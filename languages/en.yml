@@ -1,0 +1,37 @@
+title:
+  archive: Archive
+  category: Category
+  tag: Tag
+
+menu:
+  home: Home
+  archives: Archives
+  categories: Categories
+  tags: Tags
+  about: About
+  search: Search
+
+sidebar:
+  overview: Overview
+  catalog: Catalog
+
+post:
+  created: Post Created
+  modified: Post Modified
+  posted: Posted on
+  sticky: Sticky
+  read_more: Read more
+  untitled: Untitled
+  visitors: Visitors
+  word_count: Word count
+  read_time: Reading time
+  copyright:
+    author: Post Author
+    link: Post Link
+    license_title: Copyright
+    license_content: 'All articles in this blog are licensed under 
+      <a href="%s" rel="external nofollow" target="_blank">%s</a> unless stating additionally'
+
+footer:
+  powered: 'Powered by %s'
+  theme: Theme

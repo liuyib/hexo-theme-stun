@@ -1,0 +1,23 @@
+{
+  "name": "hexo-theme-stun",
+  "version": "0.0.1",
+  "description": "a gorgeous blog theme - stun",
+  "homepage": "https://liuyib.github.io",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liuyib/hexo-theme-stun"
+  },
+  "keywords": [
+    "stun",
+    "Hexo"
+  ],
+  "author": "liuyib",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/liuyib/hexo-theme-stun/issues"
+  },
+  "devDependencies": {}
+}

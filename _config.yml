@@ -1,0 +1,82 @@
+
+# html lang
+language:
+- zh-CN
+- en
+
+# main menu navigation
+menu:
+  home: /
+  archives: /archives
+  categories: /categories
+  about: /about
+
+# favicon
+favicon:
+  # in theme directory(source/imgs)
+  normal: /imgs/favicon.ico
+
+# social links
+social:
+  GitHub: https://github.com/liuyib && github
+  Segmentfault: https://segmentfault.com/u/liuyib && segmentfault
+
+# sidebar avatar
+# in theme directory(source/imgs)
+avatar: /imgs/my_favorite.jpg
+
+# catalog of article in the sidebar
+catalog:
+  enable: true
+
+
+# PWA
+# see https://github.com/JLHwung/hexo-offline
+pwa:
+  enable: false
+  manifest: /manifest.json
+
+# stylesheets loaded in the <head>
+stylesheets:
+  - /css/index.css
+
+# scripts loaded in the end of the body
+scripts:
+  - /js/index.js
+
+# copyright
+post_copyright:
+  enable: true
+  license: CC BY-NC-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+# comments
+# disqus
+disqus:
+  enable: false
+
+# busuanzi count for PV / UV in site
+busuanzi:
+  # count values only if the other configs are false
+  enable: true
+  # custom uv span for the whole site
+  site_uv: true
+  site_uv_header: <i class="fa fa-user"></i>
+  site_uv_footer:
+  # custom pv span for the whole site
+  site_pv: true
+  site_pv_header: <i class="fa fa-eye"></i>
+  site_pv_footer:
+  # custom pv span for one page only
+  page_pv: true
+  page_pv_header: <i class="fa fa-file"></i>
+  page_pv_footer:
+
+# canvas ribbon
+# see: https://github.com/hustcc/ribbon.js
+canvas_ribbon:
+  enable: false
+  size: 150
+  alpha: 0.6
+  zIndex: -1
+  click_to_change: false
