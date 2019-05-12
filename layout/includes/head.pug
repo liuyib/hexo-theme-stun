@@ -1,0 +1,25 @@
+- var pageDescription = page.description || page.title || config.description || ''
+- var pageKeywords = [config.author, config.title, config.keywords].filter(i => !!i).join(', ')
+- var pageAuthor = config.email ? `${config.author}: ${config.email}` : config.author
+- var pageCopyright = config.copyright || config.author
+
+meta(charset='UTF-8')
+meta(http-equiv="X-UA-Compatible" content="IE=edge")
+meta(name="viewport" content="width=device-width, initial-scale=1")
+meta(name="description" content=pageDescription)
+meta(name="keywords" content=pageKeywords)
+meta(name="author" content=pageAuthor)
+meta(name="copyright" content=pageCopyright)
+title= pageTitle
+
+//- favicon_tag accept a param of type string
+!=favicon_tag((config.favicon || theme.favicon || '/imgs/favicon.ico') + '')
+
+//- load stylesheets in the head tag
+if theme.stylesheets !== undefined && theme.stylesheets.length > 0
+  //- stylesheets list from _config.yml
+  each url in theme.stylesheets
+    link(rel='stylesheet', href=url)
+
+//- load source
+include ./source.pug

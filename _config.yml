@@ -1,79 +1,93 @@
 
-# html lang
+# HTML lang
 language:
-- zh-CN
-- en
+  - zh-CN
+  - en
 
-# main menu navigation
+# Main menu navigation
 menu:
   home: /
   archives: /archives
   categories: /categories
   about: /about
 
-# favicon
-favicon:
-  # in theme directory(source/imgs)
-  normal: /imgs/favicon.ico
+# Favicon
+favicon: /imgs/favicon.ico
 
-# social links
+# Social links
 social:
   GitHub: https://github.com/liuyib && github
   Segmentfault: https://segmentfault.com/u/liuyib && segmentfault
 
-# sidebar avatar
-# in theme directory(source/imgs)
+# Sidebar avatar
+# In theme directory(source/imgs)
 avatar: /imgs/my_favorite.jpg
 
-# catalog of article in the sidebar
+# Catalog of article in the sidebar
 catalog:
   enable: true
-
+  # Show list number
+  number: true
 
 # PWA
-# see https://github.com/JLHwung/hexo-offline
+# See https://github.com/JLHwung/hexo-offline
 pwa:
   enable: false
   manifest: /manifest.json
 
-# stylesheets loaded in the <head>
+# Stylesheets loaded in the <head>
 stylesheets:
   - /css/index.css
 
-# scripts loaded in the end of the body
+# Scripts loaded in the end of the body
 scripts:
   - /js/index.js
 
-# copyright
+
+# ------------------------------------
+# Comments
+# ------------------------------------
+# Disqus
+disqus:
+  enable: false
+
+# Article copyright
 post_copyright:
   enable: true
   license: CC BY-NC-SA 4.0
   license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
 
-# comments
-# disqus
-disqus:
-  enable: false
-
-# busuanzi count for PV / UV in site
-busuanzi:
-  # count values only if the other configs are false
+# Copyright in the site bottom
+site_copyright:
   enable: true
-  # custom uv span for the whole site
+  start: 2019
+  # If not set, default is the latest year
+  end:
+
+# ICP
+ICP:
+  enable: false
+  text:
+
+# Busuanzi count for PV / UV in site
+busuanzi:
+  # Count values only if the other configs are false
+  enable: true
+  # Custom uv span for the whole site
   site_uv: true
   site_uv_header: <i class="fa fa-user"></i>
   site_uv_footer:
-  # custom pv span for the whole site
+  # Custom pv span for the whole site
   site_pv: true
   site_pv_header: <i class="fa fa-eye"></i>
   site_pv_footer:
-  # custom pv span for one page only
+  # Custom pv span for one page only
   page_pv: true
   page_pv_header: <i class="fa fa-file"></i>
   page_pv_footer:
 
-# canvas ribbon
-# see: https://github.com/hustcc/ribbon.js
+# Canvas ribbon
+# See: https://github.com/hustcc/ribbon.js
 canvas_ribbon:
   enable: false
   size: 150

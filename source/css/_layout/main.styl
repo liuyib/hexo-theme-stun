@@ -1,0 +1,31 @@
+#main
+  margin: 0 100px
+
+#main-inner
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6
+    cursor: pointer
+    transition: padding-left .3s ease
+
+    &::before
+      content: '#'
+      display: block
+      position: absolute
+      left: 0
+      top: calc(50% - .68rem)
+      font: normal normal normal 16px/2 'Arial'
+      color: $h-before-color
+      transition: color .3s ease
+
+    &:hover
+      padding-left: 1.1rem
+
+      &::before
+        color: $light-blue
+
+  h2
+    padding-left: 16px
