@@ -25,7 +25,8 @@ body
 
 h1, h2, h3, h4, h5, h6
   position: relative
-  margin: 30px 0 15px 0
+  margin: 1.5rem 0 1rem 0
+  padding: .5rem 0 0 0
   line-height: $line-height-h
   font-weight: $font-weight-bolder
   color: lighten($font-color, 15%)
@@ -34,11 +35,61 @@ for headline in (1..6)
   h{headline}
     font-size: $font-size-h-base - $font-size-h-step * headline
 
+p
+  margin: 0 0 .5rem 0
+
 a
-  color: $link-color
   outline: none
+  border-bottom: 1px solid $link-bottom-color
+  color: $link-color
+  text-decoration: none
   cursor: pointer
-  transition: .3s color ease
+  transition: .3s all ease
 
   &:hover
+    border-bottom: 1px solid $link-bottom-hover-color
     color: $link-hover-color
+
+img
+  display: block
+  border-radius: 3px
+  if ($img-border-width != 0)
+    border: $img-border-width solid $img-border-color
+    padding: 6px
+  vertical-align: middle
+
+hr
+  position: relative
+  margin: 1rem 0
+  width: calc(100% - 1.5rem)
+  height: 0
+  border: 0
+  border-top: 4px dashed $hr-color
+  background-color: #fff
+
+  &::after
+    content: '\f0fb'
+    display: block
+    position: absolute
+    top: calc(50% - 1rem - 2px)
+    right: -1.5rem
+    width: 1.5rem
+    height: 2rem
+    line-height: 2rem
+    font-family: 'fontStun'
+    font-size: 26px
+    color: $hr-plane-color
+
+blockquote
+  padding: .5rem 1rem
+  background-color: $quote-bg-color
+  border-left: 5px solid $quote-left-color
+
+code
+  border-radius: 3px
+  padding: 2px 4px
+  color: $code-color
+  background-color $code-bg-color
+  font-family: $code-family
+  font-size: .94em
+  word-wrap: break-word;
