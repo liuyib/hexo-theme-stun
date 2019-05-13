@@ -26,14 +26,13 @@ body
 h1, h2, h3, h4, h5, h6
   position: relative
   margin: 1.5rem 0 1rem 0
-  padding: .5rem 0 0 0
   line-height: $line-height-h
   font-weight: $font-weight-bolder
-  color: lighten($font-color, 15%)
+  color: lighten($h-color, 15%)
 
-for headline in (1..6)
-  h{headline}
-    font-size: $font-size-h-base - $font-size-h-step * headline
+for size in (1..6)
+  h{size}
+    font-size: $h-font-size-base - $h-font-size-step * size
 
 p
   margin: 0 0 .5rem 0
@@ -64,14 +63,14 @@ hr
   width: calc(100% - 1.5rem)
   height: 0
   border: 0
-  border-top: 4px dashed $hr-color
+  border-bottom: 3px dashed $hr-color
   background-color: #fff
 
   &::after
     content: '\f0fb'
     display: block
     position: absolute
-    top: calc(50% - 1rem - 2px)
+    top: calc(50% - 1rem + .5px)
     right: -1.5rem
     width: 1.5rem
     height: 2rem

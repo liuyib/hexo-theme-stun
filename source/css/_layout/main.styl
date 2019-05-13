@@ -1,31 +1,36 @@
-#main
-  margin: 0 100px
+headingLeft(fontsize)
+  padding-left: unit(fontsize, "rem")
 
 #main-inner
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6
+  h1, h2, h3, h4, h5, h6
     cursor: pointer
     transition: padding-left .3s ease
 
+    a
+      text-decoration: none
+      border-bottom: 0
+      color: $h-color
+
+      &:hover
+        color: $h-color
+
     &::before
-      content: '#'
+      content: "\e801"
       display: block
       position: absolute
       left: 0
-      top: calc(50% - .68rem)
-      font: normal normal normal 16px/2 'Arial'
-      color: $h-before-color
+      top: calc(50% - .7em)
+      font-size: .95em
+      font-family: "fontStun"
+      color: $h-link-logo-color
       transition: color .3s ease
 
     &:hover
-      padding-left: 1.1rem
+      padding-left: 1.5em
 
       &::before
-        color: $light-blue
+        color: $blue-light
 
-  h2
-    padding-left: 16px
+  for size in 1..6
+    h{size}
+      headingLeft(1.45 - 0.1 * size)
