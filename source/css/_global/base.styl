@@ -1,0 +1,44 @@
+::selection
+  background: $selection-bg
+  color: $selection-color
+
+*,
+*::before,
+*::after
+  box-sizing: border-box
+
+*
+  margin: 0 
+  padding: 0
+
+html
+  line-height: 100%
+  font-size: $font-size-larger
+
+body
+  position: relative
+  font-family: $font-family
+  font-size: $font-size
+  line-height: $line-height-base
+  color: $font-color
+  background-color $body-bg-color
+
+h1, h2, h3, h4, h5, h6
+  position: relative
+  margin: 30px 0 15px 0
+  line-height: $line-height-h
+  font-weight: $font-weight-bolder
+  color: lighten($font-color, 15%)
+
+for headline in (1..6)
+  h{headline}
+    font-size: $font-size-h-base - $font-size-h-step * headline
+
+a
+  color: $link-color
+  outline: none
+  cursor: pointer
+  transition: .3s color ease
+
+  &:hover
+    color: $link-hover-color

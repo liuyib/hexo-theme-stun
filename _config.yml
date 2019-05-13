@@ -66,8 +66,8 @@ site_copyright:
 
 # ICP
 ICP:
-  enable: false
-  text:
+  enable: true
+  text: 豫备案12345678号.
 
 # Busuanzi count for PV / UV in site
 busuanzi:

@@ -1,20 +1,25 @@
-footer.footer-bg
+footer#stun-footer.stun-footer
   - var date = new Date()
   - var nowYear = date.getFullYear()
   - var copyRight = theme.site_copyright
-  - var startYear = copyRight && copyRight.enable ? copyRight.start || nowYear  : nowYear
-  - var endYear = copyRight && copyRight.enable ? copyRight.end || nowYear  : nowYear
+  - var startYear = copyRight.start || nowYear
+  - var endYear = copyRight.end || nowYear
 
   .footer-inner
-    p.powered-info
+    p
       span!= _p('footer.powered', link_to('http://hexo.io', 'hexo', {external: true}))
-      span.powered-info-separator |
+      span.footer-separator |
       span= _p('footer.theme') + ' '
       span!= link_to('https://github.com/liuyib/hexo-theme-stun', 'stun', {external: true})
       span= ' v' + version() + '.'
-    p.copyright!= '&copy; ' + startYear + (startYear != endYear ? '-' + endYear : '')  + ' by ' + config.author
+
+    p
+      if copyRight.enable
+        span!= `&copy; ${startYear}` + (startYear != endYear ? `-${endYear}` : '')
+        span.footer-heart= '❤'
+        span= config.author + '. '
       if theme.ICP.enable
-        span.icp= '. ' + theme.ICP.text
+        span= theme.ICP.text
 
     //- enable busuanzi to show PV / UV
     if theme.busuanzi.enable

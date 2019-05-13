@@ -1,43 +1,5 @@
-::selection
-  background: $selection-bgc
-  color: $selection-color
+// reset style
+@import "./base.styl"
 
-*,
-*::before,
-*::after
-  box-sizing: border-box
-
-*
-  margin: 0 
-  padding: 0
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6
-  position: relative
-  margin: .2rem 0
-  color: lighten($font-color, 15%)
-  font-weight: bold
-
-html
-  line-height: 100%
-  font-size: $rem
-
-body
-  font-size: $font-size
-  font-family: $font-family
-  line-height: $text-line-height
-  color: $font-color
-  background-color #fff
-
-a
-  color: $a-link-color
-  cursor: pointer
-  text-decoration: none
-  transition: .3s color ease
-
-a:hover
-  color: $a-hover-color
+// font style
+@import "./font.styl"

@@ -1,19 +1,39 @@
-footer
-  background-color: $light-blue
+.stun-footer
+  background-color: $footer-bg-color
+  background-position: bottom
+  background-size: cover
+  background-attachment: fixed
+  background-image: url($footer-bg)
 
-  &.footer-bg
-    background-position: bottom
-    background-size: cover
-    background-attachment: fixed
-    background-image: url($footer-bg)
+  a
+    text-decoration: none
+    color: $footer-link-color
 
-.footer-inner
-  padding: 2rem 1rem
-  color: $theme-footer-text-color
-  text-align: center
-  cursor: default
+    &:hover
+      color: $footer-link-hover-color
 
-.powered-info-separator
-  margin: 0 0.3rem
+  .footer-inner
+    min-height: $footer-min-height
+    padding: $footer-padding
+    color: $footer-text-color
+    text-align: center
+    cursor: default
 
-// #busuanzi
+  .footer-separator
+    margin: 0 .3rem
+
+  .footer-heart
+    display: inline-block
+    margin: 0 .3rem
+    color: red
+    animation: footer-heart-beat 1.4s infinite
+
+@keyframes footer-heart-beat
+  0%
+    transform: scale(1)
+  15%
+    transform: scale(1.2)
+  30%
+    transform: scale(1)
+  45%
+    transform: scale(1.2)

@@ -1,0 +1,52 @@
+@font-face {
+  font-family: 'fontStun';
+  src: url('../../fonts/font.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+ 
+ [class^="icon-"]::before, [class*=" icon-"]::before {
+  font-family: "fontStun";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+ 
+  /* For safety - reset parent styles, that can break glyph codes */
+  font-variant: normal;
+  text-transform: none;
+ 
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+ 
+.icon-search::before { content: '\e800'; } /* 放大镜 */
+.icon-link::before { content: '\e801'; } /* 标题链接 */
+.icon-home::before { content: '\e802'; } /* 首页 */
+.icon-folder::before { content: '\e803'; } /* 归档 */
+.icon-catalog::before { content: '\e804'; } /* 分类 */
+.icon-user::before { content: '\e805'; } /* 关于 */
+.icon-calendar::before { content: '\e806'; } /* 发表时间 */
+.icon-tag::before { content: '\e808'; } /* 标签 */
+.icon-eye::before { content: '\e809'; } /* 阅读次数 */
+.icon-twitter::before { content: '\f099'; } /* twitter */
+.icon-github::before { content: '\f09b'; } /* github */
+.icon-rss::before { content: '\f09e'; } /* rss */
+.icon-menu::before { content: '\f0c9'; } /* 菜单 */
+.icon-mail::before { content: '\f0e0'; } /* 邮件 */
+.icon-fighter-jet::before { content: '\f0fb'; } /* 飞机 */
+.icon-weibo::before { content: '\f18a'; } /* 微博 */
+.icon-file-word::before { content: '\f1c2'; } /* 字数统计 */
+.icon-qq::before { content: '\f1d6'; } /* QQ */
+.icon-wechat::before { content: '\f1d7'; } /* 微信 */
+.icon-paper-plane::before { content: '\f1d8'; } /* 纸飞机 */
+.icon-cc::before { content: '\f20a'; } /* 版权声明 */
