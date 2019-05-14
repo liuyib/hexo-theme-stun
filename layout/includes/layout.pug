@@ -21,7 +21,7 @@ html(lang=config.language)
       //- scripts list from config.yml
       each url in theme.scripts
         script(src=`${url}?version=${version()}`)
-    script
-      //<![CDATA[
+
+    <script id="__bs_script__">//<![CDATA[
         document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.26.5'><\/script>".replace("HOST", location.hostname));
-      //]]>
+    //]]></script>

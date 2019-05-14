@@ -7,6 +7,7 @@ language:
 # Main menu navigation
 menu:
   home: /
+  tags: /tags
   archives: /archives
   categories: /categories
   about: /about
@@ -16,8 +17,8 @@ favicon: /imgs/favicon.ico
 
 # Social links
 social:
-  GitHub: https://github.com/liuyib && github
-  Segmentfault: https://segmentfault.com/u/liuyib && segmentfault
+  github: https://github.com/liuyib
+  segmentfault: https://segmentfault.com/u/liuyib
 
 # Sidebar avatar
 # In theme directory(source/imgs)
