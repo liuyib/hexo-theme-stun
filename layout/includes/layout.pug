@@ -1,12 +1,3 @@
-
-- var pageTitle = page.title || config.subtitle || ''
-- if (is_archive()) pageTitle = _p('page.archives')
-- if (is_tag()) pageTitle = _p('page.tag') + ': ' + page.tag
-- if (is_category()) pageTitle = _p('page.category') + ': ' + page.category
-- if (is_month()) pageTitle += ': ' + page.month + '/' + page.year
-- if (is_year()) pageTitle += ': ' + page.year
-- pageTitle ? pageTitle += ' | ' + config.title : pageTitle = config.title
-
 doctype html
 html(lang=config.language)
   head
@@ -21,7 +12,3 @@ html(lang=config.language)
       //- scripts list from config.yml
       each url in theme.scripts
         script(src=`${url}?version=${version()}`)
-
-    <script id="__bs_script__">//<![CDATA[
-        document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.26.5'><\/script>".replace("HOST", location.hostname));
-    //]]></script>
