@@ -12,13 +12,13 @@
   padding: 0
 
 html
+  font-size: $font-size-rem
   line-height: 100%
-  font-size: $font-size-larger
 
 body
   position: relative
   font-family: $font-family
-  font-size: $font-size
+  font-size: $font-size-base
   line-height: $line-height-base
   color: $font-color
   background-color $body-bg-color
@@ -54,7 +54,7 @@ img
   border-radius: 3px
   if ($img-border-width != 0)
     border: $img-border-width solid $img-border-color
-    padding: 6px
+    padding: .3rem
   vertical-align: middle
 
 hr
