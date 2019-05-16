@@ -7,9 +7,9 @@ language:
 # Main menu navigation
 menu:
   home: /
-  tags: /tags
   archives: /archives
   categories: /categories
+  tags: /tags
   about: /about
 
 # Favicon
@@ -29,6 +29,15 @@ catalog:
   enable: true
   # Show list number
   number: true
+
+# Tag cloud
+tag:
+  # Color for tag
+  start_color: '#fc0'
+  end_color: '#f0c'
+  # Font size for tag
+  min_font_size: 16
+  max_font_size: 30
 
 # PWA
 # See https://github.com/JLHwung/hexo-offline

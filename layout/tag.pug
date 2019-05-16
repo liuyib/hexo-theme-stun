@@ -1,11 +1,8 @@
 extends includes/layout.pug
 
 block content
+  include ./includes/mixins/articles-sort.pug
   div#tag
-    h1= 'Tag: ' + page.tag
-    - page.posts.each(function(article){
-      a(href=url_for(article.path))= article.title
-      time(datetime=date_xml(article.date))= date(article.date)
-      br.clear
-    - })
-  #paginator!= paginator()
+    .article-sort-title= _p('page.tag') + ' - ' + page.tag
+    +articleSort(page.posts)
+  include ./includes/pagination.pug

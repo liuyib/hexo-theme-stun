@@ -1,8 +1,12 @@
 extends includes/layout.pug
 
 block content
-  div page test
-  article#page
-    h1= page.title
-    != page.content
-  #paginator!= paginator()
+  if (page.type === 'tags')
+    div.tag-cloud
+      div.tag-cloud-title= _p('page.tag') + ' - '
+        span.tag-cloud-num= (site.tags.length - 1)
+      - var min_font = theme.tag && (theme.tag.min_font_size || 14)
+      - var max_font = theme.tag && (theme.tag.max_font_size || 30)
+      - var start_color = theme.tag && (theme.tag.start_color || '#a4d8fa')
+      - var end_color = theme.tag && (theme.tag.end_color || '#1b9ef3')
+      div.tag-cloud-item!=tagcloud({min_font: min_font, max_font: max_font, amount: 200, color: true, start_color, end_color})
