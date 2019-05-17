@@ -1,13 +1,11 @@
 extends includes/layout.pug
 
 block content
-  div category test
-
   #category
     h1= page.category
     - page.posts.each(function(article){
       .category-item
         a(href=url_for(article.path))= article.title
-        time(datetime=date_xml(article.date))= date(article.date)
+        time(datetime=date_xml(article.date))= full_date(article.date, 'YYYY-MM-DD')
     - })
-  #paginator!= paginator()
+  include ./includes/pagination.pug

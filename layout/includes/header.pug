@@ -1,4 +1,13 @@
-header#stun-header
-  nav#header-nav
-    each url, label in theme.menu
-      a(href=url)= _p(`menu.${label}`)
+header#header
+  nav#header-nav.nav-slider
+    div.header-nav-menu
+      ul
+        each url, label in theme.menu
+          li
+            - if (theme.show_menu_icon)
+              a(href=url)
+                i(class=`header-nav-menu-icon icon-${label}`)
+                != _p(`menu.${label}`)
+  div#header-info
+    div.site-info-title= config.title
+    div.site-info-subtitle= config.subtitle

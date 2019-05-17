@@ -2,51 +2,9 @@
 extends includes/layout.pug
 
 block content
-  div archive test
   - var archivesList = list_archives({ show_count: true })
 
   div.archive
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
     aside
       h2(id="Archives")
         a(href="#Archives") Archives
@@ -55,45 +13,11 @@ block content
       else
         p None.
       hr
+      - page.posts.each(function(article){
+        .archive-list-item
+          time.article-sort-item__time= full_date(article.date, 'YYYY-MM-DD')
+          a(href=url_for(article.canonical_path))= article.title
+      - })
 
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-    p hello world
-      //- - page.posts.each(function(article){
-      //-   .archive-list-item
-      //-     a(href=url_for(article.path))= article.title
-      //-     time(datetime=date_xml(article.date))= date(article.date)
-      //- - })
+      hr
+  include ./includes/pagination.pug

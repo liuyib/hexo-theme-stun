@@ -1,15 +1,28 @@
-- var pageTitle = page.title || config.subtitle || ''
-- if (is_archive()) pageTitle = 'Archives'
-- if (is_tag()) pageTitle = _p('title.tags')
-- if (is_category()) pageTitle = 'Categories' + ': ' + page.category
-- if (is_month()) pageTitle += ': ' + page.year + '/' + page.month
-- if (is_year()) pageTitle += ': ' + page.year
-- pageTitle ? pageTitle += ' | ' + config.title : pageTitle = config.title
+-
+  var pageTitle = page.title || config.subtitle || ''
 
-- var pageDescription = page.description || page.title || config.description || ''
-- var pageKeywords = [config.author, config.title, config.keywords].filter(i => !!i).join(', ')
-- var pageAuthor = config.email ? `${config.author}: ${config.email}` : config.author
-- var pageCopyright = config.copyright || config.author
+  //- A page that show all tags
+  if (page.type === 'tags') pageTitle = _p('title.tags')
+  //- A page that show all categories
+  if (page.type === 'categories') pageTitle = _p('title.categories')
+  //- A page that show archives of posts
+  if (is_archive()) pageTitle = _p('title.archives')
+  //- A page that show all posts for a tag
+  if (is_tag()) pageTitle = _p('title.tags') + ': ' + page.tag
+  //- A page that show all posts for a category
+  if (is_category()) pageTitle = _p('title.categories') + ': ' + page.category
+  //- A page that show all posts for month
+  if (is_month()) pageTitle += ': ' + page.year + '/' + page.month
+  //- A page that show all posts for year
+  if (is_year()) pageTitle += ': ' + page.year
+
+  pageTitle ? pageTitle += ' | ' + config.title : pageTitle = config.title
+
+-
+  var pageDescription = page.description || page.title || config.description || ''
+  var pageKeywords = [config.author, config.title, config.keywords].filter(i => !!i).join(', ')
+  var pageAuthor = config.email ? `${config.author}: ${config.email}` : config.author
+  var pageCopyright = config.copyright || config.author
 
 meta(charset='UTF-8')
 meta(http-equiv="X-UA-Compatible" content="IE=edge")
@@ -18,14 +31,14 @@ meta(name="description" content=pageDescription)
 meta(name="keywords" content=pageKeywords)
 meta(name="author" content=pageAuthor)
 meta(name="copyright" content=pageCopyright)
-meta(http-equiv="Content-Security-Policy" content="unsafe-inline")
+
 title= pageTitle
 
 //- favicon_tag accept a param of type string
 != favicon_tag((config.favicon || theme.favicon || '/imgs/favicon.ico') + '')
 
-//- load stylesheets in the head tag
+//- Load stylesheets in the head tag
 if theme.stylesheets !== undefined && theme.stylesheets.length > 0
-  //- stylesheets list from _config.yml
+  //- Stylesheets list from _config.yml
   each url in theme.stylesheets
     link(rel='stylesheet', href=url)
