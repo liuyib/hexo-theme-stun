@@ -4,13 +4,16 @@ language:
   - zh-CN
   - en
 
-# Main menu navigation
+# Header menu navigation
 menu:
   home: /
   archives: /archives
   categories: /categories
   tags: /tags
   about: /about
+
+# Is show header menu icon
+show_menu_icon: true
 
 # Favicon
 favicon: /imgs/favicon.ico
@@ -51,7 +54,8 @@ stylesheets:
 
 # Scripts loaded in the end of the body
 scripts:
-  - /js/index.js
+  - /js/utils.js
+  - /js/scroll.js
 
 
 # ------------------------------------
