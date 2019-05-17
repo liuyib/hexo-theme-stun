@@ -9,4 +9,8 @@ block content
       - var max_font = theme.tag && (theme.tag.max_font_size || 30)
       - var start_color = theme.tag && (theme.tag.start_color || '#a4d8fa')
       - var end_color = theme.tag && (theme.tag.end_color || '#1b9ef3')
-      div.tag-cloud-item!=tagcloud({min_font: min_font, max_font: max_font, amount: 200, color: true, start_color, end_color})
+      div.tag-cloud-item!= tagcloud({min_font: min_font, max_font: max_font, amount: 200, color: true, start_color, end_color})
+
+  if (page.type === 'categories')
+    div.category
+      div.category-item!= list_categories()

@@ -2,17 +2,12 @@ headingLeft(fontsize)
   padding-left: unit(fontsize, "rem")
 
 #main-inner
+  max-width: $content-desktop
+  margin: 0 auto
+  
   h1, h2, h3, h4, h5, h6
     cursor: pointer
     transition: padding-left .3s ease
-
-    a
-      text-decoration: none
-      border-bottom: 0
-      color: $h-color
-
-      &:hover
-        color: $h-color
 
     &::before
       content: "\e801"
@@ -29,7 +24,7 @@ headingLeft(fontsize)
       padding-left: 1.5em
 
       &::before
-        color: $blue-light
+        color: $h-link-logo-hover-color
 
   for size in 1..6
     h{size}

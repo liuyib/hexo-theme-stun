@@ -1,8 +1,20 @@
 extends includes/layout.pug
 
 block content
-  div post test
   article#post
-    h1= page.title
+    div#post-header
+      h1.post-title= page.title
+      div.post-meta
+        span.post-meta-create
+          i.icon-post-create
+          span= full_date(page.date, 'YYYY-MM-DD')
+        span.dot!= '&bull;'
+        span.post-meta-word
+          i.icon-post-word
+          span TODO
+        span.dot!= '&bull;'
+        span.post-meta-read
+          i.icon-post-read
+          span TODO
     != page.content
-  #paginator!= paginator()
+  include ./includes/pagination.pug
