@@ -1,8 +1,90 @@
+setOlStyle(content, hoverColor)
+  &::before
+    content: content
+    position: absolute 
+    top: 0
+    left: .2rem
+    margin: 0 auto
+    line-height: 1.4rem
+    color: $blue-light
+    font-family: 'fontStun'
+    font-size: .5rem
+    transition: color .2s ease
+
+  &:hover
+    &::before
+      color: hoverColor
+
 #post
   width: $main-desktop
   padding: 2rem
   border-radius: 5px
   background-color #fff
+
+  li
+    position: relative
+    padding-left: 1.2rem
+    list-style-type: none
+
+  ul
+    li
+      setOlStyle($icon-ol-list-1, #fc0)
+      ul
+        li
+          setOlStyle($icon-ol-list-2, #fc0)
+          ul
+            li
+              setOlStyle($icon-ol-list-3, #fc0)
+
+  // Code in the post
+  figure.highlight
+    position: relative
+    min-width: 100%
+    margin: 1rem 0
+    background-color #f7f7f7
+    overflow-y: hidden
+    overflow-x: auto
+    
+    pre
+      font-family: $code-family
+
+    --table-header-height = 1.5rem
+    
+    table
+      position: relative
+      border-spacing: 0
+      padding: --table-header-height 0 0 0
+
+      &::before
+        content: 'TODO'
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: --table-header-height
+        line-height: --table-header-height
+        border-top-left-radius: 3px
+        border-top-right-radius: 3px
+        padding-left: 1rem 
+        background-color #eff2f3
+        font-weight: $font-weight-bolder
+    
+      // The line number of code
+      td.gutter
+        width: 1rem
+        border-bottom-left-radius: 3px
+        padding: 0 .5rem
+        line-height: $line-height-code-block
+        text-align: center
+        background-color #eff2f3
+        color: #b6b6b6
+
+      // Code content
+      td.code
+        width: 100%
+        border-bottom-right-radius: 3px
+        padding: .5rem
+        line-height: $line-height-code-block
 
 #post-header
   padding: 0 0 3rem 0
@@ -22,15 +104,34 @@
       padding-left: 0
 
   .post-meta
+    *::before, *::after
+      margin-right: .2rem
+      font-family: 'fontStun'
+    
+    &-create, &-word, &-read
+      margin-right: .2rem
+    
     .dot
       margin: 0 .5rem
       color: #666
 
     &-create
       color: #00a7e0
+
+      &::before
+        content: $icon-post-create-before
     
     &-word
       color: #333
+
+      &::before
+        content: $icon-post-word-before
     
     &-read
       color: #ff3f1a
+
+      &::before
+        content: $icon-post-read-before
+      
+      &::after
+        content: $icon-post-read-after

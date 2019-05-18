@@ -1,31 +1,45 @@
 headingLeft(fontsize)
   padding-left: unit(fontsize, "rem")
 
+  &:hover
+    padding-left: fontsize + .3rem
+
+    &::before
+      color: $h-link-logo-hover-color
+
 #main-inner
   max-width: $content-desktop
   margin: 0 auto
   
   h1, h2, h3, h4, h5, h6
     cursor: pointer
-    transition: padding-left .3s ease
 
-    &::before
-      content: "\e801"
-      display: block
-      position: absolute
-      left: 0
-      top: calc(50% - .7em)
-      font-size: .95em
-      font-family: "fontStun"
-      color: $h-link-logo-color
-      transition: color .3s ease
+    a
+      text-decoration: none
+      border-bottom: 0
+      color: inherit
 
-    &:hover
-      padding-left: 1.5em
+      &:hover
+        color: inherit
+
+    // Enable heading`s icon
+    if ($icon-h-link is defined)
+      position: relative
+      transition: padding-left .3s ease
 
       &::before
-        color: $h-link-logo-hover-color
+        display: block
+        content: $icon-h-link
+        position: absolute
+        left: 0
+        top: 0
+        height: 100%
+        line-height: $line-height-h
+        font-family: "fontStun"
+        color: $h-link-logo-color
+        transition: color .3s ease
 
   for size in 1..6
     h{size}
-      headingLeft(1.45 - 0.1 * size)
+      if ($icon-h-link is defined)
+        headingLeft(1.45 - 0.1 * size)

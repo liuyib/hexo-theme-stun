@@ -6,15 +6,16 @@ block content
       h1.post-title= page.title
       div.post-meta
         span.post-meta-create
-          i.icon-post-create
+          span 发表于
           span= full_date(page.date, 'YYYY-MM-DD')
         span.dot!= '&bull;'
         span.post-meta-word
-          i.icon-post-word
+          span 字数统计
           span TODO
         span.dot!= '&bull;'
         span.post-meta-read
-          i.icon-post-read
+          span 热度
           span TODO
     != page.content
+    != console.log(page)
   include ./includes/pagination.pug

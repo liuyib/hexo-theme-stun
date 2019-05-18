@@ -2,7 +2,7 @@
 // Global variables
 // ==========================================
 
-// Define color
+// Define global color
 $black-light  = #666
 $black-dark  = #333
 $gray-light = #c2c2c2
@@ -14,18 +14,31 @@ $white-dark = #e3e4e4
 // Text
 $font-color = $black-light
 
+// Background color for <body>
+$body-bg-color = $white-light
+
 // Link
 $link-color = #b00
 $link-hover-color = #f00
 $link-bottom-color = #fc0
 $link-bottom-hover-color = #f0c
 
-// Color for <body>
-$body-bg-color = $white-light
-
 // Selection
 $selection-bg = #00c4b6
 $selection-color = #fff
+
+// Header
+$header-nav-bg-color = $black-dark
+$header-text-color = $white-light
+$header-text-hover-color = $gray-light
+$header-link-color = $header-text-color
+$header-link-hover-color = $blue-light
+
+// Footer
+$footer-text-color = #eee
+$footer-bg-color = #333
+$footer-link-color = $link-color
+$footer-link-hover-color = $link-hover-color
 
 // Heading
 $h-link-logo-color = #f47466
@@ -36,13 +49,13 @@ $h-color = #222;
 
 // Horizon line
 $hr-color = #fc0
-$hr-plane-color = #999
+$hr-icon-color = #999
 
 // Blockquote
 $quote-bg-color = #e8e8e8
 $quote-left-color = #009a61
 
-// Code
+// Code block
 $code-bg-color = #f6f0f2
 $code-color = #c7254e
 $code-family = "Source Code Pro", Consolas, Menlo, Monaco, "Courier New", monospace
@@ -52,23 +65,69 @@ $img-border-width = 1px
 $img-border-color = #dadefb
 
 // -------------------------------------------
+// Icon font
+// -------------------------------------------
+
+// Define icon font
+// -------------------------------------------
+// Icon for <hr>
+$icon-hr-plane-1 = '\f0fb'
+$icon-hr-plane-2 = '\f197'
+$icon-hr-plane-3 = '\e80e'
+
+// Icon for <h>
+$icon-h-chain-1 = '\e801'
+$icon-h-chain-2 = '\e80b'
+$icon-h-pin = '\e80f'
+$icon-h-hash = '\e810'
+$icon-h-anchor = '\e81f'
+$icon-h-paw = '\f1b0'
+
+// Icon for <ol>
+$icon-ol-list-dot = '\e807'
+$icon-ol-list-triangle = '\e80c'
+$icon-ol-list-rect = '\e80a'
+
+// Icon before article
+$icon-post-create = '\e806'
+$icon-post-word = '\f1c2'
+$icon-post-eye = '\e809'
+$icon-post-fire = '\e80d'
+$icon-post-celsius = '\ \2103'
+
+// Use icon font
+// -------------------------------------------
+$icon-hr = $icon-hr-plane-1
+
+$icon-h-link = $icon-h-anchor
+
+$icon-ol-list-1 = $icon-ol-list-dot
+$icon-ol-list-2 = $icon-ol-list-triangle
+$icon-ol-list-3 = $icon-ol-list-rect
+
+$icon-post-create-before = $icon-post-create
+$icon-post-word-before = $icon-post-word
+$icon-post-read-before = $icon-post-fire
+$icon-post-read-after = $icon-post-celsius
+
+// -------------------------------------------
 // Font, line-height
 // -------------------------------------------
 // Line height
-$line-height-base = 2
+$line-height-base = 2 // common font line height
 $line-height-h = 1.5
-$line-height-code-block = 1.6 // can't be less 1.3
+$line-height-code-block = 1.7 // can't be less 1.3
 
 // Font size
 $font-size-rem = 20px
-$font-size-base = 14px
+$font-size-base = 14px // common font size
 $font-size-small = $font-size-base - 2px;
 $font-size-smaller = $font-size-base - 4px;
 $font-size-large = $font-size-base + 2px;
 $font-size-larger = $font-size-base + 4px;
 
 // Font family
-$font-family = Lato, Helvetica Neue For Number, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif
+$font-family = PingFang SC, Microsoft YaHei, Lato, sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Hiragino Sans GB, Helvetica Neue, Helvetica, Arial
 
 // Font weight
 $font-weight-light = 300
@@ -89,22 +148,14 @@ $z-index-5 = 1004
 // -------------------------------------------
 // Layout
 // -------------------------------------------
+
+// Width
 $content-desktop = 1110px
 $main-desktop = 772px
 
 // Header
 $header-nav-height = 60px
-$header-nav-bg-color = $black-dark
-$header-text-color = $white-light
-$header-text-hover-color = $gray-light
-$header-link-color = $header-text-color
-$header-link-hover-color = $blue-light
 
 // Footer
 $footer-min-height = 40px
-$footer-padding = 2rem 1rem
-$footer-text-color = #eee
-$footer-bg-color = #333
-$footer-link-color = $link-color
-$footer-link-hover-color = $link-hover-color
 $footer-bg = "../imgs/demo/stun-bg.jpg"
