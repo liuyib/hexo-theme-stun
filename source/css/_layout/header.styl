@@ -19,7 +19,6 @@ header
   &.fixed
     background: rgba(255, 255, 255, .8);
     box-shadow: 0 5px 5px -5px rgba(133, 133, 133, .6);
-    transition: transform .4s ease-out
 
     a
       color: #464646
@@ -29,8 +28,9 @@ header
 
   &.nav-slider
     animation-duration: .5s
+    animation-timing-function: ease
     animation-fill-mode: both
-  
+
   &.slider-down
     animation-name: sliderDown
 
