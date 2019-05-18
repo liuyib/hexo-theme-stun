@@ -43,7 +43,7 @@ for size in (1..6)
     font-size: $h-font-size-base - $h-font-size-step * size
 
 p
-  margin: 0 0 .5rem 0
+  margin: .5rem 0
 
 a
   outline: none
@@ -68,24 +68,22 @@ img
 hr
   position: relative
   margin: 1rem 0
-  width: calc(100% - 1.5rem)
+  width: $icon-hr is defined ? calc(100% - 1.5rem) : 100%
   height: 0
-  border: 0
-  border-bottom: 3px dashed $hr-color
-  background-color: #fff
+  border: 2px dashed $hr-color
 
   &::after
-    content: '\f0fb'
     display: block
+    content: $icon-hr
     position: absolute
-    top: calc(50% - 1rem + .5px)
+    top: calc(50% - 1rem - 1px)
     right: -1.5rem
     width: 1.5rem
     height: 2rem
     line-height: 2rem
     font-family: 'fontStun'
     font-size: 26px
-    color: $hr-plane-color
+    color: $hr-icon-color
 
 blockquote
   padding: .5rem 1rem
