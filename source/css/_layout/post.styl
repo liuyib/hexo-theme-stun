@@ -23,8 +23,13 @@ setOlStyle(content, hoverColor)
 
   li
     position: relative
-    padding-left: 1.2rem
-    list-style-type: none
+
+    if ($icon-ol-list-1 is defined && $icon-ol-list-2 is defined && $icon-ol-list-3 is defined)
+      list-style-type: none
+      padding-left: 1.5rem
+    else
+      list-style-position: inside
+      padding-left: 1rem
 
   ul
     li
