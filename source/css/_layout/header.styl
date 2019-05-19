@@ -1,15 +1,34 @@
 header
+  display: flex
+  flex-direction: column
+  position: relative
   width: 100%
-  height: 100%
+  height: 100vh
   margin: 0 0 2rem 0
   font-size: 1rem
   background-color: alpha($header-nav-bg-color, .6)
   background-image: url(/imgs/demo/stun-bg.jpg)
   background-attachment: fixed
   background-position: center
+  background-repeat: no-repeat
+  background-size: cover
+
+  // header nav menu
+  .icon-home::before
+    content: $nav-home
+  .icon-archives::before
+    content: $nav-archive
+  .icon-categories::before
+    content: $nav-category
+  .icon-tags::before
+    content: $nav-tag
+  .icon-about::before
+    content: $nav-about
+  .icon-search::before
+    content: $nav-search
 
 #header-nav
-  z-index: $z-index-2
+  z-index: $z-index-5
   position: fixed
   top: 0
   width: 100%
@@ -84,14 +103,60 @@ header
         color: $header-link-hover-color
 
 #header-info
-  padding: 12rem 1rem
+  display: flex
+  flex: 1
+  flex-direction: column
   text-align: center
 
-  .site-info-title
-    font-size: 2.5rem
-    font-weight: $font-weight-bolder
-    color: #f9f9f9
-  .site-info-subtitle
-    font-size: 2rem
-    font-weight: $font-weight-bold  
-    color: #f9f9f9
+  // enable blur effect for site info
+  if ($is-site-info-blur == true)
+    position: absolute
+    left: calc(50% - 300px)
+    top: calc(50% - 150px)
+    width: 600px
+    height: 300px
+    background: inherit;
+    overflow: hidden;
+
+    // blur effect
+    &::before
+      content: '';
+      position: absolute;
+      top:0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: 0 - $site-info-blur-radius
+      background: inherit;
+      background-attachment: fixed;
+      filter: blur($site-info-blur);
+
+    // background color for blur effect
+    if ($is-site-info-blur-bg == true)
+      &::after
+        content: '';
+        position: absolute;
+        top:0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0, 0, 0, .1);
+
+  .header-info-inner
+    z-index: $z-index-4
+    display: flex
+    position: relative
+    width: 100%
+    height: 100%
+    flex: 1
+    flex-direction: column
+    justify-content: center
+
+    .site-info-title
+      font-size: 2.5rem
+      font-weight: $font-weight-bolder
+      color: #f9f9f9
+    .site-info-subtitle
+      font-size: 2rem
+      font-weight: $font-weight-bold  
+      color: #f9f9f9
