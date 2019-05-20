@@ -2,22 +2,14 @@
 extends includes/layout.pug
 
 block content
+  include ./includes/mixins/articles-sort.pug
   - var archivesList = list_archives({ show_count: true })
 
   div.archive
-    aside
-      h2(id="Archives")
-        a(href="#Archives") Archives
-      if archivesList
-        != archivesList
+    aside.archive-inner
+      if (site.posts.length === 0)
+        div.article-sort-title= _p('page.articles-0')
       else
-        p None.
-      hr
-      - page.posts.each(function(article){
-        .archive-list-item
-          time.article-sort-item__time= full_date(article.date, 'YYYY-MM-DD')
-          a(href=url_for(article.canonical_path))= article.title
-      - })
+        div.article-sort-title= _p('page.articles-1', page.posts.length)
 
-      hr
-  include ./includes/pagination.pug
+      +articleSort(page.posts)
