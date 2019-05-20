@@ -12,5 +12,9 @@ block content
       div.tag-cloud-item!= tagcloud({min_font: min_font, max_font: max_font, amount: 200, color: true, start_color, end_color})
 
   if (page.type === 'categories')
-    div.category
-      div.category-item!= list_categories()
+    div.category.main-content
+      != list_categories()
+
+  if (page.type === 'about')
+    div.about.main-content
+      != page.content
