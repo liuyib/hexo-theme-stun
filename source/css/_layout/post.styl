@@ -1,14 +1,13 @@
-setOlStyle(content, hoverColor)
+setUlStyle(content, hoverColor)
   &::before
     content: content
     position: absolute 
     top: 0
-    left: .2rem
-    margin: 0 auto
-    line-height: 1.4rem
+    left: -1.3em
+    line-height: 2em
     color: $blue-light
     font-family: 'fontStun'
-    font-size: .5rem
+    font-size: 1em
     transition: color .2s ease
 
   &:hover
@@ -21,25 +20,40 @@ setOlStyle(content, hoverColor)
   border-radius: 5px
   background-color #fff
 
+  ul, ol
+    margin: 0
+    padding-left: 2em
+
   li
     position: relative
+    margin: .2em 0
 
-    if ($icon-ol-list-1 is defined && $icon-ol-list-2 is defined && $icon-ol-list-3 is defined)
+    if ($icon-ul-list-1 is defined && $icon-ul-list-2 is defined && $icon-ul-list-3 is defined)
       list-style-type: none
-      padding-left: 1.5rem
-    else
-      list-style-position: inside
-      padding-left: 1rem
-
+  
   ul
     li
-      setOlStyle($icon-ol-list-1, #fc0)
+      setUlStyle($icon-ul-list-1, #fc0)
       ul
         li
-          setOlStyle($icon-ol-list-2, #fc0)
+          setUlStyle($icon-ul-list-2, #fc0)
           ul
             li
-              setOlStyle($icon-ol-list-3, #fc0)
+              setUlStyle($icon-ul-list-3, #fc0)
+      
+  ol
+    counter-reset: ol-li
+
+    & > li
+      margin: .4em 0
+
+      &::before
+        content: counter(ol-li, $icon-ol-list-style) '.'
+        counter-increment: ol-li
+        position: absolute
+        left: -1.5em
+        text-align: right
+        color: $blue-light
 
   // Code in the post
   figure.highlight
@@ -51,12 +65,14 @@ setOlStyle(content, hoverColor)
     overflow-x: auto
     
     pre
+      margin: 0
       font-family: $code-family
 
     --table-header-height = 1.5rem
     
     table
       position: relative
+      width: 100%
       border-spacing: 0
       padding: --table-header-height 0 0 0
 
@@ -86,10 +102,25 @@ setOlStyle(content, hoverColor)
 
       // Code content
       td.code
-        width: 100%
         border-bottom-right-radius: 3px
         padding: .5rem
         line-height: $line-height-code-block
+  
+  blockquote
+    margin: 0
+
+    & > *
+      margin-top: 0 !important
+    
+    & > *:last-child
+      margin-bottom: 0 !important
+
+    figure
+      margin-top: 0 !important
+      margin-bottom: 0 !important
+
+    & + blockquote
+      padding-top: 0
 
 #post-header
   padding: 0 0 3rem 0
