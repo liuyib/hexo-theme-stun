@@ -20,6 +20,39 @@ setUlStyle(content, hoverColor)
   border-radius: 5px
   background-color #fff
 
+  h1, h2, h3, h4, h5, h6
+    cursor: pointer
+
+    a
+      text-decoration: none
+      border-bottom: 0
+      color: inherit
+
+      &:hover
+        color: inherit
+
+    // Enable heading`s icon
+    if ($icon-h-link is defined)
+      position: relative
+      transition: padding-left .3s ease
+
+      &::before
+        display: block
+        content: $icon-h-link
+        position: absolute
+        left: 0
+        top: 0
+        height: 100%
+        line-height: $line-height-h
+        font-family: "fontStun"
+        color: $h-link-logo-color
+        transition: color .3s ease
+
+  for size in 1..6
+    h{size}
+      if ($icon-h-link is defined)
+        headingLeft(1.45 - 0.1 * size)
+
   ul, ol
     margin: 0
     padding-left: 2em

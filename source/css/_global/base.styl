@@ -31,16 +31,17 @@ body
 #main
   flex: 1 auto
 
-h1, h2, h3, h4, h5, h6
-  position: relative
-  margin: 1.5rem 0 1rem 0
-  line-height: $line-height-h
-  font-weight: $font-weight-bolder
-  color: lighten($h-color, 15%)
+#post
+  h1, h2, h3, h4, h5, h6
+    position: relative
+    margin: 1.5rem 0 1rem 0
+    line-height: $line-height-h
+    font-weight: $font-weight-bolder
+    color: lighten($h-color, 15%)
 
-for size in (1..6)
-  h{size}
-    font-size: $h-font-size-base - $h-font-size-step * size
+  for size in (1..6)
+    h{size}
+      font-size: $h-font-size-base - $h-font-size-step * size
 
 p
   margin: .5rem 0
