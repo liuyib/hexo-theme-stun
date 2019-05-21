@@ -28,12 +28,13 @@ post:
   created: 创建于
   modified: 更新于
   posted: 发表于
-  sticky: 置顶
-  read_more: 阅读全文
-  untitled: 未命名
-  visitors: 阅读次数
   word_count: 字数统计
+  read-count: 阅读次数
   read_time: 阅读时长
+  read_more: 阅读全文
+  fire: 热度
+  sticky: 置顶
+  untitled: 文章未命名
   copyright:
     author: 本文作者
     link: 本文链接

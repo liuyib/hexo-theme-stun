@@ -2,7 +2,6 @@ extends includes/layout.pug
 
 block content
   include ./includes/mixins/articles-sort.pug
-  div#tag
-    .article-sort-title= _p('page.tag') + ' - ' + page.tag
+  div.tag.main-content
+    .article-sort-title= _p('page.tags') + ' - ' + page.tag
     +articleSort(page.posts)
-  include ./includes/pagination.pug

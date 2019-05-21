@@ -1,3 +1,6 @@
+# ==================================================
+# Basic config
+# ==================================================
 
 # HTML lang
 language:
@@ -12,9 +15,6 @@ menu:
   tags: /tags
   about: /about
 
-# Is show header menu icon
-show_menu_icon: true
-
 # Favicon
 favicon: /imgs/favicon.ico
 
@@ -23,30 +23,9 @@ social:
   github: https://github.com/liuyib
   segmentfault: https://segmentfault.com/u/liuyib
 
-# Sidebar avatar
+# Avatar in the sidebar
 # In theme directory(source/imgs)
 avatar: /imgs/my_favorite.jpg
-
-# Catalog of article in the sidebar
-catalog:
-  enable: true
-  # Show list number
-  number: true
-
-# Tag cloud
-tag:
-  # Color for tag
-  start_color: '#fc0'
-  end_color: '#f0c'
-  # Font size for tag
-  min_font_size: 16
-  max_font_size: 30
-
-# PWA
-# See https://github.com/JLHwung/hexo-offline
-pwa:
-  enable: false
-  manifest: /manifest.json
 
 # Stylesheets loaded in the <head>
 stylesheets:
@@ -57,33 +36,78 @@ scripts:
   - /js/utils.js
   - /js/scroll.js
 
+# ==================================================
+# Advanced config
+# ==================================================
 
-# ------------------------------------
+# --------------------------------------------------
+# Icon
+# --------------------------------------------------
+# Header menu icon
+header_menu_icon:
+  enable: true
+
+# --------------------------------------------------
+# Tag cloud
+# If not used, comment it or ignore it
+# --------------------------------------------------
+tag:
+  # Color for tag
+  start_color: '#fc0'
+  end_color: '#f0c'
+  # Font size for tag
+  min_font_size: 16
+  max_font_size: 30
+
+# --------------------------------------------------
+# Catalog of article in the sidebar
+# --------------------------------------------------
+catalog:
+  enable: true
+  # Show list number
+  number: true
+
+# --------------------------------------------------
 # Comments
-# ------------------------------------
+# --------------------------------------------------
 # Disqus
 disqus:
-  enable: false
+  enable: true
 
-# Article copyright
+# --------------------------------------------------
+# Copyright
+# --------------------------------------------------
+# Copyright of articles
 post_copyright:
   enable: true
   license: CC BY-NC-SA 4.0
   license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
 
-# Copyright in the site bottom
+# Copyright at the bottom of the site
 site_copyright:
   enable: true
   start: 2019
   # If not set, default is the latest year
   end:
 
+# --------------------------------------------------
 # ICP
+# --------------------------------------------------
 ICP:
   enable: true
   text: 豫备案12345678号.
 
+# --------------------------------------------------
+# PWA
+# See https://github.com/JLHwung/hexo-offline
+# --------------------------------------------------
+pwa:
+  enable: true
+  manifest: /manifest.json
+
+# --------------------------------------------------
 # Busuanzi count for PV / UV in site
+# --------------------------------------------------
 busuanzi:
   # Count values only if the other configs are false
   enable: true
@@ -100,8 +124,10 @@ busuanzi:
   page_pv_header: <i class="fa fa-file"></i>
   page_pv_footer:
 
+# --------------------------------------------------
 # Canvas ribbon
 # See: https://github.com/hustcc/ribbon.js
+# --------------------------------------------------
 canvas_ribbon:
   enable: false
   size: 150
