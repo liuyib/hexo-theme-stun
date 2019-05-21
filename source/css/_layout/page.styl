@@ -19,7 +19,7 @@ setUlStyle(content, hoverColor)
   width: $main-desktop
   padding: 2rem
   border-radius: 5px
-  background-color #fff
+  background-color: $white
 
   h1, h2, h3, h4, h5, h6
     cursor: pointer
@@ -162,8 +162,11 @@ setUlStyle(content, hoverColor)
     margin-bottom: 0 !important
 
 .archive
+  float: left
   width: $main-desktop
-  padding: 3rem 2rem
+  padding: 2rem
+  border-radius: 5px
+  background-color: $white
 
 .archive-inner
   position: relative
@@ -195,7 +198,7 @@ setUlStyle(content, hoverColor)
     line-height: 1.2rem
     border: .25rem solid $blue-light
     border-radius: 50%
-    background-color: #fff    
+    background-color: $white    
     transition: all .2s ease
 
 .article-sort-item
@@ -207,6 +210,9 @@ setUlStyle(content, hoverColor)
     display: inline-block
     margin: 0
     font-weight: $font-weight-normal
+
+  &:last-child
+    margin-bottom: 0
 
   &:not(.year):hover
     &::before
@@ -222,10 +228,11 @@ setUlStyle(content, hoverColor)
     height: .8rem
     border: .2rem solid $blue-light
     border-radius: 50%
-    background-color #fff
+    background-color: $white
     transition: all .2s ease
 
   &.year
+    display: block
     position: relative
     font-size: 1rem
     font-weight: $font-weight-bolder

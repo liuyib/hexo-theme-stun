@@ -7,13 +7,14 @@
 
 nav#paginator
   if (!is_post())
-    != paginator(options)
+    div.paginator-inner!= paginator(options)
   else
-    if (page.prev)
-      .article-prev.pull-left
-        a(href=url_for(page.prev.path))
-          span= page.prev.title
-    if (page.next)
-      .article-next.pull-right
-        a(href=url_for(page.next.path))
-          span= page.next.title
+    div.post-paginator
+      if (page.prev)
+        .article-prev.pull-left
+          a(href=url_for(page.prev.path))
+            span= page.prev.title
+      if (page.next)
+        .article-next.pull-right
+          a(href=url_for(page.next.path))
+            span= page.next.title
