@@ -246,10 +246,8 @@ setUlStyle(content, hoverColor)
       border-bottom: 0
       color: $blue-light !important
 
-.tag-cloud
-  padding: 3rem  5rem 9rem 5rem
-  text-align: center
-
+.tag-cloud,
+.category
   a
     margin: 0 .4rem
     border-bottom: 0
@@ -261,7 +259,28 @@ setUlStyle(content, hoverColor)
   &-title
     padding: 0 0 1.8rem 0
     font-size: 1.8rem
+    text-align: center
     cursor: default
+
+.tag-cloud
+  text-align: center
+
+.category
+  font-size: 1.2em
+
+  .category-list-link
+    color: inherit
+    
+  .category-list-count
+    padding-left: .3em
+    color: #99a9bf
+    font-size: .8em
+
+    &::before
+      content: '('
+      
+    &::after
+      content: ')'
 
 .about
   width: $main-desktop

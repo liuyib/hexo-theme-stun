@@ -2,8 +2,8 @@ extends includes/layout.pug
 
 block content
   if (page.type === 'tags')
-    div.tag-cloud
-      div.tag-cloud-title= _p('page.tag') + ' - '
+    div.tag-cloud.main-content
+      div.tag-cloud-title= _p('page.tags') + ' - '
         span.tag-cloud-num= site.tags.length
       - var min_font = theme.tag && (theme.tag.min_font_size || 14)
       - var max_font = theme.tag && (theme.tag.max_font_size || 30)
@@ -13,6 +13,8 @@ block content
 
   if (page.type === 'categories')
     div.category.main-content
+      div.category-title= _p('page.categories') + ' - '
+        span.category-num= site.categories.length
       != list_categories()
 
   if (page.type === 'about')
