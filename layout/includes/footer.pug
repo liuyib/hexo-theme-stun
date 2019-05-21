@@ -2,8 +2,8 @@ footer#footer
   - var date = new Date()
   - var nowYear = date.getFullYear()
   - var copyRight = theme.site_copyright
-  - var startYear = copyRight.start || nowYear
-  - var endYear = copyRight.end || nowYear
+  - var startYear = copyRight ? copyRight.start || nowYear : nowYear
+  - var endYear = copyRight ? copyRight.end || nowYear : nowYear
 
   .footer-inner
     p
@@ -14,13 +14,13 @@ footer#footer
       span= ' v' + version() + '.'
 
     p
-      if copyRight.enable
+      if copyRight && copyRight.enable
         span!= `&copy; ${startYear}` + (startYear != endYear ? `-${endYear}` : '')
         span.footer-heart= '❤'
         span= config.author + '. '
-      if theme.ICP.enable
+      if theme.ICP && theme.ICP.enable
         span= theme.ICP.text
 
     //- enable busuanzi to show PV / UV
-    if theme.busuanzi.enable
+    if theme.busuanzi && theme.busuanzi.enable
       include ./count/busuanzi.pug

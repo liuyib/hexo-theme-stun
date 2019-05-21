@@ -6,6 +6,7 @@ block content
     - page.posts.each(function(article){
       .category-item
         a(href=url_for(article.path))= article.title
-        time(datetime=date_xml(article.date))= full_date(article.date, 'YYYY-MM-DD')
+        if article.date
+          time(datetime=date_xml(article.date))= full_date(article.date, 'YYYY-MM-DD')
     - })
   include ./includes/pagination.pug

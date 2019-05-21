@@ -1,13 +1,15 @@
 mixin articleSort(posts)
   section.article-sort
-    - var year
+    - var year, tmpYear
     - posts.each(function (article) {
-      - var tmpYear = full_date(article.date, 'YYYY')
+      if article.date
+        - tmpYear = full_date(article.date, 'YYYY')
       if tmpYear !== year
         - year = tmpYear
         time.article-sort-item.year= year
       article.article-sort-item
-        time.article-sort-item__time= full_date(article.date, 'MM-DD')
-        h2.article-sort-item-title
-          a.article-sort-item__title(href=url_for(article.path))= article.title || 'No Title'
+        if article.date
+          time.article-sort-item__time= full_date(article.date, 'MM-DD')
+          h2.article-sort-item-title
+            a.article-sort-item__title(href=url_for(article.path))= article.title || 'No Title'
     - })
