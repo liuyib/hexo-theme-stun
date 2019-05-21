@@ -1,0 +1,15 @@
+include ./mixins/articles-sort.pug
+include ./mixins/post-header.pug
+
+div.content
+  section.recent-posts
+    if page.posts.length > 0
+      //- show 10 articles in the home page
+      each post in page.posts.sort('date', -1).limit(10).toArray()
+        article.post-item
+          +postHeader(post)
+          div.post-excerpt!= post.excerpt
+          footer.post-footer
+            div.post-btn
+              a(href=url_for(post.path)) 阅读全文 »
+  include ./pagination.pug

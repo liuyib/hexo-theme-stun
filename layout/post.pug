@@ -1,28 +1,9 @@
 extends includes/layout.pug
 
 block content
+  include ./includes/mixins/post-header.pug
   article#post.main-content
-    header.post-header
-      if (page.title)
-        h1.post-title= page.title
-      else
-        h1.post-title= _p('post.untitled')
-      
-      div.post-meta
-        span.post-meta-create
-          span= _p('post.posted') + ' '
-          if page.date
-            span= full_date(page.date, 'YYYY-MM-DD')
-          else
-            span none
-        span.dot!= '&bull;'
-        span.post-meta-word
-          span= _p('post.word_count') + ' '
-          span TODO
-        span.dot!= '&bull;'
-        span.post-meta-read
-          span= _p('post.fire') + ' '
-          span TODO
+    +postHeader(page)
     div.post-body
       != page.content
     footer.post-footer

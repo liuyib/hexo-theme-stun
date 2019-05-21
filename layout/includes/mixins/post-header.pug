@@ -1,0 +1,21 @@
+mixin postHeader(post)
+  header.post-header
+    if (post.title)
+      h1.post-title= post.title
+    else
+      h1.post-title= _p('post.untitled')
+    div.post-meta
+      span.post-meta-create
+        span= _p('post.posted') + ' '
+        if post.date
+          span= full_date(post.date, 'YYYY-MM-DD')
+        else
+          span none
+      span.dot!= '&bull;'
+      span.post-meta-word
+        span= _p('post.word_count') + ' '
+        span TODO
+      span.dot!= '&bull;'
+      span.post-meta-read
+        span= _p('post.fire') + ' '
+        span TODO

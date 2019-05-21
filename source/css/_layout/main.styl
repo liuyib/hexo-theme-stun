@@ -14,3 +14,55 @@ headingLeft(fontsize)
   max-width: $content-desktop
   margin: 0 auto
   overflow: hidden
+
+.content
+  float: left
+  width: $main-desktop
+
+  .post-header,
+  .post-excerpt,
+  .post-footer
+    margin-bottom: 2em
+  
+  .post-header
+    padding: 0
+
+  .post-item
+    width: 100%
+    border-radius: 5px
+    margin: 0 0 2rem 0
+    padding: 2rem
+    background-color: $white
+
+    & > :first-child,
+    .post-excerpt > :first-child
+      margin-top: 0
+    & > :last-child,
+    .post-excerpt > :last-child
+      margin-bottom: 0
+  
+  .post-footer
+    .post-btn
+      width: 6em
+      margin: 0 auto
+      border-radius: 5px
+      background-color: alpha($blue-light, .8)
+      text-align: center
+      cursor: pointer
+      transition: background-color .2s ease
+
+      &:hover
+        background-color: $blue-light
+
+      a
+        border-bottom: 0
+        color: $white
+
+.aside
+  display: block
+  float: right
+  width: $main-side-desktop
+  height: 100%
+  padding: 1rem
+  border-radius: 5px
+  background-color: $white
