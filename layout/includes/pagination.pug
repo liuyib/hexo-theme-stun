@@ -2,21 +2,18 @@
   var options = {
     prev_text: '<i class="icon-left-arrow"></i>',
     next_text: '<i class="icon-right-arrow"></i>',
-    mid_size: 3
+    mid_size: 1
   }
 
 div#paginator
   if (!is_post())
-    div.pagination
-      != paginator()
+    != paginator(options)
   else
     if (page.prev)
       .article-prev.pull-left
         a(href=url_for(page.prev.path))
-          i.icon-left-arrow
           span= page.prev.title
     if (page.next)
       .article-next.pull-right
         a(href=url_for(page.next.path))
           span= page.next.title
-          i.icon-right-arrow

@@ -1,0 +1,88 @@
+#paginator
+  width: 100%
+  margin-top: 1em
+  padding: 2.5em 0 0 0
+  border-top: 1px solid #e8e8e8
+  text-align: center
+  font-size: 1.2em
+  overflow: hidden
+
+  a
+    height: 100%
+    border-bottom: 0
+    font-family: 'fontStun'
+    color: inherit
+    transition: all .1s ease
+
+    &:hover
+      color: $link-hover-color
+  
+  a.page-number
+    &:hover
+      color: $white-light 
+      background-color: $blue-light
+
+  .space,
+  .page-number
+    display: inline-block
+    width: 1.5em
+    height: 1.5em
+    line-height: 1.5em
+    border-radius: 3px
+  
+  .page-number
+    margin: 0 .5em
+
+  .space
+    margin: 0 .2em
+
+  // .page-number:not(.current)
+  //   border: 1px solid alpha($blue-light, .8)
+
+  .current
+    color: $white-light
+    background-color: $blue-light
+
+  .icon-left-arrow,
+  .icon-right-arrow
+    font-family: 'fontStun'
+    font-style: normal
+
+  a.prev
+    margin-right: 1em
+  a.next
+    margin-left: 1em
+
+  .icon-left-arrow
+    &::before
+      content: $icon-prev
+  .icon-right-arrow
+    &::after
+      content: $icon-next
+
+  .article-prev,
+  .article-next
+    color: alpha($font-color, .8)
+
+    a
+      color: inherit
+
+      &:hover
+        color: $link-hover-color
+    
+  .article-prev
+    a
+      &::before
+        margin-right: .5em
+        content: $icon-prev
+
+  .article-next
+    a
+      &::after
+        margin-left: .5em
+        content: $icon-next
+
+  .pull-left
+    float: left
+  .pull-right
+    float: right

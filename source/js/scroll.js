@@ -26,31 +26,6 @@
         }
       }
     }
-
-    // if (newScrollTop < 200) {
-    //   if (newScrollTop === 0) {
-    //     nav.classList.remove('fixed');
-    //   }
-      
-    //   if (nav.classList.contains('slider-up')) {
-    //     nav.classList.remove('slider-up');
-    //     nav.classList.add('slider-down');
-    //   }
-    // } else {
-    //   if (delta > 0) {
-    //     if (Math.abs(delta) > 5) {
-    //       nav.classList.remove('slider-down');
-    //       nav.classList.add('slider-up');
-    //       nav.classList.add('fixed');
-    //     }
-    //   } else {
-    //     if (Math.abs(delta) > 5) {
-    //       nav.classList.remove('slider-up');
-    //       // nav.classList.remove('fixed');
-    //       nav.classList.add('slider-down');
-    //     }
-    //   }
-    // }
         
     oldScrollTop = newScrollTop;
   };
