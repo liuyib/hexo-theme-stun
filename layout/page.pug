@@ -4,7 +4,7 @@ block content
   if (page.type === 'tags')
     div.tag-cloud
       div.tag-cloud-title= _p('page.tag') + ' - '
-        span.tag-cloud-num= (site.tags.length - 1)
+        span.tag-cloud-num= site.tags.length
       - var min_font = theme.tag && (theme.tag.min_font_size || 14)
       - var max_font = theme.tag && (theme.tag.max_font_size || 30)
       - var start_color = theme.tag && (theme.tag.start_color || '#a4d8fa')
