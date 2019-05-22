@@ -1,5 +1,5 @@
 headingLeft(fontsize)
-  padding-left: unit(fontsize, "rem")
+  padding-left: unit(fontsize, 'rem')
 
   &:hover
     padding-left: fontsize + .3rem
@@ -11,8 +11,8 @@ headingLeft(fontsize)
   margin-bottom: 3rem
 
 #main-inner
-  max-width: $content-desktop
   margin: 0 auto
+  max-width: $content-desktop
   overflow: hidden
 
 .content
@@ -23,33 +23,34 @@ headingLeft(fontsize)
   .post-excerpt,
   .post-footer
     margin-bottom: 2em
-  
+
   .post-header
     padding: 0
 
   .post-item
-    width: 100%
-    border-radius: 5px
-    margin: 0 0 2rem 0
-    padding: 2rem
     background-color: $white
+    border-radius: 5px
+    margin: 0 0 2rem
+    padding: 2rem
+    width: 100%
 
     & > :first-child,
     .post-excerpt > :first-child
       margin-top: 0
+
     & > :last-child,
     .post-excerpt > :last-child
       margin-bottom: 0
-  
+
   .post-footer
     .post-btn
-      width: 6em
-      margin: 0 auto
-      border-radius: 5px
       background-color: alpha($blue-light, .8)
-      text-align: center
+      border-radius: 5px
       cursor: pointer
+      margin: 0 auto
+      text-align: center
       transition: background-color .2s ease
+      width: 6em
 
       &:hover
         background-color: $blue-light
@@ -59,10 +60,10 @@ headingLeft(fontsize)
         color: $white
 
 .aside
+  background-color: $white
+  border-radius: 5px
   display: block
   float: right
-  width: $main-side-desktop
   height: 100%
   padding: 1rem
-  border-radius: 5px
-  background-color: $white
+  width: $main-side-desktop

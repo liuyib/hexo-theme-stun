@@ -17,11 +17,11 @@ html
 body
   position: relative
   margin: 0
-  font-family: $font-family
-  font-size: $font-size-base
-  line-height: $line-height-base
+  background-color: $body-bg-color
   color: $font-color
-  background-color $body-bg-color
+  font-size: $font-size-base
+  font-family: $font-family
+  line-height: $line-height-base
 
 #container
   display: flex
@@ -33,14 +33,19 @@ body
 
 // Not global, only min-content class
 .main-content
-  h1, h2, h3, h4, h5, h6
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6
     position: relative
-    margin: 1.5rem 0 1rem 0
-    line-height: $line-height-h
-    font-weight: $font-weight-bolder
+    margin: 1.5rem 0 1rem
     color: lighten($h-color, 15%)
+    font-weight: $font-weight-bolder
+    line-height: $line-height-h
 
-  for size in (1..6)
+  for size in (1 .. 6)
     h{size}
       font-size: $h-font-size-base - $h-font-size-step * size
 
@@ -62,9 +67,11 @@ a
 img
   display: block
   border-radius: 3px
+
   if ($img-border-width != 0)
-    border: $img-border-width solid $img-border-color
     padding: .3rem
+    border: $img-border-width solid $img-border-color
+
   vertical-align: middle
 
 hr
@@ -82,21 +89,21 @@ hr
     right: -1.5rem
     width: 1.5rem
     height: 2rem
-    line-height: 2rem
-    font-family: 'fontStun'
-    font-size: 26px
     color: $hr-icon-color
+    font-size: 26px
+    font-family: 'fontStun'
+    line-height: 2rem
 
 blockquote
   padding: .5rem 1rem
-  background-color: $quote-bg-color
   border-left: 5px solid $quote-left-color
+  background-color: $quote-bg-color
 
 code
-  border-radius: 3px
   padding: 2px 4px
+  border-radius: 3px
+  background-color: $code-bg-color
   color: $code-color
-  background-color $code-bg-color
-  font-family: $code-family
+  word-wrap: break-word
   font-size: .94em
-  word-wrap: break-word;
+  font-family: $code-family

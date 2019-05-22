@@ -1,7 +1,7 @@
 .post-header
-  padding: 0 0 3rem 0
+  padding: 0 0 3rem
   text-align: center
-  
+
   .post-title
     margin: 0
     padding-left: 0
@@ -11,18 +11,21 @@
 
     &::before
       content: ''
-    
+
     &:hover
       padding-left: 0
 
   .post-meta
-    *::before, *::after
+    *::before,
+    *::after
       margin-right: .2rem
       font-family: 'fontStun'
-    
-    &-create, &-word, &-read
+
+    &-create,
+    &-word,
+    &-read
       margin-right: .2rem
-    
+
     .dot
       margin: 0 .5rem
       color: #666
@@ -32,18 +35,18 @@
 
       &::before
         content: $icon-post-create-before
-    
+
     &-word
       color: #333
 
       &::before
         content: $icon-post-word-before
-    
+
     &-read
       color: #ff3f1a
 
       &::before
         content: $icon-post-read-before
-      
+
       &::after
         content: $icon-post-read-after
