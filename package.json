@@ -1,10 +1,11 @@
 {
   "name": "hexo-theme-stun",
   "version": "0.0.1",
-  "description": "a gorgeous blog theme - stun",
+  "description": "A beautiful blog theme - stun",
   "homepage": "https://liuyib.github.io",
   "scripts": {
-    "test": ""
+    "cz": "git cz",
+    "release": "standard-version"
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,28 @@
   "bugs": {
     "url": "https://github.com/liuyib/hexo-theme-stun/issues"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@commitlint/cli": "^7.6.1",
+    "commitizen": "^3.1.1",
+    "commitlint-config-cz": "^0.11.1",
+    "cz-customizable": "^6.2.0",
+    "husky": "^2.3.0",
+    "standard-version": "^6.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "./config.js"
+    }
+  },
+  "dependencies": {
+    "stylus-supremacy": "^2.12.7"
+  }
 }
