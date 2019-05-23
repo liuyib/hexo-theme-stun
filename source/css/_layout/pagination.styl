@@ -1,9 +1,9 @@
 #paginator
+  overflow: hidden
   width: 100%
   margin-top: 1em
   text-align: center
   font-size: 1.2em
-  overflow: hidden
 
   .paginator-inner
     border-radius: 5px
@@ -64,9 +64,9 @@
       content: $icon-next
 
   .post-paginator
+    overflow: hidden
     padding-top: 2em
     border-top: 1px solid #e8e8e8
-    overflow: hidden
 
   .article-prev,
   .article-next
@@ -81,14 +81,14 @@
   .article-prev
     a
       &::before
-        margin-right: .5em
         content: $icon-prev
+        margin-right: .5em
 
   .article-next
     a
       &::after
-        margin-left: .5em
         content: $icon-next
+        margin-left: .5em
 
   .pull-left
     float: left

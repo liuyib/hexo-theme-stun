@@ -43,11 +43,11 @@ setUlStyle(content, hoverColor)
       transition: padding-left .3s ease
 
       &::before
-        display: block
         content: $icon-h-link
+        display: block
         position: absolute
-        left: 0
         top: 0
+        left: 0
         height: 100%
         line-height: $line-height-h
         font-family: 'fontStun'
@@ -91,20 +91,20 @@ setUlStyle(content, hoverColor)
 
       &::before
         content: counter(ol-li, $icon-ol-list-style) '.'
-        counter-increment: ol-li
         position: absolute
         left: -1.5em
+        counter-increment: ol-li
         text-align: right
         color: $blue-light
 
   // Code in the post
   figure.highlight
+    overflow-x: auto
+    overflow-y: hidden
     position: relative
     min-width: 100%
     margin: 1rem 0
     background-color: #f7f7f7
-    overflow-y: hidden
-    overflow-x: auto
 
     pre
       margin: 0
@@ -113,9 +113,9 @@ setUlStyle(content, hoverColor)
     --table-header-height = 1.5rem
 
     table
+      border-spacing: 0
       position: relative
       width: 100%
-      border-spacing: 0
       padding: --table-header-height 0 0
 
       &::before
@@ -182,10 +182,10 @@ setUlStyle(content, hoverColor)
   margin-left: 2rem
 
   &::before
-    position: absolute
     content: ''
-    left: -.1rem
+    position: absolute
     top: .2rem
+    left: -.1rem
     height: calc(100% - 1rem)
     border-left: .2rem solid $blue-light
 
@@ -197,11 +197,11 @@ setUlStyle(content, hoverColor)
   line-height: 1
 
   &::before
-    z-index: $z-index-2
     content: ''
     position: absolute
-    left: -.6rem
     top: .1rem
+    left: -.6rem
+    z-index: $z-index-2
     width: 1.2rem
     height: 1.2rem
     line-height: 1.2rem
@@ -228,11 +228,11 @@ setUlStyle(content, hoverColor)
       border-color: $orange-dark
 
   &::before
-    z-index: $z-index-2
     content: ''
     position: absolute
-    left: -.4rem
     top: calc(50% - .4rem)
+    left: -.4rem
+    z-index: $z-index-2
     width: .8rem
     height: .8rem
     border: .2rem solid $blue-light

@@ -1,7 +1,7 @@
 #header
   display: flex
-  flex-direction: column
   position: relative
+  flex-direction: column
   width: 100%
   height: 100vh
   margin: 0 0 3rem
@@ -33,9 +33,9 @@
     content: $nav-search
 
 #header-nav
-  z-index: $z-index-5
   position: fixed
   top: 0
+  z-index: $z-index-5
   width: 100%
   height: $header-nav-height
   transition: all .3s ease-in-out
@@ -87,9 +87,9 @@
 
   li
     float: left
+    list-style-type: none
     height: 100%
     margin: 0 1rem 0 0
-    list-style-type: none
 
     &:hover
       color: $header-link-hover-color
@@ -118,13 +118,13 @@
 
   // enable blur effect for site info
   if ($is-site-info-blur == true)
+    overflow: hidden
     position: absolute
-    left: calc(50% - 300px)
     top: calc(50% - 150px)
+    left: calc(50% - 300px)
     width: 600px
     height: 300px
     background: inherit
-    overflow: hidden
 
     // blur effect
     &::before
@@ -151,9 +151,9 @@
         background: rgba(0, 0, 0, .1)
 
   .header-info-inner
-    z-index: $z-index-4
     display: flex
     position: relative
+    z-index: $z-index-4
     width: 100%
     height: 100%
     flex: 1
