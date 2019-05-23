@@ -1,6 +1,6 @@
 ::selection
-  background: $selection-bg
   color: $selection-color
+  background: $selection-bg
 
 :root
   box-sizing: border-box
@@ -17,16 +17,16 @@ html
 body
   position: relative
   margin: 0
-  background-color: $body-bg-color
-  color: $font-color
-  font-size: $font-size-base
   font-family: $font-family
+  font-size: $font-size-base
   line-height: $line-height-base
+  color: $font-color
+  background-color: $body-bg-color
 
 #container
   display: flex
-  flex-direction: column
   min-height: 100vh
+  flex-direction: column
 
 #main
   flex: 1 auto
@@ -41,9 +41,9 @@ body
   h6
     position: relative
     margin: 1.5rem 0 1rem
-    color: lighten($h-color, 15%)
     font-weight: $font-weight-bolder
     line-height: $line-height-h
+    color: lighten($h-color, 15%)
 
   for size in (1 .. 6)
     h{size}
@@ -53,12 +53,12 @@ p
   margin: .5rem 0
 
 a
-  outline: none
   border-bottom: 1px solid $link-bottom-color
-  color: $link-color
   text-decoration: none
-  cursor: pointer
+  color: $link-color
+  outline: none
   transition: .2s all ease
+  cursor: pointer
 
   &:hover
     border-bottom: 1px solid $link-bottom-hover-color
@@ -69,17 +69,17 @@ img
   border-radius: 3px
 
   if ($img-border-width != 0)
-    padding: .3rem
     border: $img-border-width solid $img-border-color
+    padding: .3rem
 
   vertical-align: middle
 
 hr
   position: relative
   margin: 1rem 0
+  border: 2px dashed $hr-color
   width: $icon-hr is defined ? calc(100% - 1.5rem) : 100%
   height: 0
-  border: 2px dashed $hr-color
 
   &::after
     content: $icon-hr
@@ -89,21 +89,21 @@ hr
     right: -1.5rem
     width: 1.5rem
     height: 2rem
-    color: $hr-icon-color
-    font-size: 26px
     font-family: 'fontStun'
+    font-size: 26px
     line-height: 2rem
+    color: $hr-icon-color
 
 blockquote
-  padding: .5rem 1rem
   border-left: 5px solid $quote-left-color
+  padding: .5rem 1rem
   background-color: $quote-bg-color
 
 code
-  padding: 2px 4px
   border-radius: 3px
-  background-color: $code-bg-color
-  color: $code-color
-  word-wrap: break-word
-  font-size: .94em
+  padding: 2px 4px
   font-family: $code-family
+  font-size: .94em
+  word-wrap: break-word
+  color: $code-color
+  background-color: $code-bg-color

@@ -1,23 +1,23 @@
 #footer
   font-size: 1rem
   background-color: $footer-bg-color
+  background-image: url($footer-bg)
+  background-attachment: fixed
   background-position: bottom
   background-size: cover
-  background-attachment: fixed
-  background-image: url($footer-bg)
 
   a
-    color: $footer-link-color
     border-bottom: 0
+    color: $footer-link-color
 
     &:hover
       color: $footer-link-hover-color
 
   .footer-inner
-    min-height: $footer-min-height
     padding: 2rem 1rem
-    color: $footer-text-color
+    min-height: $footer-min-height
     text-align: center
+    color: $footer-text-color
     cursor: default
 
   .footer-separator
@@ -28,16 +28,3 @@
     margin: 0 .3rem
     color: red
     animation: footer-heart-beat 1.4s infinite
-
-@keyframes footer-heart-beat
-  0%
-    transform: scale(1)
-
-  15%
-    transform: scale(1.2)
-
-  30%
-    transform: scale(1)
-
-  45%
-    transform: scale(1.2)

@@ -28,11 +28,11 @@ headingLeft(fontsize)
     padding: 0
 
   .post-item
-    background-color: $white
-    border-radius: 5px
     margin: 0 0 2rem
+    border-radius: 5px
     padding: 2rem
     width: 100%
+    background-color: $white
 
     & > :first-child,
     .post-excerpt > :first-child
@@ -44,13 +44,13 @@ headingLeft(fontsize)
 
   .post-footer
     .post-btn
-      background-color: alpha($blue-light, .8)
-      border-radius: 5px
-      cursor: pointer
       margin: 0 auto
-      text-align: center
-      transition: background-color .2s ease
+      border-radius: 5px
       width: 6em
+      text-align: center
+      background-color: alpha($blue-light, .8)
+      transition: background-color .2s ease
+      cursor: pointer
 
       &:hover
         background-color: $blue-light
@@ -59,11 +59,72 @@ headingLeft(fontsize)
         border-bottom: 0
         color: $white
 
-.aside
+.sidebar
   display: block
   float: right
-  background-color: $white
   border-radius: 5px
-  height: 100%
   padding: 1rem
   width: $main-side-desktop
+  height: 100%
+  background-color: $white
+
+  .site-author
+    width: 100%
+
+    &-avatar
+      margin: 0 auto
+      border-radius: 50%
+      width: 150px
+      width: 150px
+
+      &:hover
+        animation: $avatar-hover-animation .8s both ease-out
+
+    &-description
+      font-weight: $font-weight-bold
+      text-align: center
+
+  .site-social,
+  .site-feed
+    a
+      border-bottom: 0
+
+  .site-social
+    ul,
+    li
+      list-style-type: none
+
+    ul
+      overflow: hidden
+      padding: 0
+
+    li
+      float: left
+      border-radius: 50%
+      width: 1.5rem
+      height: 1.5rem
+      font-size: 1em
+      line-height: 1.5rem
+      text-align: center
+      background-color: alpha($blue-light, .6)
+
+      &:not(:last-child)
+        margin-right: .5rem
+
+      a
+        color: #fff
+
+  .site-feed
+    border-width: 1px 0 1px 0
+    border-style: dashed
+    border-color: #d8d8d8
+    padding: .5rem 0
+    text-align: center
+
+    &-mail
+      a
+        color: alpha($blue-light, .9)
+
+    &-rss
+      a
+        color: alpha($orange-dark, .9)

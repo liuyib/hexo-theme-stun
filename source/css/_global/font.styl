@@ -1,36 +1,38 @@
 @font-face
   font-family: 'fontStun'
-  src: url('../../fonts/font.woff') format('woff')
   font-weight: normal
   font-style: normal
+  src: url('../../fonts/font.woff') format('woff')
 
 [class^='icon-']::before,
 [class*=' icon-']::before
   display: inline-block
-  font-family: 'fontStun'
-  font-style: normal
-  font-weight: normal
-  speak: none
-  text-decoration: inherit
   width: 1em
-  margin-right: .2em
-  text-align: center
+  font-family: 'fontStun'
+  font-weight: normal
+  font-style: normal
   /* For safety - reset parent styles, that can break glyph codes */
   font-variant: normal
-  text-transform: none
   /* fix buttons height, for twitter bootstrap */
   line-height: 1em
+  text-align: center
+  text-decoration: inherit
+  text-transform: none
+  speak: none
   /* Font smoothing. That was taken from TWBS */
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
 
 // Link
 // -------------------------------------------
-.icon-twitter::before
-  content: '\f099'
-
 .icon-github::before
   content: '\f09b'
+
+.icon-segmentfault::before
+  content: 'sf'
+
+.icon-twitter::before
+  content: '\f099'
 
 .icon-weibo::before
   content: '\f18a'

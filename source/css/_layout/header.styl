@@ -1,17 +1,17 @@
 #header
   display: flex
   position: relative
-  flex-direction: column
+  margin: 0 0 3rem
   width: 100%
   height: 100vh
-  margin: 0 0 3rem
   font-size: 1rem
   background-color: alpha($header-nav-bg-color, .6)
   background-image: url('/imgs/demo/stun-bg.jpg')
+  background-repeat: no-repeat
   background-attachment: fixed
   background-position: center
-  background-repeat: no-repeat
   background-size: cover
+  flex-direction: column
 
   // header nav menu
   .icon-home::before
@@ -55,56 +55,42 @@
     animation-fill-mode: both
 
   &.slider-down
-    animation-name: sliderDown
+    animation-name: header-sliderDown
 
   &.slider-up
-    animation-name: sliderUp
-
-@keyframes sliderDown
-  0%
-    transform: translateY(-100%)
-
-  100%
-    transform: translateY(0)
-
-@keyframes sliderUp
-  0%
-    transform: translateY(0)
-
-  100%
-    transform: translateY(-100%)
+    animation-name: header-sliderUp
 
 .header-nav-menu
   position: relative
+  margin: 0 auto
   width: $content-desktop
   height: 100%
-  margin: 0 auto
+
+  &-icon
+    margin-right: .25rem
 
   ul
-    height: 100%
     margin: 0
     padding: 0
+    height: 100%
 
   li
     float: left
     list-style-type: none
-    height: 100%
     margin: 0 1rem 0 0
+    height: 100%
 
     &:hover
       color: $header-link-hover-color
 
-    i
-      padding-right: .15rem
-
     a
       display: block
-      height: 100%
-      padding: 0 .5rem
       border-bottom: 0
+      padding: 0 .5rem
+      height: 100%
       line-height: $header-nav-height
-      color: $header-link-color
       text-decoration: none
+      color: $header-link-color
       transition: color .2s ease
 
       &:hover
@@ -112,9 +98,9 @@
 
 #header-info
   display: flex
+  text-align: center
   flex: 1
   flex-direction: column
-  text-align: center
 
   // enable blur effect for site info
   if ($is-site-info-blur == true)

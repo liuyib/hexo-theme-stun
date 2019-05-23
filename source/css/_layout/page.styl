@@ -4,10 +4,10 @@ setUlStyle(content, hoverColor)
     position: absolute
     top: 0
     left: -1.3em
-    line-height: 2em
-    color: $blue-light
     font-family: 'fontStun'
     font-size: 1em
+    line-height: 2em
+    color: $blue-light
     transition: color .2s ease
 
   &:hover
@@ -16,9 +16,9 @@ setUlStyle(content, hoverColor)
 
 .main-content
   float: left
-  width: $main-desktop
-  padding: 2rem
   border-radius: 5px
+  padding: 2rem
+  width: $main-desktop
   background-color: $white
 
   h1,
@@ -30,8 +30,8 @@ setUlStyle(content, hoverColor)
     cursor: pointer
 
     a
-      text-decoration: none
       border-bottom: 0
+      text-decoration: none
       color: inherit
 
       &:hover
@@ -49,8 +49,8 @@ setUlStyle(content, hoverColor)
         top: 0
         left: 0
         height: 100%
-        line-height: $line-height-h
         font-family: 'fontStun'
+        line-height: $line-height-h
         color: $h-link-logo-color
         transition: color .3s ease
 
@@ -93,17 +93,17 @@ setUlStyle(content, hoverColor)
         content: counter(ol-li, $icon-ol-list-style) '.'
         position: absolute
         left: -1.5em
-        counter-increment: ol-li
         text-align: right
         color: $blue-light
+        counter-increment: ol-li
 
   // Code in the post
   figure.highlight
     overflow-x: auto
     overflow-y: hidden
     position: relative
-    min-width: 100%
     margin: 1rem 0
+    min-width: 100%
     background-color: #f7f7f7
 
     pre
@@ -115,32 +115,32 @@ setUlStyle(content, hoverColor)
     table
       border-spacing: 0
       position: relative
-      width: 100%
       padding: --table-header-height 0 0
+      width: 100%
 
       &::before
         content: 'TODO'
         position: absolute
         top: 0
         left: 0
-        width: 100%
-        height: --table-header-height
-        line-height: --table-header-height
         border-top-left-radius: 3px
         border-top-right-radius: 3px
         padding-left: 1rem
-        background-color: #eff2f3
+        width: 100%
+        height: --table-header-height
         font-weight: $font-weight-bolder
+        line-height: --table-header-height
+        background-color: #eff2f3
 
       // The line number of code
       td.gutter
-        width: 1rem
         border-bottom-left-radius: 3px
         padding: 0 .5rem
+        width: 1rem
         line-height: $line-height-code-block
         text-align: center
-        background-color: #eff2f3
         color: #b6b6b6
+        background-color: #eff2f3
 
       // Code content
       td.code
@@ -172,9 +172,9 @@ setUlStyle(content, hoverColor)
 
 .archive
   float: left
-  width: $main-desktop
-  padding: 2rem
   border-radius: 5px
+  padding: 2rem
+  width: $main-desktop
   background-color: $white
 
 .archive-inner
@@ -186,8 +186,8 @@ setUlStyle(content, hoverColor)
     position: absolute
     top: .2rem
     left: -.1rem
-    height: calc(100% - 1rem)
     border-left: .2rem solid $blue-light
+    height: calc(100% - 1rem)
 
 .article-sort-title
   position: relative
@@ -202,11 +202,11 @@ setUlStyle(content, hoverColor)
     top: .1rem
     left: -.6rem
     z-index: $z-index-2
+    border: .25rem solid $blue-light
+    border-radius: 50%
     width: 1.2rem
     height: 1.2rem
     line-height: 1.2rem
-    border: .25rem solid $blue-light
-    border-radius: 50%
     background-color: $white
     transition: all .2s ease
 
@@ -233,29 +233,29 @@ setUlStyle(content, hoverColor)
     top: calc(50% - .4rem)
     left: -.4rem
     z-index: $z-index-2
-    width: .8rem
-    height: .8rem
     border: .2rem solid $blue-light
     border-radius: 50%
+    width: .8rem
+    height: .8rem
     background-color: $white
     transition: all .2s ease
 
   &.year
     display: block
     position: relative
+    margin-bottom: 1.3rem
     font-size: 1rem
     font-weight: $font-weight-bolder
-    margin-bottom: 1.3rem
 
   &__time
-    color: #99a9bf
     margin-right: 1rem
+    color: #99a9bf
 
   &__title
     border-bottom: 0
-    color: $font-color
     font-size: .9rem
     text-decoration: none
+    color: $font-color
     cursor: pointer
 
     &:hover
@@ -289,8 +289,8 @@ setUlStyle(content, hoverColor)
 
   .category-list-count
     padding-left: .3em
-    color: #99a9bf
     font-size: .8em
+    color: #99a9bf
 
     &::before
       content: '('
