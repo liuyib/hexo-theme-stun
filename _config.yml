@@ -6,6 +6,7 @@
 language:
   - zh-CN
   - en
+  # - XXX
 
 # Header menu navigation
 menu:
@@ -14,18 +15,21 @@ menu:
   categories: /categories
   tags: /tags
   about: /about
+  # XXX: /xxx
 
 # Favicon
-favicon: /imgs/favicon.ico
+# Example /imgs/favicon.ico
+favicon:
 
 # Avatar in the sidebar
 # In theme directory(source/imgs)
-avatar: /imgs/my_favorite.jpg
+# Example /imgs/stun.jpg
+avatar:
 
 # Social links
 social:
-  github: https://github.com/liuyib
-  segmentfault: https://segmentfault.com/u/liuyib
+  github:
+  segmentfault:
   twitter:
   weibo:
   wechat:
@@ -33,8 +37,8 @@ social:
   telegram:
 
 feed:
-  mail: https://github.com/liuyib
-  rss: https://github.com/liuyib
+  mail:
+  rss:
 
 # Stylesheets loaded in the <head>
 stylesheets:
@@ -104,7 +108,8 @@ site_copyright:
 # --------------------------------------------------
 ICP:
   enable: true
-  text: 豫备案12345678号.
+  # Example 豫ICP备xxxxxxxx号-x
+  text:
 
 # --------------------------------------------------
 # PWA
