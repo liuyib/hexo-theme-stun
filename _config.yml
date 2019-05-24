@@ -18,14 +18,23 @@ menu:
 # Favicon
 favicon: /imgs/favicon.ico
 
+# Avatar in the sidebar
+# In theme directory(source/imgs)
+avatar: /imgs/my_favorite.jpg
+
 # Social links
 social:
   github: https://github.com/liuyib
   segmentfault: https://segmentfault.com/u/liuyib
+  twitter:
+  weibo:
+  wechat:
+  qq:
+  telegram:
 
-# Avatar in the sidebar
-# In theme directory(source/imgs)
-avatar: /imgs/my_favorite.jpg
+feed:
+  mail: https://github.com/liuyib
+  rss: https://github.com/liuyib
 
 # Stylesheets loaded in the <head>
 stylesheets:

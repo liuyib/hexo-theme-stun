@@ -2,6 +2,7 @@
 extends includes/layout.pug
 
 block content
+  include ./includes/aside.pug
   include ./includes/mixins/articles-sort.pug
   - var archivesList = list_archives({ show_count: true })
 
@@ -13,3 +14,5 @@ block content
         div.article-sort-title= _p('page.articles-1', page.posts.length)
 
       +articleSort(page.posts)
+    
+    include ./includes/pagination.pug

@@ -9,7 +9,7 @@ $gray-light    = #c2c2c2
 $gray-dark     = #888
 $blue-light    = #49b1f5
 $blue-lighter  = #a4d8fa
-$orange-dark   = #ff7242
+$orange-dark   = #fc6423
 $white         = #fff
 $white-light   = #f4f5f5
 $white-dark    = #e3e4e4
@@ -119,6 +119,12 @@ $icon-left-arrow         = '\e810'
 $icon-right-arrow        = '\e816'
 
 // -------------------------------------------
+// 站点头像的鼠标 hover 动画，可选值如下：
+// avatar-shake  // 抖动动画
+// avatar-turn   // 旋转动画
+$avatar-hover-animation =  'avatar-shake'
+
+// -------------------------------------------
 // 启用磨砂玻璃效果
 $is-site-info-blur     = true   // 是否启用毛玻璃效果
 $is-site-info-blur-bg  = false  // 是否启用毛玻璃效果的背景颜色
@@ -147,20 +153,20 @@ $icon-ul-list-2          = $icon-ul-list-dot-empty
 $icon-ul-list-3          = $icon-ul-list-rect
 
 // 有序列表序号的样式，可选的值如下：
-// decimal
-// decimal-leading-zero
+// decimal               // 数字
+// decimal-leading-zero  // 个位前面加零的数字
 
-// lower-roman
-// upper-roman
+// lower-roman           // 小写罗马字符
+// upper-roman           // 大写罗马字符
 
-// lower-greek
+// lower-greek           // 希腊字符
  
-// lower-latin
-// upper-latin
+// lower-latin           // 小写拉丁字符（英文）
+// upper-latin           // 大写拉丁字符
 
 // armenian
 // georgian
-$icon-ol-list-style      = decimal
+$icon-ol-list-style      = lower-latin
 
 // 文章头部信息
 $icon-post-create-before = $icon-post-create-1

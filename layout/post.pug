@@ -1,6 +1,7 @@
 extends includes/layout.pug
 
 block content
+  include ./includes/aside.pug
   include ./includes/mixins/post-header.pug
   article#post.main-content
     +postHeader(page)

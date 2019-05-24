@@ -69,18 +69,20 @@ headingLeft(fontsize)
   background-color: $white
 
   .site-author
+    margin-bottom: 1rem
     width: 100%
 
     &-avatar
       margin: 0 auto
       border-radius: 50%
       width: 150px
-      width: 150px
+      height: 150px
 
       &:hover
         animation: $avatar-hover-animation .8s both ease-out
 
     &-description
+      margin-bottom: 0
       font-weight: $font-weight-bold
       text-align: center
 
@@ -90,41 +92,96 @@ headingLeft(fontsize)
       border-bottom: 0
 
   .site-social
+    margin-bottom: 1rem
+
     ul,
     li
       list-style-type: none
 
     ul
+      display: flex
       overflow: hidden
+      margin: 0 auto
       padding: 0
+      text-align: center
+      flex-wrap: wrap
+      justify-content: center
 
     li
-      float: left
+      margin-right: 8px
       border-radius: 50%
       width: 1.5rem
       height: 1.5rem
-      font-size: 1em
       line-height: 1.5rem
       text-align: center
       background-color: alpha($blue-light, .6)
+      flex: 0 0 auto
 
-      &:not(:last-child)
-        margin-right: .5rem
+      &:last-child
+        margin-right: 0
 
       a
+        display: block
+        border-radius: 50%
         color: #fff
 
   .site-feed
+    margin-bottom: 1rem
     border-width: 1px 0 1px 0
     border-style: dashed
     border-color: #d8d8d8
     padding: .5rem 0
+    font-size: 1.2em
     text-align: center
 
-    &-mail
+    .icon-email,
+    .icon-rss
+      margin-right: .4em
+
+    &-email,
+    &-rss
+      display: inline-block
+      width: 50%
+      text-align: center
+
+    &-email
       a
         color: alpha($blue-light, .9)
 
     &-rss
+      a
+        color: alpha($orange-dark, .9)
+
+  .site-state
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+
+    a
+      display: block
+      border-bottom: 0
+
+    &-item
+      margin-right: .5rem
+      border-right: 1px solid #eee
+      padding-right: .5rem
+      text-align: center
+
+      &:last-child
+        margin: 0
+        border: 0
+        padding: 0
+
+      &-count
+        font-weight: $font-weight-bold
+        color: $black-dark
+
+    &-posts
+      a
+        color: alpha($blue-light, .9)
+    &-categories
+      a
+        color: alpha($black-dark, .9)
+    &-tags
       a
         color: alpha($orange-dark, .9)

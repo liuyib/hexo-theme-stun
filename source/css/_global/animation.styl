@@ -1,0 +1,65 @@
+// ----------------------------------------
+// header nav slider animation
+// ----------------------------------------
+@keyframes header-sliderDown
+  0%
+    transform: translateY(-100%)
+
+  100%
+    transform: translateY(0)
+
+@keyframes header-sliderUp
+  0%
+    transform: translateY(0)
+
+  100%
+    transform: translateY(-100%)
+
+// ----------------------------------------
+
+// ----------------------------------------
+// avatar animation
+// ----------------------------------------
+@keyframes avatar-shake
+  0%
+    transform: scale(1)
+
+  10%,
+  20%
+    transform: scale(.9) rotate(3deg)
+
+  30%,
+  50%,
+  70%,
+  90%
+    transform: scale(1.1) rotate(-3deg)
+
+  40%,
+  60%,
+  80%
+    transform: scale(1.1) rotate(3deg)
+
+  100%
+    transform: scale(1)
+
+@keyframes avatar-turn
+  100%
+    transform: rotate(1turn)
+
+// ----------------------------------------
+
+// ----------------------------------------
+// footer heart beat animation
+// ----------------------------------------
+@keyframes footer-heart-beat
+  0%
+    transform: scale(1)
+
+  15%
+    transform: scale(1.2)
+
+  30%
+    transform: scale(1)
+
+  45%
+    transform: scale(1.2)

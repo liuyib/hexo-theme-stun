@@ -1,6 +1,7 @@
 extends includes/layout.pug
 
 block content
+  include ./includes/aside.pug
   if (page.type === 'tags')
     div.tag-cloud.main-content
       div.tag-cloud-title= _p('page.tags') + ' - '
