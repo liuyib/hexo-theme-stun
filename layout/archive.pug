@@ -11,4 +11,5 @@ block content
       else
         div.article-sort-title= _p('page.articles-1', site.posts.length)
     
-      +articleSort(site.posts)
+      +articleSort(page.posts)
+    include ./includes/pagination.pug

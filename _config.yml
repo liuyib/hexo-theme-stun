@@ -66,8 +66,8 @@ header_menu_icon:
 # --------------------------------------------------
 tag:
   # Color for tag
-  start_color: '#fc0'
-  end_color: '#f0c'
+  start_color: '#a4d8fa'
+  end_color: '#49b1f5'
   # Font size for tag
   min_font_size: 16
   max_font_size: 30

@@ -35,7 +35,7 @@ meta(name="copyright" content=pageCopyright)
 title= pageTitle
 
 //- favicon_tag accept a param of type string
-!= favicon_tag((config.favicon || theme.favicon || '/imgs/favicon.ico') + '')
+!= favicon_tag((config.favicon || theme.favicon) + '')
 
 //- Load stylesheets in the head tag
 if theme.stylesheets !== undefined && theme.stylesheets.length > 0

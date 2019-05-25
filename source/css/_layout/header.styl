@@ -3,10 +3,9 @@
   position: relative
   margin: 0 0 3rem
   width: 100%
-  height: 100vh
+  height: $header-height
   font-size: 1rem
-  background-color: alpha($header-nav-bg-color, .6)
-  background-image: url('/imgs/demo/stun-bg.jpg')
+  background-image: url($header-bg-img)
   background-repeat: no-repeat
   background-attachment: fixed
   background-position: center
@@ -38,19 +37,18 @@
   z-index: $z-index-5
   width: 100%
   height: $header-nav-height
-  transition: all .3s ease-in-out
 
   &.fixed
-    background-color: alpha($black-dark, .5)
+    background-color: alpha($header-nav-bg-color, .5)
 
     a
-      color: $white-light
+      color: $header-nav-link-color
 
       &:hover
-        color: $header-link-hover-color
+        color: $header-nav-link-hover-color
 
   &.nav-slider
-    animation-duration: .5s
+    animation-duration: .3s
     animation-timing-function: ease
     animation-fill-mode: both
 
@@ -90,11 +88,11 @@
       height: 100%
       line-height: $header-nav-height
       text-decoration: none
-      color: $header-link-color
+      color: $header-nav-link-color
       transition: color .2s ease
 
       &:hover
-        color: $header-link-hover-color
+        color: $header-nav-link-hover-color
 
 #header-info
   display: flex
@@ -124,17 +122,6 @@
       background: inherit
       background-attachment: fixed
       filter: blur($site-info-blur)
-
-    // background color for blur effect
-    if ($is-site-info-blur-bg == true)
-      &::after
-        content: ''
-        position: absolute
-        top: 0
-        right: 0
-        bottom: 0
-        left: 0
-        background: rgba(0, 0, 0, .1)
 
   .header-info-inner
     display: flex

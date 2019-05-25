@@ -48,26 +48,31 @@ headingLeft(fontsize)
       border-radius: 5px
       width: 6em
       text-align: center
-      background-color: alpha($blue-light, .8)
+      background-color: $home-post-read-more-color
       transition: background-color .2s ease
       cursor: pointer
 
       &:hover
-        background-color: $blue-light
+        background-color: $home-post-read-more-hover-color
 
       a
         border-bottom: 0
         color: $white
 
 .sidebar
-  display: block
   float: right
-  border-radius: 5px
-  padding: 1rem
   width: $main-side-desktop
-  height: 100%
-  background-color: $white
 
+  .sidebar-inner
+    border-radius: 5px
+    padding: 1rem
+    width: $main-side-desktop
+    background-color: $white
+
+    &.sticky
+      position: fixed
+      top: 30px
+  
   .site-author
     margin-bottom: .8rem
     width: 100%

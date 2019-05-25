@@ -1,7 +1,7 @@
 #footer
   font-size: 1rem
   background-color: $footer-bg-color
-  background-image: url($footer-bg)
+  background-image: url($footer-bg-img)
   background-attachment: fixed
   background-position: bottom
   background-size: cover
@@ -14,11 +14,15 @@
       color: $footer-link-hover-color
 
   .footer-inner
-    padding: 2rem 1rem
-    min-height: $footer-min-height
+    padding: 1rem
     text-align: center
     color: $footer-text-color
     cursor: default
+
+    p
+      margin: 5px 0
+      font-size: $font-size-large
+      line-height: 1.5em
 
   .footer-separator
     margin: 0 .3rem

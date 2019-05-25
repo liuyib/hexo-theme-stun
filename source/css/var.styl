@@ -14,58 +14,95 @@ $white         = #fff
 $white-light   = #f4f5f5
 $white-dark    = #e3e4e4
 
+// Element color
+// -------------------------------------------
+// Selection (:selection)
+$selection-bg                = #8be0e1
+$selection-color             = #fff
+
 // Text
-$font-color    = $black-light
+$font-color                  = $black-light
 
-// Background color for <body>
-$body-bg-color = $white-light
+// Body (<body>)
+$body-bg-color               = $white-light
 
-// Link
-$link-color              = #b00
-$link-hover-color        = #f00
-$link-bottom-color       = #fc0
-$link-bottom-hover-color = #f0c
+// Link (<a>)
+$link-color                  = #058ed2
+$link-hover-color            = #11a3eb
+$link-bottom-color           = #d9ecfb
+$link-bottom-hover-color     = #7ebef1
 
-// Selection
-$selection-bg            = #00c4b6
-$selection-color         = #fff
+// Heading (<h1~6>)
+$h-link-logo-color           = #f47466
+$h-link-logo-hover-color     = $blue-light
+$h-font-size-base            = 24px
+$h-font-size-step            = 2px
+$h-color                     = #222;
 
-// Header
-$header-nav-bg-color     = $black-dark
-$header-text-color       = $white-light
-$header-text-hover-color = $gray-light
-$header-link-color       = $header-text-color
-$header-link-hover-color = $blue-light
+// Horizon line (<hr>)
+$hr-color                    = #b8dcfd
+$hr-icon-color               = #b8dcfd
 
-// Footer
-$footer-text-color       = #eee
-$footer-bg-color         = #333
-$footer-link-color       = $link-color
-$footer-link-hover-color = $link-hover-color
-
-// Heading
-$h-link-logo-color       = #f47466
-$h-link-logo-hover-color = $blue-light
-$h-font-size-base        = 24px
-$h-font-size-step        = 2px
-$h-color                 = #222;
-
-// Horizon line
-$hr-color                = #fc0
-$hr-icon-color           = #999
+// Unordered list (<ul>)
+$ul-list-color               = $blue-light
+$ul-list-hover-color         = $orange-dark
 
 // Blockquote
-$quote-bg-color          = #e8e8e8
-$quote-left-color        = #009a61
+$quote-bg-color              = #f8f8f8
+$quote-left-color            = #cbcbcb
 
 // Code block
-$code-bg-color           = #f6f0f2
-$code-color              = #c7254e
-$code-family             = "Source Code Pro", Consolas, Menlo, Monaco, "Courier New", monospace
+$code-block-side-bg-color    = #eff2f3
+$code-block-side-color       = #a9a9a9
+$code-block-bg-color         = #f8f8f8
+$code-block-color            = #cbcbcb
 
-// Img
-$img-border-width        = 1px
-$img-border-color        = #dadefb
+// Code
+$code-bg-color               = #f3f4f4
+$code-color                  = $font-color
+
+// Img    
+$img-border-width            = 1px
+$img-border-color            = #dadefb
+
+// Modules color
+// -------------------------------------------
+// Header
+$header-nav-bg-color             = $black-dark
+$header-nav-text-color           = $white-light
+$header-nav-text-hover-color     = $blue-light
+$header-nav-link-color           = $white-light
+$header-nav-link-hover-color     = $blue-light
+
+// Footer
+$footer-text-color               = #eee
+$footer-bg-color                 = #333
+$footer-link-color               = #c20808
+$footer-link-hover-color         = #ed0b0b
+
+// Home page
+$home-post-title-color           = #444
+$home-post-create-color          = #00a7e0
+$home-post-word-count-color      = #333
+$home-post-read-color            = #ff3f1a
+$home-post-read-more-color       = #73c8ff
+$home-post-read-more-hover-color = $blue-light
+
+// Archives page
+$archives-left-line-color        = #c8edff
+$archives-left-dot-color         = #6ec5ff
+$archives-left-dot-hover-color   = $orange-dark
+$archives-right-time-color       = #99a9bf
+
+// Categories page
+$categories-list-dot-color       = $blue-light
+$categories-list-dot-hover-color = $orange-dark
+$categories-post-count-color     = #99a9bf
+$categories-link-color           = $font-color
+$categories-link-hover-color     = $blue-light
+
+// Tags page
+$tags-hover-color                = $orange-dark
 
 // -------------------------------------------
 // Icon font
@@ -119,66 +156,6 @@ $icon-left-arrow         = '\e810'
 $icon-right-arrow        = '\e816'
 
 // -------------------------------------------
-// 站点头像的鼠标 hover 动画，可选值如下：
-// avatar-shake  // 抖动动画
-// avatar-turn   // 旋转动画
-$avatar-hover-animation =  'avatar-shake'
-
-// -------------------------------------------
-// 启用磨砂玻璃效果
-$is-site-info-blur     = true   // 是否启用毛玻璃效果
-$is-site-info-blur-bg  = false  // 是否启用毛玻璃效果的背景颜色
-$site-info-blur        = 8px    // 模糊程度
-$site-info-blur-radius = -20px  // 模糊半径（负数：模糊半径减小）
-
-// 启用图标（注释掉即可关闭图标）
-// -------------------------------------------
-// 导航栏菜单
-$nav-home                = $nav-home-2
-$nav-archive             = $nav-archive-2
-$nav-category            = $nav-category-2
-$nav-tag                 = $nav-tag-2
-$nav-about               = $nav-about-2
-$nav-search              = $nav-search-2
-
-// 水平线
-$icon-hr                 = $icon-hr-plane-1
-
-// 文章副标题
-$icon-h-link             = $icon-h-anchor
-
-// 无序列表
-$icon-ul-list-1          = $icon-ul-list-dot
-$icon-ul-list-2          = $icon-ul-list-dot-empty
-$icon-ul-list-3          = $icon-ul-list-rect
-
-// 有序列表序号的样式，可选的值如下：
-// decimal               // 数字
-// decimal-leading-zero  // 个位前面加零的数字
-
-// lower-roman           // 小写罗马字符
-// upper-roman           // 大写罗马字符
-
-// lower-greek           // 希腊字符
- 
-// lower-latin           // 小写拉丁字符（英文）
-// upper-latin           // 大写拉丁字符
-
-// armenian
-// georgian
-$icon-ol-list-style      = lower-latin
-
-// 文章头部信息
-$icon-post-create-before = $icon-post-create-1
-$icon-post-word-before   = $icon-post-word-1
-$icon-post-read-before   = $icon-post-fire
-$icon-post-read-after    = $icon-post-celsius
-
-// 上 / 下一项
-$icon-prev               = $icon-left-arrow
-$icon-next               = $icon-right-arrow
-
-// -------------------------------------------
 // Font, line-height
 // -------------------------------------------
 // Line height
@@ -196,6 +173,7 @@ $font-size-larger       = $font-size-base + 4px;
 
 // Font family
 $font-family            = PingFang SC, Microsoft YaHei, Lato, sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Hiragino Sans GB, Helvetica Neue, Helvetica, Arial
+$code-font-family       = "Source Code Pro", Consolas, Menlo, Monaco, "Courier New", monospace
 
 // Font weight
 $font-weight-light      = 300
@@ -221,10 +199,3 @@ $z-index-5 = 1004
 $content-desktop   = 1110px
 $main-desktop      = 772px
 $main-side-desktop = 315px
-
-// Header
-$header-nav-height = 60px
-
-// Footer
-$footer-min-height = 40px
-$footer-bg         = "../imgs/demo/stun-bg.jpg"

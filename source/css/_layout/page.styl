@@ -7,7 +7,7 @@ setUlStyle(content, hoverColor)
     font-family: 'fontStun'
     font-size: 1em
     line-height: 2em
-    color: $blue-light
+    color: $ul-list-color
     transition: color .2s ease
 
   &:hover
@@ -73,15 +73,15 @@ setUlStyle(content, hoverColor)
 
   ul
     li
-      setUlStyle($icon-ul-list-1, #fc0)
+      setUlStyle($icon-ul-list-1, $ul-list-hover-color)
 
       ul
         li
-          setUlStyle($icon-ul-list-2, #fc0)
+          setUlStyle($icon-ul-list-2, $ul-list-hover-color)
 
           ul
             li
-              setUlStyle($icon-ul-list-3, #fc0)
+              setUlStyle($icon-ul-list-3, $ul-list-hover-color)
 
   ol
     counter-reset: ol-li
@@ -104,11 +104,11 @@ setUlStyle(content, hoverColor)
     position: relative
     margin: 1rem 0
     min-width: 100%
-    background-color: #f7f7f7
+    background-color: $code-block-bg-color
 
     pre
       margin: 0
-      font-family: $code-family
+      font-family: $code-font-family
 
     --table-header-height = 1.5rem
 
@@ -130,7 +130,7 @@ setUlStyle(content, hoverColor)
         height: --table-header-height
         font-weight: $font-weight-bolder
         line-height: --table-header-height
-        background-color: #eff2f3
+        background-color: $code-block-side-bg-color
 
       // The line number of code
       td.gutter
@@ -139,8 +139,8 @@ setUlStyle(content, hoverColor)
         width: 1rem
         line-height: $line-height-code-block
         text-align: center
-        color: #b6b6b6
-        background-color: #eff2f3
+        color: $code-block-side-color
+        background-color: $code-block-side-bg-color
 
       // Code content
       td.code
@@ -186,7 +186,7 @@ setUlStyle(content, hoverColor)
     position: absolute
     top: .2rem
     left: -.1rem
-    border-left: .2rem solid $blue-light
+    border-left: .2rem solid $archives-left-line-color
     height: calc(100% - 1rem)
 
 .article-sort-title
@@ -202,7 +202,7 @@ setUlStyle(content, hoverColor)
     top: .1rem
     left: -.6rem
     z-index: $z-index-2
-    border: .25rem solid $blue-light
+    border: .25rem solid $archives-left-dot-color
     border-radius: 50%
     width: 1.2rem
     height: 1.2rem
@@ -225,7 +225,7 @@ setUlStyle(content, hoverColor)
 
   &:not(.year):hover
     &::before
-      border-color: $orange-dark
+      border-color: $archives-left-dot-hover-color
 
   &::before
     content: ''
@@ -233,7 +233,7 @@ setUlStyle(content, hoverColor)
     top: calc(50% - .4rem)
     left: -.4rem
     z-index: $z-index-2
-    border: .2rem solid $blue-light
+    border: .2rem solid $archives-left-dot-color
     border-radius: 50%
     width: .8rem
     height: .8rem
@@ -248,7 +248,7 @@ setUlStyle(content, hoverColor)
 
   &__time
     margin-right: 1rem
-    color: #99a9bf
+    color: $archives-right-time-color
 
   &__title > a
     border-bottom: 0
@@ -266,10 +266,6 @@ setUlStyle(content, hoverColor)
   a
     margin: 0 .4rem
     border-bottom: 0
-    text-decoration: none
-
-    &:hover
-      color: $link-hover-color !important
 
   &-title
     padding: 0 0 1.8rem
@@ -280,16 +276,31 @@ setUlStyle(content, hoverColor)
 .tag-cloud
   text-align: center
 
+  a
+   &:hover
+    color: $tags-hover-color !important
+
 .category
   font-size: 1.2em
 
-  .category-list-link
-    color: inherit
+  a
+    color: $categories-link-color
+
+    &:hover
+      color: $categories-link-hover-color
+
+  .category-list-item
+    &::before
+      color: $categories-list-dot-color
+    
+    &:hover
+      &::before
+        color: $categories-list-dot-hover-color
 
   .category-list-count
     padding-left: .3em
     font-size: .8em
-    color: #99a9bf
+    color: $categories-post-count-color
 
     &::before
       content: '('
