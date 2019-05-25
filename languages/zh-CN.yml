@@ -23,13 +23,17 @@ page:
 sidebar:
   overview: 站点概览
   catalog: 文章目录
+  subscribe: 订阅
+  articles: 文章
+  categories: 分类
+  tags: 标签
 
 post:
   created: 创建于
   modified: 更新于
   posted: 发表于
   word_count: 字数统计
-  read-count: 阅读次数
+  read_count: 阅读次数
   read_time: 阅读时长
   read_more: 阅读全文
   fire: 热度

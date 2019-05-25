@@ -10,6 +10,6 @@ mixin articleSort(posts)
       article.article-sort-item
         if article.date
           time.article-sort-item__time= full_date(article.date, 'MM-DD')
-          h2.article-sort-item-title
-            a.article-sort-item__title(href=url_for(article.path))= article.title || 'No Title'
+          h2.article-sort-item__title
+            a(href=url_for(article.path))= article.title || 'No Title'
     - })

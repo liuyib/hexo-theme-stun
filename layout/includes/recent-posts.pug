@@ -11,5 +11,5 @@ div.content
           div.post-excerpt!= post.excerpt
           footer.post-footer
             div.post-btn
-              a(href=url_for(post.path)) 阅读全文 »
+              a(href=url_for(post.path))= _p('post.read_more') + ' »'
   include ./pagination.pug

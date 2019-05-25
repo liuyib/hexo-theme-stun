@@ -69,7 +69,7 @@ headingLeft(fontsize)
   background-color: $white
 
   .site-author
-    margin-bottom: 1rem
+    margin-bottom: .8rem
     width: 100%
 
     &-avatar
@@ -83,16 +83,21 @@ headingLeft(fontsize)
 
     &-description
       margin-bottom: 0
+      font-size: 1.2em
       font-weight: $font-weight-bold
       text-align: center
 
   .site-social,
-  .site-feed
+  .site-feed,
+  .site-state
+    &:not(:last-child)
+      border-bottom: 1px dashed #d8d8d8
+
     a
       border-bottom: 0
 
   .site-social
-    margin-bottom: 1rem
+    padding-bottom: 1rem
 
     ul,
     li
@@ -126,13 +131,12 @@ headingLeft(fontsize)
         color: #fff
 
   .site-feed
-    margin-bottom: 1rem
-    border-width: 1px 0 1px 0
-    border-style: dashed
-    border-color: #d8d8d8
-    padding: .5rem 0
+    display: flex
+    margin-top: .5rem
+    padding-bottom: .5rem
     font-size: 1.2em
     text-align: center
+    justify-content: center
 
     .icon-email,
     .icon-rss
@@ -140,28 +144,22 @@ headingLeft(fontsize)
 
     &-email,
     &-rss
-      display: inline-block
-      width: 50%
-      text-align: center
+      margin: 0 auto
 
-    &-email
-      a
-        color: alpha($blue-light, .9)
+    &-email > a
+      color: alpha($blue-light, .9)
 
-    &-rss
-      a
-        color: alpha($orange-dark, .9)
+    &-rss > a
+      color: alpha($orange-dark, .9)
 
   .site-state
     display: flex
+    margin-top: 1rem
     flex-wrap: wrap
     justify-content: center
 
-    a
-      display: block
-      border-bottom: 0
-
     &-item
+      line-height: 1.6em
       margin-right: .5rem
       border-right: 1px solid #eee
       padding-right: .5rem
@@ -176,12 +174,11 @@ headingLeft(fontsize)
         font-weight: $font-weight-bold
         color: $black-dark
 
-    &-posts
-      a
-        color: alpha($blue-light, .9)
-    &-categories
-      a
-        color: alpha($black-dark, .9)
-    &-tags
-      a
-        color: alpha($orange-dark, .9)
+    &-posts > a
+      color: alpha($blue-light, .9)
+
+    &-categories > a
+      color: alpha($black-dark, .9)
+
+    &-tags > a
+      color: alpha($orange-dark, .9)

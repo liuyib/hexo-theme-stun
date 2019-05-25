@@ -2,38 +2,42 @@ aside.sidebar
   div.site-author
     img(src=theme.avatar alt="avatar").site-author-avatar
     p.site-author-description write code and love life
-  div.site-social
-    ul
-      if theme.social
+  if theme.social
+    div.site-social
+      ul
         for value, key in theme.social
           if key && value
             li
               a(href=value target="_blank" title=`${key} - ${value}`)
                 i(class=`icon-${key}`)
-  div.site-feed
-    span.site-feed-email
+  if theme.feed && (theme.feed.mail || theme.feed.rss)
+    div.site-feed
       if theme.feed && theme.feed.mail
-        a(href=theme.feed.mail title=`email - ${theme.feed.mail}`)
-          i.icon-email
-          span Email 订阅
-    span.site-feed-rss
+        span.site-feed-email
+          a(href=theme.feed.mail title=`email - ${theme.feed.mail}`)
+            i.icon-email
+            span Email
+            span= _p('sidebar.subscribe')
       if theme.feed && theme.feed.rss
-        a(href=theme.feed.rss title=`rss - theme.feed.rss`)
-          i.icon-rss
-          span RSS 订阅
-  div.site-state
-    div.site-state-item.site-state-posts
-      if theme.menu && theme.menu.archives
-        a(href=theme.menu.archives)
-          div.site-state-item-count= site.posts.length
-          div.site-state-item-name 文章
-    div.site-state-item.site-state-categories
-      if theme.menu && theme.menu.categories
-        a(href=theme.menu.categories)
-          div.site-state-item-count= site.categories.length
-          div.site-state-item-name 分类
-    div.site-state-item.site-state-tags
-      if theme.menu && theme.menu.tags
-        a(href=theme.menu.tags)
-          div.site-state-item-count= site.tags.length
-          div.site-state-item-name 标签
+        span.site-feed-rss
+          a(href=theme.feed.rss title=`rss - theme.feed.rss`)
+            i.icon-rss
+            span RSS
+            span= _p('sidebar.subscribe')
+  if theme.menu && (theme.menu.archives || theme.menu.categories || theme.menu.tags)
+    div.site-state
+      if theme.menu.archives
+        div.site-state-item.site-state-posts
+          a(href=theme.menu.archives)
+            div.site-state-item-count= site.posts.length
+            div.site-state-item-name= _p('sidebar.articles')
+      if theme.menu.categories
+        div.site-state-item.site-state-categories
+          a(href=theme.menu.categories)
+            div.site-state-item-count= site.categories.length
+            div.site-state-item-name= _p('sidebar.categories')
+      if theme.menu.tags
+        div.site-state-item.site-state-tags
+          a(href=theme.menu.tags)
+            div.site-state-item-count= site.tags.length
+            div.site-state-item-name= _p('sidebar.tags')
