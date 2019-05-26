@@ -7,10 +7,12 @@ footer#footer
 
   .footer-inner
     p
-      span!= _p('footer.powered', link_to('http://hexo.io', 'hexo', {external: true}))
+      span.footer-powered
+        != _p('footer.powered', link_to('http://hexo.io', 'hexo', {external: true}))
       span.footer-separator |
       span= _p('footer.theme') + ' '
-      span!= link_to('https://github.com/liuyib/hexo-theme-stun', 'stun', {external: true})
+      span
+        a(href='https://github.com/liuyib/hexo-theme-stun' target='_blank') stun
       span= ' v' + version() + '.'
 
     p

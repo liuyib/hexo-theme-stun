@@ -72,7 +72,7 @@ headingLeft(fontsize)
     &.sticky
       position: fixed
       top: 30px
-  
+
   .site-author
     margin-bottom: .8rem
     width: 100%
@@ -124,8 +124,12 @@ headingLeft(fontsize)
       height: 1.5rem
       line-height: 1.5rem
       text-align: center
-      background-color: alpha($blue-light, .6)
+      background-color: $sidebar-social-color
+      transition: background-color .2s
       flex: 0 0 auto
+
+      &:hover
+        background-color: $sidebar-social-hover-color
 
       &:last-child
         margin-right: 0
@@ -152,10 +156,10 @@ headingLeft(fontsize)
       margin: 0 auto
 
     &-email > a
-      color: alpha($blue-light, .9)
+      color: $sidebar-feed-email-color
 
     &-rss > a
-      color: alpha($orange-dark, .9)
+      color: $sidebar-feed-rss-color
 
   .site-state
     display: flex
@@ -164,10 +168,10 @@ headingLeft(fontsize)
     justify-content: center
 
     &-item
-      line-height: 1.6em
       margin-right: .5rem
       border-right: 1px solid #eee
       padding-right: .5rem
+      line-height: 1.6em
       text-align: center
 
       &:last-child
@@ -180,10 +184,10 @@ headingLeft(fontsize)
         color: $black-dark
 
     &-posts > a
-      color: alpha($blue-light, .9)
+      color: $sidebar-state-post-color
 
     &-categories > a
-      color: alpha($black-dark, .9)
+      color: $sidebar-state-category-color
 
     &-tags > a
-      color: alpha($orange-dark, .9)
+      color: $sidebar-state-tag-color

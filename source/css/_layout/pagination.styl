@@ -10,20 +10,17 @@
     padding: .7em 0
     background-color: $white
 
-  a
+  a.page-number
     border-bottom: 0
     height: 100%
     font-family: 'fontStun'
-    color: alpha($blue-light, .9)
+    color: $pagination-item-color
+    background-color: $pagination-item-bg-color
     transition: all .2s ease
 
     &:hover
-      color: $link-hover-color
-
-  a.page-number
-    &:hover
-      color: $white-light
-      background-color: $blue-light
+      color: $pagination-item-hover-color
+      background-color: $pagination-item-hover-bg-color
 
   .space,
   .page-number
@@ -41,13 +38,22 @@
     margin: 0 .2em
 
   .current
-    color: $white-light
-    background-color: $blue-light
+    color: $pagination-item-active-color
+    background-color: $pagination-item-active-bg-color
 
   .icon-left-arrow,
   .icon-right-arrow
     font-family: 'fontStun'
     font-style: normal
+
+  a.prev,
+  a.next
+    border-bottom: 0
+    vertical-align: middle
+    color: $pagination-arrow-color
+
+    &:hover
+      color: $pagination-arrow-hover-color
 
   a.prev
     margin-right: 1em
@@ -63,6 +69,8 @@
     &::after
       content: $icon-next
 
+  // paginator after post
+  // -------------------------
   .post-paginator
     overflow: hidden
     border-top: 1px solid #e8e8e8
@@ -70,25 +78,26 @@
 
   .article-prev,
   .article-next
-    color: alpha($font-color, .8)
-
     a
-      color: inherit
+      border-bottom: 0
+      color: $pagination-arrow-color
+
+      &::before,
+      &::after
+        font-family: 'fontStun'
 
       &:hover
-        color: $link-hover-color
+        color: $pagination-arrow-hover-color
 
-  .article-prev
-    a
-      &::before
-        content: $icon-prev
-        margin-right: .5em
+  .article-prev a
+    &::before
+      content: $icon-prev
+      margin-right: .5em
 
-  .article-next
-    a
-      &::after
-        content: $icon-next
-        margin-left: .5em
+  .article-next a
+    &::after
+      content: $icon-next
+      margin-left: .5em
 
   .pull-left
     float: left
