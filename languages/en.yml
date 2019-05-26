@@ -1,37 +1,56 @@
+# Site title
 title:
-  archive: Archive
-  category: Category
-  tag: Tag
+  home: Home page
+  archives: Archives page
+  categories: Categories page
+  tags: Tags page
+  about: About page
 
+# Header nav menu
 menu:
   home: Home
   archives: Archives
   categories: Categories
   tags: Tags
   about: About
-  search: Search
 
+# archives page, categories page, tags page
+page:
+  tags: Tags
+  categories: Categories
+  articles-0: No articles
+  articles-1: Total %s Articles, Go on!
+
+# Sidebar
 sidebar:
   overview: Overview
   catalog: Catalog
+  subscribe: Subscribe
+  articles: Articles
+  categories: Categories
+  tags: Tags
+  read_info: You have read
 
+# Post
 post:
-  created: Post Created
-  modified: Post Modified
-  posted: Posted on
-  sticky: Sticky
-  read_more: Read more
-  untitled: Untitled
-  visitors: Visitors
-  word_count: Word count
+  created: Created
+  modified: Modified
+  posted: Posted
+  word_count: Words
+  read_count: Visited
   read_time: Reading time
+  read_more: Read more
+  fire: Heat
+  sticky: Sticky
+  untitled: Untitled
   copyright:
-    author: Post Author
-    link: Post Link
+    author: Author
+    link: Link
     license_title: Copyright
     license_content: 'All articles in this blog are licensed under 
       <a href="%s" rel="external nofollow" target="_blank">%s</a> unless stating additionally'
 
+# Site footer
 footer:
   powered: 'Powered by %s'
   theme: Theme

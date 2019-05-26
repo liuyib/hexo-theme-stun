@@ -48,6 +48,7 @@ stylesheets:
 scripts:
   - /js/utils.js
   - /js/scroll.js
+  - /js/sidebar.js
 
 # ==================================================
 # Advanced config

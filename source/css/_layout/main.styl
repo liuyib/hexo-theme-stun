@@ -43,14 +43,17 @@ headingLeft(fontsize)
       margin-bottom: 0
 
   .post-footer
+    display: flex
+
     .post-btn
       margin: 0 auto
       border-radius: 5px
-      width: 6em
+      padding: 0 .6em
       text-align: center
       background-color: $home-post-read-more-color
       transition: background-color .2s ease
       cursor: pointer
+      justify-content: center
 
       &:hover
         background-color: $home-post-read-more-hover-color
@@ -73,121 +76,172 @@ headingLeft(fontsize)
       position: fixed
       top: 30px
 
-  .site-author
-    margin-bottom: .8rem
-    width: 100%
+  // .site-panel
+  // transition: opacity .5s
+  .show
+    display: block
 
-    &-avatar
-      margin: 0 auto
-      border-radius: 50%
-      width: 150px
-      height: 150px
+  .hide
+    display: none
+
+  .sidebar-nav
+    padding-bottom: 1em
+    text-align: center
+
+    &-toc,
+    &-overview
+      margin: 0 .5em
+      border-bottom: 1px solid #fff
+      padding: .3em 0
+      color: $sidebar-nav-text-color
+      transition: all .2s
 
       &:hover
-        animation: $avatar-hover-animation .8s both ease-out
+        color: $sidebar-nav-text-hover-color
+        cursor: pointer
 
-    &-description
-      margin-bottom: 0
-      font-size: 1.2em
-      font-weight: $font-weight-bold
-      text-align: center
+    .current
+      border-color: $sidebar-nav-text-hover-color
+      color: $sidebar-nav-text-hover-color
 
-  .site-social,
-  .site-feed,
-  .site-state
-    &:not(:last-child)
-      border-bottom: 1px dashed #d8d8d8
+  .site-overview
+    .site-author
+      margin-bottom: .8rem
+      width: 100%
 
-    a
-      border-bottom: 0
+      &-avatar
+        margin: 0 auto
+        border-radius: 50%
+        width: 150px
+        height: 150px
 
-  .site-social
-    padding-bottom: 1rem
+        &:hover
+          animation: $avatar-hover-animation .8s both ease-out
 
-    ul,
-    li
-      list-style-type: none
+      &-description
+        margin-bottom: 0
+        font-size: 1.2em
+        font-weight: $font-weight-bold
+        text-align: center
 
-    ul
+    .site-social,
+    .site-feed,
+    .site-state
+      &:not(:last-child)
+        border-bottom: 1px dashed #d8d8d8
+
+      a
+        border-bottom: 0
+
+    .site-social
+      padding-bottom: 1rem
+
+      ul,
+      li
+        list-style-type: none
+
+      ul
+        display: flex
+        overflow: hidden
+        margin: 0 auto
+        padding: 0
+        text-align: center
+        flex-wrap: wrap
+        justify-content: center
+
+      li
+        margin-right: 8px
+        border-radius: 50%
+        width: 1.5rem
+        height: 1.5rem
+        line-height: 1.5rem
+        text-align: center
+        background-color: $sidebar-social-color
+        transition: background-color .2s
+        flex: 0 0 auto
+
+        &:hover
+          background-color: $sidebar-social-hover-color
+
+        &:last-child
+          margin-right: 0
+
+        a
+          display: block
+          border-radius: 50%
+          color: #fff
+
+    .site-feed
       display: flex
-      overflow: hidden
-      margin: 0 auto
-      padding: 0
+      margin-top: .5rem
+      padding-bottom: .5rem
+      font-size: 1.2em
       text-align: center
+      justify-content: center
+
+      .icon-email,
+      .icon-rss
+        margin-right: .4em
+
+      &-email,
+      &-rss
+        margin: 0 auto
+
+        span
+          margin: 0 .15em
+
+      &-email > a
+        color: $sidebar-feed-email-color
+
+      &-rss > a
+        color: $sidebar-feed-rss-color
+
+    .site-state
+      display: flex
+      margin-top: 1rem
       flex-wrap: wrap
       justify-content: center
 
-    li
-      margin-right: 8px
-      border-radius: 50%
-      width: 1.5rem
-      height: 1.5rem
-      line-height: 1.5rem
-      text-align: center
-      background-color: $sidebar-social-color
-      transition: background-color .2s
-      flex: 0 0 auto
+      &-item
+        margin-right: .5rem
+        border-right: 1px solid #eee
+        padding-right: .5rem
+        line-height: 1.6em
+        text-align: center
 
-      &:hover
-        background-color: $sidebar-social-hover-color
+        &:last-child
+          margin: 0
+          border: 0
+          padding: 0
 
-      &:last-child
-        margin-right: 0
+        &-count
+          font-weight: $font-weight-bold
+          color: $black-dark
 
-      a
-        display: block
-        border-radius: 50%
-        color: #fff
+      &-posts > a
+        color: $sidebar-state-post-color
 
-  .site-feed
-    display: flex
-    margin-top: .5rem
-    padding-bottom: .5rem
-    font-size: 1.2em
+      &-categories > a
+        color: $sidebar-state-category-color
+
+      &-tags > a
+        color: $sidebar-state-tag-color
+
+  .post-toc
+    color: red
+
+  .sidebar-progress
+    display: none
+    margin-top: 1em
     text-align: center
-    justify-content: center
 
-    .icon-email,
-    .icon-rss
-      margin-right: .4em
+    &-read
+      margin-bottom: .3em
 
-    &-email,
-    &-rss
-      margin: 0 auto
+      span
+        margin: 0 .1em
 
-    &-email > a
-      color: $sidebar-feed-email-color
-
-    &-rss > a
-      color: $sidebar-feed-rss-color
-
-  .site-state
-    display: flex
-    margin-top: 1rem
-    flex-wrap: wrap
-    justify-content: center
-
-    &-item
-      margin-right: .5rem
-      border-right: 1px solid #eee
-      padding-right: .5rem
-      line-height: 1.6em
-      text-align: center
-
-      &:last-child
-        margin: 0
-        border: 0
-        padding: 0
-
-      &-count
-        font-weight: $font-weight-bold
-        color: $black-dark
-
-    &-posts > a
-      color: $sidebar-state-post-color
-
-    &-categories > a
-      color: $sidebar-state-category-color
-
-    &-tags > a
-      color: $sidebar-state-tag-color
+    &-line
+      width: 0
+      height: 1px
+      background-color: $blue-light
