@@ -19,7 +19,7 @@
     *::before,
     *::after
       margin-right: .2rem
-      font-family: 'fontStun'
+      font-family: $font-icon-family
 
     &-create,
     &-word,
@@ -50,3 +50,34 @@
 
       &::after
         content: $icon-post-read-after
+
+.post-footer
+  &-copyright
+    margin-bottom: 1rem
+    border: 1px solid #e6e6e6
+    border-radius: 2px
+    padding: .8rem 1rem
+    width: 100%
+    transition: box-shadow .2s
+
+    &:hover
+      box-shadow: 0 0 4px 4px #f5f5f5
+
+    .copyright-name
+      margin-right: .5rem
+      font-weight: $font-weight-bold
+
+    .copyright-value
+      color: $font-color
+
+  &-tags
+    margin-bottom: 1rem
+    
+    &::before
+      content: $nav-tag-2
+      margin-left: 3px
+      font-family: $font-icon-family
+      color: $post-tags-icon-color
+
+    span
+      margin: 0 .5rem

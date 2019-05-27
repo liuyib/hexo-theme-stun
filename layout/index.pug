@@ -1,5 +1,11 @@
 extends includes/layout.pug
 
 block content
-  include ./includes/recent-posts.pug  
-  include ./includes/aside.pug
+  include ./includes/mixins/articles-sort.pug
+  include ./includes/mixins/post-header.pug
+
+  include ./includes/common/sidebar.pug
+  
+  div.content
+    include ./includes/common/recent-posts.pug  
+    include ./includes/common/pagination.pug

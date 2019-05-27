@@ -1,7 +1,8 @@
 extends includes/layout.pug
 
 block content
-  include ./includes/aside.pug
+  include ./includes/common/sidebar.pug
+  
   div#category.main-content
     h1= page.category
     - page.posts.each(function(article){
@@ -10,4 +11,4 @@ block content
         if article.date
           time(datetime=date_xml(article.date))= full_date(article.date, 'YYYY-MM-DD')
     - })
-    include ./includes/pagination.pug
+    include ./includes/common/pagination.pug

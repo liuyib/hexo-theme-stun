@@ -1,0 +1,43 @@
+#recent-posts
+  .post-header,
+  .post-excerpt,
+  .post-footer
+    margin-bottom: 2em
+
+  .post-header
+    padding: 0
+
+  .post-item
+    margin: 0 0 2rem
+    border-radius: 5px
+    padding: 2rem
+    width: 100%
+    background-color: $white
+
+    & > :first-child,
+    .post-excerpt > :first-child
+      margin-top: 0
+
+    & > :last-child,
+    .post-excerpt > :last-child
+      margin-bottom: 0
+
+  .post-footer
+    display: flex
+
+    .post-btn
+      margin: 0 auto
+      border-radius: 5px
+      padding: 0 .6em
+      text-align: center
+      background-color: $home-post-read-more-color
+      transition: background-color .2s ease
+      cursor: pointer
+      justify-content: center
+
+      &:hover
+        background-color: $home-post-read-more-hover-color
+
+      a
+        border-bottom: 0
+        color: $white

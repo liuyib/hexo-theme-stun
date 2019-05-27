@@ -1,11 +1,35 @@
 extends includes/layout.pug
 
 block content
-  include ./includes/aside.pug
+  include ./includes/common/sidebar.pug
   include ./includes/mixins/post-header.pug
+  
   article#post.main-content
     +postHeader(page)
     div.post-body
       != page.content
     footer.post-footer
-      include ./includes/pagination.pug
+      if theme.post_copyright.enable
+        div.post-footer-copyright
+          div.copyright-author
+            span.copyright-name!= _p('post.copyright.author') + ':'
+            span.copyright-value
+              if (config.url && config.author)
+                a(href=config.url)= config.author
+          div.copyright-link
+            span.copyright-name!= _p('post.copyright.link') + ':'
+            span.copyright-value
+              if (config.url)
+                a(href=page.permalink)= page.permalink
+          div.copyright-notice
+            span.copyright-name!= _p('post.copyright.license_title') + ':'
+            span.copyright-value
+              != _p('post.copyright.license_content', theme.post_copyright.license_url, theme.post_copyright.license)
+
+      div.post-footer-tags
+        if page.tags && page.tags.data
+          each tag in page.tags.data
+            span!= link_to(tag.permalink, tag.name)
+      
+      include ./includes/common/reward.pug
+      include ./includes/common/pagination.pug
