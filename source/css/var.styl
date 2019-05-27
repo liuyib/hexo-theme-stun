@@ -182,17 +182,24 @@ $icon-right-arrow        = '\e816'
 // Font, line-height
 // -------------------------------------------
 // Line height
-$line-height-base       = 2    // 基础行高
-$line-height-h          = 1.5
-$line-height-code-block = 1.7  // 不能小于 1.3
+$line-height-base       = 2    // global line height
+$line-height-h          = 1.5  // <h1~6> line height
+$line-height-code-block = 1.7  // can`t less 1.3
 
 // Font size
-$font-size-rem          = 20px
-$font-size-base         = 14px // 基础字体大小
+$font-size-rem          = 20px // <html>
+$font-size-base         = 14px // <body>
 $font-size-small        = $font-size-base - 2px;
 $font-size-smaller      = $font-size-base - 4px;
 $font-size-large        = $font-size-base + 2px;
 $font-size-larger       = $font-size-base + 4px;
+
+// If you don`t want to bother, comment it and default value will be enable
+$font-header-base       = 20px
+$font-footer-base       = 20px
+$font-main-base         = 16px
+$font-post-title        = 40px // article title
+$font-sidebar-base      = 16px
 
 // Font family
 $font-family            = PingFang SC, Microsoft YaHei, Lato, sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Hiragino Sans GB, Helvetica Neue, Helvetica, Arial
@@ -217,8 +224,7 @@ $z-index-5 = 1004
 // -------------------------------------------
 // Layout
 // -------------------------------------------
-
 // Width
-$content-desktop   = 1110px
-$main-desktop      = 772px
+$content-desktop   = 1340px
+$main-desktop      = 992px
 $main-side-desktop = 315px

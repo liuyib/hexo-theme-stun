@@ -18,6 +18,7 @@ headingLeft(fontsize)
 .content
   float: left
   width: $main-desktop
+  font-size: $font-main-base
 
   .post-header,
   .post-excerpt,
@@ -65,6 +66,7 @@ headingLeft(fontsize)
 .sidebar
   float: right
   width: $main-side-desktop
+  font-size: $font-sidebar-base is defined ? $font-sidebar-base : $font-size-large
 
   .sidebar-inner
     border-radius: 5px
@@ -75,11 +77,6 @@ headingLeft(fontsize)
     &.sticky
       position: fixed
       top: 30px
-
-  // .site-panel
-  // transition: opacity .5s
-  .show
-    display: block
 
   .hide
     display: none
@@ -120,7 +117,6 @@ headingLeft(fontsize)
 
       &-description
         margin-bottom: 0
-        font-size: 1.2em
         font-weight: $font-weight-bold
         text-align: center
 
@@ -175,7 +171,6 @@ headingLeft(fontsize)
       display: flex
       margin-top: .5rem
       padding-bottom: .5rem
-      font-size: 1.2em
       text-align: center
       justify-content: center
 

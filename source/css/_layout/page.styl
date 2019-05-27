@@ -19,6 +19,7 @@ setUlStyle(content, hoverColor)
   border-radius: 5px
   padding: 2rem
   width: $main-desktop
+  font-size: $font-main-base is defined ? $font-main-base : $font-size-large
   background-color: $white
 
   h1,
@@ -184,31 +185,32 @@ setUlStyle(content, hoverColor)
   &::before
     content: ''
     position: absolute
-    top: .2rem
-    left: -.1rem
+    top: $font-main-base is defined ? ($font-main-base) : 1rem
+    bottom: $font-main-base is defined ? ($font-main-base) : 1rem
+    left: 0
     border-left: .2rem solid $archives-left-line-color
-    height: calc(100% - 1rem)
+    transform: translate(-50%, 0)
 
 .article-sort-title
   position: relative
   margin-bottom: 1.3rem
   padding-left: 1.4rem
-  font-size: 1.2rem
-  line-height: 1
+  font-size: $font-main-base is defined ? ($font-main-base * 1.4) : 1.2rem
 
   &::before
     content: ''
     position: absolute
-    top: .1rem
-    left: -.6rem
+    top: 50%
+    left: 0
     z-index: $z-index-2
     border: .25rem solid $archives-left-dot-color
     border-radius: 50%
-    width: 1.2rem
-    height: 1.2rem
+    width: 1rem
+    height: 1rem
     line-height: 1.2rem
     background-color: $white
     transition: all .2s ease
+    transform: translate(-50%, -50%)
 
 .article-sort-item
   position: relative
@@ -230,29 +232,31 @@ setUlStyle(content, hoverColor)
   &::before
     content: ''
     position: absolute
-    top: calc(50% - .4rem)
-    left: -.4rem
+    top: 50%
+    left: 0
     z-index: $z-index-2
-    border: .2rem solid $archives-left-dot-color
+    border: .15rem solid $archives-left-dot-color
     border-radius: 50%
-    width: .8rem
-    height: .8rem
+    width: .6rem
+    height: .6rem
     background-color: $white
     transition: all .2s ease
+    transform: translate(-50%, -50%)
 
   &.year
     display: block
     position: relative
-    font-size: 1rem
+    font-size: $font-main-base is defined ? ($font-main-base * 1.2) : 1.2rem
     font-weight: $font-weight-bolder
 
   &__time
     margin-right: 1rem
+    font-size: $font-main-base is defined ? ($font-main-base * .9) : .8rem
     color: $archives-right-time-color
 
   &__title > a
     border-bottom: 0
-    font-size: .9rem
+    font-size: $font-main-base is defined ? ($font-main-base * 1.2) : 1rem
     text-decoration: none
     color: $font-color
     cursor: pointer
@@ -269,7 +273,7 @@ setUlStyle(content, hoverColor)
 
   &-title
     padding: 0 0 1.8rem
-    font-size: 1.8rem
+    font-size: $font-main-base is defined ? ($font-main-base * 2) : 1.5rem
     text-align: center
     cursor: default
 
@@ -277,11 +281,11 @@ setUlStyle(content, hoverColor)
   text-align: center
 
   a
-   &:hover
-    color: $tags-hover-color !important
+    &:hover
+      color: $tags-hover-color !important
 
 .category
-  font-size: 1.2em
+  font-size: $font-main-base is defined ? ($font-main-base * 1.2) : 1.2em
 
   a
     color: $categories-link-color
@@ -292,14 +296,14 @@ setUlStyle(content, hoverColor)
   .category-list-item
     &::before
       color: $categories-list-dot-color
-    
+
     &:hover
       &::before
         color: $categories-list-dot-hover-color
 
   .category-list-count
     padding-left: .3em
-    font-size: .8em
+    font-size: $font-main-base is defined ? ($font-main-base * .8) : .8em
     color: $categories-post-count-color
 
     &::before
