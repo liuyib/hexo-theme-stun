@@ -50,6 +50,12 @@ post:
     license_content: '本博客所有文章除特别声明外，均采用 
       <a href="%s" rel="external nofollow" target="_blank">%s</a> 许可协议。转载请注明出处！'
 
+# 打赏
+reward:
+  btn_text: 请我喝杯咖啡~
+  alipay: 支付宝打赏
+  wechat: 微信打赏
+
 # 网站底部
 footer:
   powered: '由 %s 强力驱动'

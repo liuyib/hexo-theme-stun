@@ -46,6 +46,8 @@ stylesheets:
 
 # Scripts loaded in the end of the body
 scripts:
+  - /js/third-part/ready.min.js
+  - /js/third-part/anime.min.js
   - /js/utils.js
   - /js/scroll.js
   - /js/sidebar.js
@@ -89,6 +91,15 @@ disqus:
   enable: true
 
 # --------------------------------------------------
+# Reward
+# --------------------------------------------------
+reward:
+  enable: true
+  qr_img_url:
+    alipay: 
+    wechat: 
+
+# --------------------------------------------------
 # Copyright
 # --------------------------------------------------
 # Copyright of articles
@@ -108,8 +119,7 @@ site_copyright:
 # ICP
 # --------------------------------------------------
 ICP:
-  enable: true
-  # Example 豫ICP备xxxxxxxx号-x
+  enable: false
   text:
 
 # --------------------------------------------------

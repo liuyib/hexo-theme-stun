@@ -1,2 +1,9 @@
 div#reward
-  span hello
+  div.reward-button!= _p('reward.btn_text')
+  div.reward-qr.qr-hide
+    span.reward-qr-alipay
+      img(src=theme.reward.qr_img_url.alipay)
+      div.reward-qr-alipay-text!= _p('reward.alipay')
+    span.reward-qr-wechat
+      img(src=theme.reward.qr_img_url.wechat)
+      div.reward-qr-wechat-text!= _p('reward.wechat')
