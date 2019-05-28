@@ -1,0 +1,197 @@
+@require './theme.styl'
+@require './diff.styl'
+
+languages = 'js' 'javascript' 'python' 'ruby' 'xml' 'html' 'css' 'perl' 'sql' 'coffeescript' 'java' 'scala' 'kotlin' 'c' 'c\+\+' 'go' 'less' 'sass' 'scss' 'stylus' 'styl' 'typescript' 'ts' 'bash' 'yml' 'gradle'
+wordWrap = !hexo-config('rootConfig.highlight.line_number') && hexo-config('code_word_wrap')
+
+addLanguagesType()
+  for lang in languages
+    .code-highlight
+      figure.highlight
+        &{'.' + lang}
+          table
+            &:before
+              content: lang
+              color: $highlight-header-color
+
+addLanguagesType()
+
+$code-block
+  overflow: auto
+  margin: .5rem 0
+  min-width: 100%
+  line-height: $line-height-code-block
+  color: $highlight-color
+  background-color: $highlight-background
+
+  if (wordWrap)
+    white-space: pre-wrap
+    counter-reset: line
+
+.code-highlight
+  pre,
+  code
+    font-family: $code-font-family
+
+  pre
+    @extend $code-block
+    padding: .5rem
+
+    code
+      padding: 0
+      background: none
+      text-shadow: none
+
+  .highlight
+    @extend $code-block
+    position: relative
+    margin-bottom: 1rem
+    border-radius: 1px
+
+    pre
+      margin: 0
+      border: none
+      padding: 0
+
+    td
+      border: none
+      padding: 0
+
+    // Code block header
+    figcaption
+      overflow: hidden
+      color: $highlight-header-color
+      background-color: $highlight-header-bg-color
+
+      span
+        float: left
+        margin-left: 2.5rem
+        color: $highlight-header-color
+
+      a
+        float: right
+        margin-right: .5rem
+        border-bottom: 0
+
+    // Code block body
+    table
+      border-spacing: 0
+      position: relative
+      margin: 0
+      border: none
+      width: 100%
+
+      // Show code type
+      &::before
+        display: block
+        position: absolute
+        left: 0
+        padding-left: 1rem
+        color: $code-block-header-text-color
+        background-color: $code-block-side-bg-color
+        transform: translate(0, -100%)
+
+      // Code line numbers
+      .gutter
+        padding: 0 .6rem
+        width: 1rem
+        background-color: $highlight-gutter-bg-color
+
+        pre
+          text-align: right
+          color: $highlight-gutter-color
+          background-color: inherit
+
+      // Code content
+      .code
+        padding: 0 .5rem
+
+    .line
+      height: $line-height
+
+      if (wordWrap)
+        &:before
+          content: counter(line)
+          display: inline-block
+          margin: 0 1rem 0 0
+          width: 1rem
+          text-align: right
+          color: $highlight-gutter-color
+          counter-increment: line
+
+  pre
+    .variable,
+    .attribute
+      color: $highlight-red
+
+    .number,
+    .preprocessor,
+    .literal,
+    .params,
+    .constant,
+    .number,
+    .command
+      color: $highlight-orange
+
+    .built_in
+      color: $highlight-yellow
+
+    .special,
+    .formula,
+    .class,
+    .string,
+    .value,
+    .inheritance,
+    .header,
+    .regexp,
+    .tag
+      color: $highlight-green
+
+    .keyword,
+    .title
+      color: $highlight-aqua
+
+    .function,
+    .title
+      color: $highlight-blue
+
+    .comment
+      color: $highlight-comment
+
+  .ruby .constant,
+  .xml .tag .title,
+  .xml .pi,
+  .xml .doctype,
+  .html .doctype,
+  .css .id,
+  .tag .name,
+  .css .class,
+  .css .pseudo
+    color: $highlight-red
+
+  .ruby .class .title,
+  .css .rules .attribute,
+  .ruby .symbol,
+  .xml .cdata
+    color: $highlight-green
+
+  .css .hexcolor,
+  .tag .string
+    color: $highlight-aqua
+
+  .python .decorator,
+  .python .title,
+  .ruby .function .title,
+  .ruby .title .keyword,
+  .perl .sub,
+  .javascript .title,
+  .js .title,
+  .coffeescript .title
+    color: $highlight-blue
+
+  .tag .attr,
+  .javascript .keyword,
+  .javascript .function,
+  .js .keyword,
+  .js .function
+    color: $highlight-purple

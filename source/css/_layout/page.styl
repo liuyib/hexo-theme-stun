@@ -14,6 +14,15 @@ setUlStyle(content, hoverColor)
     &::before
       color: hoverColor
 
+headingLeft(fontsize)
+  padding-left: unit(fontsize, 'rem')
+
+  &:hover
+    padding-left: fontsize + .3rem
+
+    &::before
+      color: $h-link-logo-hover-color
+
 .main-content
   float: left
   border-radius: 5px
@@ -21,6 +30,12 @@ setUlStyle(content, hoverColor)
   width: $main-desktop
   font-size: $font-main-base is defined ? $font-main-base : $font-size-large
   background-color: $white
+
+  & > :first-child
+    margin-top: 0
+
+  & > :last-child
+    margin-bottom: 0
 
   h1,
   h2,
@@ -33,12 +48,7 @@ setUlStyle(content, hoverColor)
     a
       border-bottom: 0
       text-decoration: none
-      color: inherit
 
-      &:hover
-        color: inherit
-
-    // Enable heading`s icon
     if ($icon-h-link is defined)
       position: relative
       transition: padding-left .3s ease
@@ -47,7 +57,6 @@ setUlStyle(content, hoverColor)
         content: $icon-h-link
         display: block
         position: absolute
-        top: 0
         left: 0
         height: 100%
         font-family: $font-icon-family
@@ -60,9 +69,12 @@ setUlStyle(content, hoverColor)
       if ($icon-h-link is defined)
         headingLeft(1.45 - .1 * size)
 
+  img
+    max-width: 100%
+
   ul,
   ol
-    margin: 0
+    margin: .5rem 0 .5rem 0
     padding-left: 2em
 
   li
@@ -98,78 +110,26 @@ setUlStyle(content, hoverColor)
         color: $blue-light
         counter-increment: ol-li
 
-  // Code in the post
-  figure.highlight
-    overflow-x: auto
-    overflow-y: hidden
-    position: relative
-    margin: 1rem 0
-    min-width: 100%
-    background-color: $code-block-bg-color
-
-    pre
-      margin: 0
-      font-family: $code-font-family
-
-    --table-header-height = 1.5rem
-
-    table
-      border-spacing: 0
-      position: relative
-      padding: --table-header-height 0 0
-      width: 100%
-
-      &::before
-        content: 'TODO'
-        position: absolute
-        top: 0
-        left: 0
-        border-top-left-radius: 3px
-        border-top-right-radius: 3px
-        padding-left: 1rem
-        width: 100%
-        height: --table-header-height
-        font-weight: $font-weight-bolder
-        line-height: --table-header-height
-        background-color: $code-block-side-bg-color
-
-      // The line number of code
-      td.gutter
-        border-bottom-left-radius: 3px
-        padding: 0 .5rem
-        width: 1rem
-        line-height: $line-height-code-block
-        text-align: center
-        color: $code-block-side-color
-        background-color: $code-block-side-bg-color
-
-      // Code content
-      td.code
-        border-bottom-right-radius: 3px
-        padding: .5rem
-        line-height: $line-height-code-block
-
   blockquote
-    margin: 0
+    margin: 0 0 1rem 0
 
-    & > *
-      margin-top: 0 !important
+    & > :first-child
+      margin-top: 0
 
-    & > *:last-child
-      margin-bottom: 0 !important
-
-    figure
-      margin-top: 0 !important
-      margin-bottom: 0 !important
+    & > :last-child
+      margin-bottom: 0
 
     & + blockquote
       padding-top: 0
 
-  & > :first-child
-    margin-top: 0 !important
-
-  & > :last-child
-    margin-bottom: 0 !important
+    figure
+      margin-top: 0
+      margin-bottom: 0
+    
+    cite
+      &::before
+        content: '--'
+        padding: 0 .2em
 
 .archive
   float: left

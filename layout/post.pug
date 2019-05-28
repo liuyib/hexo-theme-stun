@@ -4,7 +4,7 @@ block content
   include ./includes/common/sidebar.pug
   include ./includes/mixins/post-header.pug
   
-  article#post.main-content
+  article#post.main-content.code-highlight
     +postHeader(page)
     div.post-body
       != page.content
