@@ -1,7 +1,7 @@
 extends includes/layout.pug
 
 block content
-  include ./includes/common/sidebar.pug
+  include ./includes/components/sidebar.pug
   include ./includes/mixins/post-header.pug
   
   article#post.main-content.code-highlight
@@ -31,5 +31,7 @@ block content
           each tag in page.tags.data
             span!= link_to(tag.permalink, tag.name)
       
-      include ./includes/common/reward.pug
-      include ./includes/common/pagination.pug
+      if theme.reward && theme.reward.enable
+        include ./includes/components/reward.pug
+      
+      include ./includes/components/pagination.pug

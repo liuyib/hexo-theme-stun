@@ -15,13 +15,18 @@ setUlStyle(content, hoverColor)
       color: hoverColor
 
 headingLeft(fontsize)
-  padding-left: unit(fontsize, 'rem')
-
   &:hover
-    padding-left: fontsize + .3rem
-
-    &::before
+    &:not(.post-title)::before
+      margin-right: fontsize + 10px
       color: $h-link-logo-hover-color
+
+if (hexo-config('vertical_align_text_inline_img') == 'top')
+  text_align_with_inline_img = top
+else if (hexo-config('vertical_align_text_inline_img') == 'middle')
+  text_align_with_inline_img = middle
+else
+  text_align_with_inline_img = bottom
+
 
 .main-content
   float: left
@@ -45,44 +50,29 @@ headingLeft(fontsize)
   h6
     cursor: pointer
 
-    a
-      border-bottom: 0
-      text-decoration: none
-
     if ($icon-h-link is defined)
-      position: relative
-      transition: padding-left .3s ease
-
-      &::before
+      &:not(.post-title)::before
         content: $icon-h-link
-        display: block
-        position: absolute
-        left: 0
         height: 100%
+        margin-right: 10px
         font-family: $font-icon-family
         line-height: $line-height-h
         color: $h-link-logo-color
-        transition: color .3s ease
+        transition: margin .3s ease
 
   for size in 1 .. 6
     h{size}
       if ($icon-h-link is defined)
-        headingLeft(1.45 - .1 * size)
+        headingLeft(10px - size * .5)
 
   img
     max-width: 100%
+    vertical-align: text_align_with_inline_img
 
   ul,
   ol
     margin: .5rem 0 .5rem 0
     padding-left: 2em
-
-  li
-    position: relative
-    margin: .2em 0
-
-    if ($icon-ul-list-1 is defined && ($icon-ul-list-2 is defined && ($icon-ul-list-3 is defined)))
-      list-style-type: none
 
   ul
     li
@@ -95,6 +85,13 @@ headingLeft(fontsize)
           ul
             li
               setUlStyle($icon-ul-list-3, $ul-list-hover-color)
+
+  li
+    position: relative
+    margin: .2em 0
+
+    if ($icon-ul-list-1 is defined && ($icon-ul-list-2 is defined && ($icon-ul-list-3 is defined)))
+      list-style-type: none
 
   ol
     counter-reset: ol-li
@@ -130,6 +127,15 @@ headingLeft(fontsize)
       &::before
         content: '--'
         padding: 0 .2em
+  
+  table
+    border-spacing: 0
+    border-collapse: collapse
+    margin: 0 auto 1rem auto
+    min-width: 100%
+
+    th, td
+      border: 1px solid #eee
 
 .archive
   float: left

@@ -45,9 +45,23 @@ body
     line-height: $line-height-h
     color: lighten($h-color, 15%)
 
-  for size in (1 .. 6)
-    h{size}
-      font-size: $h-font-size-base - $h-font-size-step * size
+  h1
+    font-size: $h-font-size.h1
+
+  h2
+    font-size: $h-font-size.h2
+
+  h3
+    font-size: $h-font-size.h3
+
+  h4
+    font-size: $h-font-size.h4
+
+  h5
+    font-size: $h-font-size.h5
+
+  h6
+    font-size: $h-font-size.h6
 
 p
   margin: .5rem 0
@@ -65,7 +79,6 @@ a
     color: $link-hover-color
 
 img
-  display: block
   border-radius: 3px
 
   if ($img-border-width != 0)

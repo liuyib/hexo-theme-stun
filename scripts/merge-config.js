@@ -14,6 +14,6 @@ hexo.on('generateBefore', function () {
       hexo.theme.config = data.stun;
     }
   }
-
+  
   hexo.theme.config.rootConfig = rootConfig;
 });

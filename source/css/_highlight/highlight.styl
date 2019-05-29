@@ -2,7 +2,7 @@
 @require './diff.styl'
 
 languages = 'js' 'javascript' 'python' 'ruby' 'xml' 'html' 'css' 'perl' 'sql' 'coffeescript' 'java' 'scala' 'kotlin' 'c' 'c\+\+' 'go' 'less' 'sass' 'scss' 'stylus' 'styl' 'typescript' 'ts' 'bash' 'yml' 'gradle'
-wordWrap = !hexo-config('rootConfig.highlight.line_number') && hexo-config('code_word_wrap')
+wordWrap = hexo-config('code_word_wrap')
 
 addLanguagesType()
   for lang in languages
@@ -93,6 +93,9 @@ $code-block
 
       // Code line numbers
       .gutter
+        if (wordWrap)
+          display: none
+
         padding: 0 .6rem
         width: 1rem
         background-color: $highlight-gutter-bg-color
