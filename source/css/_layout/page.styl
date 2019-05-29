@@ -27,7 +27,6 @@ else if (hexo-config('vertical_align_text_inline_img') == 'middle')
 else
   text_align_with_inline_img = bottom
 
-
 .main-content
   float: left
   border-radius: 5px
@@ -53,8 +52,8 @@ else
     if ($icon-h-link is defined)
       &:not(.post-title)::before
         content: $icon-h-link
-        height: 100%
         margin-right: 10px
+        height: 100%
         font-family: $font-icon-family
         line-height: $line-height-h
         color: $h-link-logo-color
@@ -71,7 +70,7 @@ else
 
   ul,
   ol
-    margin: .5rem 0 .5rem 0
+    margin: .5rem 0
     padding-left: 2em
 
   ul
@@ -108,7 +107,7 @@ else
         counter-increment: ol-li
 
   blockquote
-    margin: 0 0 1rem 0
+    margin: 0 0 1rem
 
     & > :first-child
       margin-top: 0
@@ -134,7 +133,8 @@ else
     margin: 0 auto 1rem auto
     min-width: 100%
 
-    th, td
+    th,
+    td
       border: 1px solid #eee
 
 .archive
