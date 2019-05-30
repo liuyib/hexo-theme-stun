@@ -1,64 +1,26 @@
-(function () {
-'use strict';
+$(function () {
+  var toc = $('.site-post-toc');
+  var view = $('.site-overview');
 
-domready(function () {
-  var sideNavItem = document.querySelectorAll('.sidebar-nav span');
-
-  if (sideNavItem[0] && sideNavItem[1]) {
-    var postToc = document.querySelector('.post-toc');
-    var siteOverview = document.querySelector('.site-overview');
-
-    // click post toc
-    sideNavItem[0].onclick = function () {
-      this.classList.add('current');
-      sideNavItem[1].classList.remove('current');
-
-      anime({
-        targets: siteOverview,
-        opacity: 0,
-        easing: 'linear',
-        duration: 200,
-        complete: function () {
-          siteOverview.style.display = 'none';
-        }
-      });
-      
-      anime({
-        targets: postToc,
-        opacity: 1,
-        easing: 'linear',
-        duration: 200,
-        complete: function () {
-          postToc.style.display = 'block';
-        }
-      });
-    };
+  $('.sidebar-nav-toc').click(function () {
+    $('.sidebar-nav-toc').toggleClass('current');
+    $('.sidebar-nav-overview').toggleClass('current');
     
-    // click site overview
-    sideNavItem[1].onclick = function () {
-      this.classList.add('current');
-      sideNavItem[0].classList.remove('current');
+    toc.velocity('fadeIn');
+    toc.css('display', 'block');
+    
+    view.velocity('fadeOut');
+    view.css('display', 'none');
+  });
 
-      anime({
-        targets: postToc,
-        opacity: 0,
-        easing: 'linear',
-        duration: 200,
-        complete: function () {
-          postToc.style.display = 'none';
-        }
-      });
+  $('.sidebar-nav-overview').click(function () {
+    $('.sidebar-nav-toc').toggleClass('current');
+    $('.sidebar-nav-overview').toggleClass('current');
 
-      anime({
-        targets: siteOverview,
-        opacity: 1,
-        easing: 'linear',
-        duration: 200,
-        complete: function () {
-          siteOverview.style.display = 'block';
-        }
-      });
-    }; 
-  }
+    toc.velocity('fadeOut');
+    toc.css('display', 'none');
+
+    view.velocity('fadeIn');
+    view.css('display', 'block');
+  });
 });
-})();

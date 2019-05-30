@@ -1,14 +1,6 @@
-(function () {
-  'use strict';
-  
-domready(function () {
-  var rewardBtn = document.querySelector('.reward-button');
-  var rewardQr = document.querySelector('.reward-qr');
-
-  rewardBtn.onclick = function () {
-    rewardQr.classList.toggle('qr-show');
-    rewardQr.classList.toggle('qr-hide');
-  };
+$(function() {
+  $('.reward-button').click(function() {
+    $('.reward-qr').toggleClass('qr-show');
+    $('.reward-qr').toggleClass('qr-hide');
+  });
 });
-})();
-  

@@ -1,98 +1,100 @@
-(function () {
-'use strict';
-
-domready(function () {
-  var headerNav = document.querySelector('#header-nav');
+$(function () {
   var prevScrollTop = 0;
 
-  // header nav slider animation
-  headerNavScroll();
-  window.addEventListener('scroll', throttle(function () {
-    headerNavScroll();
+  $(window).scroll(throttle(function () {
+    var scrollTop = $(this).scrollTop();
+    
+    headerNavScroll(scrollTop);
   }, 20, 100));
+  
+  var postH =  $('#post').height() - $(window).height();
 
-  function headerNavScroll() {
-    var nowScrollTop = getScrollTop();
-    var delta = nowScrollTop - prevScrollTop;
+  $(window).scroll(function () {
+    var scrollH = parseInt(document.querySelector('#post')
+      .getBoundingClientRect().top);
 
-    if (nowScrollTop === 0) {
-      headerNav.classList.remove('fixed');
-    } else {
-      headerNav.classList.add('fixed');
-
-      if (delta > 0) {
-        if (Math.abs(delta) > 5) {
-          headerNav.classList.remove('slider-down');
-          headerNav.classList.add('slider-up');
-        }
-      } else {
-        if (Math.abs(delta) > 5) {
-          headerNav.classList.remove('slider-up');
-          headerNav.classList.add('slider-down');
-        }
-      }
-    }
-
-    prevScrollTop = nowScrollTop;
-  }
-
-  var sidebar = document.querySelector('.sidebar-inner');
-  var mainInner = document.querySelector('#main-inner');
-  var progress = document.querySelector('.sidebar-progress');
-  var progressNumber = document.querySelector('.sidebar-progress-number');
-  var progressLine = document.querySelector('.sidebar-progress-line');
-
-  // sticky the sidebar
-  sidebarSticky();
-
-  window.addEventListener('scroll', function () {
+    updateProgress(postH, scrollH);
     sidebarSticky();
   });
 
-  function sidebarSticky() {
-    var mainInnerRect = mainInner.getBoundingClientRect();
-        
-    if (mainInnerRect.y < 30) {
-      sidebar.classList.add('sticky');
+  // click heading
+  $('.main-content')
+    .find('h1,h2,h3,h4,h5,h6')
+    .on('click', function () {
+      scrollToHead('#' + $(this).attr('id'))
+    });
+
+  // click post toc
+  $('.toc-link').on('click', function (e) {
+    e.preventDefault();
+
+    scrollToHead($(this).attr('href'));
+  });
+  
+  // site header nav scroll
+  function headerNavScroll(scrollTop) {
+    var delta = scrollTop - prevScrollTop;
+
+    if (scrollTop === 0) {
+      $('#header-nav').removeClass('fixed');
     } else {
-      sidebar.classList.remove('sticky');
+      $('#header-nav').addClass('fixed');
+
+      if (delta > 0) {
+        if (Math.abs(delta) > 5) {
+          $('#header-nav').removeClass('slider-down');
+          $('#header-nav').addClass('slider-up');
+        }
+      } else {
+        if (Math.abs(delta) > 5) {
+          $('#header-nav').removeClass('slider-up');
+          $('#header-nav').addClass('slider-down');
+        }
+      }
+    }
+
+    prevScrollTop = scrollTop;
+  }
+
+  // sidebar sticky
+  function sidebarSticky() {
+    var targetY = document.querySelector('#main-inner')
+      .getBoundingClientRect().top;
+
+    if (targetY < 30) {
+      $('.sidebar-inner').addClass('sticky');
+    } else {
+      $('.sidebar-inner').removeClass('sticky');
     }
   }
 
-  var post = document.querySelector('#post');
-  
-  if (post) {
-    var postHeight = post.offsetHeight - getWindowClient().height;
-    
-    // update post read progress
-    updateProgress();
-
-    window.addEventListener('scroll', function () {
-      updateProgress();
-    });
-  }
-  
-  function updateProgress() {
-    var postRect = post.getBoundingClientRect();
-    var scrollHeight = parseInt(postRect.y);
+  // update the reading progress lines of post
+  function updateProgress(postH, scrollH) {
     var result = '';
 
-    if (Math.abs(scrollHeight) === 0) {
+    if (Math.abs(scrollH) === 0) {
       result = '0%'
-      progress.style.display = 'block';
-    } else if (scrollHeight < 0) {
-      if (parseInt((Math.abs(scrollHeight) / postHeight) * 100) > 100) {
+      $('.sidebar-progress').css('display', 'block');
+    } else if (scrollH < 0) {
+      if (parseInt((Math.abs(scrollH) / postH) * 100) > 100) {
         result = '100%';
       } else {
-        result = parseInt((Math.abs(scrollHeight) / postHeight) * 100) + '%';
+        result = parseInt((Math.abs(scrollH) / postH) * 100) + '%';
       }
-      progress.style.display = 'block';
+      $('.sidebar-progress').css('display', 'block');
     } else {
-      progress.style.display = 'none';
+      $('.sidebar-progress').css('display', 'none');
     }
 
-    progressNumber.innerText = result;
-    progressLine.style.width = result;
+    $('.sidebar-progress-number').html(result);
+    $('.sidebar-progress-line').css('width', result);
+  }
+
+  // scroll heading to top
+  function scrollToHead(anchor) {
+    $(anchor).velocity('stop').velocity('scroll', {
+      duration: 500,
+      easing: 'easeOutSine'
+    });
   }
 });
-})();

@@ -58,26 +58,6 @@ function isMobile() {
   return check;
 }
 
-/**
- * Get document scroll top
- */
-function getScrollTop() {
-  return window.pageYOffset || document.documentElement.scrollTop ||
-    document.body.scrollTop || 0;
-}
-
-/**
- * Get window client size
- */
-function getWindowClient() {
-  return {
-    width: window.innerWidth || document.documentElement.clientWidth ||
-      document.body.clientWidth || 0,
-    height: window.innerHeight || document.documentElement.clientHeight ||
-      document.body.clientHeight || 0
-  }
-}
-
 window.debounce = debounce;
 window.throttle = throttle;
 window.isMobile = isMobile;
