@@ -48,13 +48,9 @@ aside#sidebar
                 div.site-state-item-count= site.tags.length
                 div.site-state-item-name= _p('sidebar.tags')
 
-    section.site-panel.post-toc.hide
-      span 生成文章目录 TODO
-      span 生成文章目录 TODO
-      span 生成文章目录 TODO
-      span 生成文章目录 TODO
-      span 生成文章目录 TODO
-      span 生成文章目录 TODO
+    section.site-panel.site-post-toc.hide
+      if page.content
+        div!= toc(page.content, {list_number: true})
 
     div.sidebar-progress
       div.sidebar-progress-read

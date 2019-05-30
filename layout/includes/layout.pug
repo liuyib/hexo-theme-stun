@@ -8,7 +8,12 @@ html(lang=config.language)
       include ./main.pug
       include ./footer.pug
 
-    if theme.scripts !== undefined && theme.scripts.length > 0
+    if theme.cdn && theme.cdn.js
+      each url in theme.cdn.js
+        if url
+          script(src=url_for(url))
+
+    if theme.scripts && theme.scripts.length > 0
       //- scripts list from config.yml
       each url in theme.scripts
-        script(src=`${url}?version=${version()}`)
+        script(src=url_for(url) + '?version=' + version())

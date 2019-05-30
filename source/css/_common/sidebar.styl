@@ -159,8 +159,18 @@
       &-tags > a
         color: $sidebar-state-tag-color
 
-  .post-toc
+  .site-post-toc
     color: red
+    overflow: auto
+    max-height: 60vh
+
+    ol,
+    li
+      list-style: none
+
+    ol
+      padding-left: 1em
+      margin: 0
 
   .sidebar-progress
     display: none
