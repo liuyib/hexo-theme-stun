@@ -51,8 +51,23 @@
       &::after
         content: $icon-post-read-after
 
-// .post-body
-  
+if (hexo-config('img_horizonal_align') == 'left')
+  img_horizonal_align = 0 auto 0 0
+else if (hexo-config('img_horizonal_align') == 'center')
+  img_horizonal_align = auto
+else if (hexo-config('img_horizonal_align') == 'right')
+  img_horizonal_align = 0 0 0 auto
+else
+  img_horizonal_align = null
+
+.post-body
+  if (img_horizonal_align != null)
+    display: flex
+    flex-direction: column
+
+    img
+      display: block
+      margin: img_horizonal_align
 
 .post-footer
   &-copyright

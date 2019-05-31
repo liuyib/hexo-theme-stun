@@ -34,7 +34,7 @@ sidebar:
 # 文章
 post:
   created: 创建于
-  modified: 更新于
+  updated: 更新于
   posted: 发表于
   word_count: 字数统计
   read_count: 阅读次数

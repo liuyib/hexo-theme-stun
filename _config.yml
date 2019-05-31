@@ -18,13 +18,10 @@ menu:
   # XXX: /xxx
 
 # Favicon
-# Example /imgs/favicon.ico
-favicon:
+favicon: /imgs/favicon.ico
 
 # Avatar in the sidebar
-# In theme directory(source/imgs)
-# Example /imgs/stun.jpg
-avatar:
+avatar: /imgs/my_avatar.jpg
 
 # Social links
 social:
@@ -36,6 +33,7 @@ social:
   qq:
   telegram:
 
+# Subscribe of email and rss
 feed:
   mail:
   rss:
@@ -46,29 +44,28 @@ stylesheets:
 
 # Scripts loaded in the end of the body
 scripts:
-  - /js/third-part/ready.min.js
-  - /js/third-part/anime.min.js
   - /js/utils.js
   - /js/scroll.js
   - /js/sidebar.js
+  - /js/post.js
+
+# CND for libs
+cdn:
+  # css:
+  js:
+    jquery: https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js
+    velocity: https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js
 
 # ==================================================
 # Advanced config
 # ==================================================
 
 # --------------------------------------------------
-# Icon
-# --------------------------------------------------
-# Header menu icon
-header_menu_icon:
-  enable: true
-
-# --------------------------------------------------
 # Tag cloud
 # If not used, comment it or ignore it
 # --------------------------------------------------
 tag:
-  # Color for tag
+  # Color for tag（please use quote to wrap value, only support HEX）
   start_color: '#a4d8fa'
   end_color: '#49b1f5'
   # Font size for tag
@@ -76,19 +73,13 @@ tag:
   max_font_size: 30
 
 # --------------------------------------------------
-# Catalog of article in the sidebar
+# Code highlight
+# values:
+# - light
+# - dark
+# - ocean
 # --------------------------------------------------
-catalog:
-  enable: true
-  # Show list number
-  number: true
-
-# --------------------------------------------------
-# Comments
-# --------------------------------------------------
-# Disqus
-disqus:
-  enable: true
+highlight_theme: light
 
 # --------------------------------------------------
 # Reward
@@ -96,8 +87,46 @@ disqus:
 reward:
   enable: true
   qr_img_url:
-    alipay: 
-    wechat: 
+    alipay:
+    wechat:
+
+# --------------------------------------------------
+# Icon
+# --------------------------------------------------
+# Whether to show header menu icon
+# values: true or false
+header_menu_icon_show: true
+
+# --------------------------------------------------
+# Whether to wrap lines when code is overflow
+# values: true or false
+# --------------------------------------------------
+code_word_wrap: true
+
+# --------------------------------------------------
+# Horizonal alignment of img
+# values:
+# - left
+# - center
+# - right
+# 
+# If you don't want to set the align of img, please empty it
+# --------------------------------------------------
+img_horizonal_align: 
+
+# --------------------------------------------------
+# Vertical alignment of text and images
+# values:
+# - top
+# - middle
+# - bottom
+# --------------------------------------------------
+text_vertical_align_with_img: bottom
+
+# --------------------------------------------------
+# Comments
+# --------------------------------------------------
+
 
 # --------------------------------------------------
 # Copyright

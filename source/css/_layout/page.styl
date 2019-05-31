@@ -20,12 +20,12 @@ headingLeft(fontsize)
       margin-right: fontsize + 10px
       color: $h-link-logo-hover-color
 
-if (hexo-config('vertical_align_text_inline_img') == 'top')
-  text_align_with_inline_img = top
-else if (hexo-config('vertical_align_text_inline_img') == 'middle')
-  text_align_with_inline_img = middle
+if (hexo-config('text_vertical_align_with_img') == 'top')
+  text_vertical_align_with_img = top
+else if (hexo-config('text_vertical_align_with_img') == 'middle')
+  text_vertical_align_with_img = middle
 else
-  text_align_with_inline_img = bottom
+  text_vertical_align_with_img = bottom
 
 .main-content
   float: left
@@ -66,8 +66,8 @@ else
 
   img
     max-width: 100%
-    vertical-align: text_align_with_inline_img
-
+    vertical-align: text_vertical_align_with_img
+  
   ul,
   ol
     margin: .5rem 0

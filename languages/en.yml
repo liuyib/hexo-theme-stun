@@ -21,7 +21,7 @@ page:
   articles-0: No articles
   articles-1: Total %s Articles, Go on!
 
-# Sidebar
+# Sidebarupdated
 sidebar:
   overview: Overview
   catalog: Catalog
@@ -34,7 +34,7 @@ sidebar:
 # Post
 post:
   created: Created
-  modified: Modified
+  updated: updated
   posted: Posted
   word_count: Words
   read_count: Visited
@@ -49,6 +49,12 @@ post:
     license_title: Copyright
     license_content: 'All articles in this blog are licensed under 
       <a href="%s" rel="external nofollow" target="_blank">%s</a> unless stating additionally'
+
+# 打赏
+reward:
+  btn_text: Reward me
+  alipay: alipay
+  wechat: wechat
 
 # Site footer
 footer:
