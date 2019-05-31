@@ -1,0 +1,31 @@
+// m-width: 992px
+// -----------------------------------------
+@media screen and (min-width: $m-width)
+  .main-content-layout,
+  .main-content
+    width: $main-desktop
+
+@media screen and (max-width: $m-width)
+  #header,
+  #footer
+    background-attachment: local
+  
+  #header
+    height: 300px
+
+// $content-desktop: 1340px
+// -----------------------------------------
+@media screen and (min-width: $content-desktop)
+  #header
+    width: 100%
+  
+  #main-inner
+    width: $content-desktop
+
+@media screen and (max-width: $content-desktop)
+  #sidebar
+    display: none
+
+  .main-content
+    float: none
+    margin: 0 auto
