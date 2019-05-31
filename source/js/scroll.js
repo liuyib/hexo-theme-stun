@@ -10,10 +10,13 @@ $(function () {
   var postH =  $('#post').height() - $(window).height();
 
   $(window).scroll(function () {
-    var scrollH = parseInt(document.querySelector('#post')
-      .getBoundingClientRect().top);
+    if (document.querySelector('#post')) {
+      var scrollH = parseInt(document.querySelector('#post')
+        .getBoundingClientRect().top);
 
-    updateProgress(postH, scrollH);
+      updateProgress(postH, scrollH);
+    }
+
     sidebarSticky();
   });
 
@@ -58,13 +61,15 @@ $(function () {
 
   // sidebar sticky
   function sidebarSticky() {
-    var targetY = document.querySelector('#main-inner')
-      .getBoundingClientRect().top;
-
-    if (targetY < 30) {
-      $('.sidebar-inner').addClass('sticky');
-    } else {
-      $('.sidebar-inner').removeClass('sticky');
+    if (document.querySelector('#main-inner')) {
+      var targetY = document.querySelector('#main-inner')
+        .getBoundingClientRect().top;
+  
+      if (targetY < 30) {
+        $('.sidebar-inner').addClass('sticky');
+      } else {
+        $('.sidebar-inner').removeClass('sticky');
+      }
     }
   }
 

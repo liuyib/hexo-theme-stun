@@ -2,9 +2,14 @@ aside#sidebar
   div.sidebar-inner
     if is_post()
       div.sidebar-nav
-        span.sidebar-nav-toc= _p('sidebar.catalog')
-        span.sidebar-nav-overview.current= _p('sidebar.overview')
-    section.site-panel.site-overview
+        span(class=`sidebar-nav-toc ${is_post() ? 'current' : ''}`)= _p('sidebar.catalog')
+        span(class=`sidebar-nav-overview ${is_post() ? '' : 'current'}`)= _p('sidebar.overview')
+    
+    section(class=`site-panel site-post-toc ${is_post() ? '' : 'hide'}`)
+      if page.content
+        div!= toc(page.content, {list_number: true})
+
+    section(class=`site-panel site-overview ${is_post() ? 'hide' : ''}`)
       div.site-author
         img(src=theme.avatar alt="avatar").site-author-avatar
         p.site-author-description write code and love life
@@ -47,10 +52,6 @@ aside#sidebar
               a(href=theme.menu.tags)
                 div.site-state-item-count= site.tags.length
                 div.site-state-item-name= _p('sidebar.tags')
-
-    section.site-panel.site-post-toc.hide
-      if page.content
-        div!= toc(page.content, {list_number: true})
 
     div.sidebar-progress
       div.sidebar-progress-read
