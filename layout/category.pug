@@ -2,13 +2,11 @@ extends includes/layout.pug
 
 block content
   include ./includes/components/sidebar.pug
+  include ./includes/mixins/articles-sort.pug
   
-  div#category.main-content
-    h1= page.category
-    - page.posts.each(function(article){
-      .category-item
-        a(href=url_for(article.path))= article.title
-        if article.date
-          time(datetime=date_xml(article.date))= full_date(article.date, 'YYYY-MM-DD')
-    - })
+  div.tag.main-content-layout
+    div.tag-inner
+      div.article-sort-title= _p('page.categories') + ' - ' + page.category
+      +articleSort(page.posts)
+
     include ./includes/components/pagination.pug

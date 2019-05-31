@@ -4,7 +4,7 @@ block content
   include ./includes/components/sidebar.pug
   include ./includes/mixins/articles-sort.pug
 
-  div.archive
+  div.archive.main-content-layout
     div.archive-inner
       if (site.posts.length === 0)
         div.article-sort-title= _p('page.articles-0')

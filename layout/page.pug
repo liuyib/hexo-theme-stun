@@ -4,7 +4,7 @@ block content
   include ./includes/components/sidebar.pug
   
   if (page.type === 'tags')
-    div.tag-cloud.main-content
+    div.tag-cloud.main-content-layout
       div.tag-cloud-title= _p('page.tags') + ' - '
         span.tag-cloud-num= site.tags.length
       - var min_font = theme.tag ? theme.tag.min_font_size : 14

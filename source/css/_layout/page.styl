@@ -27,7 +27,7 @@ else if (hexo-config('text_vertical_align_with_img') == 'middle')
 else
   text_vertical_align_with_img = bottom
 
-.main-content
+$content-layout
   float: left
   border-radius: 5px
   padding: 2rem
@@ -41,12 +41,20 @@ else
   & > :last-child
     margin-bottom: 0
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6
+.main-content-layout
+  @extend $content-layout
+  
+.main-content
+  @extend $content-layout
+
+  li
+    position: relative
+    margin: .2em 0
+
+    if ($icon-ul-list-1 is defined && ($icon-ul-list-2 is defined && ($icon-ul-list-3 is defined)))
+      list-style-type: none
+
+  h1, h2, h3, h4, h5, h6
     cursor: pointer
 
     if ($icon-h-link is defined)
@@ -67,7 +75,7 @@ else
   img
     max-width: 100%
     vertical-align: text_vertical_align_with_img
-  
+
   ul,
   ol
     margin: .5rem 0
@@ -144,7 +152,8 @@ else
   width: $main-desktop
   background-color: $white
 
-.archive-inner
+.archive-inner,
+.tag-inner
   position: relative
   margin-left: 2rem
 
@@ -182,11 +191,13 @@ else
   position: relative
   margin-bottom: .8rem
   padding-left: 1.4rem
-
+  display: flex
+  align-items: center
+  
   h2
-    display: inline-block
     margin: 0
     font-weight: $font-weight-normal
+    line-height: $line-height-h
 
   &:last-child
     margin-bottom: 0
@@ -219,8 +230,9 @@ else
     margin-right: 1rem
     font-size: $font-main-base is defined ? ($font-main-base * .9) : .8rem
     color: $archives-right-time-color
+    transform: translate(0, 8%)
 
-  &__title > a
+  &__title a
     border-bottom: 0
     font-size: $font-main-base is defined ? ($font-main-base * 1.2) : 1rem
     text-decoration: none

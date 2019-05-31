@@ -2,12 +2,6 @@
 # Basic config
 # ==================================================
 
-# HTML lang
-language:
-  - zh-CN
-  - en
-  # - XXX
-
 # Header menu navigation
 menu:
   home: /

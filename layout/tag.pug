@@ -4,6 +4,9 @@ block content
   include ./includes/components/sidebar.pug
   include ./includes/mixins/articles-sort.pug
   
-  div.tag.main-content
-    .article-sort-title= _p('page.tags') + ' - ' + page.tag
-    +articleSort(page.posts)
+  div.tag.main-content-layout
+    div.tag-inner
+      div.article-sort-title= _p('page.tags') + ' - ' + page.tag
+      +articleSort(page.posts)
+
+    include ./includes/components/pagination.pug
