@@ -27,8 +27,8 @@ block content
               span.copyright-value
                 != _p('post.copyright.license_content', theme.post_copyright.license_url, theme.post_copyright.license)
 
-        div.post-footer-tags
-          if page.tags && page.tags.data
+        if page.tags && page.tags.length > 0
+          div.post-footer-tags
             each tag in page.tags.data
               span!= link_to(tag.permalink, tag.name)
         

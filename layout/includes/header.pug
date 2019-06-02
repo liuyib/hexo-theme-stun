@@ -6,11 +6,12 @@ header#header
         ul.header-nav-menu-inner
           if theme.menu
             each url, label in theme.menu
-              li
-                a(href=url)
-                  if (theme.header_menu_icon_show)
-                    i(class=`header-nav-menu-icon icon-${label}`)
-                  != _p(`nav.${label}`)
+              if url
+                li
+                  a(href=url)
+                    if (theme.header_menu_icon_show)
+                      i(class=`header-nav-menu-icon icon-${label}`)
+                    != _p(`nav.${label}`)
       div.header-nav-search
         span!= _p('nav.search')
     

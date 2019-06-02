@@ -6,9 +6,9 @@
 menu:
   home: /
   archives: /archives
-  categories: /categories
-  tags: /tags
-  about: /about
+  categories: 
+  tags: 
+  about: 
   # XXX: /xxx
 
 # Favicon
@@ -30,7 +30,7 @@ social:
 # Subscribe of email and rss
 feed:
   mail: 
-  rss: 
+  # rss: 
 
 # Stylesheets loaded in the <head>
 stylesheets:
@@ -80,7 +80,7 @@ highlight_theme: light
 # Reward
 # --------------------------------------------------
 reward:
-  enable: true
+  enable: false
   qr_img_url:
     alipay: 
     wechat: 
