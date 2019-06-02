@@ -1,14 +1,14 @@
 $(function () {
   var prevScrollTop = 0;
-
+  
   $(window).scroll(throttle(function () {
     var scrollTop = $(this).scrollTop();
     
     headerNavScroll(scrollTop);
   }, 20, 100));
   
-  var postH =  $('#post').height() - $(window).height();
-
+  var postH = $('#post').height() - $(window).height();
+  
   $(window).scroll(function () {
     if (document.querySelector('#post')) {
       var scrollH = parseInt(document.querySelector('#post')
@@ -76,16 +76,20 @@ $(function () {
   // update the reading progress lines of post
   function updateProgress(postH, scrollH) {
     var result = '';
-
+    
     if (Math.abs(scrollH) === 0) {
       result = '0%'
+      
       $('.sidebar-progress').css('display', 'block');
     } else if (scrollH < 0) {
-      if (parseInt((Math.abs(scrollH) / postH) * 100) > 100) {
-        result = '100%';
+      var scrollH = Math.abs(scrollH);
+      
+      if (scrollH <= postH) {
+        result = parseInt((scrollH / postH) * 100) + '%';
       } else {
-        result = parseInt((Math.abs(scrollH) / postH) * 100) + '%';
+        result = '100%';
       }
+
       $('.sidebar-progress').css('display', 'block');
     } else {
       $('.sidebar-progress').css('display', 'none');
