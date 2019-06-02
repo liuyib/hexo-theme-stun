@@ -1,13 +1,16 @@
+#post
+  overflow: hidden
+
 .post-header
   margin: 0 0 1rem
   text-align: center
 
   .post-title
-    margin: 0 0 .5rem 0
+    margin: 0 0 .5rem
     padding-left: 0
     font-size: $font-post-title is defined ? $font-post-title : 2rem
+    word-wrap: break-word
     color: $post-info-title-color
-    cursor: default
 
     &::before
       content: ''
@@ -20,12 +23,7 @@
     *::after
       margin-right: .2rem
       font-family: $font-icon-family
-
-    &-create,
-    &-word,
-    &-read
-      margin-right: .2rem
-
+    
     .dot
       margin: 0 .5rem
       color: #666
@@ -84,13 +82,15 @@ else
     .copyright-name
       margin-right: .5rem
       font-weight: $font-weight-bold
+      white-space: nowrap
 
     .copyright-value
+      word-break: break-all
       color: $font-color
 
   &-tags
     margin-bottom: 1rem
-    
+
     &::before
       content: $nav-tag-2
       margin-left: 3px

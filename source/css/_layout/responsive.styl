@@ -1,31 +1,162 @@
-// m-width: 992px
-// -----------------------------------------
-@media screen and (min-width: $m-width)
-  .main-content-layout,
-  .main-content
-    width: $main-desktop
-
-@media screen and (max-width: $m-width)
-  #header,
-  #footer
-    background-attachment: local
-  
-  #header
-    height: 300px
-
 // $content-desktop: 1340px
 // -----------------------------------------
 @media screen and (min-width: $content-desktop)
   #header
     width: 100%
-  
+
+  .header-nav-inner
+    width: $content-desktop
+
   #main-inner
     width: $content-desktop
 
 @media screen and (max-width: $content-desktop)
+  .header-nav-inner
+    width: 100%
+
   #sidebar
     display: none
 
-  .main-content
+  .main-content,
+  .home-content
     float: none
     margin: 0 auto
+
+  .main-content-layout
+    float: none
+    margin: 0 auto
+
+// $md-width: 992px
+// -----------------------------------------
+@media screen and (min-width: $md-width)
+  .main-content-layout,
+  .main-content
+    width: $main-desktop
+
+  .home-content
+    width: $main-desktop
+
+@media screen and (max-width: $md-width)
+  #header,
+  #footer
+    background-attachment: local
+
+  #header
+    height: 300px
+
+  #header,
+  #main
+    margin-bottom: 2rem
+
+  .main-content
+    padding: 1.5rem
+    width: 100%
+
+  .home-content
+    width: 100%
+
+  .main-content-layout
+    width: 100%
+
+// sm-width: 768px
+// -----------------------------------------
+@media screen and (min-width: $sm-width)
+  .header-nav-menu-inner
+    display: block !important
+    opacity: 1 !important
+
+@media screen and (max-width: $sm-width)
+  .header-nav-menu-inner
+    display: none
+    height: auto
+    background-color: $white-light
+    border-radius: 3px
+
+    li
+      float: none
+      margin: 0
+
+    a
+      padding: 0 1rem
+      color: $black-light
+      user-select: none
+
+      &:hover
+        color: $white-light
+        background-color: $blue-lighter
+  
+  .header-nav-menu
+    .menu-icon
+      &::before
+        content: $nav-menu
+        float: left
+        margin-right: .5rem
+        padding: 0 .5rem
+        font-family: 'fontStun'
+        font-style: normal
+        line-height: $header-nav-height
+        color: $white-light
+
+      &:hover
+        &::before
+          color: $header-nav-link-hover-color
+          cursor: pointer
+
+// $xs-width: 576px
+// -----------------------------------------
+@media screen and (max-width: $xs-width)
+  #header
+    height: 240px
+
+  #header,
+  #main
+    margin-bottom: 1.5rem
+
+  .header-info-inner
+    .site-info-title
+      font-size: 1.75rem
+
+    .site-info-subtitle
+      font-size: 1.25rem
+  
+  .header-nav-search
+    span
+      display: none
+
+  .main-content
+    padding: 1rem
+
+  .post-header
+    .post-title
+      font-size: 1.25rem
+
+    .post-meta
+      &-create,
+      &-read,
+      &-word
+        :first-child
+          display: none
+
+      .dot
+        margin: 0 .3rem
+
+  .reward-qr
+    flex-direction: column
+
+  #recent-posts
+    .post-item
+      margin: 0 0 1.5rem
+      padding: 1.25rem
+
+  .main-content-layout
+    padding: 1.25rem
+
+  .archive-inner
+    margin-left: .5rem
+
+    .article-sort-title
+      margin-bottom: .8rem
+      font-size: 1rem
+
+    .article-sort-item
+      margin-bottom: .5rem

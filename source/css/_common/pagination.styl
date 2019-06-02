@@ -3,11 +3,11 @@
   margin-top: 1em
   width: 100%
   font-size: 1.2em
-  text-align: center
 
   .paginator-inner
     border-radius: 5px
     padding: .7em 0
+    text-align: center
     background-color: $white
 
   a.page-number
@@ -69,17 +69,20 @@
     &::after
       content: $icon-next
 
-  // paginator after post
-  // -------------------------
-  .post-paginator
-    overflow: hidden
-    border-top: 1px solid #e8e8e8
-    padding-top: 2em
+// paginator after post
+// -------------------------
+.post-paginator
+  overflow: hidden
+  border-top: 1px solid #e8e8e8
+  padding-top: 2em
 
   .article-prev,
   .article-next
+    width: 100%
+
     a
       border-bottom: 0
+      word-break: break-all
       color: $pagination-arrow-color
 
       &::before,
@@ -89,15 +92,21 @@
       &:hover
         color: $pagination-arrow-hover-color
 
-  .article-prev a
-    &::before
-      content: $icon-prev
-      margin-right: .5em
+  .article-prev
+    text-align: left
 
-  .article-next a
-    &::after
-      content: $icon-next
-      margin-left: .5em
+    a
+      &::before
+        content: $icon-prev
+        margin-right: .5em
+
+  .article-next
+    text-align: right
+
+    a
+      &::after
+        content: $icon-next
+        margin-left: .5em
 
   .pull-left
     float: left

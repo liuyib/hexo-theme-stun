@@ -12,25 +12,25 @@ menu:
   # XXX: /xxx
 
 # Favicon
-favicon: /imgs/favicon.ico
+favicon: 
 
 # Avatar in the sidebar
-avatar: /imgs/my_avatar.jpg
+avatar: 
 
 # Social links
 social:
-  github:
-  segmentfault:
-  twitter:
-  weibo:
-  wechat:
-  qq:
-  telegram:
+  github: 
+  segmentfault: 
+  twitter: 
+  weibo: 
+  wechat: 
+  qq: 
+  telegram: 
 
 # Subscribe of email and rss
 feed:
-  mail:
-  rss:
+  mail: 
+  rss: 
 
 # Stylesheets loaded in the <head>
 stylesheets:
@@ -40,12 +40,13 @@ stylesheets:
 scripts:
   - /js/utils.js
   - /js/scroll.js
+  - /js/header.js
   - /js/sidebar.js
   - /js/post.js
 
-# CND for libs
+# CND for third libs
 cdn:
-  # css:
+  # css: 
   js:
     jquery: https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js
     velocity: https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js
@@ -81,8 +82,8 @@ highlight_theme: light
 reward:
   enable: true
   qr_img_url:
-    alipay:
-    wechat:
+    alipay: 
+    wechat: 
 
 # --------------------------------------------------
 # Icon
@@ -104,7 +105,8 @@ code_word_wrap: true
 # - center
 # - right
 # 
-# If you don't want to set the align of img, please empty it
+# If you don't want to set the align of img
+# please empty it, then img will show by default
 # --------------------------------------------------
 img_horizonal_align: 
 
@@ -136,49 +138,49 @@ site_copyright:
   enable: true
   start: 2019
   # If not set, default is the latest year
-  end:
+  end: 
 
 # --------------------------------------------------
 # ICP
 # --------------------------------------------------
 ICP:
   enable: false
-  text:
+  text: 
 
 # --------------------------------------------------
 # PWA
 # See https://github.com/JLHwung/hexo-offline
 # --------------------------------------------------
-pwa:
-  enable: true
-  manifest: /manifest.json
+# pwa:
+#   enable: true
+#   manifest: /manifest.json
 
 # --------------------------------------------------
 # Busuanzi count for PV / UV in site
 # --------------------------------------------------
-busuanzi:
-  # Count values only if the other configs are false
-  enable: true
-  # Custom uv span for the whole site
-  site_uv: true
-  site_uv_header: <i class="fa fa-user"></i>
-  site_uv_footer:
-  # Custom pv span for the whole site
-  site_pv: true
-  site_pv_header: <i class="fa fa-eye"></i>
-  site_pv_footer:
-  # Custom pv span for one page only
-  page_pv: true
-  page_pv_header: <i class="fa fa-file"></i>
-  page_pv_footer:
+# busuanzi:
+#   # Count values only if the other configs are false
+#   enable: true
+#   # Custom uv span for the whole site
+#   site_uv: true
+#   site_uv_header: <i class="fa fa-user"></i>
+#   site_uv_footer:
+#   # Custom pv span for the whole site
+#   site_pv: true
+#   site_pv_header: <i class="fa fa-eye"></i>
+#   site_pv_footer:
+#   # Custom pv span for one page only
+#   page_pv: true
+#   page_pv_header: <i class="fa fa-file"></i>
+#   page_pv_footer:
 
 # --------------------------------------------------
 # Canvas ribbon
 # See: https://github.com/hustcc/ribbon.js
 # --------------------------------------------------
-canvas_ribbon:
-  enable: false
-  size: 150
-  alpha: 0.6
-  zIndex: -1
-  click_to_change: false
+# canvas_ribbon:
+#   enable: false
+#   size: 150
+#   alpha: 0.6
+#   zIndex: -1
+#   click_to_change: false

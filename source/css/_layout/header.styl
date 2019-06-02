@@ -30,6 +30,18 @@
   .icon-search::before
     content: $nav-search
 
+$header-nav-color
+  .header-nav-menu,
+  .header-nav-search
+    color: $header-nav-link-color
+
+    &:hover
+      color: $header-nav-link-hover-color
+
+      &::before,
+      &::after
+        color: $header-nav-link-hover-color
+
 #header-nav
   position: fixed
   top: 0
@@ -40,12 +52,7 @@
 
   &.fixed
     background-color: alpha($header-nav-bg-color, .5)
-
-    a
-      color: $header-nav-link-color
-
-      &:hover
-        color: $header-nav-link-hover-color
+    @extend $header-nav-color
 
   &.nav-slider
     animation-duration: .3s
@@ -58,19 +65,31 @@
   &.slider-up
     animation-name: header-sliderUp
 
-.header-nav-menu
+.header-nav-inner
   position: relative
   margin: 0 auto
-  width: $content-desktop
+  padding: 0 1rem
+  height: 100%
+
+.header-nav-menu a,
+.header-nav-search
+  color: $header-nav-link-color
+
+  &:hover
+    color: $header-nav-link-hover-color
+
+    &::before,
+    &::after
+      color: $header-nav-link-hover-color
+
+.header-nav-menu-inner
+  float: left
+  margin: 0
+  padding: 0
   height: 100%
 
   &-icon
     margin-right: .25rem
-
-  ul
-    margin: 0
-    padding: 0
-    height: 100%
 
   li
     float: left
@@ -78,21 +97,34 @@
     margin: 0 1rem 0 0
     height: 100%
 
-    &:hover
-      color: $header-link-hover-color
+  a
+    display: block
+    border-bottom: 0
+    padding: 0 .5rem
+    height: 100%
+    line-height: $header-nav-height
+    text-decoration: none
+    transition: color .2s ease
 
-    a
-      display: block
-      border-bottom: 0
-      padding: 0 .5rem
-      height: 100%
-      line-height: $header-nav-height
-      text-decoration: none
-      color: $header-nav-link-color
-      transition: color .2s ease
+  i
+    margin-right: .3rem      
 
-      &:hover
-        color: $header-nav-link-hover-color
+.header-nav-search
+  float: right
+  padding: 0 .5rem
+  height: 100%
+  line-height: $header-nav-height
+  color: $white-light
+
+  &::before
+    content: $nav-search
+    margin-right: .3rem
+    font-family: 'fontStun'
+    font-style: normal
+    color: $white-light
+
+  &:hover
+    cursor: pointer
 
 #header-info
   display: flex
@@ -123,22 +155,19 @@
       background-attachment: fixed
       filter: blur($site-info-blur-level)
 
-  .header-info-inner
-    display: flex
-    position: relative
-    z-index: $z-index-4
-    width: 100%
-    height: 100%
-    flex: 1
-    flex-direction: column
-    justify-content: center
+.header-info-inner
+  display: flex
+  width: 100%
+  height: 100%
+  flex-direction: column
+  justify-content: center
 
-    .site-info-title
-      font-size: 2.5rem
-      font-weight: $font-weight-bolder
-      color: #f9f9f9
+  .site-info-title
+    font-size: 2.5rem
+    font-weight: $font-weight-bolder
+    color: #f9f9f9
 
-    .site-info-subtitle
-      font-size: 2rem
-      font-weight: $font-weight-bold
-      color: #f9f9f9
+  .site-info-subtitle
+    font-size: 2rem
+    font-weight: $font-weight-bold
+    color: #f9f9f9

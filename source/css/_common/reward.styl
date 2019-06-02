@@ -2,44 +2,44 @@
   display: flex
   flex-direction: column
 
-  .reward-button
-    margin: 1rem auto 1.5rem
-    border-radius: 10px
-    padding: .2rem 1rem
-    color: $white-light
-    background-color: $reward-btn-color
-    transition: background-color .2s
-    cursor: pointer
+.reward-button
+  margin: 1rem auto 1.5rem
+  border-radius: 10px
+  padding: .2rem 1rem
+  color: $white-light
+  background-color: $reward-btn-color
+  transition: background-color .2s
+  cursor: pointer
+  justify-content: center
+
+  &:hover
+    background-color: $reward-btn-hover-color
+
+.reward-qr
+  display: flex
+
+  &-alipay,
+  &-wechat
+    margin: 0 auto
+    text-align: center
     justify-content: center
 
-    &:hover
-      background-color: $reward-btn-hover-color
+    img
+      width: 200px
+      height: 200px
 
-  .reward-qr
+  &-alipay-text,
+  &-wechat-text
+    margin: .5rem 0
+
+  &-alipay-text
+    color: $reward-alipay-color
+
+  &-wechat-text
+    color: $reward-wechat-color
+
+  &.qr-hide
+    display: none
+
+  &.qr-show
     display: flex
-
-    .reward-qr-alipay,
-    .reward-qr-wechat
-      margin: 0 auto
-      text-align: center
-      justify-content: center
-
-      img
-        width: 200px
-        height: 200px
-
-      .reward-qr-alipay-text,
-      .reward-qr-wechat-text
-        margin-top: .5rem
-
-      .reward-qr-alipay-text
-        color: $reward-alipay-color
-
-      .reward-qr-wechat-text
-        color: $reward-wechat-color
-
-    &.qr-hide
-      display: none
-
-    &.qr-show
-      display: flex

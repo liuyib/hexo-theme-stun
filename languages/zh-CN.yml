@@ -6,13 +6,14 @@ title:
   tags: 标签页
   about: 关于页
 
-# 导航栏菜单
-menu:
+# 导航栏
+nav:
   home: 首页
   archives: 归档
   categories: 分类
   tags: 标签
   about: 关于
+  search: 搜索
 
 # 归档页、分类页、标签页
 page:
