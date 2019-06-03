@@ -1,18 +1,33 @@
-<center>
-  <img style="width: 200px;" src="https://raw.githubusercontent.com/liuyib/picBed/master/hexo-blog/20190602210819.png" alt="stun-logo">
-</center>
+<p align="center"><a href="https://liuyib.github.io/hexo-theme-stun/" target="_blank" rel="noopener noreferrer"><img width="100" src="https://raw.githubusercontent.com/liuyib/picBed/master/hexo-blog/20190603093757.png" alt="stun logo"></a></p>
 
-<center><strong>一个漂亮、好用的 hexo 主题</strong></center>
+<h2 align="center">一个漂亮、好用的 hexo 主题</h2>
+
+<p align="center">
+  <a href="https://standardjs.com/" target="_blank" rel="noopener noreferrer">
+    <img alt="JavaScript Style Guide" src="https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square">
+  </a>
+  <a href="https://github.com/liuyib/hexo-theme-stun/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">
+    <img alt="GitHub" src="https://img.shields.io/github/license/liuyib/hexo-theme-stun.svg?style=flat-square">
+  </a>
+  <a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener noreferrer">
+    <img alt="hexo" src="https://img.shields.io/badge/hexo-%3E%3D3.0-blue.svg?style=flat-square">
+  </a>
+  <a href="https://github.com/liuyib/hexo-theme-stun/releases" target="_blank" rel="noopener noreferrer">
+    <img alt="GitHub release" src="https://img.shields.io/github/release/liuyib/hexo-theme-stun.svg?style=flat-square">
+  </a>
+</p>
 
 ## 演示
 
 - [蚂蚁的博客](https://liuyib.github.io/)
 
-如果你正在使用主题 stun，并且希望在这里展示你的网站，你可以进行 PR 将你的网站链接写在这里。
+如果你正在使用主题 stun，并且希望在这里展示你的网站，你可以通过 PR 将你的网站链接填写在这里。
 
 ## 安装
 
 - 安装 stun
+
+进入 hexo 根目录，执行指令。
 
 ``` bash
 git clone https://github.com/liuyib/hexo-theme-stun.git themes/stun
@@ -77,6 +92,6 @@ IE >= 10
 
 ## 开源协议
 
-[MIT]()
+[MIT](https://github.com/liuyib/hexo-theme-stun/blob/master/LICENSE)
 
 Copyright(c) 2019-present, liuyib
