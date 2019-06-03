@@ -1,6 +1,6 @@
 <p align="center"><a href="https://liuyib.github.io/hexo-theme-stun/" target="_blank" rel="noopener noreferrer"><img width="100" src="https://raw.githubusercontent.com/liuyib/picBed/master/hexo-blog/20190603093757.png" alt="stun logo"></a></p>
 
-<h2 align="center">一个漂亮、好用的 hexo 主题</h2>
+<h3 align="center">一个漂亮、好用的 hexo 主题</h3>
 
 <p align="center">
   <a href="https://standardjs.com/" target="_blank" rel="noopener noreferrer">
@@ -79,16 +79,7 @@ IE >= 10
 
 ## 打赏
 
-<center style="display: flex; justify-content: center;">
-  <div>
-    <img style="width: 200px;" src="https://raw.githubusercontent.com/liuyib/picBed/master/hexo-blog/20190529222805.png" alt="alipay" title="alipay">
-    <p>支付宝</p>
-  </div>
-  <div>
-    <img style="width: 200px;" src="https://raw.githubusercontent.com/liuyib/picBed/master/hexo-blog/20190529222806.png" alt="wechat" title="wechat">
-    <p>微信</p>
-  </div>
-</center>
+<p align="center"><img style="height: 200px" src="https://raw.githubusercontent.com/liuyib/picBed/master/hexo-blog/20190603113841.png" alt="reward qr"></p>
 
 ## 开源协议
 
