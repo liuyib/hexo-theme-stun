@@ -58,7 +58,8 @@ else if (hexo-config('img_horizonal_align') == 'right')
 else
   img_horizonal_align = null
 
-.post-body
+.post-body,
+#recent-posts
   if (img_horizonal_align != null)
     display: flex
     flex-direction: column
@@ -66,6 +67,10 @@ else
     img
       display: block
       margin: img_horizonal_align
+
+.post-body
+  #more
+    border: 0
 
 .post-footer
   &-copyright
