@@ -1,10 +1,10 @@
 <p align="center"><a href="https://liuyib.github.io/hexo-theme-stun/" target="_blank" rel="noopener noreferrer"><img width="100" src="https://raw.githubusercontent.com/liuyib/picBed/master/hexo-blog/20190603093757.png" alt="stun logo"></a></p>
 
-<h3 align="center">一个漂亮、好用的 hexo 主题</h3>
+<h3 align="center">一个漂亮、简洁的 hexo 主题</h3>
 
 <p align="center">
-  <a href="https://standardjs.com/" target="_blank" rel="noopener noreferrer">
-    <img alt="JavaScript Style Guide" src="https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square">
+  <a href="http://commitizen.github.io/cz-cli/" target="_blank" rel="noopener noreferrer">
+    <img alt="Commitizen friendly" src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square">
   </a>
   <a href="https://github.com/liuyib/hexo-theme-stun/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">
     <img alt="GitHub" src="https://img.shields.io/github/license/liuyib/hexo-theme-stun.svg?style=flat-square">
@@ -21,7 +21,7 @@
 
 - [蚂蚁的博客](https://liuyib.github.io/)
 
-如果你正在使用主题 stun，并且希望在这里展示你的网站，你可以通过 PR 将你的网站链接填写在这里。
+如果你正在使用 stun 主题，并希望像上面一样，在这里展示出来，你可以通过 PR 将你的网站链接填写在这里。
 
 ## 安装
 
@@ -33,19 +33,13 @@
 git clone https://github.com/liuyib/hexo-theme-stun.git themes/stun
 ```
 
-- 如果你是第一次使用 hexo，需要执行指令
+- 如果你没有安装对 pug, stylus 的支持，还需执行指令
 
 ``` bash
-npm install
+npm install --save-dev hexo-render-pug hexo-renderer-stylus
 ```
 
-- 如果你没有安装对 pug 的支持，请执行指令
-
-``` bash
-npm install --save-dev hexo-render-pug
-```
-
-# 使用
+## 使用
 
 修改 hexo 根目录下的 `_config.yml` 文件。
 
@@ -71,18 +65,12 @@ favicon: # url or path
 avatar: # url or path
 ```
 
-更多配置，请访问：[https://liuyib.github.io/hexo-theme-stun/](https://liuyib.github.io/hexo-theme-stun/)
+详细配置，请访问：[https://liuyib.github.io/hexo-theme-stun/](https://liuyib.github.io/hexo-theme-stun/)
 
 ## 浏览器支持
 
 IE >= 10
 
-## 打赏
-
-<p align="center"><img style="height: 200px" src="https://raw.githubusercontent.com/liuyib/picBed/master/hexo-blog/20190603113841.png" alt="reward qr"></p>
-
 ## 开源协议
 
 [MIT](https://github.com/liuyib/hexo-theme-stun/blob/master/LICENSE)
-
-Copyright(c) 2019-present, liuyib
