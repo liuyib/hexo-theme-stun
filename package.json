@@ -5,7 +5,9 @@
   "homepage": "https://liuyib.github.io",
   "scripts": {
     "cz": "git cz",
-    "release": "standard-version"
+    "release": "standard-version",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "repository": {
     "type": "git",
@@ -30,7 +32,8 @@
     "commitlint-config-cz": "^0.11.1",
     "cz-customizable": "^6.2.0",
     "husky": "^2.3.0",
-    "standard-version": "^6.0.1"
+    "standard-version": "^6.0.1",
+    "vuepress": "^0.14.11"
   },
   "husky": {
     "hooks": {
