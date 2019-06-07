@@ -8,6 +8,9 @@ html(lang=config.language)
       include ./main.pug
       include ./footer.pug
 
+      if theme.back_to_top
+        include ./components/back-top.pug
+
     if theme.cdn && theme.cdn.js
       each url in theme.cdn.js
         if url

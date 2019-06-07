@@ -1,22 +1,29 @@
 $(function () {
+  var SIDEBAR_STICKY_TOP = 30;
   var prevScrollTop = 0;
+  var initScrollTop = $(window).scrollTop();
   
+  headerNavScroll(initScrollTop);
+  backToTop(initScrollTop);
+
   $(window).scroll(throttle(function () {
     var scrollTop = $(this).scrollTop();
     
     headerNavScroll(scrollTop);
+    backToTop(scrollTop);
   }, 20, 100));
   
+  var post = document.querySelector('#post');
   var postH = $('#post').height() - $(window).height();
+  var scrollH = post && parseInt(post.getBoundingClientRect().top);
+  
+  updateProgress(postH, scrollH);
+  sidebarSticky();
   
   $(window).scroll(function () {
-    if (document.querySelector('#post')) {
-      var scrollH = parseInt(document.querySelector('#post')
-        .getBoundingClientRect().top);
+    var scrollH = post && parseInt(post.getBoundingClientRect().top);
 
-      updateProgress(postH, scrollH);
-    }
-
+    updateProgress(postH, scrollH);
     sidebarSticky();
   });
 
@@ -33,6 +40,21 @@ $(function () {
 
     scrollToHead($(this).attr('href'));
   });
+
+  $('#back-top').click(function () {
+    $('body').velocity('stop').velocity('scroll', {
+      duration: 500,
+      easing: 'easeOutQuart'
+    });
+
+    $('#back-top').velocity({
+      translateY: '-100vh',
+    }, {
+      duration: 500
+    }).velocity('reverse', {
+      duration: 10
+    });
+  });
   
   // site header nav scroll
   function headerNavScroll(scrollTop) {
@@ -40,6 +62,8 @@ $(function () {
 
     if (scrollTop === 0) {
       $('#header-nav').removeClass('fixed');
+      $('#header-nav').removeClass('slider-up');
+      $('#header-nav').addClass('slider-down');
     } else {
       $('#header-nav').addClass('fixed');
 
@@ -64,8 +88,8 @@ $(function () {
     if (document.querySelector('#main-inner')) {
       var targetY = document.querySelector('#main-inner')
         .getBoundingClientRect().top;
-  
-      if (targetY < 30) {
+
+      if (targetY < SIDEBAR_STICKY_TOP) {
         $('.sidebar-inner').addClass('sticky');
       } else {
         $('.sidebar-inner').removeClass('sticky');
@@ -105,5 +129,14 @@ $(function () {
       duration: 500,
       easing: 'easeOutSine'
     });
+  }
+
+  // back to top
+  function backToTop(scrollTop) {
+    if (scrollTop !== 0) {
+      $('#back-top').css('display', 'block');
+    } else {
+      $('#back-top').css('display', 'none');
+    }
   }
 });
