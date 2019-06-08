@@ -3,7 +3,7 @@ extends includes/layout.pug
 block content
   include ./includes/components/sidebar.pug
   
-  if (page.type === 'tags')
+  if (page.title === 'tags')
     div.tag-cloud.main-content-layout
       div.tag-cloud-title= _p('page.tags') + ' - '
         span.tag-cloud-num= site.tags.length
@@ -13,12 +13,16 @@ block content
       - var end_color = theme.tag ? theme.tag.end_color : '#1b9ef3'
       div.tag-cloud-item!= tagcloud({min_font: min_font, max_font: max_font, amount: 200, color: true, start_color, end_color})
 
-  if (page.type === 'categories')
+  else if (page.title === 'categories')
     div.category.main-content
       div.category-title= _p('page.categories') + ' - '
         span.category-num= site.categories.length
       != list_categories()
 
-  if (page.type === 'about')
+  else if (page.title === 'about')
+    div.about.main-content.code-highlight
+      != page.content
+
+  else
     div.about.main-content.code-highlight
       != page.content
