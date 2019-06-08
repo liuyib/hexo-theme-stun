@@ -53,8 +53,9 @@ aside#sidebar
                 div.site-state-item-count= site.tags.length
                 div.site-state-item-name= _p('sidebar.tags')
 
-    div.sidebar-progress
-      div.sidebar-progress-read
-        span= _p('sidebar.read_info')
-        span.sidebar-progress-number
-      div.sidebar-progress-line
+    if is_post()
+      div.sidebar-progress
+        div.sidebar-progress-read
+          span= _p('sidebar.read_info')
+          span.sidebar-progress-number
+        div.sidebar-progress-line
