@@ -14,6 +14,7 @@ nav:
   tags: 标签
   about: 关于
   search: 搜索
+  read: 阅读
 
 # 归档页、分类页、标签页
 page:
@@ -56,6 +57,9 @@ reward:
   btn_text: 请我喝杯咖啡~
   alipay: 支付宝打赏
   wechat: 微信打赏
+
+# 回到顶部
+back_to_top: 回到顶部
 
 # 网站底部
 footer:

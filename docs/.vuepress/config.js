@@ -30,6 +30,7 @@ module.exports = {
     // 如果你的文档不在仓库的根部，请指定 docsRepo 元字符
     docsDir: 'docs',
     docsBranch: 'master',
+    sidebarDepth: 3,
     locales: {
       '/': {
         label: 'English',
@@ -43,7 +44,7 @@ module.exports = {
           }
         },
         sidebar: {
-          '/guide/': genSidebarConfig('guide'),
+          '/': getEnSidebar('guide'),
         },
         nav: [
           {
@@ -73,7 +74,7 @@ module.exports = {
           }
         },
         sidebar: {
-          '/zh-CN/guide/': genSidebarConfig('指南'),
+          '/zh-CN/': getZhSidebar('指南'),
         },
         nav: [
           {
@@ -95,13 +96,27 @@ module.exports = {
   },
 };
 
-function genSidebarConfig(title) {
+function getEnSidebar(title) {
   return [
     {
       title,
       collapsable: false,
       children: [
-        '',
+        '/guide/',
+        '/advanced/theme-config'
+      ],
+    },
+  ];
+}
+
+function getZhSidebar(title) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '/zh-CN/guide/',
+        '/zh-CN/advanced/theme-config'
       ],
     },
   ];
