@@ -36,6 +36,9 @@
     border-color: $sidebar-nav-text-hover-color
     color: $sidebar-nav-text-hover-color
 
+if (hexo-config('avatar_animation'))
+  $avatar-animation = 'avatar-' + hexo-config('avatar_animation')
+
 .site-overview
   .site-author
     display: flex
@@ -50,7 +53,7 @@
       height: 150px
 
       &:hover
-        animation: $avatar-hover-animation .8s both ease-out
+        animation: $avatar-animation .8s both ease-out
 
     &-description
       margin-bottom: 0

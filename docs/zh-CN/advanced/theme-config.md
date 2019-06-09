@@ -48,13 +48,21 @@ menu:
 在 hexo 根目录执行指令。
 
 ``` bash
-hexo new page xxx # xxx 表示页面名称 e.g. about
+hexo new page xxx # xxx 表示页面名称
 ```
 
 执行这条指令后，会在 `source/xxx` 目录下生成 `index.md` 文件。
 
 ::: warning
 这里新建的页面名称，需要和 `stun.yml` 文件中添加的页面路径名称保持一致。
+
+e.g. 你在 `stun.yml` 中进行了如下设置：
+``` yaml
+menu:
+  about: /about-me
+```
+
+那么你应该执行指令：`hexo new page about-me`
 :::
 
 ## 自定义页面
@@ -142,6 +150,34 @@ avatar: # 填写图片路径或链接
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608225634.png)
 
+## 头像 hover 动画
+
+设置鼠标经过头像时的动画，修改 `stun.yml` 文件：
+
+``` yaml
+avatar_animation: turn
+```
+
+可选值有：`turn`, `shake`。
+
+## 顶部导航栏高度
+
+修改 `stun.yml` 文件：
+
+``` yaml
+header_nav_height: 50px
+```
+
+## 网站头部高度
+
+修改 `stun.yml` 文件：
+
+``` yaml
+header_height: 80%
+```
+
+支持任意 CSS 单位的数值，默认值为屏幕高度的 80%。
+
 ## 顶部图
 
 设置网站顶部图片，修改 `stun.yml` 文件：
@@ -154,20 +190,36 @@ header_bg_img: # 填写图片路径或链接
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190609105301.jpg)
 
-设置了 `header_bg_img` 选项之后，默认所有页面都会使用这张图片作为顶部图片。如果想要为某个页面或某篇文章单独指定顶部图，在页面或文章的 `md` 文件头部，添加 `top_img` 项，填入你想要的图片 url 或路径即可。例如：
+当你设置了顶部图之后，所有页面都会使用这张图片作为顶部图。如果想要为某个页面或某篇文章单独指定顶部图，在页面或文章的 `md` 文件头部，添加 `top_img` 项，填入你想要的图片 url 或路径即可。例如：
 
 ``` yaml
 ---
 title: Hello Stun
 date: 2019-05-15 22:54:49
-top_img: https://raw.githubusercontent.com/liuyib/picBed/master/hexo-blog/20190528163523.jpg
+top_img: https://xxxx.jpg
 tags:
   - hexo-theme
   - stun
 ---
 ```
 
+## 顶部图模糊滤镜
+
+某些情况下，你可能需要顶部图具有模糊滤镜效果，那么你只需要修改 `stun.yml` 文件：
+
+``` yaml
+top_img_blur:
+  enable: true # 设为 false 表示不启用
+  level: '15px'
+```
+
+其中 `level` 表示模糊程度，支持任意 CSS 单位的数值。效果如下：
+
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190609164629.jpg)
+
 ## 底部图
+
+修改 `stun.yml` 文件：
 
 ``` yaml
 footer_bg_img: # 填写图片路径或链接
@@ -356,11 +408,11 @@ post_copyright:
   license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
 ```
 
-默认启用并采用 `CC BY-NC-SA 4.0` 许可协议，效果如下：
+默认启用并采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议，效果如下：
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190609092406.png)
 
-## 站点年份声明
+## 站点年份
 
 设置网站底部的年份，修改 `stun.yml` 文件：
 
@@ -368,25 +420,23 @@ post_copyright:
 site_copyright:
   enable: true # 设为 false 表示不启用
   start: 2019
-  # 如果不设置，默认到最新的年份
+  # 如果不设置，默认是最新的年份
   end: 
 ```
 
-你可以显式的设置开始（start）和截止（end）时间。其中开始时间必须设置，截止时间不设置默认为最新的年份。
+其中开始时间必须设置，截止时间不设置默认为最新的年份。效果分别如下：
 
-效果分别如下：
+- 设置开始、截止时间
 
-- 设置截止时间
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190609170802.png)
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190609094527.png)
+- 设置开始时间，不设置截止时间
 
-- 不设置截止时间
-
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190609094715.png)
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190609170803.png)
 
 - 开始时间和截止时间相同
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190609094528.png)
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190609170801.png)
 
 ## 底部自定义文字
 
@@ -396,8 +446,8 @@ site_copyright:
 footer_custom_text: 
 ```
 
-默认值为空。你可以填写任意信息，通常用于填写 ICP 备案号，网站采用的服务等等。
+你可以填写任意信息，通常用于填写 ICP 备案号，网站采用的服务等等。
 
-例如，填写为 `footer_custom_text: Hello there. 博客托管于 <a href="https://github.com/">Github</a>.<br>备案 xxxxxxxxx 号.`，效果如下：
+例如，设置为 `Hello there. 博客托管于 <a href="https://github.com/">Github</a>.<br>备案 xxxxxxxxx 号.`，效果如下：
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190609101330.png)

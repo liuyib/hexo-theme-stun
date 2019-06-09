@@ -1,6 +1,9 @@
 if (hexo-config('header_bg_img'))
   $header-bg-img = hexo-config('header_bg_img')
 
+if (hexo-config('header_height'))
+  $header-height = unit(convert(hexo-config('header_height')), 'vh')
+
 #header
   display: flex
   position: relative
@@ -47,6 +50,9 @@ $header-nav-color
       &::before,
       &::after
         color: $header-nav-link-hover-color
+
+if (hexo-config('header_nav_height'))
+  $header-nav-height = convert(hexo-config('header_nav_height'))
 
 #header-nav
   position: fixed
@@ -132,8 +138,13 @@ $header-nav-color
   &:hover
     cursor: pointer
 
+if (hexo-config('top_img_blur') && hexo-config('top_img_blur.enable'))
+  $site-info-blur-enable = true
+  $site-info-blur-level = convert(hexo-config('top_img_blur.level'))
+
 #header-info
   display: flex
+  z-index: $z-index-1
   text-align: center
   flex: 1
   flex-direction: column
@@ -142,10 +153,10 @@ $header-nav-color
   if ($site-info-blur-enable == true)
     overflow: hidden
     position: absolute
-    top: calc(50% - 150px)
-    left: calc(50% - 300px)
-    width: 600px
-    height: 300px
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
     background: inherit
 
     // blur effect
@@ -156,10 +167,12 @@ $header-nav-color
       right: 0
       bottom: 0
       left: 0
-      margin: 0 - $site-info-blur-spread
+      z-index: $z-index-0
+      // convert string to stylus node
+      margin: 0 - $site-info-blur-level * 1.5
       background: inherit
       background-attachment: fixed
-      filter: blur($site-info-blur-level)
+      filter: blur(20px)
 
 .header-info-inner
   display: flex

@@ -55,60 +55,33 @@ cdn:
 # Advanced config
 # ==================================================
 
-# --------------------------------------------------
+# Header navigation bar height
+header_nav_height: 50px
+
+# Header height
+header_height: 80%
+
 # Background image in the header
-# --------------------------------------------------
 header_bg_img: 
 
-# --------------------------------------------------
 # Background image in the footer
-# --------------------------------------------------
 footer_bg_img: 
 
-# --------------------------------------------------
-# Tag cloud
-# If not used, comment it or ignore it
-# --------------------------------------------------
-tag:
-  # Color for tag（please use quote to wrap value, only support HEX）
-  start_color: '#a4d8fa'
-  end_color: '#49b1f5'
-  # Font size for tag
-  min_font_size: 16
-  max_font_size: 30
-
-# --------------------------------------------------
 # Code highlight
 # values:
 # - light
 # - dark
 # - ocean
-# --------------------------------------------------
 highlight_theme: light
 
-# --------------------------------------------------
-# Reward
-# --------------------------------------------------
-reward:
-  enable: false
-  qr_img_url:
-    alipay: 
-    wechat: 
-
-# --------------------------------------------------
-# Icon
-# --------------------------------------------------
-# Whether to show header menu icon
+# Header menu icon
 # values: true or false
 header_menu_icon_show: true
 
-# --------------------------------------------------
-# Whether to wrap lines when code is overflow
+# Code wrap
 # values: true or false
-# --------------------------------------------------
 code_word_wrap: true
 
-# --------------------------------------------------
 # Horizonal alignment of img
 # values:
 # - left
@@ -117,32 +90,26 @@ code_word_wrap: true
 # 
 # If you don't want to set the align of img
 # please empty it, then img will show by default
-# --------------------------------------------------
 img_horizonal_align: 
 
-# --------------------------------------------------
 # Vertical alignment of text and images
 # values:
 # - top
 # - middle
 # - bottom
-# --------------------------------------------------
 text_vertical_align_with_img: bottom
 
-# --------------------------------------------------
+# Reward
+reward:
+  enable: false
+  qr_img_url:
+    alipay: 
+    wechat: 
+
 # Back to top
 # values: true or false
-# --------------------------------------------------
 back_to_top: true
 
-# --------------------------------------------------
-# Comments
-# --------------------------------------------------
-
-
-# --------------------------------------------------
-# Copyright
-# --------------------------------------------------
 # Copyright of articles
 post_copyright:
   enable: true
@@ -156,45 +123,27 @@ site_copyright:
   # If not set, default is the latest year
   end: 
 
-# --------------------------------------------------
 # Custom text in the footer
-# --------------------------------------------------
 footer_custom_text: 
 
-# --------------------------------------------------
-# PWA
-# See https://github.com/JLHwung/hexo-offline
-# --------------------------------------------------
-# pwa:
-#   enable: true
-#   manifest: /manifest.json
+# Blur filter effect of top image
+top_img_blur:
+  enable: false
+  # Blutrriness
+  level: 15px
 
-# --------------------------------------------------
-# Busuanzi count for PV / UV in site
-# --------------------------------------------------
-# busuanzi:
-#   # Count values only if the other configs are false
-#   enable: true
-#   # Custom uv span for the whole site
-#   site_uv: true
-#   site_uv_header: <i class="fa fa-user"></i>
-#   site_uv_footer:
-#   # Custom pv span for the whole site
-#   site_pv: true
-#   site_pv_header: <i class="fa fa-eye"></i>
-#   site_pv_footer:
-#   # Custom pv span for one page only
-#   page_pv: true
-#   page_pv_header: <i class="fa fa-file"></i>
-#   page_pv_footer:
+# Avatar animation
+# values:
+# - shake
+# - turn
+avatar_animation: turn
 
-# --------------------------------------------------
-# Canvas ribbon
-# See: https://github.com/hustcc/ribbon.js
-# --------------------------------------------------
-# canvas_ribbon:
-#   enable: false
-#   size: 150
-#   alpha: 0.6
-#   zIndex: -1
-#   click_to_change: false
+# Tag cloud
+# If not used, comment it or ignore it
+tag:
+  # Color for tag（please use quote to wrap value, only support HEX）
+  start_color: '#a4d8fa'
+  end_color: '#49b1f5'
+  # Font size for tag
+  min_font_size: 16
+  max_font_size: 30
