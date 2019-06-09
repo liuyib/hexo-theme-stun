@@ -1,10 +1,15 @@
+if (hexo-config('footer_bg_img'))
+  $footer-bg-img = hexo-config('footer_bg_img')
+
 #footer
   font-size: $font-footer-base is defined ? $font-footer-base : 1rem
-  background-color: $footer-bg-color
-  background-image: url($footer-bg-img)
+  background-color: $gray-dark
   background-attachment: fixed
   background-position: bottom
   background-size: cover
+
+  if (hexo-config('footer_bg_img'))
+    background-image: url($footer-bg-img)
 
   span
     vertical-align: middle

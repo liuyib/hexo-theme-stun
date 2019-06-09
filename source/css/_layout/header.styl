@@ -1,15 +1,21 @@
+if (hexo-config('header_bg_img'))
+  $header-bg-img = hexo-config('header_bg_img')
+
 #header
   display: flex
   position: relative
   margin: 0 0 3rem
   height: $header-height
   font-size: $font-header-base is defined ? $font-header-base : 1rem
-  background-image: url($header-bg-img)
+  background-color: $gray-dark
   background-repeat: no-repeat
   background-attachment: fixed
   background-position: center
   background-size: cover
   flex-direction: column
+
+  if (hexo-config('header_bg_img'))
+    background-image: url($header-bg-img)
 
   // header nav menu
   .icon-home::before
@@ -107,7 +113,7 @@ $header-nav-color
     transition: color .2s ease
 
   i
-    margin-right: .3rem      
+    margin-right: .3rem
 
 .header-nav-search
   float: right

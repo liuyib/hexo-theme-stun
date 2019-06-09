@@ -20,8 +20,10 @@ footer#footer
         span!= `&copy; ${startYear}` + (startYear != endYear ? `-${endYear}` : '')
         span.footer-heart= '❤'
         span= config.author + '. '
-      if theme.ICP && theme.ICP.enable
-        span= theme.ICP.text
+    
+    p
+      if theme.footer_custom_text
+        span!= theme.footer_custom_text
 
     //- enable busuanzi to show PV / UV
     if theme.busuanzi && theme.busuanzi.enable

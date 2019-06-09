@@ -142,6 +142,37 @@ avatar: # 填写图片路径或链接
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608225634.png)
 
+## 顶部图
+
+设置网站顶部图片，修改 `stun.yml` 文件：
+
+``` yaml
+header_bg_img: # 填写图片路径或链接
+```
+
+效果如下：
+
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190609105301.jpg)
+
+设置了 `header_bg_img` 选项之后，默认所有页面都会使用这张图片作为顶部图片。如果想要为某个页面或某篇文章单独指定顶部图，在页面或文章的 `md` 文件头部，添加 `top_img` 项，填入你想要的图片 url 或路径即可。例如：
+
+``` yaml
+---
+title: Hello Stun
+date: 2019-05-15 22:54:49
+top_img: https://raw.githubusercontent.com/liuyib/picBed/master/hexo-blog/20190528163523.jpg
+tags:
+  - hexo-theme
+  - stun
+---
+```
+
+## 底部图
+
+``` yaml
+footer_bg_img: # 填写图片路径或链接
+```
+
 ## 友链
 
 修改 `stun.yml` 文件：
@@ -206,7 +237,7 @@ highlight_theme: light
 
 ## 赞赏码
 
-默认没有开启赞赏码，如果你想要使用，修改 `stun.yml` 文件：
+启用或关闭赞赏码，修改 `stun.yml` 文件：
 
 ``` yaml
 reward:
@@ -216,25 +247,29 @@ reward:
     wechat: # 填写图片路径或链接
 ```
 
-效果如下：
+默认不启用。启用效果如下：
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608175556.png)
 
 ## 菜单图标
 
-顶部导航栏图标默认启用，如果你想要关闭图标，修改 `stun.yml` 文件：
+启用或关闭导航栏菜单图标，修改 `stun.yml` 文件：
 
 ``` yaml
 header_menu_icon_show: # true or false
 ```
 
+默认启用。
+
 ## 代码换行
 
-代码溢出时默认是换行的，如果你想要代码溢出时，显示水平滚动条，修改 `stun.yml` 文件：
+设置代码溢出时，是否换行，修改 `stun.yml` 文件：
 
 ``` yaml
 code_word_wrap: # true or false
 ```
+
+默认换行。如果设为不换行，当代码溢出时，显示水平滚动条。
 
 效果分别如下：
 
@@ -299,3 +334,70 @@ text_vertical_align_with_img: # top or middle or bottom
 - `text_vertical_align_with_img: bottom`
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608232754.png)
+
+## 返回顶部
+
+启用或关闭返回顶部按钮，修改 `stun.yml` 文件：
+
+``` yaml
+back_to_top: # true or false
+```
+
+默认启用。
+
+## 文章版权声明
+
+设置文章末尾的版权声明，修改 `stun.yml` 文件：
+
+``` yaml
+post_copyright:
+  enable: true # 设为 false 表示不启用
+  license: CC BY-NC-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+```
+
+默认启用并采用 `CC BY-NC-SA 4.0` 许可协议，效果如下：
+
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190609092406.png)
+
+## 站点年份声明
+
+设置网站底部的年份，修改 `stun.yml` 文件：
+
+``` yaml
+site_copyright:
+  enable: true # 设为 false 表示不启用
+  start: 2019
+  # 如果不设置，默认到最新的年份
+  end: 
+```
+
+你可以显式的设置开始（start）和截止（end）时间。其中开始时间必须设置，截止时间不设置默认为最新的年份。
+
+效果分别如下：
+
+- 设置截止时间
+
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190609094527.png)
+
+- 不设置截止时间
+
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190609094715.png)
+
+- 开始时间和截止时间相同
+
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190609094528.png)
+
+## 底部自定义文字
+
+设置网站底部自定义文字（支持 HTML 语法），修改 `stun.yml` 文件：
+
+``` yaml
+footer_custom_text: 
+```
+
+默认值为空。你可以填写任意信息，通常用于填写 ICP 备案号，网站采用的服务等等。
+
+例如，填写为 `footer_custom_text: Hello there. 博客托管于 <a href="https://github.com/">Github</a>.<br>备案 xxxxxxxxx 号.`，效果如下：
+
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190609101330.png)
