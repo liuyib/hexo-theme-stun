@@ -1,12 +1,23 @@
 #main
   margin-bottom: 3rem
 
-#main-inner
+.main-inner
   margin: 0 auto
 
+if (hexo-config('sidebar.display') == 'always')
+  if (hexo-config('sidebar.float') == 'left')
+    $content-show
+      float: right
+  else if (hexo-config('sidebar.float') == 'right')
+    $content-show
+      float: left
+else
+  $content-show
+    margin: 0 auto
+
 .home-content
-  float: left
   font-size: $font-main-base
+  @extend $content-show
 
   img
     max-width: 100%

@@ -7,7 +7,7 @@
   .header-nav-inner
     width: $content-desktop
 
-  #main-inner
+  .main-inner
     width: $content-desktop
 
 @media screen and (max-width: $content-desktop)
@@ -61,46 +61,42 @@
 // sm-width: 768px
 // -----------------------------------------
 @media screen and (min-width: $sm-width)
-  .header-nav-menu-inner
+  .header-nav-menu
     display: block !important
     opacity: 1 !important
 
 @media screen and (max-width: $sm-width)
-  .header-nav-menu-inner
-    display: none
-    height: auto
-    background-color: $white-light
-    border-radius: 3px
+  .header-nav-inner
+    .header-nav-menu
+      display: none
+      border-radius: 3px
+      width: 100%
+      height: auto
+      background-color: alpha($header-nav-bg-color, .7)
 
-    li
-      float: none
-      margin: 0
+      span
+        float: none
+        margin: 0
 
-    a
-      padding: 0 1rem
-      color: $black-light
-      user-select: none
+      a
+        padding: 0 1rem
+        color: $white-light !important
+        user-select: none
 
-      &:hover
-        color: $white-light
-        background-color: $blue-lighter
-  
-  .header-nav-menu
-    .menu-icon
-      &::before
-        content: $nav-menu
-        float: left
-        margin-right: .5rem
-        padding: 0 .5rem
-        font-family: 'fontStun'
-        font-style: normal
-        line-height: $header-nav-height
-        color: $white-light
+        &:hover
+          color: $white-light
+          background-color: $blue-lighter
 
-      &:hover
-        &::before
-          color: $header-nav-link-hover-color
-          cursor: pointer
+  .header-nav-menu-icon
+    display: block
+    float: left
+
+  .header-info-inner
+    .site-info-title
+      font-size: 2rem
+
+    .site-info-subtitle
+      font-size: 1.5rem
 
 // $xs-width: 576px
 // -----------------------------------------
@@ -118,7 +114,7 @@
 
     .site-info-subtitle
       font-size: 1.25rem
-  
+
   .header-nav-search
     span
       display: none

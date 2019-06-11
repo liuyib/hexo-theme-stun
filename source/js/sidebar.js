@@ -1,6 +1,6 @@
 $(function () {
-  var toc = $('.site-post-toc');
-  var view = $('.site-overview');
+  var toc = $('.sidebar-toc');
+  var view = $('.sidebar-overview');
 
   $('.sidebar-nav-toc').click(function () {
     $('.sidebar-nav-toc').toggleClass('current');

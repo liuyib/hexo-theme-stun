@@ -1,0 +1,104 @@
+aside#sidebar
+  div.sidebar-inner
+    - var isShowPostToc = theme.toc.enable && is_post()
+    if isShowPostToc
+      div.sidebar-nav
+        span(class='sidebar-nav-toc current')= _p('sidebar.catalog')
+        span(class='sidebar-nav-overview')= _p('sidebar.overview')
+    
+    section(
+      class=`sidebar-toc ${isShowPostToc ? '' : 'hide'}`
+      style=`
+        white-space: ${theme.toc.wrap ? 'normal' : 'nowrap'};
+        word-break: ${theme.toc.wrap ? 'break-all' : 'normal'};
+    `)
+      if page.content
+        - var tocMaxDepth = page.toc_max_depth ? page.toc_max_depth : theme.toc.max_depth
+        div!= toc(page.content, {list_number: theme.toc.number, max_depth: tocMaxDepth})
+
+    section(class=`sidebar-overview ${isShowPostToc ? 'hide' : ''}`)
+      if theme.author.enable
+        div.sidebar-author
+          img(
+            src=theme.author.avatar.url alt='avatar'
+            style=`
+              border-radius: ${theme.author.avatar.rounded ? '50%' : '0'};
+              ${theme.author.avatar.opacity ? `opacity: ${theme.author.avatar.opacity}` : ''};
+            `
+          ).sidebar-author-avatar
+
+          if theme.author.motto
+            p.sidebar-author-motto= theme.author.motto
+
+      if theme.social.enable
+        div.sidebar-social
+          for value, name in theme.social
+            if name && value && name !== 'enable'
+              - socialLinkPath = value.split('||')[0] && value.split('||')[0].trim()
+              - socialLinkIcon = value.split('||')[1] && value.split('||')[1].trim()
+              span(class=`
+                ${theme.social_setting.icon_only ? 'icon-only' : ''}
+              `).sidebar-social-item
+                a(href=socialLinkPath target='_blank' title=`${name} → ${socialLinkPath}`)
+                  if socialLinkIcon && socialLinkIcon.match('origin:')
+                    != socialLinkIcon.split('origin:')[1]
+                  else
+                    i(class=`fa fa-${socialLinkIcon ? socialLinkIcon : 'question-circle-o'}`)
+                  
+                  if !theme.social_setting.icon_only
+                    span= name
+      
+      if theme.feed.enable
+        div.sidebar-feed
+          if theme.feed.mail
+            span.sidebar-feed-email
+              a(href=theme.feed.mail title=`email → ${theme.feed.mail}`)
+                i(class='fa fa-envelope').sidebar-feed-icon
+                span Email
+                span= _p('sidebar.subscribe')
+          if theme.feed.rss
+            span.sidebar-feed-rss
+              a(href=theme.feed.rss title=`rss → ${theme.feed.rss}`)
+                i(class='fa fa-rss').sidebar-feed-icon
+                span RSS
+                span= _p('sidebar.subscribe')
+      
+      if theme.menu
+        - var menuArchives = theme.menu.archives.split('||')[0]
+        - var menuCategories = theme.menu.categories.split('||')[0]
+        - var menuTags = theme.menu.tags.split('||')[0]
+        div.sidebar-state
+          if theme.menu.archives
+            div.sidebar-state-item.sidebar-state-posts
+              a(href=menuArchives && menuArchives.trim())
+                div.sidebar-state-item-count= site.posts.length
+                div.sidebar-state-item-name= _p('sidebar.articles')
+          if theme.menu.categories
+            div.sidebar-state-item.sidebar-state-categories
+              a(href=menuCategories && menuCategories.trim())
+                div.sidebar-state-item-count= site.categories.length
+                div.sidebar-state-item-name= _p('sidebar.categories')
+          if theme.menu.tags
+            div.sidebar-state-item.sidebar-state-tags
+              a(href=menuTags && menuTags.trim())
+                div.sidebar-state-item-count= site.tags.length
+                div.sidebar-state-item-name= _p('sidebar.tags')
+      
+      if theme.creative_commons.enable && theme.creative_commons.sidebar
+        - var themeCC = theme.creative_commons
+        - var ccLicense = themeCC.license && themeCC.license.toLowerCase()
+        - var ccLanguage = (themeCC.language && themeCC.language.toLowerCase()) || 'en'
+        - var ccURL = `https://creativecommons.org/licenses/${ccLicense}/4.0/deed.${ccLanguage}`
+        div.sidebar-cc
+          a(href=ccURL target='_blank')
+            img(src=url_for(`/imgs/cc-${ccLicense}.svg`) alt='creative commons')
+
+    if theme.reading_progress.enable && is_post()
+      div.sidebar-progress
+        div.sidebar-progress-read
+          span= _p('sidebar.read_info')
+          span.sidebar-progress-number
+        div(style=`
+          background-color: ${theme.reading_progress.color};
+          height: ${theme.reading_progress.height};
+        `).sidebar-progress-line

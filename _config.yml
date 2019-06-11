@@ -1,71 +1,185 @@
-# ==================================================
-# Basic config
-# ==================================================
+# ---------------------------------------------------------------
+# Site Information config
+# ---------------------------------------------------------------
 
-# Header menu navigation
+favicon:
+  small: /imgs/favicon-16x16-stun.png
+  medium: /imgs/favicon-32x32-stun.png
+  # apple_touch_icon: /imgs/apple-touch-icon-stun.png
+  # safari_pinned_tab: /imgs/logo-stun.svg
+
+# Creative Commons 4.0 International License.
+creative_commons:
+  enable: true
+  # Available: BY | BY-SA | BY-ND | BY-NC | BY-NC-SA | BY-NC-ND
+  # For details, please see: https://creativecommons.org/share-your-work/licensing-types-examples
+  license: BY-NC-SA
+  # Show the CC license in the sidebar.
+  sidebar: true
+  # Show the CC license in the post bottom.
+  post: true
+  # You can set a language value if you prefer a translated version of CC license.
+  # Valid values of language: en, zh, etc.
+  # If not set, 'en' will be used by default.
+  language: zh
+
+# Footer of your site
+footer:
+  copyright:
+    enable: true
+    # If not set, will be used `author` from Hexo main config.
+    content: liuyib. All Rights Reserved.
+    # Specify the date when the site was setup. If not set, current year will be used.
+    since: 2019
+    end: 
+  
+  # Icon between copyright year and copyright owner.
+  icon:
+    # Icon name in FontAwesome, see: https://fontawesome.com/icons?d=listing
+    # `heart` is recommended with animation in red (e.g. #ff0000).
+    name: heart
+    # Heart beat animation
+    animation: true
+    # Please use quote to wrap value (Support for all types of CSS color units)
+    color: "#ff0000"
+  
+  # Hexo link (Powered by Hexo).
+  powered:
+    enable: true
+    # Version info of Hexo after Hexo link (e.g. vX.X.X).
+    version: false
+  
+  # Theme info link (Theme - stun).
+  theme:
+    enable: true
+    # Version info of theme after theme info (e.g. vX.X.X).
+    version: true
+  
+  # Beian icp information for Chinese users.
+  # http://www.miitbeian.gov.cn
+  beian:
+    enable: false
+    # 备案 XXXXXXXX 号
+    icp: 
+  
+  # Any custom text (e.g. Hosted by <a href="https://pages.github.com/" rel="noopener" target="_blank">Github Pages</a>).
+  custom_text: Hosted by <a href="https://pages.github.com/" rel="noopener" target="_blank">Github Pages</a>
+
+# ---------------------------------------------------------------
+# Menu config
+# ---------------------------------------------------------------
+
+# Header navigation menu
+# Value before `||` delimeter is the target link.
+# Value after `||` delimeter is the name of FontAwesome icon. If not set, 'question-circle-o' icon will be show.
 menu:
-  home: /
-  archives: /archives
-  categories: 
-  tags: 
-  about: 
-  # XXX: /xxx
+  home: / || home
+  archives: /archives/ || folder-open
+  categories: /categories/ || th
+  tags: /tags/ || tags
+  about: /about/ || user
+  # reading: /reading/ || book
+  # sitemap: /sitemap.xml || sitemap
+  # xxx: /xxx/ || xxx
 
-# Favicon
-favicon: 
+menu_settings:
+  icon: true
 
-# Avatar in the sidebar
-avatar: 
+# ---------------------------------------------------------------
+# Sidebar config
+# ---------------------------------------------------------------
+
+sidebar:
+  # Sidebar Display, available values: always | remove
+  display: always
+  # Sidebar position, available values: left | right
+  float: left
+  # Sidebar offset from top menubar (Support for all types of CSS size units)
+  offsetTop: 30px
+  # Define the sidebar width (Support for all types of CSS size units)
+  width: 300px
+  # Horizon line
+  horizon_line: true
+
+author:
+  enable: true
+  # Avatar in the sidebar
+  avatar:
+    # In theme directory (source/imgs): /images/avatar.png
+    # In site directory (source/uploads): /uploads/avatar.png
+    url: /imgs/avatar.png
+    # If true, the avatar would be dispalyed in circle.
+    rounded: true
+    # The value should be choose from 0 to 1. (Don't omit the zero before decimal point. e.g. 0.5 can`t be .5)
+    opacity: 1
+    # Mouse hover animation, available value: turn | shake
+    animation: shake
+
+  # Your favorite motto (e.g. Talk is cheap, show me your code.)
+  motto: write code and love life
 
 # Social links
+# Value before `||` delimeter is the target link.
+# Value after `||` delimeter is the name of FontAwesome icon.
+# If you can`t find suitable icon, you can choose to display the original
+#   text by adding the "origin" prefix (e.g. origin:sf, then "sf" will be show)
 social:
-  github: 
-  segmentfault: 
-  twitter: 
-  weibo: 
-  wechat: 
-  qq: 
-  telegram: 
+  enable: true
+  github: https://github.com/ || github
+  google: https://plus.google.com/ || google
+  twitter: https://twitter.com/ || twitter
+  youtube: https://youtube.com/ || youtube
+  segmentfault: https://segmentfault.com/ || origin:sf
+  zhihu: https://www.zhihu.com/ || origin:知
+  weibo: https://weibo.com/ || weibo
+  wechat: yournumber || weixin
+  telegram: yournumber || telegram
+  qq: yournumber || qq
+
+social_setting:
+  # Only show social links by icon
+  icon_only: true
+
+# Table Of Contents in the Sidebar
+toc:
+  enable: true
+  # Automatically add list number to toc.
+  number: true
+  # If true, all words will placed on next lines if header width longer then sidebar width.
+  wrap: true
+  # Maximum heading depth of generated toc. You can set it in one post through `toc_max_depth` in Front-matter.
+  # e.g. value: 3, will use h1~3 to generated toc
+  max_depth: 5
 
 # Subscribe of email and rss
 feed:
-  mail: 
-  # rss: 
+  enable: true
+  mail: mail-test
+  rss: rss-test
 
-# Stylesheets loaded in the <head>
-stylesheets:
-  - /css/index.css
+# The reading progress of post
+reading_progress:
+  enable: true
+  # Please use quote to wrap value (Support for all types of CSS color units)
+  color: "#49b1f5"
+  # Support for all types of CSS size units
+  height: 1px
 
-# Scripts loaded in the end of the body
-scripts:
-  - /js/utils.js
-  - /js/scroll.js
-  - /js/header.js
-  - /js/sidebar.js
-  - /js/post.js
+# ---------------------------------------------------------------
+# Post config
+# ---------------------------------------------------------------
 
-# CND for third libs
-cdn:
-  # css: 
-  js:
-    jquery: https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js
-    velocity: https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js
+post_meta:
+  icon_only: 
+  created:  
+  updated: 
 
-# ==================================================
-# Advanced config
-# ==================================================
-
-# Header navigation bar height
-header_nav_height: 50px
-
-# Header height
-header_height: 80%
-
-# Background image in the header
-header_bg_img: 
-
-# Background image in the footer
-footer_bg_img: 
+# Automatically Excerpt (Not recommend).
+# Use <!-- more --> in the post to control excerpt accurately.
+auto_excerpt:
+  enable: false
+  # The number of words that are automatically reserved as a excerpt
+  length: 300
 
 # Code highlight
 # values:
@@ -73,10 +187,6 @@ footer_bg_img:
 # - dark
 # - ocean
 highlight_theme: light
-
-# Header menu icon
-# values: true or false
-header_menu_icon_show: true
 
 # Code wrap
 # values: true or false
@@ -101,49 +211,65 @@ text_vertical_align_with_img: bottom
 
 # Reward
 reward:
-  enable: false
-  qr_img_url:
-    alipay: 
-    wechat: 
+  enable: true
+  alipay: https://raw.githubusercontent.com/liuyib/picBed/master/hexo-blog/20190529222805.png
+  wechat: https://raw.githubusercontent.com/liuyib/picBed/master/hexo-blog/20190529222806.png
+
+# ---------------------------------------------------------------
+# Other config
+# ---------------------------------------------------------------
+
+# Header navigation bar height (Support for all types of CSS size units)
+header_nav_height: 50px
+
+# Header height (Only percentage units are supported)
+header_height: 80%
+
+# Background image in the header
+header_bg_img: https://raw.githubusercontent.com/liuyib/picBed/master/hexo-blog/20190529223722.jpg
+
+# Background image in the footer
+footer_bg_img: https://raw.githubusercontent.com/liuyib/picBed/master/hexo-blog/20190529223722.jpg
 
 # Back to top
 # values: true or false
 back_to_top: true
 
-# Copyright of articles
-post_copyright:
-  enable: true
-  license: CC BY-NC-SA 4.0
-  license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
-
-# Copyright at the bottom of the site
-site_copyright:
-  enable: true
-  start: 2019
-  # If not set, default is the latest year
-  end: 
-
-# Custom text in the footer
-footer_custom_text: 
-
 # Blur filter effect of top image
 top_img_blur:
   enable: false
-  # Blutrriness
   level: 15px
-
-# Avatar animation
-# values:
-# - shake
-# - turn
-avatar_animation: turn
 
 # Tag cloud
 # If not used, comment it or ignore it
 tag:
-  # Color for tag（please use quote to wrap value, only support HEX）
+  # Color for tag (please use quote to wrap value, only support HEX)
   start_color: '#a4d8fa'
   end_color: '#49b1f5'
   # Font size for tag
-  min_font_size: 16
-  max_font_size: 30
+  min_font_size: 24
+  max_font_size: 34
+
+# Assets
+# In theme directory (source/css)
+css: css
+# In theme directory (source/js)
+js: js
+# In theme directory (source/imgs)
+img: imgs
+
+# CND for third libs
+cdn:
+  css:
+    fontawesome: https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css
+  js:
+    jquery: https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js
+    velocity: https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js
+
+# Scripts loaded in the end of the body
+scripts:
+  - /js/utils.js
+  - /js/scroll.js
+  - /js/header.js
+  - /js/sidebar.js
+  - /js/post.js

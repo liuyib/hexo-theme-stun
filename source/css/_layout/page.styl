@@ -28,11 +28,11 @@ else
   text_vertical_align_with_img = bottom
 
 $content-layout
-  float: left
   border-radius: 5px
   padding: 2rem
   font-size: $font-main-base is defined ? $font-main-base : $font-size-large
   background-color: $white
+  @extend $content-show
 
   & > :first-child
     margin-top: 0

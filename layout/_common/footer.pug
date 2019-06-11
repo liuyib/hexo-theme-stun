@@ -1,0 +1,46 @@
+footer#footer
+  -
+    var footer = theme.footer
+    var nowYear = new Date().getFullYear()
+    var startYear = footer.copyright.enable ? footer.copyright.since || nowYear : nowYear
+    var endYear = footer.copyright.enable ? footer.copyright.end || nowYear : nowYear
+
+  div.footer-inner
+    if footer.copyright.enable || footer.beian.enable
+      div
+        if footer.copyright.enable
+          span!= `&copy; ${startYear}` + (startYear != endYear ? `-${endYear}` : '')
+          span(
+            class=`fa fa-${footer.icon.name} ${footer.icon.animation ? 'heart-beat' : ''}`
+            style=`color: ${footer.icon.color}`
+          ).footer-separator
+          span= footer.copyright.content || config.author + '.'
+
+        if footer.copyright.enable && footer.beian.enable
+          span.footer-separator |
+    
+        if footer.beian.enable
+          span!= footer.beian.icp
+
+    if footer.powered.enable || footer.theme.enable
+      div
+        if footer.powered.enable
+          span.footer-powered
+            != _p('footer.powered', link_to('http://hexo.io/', 'hexo', {external: true}))
+          
+          if footer.powered.version
+            span= ' v' + hexo_env('version') + '.'
+        
+        if footer.powered.enable && footer.theme.enable
+          span.footer-separator |
+
+        if footer.theme.enable
+          span= _p('footer.theme') + ' - '
+            != link_to('https://github.com/liuyib/hexo-theme-stun/', 'stun', {external: true})
+        
+          if footer.theme.version
+            span= ' v' + stun_env('version') + '.'
+    
+    if footer.custom_text
+      div
+        span!= footer.custom_text

@@ -1,12 +1,11 @@
-extends includes/layout.pug
+extends ./_common/layout.pug
 
 block content
-  include ./includes/components/sidebar.pug
-  include ./includes/mixins/articles-sort.pug
+  include ./_mixins/articles-sort.pug
   
   div.tag.main-content-layout
     div.tag-inner
       div.article-sort-title= _p('page.categories') + ' - ' + page.category
       +articleSort(page.posts)
 
-    include ./includes/components/pagination.pug
+    include ./_components/pagination.pug

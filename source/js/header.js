@@ -1,6 +1,6 @@
 $(function () {
-  $('.menu-icon').click(function () {
-    var menu = $('.header-nav-menu-inner');
+  $('.header-nav-menu-icon').click(function () {
+    var menu = $('.header-nav-menu');
 
     if (menu.css('display') === 'none') {
       menu.velocity('fadeIn');

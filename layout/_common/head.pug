@@ -1,24 +1,16 @@
 -
   var pageTitle = page.title || config.subtitle || ''
 
-  //- A page that show all tags
   if (page.type === 'tags') pageTitle = _p('title.tags')
-  //- A page that show all categories
   if (page.type === 'categories') pageTitle = _p('title.categories')
-  //- A page that show archives of posts
   if (is_archive()) pageTitle = _p('title.archives')
-  //- A page that show all posts for a tag
   if (is_tag()) pageTitle = _p('title.tags') + ': ' + page.tag
-  //- A page that show all posts for a category
   if (is_category()) pageTitle = _p('title.categories') + ': ' + page.category
-  //- A page that show all posts for month
   if (is_month()) pageTitle += ': ' + page.year + '/' + page.month
-  //- A page that show all posts for year
   if (is_year()) pageTitle += ': ' + page.year
 
   pageTitle ? pageTitle += ' | ' + config.title : pageTitle = config.title
 
--
   var pageDescription = page.description || page.title || config.description || ''
   var pageKeywords = [config.author, config.title, config.keywords].filter(i => !!i).join(', ')
   var pageAuthor = config.email ? `${config.author}: ${config.email}` : config.author
@@ -27,18 +19,27 @@
 meta(charset='UTF-8')
 meta(http-equiv="X-UA-Compatible" content="IE=edge")
 meta(name="viewport" content="width=device-width, initial-scale=1")
-meta(name="description" content=pageDescription)
 meta(name="keywords" content=pageKeywords)
 meta(name="author" content=pageAuthor)
+meta(name="description" content=pageDescription)
 meta(name="copyright" content=pageCopyright)
-
 title= pageTitle
 
-//- favicon_tag accept a param of type string
-!= favicon_tag((config.favicon || theme.favicon) + '')
+if theme.cdn && theme.cdn.css
+  each url in theme.cdn.css
+    if url
+      link(rel='stylesheet' href=url_for(url))
 
-//- Load stylesheets in the head tag
-if theme.stylesheets !== undefined && theme.stylesheets.length > 0
-  //- Stylesheets list from _config.yml
-  each url in theme.stylesheets
-    link(rel='stylesheet', href=url)
+link(rel='stylesheet' href=`${url_for(theme.css)}/index.css?v=${stun_env('version')}`)
+
+if theme.favicon.apple_touch_icon
+  link(rel="apple-touch-icon" sizes="180x180" href=`${url_for(theme.favicon.apple_touch_icon)}?v=${stun_env('version')}`)
+
+if theme.favicon.medium
+  link(rel="icon" type="image/png" sizes="32x32" href=`${url_for(theme.favicon.medium)}?v=${stun_env('version')}`)
+
+if theme.favicon.small
+  link(rel="icon" type="image/png" sizes="16x16" href=`${url_for(theme.favicon.small)}?v=${stun_env('version')}`)
+
+if theme.favicon.safari_pinned_tab
+  link(rel="mask-icon" href=`${url_for(theme.favicon.safari_pinned_tab)}?v=${stun_env('version')}` color="#333")

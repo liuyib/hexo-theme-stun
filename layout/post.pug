@@ -1,31 +1,18 @@
-extends includes/layout.pug
+extends ./_common/layout.pug
 
 block content
-  include ./includes/components/sidebar.pug
-  include ./includes/mixins/post-header.pug
+  include ./_mixins/post-header.pug
   
   article#post
     div.main-content.code-highlight
       +postHeader(page)
+      
       div.post-body
         != page.content
+
       footer.post-footer
-        if theme.post_copyright.enable
-          div.post-footer-copyright
-            div.copyright-author
-              span.copyright-name!= _p('post.copyright.author') + ':'
-              span.copyright-value
-                if (config.url && config.author)
-                  a(href=config.url)= config.author
-            div.copyright-link
-              span.copyright-name!= _p('post.copyright.link') + ':'
-              span.copyright-value
-                if (config.url)
-                  a(href=page.permalink)= page.permalink
-            div.copyright-notice
-              span.copyright-name!= _p('post.copyright.license_title') + ':'
-              span.copyright-value
-                != _p('post.copyright.license_content', theme.post_copyright.license_url, theme.post_copyright.license)
+        if theme.creative_commons.enable && theme.creative_commons.post
+          include ./_components/copyright.pug
 
         if page.tags && page.tags.length > 0
           div.post-footer-tags
@@ -33,6 +20,6 @@ block content
               span!= link_to(tag.permalink, tag.name)
         
         if theme.reward && theme.reward.enable
-          include ./includes/components/reward.pug
+          include ./_components/reward.pug
         
-        include ./includes/components/pagination.pug
+        include ./_components/pagination.pug

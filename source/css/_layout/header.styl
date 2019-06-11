@@ -9,7 +9,7 @@ if (hexo-config('header_height'))
   position: relative
   margin: 0 0 3rem
   height: $header-height
-  font-size: $font-header-base is defined ? $font-header-base : 1rem
+  font-size: $font-header-base
   background-color: $gray-dark
   background-repeat: no-repeat
   background-attachment: fixed
@@ -20,27 +20,8 @@ if (hexo-config('header_height'))
   if (hexo-config('header_bg_img'))
     background-image: url($header-bg-img)
 
-  // header nav menu
-  .icon-home::before
-    content: $nav-home
-
-  .icon-archives::before
-    content: $nav-archive
-
-  .icon-categories::before
-    content: $nav-category
-
-  .icon-tags::before
-    content: $nav-tag
-
-  .icon-about::before
-    content: $nav-about
-
-  .icon-search::before
-    content: $nav-search
-
 $header-nav-color
-  .header-nav-menu,
+  .header-nav-menu a,
   .header-nav-search
     color: $header-nav-link-color
 
@@ -54,22 +35,20 @@ $header-nav-color
 if (hexo-config('header_nav_height'))
   $header-nav-height = convert(hexo-config('header_nav_height'))
 
-#header-nav
+.header-nav
   position: fixed
   top: 0
   z-index: $z-index-5
   width: 100%
   height: $header-nav-height
   transition: background-color .3s
+  animation-duration: .3s
+  animation-timing-function: ease
+  animation-fill-mode: both
 
   &.fixed
     background-color: alpha($header-nav-bg-color, .5)
     @extend $header-nav-color
-
-  &.nav-slider
-    animation-duration: .3s
-    animation-timing-function: ease
-    animation-fill-mode: both
 
   &.slider-down
     animation-name: header-sliderDown
@@ -82,58 +61,40 @@ if (hexo-config('header_nav_height'))
   margin: 0 auto
   padding: 0 1rem
   height: 100%
-
-.header-nav-menu a,
-.header-nav-search
-  color: $header-nav-link-color
-
-  &:hover
-    color: $header-nav-link-hover-color
-
-    &::before,
-    &::after
-      color: $header-nav-link-hover-color
-
-.header-nav-menu-inner
-  float: left
-  margin: 0
-  padding: 0
-  height: 100%
-
-  &-icon
-    margin-right: .25rem
-
-  li
-    float: left
-    list-style-type: none
-    margin: 0 1rem 0 0
-    height: 100%
-
-  a
-    display: block
-    border-bottom: 0
-    padding: 0 .5rem
-    height: 100%
-    line-height: $header-nav-height
-    text-decoration: none
-    transition: color .2s ease
+  @extend $header-nav-color
 
   i
     margin-right: .3rem
 
-.header-nav-search
-  float: right
+$header-nav-item
   padding: 0 .5rem
   height: 100%
   line-height: $header-nav-height
-  color: $white-light
 
-  &::before
-    content: $nav-search
-    margin-right: .3rem
-    font-family: 'fontStun'
-    font-style: normal
-    color: $white-light
+.header-nav-menu
+  float: left
+  height: 100%
+
+  &-icon
+    display: none
+    color: $header-nav-link-color
+    @extend $header-nav-item
+
+  span
+    float: left
+    margin: 0 1rem 0 0
+
+  a
+    display: block
+    border-bottom: 0
+    text-decoration: none
+    transition: color .2s ease
+    @extend $header-nav-item
+
+.header-nav-search
+  float: right
+  transition: color .2s ease
+  @extend $header-nav-item
 
   &:hover
     cursor: pointer
@@ -142,7 +103,7 @@ if (hexo-config('top_img_blur') && hexo-config('top_img_blur.enable'))
   $site-info-blur-enable = true
   $site-info-blur-level = convert(hexo-config('top_img_blur.level'))
 
-#header-info
+.header-info
   display: flex
   z-index: $z-index-1
   text-align: center
@@ -168,7 +129,6 @@ if (hexo-config('top_img_blur') && hexo-config('top_img_blur.enable'))
       bottom: 0
       left: 0
       z-index: $z-index-0
-      // convert string to stylus node
       margin: 0 - $site-info-blur-level * 1.5
       background: inherit
       background-attachment: fixed

@@ -1,0 +1,21 @@
+-
+  var themeCC = theme.creative_commons
+  var ccLicense = themeCC.license && themeCC.license.toLowerCase()
+  var ccLanguage = (themeCC.language && themeCC.language.toLowerCase()) || 'en'
+  var ccURL = `https://creativecommons.org/licenses/${ccLicense}/4.0/deed.${ccLanguage}`
+
+div.post-footer-copyright
+  div.copyright-author
+    span.copyright-name!= _p('post.copyright.author') + ':'
+    span.copyright-value
+      if (config.url && config.author)
+        a(href=config.url)= config.author
+  div.copyright-link
+    span.copyright-name!= _p('post.copyright.link') + ':'
+    span.copyright-value
+      if (config.url)
+        a(href=page.permalink)= page.permalink
+  div.copyright-notice
+    span.copyright-name!= _p('post.copyright.license_title') + ':'
+    span.copyright-value
+      != _p('post.copyright.license_content', ccURL, ccLicense.toUpperCase())

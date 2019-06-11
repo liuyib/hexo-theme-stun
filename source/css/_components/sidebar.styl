@@ -1,30 +1,42 @@
+if (hexo-config('sidebar.width'))
+  $sidebar-width = convert(hexo-config('sidebar.width'))
+
+if (hexo-config('sidebar.float') == 'left')
+  $sidebar-show
+    float: left
+else if (hexo-config('sidebar.float') == 'right')
+  $sidebar-show
+    float: right
+
 #sidebar
-  float: right
-  width: $main-side-desktop
-  font-size: $font-sidebar-base is defined ? $font-sidebar-base : $font-size-large
+  width: $sidebar-width
+  font-size: $font-sidebar-base
+  @extend $sidebar-show
+
+if (hexo-config('sidebar.offsetTop'))
+  $sidebar-top = convert(hexo-config('sidebar.offsetTop'))
 
 .sidebar-inner
   border-radius: 5px
   padding: 1rem
-  width: $main-side-desktop
+  width: $sidebar-width
   background-color: $white
 
   &.sticky
     position: fixed
-    top: 30px
+    top: $sidebar-top
 
   .hide
     display: none
-
+  
 .sidebar-nav
   padding-bottom: 1em
   text-align: center
 
   &-toc,
   &-overview
-    margin: 0 .5em
     border-bottom: 1px solid #fff
-    padding: .3em 0
+    padding: .3em .5em
     color: $sidebar-nav-text-color
     transition: all .2s
 
@@ -36,64 +48,68 @@
     border-color: $sidebar-nav-text-hover-color
     color: $sidebar-nav-text-hover-color
 
-if (hexo-config('avatar_animation'))
-  $avatar-animation = 'avatar-' + hexo-config('avatar_animation')
+if (hexo-config('avatar.animation'))
+  $avatar-animation = convert('avatar-' + hexo-config('avatar.animation'))
 
-.site-overview
-  .site-author
+.sidebar-toc
+  overflow: auto
+  max-height: 50vh
+
+  ol,
+  li
+    list-style: none
+
+  ol
+    margin: 0
+    padding-left: 1em
+
+.sidebar-overview
+  .sidebar-author
     display: flex
     width: 100%
-    margin-bottom: .8rem
     flex-direction: column
 
     &-avatar
       margin: 0 auto
       border-radius: 50%
+      padding: 0
       width: 150px
       height: 150px
 
       &:hover
         animation: $avatar-animation .8s both ease-out
 
-    &-description
+    &-motto
       margin-bottom: 0
       font-weight: $font-weight-bold
       text-align: center
 
-  .site-social,
-  .site-feed,
-  .site-state
-    &:not(:last-child)
-      border-bottom: 1px dashed #d8d8d8
-
+  .sidebar-social,
+  .sidebar-feed,
+  .sidebar-state,
+  .sidebar-cc
     a
       border-bottom: 0
 
-  .site-social
-    padding-bottom: 1rem
+    if (hexo-config('sidebar.horizon_line'))
+      &:not(:last-child)
+        border-bottom: 1px dashed #e6e6e6
 
-    ul,
-    li
-      list-style-type: none
+  .sidebar-social
+    display: flex
+    overflow: hidden
+    margin: 0 auto
+    padding: .8rem 0
+    text-align: center
+    flex-wrap: wrap
+    justify-content: center
 
-    ul
-      display: flex
-      overflow: hidden
-      margin: 0 auto
-      padding: 0
-      text-align: center
-      flex-wrap: wrap
-      justify-content: center
-
-    li
-      margin-right: 8px
-      border-radius: 50%
-      width: 1.5rem
-      height: 1.5rem
-      line-height: 1.5rem
+    &-item
+      margin: .2rem
+      border-radius: 1px
       text-align: center
       background-color: $sidebar-social-color
-      transition: background-color .2s
+      transition: background-color .3s
       flex: 0 0 auto
 
       &:hover
@@ -104,19 +120,32 @@ if (hexo-config('avatar_animation'))
 
       a
         display: block
-        border-radius: 50%
+        padding: 0 .2rem
         color: #fff
+      
+      i
+        display: inline
+        margin: 0 .2rem
+      
+      span
+        margin: 0 .2rem
+      
+    .icon-only
+      line-height: 1.5rem
+      border-radius: 50%
 
-  .site-feed
+      a
+        width: 1.5rem
+        height: 1.5rem
+
+  .sidebar-feed
     display: flex
-    margin-top: .5rem
-    padding-bottom: .5rem
+    padding: .5rem 0
     text-align: center
     justify-content: center
 
-    .icon-email,
-    .icon-rss
-      margin-right: .4em
+    &-icon
+      margin-right: .3em
 
     &-email,
     &-rss
@@ -131,9 +160,9 @@ if (hexo-config('avatar_animation'))
     &-rss > a
       color: $sidebar-feed-rss-color
 
-  .site-state
+  .sidebar-state
     display: flex
-    margin-top: 1rem
+    padding: .5rem 0
     flex-wrap: wrap
     justify-content: center
 
@@ -162,21 +191,25 @@ if (hexo-config('avatar_animation'))
     &-tags > a
       color: $sidebar-state-tag-color
 
-.site-post-toc
-  overflow: auto
-  max-height: 60vh
+  .sidebar-cc
+    padding: .5rem 0
+    text-align: center
 
-  ol,
-  li
-    list-style: none
+    img
+      border-width: 0
+      padding: 0
 
-  ol
-    margin: 0
-    padding-left: 1em
+  & > :last-child
+    margin-bottom: 0
+    padding-bottom: 0
+
+  & > :first-child
+    margin-top: 0
+    padding-top: 0
 
 .sidebar-progress
   display: none
-  margin-top: 1em
+  margin-top: .5em
   text-align: center
 
   &-read

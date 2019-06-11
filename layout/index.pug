@@ -1,11 +1,9 @@
-extends includes/layout.pug
+extends ./_common/layout.pug
 
 block content
-  include ./includes/mixins/articles-sort.pug
-  include ./includes/mixins/post-header.pug
-
-  include ./includes/components/sidebar.pug
+  include ./_mixins/articles-sort.pug
+  include ./_mixins/post-header.pug
   
   div.home-content.code-highlight
-    include ./includes/components/recent-posts.pug  
-    include ./includes/components/pagination.pug
+    include ./_components/recent-posts.pug  
+    include ./_components/pagination.pug

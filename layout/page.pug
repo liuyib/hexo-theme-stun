@@ -1,8 +1,6 @@
-extends includes/layout.pug
+extends ./_common/layout.pug
 
 block content
-  include ./includes/components/sidebar.pug
-  
   if (page.title === 'tags')
     div.tag-cloud.main-content-layout
       div.tag-cloud-title= _p('page.tags') + ' - '

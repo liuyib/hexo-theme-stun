@@ -9,7 +9,7 @@ html(lang=config.language)
       include ./footer.pug
 
       if theme.back_to_top
-        include ./components/back-top.pug
+        include ../_components/back-top.pug
 
     if theme.cdn && theme.cdn.js
       each url in theme.cdn.js
@@ -17,6 +17,5 @@ html(lang=config.language)
           script(src=url_for(url))
 
     if theme.scripts && theme.scripts.length > 0
-      //- scripts list from config.yml
       each url in theme.scripts
-        script(src=url_for(url) + '?version=' + version())
+        script(src=url_for(url) + '?v=' + stun_env('version'))
