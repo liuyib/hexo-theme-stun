@@ -1,20 +1,22 @@
 if (hexo-config('sidebar.width'))
   $sidebar-width = convert(hexo-config('sidebar.width'))
+else
+  $sidebar-width = 300px
 
-if (hexo-config('sidebar.float') == 'left')
-  $sidebar-show
-    float: left
-else if (hexo-config('sidebar.float') == 'right')
-  $sidebar-show
-    float: right
+if (hexo-config('sidebar.float'))
+  $sidebar-float = convert(hexo-config('sidebar.float'))
+else
+  $sidebar-float = right
 
 #sidebar
+  float: $sidebar-float
   width: $sidebar-width
   font-size: $font-sidebar-base
-  @extend $sidebar-show
 
 if (hexo-config('sidebar.offsetTop'))
   $sidebar-top = convert(hexo-config('sidebar.offsetTop'))
+else
+  $sidebar-top = 30px
 
 .sidebar-inner
   border-radius: 5px
@@ -28,7 +30,7 @@ if (hexo-config('sidebar.offsetTop'))
 
   .hide
     display: none
-  
+
 .sidebar-nav
   padding-bottom: 1em
   text-align: center
@@ -48,12 +50,19 @@ if (hexo-config('sidebar.offsetTop'))
     border-color: $sidebar-nav-text-hover-color
     color: $sidebar-nav-text-hover-color
 
-if (hexo-config('avatar.animation'))
-  $avatar-animation = convert('avatar-' + hexo-config('avatar.animation'))
+if (hexo-config('toc.wrap'))
+  $toc-word-break
+    white-space: normal
+    word-break: break-all
+else
+  $toc-word-break
+    white-space: nowrap
+    word-break: normal
 
 .sidebar-toc
   overflow: auto
   max-height: 50vh
+  @extend $toc-word-break
 
   ol,
   li
@@ -63,6 +72,21 @@ if (hexo-config('avatar.animation'))
     margin: 0
     padding-left: 1em
 
+if (!hexo-config('author.avatar.rounded'))
+  $avatar-rounded = 0
+else
+  $avatar-rounded = 50%
+
+if (hexo-config('author.avatar.opacity'))
+  $avatar-opacity = hexo-config('author.avatar.opacity')
+else
+  $avatar-opacity = 1
+
+if (hexo-config('author.avatar.animation'))
+  $avatar-animation = convert('avatar-' + hexo-config('author.avatar.animation'))
+else
+  $avatar-animation = convert('avatar-turn')
+
 .sidebar-overview
   .sidebar-author
     display: flex
@@ -71,16 +95,17 @@ if (hexo-config('avatar.animation'))
 
     &-avatar
       margin: 0 auto
-      border-radius: 50%
+      border-radius: $avatar-rounded
       padding: 0
       width: 150px
       height: 150px
+      opacity: $avatar-opacity
 
       &:hover
         animation: $avatar-animation .8s both ease-out
 
     &-motto
-      margin-bottom: 0
+      margin: .5rem 0 0
       font-weight: $font-weight-bold
       text-align: center
 
@@ -95,48 +120,71 @@ if (hexo-config('avatar.animation'))
       &:not(:last-child)
         border-bottom: 1px dashed #e6e6e6
 
+  if (hexo-config('social_setting.text_align'))
+    $text-align = convert(hexo-config('social_setting.text_align'))
+  else
+    $text-align = center
+
   .sidebar-social
     display: flex
     overflow: hidden
     margin: 0 auto
-    padding: .8rem 0
+    padding: .5rem 0
     text-align: center
     flex-wrap: wrap
-    justify-content: center
+    justify-content: $text-align
 
     &-item
       margin: .2rem
       border-radius: 1px
       text-align: center
-      background-color: $sidebar-social-color
       transition: background-color .3s
       flex: 0 0 auto
 
-      &:hover
-        background-color: $sidebar-social-hover-color
+      if (hexo-config('social_setting.icon_only'))
+        background-color: $sidebar-social-color
 
-      &:last-child
-        margin-right: 0
+        &:hover
+          background-color: $sidebar-social-hover-color
+      else
+        background-color: #fff
+
+        &:hover
+          background-color: $sidebar-social-color
 
       a
         display: block
-        padding: 0 .2rem
-        color: #fff
-      
+
       i
         display: inline
-        margin: 0 .2rem
-      
-      span
-        margin: 0 .2rem
-      
-    .icon-only
-      line-height: 1.5rem
-      border-radius: 50%
 
-      a
-        width: 1.5rem
-        height: 1.5rem
+      if (hexo-config('social_setting.icon_only'))
+        border-radius: 50%
+        line-height: 1.5rem
+
+        a
+          width: 1.5rem
+          height: 1.5rem
+
+        i,
+        span
+          color: #fff
+      else
+        a
+          padding: 0 .2rem
+
+        i,
+        span
+          margin: 0 .2rem
+          color: #999
+
+        &:hover
+          i,
+          span
+            color: #fff
+
+        i
+          width: 1.2rem
 
   .sidebar-feed
     display: flex
@@ -207,6 +255,16 @@ if (hexo-config('avatar.animation'))
     margin-top: 0
     padding-top: 0
 
+if (hexo-config('reading_progress.color'))
+  $reading_progress_color = convert(hexo-config('reading_progress.color'))
+else
+  $reading_progress_color = $blue-light
+
+if (hexo-config('reading_progress.height'))
+  $reading_progress_height = convert(hexo-config('reading_progress.height'))
+else
+  $reading_progress_height = 1px
+
 .sidebar-progress
   display: none
   margin-top: .5em
@@ -220,5 +278,5 @@ if (hexo-config('avatar.animation'))
 
   &-line
     width: 0
-    height: 1px
-    background-color: $blue-light
+    height: $reading_progress_height
+    background-color: $reading_progress_color

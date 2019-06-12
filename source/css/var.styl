@@ -182,8 +182,9 @@ $z-index-5 = 1004
 // Layout
 // -------------------------------------------
 // Width
+$main-sidebar-gap  = 30px
 $main-desktop      = 992px
-$content-desktop   = 1340px
+$content-desktop   = $main-desktop + convert(hexo-config('sidebar.width')) + $main-sidebar-gap
 
 // -------------------------------------------
 // Responsive layout
