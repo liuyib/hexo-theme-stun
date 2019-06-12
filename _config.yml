@@ -177,13 +177,6 @@ post_meta:
   created:  
   updated: 
 
-# Automatically Excerpt (Not recommend).
-# Use <!-- more --> in the post to control excerpt accurately.
-auto_excerpt:
-  enable: false
-  # The number of words that are automatically reserved as a excerpt
-  length: 300
-
 # Code highlight
 # values:
 # - light

@@ -2,7 +2,7 @@
 @require './diff.styl'
 
 languages = 'js' 'javascript' 'python' 'ruby' 'xml' 'html' 'css' 'perl' 'sql' 'coffeescript' 'java' 'scala' 'kotlin' 'c' 'c\+\+' 'go' 'less' 'sass' 'scss' 'stylus' 'styl' 'typescript' 'ts' 'bash' 'yml' 'gradle'
-wordWrap = hexo-config('code_word_wrap')
+$wordWrap = hexo-config('code_word_wrap')
 
 addLanguagesType()
   for lang in languages
@@ -24,7 +24,7 @@ $code-block
   color: $highlight-color
   background-color: $highlight-background
 
-  if (wordWrap)
+  if ($wordWrap)
     white-space: pre-wrap
     counter-reset: line
 
@@ -93,7 +93,7 @@ $code-block
 
       // Code line numbers
       .gutter
-        if (wordWrap)
+        if ($wordWrap)
           display: none
 
         padding: 0 .6rem
@@ -112,7 +112,7 @@ $code-block
     .line
       height: $line-height
 
-      if (wordWrap)
+      if ($wordWrap)
         &:before
           content: counter(line)
           display: inline-block
@@ -198,3 +198,9 @@ $code-block
   .js .keyword,
   .js .function
     color: $highlight-purple
+
+  .diff .addition
+    background-color: $highlight-addition
+
+  .diff .deletion
+    background-color: $highlight-deletion

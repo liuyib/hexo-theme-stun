@@ -1,8 +1,11 @@
 $highlight_theme = hexo-config('highlight_theme')
 
 if ($highlight_theme == 'light')
-  $highlight-deletion = #fdd
-  $highlight-addition = #dfd
-else
-  $highlight-deletion = #008000
-  $highlight-addition = #800000
+  $highlight-addition = #deffe7
+  $highlight-deletion = #ffe8eb
+else if ($highlight_theme == 'dark')
+  $highlight-addition = #91f4a9
+  $highlight-deletion = #ffb1ba
+else if ($highlight_theme == 'ocean')
+  $highlight-addition = #57c371
+  $highlight-deletion = #df6969

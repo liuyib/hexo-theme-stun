@@ -21,11 +21,11 @@ headingLeft(fontsize)
       color: $h-link-logo-hover-color
 
 if (hexo-config('text_vertical_align_with_img') == 'top')
-  text_vertical_align_with_img = top
+  $text_vertical_align_with_img = top
 else if (hexo-config('text_vertical_align_with_img') == 'middle')
-  text_vertical_align_with_img = middle
+  $text_vertical_align_with_img = middle
 else
-  text_vertical_align_with_img = bottom
+  $text_vertical_align_with_img = bottom
 
 $content-layout
   border-radius: 5px
@@ -42,7 +42,7 @@ $content-layout
 
 .main-content-layout
   @extend $content-layout
-  
+
 .main-content
   @extend $content-layout
 
@@ -53,7 +53,17 @@ $content-layout
     if ($icon-ul-list-1 is defined && ($icon-ul-list-2 is defined && ($icon-ul-list-3 is defined)))
       list-style-type: none
 
-  h1, h2, h3, h4, h5, h6
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6
+    position: relative
+    margin: 1.5rem 0 1rem
+    font-weight: $font-weight-bolder
+    line-height: $line-height-h
+    color: lighten($h-color, 15%)
     cursor: pointer
 
     if ($icon-h-link is defined)
@@ -71,9 +81,27 @@ $content-layout
       if ($icon-h-link is defined)
         headingLeft(10px - size * .5)
 
+  h1
+    font-size: $h-font-size.h1
+
+  h2
+    font-size: $h-font-size.h2
+
+  h3
+    font-size: $h-font-size.h3
+
+  h4
+    font-size: $h-font-size.h4
+
+  h5
+    font-size: $h-font-size.h5
+
+  h6
+    font-size: $h-font-size.h6
+
   img
     max-width: 100%
-    vertical-align: text_vertical_align_with_img
+    vertical-align: $text_vertical_align_with_img
 
   ul,
   ol
@@ -128,16 +156,16 @@ $content-layout
     figure
       margin-top: 0
       margin-bottom: 0
-    
+
     cite
       &::before
         content: '--'
         padding: 0 .2em
-  
+
   table
     border-spacing: 0
     border-collapse: collapse
-    margin: 0 auto 1rem auto
+    margin: 0 auto 1rem
     min-width: 100%
 
     th,
@@ -169,7 +197,7 @@ $content-layout
   position: relative
   margin-bottom: 1.3rem
   padding-left: 1.4rem
-  font-size: $font-main-base is defined ? ($font-main-base * 1.4) : 1.2rem
+  font-size: $font-main-base is defined ? (($font-main-base * 1.4)) : 1.2rem
 
   &::before
     content: ''
@@ -187,12 +215,12 @@ $content-layout
     transform: translate(-50%, -50%)
 
 .article-sort-item
+  display: flex
   position: relative
   margin-bottom: .8rem
   padding-left: 1.4rem
-  display: flex
   align-items: center
-  
+
   h2
     margin: 0
     font-weight: $font-weight-normal
@@ -222,18 +250,18 @@ $content-layout
   &.year
     display: block
     position: relative
-    font-size: $font-main-base is defined ? ($font-main-base * 1.2) : 1.2rem
+    font-size: $font-main-base is defined ? (($font-main-base * 1.2)) : 1.2rem
     font-weight: $font-weight-bolder
 
   &__time
     margin-right: 1rem
-    font-size: $font-main-base is defined ? ($font-main-base * .9) : .8rem
+    font-size: $font-main-base is defined ? (($font-main-base * .9)) : .8rem
     color: $archives-right-time-color
     transform: translate(0, 8%)
 
   &__title a
     border-bottom: 0
-    font-size: $font-main-base is defined ? ($font-main-base * 1.2) : 1rem
+    font-size: $font-main-base is defined ? (($font-main-base * 1.2)) : 1rem
     text-decoration: none
     color: $font-color
     cursor: pointer
@@ -250,7 +278,7 @@ $content-layout
 
   &-title
     padding: 0 0 1.8rem
-    font-size: $font-main-base is defined ? ($font-main-base * 2) : 1.5rem
+    font-size: $font-main-base is defined ? (($font-main-base * 2)) : 1.5rem
     text-align: center
     cursor: default
 
@@ -262,7 +290,7 @@ $content-layout
       color: $tags-hover-color !important
 
 .category
-  font-size: $font-main-base is defined ? ($font-main-base * 1.2) : 1.2em
+  font-size: $font-main-base is defined ? (($font-main-base * 1.2)) : 1.2em
 
   a
     color: $categories-link-color
@@ -280,7 +308,7 @@ $content-layout
 
   .category-list-count
     padding-left: .3em
-    font-size: $font-main-base is defined ? ($font-main-base * .8) : .8em
+    font-size: $font-main-base is defined ? (($font-main-base * .8)) : .8em
     color: $categories-post-count-color
 
     &::before
