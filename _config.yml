@@ -23,7 +23,7 @@ creative_commons:
   # If not set, 'en' will be used by default.
   language: zh
 
-# Footer of your site
+# Footer of your site.
 footer:
   copyright:
     enable: true
@@ -38,9 +38,9 @@ footer:
     # Icon name in FontAwesome, see: https://fontawesome.com/icons?d=listing
     # `heart` is recommended with animation in red (e.g. #ff0000).
     name: heart
-    # Heart beat animation
+    # Heart beat animation.
     animation: true
-    # Please use quote to wrap value (Support for all types of CSS color units)
+    # Please use quote to wrap value (Support for all types of CSS color units).
     color: "#ff0000"
   
   # Hexo link (Powered by Hexo).
@@ -69,7 +69,7 @@ footer:
 # Menu config
 # ---------------------------------------------------------------
 
-# Header navigation menu
+# Header navigation menu.
 # Value before `||` delimeter is the target link.
 # Value after `||` delimeter is the name of FontAwesome icon. If not set, 'question-circle-o' icon will be show.
 menu:
@@ -94,35 +94,35 @@ sidebar:
   display: always
   # Sidebar position, available values: left | right
   float: right
-  # Sidebar offset from top menubar (Support for all types of CSS size units)
+  # Sidebar offset from top menubar (Support for all types of CSS size units).
   offsetTop: 20px
-  # Define the sidebar width, suggest: 260px ~ 360px is better (Support for all types of CSS size units)
+  # Define the sidebar width, suggest: 260px ~ 360px is better (Support for all types of CSS size units).
   width: 300px
-  # Horizon line
+  # Horizon line.
   horizon_line: true
 
 author:
   enable: true
-  # Avatar in the sidebar
+  # Avatar in the sidebar.
   avatar:
     # In theme directory (source/imgs): /images/avatar.png
     # In site directory (source/uploads): /uploads/avatar.png
     url: /imgs/avatar.png
     # If true, the avatar would be dispalyed in circle.
     rounded: true
-    # The value should be choose from 0 to 1. (Don't omit the zero before decimal point. e.g. 0.5 can`t be .5)
+    # The value should be choose from 0 to 1. (Don't omit the zero before decimal point. e.g. 0.5 can`t be .5).
     opacity: 1
-    # Mouse hover animation, available value: turn | shake
+    # Mouse hover animation, available value: turn | shake.
     animation: shake
 
-  # Your favorite motto (e.g. Talk is cheap, show me your code.)
+  # Your favorite motto (e.g. Talk is cheap, show me your code.).
   motto: hello world
 
-# Social links
+# Social links.
 # Value before `||` delimeter is the target link.
 # Value after `||` delimeter is the name of FontAwesome icon.
-# If you can`t find suitable icon, you can choose to display the original
-#   text by adding the "origin" prefix (e.g. origin:sf, then "sf" will be show)
+# If you can`t find suitable icon, you can choose to display the original.
+#   text by adding the "origin" prefix (e.g. origin:sf, then "sf" will be show).
 social:
   enable: true
   github: https://github.com/ || github
@@ -137,12 +137,12 @@ social:
   qq: yournumber || qq
 
 social_setting:
-  # Only show social links by icon
+  # Only show social links by icon.
   icon_only: true
   # Alignment of socail link, available values: flex-start | center | flex-end | space-between
   text_align: center
 
-# Table Of Contents in the Sidebar
+# Table Of Contents in the Sidebar.
 toc:
   enable: true
   # Automatically add list number to toc.
@@ -150,22 +150,22 @@ toc:
   # If true, all words will placed on next lines if header width longer then sidebar width.
   wrap: true
   # Maximum heading depth of generated toc. You can set it in one post through `toc_max_depth` in Front-matter.
-  # e.g. value: 3, will use h1~3 to generated toc
+  # e.g. value: 3, will use h1~3 to generated toc.
   max_depth: 5
 
-# Subscribe of email and rss
+# Subscribe of email and rss.
 feed:
   enable: false
-  # Enter your email subscription link (e.g. http://eepurl.com/guAE6j)
+  # Enter your email subscription link (e.g. http://eepurl.com/guAE6j).
   email: 
   # rss: 
 
-# The reading progress of post
+# The reading progress of post.
 reading_progress:
   enable: true
-  # Please use quote to wrap value (Support for all types of CSS color units)
+  # Please use quote to wrap value (Support for all types of CSS color units).
   color: "#49b1f5"
-  # Support for all types of CSS size units
+  # Support for all types of CSS size units.
   height: 1px
 
 # ---------------------------------------------------------------
@@ -177,35 +177,42 @@ post_meta:
   created:  
   updated: 
 
-# Code highlight
+# Code highlight.
 # values:
 # - light
 # - dark
 # - ocean
 highlight_theme: light
 
-# Code wrap
+# Code wrap.
 # values: true or false
 code_word_wrap: true
 
-# Horizonal alignment of img
+# Horizonal alignment of img.
 # values:
 # - left
 # - center
 # - right
 # 
-# If you don't want to set the align of img
-# please empty it, then img will show by default
+# If you don't want to set the align of img, please empty it, then img will show by default.
 img_horizonal_align: 
 
-# Vertical alignment of text and images
+# Vertical alignment of text and images.
 # values:
 # - top
 # - middle
 # - bottom
 text_vertical_align_with_img: bottom
 
-# Reward
+# Show tags at the bottom of post.
+post_tags: true
+
+# Show "post end" at the bottom of post.
+post_end:
+  enable: true
+  horizon_line: true
+
+# Reward.
 reward:
   enable: true
   alipay: https://raw.githubusercontent.com/liuyib/picBed/master/hexo-blog/20190529222805.png
@@ -215,46 +222,46 @@ reward:
 # Other config
 # ---------------------------------------------------------------
 
-# Header navigation bar height (Support for all types of CSS size units)
+# Header navigation bar height (Support for all types of CSS size units).
 header_nav_height: 50px
 
-# Header height (Only percentage units are supported)
+# Header height (Only percentage units are supported).
 header_height: 80%
 
-# Background image in the header
+# Background image in the header.
 header_bg_img: https://raw.githubusercontent.com/liuyib/picBed/master/hexo-blog/20190529223722.jpg
 
-# Background image in the footer
+# Background image in the footer.
 footer_bg_img: https://raw.githubusercontent.com/liuyib/picBed/master/hexo-blog/20190529223722.jpg
 
-# Back to top
+# Back to top.
 # values: true or false
 back_to_top: true
 
-# Blur filter effect of top image
+# Blur filter effect of top image.
 top_img_blur:
   enable: false
   level: 15px
 
-# Tag cloud
-# If not used, comment it or ignore it
+# Tag cloud.
+# If not used, comment it or ignore it.
 tag:
-  # Color for tag (please use quote to wrap value, only support HEX)
+  # Color for tag (please use quote to wrap value, only support HEX).
   start_color: '#a4d8fa'
   end_color: '#49b1f5'
-  # Font size for tag
+  # Font size for tag.
   min_font_size: 24
   max_font_size: 34
 
-# Assets
-# In theme directory (source/css)
+# Assets.
+# In theme directory (source/css).
 css: css
-# In theme directory (source/js)
+# In theme directory (source/js).
 js: js
-# In theme directory (source/imgs)
+# In theme directory (source/imgs).
 img: imgs
 
-# CND for third libs
+# CND for third libs.
 cdn:
   css:
     fontawesome: https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css
@@ -262,7 +269,7 @@ cdn:
     jquery: https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js
     velocity: https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js
 
-# Scripts loaded in the end of the body
+# Scripts loaded in the end of the body.
 scripts:
   - /js/utils.js
   - /js/scroll.js

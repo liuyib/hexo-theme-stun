@@ -20,13 +20,6 @@ headingLeft(fontsize)
       margin-right: fontsize + 10px
       color: $h-link-logo-hover-color
 
-if (hexo-config('text_vertical_align_with_img') == 'top')
-  $text_vertical_align_with_img = top
-else if (hexo-config('text_vertical_align_with_img') == 'middle')
-  $text_vertical_align_with_img = middle
-else
-  $text_vertical_align_with_img = bottom
-
 $content-layout
   border-radius: 5px
   padding: 2rem
@@ -42,6 +35,11 @@ $content-layout
 
 .main-content-layout
   @extend $content-layout
+
+if (hexo-config('text_vertical_align_with_img'))
+  $text_vertical_align_with_img = convert(hexo-config('text_vertical_align_with_img'))
+else
+  $text_vertical_align_with_img = bottom
 
 .main-content
   @extend $content-layout

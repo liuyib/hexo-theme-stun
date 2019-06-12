@@ -23,7 +23,7 @@
     *::after
       margin-right: .2rem
       font-family: $font-icon-family
-    
+
     .dot
       margin: 0 .5rem
       color: #666
@@ -70,6 +70,18 @@ else
     border: 0
 
 .post-footer
+  &-end
+    margin: 1rem 0 0
+    text-align: center
+    color: #b6b6b6
+
+    if (hexo-config('post_end.horizon_line'))
+      border-top: 1px dashed #e6e6e6
+      padding: 1rem 0 0
+  
+    span
+      margin: 0 .1rem
+
   &-copyright
     margin: 1.2rem 0
     border: 1px solid #e6e6e6
@@ -93,11 +105,8 @@ else
   &-tags
     margin-bottom: 1rem
 
-    &::before
-      content: $nav-tag-2
-      margin-left: 3px
-      font-family: $font-icon-family
-      color: $post-tags-icon-color
+    .icon
+      color: $blue-light
 
     span
       margin: 0 .5rem
