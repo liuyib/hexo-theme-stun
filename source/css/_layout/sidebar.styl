@@ -1,22 +1,15 @@
-if (hexo-config('sidebar.width'))
-  $sidebar-width = convert(hexo-config('sidebar.width'))
-else
-  $sidebar-width = 300px
-
-if (hexo-config('sidebar.float'))
-  $sidebar-float = convert(hexo-config('sidebar.float'))
-else
-  $sidebar-float = right
+$sidebar-float = convert(
+  hexo-config('sidebar.float') || 'right')
+$sidebar-width = convert(
+  hexo-config('sidebar.width') || '300px')
 
 #sidebar
   float: $sidebar-float
   width: $sidebar-width
   font-size: $font-sidebar-base
 
-if (hexo-config('sidebar.offsetTop'))
-  $sidebar-top = convert(hexo-config('sidebar.offsetTop'))
-else
-  $sidebar-top = 30px
+$sidebar-top = convert(
+  hexo-config('sidebar.offsetTop') || '30px')
 
 .sidebar-inner
   border-radius: 5px
@@ -72,20 +65,16 @@ else
     margin: 0
     padding-left: 1em
 
-if (!hexo-config('author.avatar.rounded'))
-  $avatar-rounded = 0
-else
+if (hexo-config('author.avatar.rounded'))
   $avatar-rounded = 50%
-
-if (hexo-config('author.avatar.opacity'))
-  $avatar-opacity = hexo-config('author.avatar.opacity')
 else
-  $avatar-opacity = 1
+  $avatar-rounded = 0
 
-if (hexo-config('author.avatar.animation'))
-  $avatar-animation = convert('avatar-' + hexo-config('author.avatar.animation'))
-else
-  $avatar-animation = convert('avatar-turn')
+$avatar-opacity = hexo-config('author.avatar.opacity') || 1
+$avatar-animation = 'avatar-' + convert(
+  hexo-config('author.avatar.animation') || 'turn')
+$text-align = convert(
+  hexo-config('social_setting.text_align') || 'center')
 
 .sidebar-overview
   .sidebar-author
@@ -120,11 +109,6 @@ else
       &:not(:last-child)
         border-bottom: 1px dashed #e6e6e6
 
-  if (hexo-config('social_setting.text_align'))
-    $text-align = convert(hexo-config('social_setting.text_align'))
-  else
-    $text-align = center
-
   .sidebar-social
     display: flex
     overflow: hidden
@@ -141,17 +125,6 @@ else
       transition: background-color .3s
       flex: 0 0 auto
 
-      if (hexo-config('social_setting.icon_only'))
-        background-color: $sidebar-social-color
-
-        &:hover
-          background-color: $sidebar-social-hover-color
-      else
-        background-color: #fff
-
-        &:hover
-          background-color: $sidebar-social-color
-
       a
         display: block
 
@@ -159,8 +132,12 @@ else
         display: inline
 
       if (hexo-config('social_setting.icon_only'))
+        background-color: $sidebar-social-color
         border-radius: 50%
         line-height: 1.5rem
+
+        &:hover
+          background-color: $sidebar-social-hover-color
 
         a
           width: 1.5rem
@@ -170,6 +147,8 @@ else
         span
           color: #fff
       else
+        background-color: #fff
+
         a
           padding: 0 .2rem
 
@@ -178,13 +157,15 @@ else
           margin: 0 .2rem
           color: #999
 
+        i
+          width: 1.2rem
+        
         &:hover
+          background-color: $sidebar-social-color
+
           i,
           span
             color: #fff
-
-        i
-          width: 1.2rem
 
   .sidebar-feed
     display: flex
@@ -255,18 +236,12 @@ else
     margin-top: 0
     padding-top: 0
 
-if (hexo-config('reading_progress.color'))
-  $reading_progress_color = convert(hexo-config('reading_progress.color'))
-else
-  $reading_progress_color = $blue-light
-
-if (hexo-config('reading_progress.height'))
-  $reading_progress_height = convert(hexo-config('reading_progress.height'))
-else
-  $reading_progress_height = 1px
+$reading_progress_color = convert(
+  hexo-config('reading_progress.color') || '$blue-light')
+$reading_progress_height = convert(
+  hexo-config('reading_progress.height') || '1px')
 
 .sidebar-progress
-  display: none
   margin-top: .5em
   text-align: center
 

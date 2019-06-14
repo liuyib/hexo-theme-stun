@@ -1,8 +1,6 @@
-if (hexo-config('header_bg_img'))
-  $header-bg-img = hexo-config('header_bg_img')
-
-if (hexo-config('header_height'))
-  $header-height = unit(convert(hexo-config('header_height')), 'vh')
+if (hexo-config('header.height'))
+  $header-height = unit(
+    convert(hexo-config('header.height') || '80%'), 'vh')
 
 #header
   display: flex
@@ -17,8 +15,9 @@ if (hexo-config('header_height'))
   background-size: cover
   flex-direction: column
 
-  if (hexo-config('header_bg_img'))
-    background-image: url($header-bg-img)
+  if (hexo-config('header.bg_image.enable'))
+    background-image: url(
+      hexo-config('header.bg_image.url') || ' ')
 
 $header-nav-color
   .header-nav-menu a,
@@ -32,8 +31,8 @@ $header-nav-color
       &::after
         color: $header-nav-link-hover-color
 
-if (hexo-config('header_nav_height'))
-  $header-nav-height = convert(hexo-config('header_nav_height'))
+$header-nav-height = convert(
+  hexo-config('header.nav_height') || '50px')
 
 .header-nav
   position: fixed
@@ -99,19 +98,18 @@ $header-nav-item
   &:hover
     cursor: pointer
 
-if (hexo-config('top_img_blur') && hexo-config('top_img_blur.enable'))
-  $site-info-blur-enable = true
-  $site-info-blur-level = convert(hexo-config('top_img_blur.level'))
+$site-info-blur-level = convert(
+  hexo-config('header.blur_effect.level') || '0')
 
 .header-info
   display: flex
-  z-index: $z-index-1
   text-align: center
   flex: 1
   flex-direction: column
-
+  
   // enable blur effect for site info
-  if ($site-info-blur-enable == true)
+  if (hexo-config('header.blur_effect.enable'))
+    z-index: $z-index-1
     overflow: hidden
     position: absolute
     top: 0
@@ -129,10 +127,10 @@ if (hexo-config('top_img_blur') && hexo-config('top_img_blur.enable'))
       bottom: 0
       left: 0
       z-index: $z-index-0
-      margin: 0 - $site-info-blur-level * 1.5
+      margin: 0 - $site-info-blur-level * 2
       background: inherit
       background-attachment: fixed
-      filter: blur(20px)
+      filter: blur($site-info-blur-level)
 
 .header-info-inner
   display: flex

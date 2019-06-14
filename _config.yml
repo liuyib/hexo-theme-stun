@@ -8,6 +8,24 @@ favicon:
   # apple_touch_icon: /imgs/apple-touch-icon-stun.png
   # safari_pinned_tab: /imgs/logo-stun.svg
 
+header:
+  # Header height (Only percentage units are supported).
+  height: 80%
+  # Header navigation bar height (Support for all types of CSS size units).
+  nav_height: 50px
+  # Background image in the header.
+  bg_image:
+    enable: true
+    # In theme directory (source/imgs): /images/avatar.png
+    # In site directory (source/uploads): /uploads/avatar.png
+    # You can also use a link of image.
+    url: 
+  # Blur filter effect of the header background.
+  blur_effect:
+    enable: false
+    # Degree of blur.
+    level: 15px
+
 # Creative Commons 4.0 International License.
 creative_commons:
   enable: true
@@ -16,62 +34,84 @@ creative_commons:
   license: BY-NC-SA
   # Show the CC license in the sidebar.
   sidebar: true
-  # Show the CC license in the post bottom.
+  # Show the CC license at the post bottom.
   post: true
   # You can set a language value if you prefer a translated version of CC license.
   # Valid values of language: en, zh, etc.
-  # If not set, 'en' will be used by default.
-  language: zh
+  # If not set, "en" will be used by default.
+  language: en
+
+# Back to top button.
+back2top:
+  enable: true
+  icon:
+    # Icon name in FontAwesome, see: https://fontawesome.com/icons?d=listing
+    # `rocket` is recommended.
+    name: rocket
+    # Animation of rocket launch.
+    animation: true
+    # Rotation Angle of icon.
+    rotate: -45deg
+    # Please use quote to wrap value (Support for all types of CSS color units).
+    color: "#49b1f5"
+    # Colour when the mouse hovers it.
+    hover_color: "#fc6423"
 
 # Footer of your site.
 footer:
+  # Background image in the footer.
+  bg_image:
+    enable: true
+    # In theme directory (source/imgs): /images/avatar.png
+    # In site directory (source/uploads): /uploads/avatar.png
+    # You can also use a link of image.
+    url: 
+  # Copyright information.
   copyright:
     enable: true
     # If not set, will be used `author` from Hexo main config.
-    content: xxx. All Rights Reserved.
-    # Specify the date when the site was setup. If not set, current year will be used.
+    text: 
+    # Specify the date when the site was setup. If not set, the current year will be used.
     since: 
+    # Specify the date when the site ended. If not set, the current year will be used.
     end: 
-  
-  # Icon between copyright year and copyright owner.
+  # Icon between the copyright year and the owner.
   icon:
+    enable: true
     # Icon name in FontAwesome, see: https://fontawesome.com/icons?d=listing
-    # `heart` is recommended with animation in red (e.g. #ff0000).
+    # `heart` is recommended with animation in red (#ff0000).
     name: heart
     # Heart beat animation.
     animation: true
     # Please use quote to wrap value (Support for all types of CSS color units).
     color: "#ff0000"
-  
   # Hexo link (Powered by Hexo).
   powered:
     enable: true
     # Version info of Hexo after Hexo link (e.g. vX.X.X).
     version: true
-  
   # Theme info link (Theme - stun).
   theme:
     enable: true
     # Version info of theme after theme info (e.g. vX.X.X).
     version: true
-  
-  # Beian icp information for Chinese users.
-  # http://www.miitbeian.gov.cn
+  # Beian icp information for Chinese users. see: http://www.miitbeian.gov.cn
   beian:
     enable: false
     # 备案 XXXXXXXX 号
     icp: 
-  
   # Any custom text (e.g. Hosted by <a href="https://pages.github.com/" rel="noopener" target="_blank">Github Pages</a>).
-  custom_text: Hosted by <a href="https://pages.github.com/" rel="noopener" target="_blank">Github Pages</a>
+  custom:
+    enable: false
+    text: 
 
 # ---------------------------------------------------------------
 # Menu config
 # ---------------------------------------------------------------
 
 # Header navigation menu.
-# Value before `||` delimeter is the target link.
-# Value after `||` delimeter is the name of FontAwesome icon. If not set, 'question-circle-o' icon will be show.
+# Value before `||` delimiter is the target link.
+# Value after `||` delimiter is the name of FontAwesome icon. If not set, "question-circle-o" icon will be shown.
 menu:
   home: / || home
   archives: /archives/ || folder-open
@@ -90,13 +130,12 @@ menu_settings:
 # ---------------------------------------------------------------
 
 sidebar:
-  # Sidebar Display, available values: always | remove
-  display: always
+  enable: true
   # Sidebar position, available values: left | right
   float: right
   # Sidebar offset from top menubar (Support for all types of CSS size units).
   offsetTop: 20px
-  # Define the sidebar width, suggest: 260px ~ 360px is better (Support for all types of CSS size units).
+  # Define the sidebar width, 260px ~ 360px is better (Support for all types of CSS size units).
   width: 300px
   # Horizon line.
   horizon_line: true
@@ -107,21 +146,22 @@ author:
   avatar:
     # In theme directory (source/imgs): /images/avatar.png
     # In site directory (source/uploads): /uploads/avatar.png
-    url: /imgs/avatar.png
-    # If true, the avatar would be dispalyed in circle.
+    # You can also use a link of image.
+    url: 
+    # If true, the avatar would be displayed in a circle.
     rounded: true
-    # The value should be choose from 0 to 1. (Don't omit the zero before decimal point. e.g. 0.5 can`t be .5).
+    # The value should be chosen from 0 to 1.
     opacity: 1
-    # Mouse hover animation, available value: turn | shake.
-    animation: shake
+    # Mouse hover animation, available value: turn | shake
+    animation: turn
 
-  # Your favorite motto (e.g. Talk is cheap, show me your code.).
-  motto: hello world
+  # Your favorite motto (e.g. Talk is cheap, show me your code).
+  motto: Talk is cheap, show me your code.
 
 # Social links.
-# Value before `||` delimeter is the target link.
-# Value after `||` delimeter is the name of FontAwesome icon.
-# If you can`t find suitable icon, you can choose to display the original.
+# Value before `||` delimiter is the target link.
+# Value after `||` delimiter is the name of FontAwesome icon.
+# If you can`t find a suitable icon, you can choose to display the original.
 #   text by adding the "origin" prefix (e.g. origin:sf, then "sf" will be show).
 social:
   enable: true
@@ -137,9 +177,11 @@ social:
   qq: yournumber || qq
 
 social_setting:
-  # Only show social links by icon.
+  # Only show social links by an icon.
   icon_only: true
-  # Alignment of socail link, available values: flex-start | center | flex-end | space-between
+  # Available values are equal to "justify-content" attribute in CSS.
+  # e.g. flex-start | center | flex-end | space-between, etc.
+  # For details, please see: https://developer.mozilla.org/zh-CN/docs/Web/CSS/justify-content
   text_align: center
 
 # Table Of Contents in the Sidebar.
@@ -147,7 +189,7 @@ toc:
   enable: true
   # Automatically add list number to toc.
   number: true
-  # If true, all words will placed on next lines if header width longer then sidebar width.
+  # If true, all words will be placed on next lines if header width longer then sidebar width.
   wrap: true
   # Maximum heading depth of generated toc. You can set it in one post through `toc_max_depth` in Front-matter.
   # e.g. value: 3, will use h1~3 to generated toc.
@@ -163,8 +205,8 @@ feed:
 # The reading progress of post.
 reading_progress:
   enable: true
-  # Please use quote to wrap value (Support for all types of CSS color units).
-  color: "#49b1f5"
+  # Please use the quote to wrap value (Support for all types of CSS color units).
+  color: "#fc6423"
   # Support for all types of CSS size units.
   height: 1px
 
@@ -172,10 +214,13 @@ reading_progress:
 # Post config
 # ---------------------------------------------------------------
 
+# The meta-information at the front of the post.
 post_meta:
-  icon_only: 
-  created:  
-  updated: 
+  icon_only: false
+  # Show create information.
+  created: true
+  # Show update information.
+  updated: true
 
 # Code highlight.
 # values:
@@ -194,7 +239,7 @@ code_word_wrap: true
 # - center
 # - right
 # 
-# If you don't want to set the align of img, please empty it, then img will show by default.
+# If you don't want to set the align of the image, please empty it, then it will show by default.
 img_horizonal_align: 
 
 # Vertical alignment of text and images.
@@ -204,54 +249,36 @@ img_horizonal_align:
 # - bottom
 text_vertical_align_with_img: bottom
 
-# Show tags at the bottom of post.
+# Show tags at the bottom of the post.
 post_tags: true
 
-# Show "post end" at the bottom of post.
-post_end:
+# Show "post end" at the bottom of the post.
+post_end_text:
   enable: true
+  # Show horizon line before the text that prompts the end of the article.
   horizon_line: true
 
-# Reward.
+# Reward
 reward:
-  enable: true
-  alipay: https://raw.githubusercontent.com/liuyib/picBed/master/hexo-blog/20190529222805.png
-  wechat: https://raw.githubusercontent.com/liuyib/picBed/master/hexo-blog/20190529222806.png
+  enable: false
+  alipay: 
+  wechat: 
 
 # ---------------------------------------------------------------
 # Other config
 # ---------------------------------------------------------------
 
-# Header navigation bar height (Support for all types of CSS size units).
-header_nav_height: 50px
-
-# Header height (Only percentage units are supported).
-header_height: 80%
-
-# Background image in the header.
-header_bg_img: https://raw.githubusercontent.com/liuyib/picBed/master/hexo-blog/20190529223722.jpg
-
-# Background image in the footer.
-footer_bg_img: https://raw.githubusercontent.com/liuyib/picBed/master/hexo-blog/20190529223722.jpg
-
-# Back to top.
-# values: true or false
-back_to_top: true
-
-# Blur filter effect of top image.
-top_img_blur:
-  enable: false
-  level: 15px
-
 # Tag cloud.
 # If not used, comment it or ignore it.
-tag:
-  # Color for tag (please use quote to wrap value, only support HEX).
-  start_color: '#a4d8fa'
-  end_color: '#49b1f5'
-  # Font size for tag.
-  min_font_size: 24
-  max_font_size: 34
+tag_cloud:
+  # Color for tag (please use the quote to wrap value, only support HEX).
+  start_color: "#a4d8fa"
+  end_color: "#49b1f5"
+  # Size for tag.
+  min_size: 24
+  max_size: 34
+  # Maximum number of tags displayed. Change it if you have more than 200 tags
+  max_amount: 200
 
 # Assets.
 # In theme directory (source/css).
@@ -269,7 +296,7 @@ cdn:
     jquery: https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js
     velocity: https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js
 
-# Scripts loaded in the end of the body.
+# Scripts loaded at the end of the body.
 scripts:
   - /js/utils.js
   - /js/scroll.js

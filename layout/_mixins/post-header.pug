@@ -4,18 +4,36 @@ mixin postHeader(post)
       h1.post-title= post.title
     else
       h1.post-title= _p('post.untitled')
+    
     div.post-meta
-      span.post-meta-create
-        span= _p('post.posted') + ' '
-        if post.date
-          span= full_date(post.date, 'YYYY-MM-DD')
-        else
-          span none
-      span.dot!= '&bull;'
+      if theme.post_meta.created
+        span.post-meta-create
+          i(class='fa fa-calendar-o')
+          if !theme.post_meta.icon_only
+            span= _p('post.posted') + ' '
+          if post.date
+            span= full_date(post.date, 'YYYY-MM-DD')
+          else
+            span none
+      
+      if theme.post_meta.updated
+        span.post-meta-update
+          i(class='fa fa-calendar-check-o')
+          if !theme.post_meta.icon_only
+            span= _p('post.updated') + ' '
+          if post.updated
+            span= full_date(post.updated, 'YYYY-MM-DD')
+          else
+            span none
+      
       span.post-meta-word
-        span= _p('post.word_count') + ' '
+        i(class='fa fa-file-word-o')
+        if !theme.post_meta.icon_only
+          span= _p('post.word_count') + ' '
         span TODO
-      span.dot!= '&bull;'
+      
       span.post-meta-read
-        span= _p('post.fire') + ' '
+        i(class='fa fa-eye')
+        if !theme.post_meta.icon_only
+          span= _p('post.read_count') + ' '
         span TODO

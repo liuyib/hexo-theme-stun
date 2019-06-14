@@ -1,29 +1,22 @@
-$(function () {
+$(document).ready(function () {
   var SIDEBAR_STICKY_TOP = 30;
   var prevScrollTop = 0;
-  var initScrollTop = $(window).scrollTop();
   
-  headerNavScroll(initScrollTop);
-  backToTop(initScrollTop);
+  // Must initial run
+  headerNavScroll();
+  backToTop();
 
   $(window).scroll(throttle(function () {
-    var scrollTop = $(this).scrollTop();
-    
-    headerNavScroll(scrollTop);
-    backToTop(scrollTop);
+    headerNavScroll();
+    backToTop();
   }, 20, 100));
   
-  var post = document.querySelector('#post');
-  var postH = $('#post').height() - $(window).height();
-  var scrollH = post && parseInt(post.getBoundingClientRect().top);
-  
-  updateProgress(postH, scrollH);
+  // Must initial run
+  readProgress();
   sidebarSticky();
-  
-  $(window).scroll(function () {
-    var scrollH = post && parseInt(post.getBoundingClientRect().top);
 
-    updateProgress(postH, scrollH);
+  $(window).scroll(function () {
+    readProgress();
     sidebarSticky();
   });
 
@@ -46,18 +39,11 @@ $(function () {
       duration: 500,
       easing: 'easeOutQuart'
     });
-
-    $('#back-top').velocity({
-      translateY: '-100vh',
-    }, {
-      duration: 500
-    }).velocity('reverse', {
-      duration: 10
-    });
   });
   
   // site header nav scroll
-  function headerNavScroll(scrollTop) {
+  function headerNavScroll() {
+    var scrollTop = $(window).scrollTop();
     var delta = scrollTop - prevScrollTop;
 
     if (scrollTop === 0) {
@@ -85,9 +71,10 @@ $(function () {
 
   // sidebar sticky
   function sidebarSticky() {
-    if (document.querySelector('.main-inner')) {
-      var targetY = document.querySelector('.main-inner')
-        .getBoundingClientRect().top;
+    var mainInner = document.querySelector('.main-inner');
+    
+    if (mainInner) {
+      var targetY = mainInner.getBoundingClientRect().top;
 
       if (targetY < SIDEBAR_STICKY_TOP) {
         $('.sidebar-inner').addClass('sticky');
@@ -98,41 +85,35 @@ $(function () {
   }
 
   // update the reading progress lines of post
-  function updateProgress(postH, scrollH) {
-    var result = '';
+  function readProgress() {
+    var winH = $(window).height();
+    var postH = $('#post').height();
+    var post = document.querySelector('#post');
+    var scrollH = (post &&
+      post.getBoundingClientRect().top * -1) || 0
     
-    if (Math.abs(scrollH) === 0) {
-      result = '0%'
-      
-      $('.sidebar-progress').css('display', 'block');
-    } else if (scrollH < 0) {
-      var scrollH = Math.abs(scrollH);
-      
-      if (scrollH <= postH) {
-        result = parseInt((scrollH / postH) * 100) + '%';
-      } else {
-        result = '100%';
-      }
+    var percent = parseInt((scrollH / Math.abs((postH - winH))) * 100);
+    percent = percent > 100 ? 100 : percent < 0 ? 0 : percent;
+    percent += '%';
 
-      $('.sidebar-progress').css('display', 'block');
-    } else {
-      $('.sidebar-progress').css('display', 'none');
-    }
-
-    $('.sidebar-progress-number').html(result);
-    $('.sidebar-progress-line').css('width', result);
+    $('.sidebar-progress-number').html(percent);
+    $('.sidebar-progress-line').css('width', percent);
   }
 
   // scroll heading to top
   function scrollToHead(anchor) {
-    $(anchor).velocity('stop').velocity('scroll', {
-      duration: 500,
-      easing: 'easeOutSine'
-    });
+    $(anchor)
+      .velocity('stop')
+      .velocity('scroll', {
+        duration: 500,
+        easing: 'easeOutSine'
+      });
   }
 
   // back to top
-  function backToTop(scrollTop) {
+  function backToTop() {
+    var scrollTop = $(window).scrollTop();
+
     if (scrollTop !== 0) {
       $('#back-top').css('display', 'block');
     } else {

@@ -2,13 +2,13 @@
   overflow: hidden
 
 .post-header
-  margin: 0 0 1rem
+  margin: 0 0 1.5rem
   text-align: center
 
   .post-title
     margin: 0 0 .5rem
     padding-left: 0
-    font-size: $font-post-title is defined ? $font-post-title : 2rem
+    font-size: $font-post-title
     word-wrap: break-word
     color: $post-info-title-color
 
@@ -22,48 +22,47 @@
     *::before,
     *::after
       margin-right: .2rem
-      font-family: $font-icon-family
+      @extend $font-face
 
-    .dot
+    & > span
+      position: relative
       margin: 0 .5rem
-      color: #666
-
+      
+      &:not(:last-child)::after
+        content: '•'
+        position: absolute
+        top: .15em
+        right: -1.1em
+        color: #666
+    
     &-create
       color: $post-info-create-color
-
-      &::before
-        content: $icon-post-create-before
-
+      
+    &-update
+      color: $post-info-update-color
+      
     &-word
       color: $post-info-word-count-color
-
-      &::before
-        content: $icon-post-word-before
-
+      
     &-read
       color: $post-info-read-count-color
 
-      &::before
-        content: $icon-post-read-before
-
-      &::after
-        content: $icon-post-read-after
-
 if (hexo-config('img_horizonal_align') == 'left')
-  $img_horizonal_align = 0 auto 0 0
-else if (hexo-config('img_horizonal_align') == 'center')
-  $img_horizonal_align = auto
+  $img_horizonal_align
+    margin: 0 auto 0 0
 else if (hexo-config('img_horizonal_align') == 'right')
-  $img_horizonal_align = 0 0 0 auto
+  $img_horizonal_align
+    margin: 0 0 0 auto
 else
-  $img_horizonal_align = null
+  $img_horizonal_align
+    margin: auto
 
 .post-body,
 #recent-posts
-  if ($img_horizonal_align != null)
+  if (hexo-config('img_horizonal_align'))
     img
       display: block
-      margin: $img_horizonal_align
+      @extend $img_horizonal_align
 
 .post-body
   #more
@@ -75,7 +74,7 @@ else
     text-align: center
     color: #b6b6b6
 
-    if (hexo-config('post_end.horizon_line'))
+    if (hexo-config('post_end_text.horizon_line'))
       border-top: 1px dashed #e6e6e6
       padding: 1rem 0 0
   
@@ -106,7 +105,7 @@ else
     margin-bottom: 1rem
 
     .icon
-      color: $blue-light
+      color: $post-tags-icon-color
 
     span
       margin: 0 .5rem

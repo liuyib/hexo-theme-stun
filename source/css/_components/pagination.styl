@@ -13,7 +13,6 @@
   a.page-number
     border-bottom: 0
     height: 100%
-    font-family: $font-icon-family
     color: $pagination-item-color
     background-color: $pagination-item-bg-color
     transition: all .2s ease
@@ -41,11 +40,6 @@
     color: $pagination-item-active-color
     background-color: $pagination-item-active-bg-color
 
-  .icon-left-arrow,
-  .icon-right-arrow
-    font-family: $font-icon-family
-    font-style: normal
-
   a.prev,
   a.next
     border-bottom: 0
@@ -61,15 +55,7 @@
   a.next
     margin-left: 1em
 
-  .icon-left-arrow
-    &::before
-      content: $icon-prev
-
-  .icon-right-arrow
-    &::after
-      content: $icon-next
-
-// paginator after post
+// Paginator after post
 // -------------------------
 .post-paginator
   overflow: hidden
@@ -85,28 +71,20 @@
       word-break: break-all
       color: $pagination-arrow-color
 
-      &::before,
-      &::after
-        font-family: $font-icon-family
-
       &:hover
         color: $pagination-arrow-hover-color
 
   .article-prev
     text-align: left
 
-    a
-      &::before
-        content: $icon-prev
-        margin-right: .5em
+    .title
+      margin-left: .3rem
 
   .article-next
     text-align: right
 
-    a
-      &::after
-        content: $icon-next
-        margin-left: .5em
+    .title
+      margin-right: .3rem
 
   .pull-left
     float: left

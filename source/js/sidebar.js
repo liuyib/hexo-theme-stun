@@ -1,26 +1,26 @@
-$(function () {
-  var toc = $('.sidebar-toc');
-  var view = $('.sidebar-overview');
+$(document).ready(function () {
+  var $toc = $('.sidebar-toc');
+  var $view = $('.sidebar-overview');
 
   $('.sidebar-nav-toc').click(function () {
     $('.sidebar-nav-toc').toggleClass('current');
     $('.sidebar-nav-overview').toggleClass('current');
     
-    toc.css('display', 'block');
-    toc.velocity('fadeIn');
+    $toc.css('display', 'block');
+    $toc.velocity('fadeIn');
     
-    view.css('display', 'none');
-    view.velocity('fadeOut');
+    $view.css('display', 'none');
+    $view.velocity('fadeOut');
   });
 
   $('.sidebar-nav-overview').click(function () {
     $('.sidebar-nav-toc').toggleClass('current');
     $('.sidebar-nav-overview').toggleClass('current');
 
-    toc.css('display', 'none');
-    toc.velocity('fadeOut');
+    $toc.css('display', 'none');
+    $toc.velocity('fadeOut');
 
-    view.css('display', 'block');
-    view.velocity('fadeIn');
+    $view.css('display', 'block');
+    $view.velocity('fadeIn');
   });
 });

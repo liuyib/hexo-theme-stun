@@ -33,18 +33,11 @@ $link-bottom-color             = #d9ecfb
 $link-bottom-hover-color       = #7ebef1
 
 // Heading (<h1~6>)
-$h-link-logo-color             = #f47466
-$h-link-logo-hover-color       = $blue-light
+$h-link-logo-color             = $blue-light
+$h-link-logo-hover-color       = #f47466
 $h-color                       = #222;
 $h-font-size-base              = 16px
-$h-font-size = {
-  h1: 2em,
-  h2: 1.5em,
-  h3: 1.125em,
-  h4: 1em,
-  h5: 0.875em,
-  h6: 0.75em
-}
+$h-font-size = 2em 1.5em 1.125em 1em 0.875em 0.75em
 
 // Horizon line (<hr>)
 $hr-color                      = #b8dcfd
@@ -112,11 +105,12 @@ $sidebar-state-post-color        = #54bcff
 $sidebar-state-category-color    = #5c5c5c
 $sidebar-state-tag-color         = #ff8956
 
-// Post header info
+// Post
 $post-info-title-color           = #444
-$post-info-create-color          = #00a7e0
-$post-info-word-count-color      = #333
-$post-info-read-count-color      = #ff3f1a
+$post-info-create-color          = #666
+$post-info-update-color          = $blue-light
+$post-info-word-count-color      = #666
+$post-info-read-count-color      = $orange-dark
 $post-tags-icon-color            = $blue-light
 
 // Pagination
@@ -160,13 +154,32 @@ $font-sidebar-base      = 16px
 
 // Font family
 $font-family            = PingFang SC, Microsoft YaHei, Lato, sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Hiragino Sans GB, Helvetica Neue, Helvetica, Arial
-$code-font-family       = "Source Code Pro", Consolas, Menlo, Monaco, "Courier New", monospace
+$code-font-family       = 'Source Code Pro', Consolas, Menlo, Monaco, 'Courier New', monospace
 
 // Font weight
 $font-weight-light      = 300
 $font-weight-normal     = 400
 $font-weight-bold       = 600
 $font-weight-bolder     = 700
+
+// -------------------------------------------
+// Icon content define
+// -------------------------------------------
+// All icon elements will inherit these attributes.
+$font-face
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+$icon-h-link             = '\f0c1'
+
+$icon-ul-list-1          = '\f111'
+$icon-ul-list-2          = '\f10c'
+$icon-ul-list-3          = '\f0c8'
+
+$icon-hr                 = '\f0fb'
 
 // -------------------------------------------
 // z-index list
@@ -184,7 +197,8 @@ $z-index-5 = 1004
 // Width
 $main-sidebar-gap  = 30px
 $main-desktop      = 992px
-$content-desktop   = $main-desktop + convert(hexo-config('sidebar.width')) + $main-sidebar-gap
+$content-desktop   = $main-desktop + convert(
+  hexo-config('sidebar.width') || '300px') + $main-sidebar-gap
 
 // -------------------------------------------
 // Responsive layout

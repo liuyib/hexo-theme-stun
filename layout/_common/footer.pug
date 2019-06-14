@@ -10,11 +10,16 @@ footer#footer
       div
         if footer.copyright.enable
           span!= `&copy; ${startYear}` + (startYear != endYear ? `-${endYear}` : '')
-          span(
-            class=`fa fa-${footer.icon.name} ${footer.icon.animation ? 'heart-beat' : ''}`
-            style=`color: ${footer.icon.color}`
-          ).footer-separator
-          span= footer.copyright.content || config.author + '.'
+
+          if footer.icon.enable
+            span(
+              class=`fa fa-${footer.icon.name} ${footer.icon.animation ? 'heart-beat' : ''}`
+              style=`color: ${footer.icon.color}`
+            ).footer-separator
+          else
+            span= ' '
+          
+          span= footer.copyright.text || config.author + '.'
 
         if footer.copyright.enable && footer.beian.enable
           span.footer-separator |
@@ -41,6 +46,6 @@ footer#footer
           if footer.theme.version
             span= ' v' + stun_env('version') + '.'
     
-    if footer.custom_text
+    if footer.custom.enable
       div
-        span!= footer.custom_text
+        span!= footer.custom.text

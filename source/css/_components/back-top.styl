@@ -4,14 +4,21 @@
   right: 1.5rem
   bottom: 5vh
 
+$back-to-top-rotate = convert(
+  hexo-config('back2top.icon.rotate') || '0')
+$back-to-top-color = convert(
+  hexo-config('back2top.icon.color') || '#666')
+$back-to-top-hover-color = convert(
+  hexo-config('back2top.icon.hover_color') || '#999')
+
 .back-top-inner
-  transform: rotate(-45deg)
+  transform: rotate($back-to-top-rotate)
 
   i
     font-size: 1.5rem
-    color: $blue-light
+    color: $back-to-top-color
     transition: color .2s
 
     &:hover
-      color: $orange-dark
+      color: $back-to-top-hover-color
       cursor: pointer

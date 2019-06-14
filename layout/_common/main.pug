@@ -1,7 +1,7 @@
 main#main
   div.main-inner
-    if theme.sidebar.display === 'always'
-      include ../_components/sidebar.pug
+    if theme.sidebar.enable
+      include ./sidebar.pug
   
     if body
       div!= body

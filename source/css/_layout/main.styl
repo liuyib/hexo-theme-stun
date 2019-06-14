@@ -10,20 +10,20 @@
 .main-inner
   margin: 0 auto
 
-if (hexo-config('sidebar.display') == 'always')
+if (hexo-config('sidebar.enable'))
   if (hexo-config('sidebar.float') == 'left')
-    $content-show
+    $content-position
       float: right
   else
-    $content-show
+    $content-position
       float: left
 else
-  $content-show
+  $content-position
     margin: 0 auto
 
 .home-content
   font-size: $font-main-base
-  @extend $content-show
+  @extend $content-position
 
   img
     max-width: 100%
