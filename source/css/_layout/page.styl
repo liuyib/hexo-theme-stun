@@ -43,27 +43,28 @@ $text_vertical_align_with_img = convert(
   h4,
   h5,
   h6
-    position: relative
-    margin: 1.5rem 0 1rem
-    font-weight: $font-weight-bolder
-    line-height: $line-height-h
-    color: lighten($h-color, 15%)
-    cursor: pointer
+    &:not(.post-title)
+      position: relative
+      margin: 1.5rem 0 1rem
+      font-weight: $font-weight-bolder
+      line-height: $line-height-h
+      color: lighten($h-color, 15%)
+      cursor: pointer
 
-    // show icon before heading
-    if ($icon-h-link)
-      &:not(.post-title)::after
-        content: $icon-h-link
-        height: 100%
-        line-height: $line-height-h
-        color: $h-link-logo-color
-        opacity: 0
-        transition: opacity .1s ease
-        @extend $font-face
+      // show icon before heading
+      if ($icon-h-link)
+        &:not(.post-title)::after
+          content: $icon-h-link
+          height: 100%
+          line-height: $line-height-h
+          color: $h-link-logo-color
+          opacity: 0
+          transition: opacity .1s ease
+          @extend $font-face
 
-    &:hover
-      &::after
-        opacity: 1
+      &:hover
+        &::after
+          opacity: 1
 
   for size in 1 .. 6
     h{size}
@@ -186,62 +187,6 @@ $text_vertical_align_with_img = convert(
     background-color: $white
     transition: all .2s ease
     transform: translate(-50%, -50%)
-
-.article-sort-item
-  display: flex
-  position: relative
-  margin-bottom: .8rem
-  padding-left: 1.4rem
-  align-items: center
-
-  h2
-    margin: 0
-    font-weight: $font-weight-normal
-    line-height: $line-height-h
-
-  &:last-child
-    margin-bottom: 0
-
-  &:not(.year):hover
-    &::before
-      border-color: $archives-left-dot-hover-color
-
-  &::before
-    content: ''
-    position: absolute
-    top: 50%
-    left: 0
-    z-index: $z-index-2
-    border: .15rem solid $archives-left-dot-color
-    border-radius: 50%
-    width: .6rem
-    height: .6rem
-    background-color: $white
-    transition: all .2s ease
-    transform: translate(-50%, -50%)
-
-  &.year
-    display: block
-    position: relative
-    font-size: $font-main-base
-    font-weight: $font-weight-bolder
-
-  &__time
-    margin-right: 1rem
-    font-size: $font-main-base
-    color: $archives-right-time-color
-    transform: translate(0, 8%)
-
-  &__title a
-    border-bottom: 0
-    font-size: $font-main-base
-    text-decoration: none
-    color: $font-color
-    cursor: pointer
-
-    &:hover
-      border-bottom: 0
-      color: $blue-light !important
 
 .tag-cloud,
 .category

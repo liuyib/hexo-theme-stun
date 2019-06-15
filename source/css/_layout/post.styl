@@ -1,52 +1,6 @@
 #post
   overflow: hidden
 
-.post-header
-  margin: 0 0 1.5rem
-  text-align: center
-
-  .post-title
-    margin: 0 0 .5rem
-    padding-left: 0
-    font-size: $font-post-title
-    word-wrap: break-word
-    color: $post-info-title-color
-
-    &::before
-      content: ''
-
-    &:hover
-      padding-left: 0
-
-  .post-meta
-    *::before,
-    *::after
-      margin-right: .2rem
-      @extend $font-face
-
-    & > span
-      position: relative
-      margin: 0 .5rem
-      
-      &:not(:last-child)::after
-        content: '•'
-        position: absolute
-        top: .15em
-        right: -1.1em
-        color: #666
-    
-    &-create
-      color: $post-info-create-color
-      
-    &-update
-      color: $post-info-update-color
-      
-    &-word
-      color: $post-info-word-count-color
-      
-    &-read
-      color: $post-info-read-count-color
-
 if (hexo-config('img_horizonal_align') == 'left')
   $img_horizonal_align
     margin: 0 auto 0 0
@@ -80,26 +34,6 @@ else
   
     span
       margin: 0 .1rem
-
-  &-copyright
-    margin: 1.2rem 0
-    border: 1px solid #e6e6e6
-    border-radius: 2px
-    padding: .8rem 1rem
-    width: 100%
-    transition: box-shadow .2s
-
-    &:hover
-      box-shadow: 0 0 4px 4px #f5f5f5
-
-    .copyright-name
-      margin-right: .5rem
-      font-weight: $font-weight-bold
-      white-space: nowrap
-
-    .copyright-value
-      word-break: break-all
-      color: $font-color
 
   &-tags
     margin-bottom: 1rem

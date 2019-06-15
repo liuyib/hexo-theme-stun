@@ -1,9 +1,16 @@
 mixin postHeader(post)
   header.post-header
-    if (post.title)
-      h1.post-title= post.title
+    if (is_post())
+      if (post.title)
+        h1.post-title= post.title
+      else
+        h1.post-title= _p('post.untitled')
     else
-      h1.post-title= _p('post.untitled')
+      a(href=url_for(post.canonical_path)).post-title-link
+        if (post.title)
+          h1.post-title= post.title
+        else
+          h1.post-title= _p('post.untitled')
     
     div.post-meta
       if theme.post_meta.created
