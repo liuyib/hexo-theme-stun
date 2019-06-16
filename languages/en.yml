@@ -38,8 +38,8 @@ post:
   updated: updated
   posted: Posted
   word_count: Words
-  read_count: Visited
-  read_time: Reading time
+  reading_count: Visited
+  reading_time: Reading time
   read_more: Read more
   fire: Heat
   sticky: Sticky

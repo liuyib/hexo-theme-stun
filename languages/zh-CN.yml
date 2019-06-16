@@ -38,8 +38,8 @@ post:
   updated: 更新于
   posted: 发表于
   word_count: 字数统计
-  read_count: 阅读次数
-  read_time: 阅读时长
+  reading_count: 阅读次数
+  reading_time: 阅读时长
   read_more: 阅读全文
   fire: 热度
   sticky: 置顶

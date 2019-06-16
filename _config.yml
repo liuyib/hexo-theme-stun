@@ -218,9 +218,33 @@ reading_progress:
 post_meta:
   icon_only: false
   # Show create information.
-  created: true
+  created:
+    enable: true
+    # Icon name in FontAwesome, see: https://fontawesome.com/v4.7.0/icons/
+    icon: calendar-o
   # Show update information.
-  updated: true
+  updated:
+    enable: true
+    # Icon name in FontAwesome, see: https://fontawesome.com/v4.7.0/icons/
+    icon: calendar-check-o
+  # Count the reading time of the post.
+  # Don't enable it before you see: https://github.com/willin/hexo-wordcount
+  reading_time:
+    enable: false
+    # Icon name in FontAwesome, see: https://fontawesome.com/v4.7.0/icons/
+    icon: clock-o
+    # Set reading speed to estimate reading time.
+    speed:
+      # Reading speed of zh-CN.
+      zh: 200
+      # Reading speed of en-US.
+      en: 80
+  # Count the words of the post.
+  # Don't enable it before you see: https://github.com/willin/hexo-wordcount
+  word_count:
+    enable: false
+    # Icon name in FontAwesome, see: https://fontawesome.com/v4.7.0/icons/
+    icon: file-word-o
 
 # Code highlight.
 # values:
@@ -284,6 +308,7 @@ gitment:
 # ---------------------------------------------------------------
 # Statistics and Analytics config
 # ---------------------------------------------------------------
+
 busuanzi:
   enable: true
   # Number of unique visitor to the entire site.

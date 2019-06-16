@@ -13,9 +13,10 @@ mixin postHeader(post)
           h1.post-title= _p("post.untitled")
     
     div.post-meta
-      if theme.post_meta.created
+      if theme.post_meta.created.enable
         span.post-meta-create
-          i(class="fa fa-calendar-o")
+          i(class=`fa fa-${theme.post_meta.created.icon}`)
+
           if !theme.post_meta.icon_only
             span= _p("post.posted") + " "
           if post.date
@@ -23,9 +24,10 @@ mixin postHeader(post)
           else
             span none
       
-      if theme.post_meta.updated
+      if theme.post_meta.updated.enable
         span.post-meta-update
-          i(class="fa fa-calendar-check-o")
+          i(class=`fa fa-${theme.post_meta.updated.icon}`)
+
           if !theme.post_meta.icon_only
             span= _p("post.updated") + " "
           if post.updated
@@ -33,15 +35,27 @@ mixin postHeader(post)
           else
             span none
       
-      span.post-meta-word
-        i(class="fa fa-file-word-o")
-        if !theme.post_meta.icon_only
-          span= _p("post.word_count") + " "
-        span TODO
-      
-      if theme.busuanzi.post_pv.enable
-        span.post-meta-read
-          i(class=`fa fa-${theme.busuanzi.post_pv.icon}`)
+      if theme.post_meta.word_count.enable
+        span.post-meta-word-count
+          i(class=`fa fa-${theme.post_meta.word_count.icon}`)
+
           if !theme.post_meta.icon_only
-            span= _p("post.read_count") + " "
+            span= _p("post.word_count") + " "
+          span= wordcount(post.content)
+      
+      if theme.post_meta.reading_time.enable
+        - var postReadingTime = theme.post_meta.reading_time
+        span.post-meta-reading-time
+          i(class=`fa fa-${postReadingTime.icon}`)
+          
+          if !theme.post_meta.icon_only
+            span= _p("post.reading_time") + " "
+          span= min2read(post.content, {cn: postReadingTime.speed.zh, en: postReadingTime.speed.en}) + " m"
+
+      if theme.busuanzi.post_pv.enable
+        span.post-meta-reading-count
+          i(class=`fa fa-${theme.busuanzi.post_pv.icon}`)
+          
+          if !theme.post_meta.icon_only
+            span= _p("post.reading_count") + " "
           span(id="busuanzi_value_page_pv")
