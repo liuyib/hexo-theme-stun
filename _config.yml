@@ -272,7 +272,7 @@ reward:
 # See: https://github.com/imsun/gitment
 gitment:
   enable: true
-  # Github username
+  # Github username.
   owner: 
   # Github repository.
   repo: 
