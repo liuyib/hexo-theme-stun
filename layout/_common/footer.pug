@@ -9,17 +9,17 @@ footer#footer
     if footer.copyright.enable || footer.beian.enable
       div
         if footer.copyright.enable
-          span!= `&copy; ${startYear}` + (startYear != endYear ? `-${endYear}` : '')
+          span!= `&copy; ${startYear}` + (startYear != endYear ? `-${endYear}` : "")
 
           if footer.icon.enable
             span(
-              class=`fa fa-${footer.icon.name} ${footer.icon.animation ? 'heart-beat' : ''}`
+              class=`fa fa-${footer.icon.name} ${footer.icon.animation ? "heart-beat" : ""}`
               style=`color: ${footer.icon.color}`
             ).footer-separator
           else
-            span= ' '
+            span= " "
           
-          span= footer.copyright.text || config.author + '.'
+          span= footer.copyright.text || config.author + "."
 
         if footer.copyright.enable && footer.beian.enable
           span.footer-separator |
@@ -31,20 +31,20 @@ footer#footer
       div
         if footer.powered.enable
           span.footer-powered
-            != _p('footer.powered', link_to('http://hexo.io/', 'hexo', {external: true}))
+            != _p("footer.powered", link_to("http://hexo.io/", "hexo", {external: true}))
           
           if footer.powered.version
-            span= ' v' + hexo_env('version') + '.'
+            span= " v" + hexo_env("version") + "."
         
         if footer.powered.enable && footer.theme.enable
           span.footer-separator |
 
         if footer.theme.enable
-          span= _p('footer.theme') + ' - '
-            != link_to('https://github.com/liuyib/hexo-theme-stun/', 'stun', {external: true})
+          span= _p("footer.theme") + " - "
+            != link_to("https://github.com/liuyib/hexo-theme-stun/", "stun", {external: true})
         
           if footer.theme.version
-            span= ' v' + stun_env('version') + '.'
+            span= " v" + stun_env("version") + "."
     
     include ../_third-party/analytics/analytics-widget.pug
     

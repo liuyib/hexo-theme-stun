@@ -18,6 +18,6 @@ html(lang=config.language)
     
     if theme.scripts && theme.scripts.length > 0
       each url in theme.scripts
-        script(src=url_for(url) + '?v=' + stun_env('version'))
+        script(src=url_for(url) + "?v=" + stun_env("version"))
 
     include ../_third-party/comments/index.pug

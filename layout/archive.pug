@@ -6,9 +6,9 @@ block content
   div.archive.main-content-layout
     div.archive-inner
       if (site.posts.length === 0)
-        div.article-sort-title= _p('page.articles-0')
+        div.article-sort-title= _p("page.articles-0")
       else
-        div.article-sort-title= _p('page.articles-1', site.posts.length)
+        div.article-sort-title= _p("page.articles-1", site.posts.length)
     
       +articleSort(page.posts)
     include ./_components/pagination.pug

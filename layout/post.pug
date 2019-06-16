@@ -13,7 +13,7 @@ block content
       if theme.post_end_text.enable
         div.post-footer-end
           span ------
-          span= _p('post.end')
+          span= _p("post.end")
           span ------
     
       if theme.creative_commons.enable && theme.creative_commons.post
@@ -22,7 +22,7 @@ block content
       if theme.post_tags
         if page.tags && page.tags.length > 0
           div.post-footer-tags
-            i(class='fa fa-tags').icon
+            i(class="fa fa-tags").icon
             each tag in page.tags.data
               span!= link_to(tag.permalink, tag.name)
       

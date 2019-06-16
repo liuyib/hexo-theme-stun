@@ -5,20 +5,20 @@ script.
   function renderGitment() {
     var gitment = new Gitment({
       id: window.location.pathname,
-      owner: '!{theme.gitment.owner}',
-      repo: '!{theme.gitment.repo}',
+      owner: "!{theme.gitment.owner}",
+      repo: "!{theme.gitment.repo}",
       oauth: {
-        client_id: '!{theme.gitment.client_id}',
-        client_secret: '!{theme.gitment.client_secret}'
+        client_id: "!{theme.gitment.client_id}",
+        client_secret: "!{theme.gitment.client_secret}"
       }
     });
-    gitment.render('gitment-container')
+    gitment.render("gitment-container")
   }
 
   if (!{theme.gitment.lazy})
     function showGitment() {
-      document.getElementById('gitment-button').style.display = 'none';
-      document.getElementById('gitment-container').style.display = 'block';
+      document.getElementById("gitment-button").style.display = "none";
+      document.getElementById("gitment-container").style.display = "block";
       renderGitment();
     }
   else

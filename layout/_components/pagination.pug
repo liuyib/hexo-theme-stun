@@ -1,7 +1,7 @@
 -
   var options = {
-    prev_text: '<i class="fa fa-chevron-left"></i>',
-    next_text: '<i class="fa fa-chevron-right"></i>',
+    prev_text: "<i class="fa fa-chevron-left"></i>",
+    next_text: "<i class="fa fa-chevron-right"></i>",
     mid_size: 1
   }
 
@@ -13,10 +13,10 @@ nav#paginator
       if (page.prev)
         div.article-prev.pull-left
           a(href=url_for(page.prev.path))
-            i(class='fa fa-chevron-left')
-            span.title= page.prev.title || _p('post.untitled')
+            i(class="fa fa-chevron-left")
+            span.title= page.prev.title || _p("post.untitled")
       if (page.next)
         div.article-next.pull-right
           a(href=url_for(page.next.path))
-            span.title= page.next.title || _p('post.untitled')
-            i(class='fa fa-chevron-right')
+            span.title= page.next.title || _p("post.untitled")
+            i(class="fa fa-chevron-right")

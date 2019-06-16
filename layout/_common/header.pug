@@ -1,22 +1,22 @@
-header#header(style=page.top_img ? `background-image: url(${page.top_img})` : '')
+header#header(style=page.top_img ? `background-image: url(${page.top_img})` : "")
   nav.header-nav
     div.header-nav-inner
-      div(class='header-nav-menu-icon fa fa-bars')
+      div(class="header-nav-menu-icon fa fa-bars")
 
       div.header-nav-search
         if (theme.menu_settings.icon)
-          i(class='fa fa-search')
-        span!= _p('nav.search')
+          i(class="fa fa-search")
+        span!= _p("nav.search")
       
       div.header-nav-menu
         each value, name in theme.menu
           if name && value
-            - var menuItemPath = value.split('||')[0] && value.split('||')[0].trim()
-            - var menuItemIcon = value.split('||')[1] && value.split('||')[1].trim()
+            - var menuItemPath = value.split("||")[0] && value.split("||")[0].trim()
+            - var menuItemIcon = value.split("||")[1] && value.split("||")[1].trim()
             span
-              a(href=menuItemPath ? menuItemPath : '')
+              a(href=menuItemPath ? menuItemPath : "")
                 if (theme.menu_settings.icon)
-                  i(class=`fa fa-${menuItemIcon ? menuItemIcon : 'question-circle-o'}`)
+                  i(class=`fa fa-${menuItemIcon ? menuItemIcon : "question-circle-o"}`)
                 != _p(`nav.${name}`)
   
   div.header-info

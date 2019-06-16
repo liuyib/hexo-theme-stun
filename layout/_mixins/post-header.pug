@@ -4,44 +4,44 @@ mixin postHeader(post)
       if (post.title)
         h1.post-title= post.title
       else
-        h1.post-title= _p('post.untitled')
+        h1.post-title= _p("post.untitled")
     else
       a(href=url_for(post.canonical_path)).post-title-link
         if (post.title)
           h1.post-title= post.title
         else
-          h1.post-title= _p('post.untitled')
+          h1.post-title= _p("post.untitled")
     
     div.post-meta
       if theme.post_meta.created
         span.post-meta-create
-          i(class='fa fa-calendar-o')
+          i(class="fa fa-calendar-o")
           if !theme.post_meta.icon_only
-            span= _p('post.posted') + ' '
+            span= _p("post.posted") + " "
           if post.date
-            span= full_date(post.date, 'YYYY-MM-DD')
+            span= full_date(post.date, "YYYY-MM-DD")
           else
             span none
       
       if theme.post_meta.updated
         span.post-meta-update
-          i(class='fa fa-calendar-check-o')
+          i(class="fa fa-calendar-check-o")
           if !theme.post_meta.icon_only
-            span= _p('post.updated') + ' '
+            span= _p("post.updated") + " "
           if post.updated
-            span= full_date(post.updated, 'YYYY-MM-DD')
+            span= full_date(post.updated, "YYYY-MM-DD")
           else
             span none
       
       span.post-meta-word
-        i(class='fa fa-file-word-o')
+        i(class="fa fa-file-word-o")
         if !theme.post_meta.icon_only
-          span= _p('post.word_count') + ' '
+          span= _p("post.word_count") + " "
         span TODO
       
       if theme.busuanzi.post_pv.enable
         span.post-meta-read
           i(class=`fa fa-${theme.busuanzi.post_pv.icon}`)
           if !theme.post_meta.icon_only
-            span= _p('post.read_count') + ' '
+            span= _p("post.read_count") + " "
           span(id="busuanzi_value_page_pv")
