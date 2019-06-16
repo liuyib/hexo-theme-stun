@@ -7,3 +7,6 @@ main#main
       div!= body
     else
       block content
+    
+    if page.comments
+      include ../_components/comments.pug

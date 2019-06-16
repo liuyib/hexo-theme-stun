@@ -3,31 +3,30 @@ extends ./_common/layout.pug
 block content
   include ./_mixins/post-header.pug
   
-  article#post
-    div.main-content.code-highlight
-      +postHeader(page)
-      
-      div.post-body
-        != page.content
+  div.main-content.code-highlight
+    +postHeader(page)
+    
+    div.post-body
+      != page.content
 
-      footer.post-footer
-        if theme.post_end_text.enable
-          div.post-footer-end
-            span ------
-            span= _p('post.end')
-            span ------
-      
-        if theme.creative_commons.enable && theme.creative_commons.post
-          include ./_components/copyright.pug
+    footer.post-footer
+      if theme.post_end_text.enable
+        div.post-footer-end
+          span ------
+          span= _p('post.end')
+          span ------
+    
+      if theme.creative_commons.enable && theme.creative_commons.post
+        include ./_components/copyright.pug
 
-        if theme.post_tags
-          if page.tags && page.tags.length > 0
-            div.post-footer-tags
-              i(class='fa fa-tags').icon
-              each tag in page.tags.data
-                span!= link_to(tag.permalink, tag.name)
-        
-        if theme.reward && theme.reward.enable
-          include ./_components/reward.pug
-        
-        include ./_components/pagination.pug
+      if theme.post_tags
+        if page.tags && page.tags.length > 0
+          div.post-footer-tags
+            i(class='fa fa-tags').icon
+            each tag in page.tags.data
+              span!= link_to(tag.permalink, tag.name)
+      
+      if theme.reward && theme.reward.enable
+        include ./_components/reward.pug
+      
+      include ./_components/pagination.pug

@@ -1,0 +1,8 @@
+if theme.gitment && theme.gitment.enable
+  div(id='comments').comments.main-content-layout
+    if theme.gitment.lazy
+      div(id='gitment-button' onclick='showGitment()')
+        != _p('comment.gitment.button')
+      div(id='gitment-container' style='display: none')
+    else
+      div(id='gitment-container')

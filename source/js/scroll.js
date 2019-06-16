@@ -39,6 +39,16 @@ $(document).ready(function () {
       duration: 500,
       easing: 'easeOutQuart'
     });
+
+    if (CONFIG.back2top_animation) {
+      $('#back-top').velocity({
+        translateY: '-100vh',
+      }, {
+        duration: 500
+      }).velocity('reverse', {
+        duration: 10
+      });
+    }
   });
   
   // site header nav scroll
@@ -87,8 +97,8 @@ $(document).ready(function () {
   // update the reading progress lines of post
   function readProgress() {
     var winH = $(window).height();
-    var postH = $('#post').height();
-    var post = document.querySelector('#post');
+    var postH = $('.main-content').height();
+    var post = document.querySelector('.main-content');
     var scrollH = (post &&
       post.getBoundingClientRect().top * -1) || 0
     

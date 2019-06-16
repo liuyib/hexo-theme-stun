@@ -52,12 +52,18 @@ post:
     license_content: 'All articles in this blog are licensed under 
       <a href="%s" rel="external nofollow" target="_blank">%s</a> unless stating additionally'
 
-# 打赏
+# Reward
 reward:
   btn_text: Buy me a coffee
   alipay: Alipay
   wechat: Wechat
 
+# Comment
+comment:
+  gitment:
+    button: Show comments from Gitment
+
+# Back to top
 back2top: Back to top
 
 # Site footer

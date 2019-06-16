@@ -265,6 +265,23 @@ reward:
   wechat: 
 
 # ---------------------------------------------------------------
+# Comment config
+# ---------------------------------------------------------------
+
+# Gitment
+# See: https://github.com/imsun/gitment
+gitment:
+  enable: true
+  # Github username
+  owner: 
+  # Github repository.
+  repo: 
+  client_id: 
+  client_secret: 
+  # Enable / Disable Lazy load. Enable is recommended.
+  lazy: true
+
+# ---------------------------------------------------------------
 # Other config
 # ---------------------------------------------------------------
 

@@ -1,22 +1,22 @@
 -
-  var pageTitle = page.title || config.subtitle || ''
+  var pageTitle = page.title || config.subtitle || ""
 
-  if (page.type === 'tags') pageTitle = _p('title.tags')
-  if (page.type === 'categories') pageTitle = _p('title.categories')
-  if (is_archive()) pageTitle = _p('title.archives')
-  if (is_tag()) pageTitle = _p('title.tags') + ': ' + page.tag
-  if (is_category()) pageTitle = _p('title.categories') + ': ' + page.category
-  if (is_month()) pageTitle += ': ' + page.year + '/' + page.month
-  if (is_year()) pageTitle += ': ' + page.year
+  if (page.type === "tags") pageTitle = _p("title.tags")
+  if (page.type === "categories") pageTitle = _p("title.categories")
+  if (is_archive()) pageTitle = _p("title.archives")
+  if (is_tag()) pageTitle = _p("title.tags") + ": " + page.tag
+  if (is_category()) pageTitle = _p("title.categories") + ": " + page.category
+  if (is_month()) pageTitle += ": " + page.year + "/" + page.month
+  if (is_year()) pageTitle += ": " + page.year
 
-  pageTitle ? pageTitle += ' | ' + config.title : pageTitle = config.title
+  pageTitle ? pageTitle += " | " + config.title : pageTitle = config.title
 
-  var pageDescription = page.description || page.title || config.description || ''
-  var pageKeywords = [config.author, config.title, config.keywords].filter(i => !!i).join(', ')
+  var pageDescription = page.description || page.title || config.description || ""
+  var pageKeywords = [config.author, config.title, config.keywords].filter(i => !!i).join(", ")
   var pageAuthor = config.email ? `${config.author}: ${config.email}` : config.author
   var pageCopyright = config.copyright || config.author
 
-meta(charset='UTF-8')
+meta(charset="UTF-8")
 meta(http-equiv="X-UA-Compatible" content="IE=edge")
 meta(name="viewport" content="width=device-width, initial-scale=1")
 meta(name="keywords" content=pageKeywords)
@@ -25,21 +25,30 @@ meta(name="description" content=pageDescription)
 meta(name="copyright" content=pageCopyright)
 title= pageTitle
 
+meta(name="format-detection" content="telephone=no")
+meta(http-equiv="x-dns-prefetch-control" content="on") 
+link(rel="dns-prefetch" href="https://cdn.jsdelivr.net")
+
 if theme.cdn && theme.cdn.css
   each url in theme.cdn.css
     if url
-      link(rel='stylesheet' href=url_for(url))
+      link(rel="stylesheet" href=url_for(url))
 
-link(rel='stylesheet' href=`${url_for(theme.css)}/index.css?v=${stun_env('version')}`)
+link(rel="stylesheet" href=`${url_for(theme.css)}/index.css?v=${stun_env("version")}`)
 
 if theme.favicon.apple_touch_icon
-  link(rel="apple-touch-icon" sizes="180x180" href=`${url_for(theme.favicon.apple_touch_icon)}?v=${stun_env('version')}`)
+  link(rel="apple-touch-icon" sizes="180x180" href=`${url_for(theme.favicon.apple_touch_icon)}?v=${stun_env("version")}`)
 
 if theme.favicon.medium
-  link(rel="icon" type="image/png" sizes="32x32" href=`${url_for(theme.favicon.medium)}?v=${stun_env('version')}`)
+  link(rel="icon" type="image/png" sizes="32x32" href=`${url_for(theme.favicon.medium)}?v=${stun_env("version")}`)
 
 if theme.favicon.small
-  link(rel="icon" type="image/png" sizes="16x16" href=`${url_for(theme.favicon.small)}?v=${stun_env('version')}`)
+  link(rel="icon" type="image/png" sizes="16x16" href=`${url_for(theme.favicon.small)}?v=${stun_env("version")}`)
 
 if theme.favicon.safari_pinned_tab
-  link(rel="mask-icon" href=`${url_for(theme.favicon.safari_pinned_tab)}?v=${stun_env('version')}` color="#333")
+  link(rel="mask-icon" href=`${url_for(theme.favicon.safari_pinned_tab)}?v=${stun_env("version")}` color="#333")
+
+script.
+  var CONFIG = {
+    back2top_animation: !{theme.back2top.icon.animation}
+  };

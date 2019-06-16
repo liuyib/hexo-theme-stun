@@ -10,15 +10,14 @@ html(lang=config.language)
 
       if theme.back2top.enable
         include ../_components/back2top.pug
-
+    
     if theme.cdn && theme.cdn.js
       each url in theme.cdn.js
         if url
           script(src=url_for(url))
-
+    
     if theme.scripts && theme.scripts.length > 0
       each url in theme.scripts
         script(src=url_for(url) + '?v=' + stun_env('version'))
-    
-    //- Just javascript code of back2top
-    include ../_scripts/back2top.pug
+
+    include ../_third-party/comments/index.pug

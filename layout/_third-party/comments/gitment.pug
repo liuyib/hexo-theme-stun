@@ -1,0 +1,27 @@
+link(href="https://cdn.jsdelivr.net/npm/gitment/style/default.min.css" rel="stylesheet" type="text/css")
+script(src="https://cdn.jsdelivr.net/npm/gitment/dist/gitment.browser.min.js")
+
+script.
+  function renderGitment() {
+    var gitment = new Gitment({
+      id: window.location.pathname,
+      owner: '!{theme.gitment.owner}',
+      repo: '!{theme.gitment.repo}',
+      oauth: {
+        client_id: '!{theme.gitment.client_id}',
+        client_secret: '!{theme.gitment.client_secret}'
+      }
+    });
+    gitment.render('gitment-container')
+  }
+
+if theme.gitment.lazy
+  script.
+    function showGitment() {
+      document.getElementById('gitment-button').style.display = 'none';
+      document.getElementById('gitment-container').style.display = 'block';
+      renderGitment();
+    }
+else
+  script.
+    window.onload = function () {renderGitment();};

@@ -1,0 +1,30 @@
+.comments
+  display: flex
+  margin: 1.5rem 0 0
+
+  a
+    text-decoration: none !important
+
+  // Gitment
+  #gitment-container
+    width: 100%
+  
+  #gitment-button
+    // display: inline-block
+    margin: 0 auto
+    border-radius: 10px
+    padding: .2rem 1rem
+    text-align: center
+    color: $white
+    background-color: alpha($blue-light, .8)
+    transition: background-color .2s
+    cursor: pointer
+
+    &:hover
+      background-color: $blue-light
+
+  a.gitment-editor-avatar
+    border: 0
+
+    &:hover
+      border: 0
