@@ -39,8 +39,9 @@ mixin postHeader(post)
           span= _p('post.word_count') + ' '
         span TODO
       
-      span.post-meta-read
-        i(class='fa fa-eye')
-        if !theme.post_meta.icon_only
-          span= _p('post.read_count') + ' '
-        span TODO
+      if theme.busuanzi.post_pv.enable
+        span.post-meta-read
+          i(class=`fa fa-${theme.busuanzi.post_pv.icon}`)
+          if !theme.post_meta.icon_only
+            span= _p('post.read_count') + ' '
+          span(id="busuanzi_value_page_pv")

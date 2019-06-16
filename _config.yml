@@ -282,6 +282,27 @@ gitment:
   lazy: true
 
 # ---------------------------------------------------------------
+# Statistics and Analytics config
+# ---------------------------------------------------------------
+busuanzi:
+  enable: true
+  # Number of unique visitor to the entire site.
+  site_uv:
+    enable: true
+    # Icon name in FontAwesome, see: https://fontawesome.com/icons
+    icon: user
+  # Number of page view to the entire site.
+  site_pv:
+    enable: true
+    # Icon name in FontAwesome, see: https://fontawesome.com/icons
+    icon: eye
+  # Number of page view to a post.
+  post_pv:
+    enable: true
+    # Icon name in FontAwesome, see: https://fontawesome.com/icons
+    icon: eye
+
+# ---------------------------------------------------------------
 # Other config
 # ---------------------------------------------------------------
 

@@ -1,0 +1,16 @@
+if theme.busuanzi.enable
+  div.busuanzi
+    script(async src="https://cdn.jsdelivr.net/gh/sukkaw/busuanzi@2.3/bsz.pure.mini.js")
+
+    if theme.busuanzi.site_uv.enable
+      span.busuanzi-uv
+        i(class="fa fa-user")
+        span(id="busuanzi_value_site_uv")
+      
+    if theme.busuanzi.site_uv.enable && theme.busuanzi.site_pv.enable
+      span.separator |
+
+    if theme.busuanzi.site_pv.enable
+      span.busuanzi-pv
+        i(class="fa fa-eye")
+        span(id="busuanzi_value_site_pv")
