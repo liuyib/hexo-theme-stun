@@ -2,15 +2,23 @@ if theme.busuanzi.enable
   div.busuanzi
     script(async src="https://cdn.jsdelivr.net/gh/sukkaw/busuanzi@2.3/bsz.pure.mini.js")
 
-    if theme.busuanzi.site_uv.enable
+    if theme.busuanzi.site.uv.enable
       span.busuanzi-uv
         i(class="fa fa-user")
+
+        if !theme.busuanzi.site.icon_only
+          span= _p("footer.uv") + " "
+        
         span(id="busuanzi_value_site_uv")
       
-    if theme.busuanzi.site_uv.enable && theme.busuanzi.site_pv.enable
+    if theme.busuanzi.site.uv.enable && theme.busuanzi.site.pv.enable
       span.separator |
 
-    if theme.busuanzi.site_pv.enable
+    if theme.busuanzi.site.pv.enable
       span.busuanzi-pv
         i(class="fa fa-eye")
+        
+        if !theme.busuanzi.site.icon_only
+          span= _p("footer.pv") + " "
+
         span(id="busuanzi_value_site_pv")

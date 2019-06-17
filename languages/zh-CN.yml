@@ -70,3 +70,5 @@ back2top: 回到顶部
 footer:
   powered: '由 %s 强力驱动'
   theme: 主题
+  uv: 访问人数
+  pv: 浏览总量

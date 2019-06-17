@@ -52,10 +52,11 @@ mixin postHeader(post)
             span= _p("post.reading_time") + " "
           span= min2read(post.content, {cn: postReadingTime.speed.zh, en: postReadingTime.speed.en}) + " m"
 
-      if theme.busuanzi.post_pv.enable
+      if theme.busuanzi.enable && theme.busuanzi.post_pv.enable
         span.post-meta-reading-count
           i(class=`fa fa-${theme.busuanzi.post_pv.icon}`)
           
-          if !theme.post_meta.icon_only
+          if !theme.post_meta.icon_only && !theme.busuanzi.post_pv.icon_only
             span= _p("post.reading_count") + " "
+          
           span(id="busuanzi_value_page_pv")

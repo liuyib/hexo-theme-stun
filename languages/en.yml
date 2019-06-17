@@ -70,3 +70,5 @@ back2top: Back to top
 footer:
   powered: 'Powered by %s'
   theme: Theme
+  uv: Visitors
+  pv: Views
