@@ -1,7 +1,7 @@
 $(document).ready(function () {
-  var SIDEBAR_STICKY_TOP = 30;
+  var SIDEBAR_STICKY_TOP = parseInt(window.CONFIG.sidebar_offsetTop);
   var prevScrollTop = 0;
-  
+    
   // Must initial run
   headerNavScroll();
   backToTop();
@@ -40,7 +40,7 @@ $(document).ready(function () {
       easing: 'easeOutQuart'
     });
 
-    if (CONFIG.back2top_animation) {
+    if (window.CONFIG.back2top_animation) {
       $('#back-top').velocity({
         translateY: '-100vh',
       }, {

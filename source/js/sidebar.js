@@ -23,4 +23,9 @@ $(document).ready(function () {
     $view.css('display', 'block');
     $view.velocity('fadeIn');
   });
+
+  if ($('.main-content, .main-content-layout').height() <
+    $('#sidebar').height()) {
+    $('#main').css('height', $('#main').height());
+  }
 });

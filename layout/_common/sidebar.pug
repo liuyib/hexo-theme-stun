@@ -45,7 +45,10 @@ aside#sidebar
                 span= _p("sidebar.subscribe")
           if theme.feed.rss !== undefined
             span.sidebar-feed-rss
-              a(href=theme.feed.rss title=`rss → ${theme.feed.rss}` target="_blank")
+              a(
+                href=url_for(theme.feed.rss)
+                title=`rss → ${url_for(theme.feed.rss)}` target="_blank"
+              )
                 i(class="fa fa-rss").sidebar-feed-icon
                 span RSS
                 span= _p("sidebar.subscribe")
