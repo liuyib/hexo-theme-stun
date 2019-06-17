@@ -71,9 +71,11 @@ footer:
     enable: true
     # If not set, will be used `author` from Hexo main config.
     text: 
-    # Specify the date when the site was setup. If not set, the current year will be used.
+    # Specify the date when the site was setup.
+    #   If not set, the current year will be used.
     since: 
-    # Specify the date when the site ended. If not set, the current year will be used.
+    # Specify the date when the site ended.
+    #   If not set, the current year will be used.
     end: 
   # Icon between the copyright year and the owner.
   icon:
@@ -111,7 +113,8 @@ footer:
 
 # Header navigation menu.
 # Value before `||` delimiter is the target link.
-# Value after `||` delimiter is the name of FontAwesome icon. If not set, "question-circle-o" icon will be shown.
+# Value after `||` delimiter is the name of FontAwesome icon.
+#   If not set, "question-circle-o" icon will be shown.
 menu:
   home: / || home
   archives: /archives/ || folder-open
@@ -135,7 +138,8 @@ sidebar:
   float: right
   # Sidebar offset from top menubar (Support for all types of CSS size units).
   offsetTop: 20px
-  # Define the sidebar width, 260px ~ 360px is better (Support for all types of CSS size units).
+  # Define the sidebar width, 260px ~ 360px is better
+  #   (Support for all types of CSS size units).
   width: 300px
   # Horizon line.
   horizon_line: true
@@ -189,9 +193,11 @@ toc:
   enable: true
   # Automatically add list number to toc.
   number: true
-  # If true, all words will be placed on next lines if header width longer then sidebar width.
+  # If true, all words will be placed on next lines
+  #   if header width longer then sidebar width.
   wrap: true
-  # Maximum heading depth of generated toc. You can set it in one post through `toc_max_depth` in Front-matter.
+  # Maximum heading depth of generated toc.
+  #   You can set it in one post through `toc_max_depth` in Front-matter.
   # e.g. value: 3, will use h1~3 to generated toc.
   max_depth: 5
 
@@ -228,7 +234,8 @@ post_meta:
     # Icon name in FontAwesome, see: https://fontawesome.com/v4.7.0/icons/
     icon: calendar-check-o
   # Count the reading time of the post.
-  # Don't enable it before you see: https://github.com/willin/hexo-wordcount
+  # Don't enable this before install dependencies
+  #   by `npm install hexo-wordcount --save` in hexo directory.
   reading_time:
     enable: false
     # Icon name in FontAwesome, see: https://fontawesome.com/v4.7.0/icons/
@@ -240,7 +247,8 @@ post_meta:
       # Reading speed of en-US.
       en: 80
   # Count the words of the post.
-  # Don't enable it before you see: https://github.com/willin/hexo-wordcount
+  # Don't enable this before install dependencies
+  #   by `npm install hexo-wordcount --save` in hexo directory.
   word_count:
     enable: false
     # Icon name in FontAwesome, see: https://fontawesome.com/v4.7.0/icons/
@@ -263,7 +271,8 @@ code_word_wrap: true
 # - center
 # - right
 # 
-# If you don't want to set the align of the image, please empty it, then it will show by default.
+# If you don't want to set the align of the image, please empty it,
+#   then it will show by default.
 img_horizonal_align: 
 
 # Vertical alignment of text and images.
@@ -311,20 +320,23 @@ gitment:
 
 busuanzi:
   enable: true
-  # Number of unique visitor to the entire site.
-  site_uv:
-    enable: true
-    # Icon name in FontAwesome, see: https://fontawesome.com/icons
-    icon: user
-  # Number of page view to the entire site.
-  site_pv:
-    enable: true
-    # Icon name in FontAwesome, see: https://fontawesome.com/icons
-    icon: eye
+  site:
+    icon_only: false
+    # Number of unique visitor to the entire site.
+    uv:
+      enable: true
+      # Icon name in FontAwesome, see: https://fontawesome.com/v4.7.0/icons/
+      icon: user
+    # Number of page view to the entire site.
+    pv:
+      enable: true
+      # Icon name in FontAwesome, see: https://fontawesome.com/v4.7.0/icons/
+      icon: eye
   # Number of page view to a post.
   post_pv:
+    icon_only: false
     enable: true
-    # Icon name in FontAwesome, see: https://fontawesome.com/icons
+    # Icon name in FontAwesome, see: https://fontawesome.com/v4.7.0/icons/
     icon: eye
 
 # ---------------------------------------------------------------
@@ -340,7 +352,7 @@ tag_cloud:
   # Size for tag.
   min_size: 24
   max_size: 34
-  # Maximum number of tags displayed. Change it if you have more than 200 tags
+  # Maximum number of tags displayed. Change it if you have more than 200 tags.
   max_amount: 200
 
 # Assets.
