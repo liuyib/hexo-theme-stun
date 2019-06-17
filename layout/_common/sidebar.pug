@@ -39,7 +39,10 @@ aside#sidebar
         div.sidebar-feed
           if theme.feed.email !== undefined
             span.sidebar-feed-email
-              a(href=theme.feed.email title=`email → ${theme.feed.email}` target="_blank")
+              a(
+                href=theme.feed.email
+                title=`email → ${theme.feed.email}` target="_blank"
+              )
                 i(class="fa fa-envelope").sidebar-feed-icon
                 span Email
                 span= _p("sidebar.subscribe")
