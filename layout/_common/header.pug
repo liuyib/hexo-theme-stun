@@ -1,4 +1,9 @@
-header#header(style=page.top_img ? `background-image: url(${page.top_img})` : "")
+header#header(
+  style=`background-image: url(${
+    page.top_image ? page.top_image :
+      theme.header.bg_image.enable ? theme.header.bg_image.url : " "
+  })`
+)
   nav.header-nav
     div.header-nav-inner
       div(class="header-nav-menu-icon fa fa-bars")
