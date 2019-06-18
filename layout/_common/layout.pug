@@ -16,8 +16,10 @@ html(lang=config.language)
         if url
           script(src=url_for(url))
     
-    if theme.scripts && theme.scripts.length > 0
-      each url in theme.scripts
-        script(src=url_for(url) + "?v=" + stun_env("version"))
+    include ../_scripts/common.pug
+    
+    if is_post()
+      include ../_scripts/post.pug
 
+    //- Third party resource file
     include ../_third-party/comments/index.pug

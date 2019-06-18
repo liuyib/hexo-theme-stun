@@ -70,6 +70,7 @@ footer:
   copyright:
     enable: true
     # If not set, will be used `author` from Hexo main config.
+    #   (e.g. liuyib. All Rights Reserved.)
     text: 
     # Specify the date when the site was setup.
     #   If not set, the current year will be used.
@@ -123,6 +124,7 @@ menu:
   about: /about/ || user
   # reading: /reading/ || book
   # sitemap: /sitemap.xml || sitemap
+  # You can also add a item by yourself.
   # xxx: /xxx/ || xxx
 
 menu_settings:
@@ -179,6 +181,8 @@ social:
   wechat: yournumber || weixin
   telegram: yournumber || telegram
   qq: yournumber || qq
+  # You can also add a link by yourself.
+  # xxx: xxx || (origin:)xxx
 
 social_setting:
   # Only show social links by an icon.
@@ -206,7 +210,8 @@ feed:
   enable: false
   # Enter your email subscription link (e.g. http://eepurl.com/guAE6j).
   email: 
-  # rss: 
+  # Enter the rss address of you set (e.g. /atom.xml)
+  rss: 
 
 # The reading progress of post.
 reading_progress:
@@ -236,6 +241,7 @@ post_meta:
   # Count the reading time of the post.
   # Don't enable this before install dependencies
   #   by `npm install hexo-wordcount --save` in hexo directory.
+  #   and you must restart your hexo server.
   reading_time:
     enable: false
     # Icon name in FontAwesome, see: https://fontawesome.com/v4.7.0/icons/
@@ -249,6 +255,7 @@ post_meta:
   # Count the words of the post.
   # Don't enable this before install dependencies
   #   by `npm install hexo-wordcount --save` in hexo directory.
+  #   and you must restart your hexo server.
   word_count:
     enable: false
     # Icon name in FontAwesome, see: https://fontawesome.com/v4.7.0/icons/
@@ -304,7 +311,7 @@ reward:
 # Gitment
 # See: https://github.com/imsun/gitment
 gitment:
-  enable: true
+  enable: false
   # Github username.
   owner: 
   # Github repository.
