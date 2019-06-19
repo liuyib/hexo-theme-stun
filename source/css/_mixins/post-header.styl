@@ -42,14 +42,9 @@
       @extend $font-face
 
     & > span
-      position: relative
-      margin: 0 .5rem
-
-      &:not(:last-child)::after
+      &:not(:first-child)::before
         content: '•'
-        position: absolute
-        top: .15em
-        right: -1.1em
+        margin: 0 .3rem
         color: #666
 
     &-create
@@ -60,13 +55,13 @@
 
     &-word-count
       color: $post-info-word-count-color
-    
+
     &-reading-time
       color: $post-info-reading-time-color
-      
+
     &-reading-count
       color: $post-info-reading-count-color
-    
+
 #recent-posts
   .post-header
     margin-bottom: 2em
