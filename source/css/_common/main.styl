@@ -10,6 +10,8 @@
 .main-inner
   margin: 0 auto
 
+$content-position
+  margin: 0 auto
 if (hexo-config('sidebar.enable'))
   if (hexo-config('sidebar.float') == 'left')
     $content-position
@@ -17,9 +19,6 @@ if (hexo-config('sidebar.enable'))
   else
     $content-position
       float: left
-else
-  $content-position
-    margin: 0 auto
 
 .home-content
   font-size: $font-main-base

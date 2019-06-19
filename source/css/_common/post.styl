@@ -1,12 +1,11 @@
+$img_horizonal_align
+  margin: auto
 if (hexo-config('img_horizonal_align') == 'left')
   $img_horizonal_align
     margin: 0 auto 0 0
 else if (hexo-config('img_horizonal_align') == 'right')
   $img_horizonal_align
-    margin: 0 0 0 auto
-else
-  $img_horizonal_align
-    margin: auto
+    margin: 0 0 0 auto  
 
 .post-body,
 #recent-posts

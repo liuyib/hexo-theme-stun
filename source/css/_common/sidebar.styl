@@ -65,10 +65,9 @@ else
     margin: 0
     padding-left: 1em
 
+$avatar-rounded = 0
 if (hexo-config('author.avatar.rounded'))
   $avatar-rounded = 50%
-else
-  $avatar-rounded = 0
 
 $avatar-opacity = hexo-config('author.avatar.opacity') || 1
 $avatar-animation = 'avatar-' + convert(
