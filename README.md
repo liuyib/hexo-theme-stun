@@ -61,15 +61,7 @@ git pull
 
 ## Configuration
 
-If you don't want to bother, you only need o fill the image path of the wetbsite favicon and your avatar to complete the most basic configuration. Other configuration items are default.
-
-``` yml
-favicon: # url or path
-
-avatar: # url or path
-```
-
-Detailed configuration, please visit: [https://liuyib.github.io/hexo-theme-stun/](https://liuyib.github.io/hexo-theme-stun/)
+Please see: [https://liuyib.github.io/hexo-theme-stun/](https://liuyib.github.io/hexo-theme-stun/)
 
 ## Browser Support
 

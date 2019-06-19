@@ -61,15 +61,7 @@ git pull
 
 ## 配置
 
-如果你不想麻烦，你只需要填写网站 favicon 和你的头像的图片路径即可完成最基本的配置。其他的配置项都是默认的。
-
-``` yml
-favicon: # url or path
-
-avatar: # url or path
-```
-
-详细配置，请访问：[https://liuyib.github.io/hexo-theme-stun/](https://liuyib.github.io/hexo-theme-stun/)
+请查看：[https://liuyib.github.io/hexo-theme-stun/](https://liuyib.github.io/hexo-theme-stun/)
 
 ## 浏览器支持
 
