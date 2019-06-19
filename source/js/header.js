@@ -1,15 +1,36 @@
-$(document).ready(function () {
-  $('.header-nav-menu-icon').click(function () {
-    var $menu = $('.header-nav-menu');
+$(document).ready(function() {
+  var $menu = $('.header-nav-menu');
 
-    if ($menu.css('display') === 'none') {
-      $menu.velocity('fadeIn');
-    } else if ($menu.css('display') === 'block') {
-      $menu.velocity('fadeOut');
-    }
+  $(document).click(function() {
+    menuHide();
   });
 
-  $('.header-nav-search').click(function () {
+  $('.header-nav-menu a').click(function(e) {
+    var e = e || window.event;
+    e.stopPropagation();
+  });
+
+  $('.header-nav-menu-icon').click(function() {
+    if ($menu.css('visibility') === 'hidden') {
+      menuShow();
+    } else {
+      menuHide();
+    }
+
+    return false;
+  });
+
+  function menuShow() {
+    $menu.removeClass('hide');
+    $menu.addClass('show');
+  }
+
+  function menuHide() {
+    $menu.removeClass('show');
+    $menu.addClass('hide');
+  }
+
+  $('.header-nav-search').click(function() {
     // TODO
   });
 });

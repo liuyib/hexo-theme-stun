@@ -72,6 +72,7 @@ $header-nav-item
 .header-nav-menu
   float: left
   height: 100%
+  transition: opacity .5s
 
   &-icon
     display: none
@@ -88,6 +89,14 @@ $header-nav-item
     text-decoration: none
     transition: color .2s ease
     @extend $header-nav-item
+  
+  &.show
+    opacity: 1
+    visibility: visible
+    
+  &.hide
+    opacity: 0
+    visibility: hidden
 
 .header-nav-search
   float: right

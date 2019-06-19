@@ -14,6 +14,13 @@
   .header-nav-inner
     width: 100%
 
+  .header-info-inner
+    .site-info-title
+      font-size: 2rem
+
+    .site-info-subtitle
+      font-size: 1.75rem
+
   #sidebar
     display: none
 
@@ -65,31 +72,32 @@
 // sm-width: 768px
 // -----------------------------------------
 @media screen and (min-width: $sm-width)
-  .header-nav-menu
-    display: block !important
-    opacity: 1 !important
-
-@media screen and (max-width: $sm-width)
   .header-nav-inner
     .header-nav-menu
-      display: none
-      border-radius: 3px
-      width: 100%
-      height: auto
-      background-color: alpha($header-nav-bg-color, .7)
+      visibility: visible
+      opacity: 1
 
-      span
-        float: none
-        margin: 0
+@media screen and (max-width: $sm-width)
+  .header-nav-menu
+    visibility: hidden
+    border-radius: 3px
+    width: 100%
+    height: auto
+    background-color: alpha($header-nav-bg-color, .7)
+    opacity: 0
 
-      a
-        padding: 0 1rem
-        color: $white-light !important
-        user-select: none
+    span
+      float: none
+      margin: 0
 
-        &:hover
-          color: $white-light
-          background-color: $blue-lighter
+    a
+      padding: 0 1rem
+      color: $white-light !important
+      user-select: none
+
+      &:hover
+        color: $white-light
+        background-color: $blue-lighter
 
   .header-nav-menu-icon
     display: block
@@ -160,13 +168,13 @@
 
     .article-sort-item
       margin-bottom: .5rem
-  
+
   .comments
     .gitment-editor-tab
       padding: 11px 8px
-    
+
     .gitment-editor-login
       margin-right: 8px
-    
+
     .gitment-editor-footer-tip
       margin-bottom: 10px

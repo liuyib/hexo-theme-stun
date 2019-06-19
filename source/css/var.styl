@@ -204,7 +204,9 @@ $content-desktop   = $main-desktop + convert(
 // -------------------------------------------
 // Responsive layout
 // -------------------------------------------
-$xs-width = 576px
-$sm-width = 768px
-$md-width = 992px
-$lg-width = 1200px
+// Subtract 0.02px to prevent bugs when certain device sizes
+//   are exactly equal to critical dimensions
+$xs-width = 576px - 0.02px
+$sm-width = 768px - 0.02px
+$md-width = 992px - 0.02px
+$lg-width = 1200px - 0.02px
