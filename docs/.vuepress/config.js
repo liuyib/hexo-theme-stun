@@ -58,6 +58,10 @@ module.exports = {
                 text: 'Theme Config',
                 link: '/advanced/theme-config',
               },
+              {
+                text: 'Third part',
+                link: '/advanced/third-part',
+              },
             ],
           },
         ],
@@ -88,6 +92,10 @@ module.exports = {
                 text: '主题配置',
                 link: '/zh-CN/advanced/theme-config',
               },
+              {
+                text: '第三方支持',
+                link: '/zh-CN/advanced/third-part',
+              },
             ],
           },
         ],
@@ -103,7 +111,8 @@ function getEnSidebar(title) {
       collapsable: false,
       children: [
         '/guide/',
-        '/advanced/theme-config'
+        '/advanced/theme-config',
+        '/advanced/third-part'
       ],
     },
   ];
@@ -116,7 +125,8 @@ function getZhSidebar(title) {
       collapsable: false,
       children: [
         '/zh-CN/guide/',
-        '/zh-CN/advanced/theme-config'
+        '/zh-CN/advanced/theme-config',
+        '/zh-CN/advanced/third-part'
       ],
     },
   ];
