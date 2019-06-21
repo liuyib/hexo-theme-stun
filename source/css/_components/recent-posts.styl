@@ -22,22 +22,20 @@
     .post-excerpt > :last-child
       margin-bottom: 0
 
-  .post-footer
+  .post-btn
     display: flex
 
-    .post-btn
+    a
+      display: inline-block
       margin: 0 auto
+      border-bottom: 0
       border-radius: 5px
       padding: 0 .6em
       text-align: center
+      color: $white
       background-color: $home-post-read-more-color
       transition: background-color .2s ease
       cursor: pointer
-      justify-content: center
 
       &:hover
         background-color: $home-post-read-more-hover-color
-
-      a
-        border-bottom: 0
-        color: $white

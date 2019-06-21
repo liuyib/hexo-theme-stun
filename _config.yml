@@ -261,6 +261,11 @@ post_meta:
     # Icon name in FontAwesome, see: https://fontawesome.com/v4.7.0/icons/
     icon: file-word-o
 
+# Automatically retain article excerpt.
+auto_excerpt:
+  enable: false
+  length: 150
+
 # Code highlight.
 # values:
 # - light

@@ -4,7 +4,14 @@ section#recent-posts
     each post in page.posts.sort("date", -1).limit(10).toArray()
       article.post-item
         +postHeader(post)
-        div.post-excerpt!= post.excerpt
-        footer.post-footer
-          div.post-btn
-            a(href=url_for(post.path))= _p("post.read_more") + " »"
+
+        if theme.auto_excerpt && theme.auto_excerpt.enable
+          - const content = strip_html(post.content)
+          - let excerpt = content.substring(0, theme.auto_excerpt.length)
+          - content.length > theme.auto_excerpt.length ? excerpt += '......' : ''
+          div!= excerpt
+        else
+          div.post-excerpt!= post.excerpt
+        
+        div.post-btn
+          a(href=url_for(post.path))= _p("post.read_more") + " »"
