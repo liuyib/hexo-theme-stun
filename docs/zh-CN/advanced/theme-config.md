@@ -31,6 +31,20 @@ language: zh-CN # 可选值 zh-CN 或 en-US
 
 语言文件在主题文件夹的 languages 目录下。stun 主题默认有 `zh-CN.yml` 和 `en.yml` 两种语言文件，如果需要支持其他语言，请自行编写语言文件。语言文件的命名规则要求符合 [RFC 4646](http://www.ietf.org/rfc/rfc4646.txt) 标准，你可以在[这里](https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry)找到各种语言的缩写。
 
+## 文章摘要
+
+如果想要保留文章摘要，需要**手动**在文章的 markdown 源文件中添加 `<!-- more -->` 标记。标记之前的部分都会被保留为文章摘要，显示在文章列表中。
+
+如果想要自动保留文章摘要，可以通过修改 `stun.yml` 文件：
+
+``` yaml
+auto_excerpt:
+  enable: false
+  length: 150
+```
+
+由于自动保留摘要的效果并不理想，所以这里不建议开启。其中 `length` 表示自动保留的字数。
+
 ## 顶部菜单栏
 
 网站顶部菜单栏默认有 `/` 和 `/archives` 两个路径，它们分别对应于网站首页和归档页。如果你想添加：`categories`、`tags`、`about` 页面，你需要进行以下操作：
@@ -102,7 +116,7 @@ menu:
 - 添加图标
 - 执行指令，新建页面
 
-这三步的步骤同上。
+这三步的操作步骤[同上](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/theme-config.html#%E9%A1%B6%E9%83%A8%E8%8F%9C%E5%8D%95%E6%A0%8F)。
 
 - 国际化设置
 
@@ -122,6 +136,8 @@ nav:
   read: Read
 ```
 
+这样就完成了自定义页面的添加。
+
 ## Favicon
 
 设置网站图标（favicon），修改 `stun.yml` 文件：
@@ -133,6 +149,8 @@ favicon:
   # apple_touch_icon: /imgs/apple-touch-icon-stun.png
   # safari_pinned_tab: /imgs/logo-stun.svg
 ```
+
+有关 favicon 的详情信息，请访问：[https://developers.google.com/web/fundamentals/design-and-ux/browser-customization/](https://developers.google.com/web/fundamentals/design-and-ux/browser-customization/)
 
 ## 网站顶部信息
 
@@ -307,7 +325,6 @@ author:
     opacity: 1
     # 鼠标 hover 动画，可选值：trun 或 shake
     animation: shake
-
   # 格言（也可以是任意一句想写的话）
   motto: 
 ```
@@ -320,7 +337,7 @@ author:
 # `||` 分隔符前面表示友链的链接或信息，后面表示友链图标。
 # 图标的名称在这里查找：https://fontawesome.com/v4.7.0/icons/
 # 如果你找不到想要的图标，可以考虑用文字来代替图标显示。
-# 通过添加 `origin:` 前缀即可显示文字。例如：`origin:知` 会用 `知` 代替图标显示。
+# 通过添加 `origin:` 前缀即可显示文字。例如：`origin:知` 会以 `知` 代替图标显示。
 social:
   # 如果不需要友链，设为 false 即可直接关闭。
   enable: true
@@ -359,8 +376,8 @@ toc:
   # 文本溢出是否换行
   wrap: true
   # 生成目录时，解析 h 标签的最大深度。
-  # 你可以在文章 markdown 文件的 Front-matter 中，通过添加 `toc_max_depth` 字段，
-  # 来指定某篇文章生成目录时，解析 h 标签的最大深度。
+  # 你可以在文章的 markdown 源文件的 Front-matter 中，通过添加 `toc_max_depth` 字段，
+  #   来指定某篇文章生成目录时，解析 h 标签的最大深度。
   max_depth: 5
 ```
 
@@ -377,7 +394,7 @@ feed:
   rss: 
 ```
 
-开启 RSS 订阅之前，你需要安装 hexo 插件：[hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed)。然后在**站点**的 `_config.yml` 文件中添加配置项（关于各个配置项的作用，请查看插件的文档）：
+开启 RSS 订阅之前，你需要安装 hexo 插件：[hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed)。然后在**站点**的 `_config.yml` 文件中添加配置项（关于各个配置项的具体含义，请自行查看插件的文档）：
 
 ``` yaml
 feed:

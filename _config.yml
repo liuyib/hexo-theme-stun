@@ -160,7 +160,6 @@ author:
     opacity: 1
     # Mouse hover animation, available value: turn | shake
     animation: turn
-
   # Your favorite motto (e.g. Talk is cheap, show me your code).
   motto: Talk is cheap, show me your code.
 
