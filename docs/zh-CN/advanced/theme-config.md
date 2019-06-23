@@ -18,7 +18,7 @@
 > 如果你进行了上述操作，当你需要修改主题配置时，只需要修改 `stun.yml` 文件即可。更新主题时，主题根目录下的 `_config.yml` 文件（可能）会更新，而你对主题配置的数据仍保留在 `stun.yml` 文件中。
 
 ::: warning
-注意，主题 `_config.yml` 文件中包含的配置项，在 `stun.yml` 文件中都要有。也就是说，上面这种做法虽然方便你保留主题的配置数据，但是当主题 `_config.yml` 文件的配置项更改时，如果你不及时手动更新 `stun.yml` 文件，主题很可能会报错。
+上面这种做法虽然方便你保留主题的配置数据，但是当主题 `_config.yml` 文件的配置项更改时，如果你不及时手动更新 `stun.yml` 文件，主题很可能会报错。
 :::
 
 ## 国际化（i18n）
@@ -656,3 +656,15 @@ tag_cloud:
 ```
 
 效果如下：![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190619210337.png)
+
+## 其他常用的设置
+
+### 指定图片大小
+
+1. 使用 HTML 中的 `img` 标签，通过 `style` 属性控制图片大小。
+2. 使用 hexo 提供的语法 `{% https://xxxxx.png width height %}`，填入图片地址和宽、高即可。
+3. stun 为此提供了一个便捷的方法来指定图片大小，你只需要在图片路径后面添加 `?size=宽度x高度` 后缀即可。例如：
+
+``` markdown
+![](https://xxxxx.png?size=200x100)
+```
