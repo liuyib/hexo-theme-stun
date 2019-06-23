@@ -85,7 +85,7 @@ aside#sidebar
         - let ccURL = `https://creativecommons.org/licenses/${ccLicense}/4.0/deed.${ccLanguage}`
         div.sidebar-cc
           a(href=ccURL target="_blank")
-            img(src=url_for(`/imgs/cc-${ccLicense}.svg`) alt="creative commons")
+            img(src=url_for(`/${theme.images}/cc-${ccLicense}.svg`) alt="creative commons")
 
     if theme.reading_progress.enable && is_post()
       div.sidebar-progress

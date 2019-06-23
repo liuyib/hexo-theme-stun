@@ -1,7 +1,8 @@
 # 主题配置
 
 ::: tip
-修改配置文件，安装新的依赖等，都需要重启 hexo 服务器。
+- 修改配置文件、安装新的依赖等，都需要重启 hexo 服务器。
+- 该文档介绍的顺序和配置文件里配置项的顺序保持一致。
 :::
 
 ## 配置文件
@@ -30,47 +31,6 @@ language: zh-CN # 可选值 zh-CN 或 en-US
 ```
 
 语言文件在主题文件夹的 languages 目录下。stun 主题默认有 `zh-CN.yml` 和 `en.yml` 两种语言文件，如果需要支持其他语言，请自行编写语言文件。语言文件的命名规则要求符合 [RFC 4646](http://www.ietf.org/rfc/rfc4646.txt) 标准，你可以在[这里](https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry)找到各种语言的缩写。
-
-## 文章摘要
-
-如果想要保留文章摘要，需要**手动**在文章的 markdown 源文件中添加 `<!-- more -->` 标记。标记之前的部分都会被保留为文章摘要，显示在文章列表中。
-
-如果想要自动保留文章摘要，可以通过修改 `stun.yml` 文件：
-
-``` yaml
-auto_excerpt:
-  enable: false
-  # 自动保留的字数
-  length: 150
-```
-
-由于自动保留摘要的效果并不理想，所以这里不建议开启。
-
-## 文章置顶
-
-想要使用文章置顶功能，首先你需要安装 hexo 插件 [hexo-generator-index-pin-top](https://github.com/netcan/hexo-generator-index-pin-top)，然后执行命令：
-
-``` bash
-npm uninstall hexo-generator-index --save
-npm install hexo-generator-index-pin-top --save
-```
-
-最后，在文章的 `front-matter` 中，添加 `top: true` 即可实现置顶效果。
-
-设置文章置顶后，可以在文章列表中的文章的头部，看到表示置顶的图标。你可以设置它的样式，修改 `stum.yml` 文件：
-
-``` yaml
-stick_top:
-  # 图标的位置
-  position: right
-  # 建议使用名为 `thumb-tack` 的图标
-  # 图标名称在这里查找：https://fontawesome.com/v4.7.0/icons/
-  icon: thumb-tack
-  # 图标的旋转角度（角度的单位是：deg）
-  rotate: 45deg
-  # 请使用引号包裹颜色值（支持所有 CSS 颜色单位）
-  color: "#999"
-```
 
 ## 顶部菜单栏
 
@@ -106,11 +66,14 @@ menu:
 
 > 如果只添加路径，没有添加图标名称，会使用默认图标进行显示。
 
-你可以通过修改 `menu_settings` 配置项来控制菜单项的图标是否显示：
+你可以通过修改 `menu_settings` 配置项来控制菜单项的图标或文字是否显示：
 
 ``` yaml
 menu_settings:
-  icon: true # true 表示显示，false 表示隐藏
+  # 是否只显示图标
+  icon_only: false
+  # 是否只显示文字
+  text_only: false
 ```
 
 - 新建页面
@@ -177,9 +140,9 @@ favicon:
   # safari_pinned_tab: /imgs/logo-stun.svg
 ```
 
-有关 favicon 的详情信息，请访问：[https://developers.google.com/web/fundamentals/design-and-ux/browser-customization/](https://developers.google.com/web/fundamentals/design-and-ux/browser-customization/)
+有关 favicon 的详细介绍，请访问：[https://developers.google.com/web/fundamentals/design-and-ux/browser-customization/](https://developers.google.com/web/fundamentals/design-and-ux/browser-customization/)
 
-## 网站顶部信息
+## 网站顶部栏信息
 
 修改 `stun.yml` 文件：
 
@@ -205,15 +168,16 @@ header:
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190619210340.jpg)
 
-## 单独设置顶部图
+## 指定顶部图
 
-如果想要为某个页面或某篇文章单独指定顶部图，在页面或文章 markdown 源文件的 [front-matter] 中，使用 `top: true` 来实现置顶。(https://hexo.io/zh-cn/docs/front-matter) 中，使用 `top: true` 来实现置顶。 中，添加 `top_image` 项，填入的图片 url 或路径即可。例如：
+如果想要为某个页面或某篇文章单独指定顶部图，你只需要在页面或文章 markdown 源文件的 [front-matter](https://hexo.io/zh-cn/docs/front-matter) 中，添加 `top_image` 项，然后填入的图片 url 或路径即可。例如：
+
 
 ``` yaml
 ---
 title: Hello Stun
 date: 2019-05-15 22:54:49
-top_image: https://xxxx.jpg
+top_image: https://xxxxx.jpg
 tags:
   - hexo-theme
   - stun
@@ -310,13 +274,13 @@ footer:
     icp: 
   # 任何自定义文本，支持 HTML（例如：托管于 <a href="https://pages.github.com/" rel="noopener" target="_blank">Github Pages</a>）
   custom:
-    enable: true
+    enable: false
     text: 
 ```
 
 效果如下：
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190619210333.png)
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190623192514.png)
 
 ## 侧边栏设置
 
@@ -353,7 +317,7 @@ author:
     # 鼠标 hover 动画，可选值：trun 或 shake
     animation: shake
   # 格言（也可以是任意一句想写的话）
-  motto: 
+  motto: hello world
 ```
 
 ## 友链
@@ -366,8 +330,6 @@ author:
 # 如果你找不到想要的图标，可以考虑用文字来代替图标显示。
 # 通过添加 `origin:` 前缀即可显示文字。例如：`origin:知` 会以 `知` 代替图标显示。
 social:
-  # 如果不需要友链，设为 false 即可直接关闭。
-  enable: true
   github: https://github.com/ || github
   google: https://plus.google.com/ || google
   twitter: https://twitter.com/ || twitter
@@ -383,6 +345,8 @@ social:
 
 # 友链的一些设置
 social_setting:
+  # 是否启用友链
+  enable: true
   # 只显示图标
   icon_only: true
   # 友链之间的排列方式，取值同 CSS 的 "justify-content" 属性。
@@ -403,7 +367,7 @@ toc:
   # 文本溢出是否换行
   wrap: true
   # 生成目录时，解析 h 标签的最大深度。
-  # 你可以在文章的 markdown 源文件的 front-matter  中，使用 `top: true` 来实现置顶。中，通过添加 `toc_max_depth` 字段，
+  # 你可以在文章的 markdown 源文件的 front-matter 中，通过添加 `toc_max_depth` 字段，
   #   来指定某篇文章生成目录时，解析 h 标签的最大深度。
   max_depth: 5
 ```
@@ -480,7 +444,7 @@ post_meta:
   # 启用这个功能之前，你首先需要在 hexo 根目录安装依赖：
   # `npm install hexo-wordcount --save`，然后重启 hexo 服务器。
   reading_time:
-    enable: true
+    enable: false
     # 图标名称在这里查找
     icon: clock-o
     # 设置文章的阅读速度（阅读时间会根据这个设置来计算）
@@ -493,12 +457,53 @@ post_meta:
   # 启用这个功能之前，你首先需要在 hexo 根目录安装依赖：
   # `npm install hexo-wordcount --save`，然后重启 hexo 服务器。
   word_count:
-    enable: true
+    enable: false
     # 图标名称在这里查找
     icon: file-word-o
 ```
 
 效果如下：![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190619210334.png)
+
+## 文章摘要
+
+如果想要保留文章摘要，需要**手动**在文章的 markdown 源文件中添加 `<!-- more -->` 标记。标记之前的部分都会被保留为文章摘要，显示在文章列表中。
+
+如果想要自动保留文章摘要，可以通过修改 `stun.yml` 文件：
+
+``` yaml
+auto_excerpt:
+  enable: false
+  # 自动保留的字数
+  length: 150
+```
+
+由于自动保留摘要的效果并不理想，所以这里不建议开启。
+
+## 文章置顶
+
+想要使用文章置顶功能，首先你需要安装 hexo 插件 [hexo-generator-index-pin-top](https://github.com/netcan/hexo-generator-index-pin-top)，然后执行命令：
+
+``` bash
+npm uninstall hexo-generator-index --save
+npm install hexo-generator-index-pin-top --save
+```
+
+最后，在文章的 `front-matter` 中，使用 `top: true` 来实现置顶。
+
+设置文章置顶后，在文章列表中，可以看到表示置顶的图标。你可以对图标进行设置，修改 `stum.yml` 文件：
+
+``` yaml
+stick_top:
+  # 图标的位置（可选值为：left 和 right）
+  position: right
+  # 建议使用名为 `thumb-tack` 的图标
+  # 图标名称在这里查找：https://fontawesome.com/v4.7.0/icons/
+  icon: thumb-tack
+  # 图标的旋转角度（角度的单位是：deg）
+  rotate: 45deg
+  # 请使用引号包裹颜色值（支持所有 CSS 颜色单位）
+  color: "#999"
+```
 
 ## 代码高亮
 
@@ -508,7 +513,7 @@ post_meta:
 highlight_theme: light
 ```
 
-有三种可供选择的代码高亮样式：`light`、`drak`、`ocean`。默认是 light。效果分别如下：
+有三种可供选择的代码高亮样式：`light`、`drak`、`ocean`。默认是 `light`。效果分别如下：
 
 - `highlight_theme: light`
 
@@ -626,13 +631,13 @@ post_end_text:
 设置文章的赞赏码，修改 `stun.yml` 文件：
 
 ``` yaml
+# Reward
 reward:
   enable: false
-  qr_img_url:
-    # 填写图片路径或链接  
-    alipay: 
-    # 填写图片路径或链接
-    wechat: 
+  # 支付宝
+  alipay: https://xxxxx.png
+  # 微信
+  wechat: https://xxxxx.png
 ```
 
 默认不启用，启用后效果如下：
@@ -659,7 +664,7 @@ tag_cloud:
 
 ## 其他常用的设置
 
-### 指定图片大小
+### 设置图片大小
 
 1. 使用 HTML 中的 `img` 标签，通过 `style` 属性控制图片大小。
 2. 使用 hexo 提供的语法 `{% https://xxxxx.png width height %}`，填入图片地址和宽、高即可。

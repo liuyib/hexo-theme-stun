@@ -29,10 +29,10 @@ menu_settings:
 # ---------------------------------------------------------------
 
 favicon:
-  small: /imgs/favicon-16x16-stun.png
-  medium: /imgs/favicon-32x32-stun.png
-  # apple_touch_icon: /imgs/apple-touch-icon-stun.png
-  # safari_pinned_tab: /imgs/logo-stun.svg
+  small: /images/favicon-16x16-stun.png
+  medium: /images/favicon-32x32-stun.png
+  # apple_touch_icon: /images/apple-touch-icon-stun.png
+  # safari_pinned_tab: /images/logo-stun.svg
 
 header:
   # Header height (Support for all types of CSS size units).
@@ -139,7 +139,7 @@ footer:
 sidebar:
   enable: true
   # Sidebar position, available values: left | right
-  float: right
+  position: right
   # Sidebar offset from top menubar
   #   (Only px units are supported).
   offsetTop: 20px
@@ -156,7 +156,7 @@ author:
     # In theme directory (source/images): /images/avatar.png
     # In site directory (source/uploads): /uploads/avatar.png
     # You can also use a link of image.
-    url: 
+    url: /images/avatar.png
     # If true, the avatar would be displayed in a circle.
     rounded: true
     # The value should be chosen from 0 to 1.
@@ -164,7 +164,7 @@ author:
     # Mouse hover animation, available value: turn | shake
     animation: turn
   # Your favorite motto (e.g. Talk is cheap, show me your code).
-  motto: Talk is cheap, show me your code.
+  motto: 
 
 # Social links.
 # Value before `||` delimiter is the target link.
@@ -187,7 +187,7 @@ social:
   # xxx: xxx || (origin:)xxx
 
 social_setting:
-  enable: true
+  enable: false
   # Only show by icon.
   icon_only: true
   # Available values are equal to "justify-content" attribute in CSS.
@@ -371,16 +371,6 @@ busuanzi:
     icon: eye
 
 # ---------------------------------------------------------------
-# Search config
-# ---------------------------------------------------------------
-
-# Algolia Search
-algolia_search:
-  enable: true
-  hits:
-    per_page: 10
-
-# ---------------------------------------------------------------
 # Other config
 # ---------------------------------------------------------------
 
@@ -401,8 +391,8 @@ tag_cloud:
 css: css
 # In theme directory (source/js).
 js: js
-# In theme directory (source/imgs).
-img: imgs
+# In theme directory (source/images).
+images: images
 
 # CND for third libs.
 cdn:
