@@ -1,6 +1,6 @@
 aside#sidebar
   div.sidebar-inner
-    - var isShowPostToc = theme.toc.enable && is_post()
+    - let isShowPostToc = theme.toc.enable && is_post()
     if isShowPostToc
       div.sidebar-nav
         span.sidebar-nav-toc.current= _p("sidebar.catalog")
@@ -8,7 +8,7 @@ aside#sidebar
     
     section(class=`${isShowPostToc ? "" : "hide"}`).sidebar-toc
       if page.content
-        - var tocMaxDepth = page.toc_max_depth ? page.toc_max_depth : (theme.toc.max_depth || 6)
+        - let tocMaxDepth = page.toc_max_depth || theme.toc.max_depth || 6
         div!= toc(page.content, {list_number: theme.toc.number, max_depth: tocMaxDepth})
 
     section(class=`${isShowPostToc ? "hide" : ""}`).sidebar-overview
@@ -19,69 +19,70 @@ aside#sidebar
           if theme.author.motto
             p.sidebar-author-motto= theme.author.motto
 
-      if theme.social.enable
+      if theme.social_setting.enable
         div.sidebar-social
-          for value, name in theme.social
-            if name && value && name !== "enable"
-              - socialLinkPath = value.split("||")[0] && value.split("||")[0].trim()
-              - socialLinkIcon = value.split("||")[1] && value.split("||")[1].trim()
+          for value, name in (theme.social || [])
+            if name && value
+              - let socialItem = value.split('||')
+              - let socialLinkPath = _.trim(_.get(socialItem, '[0]'))
+              - let socialLinkIcon = _.trim(_.get(socialItem, '[1]'))
               span.sidebar-social-item
-                a(href=socialLinkPath target="_blank" title=`${name} → ${socialLinkPath}`)
+                a(href=socialLinkPath target="_blank"
+                    title=`${name} → ${socialLinkPath}`)
+
                   if socialLinkIcon && socialLinkIcon.match("origin:")
                     span!= socialLinkIcon.split("origin:")[1]
                   else
-                    i(class=`fa fa-${socialLinkIcon ? socialLinkIcon : "question-circle-o"}`)
+                    i(class=`fa fa-${socialLinkIcon ?
+                        socialLinkIcon : "question-circle-o"}`)
                   
                   if !theme.social_setting.icon_only
                     span= name
       
       if theme.feed.enable
         div.sidebar-feed
-          if theme.feed.email !== undefined
+          - let feedEmail = theme.feed.email
+          if feedEmail
             span.sidebar-feed-email
-              a(
-                href=theme.feed.email
-                title=`email → ${theme.feed.email}` target="_blank"
-              )
+              a(href=feedEmail target="_blank" title=`email → ${feedEmail}`)
                 i(class="fa fa-envelope").sidebar-feed-icon
                 span Email
                 span= _p("sidebar.subscribe")
-          if theme.feed.rss !== undefined
+          
+          - let feedRSS = theme.feed.rss
+          if feedRSS
             span.sidebar-feed-rss
-              a(
-                href=url_for(theme.feed.rss)
-                title=`rss → ${url_for(theme.feed.rss)}` target="_blank"
-              )
+              a(href=url_for(feedRSS) target="_blank" title=`rss → ${url_for(feedRSS)}`)
                 i(class="fa fa-rss").sidebar-feed-icon
                 span RSS
                 span= _p("sidebar.subscribe")
       
       if theme.menu
-        - var menuArchives = theme.menu.archives.split("||")[0]
-        - var menuCategories = theme.menu.categories.split("||")[0]
-        - var menuTags = theme.menu.tags.split("||")[0]
+        - let menuArchives   = _.trim(_.get(theme.menu.archives.split('||'), '[0]'))
+        - let menuCategories = _.trim(_.get(theme.menu.categories.split('||'), '[0]'))
+        - let menuTags       = _.trim(_.get(theme.menu.tags.split('||'), '[0]'))
         div.sidebar-state
           if theme.menu.archives
             div.sidebar-state-item.sidebar-state-posts
-              a(href=menuArchives && menuArchives.trim())
+              a(href=menuArchives)
                 div.sidebar-state-item-count= site.posts.length
                 div.sidebar-state-item-name= _p("sidebar.articles")
           if theme.menu.categories
             div.sidebar-state-item.sidebar-state-categories
-              a(href=menuCategories && menuCategories.trim())
+              a(href=menuCategories)
                 div.sidebar-state-item-count= site.categories.length
                 div.sidebar-state-item-name= _p("sidebar.categories")
           if theme.menu.tags
             div.sidebar-state-item.sidebar-state-tags
-              a(href=menuTags && menuTags.trim())
+              a(href=menuTags)
                 div.sidebar-state-item-count= site.tags.length
                 div.sidebar-state-item-name= _p("sidebar.tags")
       
       if theme.creative_commons.enable && theme.creative_commons.sidebar
-        - var themeCC = theme.creative_commons
-        - var ccLicense = themeCC.license && themeCC.license.toLowerCase()
-        - var ccLanguage = (themeCC.language && themeCC.language.toLowerCase()) || "en"
-        - var ccURL = `https://creativecommons.org/licenses/${ccLicense}/4.0/deed.${ccLanguage}`
+        - let themeCC = theme.creative_commons
+        - let ccLicense = themeCC.license && themeCC.license.toLowerCase()
+        - let ccLanguage = (themeCC.language && themeCC.language.toLowerCase()) || "en"
+        - let ccURL = `https://creativecommons.org/licenses/${ccLicense}/4.0/deed.${ccLanguage}`
         div.sidebar-cc
           a(href=ccURL target="_blank")
             img(src=url_for(`/imgs/cc-${ccLicense}.svg`) alt="creative commons")

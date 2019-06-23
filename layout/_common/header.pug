@@ -1,7 +1,8 @@
 header#header(
   style=`background-image: url(${
     page.top_image ? page.top_image :
-      theme.header.bg_image.enable ? theme.header.bg_image.url : " "
+      theme.header.bg_image.enable ?
+        theme.header.bg_image.url : " "
   })`
 )
   nav.header-nav
@@ -9,20 +10,24 @@ header#header(
       div(class="header-nav-menu-icon fa fa-bars")
 
       div.header-nav-search
-        if (theme.menu_settings.icon)
+        if !theme.menu_settings.text_only
           i(class="fa fa-search")
-        span!= _p("nav.search")
+        if !theme.menu_settings.icon_only
+          span!= _p("nav.search")
       
       div.header-nav-menu
-        each value, name in theme.menu
+        each value, name in (theme.menu || [])
           if name && value
-            - var menuItemPath = value.split("||")[0] && value.split("||")[0].trim()
-            - var menuItemIcon = value.split("||")[1] && value.split("||")[1].trim()
+            - let menuItem = value.split('||')
+            - let menuItemPath = _.trim(_.get(menuItem, '[0]'))
+            - let menuItemIcon = _.trim(_.get(menuItem, '[1]'))
             span
-              a(href=menuItemPath ? menuItemPath : "")
-                if (theme.menu_settings.icon)
-                  i(class=`fa fa-${menuItemIcon ? menuItemIcon : "question-circle-o"}`)
-                != _p(`nav.${name}`)
+              a(href=menuItemPath ? menuItemPath : "/")
+                if !theme.menu_settings.text_only
+                  i(class=`fa fa-${menuItemIcon ?
+                    menuItemIcon : "question-circle-o"}`)
+                if !theme.menu_settings.icon_only
+                  != _p(`nav.${name}`)
   
   div.header-info
     div.header-info-inner

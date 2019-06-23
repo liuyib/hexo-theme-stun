@@ -1,4 +1,30 @@
 # ---------------------------------------------------------------
+# Menu config
+# ---------------------------------------------------------------
+
+# Header navigation menu.
+# Value before `||` delimiter is the target link.
+# Value after `||` delimiter is the name of FontAwesome icon.
+# See: https://fontawesome.com/v4.7.0/icons/
+# If not set, "question-circle-o" icon will be shown.
+menu:
+  home: / || home
+  archives: /archives/ || folder-open
+  categories: /categories/ || th
+  tags: /tags/ || tags
+  about: /about/ || user
+  # reading: /reading/ || book
+  # sitemap: /sitemap.xml || sitemap
+  # You can also add a item by yourself.
+  # xxx: /xxx/ || xxx
+
+menu_settings:
+  # Only show by icon.
+  icon_only: false
+  # Only show by text.
+  text_only: false
+
+# ---------------------------------------------------------------
 # Site Information config
 # ---------------------------------------------------------------
 
@@ -9,14 +35,14 @@ favicon:
   # safari_pinned_tab: /imgs/logo-stun.svg
 
 header:
-  # Header height (Only percentage units are supported).
+  # Header height (Support for all types of CSS size units).
   height: 80%
   # Header navigation bar height (Support for all types of CSS size units).
   nav_height: 50px
   # Background image in the header.
   bg_image:
     enable: true
-    # In theme directory (source/imgs): /images/avatar.png
+    # In theme directory (source/images): /images/avatar.png
     # In site directory (source/uploads): /uploads/avatar.png
     # You can also use a link of image.
     url: 
@@ -45,14 +71,14 @@ creative_commons:
 back2top:
   enable: true
   icon:
-    # Icon name in FontAwesome, see: https://fontawesome.com/icons?d=listing
+    # Icon name in FontAwesome, see: https://fontawesome.com/v4.7.0/icons/
     # `rocket` is recommended.
     name: rocket
     # Animation of rocket launch.
     animation: true
     # Rotation Angle of icon.
     rotate: -45deg
-    # Please use quote to wrap value (Support for all types of CSS color units).
+    # Please use quote to wrap value (All CSS size units are supported).
     color: "#49b1f5"
     # Colour when the mouse hovers it.
     hover_color: "#fc6423"
@@ -62,7 +88,7 @@ footer:
   # Background image in the footer.
   bg_image:
     enable: true
-    # In theme directory (source/imgs): /images/avatar.png
+    # In theme directory (source/images): /images/avatar.png
     # In site directory (source/uploads): /uploads/avatar.png
     # You can also use a link of image.
     url: 
@@ -72,21 +98,19 @@ footer:
     # If not set, will be used `author` from Hexo main config.
     #   (e.g. liuyib. All Rights Reserved.)
     text: 
-    # Specify the date when the site was setup.
-    #   If not set, the current year will be used.
+    # Start time. If not set, the current year will be used.
     since: 
-    # Specify the date when the site ended.
-    #   If not set, the current year will be used.
+    # End time. If not set, the current year will be used.
     end: 
-  # Icon between the copyright year and the owner.
+  # The icon between the copyright year and the owner.
   icon:
     enable: true
-    # Icon name in FontAwesome, see: https://fontawesome.com/icons?d=listing
+    # Icon name in FontAwesome, see: https://fontawesome.com/v4.7.0/icons/
     # `heart` is recommended with animation in red (#ff0000).
     name: heart
     # Heart beat animation.
     animation: true
-    # Please use quote to wrap value (Support for all types of CSS color units).
+    # Please use quote to wrap value (All CSS size units are supported).
     color: "#ff0000"
   # Hexo link (Powered by Hexo).
   powered:
@@ -109,28 +133,6 @@ footer:
     text: 
 
 # ---------------------------------------------------------------
-# Menu config
-# ---------------------------------------------------------------
-
-# Header navigation menu.
-# Value before `||` delimiter is the target link.
-# Value after `||` delimiter is the name of FontAwesome icon.
-#   If not set, "question-circle-o" icon will be shown.
-menu:
-  home: / || home
-  archives: /archives/ || folder-open
-  categories: /categories/ || th
-  tags: /tags/ || tags
-  about: /about/ || user
-  # reading: /reading/ || book
-  # sitemap: /sitemap.xml || sitemap
-  # You can also add a item by yourself.
-  # xxx: /xxx/ || xxx
-
-menu_settings:
-  icon: true
-
-# ---------------------------------------------------------------
 # Sidebar config
 # ---------------------------------------------------------------
 
@@ -138,10 +140,11 @@ sidebar:
   enable: true
   # Sidebar position, available values: left | right
   float: right
-  # Sidebar offset from top menubar (Support for all types of CSS size units).
+  # Sidebar offset from top menubar
+  #   (Only px units are supported).
   offsetTop: 20px
   # Define the sidebar width, 260px ~ 360px is better
-  #   (Support for all types of CSS size units).
+  #   (All CSS size units are supported).
   width: 300px
   # Horizon line.
   horizon_line: true
@@ -150,7 +153,7 @@ author:
   enable: true
   # Avatar in the sidebar.
   avatar:
-    # In theme directory (source/imgs): /images/avatar.png
+    # In theme directory (source/images): /images/avatar.png
     # In site directory (source/uploads): /uploads/avatar.png
     # You can also use a link of image.
     url: 
@@ -166,10 +169,10 @@ author:
 # Social links.
 # Value before `||` delimiter is the target link.
 # Value after `||` delimiter is the name of FontAwesome icon.
+# See: https://fontawesome.com/v4.7.0/icons/
 # If you can`t find a suitable icon, you can choose to display the original.
 #   text by adding the "origin" prefix (e.g. origin:sf, then "sf" will be show).
 social:
-  enable: true
   github: https://github.com/ || github
   google: https://plus.google.com/ || google
   twitter: https://twitter.com/ || twitter
@@ -184,7 +187,8 @@ social:
   # xxx: xxx || (origin:)xxx
 
 social_setting:
-  # Only show social links by an icon.
+  enable: true
+  # Only show by icon.
   icon_only: true
   # Available values are equal to "justify-content" attribute in CSS.
   # e.g. flex-start | center | flex-end | space-between, etc.
@@ -215,7 +219,7 @@ feed:
 # The reading progress of post.
 reading_progress:
   enable: true
-  # Please use the quote to wrap value (Support for all types of CSS color units).
+  # Please use the quote to wrap value (All CSS size units are supported).
   color: "#fc6423"
   # Support for all types of CSS size units.
   height: 1px
@@ -226,6 +230,7 @@ reading_progress:
 
 # The meta-information at the front of the post.
 post_meta:
+  # Only show by icon.
   icon_only: false
   # Show create information.
   created:
@@ -253,7 +258,7 @@ post_meta:
       en: 80
   # Count the words of the post.
   # Don't enable this before install dependencies
-  #   by `npm install hexo-wordcount --save` in hexo directory.
+  #   by `npm install hexo-wordcount --save` in hexo directory
   #   and you must restart your hexo server.
   word_count:
     enable: false
@@ -345,6 +350,7 @@ gitment:
 busuanzi:
   enable: true
   site:
+    # Only show by icon.
     icon_only: false
     # Number of unique visitor to the entire site.
     uv:
@@ -358,6 +364,7 @@ busuanzi:
       icon: eye
   # Number of page view to a post.
   post_pv:
+    # Only show by icon.
     icon_only: false
     enable: true
     # Icon name in FontAwesome, see: https://fontawesome.com/v4.7.0/icons/
@@ -404,11 +411,3 @@ cdn:
   js:
     jquery: https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js
     velocity: https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js
-
-# Scripts loaded at the end of the body.
-scripts:
-  - /js/utils.js
-  - /js/scroll.js
-  - /js/header.js
-  - /js/sidebar.js
-  - /js/post.js
