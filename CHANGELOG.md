@@ -4,7 +4,6 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## [1.0.0](https://github.com/liuyib/hexo-theme-stun/compare/v1.0.0-beta.0...v1.0.0) (2019-06-23)
 
-
 ### Bug Fixes
 
 * Display the reading progress bar only on the articles page ([cdaac3f](https://github.com/liuyib/hexo-theme-stun/commit/cdaac3f))
@@ -13,7 +12,6 @@ All notable changes to this project will be documented in this file. See [standa
 * Solve the problem of sidebar jumping ([6933c40](https://github.com/liuyib/hexo-theme-stun/commit/6933c40))
 * Solve the problem that the menu always shows in mobile ([21cde8e](https://github.com/liuyib/hexo-theme-stun/commit/21cde8e))
 * Solved the display of unordered list ([1ba789e](https://github.com/liuyib/hexo-theme-stun/commit/1ba789e))
-
 
 ### Features
 
@@ -28,7 +26,6 @@ All notable changes to this project will be documented in this file. See [standa
 * Add the hyperlink to post title ([2d4089c](https://github.com/liuyib/hexo-theme-stun/commit/2d4089c))
 * Add word count & reading time cout of post ([b0c34df](https://github.com/liuyib/hexo-theme-stun/commit/b0c34df))
 * Provides a way to specify the size of the image ([aa4195f](https://github.com/liuyib/hexo-theme-stun/commit/aa4195f))
-
 
 
 ## [1.0.0-alpha.0](https://github.com/liuyib/hexo-theme-stun/compare/v1.0.0-beta.0...v1.0.0-alpha.0) (2019-06-17)
