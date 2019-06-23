@@ -1,13 +1,25 @@
+if (hexo-config('stick_top.position') == 'left')
+  $stick-top-position
+    left: 1.5rem
+else
+  $stick-top-position
+    right: 1.5rem
+
+$stick-top-rotate = convert(
+  hexo-config('stick_top.rotate' || '0deg'))
+
+$stick-top-color = convert(
+  hexo-config('stick_top.color' || '#999'))
+
 #recent-posts
-  .post-header,
-  .post-excerpt,
-  .post-footer
+  .post-header
+    margin-bottom: 1.5rem
+
+  .post-excerpt
     margin-bottom: 2em
 
-  .post-header
-    padding: 0
-
   .post-item
+    position: relative
     margin: 0 0 2rem
     border-radius: 5px
     padding: 2rem
@@ -21,6 +33,13 @@
     & > :last-child,
     .post-excerpt > :last-child
       margin-bottom: 0
+  
+  .sticky-top
+    position: absolute
+    top: 1rem
+    transform: scale(1.5) rotate($stick-top-rotate)
+    color: $stick-top-color
+    @extend $stick-top-position
 
   .post-btn
     display: flex

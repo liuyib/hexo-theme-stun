@@ -1,9 +1,13 @@
 section#recent-posts
   if page.posts.length > 0
     //- show 10 articles in the home page
-    each post in page.posts.sort("date", -1).limit(10).toArray()
+    each post in page.posts.toArray()
       article.post-item
         +postHeader(post)
+
+        if post.top
+          div.sticky-top
+            i(class=`fa fa-${theme.stick_top.icon}`)
 
         if theme.auto_excerpt && theme.auto_excerpt.enable
           - const content = strip_html(post.content)

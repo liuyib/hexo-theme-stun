@@ -40,10 +40,37 @@ language: zh-CN # 可选值 zh-CN 或 en-US
 ``` yaml
 auto_excerpt:
   enable: false
+  # 自动保留的字数
   length: 150
 ```
 
-由于自动保留摘要的效果并不理想，所以这里不建议开启。其中 `length` 表示自动保留的字数。
+由于自动保留摘要的效果并不理想，所以这里不建议开启。
+
+## 文章置顶
+
+想要使用文章置顶功能，首先你需要安装 hexo 插件 [hexo-generator-index-pin-top](https://github.com/netcan/hexo-generator-index-pin-top)，然后执行命令：
+
+``` bash
+npm uninstall hexo-generator-index --save
+npm install hexo-generator-index-pin-top --save
+```
+
+最后，在文章的 `front-matter` 中，添加 `top: true` 即可实现置顶效果。
+
+设置文章置顶后，可以在文章列表中的文章的头部，看到表示置顶的图标。你可以设置它的样式，修改 `stum.yml` 文件：
+
+``` yaml
+stick_top:
+  # 图标的位置
+  position: right
+  # 建议使用名为 `thumb-tack` 的图标
+  # 图标名称在这里查找：https://fontawesome.com/v4.7.0/icons/
+  icon: thumb-tack
+  # 图标的旋转角度（角度的单位是：deg）
+  rotate: 45deg
+  # 请使用引号包裹颜色值（支持所有 CSS 颜色单位）
+  color: "#999"
+```
 
 ## 顶部菜单栏
 
@@ -88,13 +115,13 @@ menu_settings:
 
 - 新建页面
 
-在 hexo 根目录执行指令：
+在 hexo 根目录执行命令：
 
 ``` bash
 hexo new page xxx # xxx 表示页面名称
 ```
 
-执行这条指令后，会在如下目录生成文件：`source/xxx/index.md`
+执行这条命令后，会在如下目录生成文件：`source/xxx/index.md`
 
 ::: warning
 新建的页面名称，需要和 `stun.yml` 文件中添加的页面路径名称保持一致。
@@ -105,7 +132,7 @@ menu:
   about: /about-me
 ```
 
-那么你应该执行指令：`hexo new page about-me`，这样才能在访问该路径时，找到对应的文件。
+那么你应该执行命令：`hexo new page about-me`，这样才能在访问该路径时，找到对应的文件。
 :::
 
 ## 自定义页面
@@ -114,7 +141,7 @@ menu:
 
 - 添加路径
 - 添加图标
-- 执行指令，新建页面
+- 执行命令，新建页面
 
 这三步的操作步骤[同上](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/theme-config.html#%E9%A1%B6%E9%83%A8%E8%8F%9C%E5%8D%95%E6%A0%8F)。
 
@@ -180,7 +207,7 @@ header:
 
 ## 单独设置顶部图
 
-如果想要为某个页面或某篇文章单独指定顶部图，在页面或文章 markdown 文件的 [front-matter](https://hexo.io/zh-cn/docs/front-matter) 中，添加 `top_image` 项，填入你想要的图片 url 或路径即可。例如：
+如果想要为某个页面或某篇文章单独指定顶部图，在页面或文章 markdown 源文件的 [front-matter] 中，使用 `top: true` 来实现置顶。(https://hexo.io/zh-cn/docs/front-matter) 中，使用 `top: true` 来实现置顶。 中，添加 `top_image` 项，填入的图片 url 或路径即可。例如：
 
 ``` yaml
 ---
@@ -224,13 +251,13 @@ back2top:
   enable: true
   icon:
     # 建议使用名为 `rocket` 的图标
-    # FontAwesome 中的图标名称：https://fontawesome.com/v4.7.0/icons/
+    # 图标名称在这里查找：https://fontawesome.com/v4.7.0/icons/
     name: rocket
     # 火箭发射动画
     animation: true
-    # 图标的旋转角度
+    # 图标的旋转角度（角度的单位是：deg）
     rotate: -45deg
-    # 支持使用所有的 CSS 颜色单位
+    # 请使用引号包裹颜色值（支持所有 CSS 颜色单位）
     color: "#49b1f5"
     hover_color: "#fc6423"
 ```
@@ -260,7 +287,7 @@ footer:
   icon:
     enable: true
     # 建议使用名为 `heart` 的图标
-    # FontAwesome 中的图标名称：https://fontawesome.com/v4.7.0/icons/
+    # 图标名称在这里查找：https://fontawesome.com/v4.7.0/icons/
     name: heart
     # 心跳动画
     animation: true
@@ -376,7 +403,7 @@ toc:
   # 文本溢出是否换行
   wrap: true
   # 生成目录时，解析 h 标签的最大深度。
-  # 你可以在文章的 markdown 源文件的 Front-matter 中，通过添加 `toc_max_depth` 字段，
+  # 你可以在文章的 markdown 源文件的 front-matter  中，使用 `top: true` 来实现置顶。中，通过添加 `toc_max_depth` 字段，
   #   来指定某篇文章生成目录时，解析 h 标签的最大深度。
   max_depth: 5
 ```
@@ -419,7 +446,7 @@ feed:
 ``` yaml
 reading_progress:
   enable: true
-  # 进度条颜色（支持所有 CSS 颜色单位）
+  # 请使用引号包裹颜色值（支持所有 CSS 颜色单位）
   color: "#fc6423"
   # 进度条高度（支持所有 CSS 长度单位）
   height: 1px
@@ -442,19 +469,19 @@ post_meta:
   # 文章创建时间
   created:
     enable: true
-    # FontAwesome 中的图标名称：https://fontawesome.com/v4.7.0/icons/
+    # 图标名称在这里查找：https://fontawesome.com/v4.7.0/icons/
     icon: calendar-o
   # 文章更新时间
   updated:
     enable: true
-    # FontAwesome 中的图标名称
+    # 图标名称在这里查找
     icon: calendar-check-o
   # 文章预计的阅读时间
   # 启用这个功能之前，你首先需要在 hexo 根目录安装依赖：
   # `npm install hexo-wordcount --save`，然后重启 hexo 服务器。
   reading_time:
     enable: true
-    # FontAwesome 中的图标名称
+    # 图标名称在这里查找
     icon: clock-o
     # 设置文章的阅读速度（阅读时间会根据这个设置来计算）
     speed:
@@ -467,7 +494,7 @@ post_meta:
   # `npm install hexo-wordcount --save`，然后重启 hexo 服务器。
   word_count:
     enable: true
-    # FontAwesome 中的图标名称
+    # 图标名称在这里查找
     icon: file-word-o
 ```
 
@@ -618,7 +645,7 @@ reward:
 
 ``` yaml
 tag_cloud:
-  # 标签的颜色（只支持十六进制的颜色值）
+  # 请使用引号包裹颜色值（只支持十六进制的颜色值）
   start_color: "#a4d8fa"
   end_color: "#49b1f5"
   # 标签最大、最小的尺寸

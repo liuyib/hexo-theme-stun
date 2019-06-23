@@ -265,6 +265,19 @@ auto_excerpt:
   enable: false
   length: 150
 
+# Stick post to the top.
+# To enable this feature, you need to install dependencies `hexo-generator-index-pin-top`
+# For details, see: https://github.com/netcan/hexo-generator-index-pin-top
+stick_top:
+  # Position of icon, available values: left | right
+  position: right
+  # Icon name in FontAwesome, see: https://fontawesome.com/v4.7.0/icons/
+  icon: thumb-tack
+  # Rotation Angle of icon.
+  rotate: 45deg
+  # Please use the quote to wrap value (All CSS size units are supported).
+  color: "#999"
+
 # Code highlight.
 # values:
 # - light
@@ -349,6 +362,16 @@ busuanzi:
     enable: true
     # Icon name in FontAwesome, see: https://fontawesome.com/v4.7.0/icons/
     icon: eye
+
+# ---------------------------------------------------------------
+# Search config
+# ---------------------------------------------------------------
+
+# Algolia Search
+algolia_search:
+  enable: true
+  hits:
+    per_page: 10
 
 # ---------------------------------------------------------------
 # Other config
