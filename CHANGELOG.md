@@ -2,6 +2,35 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0](https://github.com/liuyib/hexo-theme-stun/compare/v1.0.0-beta.0...v1.0.0) (2019-06-23)
+
+
+### Bug Fixes
+
+* Display the reading progress bar only on the articles page ([cdaac3f](https://github.com/liuyib/hexo-theme-stun/commit/cdaac3f))
+* Remove the display property of post to eliminate BFC effects ([b971e12](https://github.com/liuyib/hexo-theme-stun/commit/b971e12))
+* Resolve read progress error, since post height equal zero ([cc1b6fa](https://github.com/liuyib/hexo-theme-stun/commit/cc1b6fa))
+* Solve the problem of sidebar jumping ([6933c40](https://github.com/liuyib/hexo-theme-stun/commit/6933c40))
+* Solve the problem that the menu always shows in mobile ([21cde8e](https://github.com/liuyib/hexo-theme-stun/commit/21cde8e))
+* Solved the display of unordered list ([1ba789e](https://github.com/liuyib/hexo-theme-stun/commit/1ba789e))
+
+
+### Features
+
+* Add back to top button ([9248c62](https://github.com/liuyib/hexo-theme-stun/commit/9248c62))
+* Add busuanzi count ([8930455](https://github.com/liuyib/hexo-theme-stun/commit/8930455))
+* Add comment support ([60d928a](https://github.com/liuyib/hexo-theme-stun/commit/60d928a))
+* Add config to automatically remain article excerpt ([94c6673](https://github.com/liuyib/hexo-theme-stun/commit/94c6673))
+* Add custom top and bottom img & custom text in footer ([bac6900](https://github.com/liuyib/hexo-theme-stun/commit/bac6900))
+* Add diff code highlight & scroll bar UI ([940028f](https://github.com/liuyib/hexo-theme-stun/commit/940028f))
+* Add the end hint at the end of post & make tags to config file ([b3605fb](https://github.com/liuyib/hexo-theme-stun/commit/b3605fb))
+* Add the feature of stick post to the top ([fa9f25c](https://github.com/liuyib/hexo-theme-stun/commit/fa9f25c))
+* Add the hyperlink to post title ([2d4089c](https://github.com/liuyib/hexo-theme-stun/commit/2d4089c))
+* Add word count & reading time cout of post ([b0c34df](https://github.com/liuyib/hexo-theme-stun/commit/b0c34df))
+* Provides a way to specify the size of the image ([aa4195f](https://github.com/liuyib/hexo-theme-stun/commit/aa4195f))
+
+
+
 ## [1.0.0-alpha.0](https://github.com/liuyib/hexo-theme-stun/compare/v1.0.0-beta.0...v1.0.0-alpha.0) (2019-06-17)
 
 ### Bug Fixes
