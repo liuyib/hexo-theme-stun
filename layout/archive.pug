@@ -1,14 +1,19 @@
 extends ./_common/layout.pug
 
 block content
-  include ./_mixins/articles-sort.pug
+  include ./_mixins/posts-sort.pug
 
-  div.archive.main-content-layout
+  div.main-content-layout
     div.archive-inner
       if (site.posts.length === 0)
         div.article-sort-title= _p("page.articles-0")
       else
         div.article-sort-title= _p("page.articles-1", site.posts.length)
     
-      +articleSort(page.posts)
-    include ./_components/pagination.pug
+      if theme.post_list_paged.archives
+        +articleSort(page.posts)
+      else
+        +articleSort(site.posts)
+    
+    if theme.post_list_paged.archives
+      include ./_components/pagination.pug

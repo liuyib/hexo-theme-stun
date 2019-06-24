@@ -1,9 +1,12 @@
 extends ./_common/layout.pug
 
 block content
-  include ./_mixins/articles-sort.pug
+  include ./_mixins/posts-sort.pug
   include ./_mixins/post-header.pug
   
   div.home-content.code-highlight
-    include ./_components/recent-posts.pug  
-    include ./_components/pagination.pug 
+    if theme.post_list_paged.home
+      include ./_components/recent-posts.pug
+      include ./_components/pagination.pug
+    else
+      include ./_components/recent-posts.pug

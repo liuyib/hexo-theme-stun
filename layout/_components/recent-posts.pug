@@ -1,21 +1,21 @@
 section#recent-posts
-  if page.posts.length > 0
-    //- show 10 articles in the home page
-    each post in page.posts.toArray()
-      article.post-item
-        +postHeader(post)
+  - var postLists = theme.post_list_paged.home ? page.posts : site.posts
+  - postLists.each(function (post) {
+    article.post-item
+      +postHeader(post)
 
-        if post.top
-          div.sticky-top
-            i(class=`fa fa-${theme.stick_top.icon}`)
+      if post.top
+        div.sticky-top
+          i(class=`fa fa-${theme.stick_top.icon}`)
 
-        if theme.auto_excerpt && theme.auto_excerpt.enable
-          - const content = strip_html(post.content)
-          - let excerpt = content.substring(0, theme.auto_excerpt.length)
-          - content.length > theme.auto_excerpt.length ? excerpt += '......' : ''
-          div!= excerpt
-        else
-          div.post-excerpt!= post.excerpt
-        
-        div.post-btn
-          a(href=url_for(post.path))= _p("post.read_more") + " »"
+      if theme.auto_excerpt && theme.auto_excerpt.enable
+        - const content = strip_html(post.content)
+        - let excerpt = content.substring(0, theme.auto_excerpt.length)
+        - content.length > theme.auto_excerpt.length ? excerpt += '......' : ''
+        div!= excerpt
+      else
+        div.post-excerpt!= post.excerpt
+      
+      div.post-btn
+        a(href=url_for(post.path))= _p("post.read_more") + " »"
+  - })

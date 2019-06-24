@@ -12,9 +12,9 @@ block content
     footer.post-footer
       if theme.post_end_text.enable
         div.post-footer-end
-          span ------
+          span= "------"
           span= _p("post.end")
-          span ------
+          span= "------"
     
       if theme.creative_commons.enable && theme.creative_commons.post
         include ./_components/copyright.pug

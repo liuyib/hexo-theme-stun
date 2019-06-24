@@ -644,6 +644,21 @@ reward:
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608175556.png)
 
+
+## 文章列表分页
+
+如果你想设置首页 或 归档页的文章列表是否分页，可以修改 `stun.yml` 文件：
+
+``` yaml
+post_list_paged:
+  home: true
+  archives: true
+```
+
+默认都开启分页。
+
+> 通常推荐首页开启分页，防止摘要图片过多，影响页面加载速度（目前 stun 还不支持图片懒加载，所以存在这个问题，以后的版本会进行支持）。推荐归档页面关闭分页，方便快速查找文章。
+
 ## 标签云
 
 如果你启用了 `tags` 页面，想要对其进行设置，修改 `stun.yml` 文件：

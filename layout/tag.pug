@@ -1,9 +1,9 @@
 extends ./_common/layout.pug
 
 block content
-  include ./_mixins/articles-sort.pug
+  include ./_mixins/posts-sort.pug
   
-  div.tag.main-content-layout
+  div.main-content-layout
     div.tag-inner
       div.article-sort-title= _p("page.tags") + " - " + page.tag
       +articleSort(page.posts)

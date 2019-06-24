@@ -1,0 +1,15 @@
+mixin articleSort(posts)
+  section.article-sort
+    - var year, tmpYear    
+    - posts.each(function (post) {
+      if post.date
+        - tmpYear = full_date(post.date, "YYYY")
+      if tmpYear !== year
+        - year = tmpYear
+        time.article-sort-item.year= year
+      post.article-sort-item
+        if post.date
+          time.article-sort-item__time= full_date(post.date, "MM-DD")
+          h2.article-sort-item__title
+            a(href=url_for(post.path))= post.title || "No Title"
+    - })
