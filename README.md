@@ -1,6 +1,6 @@
 <p align="center"><a href="https://liuyib.github.io/hexo-theme-stun/" target="_blank" rel="noopener noreferrer"><img width="100" src="https://raw.githubusercontent.com/liuyib/picBed/master/hexo-blog/20190603093757.png" alt="stun logo"></a></p>
 
-<h3 align="center">A beautiful & simple theme for Hexo</h3>
+<h3 align="center">一个漂亮、简洁的 hexo 主题</h3>
 
 <p align="center">
   <a href="http://commitizen.github.io/cz-cli/" target="_blank" rel="noopener noreferrer">
@@ -13,45 +13,47 @@
     <img alt="hexo" src="https://img.shields.io/badge/hexo-%3E%3D3.0-blue.svg?style=flat-square">
   </a>
   <a href="https://github.com/liuyib/hexo-theme-stun/releases" target="_blank" rel="noopener noreferrer">
-    <img alt="GitHub release" src="https://img.shields.io/github/release/liuyib/hexo-theme-stun.svg?style=flat-square">
+    <img alt="GitHub release" src="https://img.shields.io/github/release-pre/liuyib/hexo-theme-stun.svg?style=flat-square">
   </a>
 </p>
 
-[English](https://github.com/liuyib/hexo-theme-stun/blob/master/README.md) | [中文简体](https://github.com/liuyib/hexo-theme-stun/blob/master/README_zh_CN.md)
+[English](https://github.com/liuyib/hexo-theme-stun/blob/master/README_en_US.md) | [中文简体](https://github.com/liuyib/hexo-theme-stun/blob/master/README.md)
 
-## Demo
+> 一个新的 hexo 主题，希望多多支持。目前在全力开发 & 维护中，有问题可以 issue 或 email 我。
+
+## 演示
 
 - [liuyib`s Blog](https://liuyib.github.io/)
 
-If you are using the stun theme and would like it to be shown here, you can fill in your website link by [PR](https://github.com/liuyib/hexo-theme-stun/pulls).
+如果你正在使用 stun 主题，并希望像上面一样，在这里展示出来，你可以通过 [PR](https://github.com/liuyib/hexo-theme-stun/pulls) 将你的网站链接填写在这里。
 
-## Installation
+## 安装
 
-- Install stun
+- 安装 stun
 
-Enter your hexo directory, run this.
+进入 hexo 根目录，执行指令。
 
 ``` bash
 git clone https://github.com/liuyib/hexo-theme-stun.git themes/stun
 ```
 
-- Install pug and stylus
+- 安装 pug 和 stylus
 
-If you don't have pug and stylus renderer, run this (If you`re not sure, just do it).
+如果你没有安装对 pug、stylus 的支持，执行指令（如果你不确定，直接执行指令就好了）。
 
 ``` bash
 npm install --save-dev hexo-render-pug hexo-renderer-stylus
 ```
 
-## How to use
+## 使用
 
-Modify the `_config.yml` file in your hexo root directory.
+修改 hexo 根目录下的 `_config.yml` 文件。
 
 ``` yml
 theme: stun
 ```
 
-## Update
+## 更新
 
 ``` bash
 cd themes/stun
@@ -59,14 +61,14 @@ cd themes/stun
 git pull
 ```
 
-## Configuration
+## 配置
 
-Please see: [https://liuyib.github.io/hexo-theme-stun/](https://liuyib.github.io/hexo-theme-stun/)
+请查看：[https://liuyib.github.io/hexo-theme-stun/](https://liuyib.github.io/hexo-theme-stun/)
 
-## Browser Support
+## 浏览器支持
 
 IE >= 10
 
-## License
+## 开源协议
 
 [MIT](https://github.com/liuyib/hexo-theme-stun/blob/master/LICENSE)
