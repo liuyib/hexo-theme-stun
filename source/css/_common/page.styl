@@ -146,14 +146,8 @@ $text_vertical_align_with_img = convert(
     td
       border: 1px solid #eee
 
-.archive
-  float: left
-  border-radius: 5px
-  padding: 2rem
-  width: $main-desktop
-  background-color: $white
-
 .archive-inner,
+.category-inner,
 .tag-inner
   position: relative
   margin-left: 2rem
@@ -191,7 +185,6 @@ $text_vertical_align_with_img = convert(
 .tag-cloud,
 .category
   a
-    margin: 0 .4rem
     border-bottom: 0
 
   &-title
@@ -204,12 +197,12 @@ $text_vertical_align_with_img = convert(
   text-align: center
 
   a
+    margin: 0 .4rem
+
     &:hover
       color: $tags-hover-color !important
 
 .category
-  font-size: $font-main-base
-
   a
     color: $categories-link-color
 
@@ -226,7 +219,7 @@ $text_vertical_align_with_img = convert(
 
   .category-list-count
     padding-left: .3em
-    font-size: $font-main-base
+    font-size: $font-size-base
     color: $categories-post-count-color
 
     &::before
@@ -234,6 +227,3 @@ $text_vertical_align_with_img = convert(
 
     &::after
       content: ')'
-
-.about
-  width: $main-desktop
