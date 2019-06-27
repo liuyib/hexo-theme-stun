@@ -14,24 +14,29 @@ $(document).ready(function () {
   // Must initial run
   readProgress();
   sidebarSticky();
+  autoSpreadToc();
+
+  var currHeading = null;
+  var lastHeading = null;
 
   $(window).scroll(function () {
     readProgress();
     sidebarSticky();
+    autoSpreadToc();
   });
 
   // click heading
   $('.main-content')
     .find('h1,h2,h3,h4,h5,h6')
     .on('click', function () {
-      scrollToHead('#' + $(this).attr('id'))
+      scrollHeadingToTop('#' + $(this).attr('id'))
     });
 
   // click post toc
   $('.toc-link').on('click', function (e) {
     e.preventDefault();
 
-    scrollToHead($(this).attr('href'));
+    scrollHeadingToTop($(this).attr('href'));
   });
 
   $('#back-top').click(function () {
@@ -110,8 +115,40 @@ $(document).ready(function () {
     $('.sidebar-progress-line').css('width', percent);
   }
 
+  // Automatically expand items in the article directory
+  //   based on the scrolling of heading in the article
+  function autoSpreadToc() {
+    if ($('.post-body').find('h1,h2,h3,h4,h5,h6')
+        .first().offset().top - $(window).scrollTop() > 0) {
+      $('.sidebar-toc li').removeClass('active current');
+
+      return;
+    }
+
+    $('.post-body').find('h1,h2,h3,h4,h5,h6')
+      .each(function (index, item) {
+        var top = item.getBoundingClientRect().top;
+
+        if (top < 0) {
+          currHeading = $(item).attr('id');
+        }
+      });
+      
+    if (currHeading === lastHeading) {
+      return;
+    } else {
+      $('.sidebar-toc li').removeClass('active current');
+      $(`.sidebar-toc a[href="#${currHeading}"]`)
+        .parents('li').addClass('active');
+      $(`.sidebar-toc a[href="#${currHeading}"]`)
+        .parent().addClass('current');
+
+      lastHeading = currHeading;
+    }
+  }
+
   // scroll heading to top
-  function scrollToHead(anchor) {
+  function scrollHeadingToTop(anchor) {
     $(anchor)
       .velocity('stop')
       .velocity('scroll', {
