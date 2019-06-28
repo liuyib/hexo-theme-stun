@@ -63,9 +63,13 @@ git pull
 
 Please see: [https://liuyib.github.io/hexo-theme-stun/](https://liuyib.github.io/hexo-theme-stun/)
 
+## Question
+
+If you have problems with your use, please read [documentation](https://liuyib.github.io/hexo-theme-stun/zh-CN/) firstly, or check [FAQ](https://github.com/liuyib/hexo-theme-stun/blob/master/FAQ.md). When the above methods can't solve your problem, then mention `issue`.
+
 ## Browser Support
 
-IE >= 10
+IE not supported.
 
 ## License
 

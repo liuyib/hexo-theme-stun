@@ -63,11 +63,15 @@ git pull
 
 ## 配置
 
-请查看：[https://liuyib.github.io/hexo-theme-stun/](https://liuyib.github.io/hexo-theme-stun/)
+请查看：[https://liuyib.github.io/hexo-theme-stun/zh-CN/](https://liuyib.github.io/hexo-theme-stun/zh-CN/)
+
+## 问题
+
+如果使用时出现问题，首先请仔细阅读[文档](https://liuyib.github.io/hexo-theme-stun/zh-CN/)，或者查看[常见问题](https://github.com/liuyib/hexo-theme-stun/blob/master/FAQ.md)。当以上的方法都无法解决你的问题时，再去提 `issue`。
 
 ## 浏览器支持
 
-IE >= 10
+不支持 IE
 
 ## 开源协议
 

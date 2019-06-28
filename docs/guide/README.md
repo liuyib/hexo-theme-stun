@@ -10,9 +10,9 @@ Enter your hexo directory, run this.
 git clone https://github.com/liuyib/hexo-theme-stun.git themes/stun
 ```
 
-- Install pug and stylus (optional)
+- Install pug and stylus
 
-If you don't have pug and stylus renderer, run this.
+If you don't have pug and stylus renderer, run this (If you`re not sure, just do it).
 
 ``` bash
 npm install --save-dev hexo-render-pug hexo-renderer-stylus
@@ -20,8 +20,16 @@ npm install --save-dev hexo-render-pug hexo-renderer-stylus
 
 ## How to use
 
-Modify the _config.yml file in your hexo root directory.
+Modify the `_config.yml` file in your hexo root directory.
 
 ``` yml
 theme: stun
+```
+
+## Update
+
+``` bash
+cd themes/stun
+
+git pull
 ```
