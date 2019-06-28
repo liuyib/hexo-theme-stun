@@ -1,12 +1,15 @@
-$sidebar-float = convert(hexo-config('sidebar.position') || 'right')
-$sidebar-width = convert(hexo-config('sidebar.width') || '300px')
+$sidebar-float = convert(
+  hexo-config('sidebar.position') || 'right')
+$sidebar-width = convert(
+  hexo-config('sidebar.width') || '300px')
 
 #sidebar
   float: $sidebar-float
   width: $sidebar-width
   font-size: $font-sidebar-base
 
-$sidebar-top = convert(hexo-config('sidebar.offsetTop') || '30px')
+$sidebar-top = convert(
+  hexo-config('sidebar.offsetTop') || '30px')
 
 .sidebar-inner
   border-radius: 5px
@@ -51,17 +54,19 @@ else
 
 .sidebar-toc
   overflow: auto
-  max-height: 50vh
+  position: relative
+  max-height: 70vh
   @extend $toc-word-break
 
-  .toc .toc-child
-    display: none
+  if (!hexo-config('toc.expand_all'))
+    .toc .toc-child
+      display: none
 
-  .toc .active > .toc-child
-    display: block
+    .toc .active > .toc-child
+      display: block
 
-  .toc .current > .toc-child
-    display: block
+    .toc .current > .toc-child
+      display: block
 
   .active,
   .current
@@ -83,8 +88,10 @@ if (hexo-config('author.avatar.rounded'))
   $avatar-rounded = 50%
 
 $avatar-opacity = hexo-config('author.avatar.opacity') || 1
-$avatar-animation = 'avatar-' + convert(hexo-config('author.avatar.animation') || 'turn')
-$text-align = convert(hexo-config('social_setting.text_align') || 'center')
+$avatar-animation = 'avatar-' + convert(
+  hexo-config('author.avatar.animation') || 'turn')
+$text-align = convert(
+  hexo-config('social_setting.text_align') || 'center')
 
 .sidebar-overview
   .sidebar-author
@@ -246,8 +253,10 @@ $text-align = convert(hexo-config('social_setting.text_align') || 'center')
     margin-top: 0
     padding-top: 0
 
-$reading_progress_color = convert(hexo-config('reading_progress.color') || '$blue-light')
-$reading_progress_height = convert(hexo-config('reading_progress.height') || '1px')
+$reading_progress_color = convert(
+  hexo-config('reading_progress.color') || '$blue-light')
+$reading_progress_height = convert(
+  hexo-config('reading_progress.height') || '1px')
 
 .sidebar-progress
   margin-top: .5em

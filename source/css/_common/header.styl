@@ -1,7 +1,10 @@
-$header-height = convert(hexo-config('header.height') || '80vh')
+$header-height = convert(
+  hexo-config('header.height') || '80vh')
+
 if (hexo-config('header.height'))
   if (match('%', hexo-config('header.height')))
-    $header-height = unit(convert(hexo-config('header.height')), 'vh')
+    $header-height = unit(convert(
+      hexo-config('header.height')), 'vh')
 
 #header
   display: flex
@@ -28,10 +31,13 @@ $header-nav-color
       &::after
         color: $header-nav-link-hover-color
 
-$header-nav-height = convert(hexo-config('header.nav_height') || '50px')
+$header-nav-height = convert(
+  hexo-config('header.nav_height') || '50px')
+
 if (hexo-config('header.nav_height'))
   if (match('%', hexo-config('header.nav_height')))
-    $header-nav-height = unit(convert(hexo-config('header.nav_height')), 'vh')
+    $header-nav-height = unit(convert(
+      hexo-config('header.nav_height')), 'vh')
 
 .header-nav
   position: fixed

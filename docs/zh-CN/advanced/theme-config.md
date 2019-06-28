@@ -347,7 +347,7 @@ social:
 social_setting:
   # 是否启用友链
   enable: true
-  # 只显示图标
+  # 是否只显示图标
   icon_only: true
   # 友链之间的排列方式，取值同 CSS 的 "justify-content" 属性。
   # 可选值：flex-start | center | flex-end | space-between 等。
@@ -366,10 +366,12 @@ toc:
   number: true
   # 文本溢出是否换行
   wrap: true
+  # 是否始终展开所有文章目录。true：始终展开，false：当文章中对应的标题到达顶部时自动展开。
+  expand_all: false
   # 生成目录时，解析 h 标签的最大深度。
   # 你可以在文章的 markdown 源文件的 front-matter 中，通过添加 `toc_max_depth` 字段，
   #   来指定某篇文章生成目录时，解析 h 标签的最大深度。
-  max_depth: 5
+  max_depth: 6
 ```
 
 ## 订阅设置
@@ -390,7 +392,7 @@ feed:
 ``` yaml
 feed:
   type: atom
-  # 这是 RSS 订阅的地址（可以随意设置）
+  # 这是 RSS 订阅的地址（可以随意设置，和上面 rss 配置项对应）
   path: atom.xml
   limit: 20
   hub:
