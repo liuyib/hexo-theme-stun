@@ -682,7 +682,7 @@ tag_cloud:
 
 效果如下：![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190619210337.png)
 
-## 其他常用的设置
+## 其他设置
 
 ### 设置图片大小
 
@@ -693,3 +693,8 @@ tag_cloud:
 ``` markdown
 ![](https://xxxxx.png?size=200x100)
 ```
+
+<!-- ### 自定义样式 <Badge text="stable"/> <Badge text="v1.0.3"/> -->
+### 自定义样式
+
+如果你想修改主题的样式，推荐在 `source/css/_custom` 目录下，新建样式文件，然后通过 `@import xxx` 语句在同目录下的 `index.styl` 中引入你新建的样式文件。当然你也可以直接将样式代码写在该目录下的 `index.styl` 文件中。如果你要自定义的样式有很多的话，还是建议按文件分类，这样更方便以后管理。
