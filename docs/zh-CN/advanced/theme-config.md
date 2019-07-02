@@ -1,8 +1,9 @@
 # 主题配置
 
-::: tip
+::: tip 前言
 - 修改配置文件、安装新的依赖等，都需要重启 hexo 服务器。
-- 没有特殊说明，配置项默认从 `v1.0.0` 版本开始支持。
+- 没有特别说明最早开始支持的版本的配置项，默认从 `v1.0.0` 版本开始支持。
+- 稳定的配置项使用 <Badge text="stable"/> 标明，表示基本不会变动；不稳定的配置项使用 <Badge text="beta" type="warn"/> 标明，表示未来可能会变动甚至删除。
 :::
 
 ## 配置文件
@@ -18,7 +19,7 @@
 
 > 如果你进行了上述操作，当你需要修改主题配置时，只需要修改 `stun.yml` 文件即可。更新主题时，主题根目录下的 `_config.yml` 文件（可能）会更新，而你对主题配置的数据仍保留在 `stun.yml` 文件中。
 
-::: warning
+::: warning 注意
 上面这种做法虽然方便你保留主题的配置数据，但是当主题 `_config.yml` 文件的配置项更改时，如果你不及时手动更新 `stun.yml` 文件，主题很可能会报错。
 :::
 
@@ -32,7 +33,7 @@ language: zh-CN # 可选值 zh-CN 或 en-US
 
 语言文件在主题文件夹的 languages 目录下。stun 主题默认有 `zh-CN.yml` 和 `en.yml` 两种语言文件，如果需要支持其他语言，请自行编写语言文件。语言文件的命名规则要求符合 [RFC 4646](http://www.ietf.org/rfc/rfc4646.txt) 标准，你可以在[这里](https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry)找到各种语言的缩写。
 
-## 顶部菜单栏
+## 顶部菜单栏 <Badge text="stable"/>
 
 网站顶部菜单栏默认有 `/` 和 `/archives` 两个路径，它们分别对应于网站首页和归档页。如果你想添加：`categories`、`tags`、`about` 页面，你需要进行以下操作：
 
@@ -49,7 +50,7 @@ menu:
   about: /about/
 ```
 
-- 添加图标
+- 添加图标 
 
 修改 `stun.yml` 文件：
 
@@ -66,7 +67,7 @@ menu:
 
 > 如果只添加路径，没有添加图标名称，会使用默认图标进行显示。
 
-你可以通过修改 `menu_settings` 配置项来控制菜单项的图标或文字是否显示：
+你可以通过修改 `menu_settings` <Badge text="stable"/> 配置项来控制菜单项的图标或文字是否显示：
 
 ``` yaml
 menu_settings:
@@ -86,7 +87,7 @@ hexo new page xxx # xxx 表示页面名称
 
 执行这条命令后，会在如下目录生成文件：`source/xxx/index.md`
 
-::: warning
+::: warning 注意
 新建的页面名称，需要和 `stun.yml` 文件中添加的页面路径名称保持一致。
 
 e.g. 你在 `stun.yml` 中设置了如下路径：
@@ -98,7 +99,7 @@ menu:
 那么你应该执行命令：`hexo new page about-me`，这样才能在访问该路径时，找到对应的文件。
 :::
 
-## 自定义页面
+## 自定义页面 <Badge text="stable"/>
 
 如果你想在网站顶部菜单栏中添加自定义页面，请进行以下操作：
 
@@ -128,7 +129,7 @@ nav:
 
 这样就完成了自定义页面的添加。
 
-## Favicon
+## Favicon <Badge text="stable"/>
 
 设置网站图标（favicon），修改 `stun.yml` 文件：
 
@@ -142,7 +143,7 @@ favicon:
 
 有关 favicon 的详细介绍，请访问：[https://developers.google.com/web/fundamentals/design-and-ux/browser-customization/](https://developers.google.com/web/fundamentals/design-and-ux/browser-customization/)
 
-## 网站顶部栏信息
+## 网站顶部栏信息 <Badge text="stable"/>
 
 修改 `stun.yml` 文件：
 
@@ -164,11 +165,11 @@ header:
     level: 15px
 ```
 
-效果如下（没有启用模糊滤镜效果）：
+其中 `blur_effect` <Badge text="beta" type="warn"/>，效果如下（没有启用模糊滤镜效果）：
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190619210340.jpg)
 
-## 指定顶部图
+## 指定顶部图 <Badge text="stable"/>
 
 如果想要为某个页面或某篇文章单独指定顶部图，你只需要在页面或文章 markdown 源文件的 [front-matter](https://hexo.io/zh-cn/docs/front-matter) 中，添加 `top_image` 项，然后填入的图片 url 或路径即可。例如：
 
@@ -184,7 +185,7 @@ tags:
 ---
 ```
 
-## 知识共享许可协议（cc）
+## 知识共享许可协议（cc） <Badge text="stable"/>
 
 修改 `stun.yml` 文件：
 
@@ -206,7 +207,7 @@ creative_commons:
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190619210339.png)
 
-## 返回顶部
+## 返回顶部 <Badge text="stable"/>
 
 修改 `stun.yml` 文件：
 
@@ -226,7 +227,7 @@ back2top:
     hover_color: "#fc6423"
 ```
 
-## 网站底部栏信息
+## 网站底部栏信息 <Badge text="stable"/>
 
 修改 `stun.yml` 文件：
 
@@ -282,7 +283,7 @@ footer:
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190623192514.png)
 
-## 侧边栏设置
+## 侧边栏设置 <Badge text="beta" type="warn"/>
 
 修改 `stun.yml` 文件：
 
@@ -290,7 +291,7 @@ footer:
 sidebar:
   enable: true
   # 侧边栏位置，可选值有：left 或 right
-  float: right
+  position: right
   # 侧边栏距离顶部的距离（只支持 px 单位）
   offsetTop: 20px
   # 侧边栏的宽度（建议：260px ~ 360px。支持所有 CSS 长度单位）
@@ -299,7 +300,7 @@ sidebar:
   horizon_line: true
 ```
 
-## 侧边栏作者信息
+## 侧边栏作者信息 <Badge text="stable"/>
 
 修改 `stun.yml` 文件：
 
@@ -320,7 +321,7 @@ author:
   motto: hello world
 ```
 
-## 友链
+## 友链 <Badge text="stable"/>
 
 修改 `stun.yml` 文件：
 
@@ -355,11 +356,7 @@ social_setting:
   text_align: center
 ```
 
-## 文章目录
-
-::: tip
-`expand_all` 选项从 `v1.0.2` 版本开始支持
-:::
+## 文章目录 <Badge text="stable"/>
 
 修改 `stun.yml` 文件：
 
@@ -378,7 +375,9 @@ toc:
   max_depth: 6
 ```
 
-## 订阅设置
+其中 `expand_all` <Badge text="v1.0.2"/>
+
+## 订阅设置 <Badge text="stable"/>
 
 设置邮件订阅和 RSS 订阅，修改 `stun.yml` 文件：
 
@@ -409,7 +408,7 @@ feed:
 
 配置完成之后，访问你设置的订阅地址即可看到 RSS 订阅信息。
 
-## 文章阅读进度条
+## 文章阅读进度条 <Badge text="stable"/>
 
 修改 `stun.yml` 文件：
 
@@ -428,7 +427,7 @@ reading_progress:
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190619211446.png)
 
-## 文章顶部信息
+## 文章顶部信息 <Badge text="beta" type="warn"/>
 
 修改 `stun.yml` 文件：
 
@@ -470,7 +469,7 @@ post_meta:
 
 效果如下：![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190619210334.png)
 
-## 文章摘要
+## 文章摘要 <Badge text="stable"/>
 
 如果想要保留文章摘要，需要**手动**在文章的 markdown 源文件中添加 `<!-- more -->` 标记。标记之前的部分都会被保留为文章摘要，显示在文章列表中。
 
@@ -485,7 +484,7 @@ auto_excerpt:
 
 由于自动保留摘要的效果并不理想，所以这里不建议开启。
 
-## 文章置顶
+## 文章置顶 <Badge text="beta" type="warn"/>
 
 想要使用文章置顶功能，首先你需要安装 hexo 插件 [hexo-generator-index-pin-top](https://github.com/netcan/hexo-generator-index-pin-top)，然后执行命令：
 
@@ -511,7 +510,7 @@ stick_top:
   color: "#999"
 ```
 
-## 代码高亮
+## 代码高亮 <Badge text="stable"/>
 
 设置代码高亮以及高亮样式，修改 `stun.yml` 文件：
 
@@ -533,7 +532,7 @@ highlight_theme: light
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608175154.png)
 
-## 代码换行
+## 代码换行 <Badge text="stable"/>
 
 设置代码溢出时，是否换行，修改 `stun.yml` 文件：
 
@@ -553,7 +552,7 @@ code_word_wrap: true
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608214539.png)
 
-## 图片水平对齐方式
+## 图片水平对齐方式 <Badge text="beta" type="warn"/>
 
 设置文章中图片的水平对齐方式，修改 `stun.yml` 文件：
 
@@ -583,7 +582,7 @@ img_horizonal_align:
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608215838.png)
 
-## 文字与图片的垂直对齐方式
+## 文字与图片的垂直对齐方式 <Badge text="beta" type="warn"/>
 
 如果你没有手动设置**图片的水平对齐方式**（手动设置了请忽略此配置项），那么图片将支持和文字在同一行内显示。此时，如果你想设置文字与图片的垂直对齐方式，修改 `stun.yml` 文件：
 
@@ -607,7 +606,7 @@ text_vertical_align_with_img: bottom
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608232754.png)
 
-## 文章标签
+## 文章标签 <Badge text="beta" type="warn"/>
 
 在文章末尾显示文章的所有标签，修改 `stun.yml` 文件：
 
@@ -617,7 +616,7 @@ post_tags: true
 
 默认启用。
 
-## 文章结束提示信息
+## 文章结束提示信息 <Badge text="stable"/>
 
 在文章末尾自动加上提示文章结束的信息，修改 `stun.yml` 文件：
 
@@ -632,7 +631,7 @@ post_end_text:
 
 默认启用。
 
-## 赞赏码
+## 赞赏码 <Badge text="stable"/>
 
 设置文章的赞赏码，修改 `stun.yml` 文件：
 
@@ -651,11 +650,7 @@ reward:
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608175556.png)
 
 
-## 文章列表分页
-
-::: tip
-从 `v1.0.1` 版本开始支持
-:::
+## 文章列表分页 <Badge text="stable"/> <Badge text="v1.0.1"/>
 
 如果你想设置首页 或 归档页的文章列表是否分页，可以修改 `stun.yml` 文件：
 
@@ -669,7 +664,7 @@ post_list_paged:
 
 > 通常推荐首页开启分页，防止摘要图片过多，影响页面加载速度（目前 stun 还不支持图片懒加载，所以存在这个问题，以后的版本会进行支持）。推荐归档页面关闭分页，方便快速查找文章。
 
-## 标签云
+## 标签云 <Badge text="beta" type="warn"/>
 
 如果你启用了 `tags` 页面，想要对其进行设置，修改 `stun.yml` 文件：
 
@@ -693,7 +688,7 @@ tag_cloud:
 
 1. 使用 HTML 中的 `img` 标签，通过 `style` 属性控制图片大小。
 2. 使用 hexo 提供的语法 `{% https://xxxxx.png width height %}`，填入图片地址和宽、高即可。
-3. stun 为此提供了一个便捷的方法来指定图片大小，你只需要在图片路径后面添加 `?size=宽度x高度` 后缀即可。例如：
+3. stun 提供了一个便捷的方法来指定图片大小，你只需要在图片路径后面添加 `?size=宽度x高度` <Badge text="stable"/> 后缀即可。例如：
 
 ``` markdown
 ![](https://xxxxx.png?size=200x100)

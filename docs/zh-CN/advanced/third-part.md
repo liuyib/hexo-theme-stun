@@ -1,12 +1,12 @@
 # 第三方支持
 
-::: tip
+::: tip 期待 stun 变得更好
 第三方支持正在不断加入中 (๑•̀ㅂ•́)و✧
 :::
 
 ## 评论系统
 
-### Gitment
+### Gitment <Badge text="stable"/>
 
 你首先需要获取 你的 OAuth 应用的 client ID 和 client secret。获取方法请看 [Gitment 的说明文档](https://github.com/imsun/gitment#2-register-an-oauth-application)。
 
@@ -28,7 +28,7 @@ gitment:
 
 ## 统计与分析
 
-### 卜蒜子统计
+### 卜蒜子统计 <Badge text="stable"/>
 
 ``` yaml
 busuanzi:
