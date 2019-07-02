@@ -2,9 +2,9 @@ setUlStyle(content, hoverColor)
   &::before
     content: content
     position: absolute
-    top: 0
+    top: .04em
     left: -1.5em
-    line-height: 2em
+    line-height: $line-height-base
     color: $ul-list-color
     transition: color .2s ease
     transform: scale(.6)
@@ -19,7 +19,6 @@ $content-layout
   padding: 2rem
   font-size: $font-main-base
   background-color: $white
-  // Config item in the _config.yml will effect this.
   @extend $content-position
 
   & > :first-child
@@ -51,7 +50,6 @@ $text_vertical_align_with_img = convert(
       color: lighten($h-color, 15%)
       cursor: pointer
 
-      // show icon before heading
       if ($icon-h-link)
         &:not(.post-title)::after
           content: $icon-h-link
@@ -84,7 +82,6 @@ $text_vertical_align_with_img = convert(
 
   li
     position: relative
-    margin: .2em 0
 
     if ($icon-ul-list-1 is defined && ($icon-ul-list-2 is defined && ($icon-ul-list-3 is defined)))
       list-style-type: none
@@ -105,8 +102,6 @@ $text_vertical_align_with_img = convert(
     counter-reset: ol-li
 
     & > li
-      margin: .4em 0
-
       &::before
         content: counter(ol-li) '.'
         position: absolute
