@@ -3,7 +3,7 @@ script(src="https://cdn.jsdelivr.net/npm/gitment/dist/gitment.browser.min.js")
 
 script.
   function renderGitment() {
-    var gitment = new Gitment({
+    let gitment = new Gitment({
       id: window.location.pathname,
       owner: "!{theme.gitment.owner}",
       repo: "!{theme.gitment.repo}",

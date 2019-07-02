@@ -1,5 +1,5 @@
 -
-  var pageTitle = page.title || config.subtitle || ""
+  let pageTitle = page.title || config.subtitle || ""
 
   if (page.type === "tags") pageTitle = _p("title.tags")
   if (page.type === "categories") pageTitle = _p("title.categories")
@@ -11,10 +11,10 @@
 
   pageTitle ? pageTitle += " | " + config.title : pageTitle = config.title
 
-  var pageDescription = page.description || page.title || config.description || ""
-  var pageKeywords = [config.author, config.title, config.keywords].filter(i => !!i).join(", ")
-  var pageAuthor = config.email ? `${config.author}: ${config.email}` : config.author
-  var pageCopyright = config.copyright || config.author
+  let pageDescription = page.description || page.title || config.description || ""
+  let pageKeywords = [config.author, config.title, config.keywords].filter(i => !!i).join(", ")
+  let pageAuthor = config.email ? `${config.author}: ${config.email}` : config.author
+  let pageCopyright = config.copyright || config.author
 
 meta(charset="UTF-8")
 meta(http-equiv="X-UA-Compatible" content="IE=edge")
@@ -49,7 +49,7 @@ if theme.favicon.safari_pinned_tab
   link(rel="mask-icon" href=`${url_for(theme.favicon.safari_pinned_tab)}?v=${stun_env("version")}` color="#333")
 
 script.
-  var CONFIG = {
+  let CONFIG = {
     back2top_animation: !{theme.back2top.icon.animation},
     sidebar_offsetTop: '!{theme.sidebar.offsetTop}'
   };

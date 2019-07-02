@@ -14,7 +14,8 @@ aside#sidebar
     section(class=`${isShowPostToc ? "hide" : ""}`).sidebar-overview
       if theme.author.enable
         div.sidebar-author
-          img(src=theme.author.avatar.url alt="avatar").sidebar-author-avatar
+          if theme.author.avatar.url
+            img(src=theme.author.avatar.url alt="avatar").sidebar-author-avatar
 
           if theme.author.motto
             p.sidebar-author-motto= theme.author.motto

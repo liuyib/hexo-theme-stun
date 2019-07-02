@@ -44,7 +44,7 @@ mixin postHeader(post)
           span= wordcount(post.content)
       
       if theme.post_meta.reading_time.enable
-        - var postReadingTime = theme.post_meta.reading_time
+        - let postReadingTime = theme.post_meta.reading_time
         span.post-meta-reading-time
           i(class=`fa fa-${postReadingTime.icon}`)
           

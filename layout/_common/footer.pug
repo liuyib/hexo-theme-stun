@@ -1,9 +1,9 @@
 footer#footer
   -
-    var footer = theme.footer
-    var nowYear = new Date().getFullYear()
-    var startYear = footer.copyright.enable ? footer.copyright.since || nowYear : nowYear
-    var endYear = footer.copyright.enable ? footer.copyright.end || nowYear : nowYear
+    let footer = theme.footer
+    let nowYear = new Date().getFullYear()
+    let startYear = footer.copyright.enable ? footer.copyright.since || nowYear : nowYear
+    let endYear = footer.copyright.enable ? footer.copyright.end || nowYear : nowYear
 
   div.footer-inner
     if footer.copyright.enable || footer.beian.enable
