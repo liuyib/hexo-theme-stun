@@ -29,13 +29,6 @@ meta(name="format-detection" content="telephone=no")
 meta(http-equiv="x-dns-prefetch-control" content="on") 
 link(rel="dns-prefetch" href="https://cdn.jsdelivr.net")
 
-if theme.cdn && theme.cdn.css
-  each url in theme.cdn.css
-    if url
-      link(rel="stylesheet" href=url_for(url))
-
-link(rel="stylesheet" href=`${url_for(theme.css)}/index.css?v=${stun_env("version")}`)
-
 if theme.favicon.apple_touch_icon
   link(rel="apple-touch-icon" sizes="180x180" href=`${url_for(theme.favicon.apple_touch_icon)}?v=${stun_env("version")}`)
 
@@ -48,9 +41,19 @@ if theme.favicon.small
 if theme.favicon.safari_pinned_tab
   link(rel="mask-icon" href=`${url_for(theme.favicon.safari_pinned_tab)}?v=${stun_env("version")}` color="#333")
 
-script.
-  let CONFIG = {
-    back2top_animation: !{theme.back2top.icon.animation},
-    sidebar_offsetTop: '!{theme.sidebar.offsetTop}'
-  };
-  window.CONFIG = CONFIG;
+if theme.cdn && theme.cdn.css
+  each url in theme.cdn.css
+    if url
+      link(rel="stylesheet" href=url_for(url))
+
+link(rel="stylesheet" href=`${url_for(theme.css)}/index.css?v=${stun_env("version")}`)
+
+if theme.cdn && theme.cdn.js
+  each url in theme.cdn.js
+    if url
+      script(src=url_for(url))
+
+include ../_third-party/analytics/index.pug
+include ../_third-party/search/index.pug
+include ../_third-party/comments/index.pug
+include ./config.pug

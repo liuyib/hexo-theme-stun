@@ -4,3 +4,6 @@ script(src=`${url_for(theme.js)}/header.js?v=${stun_env("version")}`)
 
 if theme.sidebar && theme.sidebar.enable
   script(src=`${url_for(theme.js)}/sidebar.js?v=${stun_env("version")}`)
+
+if theme.algolia_search.enable
+  script(src=`${ url_for(theme.js)}/algolia-search.js?v=${stun_env("version")}`)

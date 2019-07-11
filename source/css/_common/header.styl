@@ -42,7 +42,7 @@ if (hexo-config('header.nav_height'))
 .header-nav
   position: fixed
   top: 0
-  z-index: $z-index-5
+  z-index: $z-index-3
   width: 100%
   height: $header-nav-height
   transition: background-color .3s
@@ -88,10 +88,10 @@ $header-nav-item
   span
     float: left
     margin: 0 1rem 0 0
-
+  
   a
+    clearAStyle()
     display: block
-    border-bottom: 0
     text-decoration: none
     transition: color .2s ease
     @extend $header-nav-item

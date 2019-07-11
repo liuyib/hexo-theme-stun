@@ -375,6 +375,21 @@ busuanzi:
     icon: eye
 
 # ---------------------------------------------------------------
+# Search config
+# ---------------------------------------------------------------
+
+# Algolia Search
+# Dependencies: https://github.com/algolia/instantsearch.js/
+algolia_search:
+  enable: true
+  hits:
+    # Number of search results displayed per page.
+    per_page: 10
+  labels:
+    # Whether to show stats of search.
+    show_stats: true
+
+# ---------------------------------------------------------------
 # Other config
 # ---------------------------------------------------------------
 
@@ -405,3 +420,4 @@ cdn:
   js:
     jquery: https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js
     velocity: https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js
+    velocity-ui: https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js

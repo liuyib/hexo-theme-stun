@@ -1,7 +1,8 @@
 {
   "env": {
     "browser": true,
-    "es6": true
+    "es6": true,
+    "jquery": true
   },
   "extends": "standard",
   "globals": {
@@ -9,7 +10,12 @@
     "SharedArrayBuffer": "readonly"
   },
   "parserOptions": {
-    "ecmaVersion": 2018
+    "ecmaVersion": 2018,
+    "debounce": false,
+    "throttle": false,
+    "isMobile": false,
+    "instantsearch": false,
+    "GLOBAL_CONFIG": false
   },
   "rules": {
     "indent": ["error", 2],

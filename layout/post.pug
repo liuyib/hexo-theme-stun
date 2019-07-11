@@ -22,7 +22,7 @@ block content
       if theme.post_tags
         if page.tags && page.tags.length > 0
           div.post-footer-tags
-            i(class="fa fa-tags").icon
+            i.fa.fa-tags.icon
             each tag in page.tags.data
               span!= link_to(tag.permalink, tag.name)
       

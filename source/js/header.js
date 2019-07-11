@@ -29,8 +29,4 @@ $(document).ready(function() {
     $menu.removeClass('show');
     $menu.addClass('hide');
   }
-
-  $('.header-nav-search').click(function() {
-    // TODO
-  });
 });

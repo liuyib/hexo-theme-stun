@@ -46,7 +46,7 @@ aside#sidebar
           if feedEmail
             span.sidebar-feed-email
               a(href=feedEmail target="_blank" title=`email → ${feedEmail}`)
-                i(class="fa fa-envelope").sidebar-feed-icon
+                i.fa.fa-envelope.sidebar-feed-icon
                 span Email
                 span= _p("sidebar.subscribe")
           
@@ -54,7 +54,7 @@ aside#sidebar
           if feedRSS
             span.sidebar-feed-rss
               a(href=url_for(feedRSS) target="_blank" title=`rss → ${url_for(feedRSS)}`)
-                i(class="fa fa-rss").sidebar-feed-icon
+                i.fa.fa-rss.sidebar-feed-icon
                 span RSS
                 span= _p("sidebar.subscribe")
       

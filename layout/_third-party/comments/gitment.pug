@@ -15,11 +15,14 @@ script.
     gitment.render("gitment-container")
   }
 
-  if (!{theme.gitment.lazy})
-    function showGitment() {
-      document.getElementById("gitment-button").style.display = "none";
-      document.getElementById("gitment-container").style.display = "block";
+  window.onload = function () {
+    if (!{theme.gitment.lazy}) {
+      function showGitment() {
+        document.getElementById("gitment-button").style.display = "none";
+        document.getElementById("gitment-container").style.display = "block";
+        renderGitment();
+      }
+    } else {
       renderGitment();
     }
-  else
-    renderGitment();
+  };

@@ -46,8 +46,9 @@ footer#footer
           if footer.theme.version
             span= " v" + stun_env("version") + "."
     
-    include ../_third-party/analytics/analytics-widget.pug
-    
+    if theme.busuanzi.enable
+      include ../_components/analytics/busuanzi.pug
+
     if footer.custom.enable
       div
         span!= footer.custom.text

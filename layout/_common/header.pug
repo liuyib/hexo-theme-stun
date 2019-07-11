@@ -7,11 +7,11 @@ header#header(
 )
   nav.header-nav
     div.header-nav-inner
-      div(class="header-nav-menu-icon fa fa-bars")
+      div.fa.fa-bars.header-nav-menu-icon
 
       div.header-nav-search
         if !theme.menu_settings.text_only
-          i(class="fa fa-search")
+          i.fa.fa-search
         if !theme.menu_settings.icon_only
           span!= _p("nav.search")
       
