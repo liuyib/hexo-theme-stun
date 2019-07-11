@@ -82,7 +82,7 @@ menu_settings:
 在 hexo 根目录执行命令：
 
 ``` bash
-hexo new page xxx # xxx 表示页面名称
+$ hexo new page xxx # xxx 表示页面名称
 ```
 
 执行这条命令后，会在如下目录生成文件：`source/xxx/index.md`
@@ -489,8 +489,8 @@ auto_excerpt:
 想要使用文章置顶功能，首先你需要安装 hexo 插件 [hexo-generator-index-pin-top](https://github.com/netcan/hexo-generator-index-pin-top)，然后执行命令：
 
 ``` bash
-npm uninstall hexo-generator-index --save
-npm install hexo-generator-index-pin-top --save
+$ npm uninstall hexo-generator-index --save
+$ npm install hexo-generator-index-pin-top --save
 ```
 
 最后，在文章的 `front-matter` 中，使用 `top: true` 来实现置顶。

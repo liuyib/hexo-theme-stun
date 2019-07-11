@@ -7,7 +7,7 @@
 Enter your hexo directory, run this.
 
 ``` bash
-git clone https://github.com/liuyib/hexo-theme-stun.git themes/stun
+$ git clone https://github.com/liuyib/hexo-theme-stun.git themes/stun
 ```
 
 - Install pug and stylus
@@ -15,7 +15,7 @@ git clone https://github.com/liuyib/hexo-theme-stun.git themes/stun
 If you don't have pug and stylus renderer, run this (If you`re not sure, just do it).
 
 ``` bash
-npm install --save-dev hexo-render-pug hexo-renderer-stylus
+$ npm install --save-dev hexo-render-pug hexo-renderer-stylus
 ```
 
 ## How to use
@@ -28,8 +28,10 @@ theme: stun
 
 ## Update
 
-``` bash
-cd themes/stun
+Enter your hexo directory, run this.
 
-git pull
+``` bash
+$ cd themes/stun
+
+$ git pull
 ```

@@ -55,3 +55,87 @@ busuanzi:
     # FontAwesome 图标名称
     icon: eye
 ```
+
+## 搜索支持
+
+### Algolia 搜索 <Badge text="stable"/>
+
+如果你想使用 Algolia 搜索的话，并不会像其他配置那样，修改一下配置项就好了。你需要按照以下步骤进行配置：
+
+1. 登录官网
+
+访问 [Algolia 官网](https://www.algolia.com/)，可以注册一个账号登录，也可以使用 Github 账号或者 Google 账号登录。
+
+2. 进入 `Indices` 页面
+
+点击 `Create Index`，然后输入 `Index name`（可以是任意字符）。
+
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190711194035.png)
+
+3. 进入 API Keys 页面
+
+你会看到 `Application ID` 和 `Search-Only API Key`，将它们保存下来，在后面的设置中会用到。
+
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190711194037.png)
+
+::: danger
+注意，这里一定不要使用 `Admin API Key` 作为你的 API Key，更不要将其写入你的配置文件。
+:::
+
+点击 `ALL API KEYS` 和 `edit` 选项。这样会弹出一个框，在这个框中，你可以进行精确的授权和控制。
+
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190711194036.png)
+
+在弹出框底部的 `ACl` 选项中，勾选 `search`，`addObject`，`deleteIndex`，`listIndexes`，`deleteObject`。最后，点击 `Update` 按钮。
+
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190711194038.png)
+
+4. 修改 Hexo 配置
+
+修改你的**站点**配置文件 `_config.yml`，添加 `applicationID` & `apiKey` & `indexName` 选项。
+
+``` yaml
+algolia:
+  applicationID: '填入你的 Application ID'
+  apiKey: '填入你的 Search-only API key'
+  indexName: '填入你的 indexName'
+```
+
+5. 安装 Algolia 模块
+
+Algolia 要求用户手动通过提供的 API 上传它们的搜索数据。在 Hexo 根目录中安装 `hexo-algolia`。这个插件将会搜索你的网站并将数据上传到 Algolia。
+
+``` bash
+$ cd hexo
+$ npm install --save hexo-algolia
+```
+
+运行下面这些指令，上传索引数据。
+
+``` bash
+$ export HEXO_ALGOLIA_INDEXING_KEY=你的Search-Only API key # 在 Git Bash 中使用这条指令
+# set HEXO_ALGOLIA_INDEXING_KEY=你的Search-Only API key    # 在 Windows 命令行中使用这条指令
+$ hexo clean
+$ hexo algolia
+```
+
+::: tip
+每次添加新的文章后，都需要运行上面这三条指令来更新你的索引数据，否则，将无法搜索到。
+:::
+
+6. 修改 stun 配置
+
+在你的主题配置文件 `stun.yml` 或 `_config.yml` 中，修改以下配置项。
+
+``` yaml
+algolia_search:
+  enable: true
+  hits:
+    # 每一页显示的搜索结果数量
+    per_page: 10
+  labels:
+    # 是否显示搜索结果的统计信息
+    show_stats: true
+```
+
+到这里，不出意外的话，你就可以使用 Algolia 搜索网站里的文章标题了。
