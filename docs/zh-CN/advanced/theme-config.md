@@ -155,11 +155,13 @@ header:
   nav_height: 50px
   # 顶部背景图片
   bg_image:
+    # 是否启用
     enable: true
     # 填写图片路径或链接
     url: https://xxxxx.png
   # 模糊滤镜效果（对网站顶部图片进行模糊）
   blur_effect:
+    # 是否启用
     enable: false
     # 模糊程度（支持所有 CSS 长度单位）
     level: 15px
@@ -179,9 +181,6 @@ header:
 title: Hello Stun
 date: 2019-05-15 22:54:49
 top_image: https://xxxxx.jpg
-tags:
-  - hexo-theme
-  - stun
 ---
 ```
 
@@ -191,6 +190,7 @@ tags:
 
 ``` yaml
 creative_commons:
+  # 是否启用
   enable: true
   # 可选值: BY | BY-SA | BY-ND | BY-NC | BY-NC-SA | BY-NC-ND
   # 详情请访问: https://creativecommons.org/share-your-work/licensing-types-examples
@@ -213,6 +213,7 @@ creative_commons:
 
 ``` yaml
 back2top:
+  # 是否启用
   enable: true
   icon:
     # 建议使用名为 `rocket` 的图标
@@ -235,11 +236,13 @@ back2top:
 footer:
   # 顶部背景图
   bg_image:
+    # 是否启用
     enable: true
     # 填写图片路径或链接
     url: https://xxxxx.png
   # 版权信息
   copyright:
+    # 是否启用
     enable: true
     # 显示的文字信息，例如：xxx All Rights Reserved.
     # 如果不设置，将显示 hexo 配置文件中的 author 字段的内容
@@ -250,6 +253,7 @@ footer:
     end: 
   # 时间和文字信息之间的图标
   icon:
+    # 是否启用
     enable: true
     # 建议使用名为 `heart` 的图标
     # 图标名称在这里查找：https://fontawesome.com/v4.7.0/icons/
@@ -260,21 +264,25 @@ footer:
     color: "#ff0000"
   # Hexo 链接（Powered by Hexo）
   powered:
+    # 是否启用
     enable: true
     # 显示版本号（例如：vX.X.X）
     version: true
   # 主题链接（Theme - stun）
   theme:
+    # 是否启用
     enable: true
     # 显示版本号（例如：vX.X.X）
     version: true
   # 备案信息（只有中国开发者会用到）详情: http://www.miitbeian.gov.cn
   beian:
+    # 是否启用
     enable: false
     # 备案 XXXXXXXX 号
     icp: 
   # 任何自定义文本，支持 HTML（例如：托管于 <a href="https://pages.github.com/" rel="noopener" target="_blank">Github Pages</a>）
   custom:
+    # 是否启用
     enable: false
     text: 
 ```
@@ -289,6 +297,7 @@ footer:
 
 ``` yaml
 sidebar:
+  # 是否启用
   enable: true
   # 侧边栏位置，可选值有：left 或 right
   position: right
@@ -306,6 +315,7 @@ sidebar:
 
 ``` yaml
 author:
+  # 是否启用
   enable: true
   # 侧边栏头像
   avatar:
@@ -346,7 +356,7 @@ social:
 
 # 友链的一些设置
 social_setting:
-  # 是否启用友链
+  # 是否启用
   enable: true
   # 是否只显示图标
   icon_only: true
@@ -362,6 +372,7 @@ social_setting:
 
 ``` yaml
 toc:
+  # 是否启用
   enable: true
   # 显示列表序号
   number: true
@@ -383,6 +394,7 @@ toc:
 
 ``` yaml
 feed:
+  # 是否启用
   enable: false
   # 邮件订阅地址 (例如：http://eepurl.com/guAE6j).
   email: 
@@ -414,6 +426,7 @@ feed:
 
 ``` yaml
 reading_progress:
+  # 是否启用
   enable: true
   # 请使用引号包裹颜色值（支持所有 CSS 颜色单位）
   color: "#fc6423"
@@ -427,7 +440,7 @@ reading_progress:
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190619211446.png)
 
-## 文章顶部信息 <Badge text="beta" type="warn"/>
+## 文章顶部信息 <Badge text="stable"/>
 
 修改 `stun.yml` 文件：
 
@@ -437,11 +450,13 @@ post_meta:
   icon_only: false
   # 文章创建时间
   created:
+    # 是否启用
     enable: true
     # 图标名称在这里查找：https://fontawesome.com/v4.7.0/icons/
     icon: calendar-o
   # 文章更新时间
   updated:
+    # 是否启用
     enable: true
     # 图标名称在这里查找
     icon: calendar-check-o
@@ -449,6 +464,7 @@ post_meta:
   # 启用这个功能之前，你首先需要在 hexo 根目录安装依赖：
   # `npm install hexo-wordcount --save`，然后重启 hexo 服务器。
   reading_time:
+    # 是否启用
     enable: false
     # 图标名称在这里查找
     icon: clock-o
@@ -462,12 +478,82 @@ post_meta:
   # 启用这个功能之前，你首先需要在 hexo 根目录安装依赖：
   # `npm install hexo-wordcount --save`，然后重启 hexo 服务器。
   word_count:
+    # 是否启用
     enable: false
     # 图标名称在这里查找
     icon: file-word-o
 ```
 
 效果如下：![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190619210334.png)
+
+## 文章列表分页 <Badge text="stable"/> <Badge text="v1.0.3"/>
+
+::: tip
+该功能从 `v1.0.1` 版本开始支持，在 `v1.0.3` 版本中对配置项进行了更改。
+:::
+
+如果你想设置首页 或 归档页的文章列表是否分页，可以修改 `stun.yml` 文件：
+
+``` yaml
+post_list:
+  # 是否分页
+  paginate:
+    # 首页的文章列表是否分页
+    home: true
+    # 归档页面的文章列表是否分页
+    archives: false
+```
+
+## 文章列表封面图片 <Badge text="stable"/> <Badge text="v1.0.3"/>
+
+如果你为一篇文章单独设置了顶部图，并且想要在文章列表中作为封面图片显示，可以修改 `stun.yml` 文件：
+
+``` yaml
+post_list:
+  # 文章列表中，文章的封面图片
+  top_image:
+    home: true
+```
+
+默认网站首页的文章列表开启分页，归档页面的文章列表不开启分页。
+
+## 文章标签 <Badge text="stable"/> <Badge text="v1.0.3"/>
+
+::: tip
+该功能从 `v1.0.0-beta.0` 版本开始支持，在 `v1.0.3` 版本中对配置项进行了更改。
+:::
+
+在文章末尾显示文章的所有标签，修改 `stun.yml` 文件：
+
+``` yaml
+post_widget:
+  # 是否在文章末尾显示文章标签
+  tags: true
+```
+
+默认启用。
+
+## 文章结束提示信息 <Badge text="stable"/> <Badge text="v1.0.3"/>
+
+::: tip
+该功能从 `v1.0.0-beta.1` 版本开始支持，在 `v1.0.3` 版本中对配置项进行了更改。
+:::
+
+在文章末尾自动添加文章结束的提示信息，修改 `stun.yml` 文件：
+
+``` yaml
+post_widget:
+  # 在文章底部显示 “本文结束” 的提示信息
+  end_text:
+    # 是否启用
+    enable: true
+    # 是否在提示信息之前显示水平分割线
+    horizon_line: true
+```
+
+效果如下：![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190619210335.png)
+
+默认启用。
 
 ## 文章摘要 <Badge text="stable"/>
 
@@ -477,6 +563,7 @@ post_meta:
 
 ``` yaml
 auto_excerpt:
+  # 是否启用
   enable: false
   # 自动保留的字数
   length: 150
@@ -606,31 +693,6 @@ text_vertical_align_with_img: bottom
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608232754.png)
 
-## 文章标签 <Badge text="beta" type="warn"/>
-
-在文章末尾显示文章的所有标签，修改 `stun.yml` 文件：
-
-``` yaml
-post_tags: true
-```
-
-默认启用。
-
-## 文章结束提示信息 <Badge text="stable"/>
-
-在文章末尾自动加上提示文章结束的信息，修改 `stun.yml` 文件：
-
-``` yaml
-post_end_text:
-  enable: true
-  # 是否显示水平分割线
-  horizon_line: true
-```
-
-效果如下：![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190619210335.png)
-
-默认启用。
-
 ## 赞赏码 <Badge text="stable"/>
 
 设置文章的赞赏码，修改 `stun.yml` 文件：
@@ -638,6 +700,7 @@ post_end_text:
 ``` yaml
 # Reward
 reward:
+  # 是否启用
   enable: false
   # 支付宝
   alipay: https://xxxxx.png
@@ -648,21 +711,6 @@ reward:
 默认不启用，启用后效果如下：
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608175556.png)
-
-
-## 文章列表分页 <Badge text="stable"/> <Badge text="v1.0.1"/>
-
-如果你想设置首页 或 归档页的文章列表是否分页，可以修改 `stun.yml` 文件：
-
-``` yaml
-post_list_paged:
-  home: true
-  archives: true
-```
-
-默认都开启分页。
-
-> 通常推荐首页开启分页，防止摘要图片过多，影响页面加载速度（目前 stun 还不支持图片懒加载，所以存在这个问题，以后的版本会进行支持）。推荐归档页面关闭分页，方便快速查找文章。
 
 ## 标签云 <Badge text="beta" type="warn"/>
 
@@ -694,7 +742,6 @@ tag_cloud:
 ![](https://xxxxx.png?size=200x100)
 ```
 
-<!-- ### 自定义样式 <Badge text="stable"/> <Badge text="v1.0.3"/> -->
-### 自定义样式
+### 自定义样式 <Badge text="stable"/> <Badge text="v1.0.3"/>
 
 如果你想修改主题的样式，推荐在 `source/css/_custom` 目录下，新建样式文件，然后通过 `@import xxx` 语句在同目录下的 `index.styl` 中引入你新建的样式文件。当然你也可以直接将样式代码写在该目录下的 `index.styl` 文件中。如果你要自定义的样式有很多的话，还是建议按文件分类，这样更方便以后管理。

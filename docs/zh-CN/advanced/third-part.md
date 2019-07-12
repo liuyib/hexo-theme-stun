@@ -15,6 +15,7 @@
 ``` yaml
 # https://github.com/imsun/gitment
 gitment:
+  # 是否启用
   enable: false
   # Github 用户名
   owner: 
@@ -32,6 +33,7 @@ gitment:
 
 ``` yaml
 busuanzi:
+  # 是否启用
   enable: true
   site:
     # 是否只显示图标
@@ -39,11 +41,13 @@ busuanzi:
     # 统计站点 UV 数量
     # 关于 UV 和 PV 的概念：https://zhuanlan.zhihu.com/p/27672009
     uv:
+      # 是否启用
       enable: true
       # FontAwesome 图标名称: https://fontawesome.com/v4.7.0/icons/
       icon: user
     # 统计站点 PV 数量
     pv:
+      # 是否启用
       enable: true
       # FontAwesome 图标名称
       icon: eye
@@ -51,6 +55,7 @@ busuanzi:
   post_pv:
     # 是否只显示图标
     icon_only: false
+    # 是否启用
     enable: true
     # FontAwesome 图标名称
     icon: eye
@@ -129,6 +134,7 @@ $ hexo algolia
 
 ``` yaml
 algolia_search:
+  # 是否启用
   enable: true
   hits:
     # 每一页显示的搜索结果数量
