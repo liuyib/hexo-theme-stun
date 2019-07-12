@@ -32,15 +32,15 @@ If you are using the stun theme and would like it to be shown here, you can fill
 Enter your hexo directory, run this.
 
 ``` bash
-git clone https://github.com/liuyib/hexo-theme-stun.git themes/stun
+$ git clone https://github.com/liuyib/hexo-theme-stun.git themes/stun
 ```
 
-- Install pug and stylus
+- Install `pug` and `stylus`
 
-If you don't have pug and stylus renderer, run this (If you`re not sure, just do it).
+The theme depends on `pug` and `stylus`, please run this.
 
 ``` bash
-npm install --save-dev hexo-render-pug hexo-renderer-stylus
+$ npm install --save-dev hexo-render-pug hexo-renderer-stylus
 ```
 
 ## How to use
@@ -54,9 +54,9 @@ theme: stun
 ## Update
 
 ``` bash
-cd themes/stun
+$ cd themes/stun
 
-git pull
+$ git pull
 ```
 
 ## Configuration

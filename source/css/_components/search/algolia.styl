@@ -18,16 +18,14 @@
   border-radius: 5px
   padding: 1rem
   width: 700px
-  height: 80%
+  max-height: 80%
   font-size: $font-size-large
   color: $font-color
   background-color: $white-light
 
-column-height = 2rem
-
 .algolia-input-wrapper
   display: flex
-  height: column-height * 2
+  margin: 1rem 0
   flex-direction: column
 
   .ais-search-box
@@ -55,31 +53,16 @@ column-height = 2rem
   color: $black-light
   cursor: pointer
 
-if (hexo-config('algolia_search.labels.show_stats'))
-  $algolia-results
-    height: calc(100% - 8rem)
-else
-  $algolia-results
-    height: calc(100% - 6rem)
-
 .algolia-results
-  display: flex
   overflow-x: hidden
-  overflow-y: auto
-  flex-direction: column
-  @extend $algolia-results
+  overflow-y: scroll
+  max-height: 16rem
 
   em
     font-style: normal
     background-color: $yellow-light
 
-#algolia-hits,
-.ais-hits
-  flex: 1 0 auto
-
 .algolia-hit-item
-  margin: .3rem 0
-
   &::before
     content: ''
     display: inline-block
@@ -92,10 +75,11 @@ else
     transition: color .2s
 
 #algolia-pagination
-  margin-bottom: .5rem
-  
+  margin: .5rem 0
+
   ul
     margin: 0
+    padding: 0
     text-align: center
 
 .ais-pagination
@@ -114,6 +98,9 @@ else
       &:hover
         color: #fff
         background-color: $blue-light
+
+#algolia-stats
+  overflow: hidden
 
 .algolia-logo
   img
