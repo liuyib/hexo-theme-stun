@@ -264,6 +264,26 @@ post_meta:
     # Icon name in FontAwesome, see: https://fontawesome.com/v4.7.0/icons/
     icon: file-word-o
 
+# The article list on the homepage or archives page.
+post_list:
+  # Whether to paginate.
+  paginate:
+    home: true
+    archives: false
+  # Whether to show the top image of post.
+  top_image:
+    home: true
+
+# The widget of post.
+post_widget:
+  # Show tags at the bottom of the post.
+  tags: true
+  # Show "post end" at the bottom of the post.
+  end_text:
+    enable: true
+    # Show the horizon line before the text of the end.
+    horizon_line: true
+
 # Automatically retain article excerpt.
 auto_excerpt:
   enable: false
@@ -310,25 +330,11 @@ img_horizonal_align:
 # - bottom
 text_vertical_align_with_img: bottom
 
-# Show tags at the bottom of the post.
-post_tags: true
-
-# Show "post end" at the bottom of the post.
-post_end_text:
-  enable: true
-  # Show horizon line before the text that prompts the end of the article.
-  horizon_line: true
-
 # Reward
 reward:
   enable: false
   alipay: 
   wechat: 
-
-# Whether to page the article list on the home page and archives page.
-post_list_paged:
-  home: true
-  archives: true
 
 # ---------------------------------------------------------------
 # Comment config

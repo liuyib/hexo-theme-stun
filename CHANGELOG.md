@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.0.3 (2019-07-12)
+
+### Features
+
+* Add the cover image in the article list & change some config ([67345e](https://github.com/liuyib/hexo-theme-stun/commit/67345e7d7fb2d4685fd6283aae308aff355d93d7))
+* Add post sticky in the archives ([e926f79](https://github.com/liuyib/hexo-theme-stun/commit/e926f79))
+* Add algolia search ([77126e4](https://github.com/liuyib/hexo-theme-stun/commit/77126e4))
+* Add the file of custom styles ([8a76e09](https://github.com/liuyib/hexo-theme-stun/commit/8a76e09))
+
 ### 1.0.2 (2019-06-28)
 
 ### Features
