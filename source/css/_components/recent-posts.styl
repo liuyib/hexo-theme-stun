@@ -1,16 +1,3 @@
-if (hexo-config('stick_top.position') == 'left')
-  $stick-top-position
-    left: 1.5rem
-else
-  $stick-top-position
-    right: 1.5rem
-
-$stick-top-rotate = convert(
-  hexo-config('stick_top.rotate' || '0deg'))
-
-$stick-top-color = convert(
-  hexo-config('stick_top.color' || '#999'))
-
 #recent-posts
   .post-header
     margin-bottom: 1.5rem
@@ -33,13 +20,9 @@ $stick-top-color = convert(
     & > :last-child,
     .post-excerpt > :last-child
       margin-bottom: 0
-  
+
   .sticky-top
-    position: absolute
     top: 1rem
-    transform: scale(1.5) rotate($stick-top-rotate)
-    color: $stick-top-color
-    @extend $stick-top-position
 
   .post-btn
     display: flex

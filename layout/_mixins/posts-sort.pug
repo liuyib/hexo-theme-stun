@@ -1,6 +1,6 @@
 mixin articleSort(posts)
   section.article-sort
-    - let year, tmpYear    
+    - let year, tmpYear
     - posts.each(function (post) {
       if post.date
         - tmpYear = full_date(post.date, "YYYY")
@@ -12,4 +12,7 @@ mixin articleSort(posts)
           time.article-sort-item__time= full_date(post.date, "MM-DD")
           h2.article-sort-item__title
             a(href=url_for(post.path))= post.title || "No Title"
+
+        if post.top
+          include ../_components/sticky-top.pug
     - })

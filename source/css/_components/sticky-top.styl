@@ -1,0 +1,19 @@
+if (hexo-config('stick_top.position') == 'left')
+  $stick-top-position
+    left: 1.5rem
+else
+  $stick-top-position
+    right: 1.5rem
+
+$stick-top-rotate = convert(
+  hexo-config('stick_top.rotate' || '0deg'))
+
+$stick-top-color = convert(
+  hexo-config('stick_top.color' || '#999'))
+
+.sticky-top
+  position: absolute
+  top: 0
+  color: $stick-top-color
+  transform: scale(1.2) rotate($stick-top-rotate)
+  @extend $stick-top-position

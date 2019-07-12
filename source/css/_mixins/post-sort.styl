@@ -43,12 +43,15 @@
     color: $archives-right-time-color
     transform: translate(0, 8%)
 
-  &__title a
-    clearAStyle()
-    font-size: $font-main-base
-    text-decoration: none
-    color: $font-color
-    cursor: pointer
+  &__title    
+    max-width: 80%
+    
+    a
+      clearAStyle()
+      font-size: $font-main-base
+      text-decoration: none
+      color: $font-color
+      cursor: pointer
 
-    &:hover
-      color: $blue-light !important
+      &:hover
+        color: $blue-light !important

@@ -5,8 +5,7 @@ section#recent-posts
       +postHeader(post)
 
       if post.top
-        div.sticky-top
-          i(class=`fa fa-${theme.stick_top.icon}`)
+        include ./sticky-top.pug
 
       if theme.auto_excerpt && theme.auto_excerpt.enable
         - const content = strip_html(post.content)
