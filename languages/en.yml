@@ -19,8 +19,8 @@ nav:
 page:
   tags: Tags
   categories: Categories
-  articles-0: No articles
-  articles-1: Total %s Articles, Go on!
+  articles-empty: No articles
+  articles-total: Total %s Articles, Go on!
 
 # Sidebarupdated
 sidebar:

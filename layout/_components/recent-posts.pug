@@ -1,8 +1,11 @@
 section#recent-posts
-  - let postLists = theme.post_list_paged.home ? page.posts : site.posts
+  - let postLists = theme.post_list.paginate.home ? page.posts : site.posts
   - postLists.each(function (post) {
     article.post-item
       +postHeader(post)
+
+      if theme.post_list.top_image.home && post.top_image
+        img(src=post.top_image)
 
       if post.top
         include ./sticky-top.pug

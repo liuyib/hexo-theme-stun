@@ -10,7 +10,7 @@ block content
       != page.content
 
     footer.post-footer
-      if theme.post_end_text.enable
+      if theme.post_widget.end_text.enable
         div.post-footer-end
           span= "------"
           span= _p("post.end")
@@ -19,7 +19,7 @@ block content
       if theme.creative_commons.enable && theme.creative_commons.post
         include ./_components/copyright.pug
 
-      if theme.post_tags
+      if theme.post_widget.tags
         if page.tags && page.tags.length > 0
           div.post-footer-tags
             i.fa.fa-tags.icon

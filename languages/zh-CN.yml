@@ -19,8 +19,8 @@ nav:
 page:
   tags: 标签
   categories: 分类
-  articles-0: 目前还没有文章哦！
-  articles-1: 目前共计 %s 篇文章，继续加油！
+  articles-empty: 目前还没有文章哦！
+  articles-total: 目前共计 %s 篇文章，继续加油！
 
 # 侧边栏
 sidebar:

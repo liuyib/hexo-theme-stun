@@ -6,14 +6,15 @@ block content
   div.main-content-layout
     div.archive-inner
       if (site.posts.length === 0)
-        div.article-sort-title= _p("page.articles-0")
+        div.article-sort-title= _p("page.articles-empty")
       else
-        div.article-sort-title= _p("page.articles-1", site.posts.length)
-    
-      if theme.post_list_paged.archives
+        div.article-sort-title= _p("page.articles-total", site.posts.length)
+
+      //- != console.log(page.posts)
+      if theme.post_list.paginate.archives
         +articleSort(page.posts)
       else
         +articleSort(site.posts)
     
-    if theme.post_list_paged.archives
+    if theme.post_list.paginate.archives
       include ./_components/pagination.pug
