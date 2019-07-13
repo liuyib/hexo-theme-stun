@@ -20,9 +20,10 @@ $(document).ready(function () {
     });
   
   $(document).on('keydown', function (e) {
-    var event = e || window.event;
+    var e = e || window.event;
     
-    if (event.code === 'Escape') {
+    // Escape <=> 27
+    if (e.keyCode === codeToKeyCode('Escape')) {
       closeSearch();
     }
   });

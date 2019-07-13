@@ -58,6 +58,17 @@ function isMobile() {
   return check;
 }
 
+function codeToKeyCode(code) {
+  var codes = {
+    'ArrowLeft': 37,
+    'ArrowRight': 39,
+    'Escape': 27
+  };
+
+  return codes[code];
+}
+
 window.debounce = debounce;
 window.throttle = throttle;
 window.isMobile = isMobile;
+window.codeToKeyCode = codeToKeyCode;
