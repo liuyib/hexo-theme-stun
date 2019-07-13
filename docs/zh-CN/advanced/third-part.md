@@ -8,24 +8,60 @@
 
 ### Gitment <Badge text="stable"/>
 
-你首先需要获取 你的 OAuth 应用的 client ID 和 client secret。获取方法请看 [Gitment 的说明文档](https://github.com/imsun/gitment#2-register-an-oauth-application)。
+首先，你需要注册一个新的 **GitHub Application** 来授权，点击[这里](https://github.com/settings/applications/new)注册。这样可以获取所需的 `client ID` 和 `client secret`。
+
+::: warning 注意
+您必须在 `Authorization callback URL` 字段中指定网站的 URL。
+:::
 
 然后修改 `stun.yml`：
 
 ``` yaml
-# https://github.com/imsun/gitment
 gitment:
   # 是否启用
   enable: false
   # Github 用户名
   owner: 
-  # Github 仓库名（可以是任意一个公开的 Github 仓库）
+  # Github 仓库名（需要是公开的仓库）
   repo: 
   client_id: 
   client_secret: 
-  # 是否启用懒加载（如果启用，只有手动点击显示按钮才会显示评论；否则，始终显示评论）
+  # 是否启用懒加载（如果启用，只有手动点击显示按钮才会显示评论）
   lazy: false
 ```
+
+如果你遇到了问题，请查看 Gitment 的文档：[https://github.com/imsun/gitment](https://github.com/imsun/gitment)
+
+### Gitalk <Badge text="stable"/> <Badge text="v1.0.4"/>
+
+首先，你需要注册一个新的 **GitHub Application** 来授权，点击[这里](https://github.com/settings/applications/new)注册。这样可以获取所需的 `client ID` 和 `client secret`。
+
+::: warning 注意
+您必须在 `Authorization callback URL` 字段中指定网站的 URL。
+:::
+
+``` yaml
+gitalk:
+  # 是否启用
+  enable: true
+  # Github 用户名
+  owner: 
+  # Github 仓库名（需要是公开的仓库）
+  repo: 
+  # Github 应用程序客户端 ID
+  client_id: 
+  # Github 应用程序客户端密钥
+  client_secret: 
+  # GitHub 仓库所有者和合作者，只有这些人可以初始化 Gitalk
+  admin: 
+  # 类似 B 站的关灯模式
+  distraction_free_mode: true
+  # 如果你想让每一个参观你网站的人看到统一的语言，你可以在这里设置，
+  # 可选值有：en, zh-CN, es-ES, fr, ru, zh-TW
+  language: 
+```
+
+如果你遇到了问题，请查看 Gitalk 的文档：[https://github.com/gitalk/gitalk](https://github.com/gitalk/gitalk)
 
 ## 统计与分析
 
@@ -63,7 +99,7 @@ busuanzi:
 
 ## 搜索支持
 
-### Algolia 搜索 <Badge text="stable"/>
+### Algolia 搜索 <Badge text="stable"/> <Badge text="v1.0.3"/>
 
 如果你想使用 Algolia 搜索的话，并不会像其他配置那样，修改一下配置项就好了。你需要按照以下步骤进行配置：
 
@@ -125,7 +161,8 @@ $ hexo algolia
 ```
 
 ::: tip
-每次添加新的文章后，都需要运行上面这三条指令来更新你的索引数据，否则，将无法搜索到。
+1. 每次添加新的文章后，都需要运行上面这三条指令来更新你的索引数据，否则，将无法搜索到。
+2. 如果你发现搜索到的结果有重复的或者有旧的数据，你需要去 Algolia 官网，清除上传的数据，然后执行上面这三条指令，重新上传索引数据即可。
 :::
 
 6. 修改 stun 配置

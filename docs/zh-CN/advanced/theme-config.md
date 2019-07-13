@@ -504,18 +504,26 @@ post_list:
     archives: false
 ```
 
+分页效果如下：
+
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190713173927.png)
+
 ## 文章列表封面图片 <Badge text="stable"/> <Badge text="v1.0.3"/>
 
 如果你为一篇文章单独设置了顶部图，并且想要在文章列表中作为封面图片显示，可以修改 `stun.yml` 文件：
 
 ``` yaml
 post_list:
-  # 文章列表中，文章的封面图片
+  # 文章列表里的文章的封面图片
   top_image:
     home: true
 ```
 
 默认网站首页的文章列表开启分页，归档页面的文章列表不开启分页。
+
+封面图片效果如下：
+
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190713173929.jpg)
 
 ## 文章标签 <Badge text="stable"/> <Badge text="v1.0.3"/>
 
@@ -531,7 +539,9 @@ post_widget:
   tags: true
 ```
 
-默认启用。
+默认启用。效果如下：
+
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190713173926.png)
 
 ## 文章结束提示信息 <Badge text="stable"/> <Badge text="v1.0.3"/>
 
@@ -596,6 +606,10 @@ stick_top:
   # 请使用引号包裹颜色值（支持所有 CSS 颜色单位）
   color: "#999"
 ```
+
+效果如下：
+
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190713174424.jpg)
 
 ## 代码高亮 <Badge text="stable"/>
 
@@ -744,4 +758,6 @@ tag_cloud:
 
 ### 自定义样式 <Badge text="stable"/> <Badge text="v1.0.3"/>
 
-如果你想修改主题的样式，推荐在 `source/css/_custom` 目录下，新建样式文件，然后通过 `@import xxx` 语句在同目录下的 `index.styl` 中引入你新建的样式文件。当然你也可以直接将样式代码写在该目录下的 `index.styl` 文件中。如果你要自定义的样式有很多的话，还是建议按文件分类，这样更方便以后管理。
+如果你想修改主题的样式，强烈推荐将样式代码写在 `source/css/_custom` 目录下的 `index.styl` 文件中。这样，当主题更新时，不会覆盖你已经修改了的样式代码。
+
+当然，你也可以进行模块化分类：在该目录下新建样式文件，然后通过 `@import xxx` 语句在同目录下的 `index.styl` 文件中引入你新建的样式文件即可。
