@@ -31,7 +31,7 @@ $(document).ready(function () {
       easing: 'easeOutQuart'
     });
 
-    if (window.CONFIG.back2top_animation) {
+    if (CONFIG.back2top_animation) {
       $('#back-top').velocity({
         translateY: '-100vh',
       }, {
@@ -69,7 +69,6 @@ $(document).ready(function () {
     prevScrollTop = scrollTop;
   }
 
-  // Scroll heading to the top.
   function scrollHeadingToTop(anchor) {
     $(anchor)
       .velocity('stop')

@@ -1,7 +1,4 @@
 $(document).ready(function () {
-  // Distance from sidebar to top.
-  var SIDEBAR_STICKY_TOP = 
-    parseInt(window.CONFIG.sidebar_offsetTop);
   var $toc = $('.sidebar-toc');
   var $view = $('.sidebar-overview');
   
@@ -13,17 +10,28 @@ $(document).ready(function () {
   // Whether toc needs scrolling.
   var isTocScroll = false;
 
+  // Distance from sidebar to top.
+  var SIDEBAR_STICKY_TOP = 
+    parseInt(CONFIG.sidebar_offsetTop);
+  
+  // Is toc in anime.
+  var isAnime = false;
+  // Is toc in max heihgt.
+  var isMaxH = true;
+  
   // Initial run
   autoSpreadToc();
   scrollTocToMiddle();
   readProgress();
   sidebarSticky();
+  sidebarAdjustHeight();
 
   $(window).scroll(function () {
     autoSpreadToc();
     scrollTocToMiddle();
     readProgress();
     sidebarSticky();
+    sidebarAdjustHeight();
   });
   
   $('.sidebar-nav-toc').click(function () {
@@ -125,6 +133,43 @@ $(document).ready(function () {
       } else {
         $('.sidebar-inner').removeClass('sticky');
       }
+    }
+  }
+
+  // Auto adjust the height of sidebar when it arrive footer.
+  function sidebarAdjustHeight() {
+    var footerTop = $('#footer').offset().top
+    var footerH = $('#footer')[0].getBoundingClientRect().height;
+    var sidebarTop = $('.sidebar-inner').offset().top
+    var sidebarH = $('.sidebar-inner')[0].getBoundingClientRect().height;
+
+    if (!isAnime && sidebarTop + sidebarH > footerTop) {
+      var targetTocH =
+        parseInt($('.sidebar-toc').css('max-height')) - footerH;
+      isAnime = true;
+      
+      $('.sidebar-toc').velocity({
+        maxHeight: targetTocH
+      }, {
+        duration: 300,
+        complete: function () {
+          isAnime = false;
+          isMaxH = false;
+        }
+      });
+    } else if (!isMaxH && !isAnime && $(window).height() <
+        $('#footer')[0].getBoundingClientRect().top) {
+      isAnime = true;
+      
+      $('.sidebar-toc').velocity({
+        maxHeight: '70vh'
+      }, {
+        duration: 240,
+        complete: function () {
+          isAnime = false;
+          isMaxH = true;
+        }
+      });
     }
   }
 
