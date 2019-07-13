@@ -65,10 +65,11 @@ $(document).ready(function () {
   //   based on the scrolling of heading in the article.
   function autoSpreadToc() {
     var $postBody = $('.post-body');
+    var $firsetChild = $postBody.find('h1,h2,h3,h4,h5,h6').first();
     
     // All heading are not to the top.
-    if ($postBody[0] && ($postBody.find('h1,h2,h3,h4,h5,h6')
-        .first().offset().top - $(window).scrollTop() > 0)) {
+    if ($postBody[0] && (!!$firsetChild[0] && 
+        $firsetChild.offset().top - $(window).scrollTop() > 0)) {
       $('.sidebar-toc li').removeClass('active current');
 
       return;
