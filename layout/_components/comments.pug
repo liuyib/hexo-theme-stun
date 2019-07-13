@@ -6,3 +6,6 @@ if theme.gitment && theme.gitment.enable
       div#gitment-container(style="display: none")
     else
       div#gitment-container
+else if theme.gitalk && theme.gitalk.enable
+  div#comments.comments.main-content-layout
+    div#gitalk-container

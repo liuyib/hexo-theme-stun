@@ -348,10 +348,34 @@ gitment:
   owner: 
   # Github repository.
   repo: 
+  # Github Application Client ID
   client_id: 
+  # Github Application Client Secret
   client_secret: 
   # Enable / Disable Lazy load. Enable is recommended.
   lazy: true
+
+# Gittalk
+# See: https://github.com/gitalk/gitalk
+gitalk:
+  enable: false
+  # Github username.
+  owner: 
+  # Github repository.
+  repo: 
+  # Github Application Client ID
+  client_id: 
+  # Github Application Client Secret
+  client_secret: 
+  # GitHub repo owner and collaborators, only these guys can initialize github issues
+  admin: 
+  # Facebook-like distraction free mode
+  distraction_free_mode: false
+  # Gitalk's display language depends on user's browser or system environment
+  # If you want everyone visiting your site to see a uniform language,
+  #   you can set a force language value
+  # Available values: en, zh-CN, es-ES, fr, ru, zh-TW
+  language: 
 
 # ---------------------------------------------------------------
 # Statistics and Analytics config

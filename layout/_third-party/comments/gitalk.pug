@@ -1,0 +1,24 @@
+link(href="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.css" rel="stylesheet" type="text/css")
+script(src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js")
+script(src="https://cdn.jsdelivr.net/npm/js-md5@latest/src/md5.min.js")
+
+-
+  let lang = _.get(theme, 'gitalk.language')
+    ? theme.gitalk.language : (config.language
+    ? config.language : (window.navigator.language ||
+      window.navigator.userLanguage));
+
+script.
+  window.onload = function () {
+    let gitalk = new Gitalk({
+      id: md5(decodeURI(location.pathname)),
+      clientID: '!{ theme.gitalk.client_id }',
+      clientSecret: '!{ theme.gitalk.client_secret }',
+      repo: '!{ theme.gitalk.repo }',
+      owner: '!{ theme.gitalk.owner }',
+      admin: ['!{ theme.gitalk.admin }'],
+      distractionFreeMode: '!{ theme.gitalk.distraction_free_mode }',
+      language: '!{ lang }'
+    });
+    gitalk.render('gitalk-container');
+  };
