@@ -14,6 +14,8 @@
     "debounce": false,
     "throttle": false,
     "isMobile": false,
+    "codeToKeyCode": false,
+    "popAlert": false,
     "instantsearch": false,
     "GLOBAL_CONFIG": false
   },

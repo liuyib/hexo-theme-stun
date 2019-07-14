@@ -78,3 +78,10 @@ footer:
   theme: Theme
   uv: Visitors
   pv: Views
+
+notification:
+  alert:
+    success: Success Tips
+    info: Informational Notes
+    warning: Warning
+    error: Error

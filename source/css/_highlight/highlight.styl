@@ -7,12 +7,15 @@ $wordWrap = hexo-config('code_word_wrap')
 addLanguagesType()
   for lang in languages
     .code-highlight
-      figure.highlight
-        &{'.' + lang}
-          table
+      figure.highlight{'.' + lang}
+        & > figcaption
+          padding: .1rem 0
+
+          span
             &:before
               content: lang
-              color: $highlight-header-color
+              margin: 0 1rem 0 .5rem
+              color: alpha($highlight-header-color, .5)
 
 addLanguagesType()
 
@@ -51,7 +54,7 @@ $code-block
     pre
       margin: 0
       border: none
-      padding: 0
+      padding: .1rem 0
 
     td
       border: none
@@ -65,12 +68,11 @@ $code-block
 
       span
         float: left
-        margin-left: 2.5rem
         color: $highlight-header-color
 
       a
         float: right
-        margin-right: .5rem
+        margin-right: 2rem
         border-bottom: 0
 
     // Code block body
@@ -80,16 +82,6 @@ $code-block
       margin: 0
       border: none
       width: 100%
-
-      // Show code type
-      &::before
-        display: block
-        position: absolute
-        left: 0
-        padding-left: 1rem
-        color: $code-block-header-text-color
-        background-color: $code-block-side-bg-color
-        transform: translate(0, -100%)
 
       // Code line numbers
       .gutter

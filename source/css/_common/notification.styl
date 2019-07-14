@@ -1,0 +1,48 @@
+.stun-message
+  display: flex
+  position: fixed
+  top: 1rem
+  left: 0
+  z-index: $z-index-5
+  width: 100%
+
+.stun-alert
+  position: relative
+  margin: auto
+  border-radius: 3px
+  padding: 8px 12px
+  line-height: 1rem
+  color: $black-light
+  background-color: #fff
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .15)
+
+  &-success
+    color: $alert-success
+
+    & ~ i
+      color: $alert-success
+
+  &-info
+    color: $alert-info
+
+    & ~ i
+      color: $alert-info
+
+  &-warning
+    color: $alert-warning
+
+    & ~ i
+      color: $alert-warning
+
+  &-error
+    color: $alert-error
+
+    & ~ i
+      color: $alert-error
+
+  &-icon
+    font-size: 20px
+
+  &-description
+    margin-left: .5rem
+    font-size: 18px

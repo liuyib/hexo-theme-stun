@@ -58,6 +58,10 @@ function isMobile() {
   return check;
 }
 
+/**
+ * Change the event code to keyCode.
+ * @param {String} code Event KeyCode
+ */
 function codeToKeyCode(code) {
   var codes = {
     'ArrowLeft': 37,
@@ -68,7 +72,46 @@ function codeToKeyCode(code) {
   return codes[code];
 }
 
+/**
+ * A UI component for notification prompts.
+ * @param {String} status The Status of message.
+ * @param {String} text The text to show.
+ * @param {Number} delay Message stay time (unit is 's', default 5s).
+ */
+function popAlert(status, text, delay) {
+  var icon = {
+    'success': 'check-circle',
+    'info': 'exclamation-circle',
+    'warning': 'exclamation-circle',
+    'error': 'times-circle'
+  };
+  
+  if (!$('.stun-alert')[0]) {
+    var $alert = $(`
+      <div class="stun-message">
+        <div class="stun-alert stun-alert-${status}">
+          <i class="stun-alert-icon fa fa-${icon[status]}"></i>
+          <span class="stun-alert-description">${text}</span>
+        </div>
+      </div>
+    `);
+  
+    $('body').append($alert);
+  }
+
+  $(document).ready(function() {
+    $('.stun-alert').velocity('stop')
+      .velocity('transition.slideDownBigIn', {
+        duration: 300
+      }).velocity('reverse', {
+        delay: delay * 1000 || 5000,
+        duration: 260
+      })
+  });
+}
+
 window.debounce = debounce;
 window.throttle = throttle;
 window.isMobile = isMobile;
 window.codeToKeyCode = codeToKeyCode;
+window.popAlert = popAlert;
