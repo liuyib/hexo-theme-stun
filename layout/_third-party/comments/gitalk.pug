@@ -9,7 +9,7 @@ script(src="https://cdn.jsdelivr.net/npm/js-md5@latest/src/md5.min.js")
       window.navigator.userLanguage));
 
 script.
-  window.onload = function () {
+  window.onload = function() {
     let gitalk = new Gitalk({
       id: md5(decodeURI(location.pathname)),
       clientID: '!{ theme.gitalk.client_id }',

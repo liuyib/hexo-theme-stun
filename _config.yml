@@ -377,6 +377,10 @@ gitalk:
   # Available values: en, zh-CN, es-ES, fr, ru, zh-TW
   language: 
 
+livere:
+  enable: false
+  uid: 
+
 # ---------------------------------------------------------------
 # Statistics and Analytics config
 # ---------------------------------------------------------------
