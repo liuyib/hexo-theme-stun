@@ -2,7 +2,7 @@ $(document).ready(function() {
   var $menu = $('.header-nav-menu');
 
   $(document).click(function() {
-    menuHide();
+    $menu.removeClass('show');
   });
 
   $('.header-nav-menu a').click(function(e) {
@@ -11,22 +11,8 @@ $(document).ready(function() {
   });
 
   $('.header-nav-menu-icon').click(function() {
-    if ($menu.css('visibility') === 'hidden') {
-      menuShow();
-    } else {
-      menuHide();
-    }
+    $menu.toggleClass('show');
 
     return false;
   });
-
-  function menuShow() {
-    $menu.removeClass('hide');
-    $menu.addClass('show');
-  }
-
-  function menuHide() {
-    $menu.removeClass('show');
-    $menu.addClass('hide');
-  }
 });

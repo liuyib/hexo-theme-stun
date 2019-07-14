@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
   // The previous distance from the page to the top.
   var prevScrollTop = 0;
   
@@ -26,10 +26,11 @@ $(document).ready(function () {
   });
 
   $('#back-top').click(function () {
-    $('body').velocity('stop').velocity('scroll', {
-      duration: 500,
-      easing: 'easeOutQuart'
-    });
+    $('body').velocity('stop')
+      .velocity('scroll', {
+        duration: 500,
+        easing: 'easeOutQuart'
+      });
 
     if (CONFIG.back2top_animation) {
       $('#back-top').velocity({
@@ -70,8 +71,7 @@ $(document).ready(function () {
   }
 
   function scrollHeadingToTop(anchor) {
-    $(anchor)
-      .velocity('stop')
+    $(anchor).velocity('stop')
       .velocity('scroll', {
         duration: 500,
         easing: 'easeOutSine'

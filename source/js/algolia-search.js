@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
   $('.header-nav-search').click(function() {
     $('body').css('overflow', 'hidden');
     $('.algolia-popup').velocity('stop')

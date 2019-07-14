@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
   var $toc = $('.sidebar-toc');
   var $view = $('.sidebar-overview');
   
@@ -58,7 +58,7 @@ $(document).ready(function () {
 
   if ($('.main-content, .main-content-layout').height() <
       $('#sidebar').height()) {
-    $('#main').css('height', $('#main').height());
+    $('#main').css('min-height', $('#main').height());
   }
 
   // Automatically expand items in the article directory
@@ -112,8 +112,8 @@ $(document).ready(function () {
     }
     
     if (isTocScroll) {
-      $currLink
-        .velocity('stop').velocity('scroll', {
+      $currLink.velocity('stop')
+        .velocity('scroll', {
           container: $toc,
           offset: -($toc.height() / 2),
           duration: 500,
