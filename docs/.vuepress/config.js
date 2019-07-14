@@ -62,6 +62,10 @@ module.exports = {
                 text: 'Third part',
                 link: '/advanced/third-part',
               },
+              {
+                text: 'Assist function',
+                link: '/advanced/assist',
+              },
             ],
           },
         ],
@@ -96,6 +100,10 @@ module.exports = {
                 text: '第三方支持',
                 link: '/zh-CN/advanced/third-part',
               },
+              {
+                text: '辅助功能',
+                link: '/zh-CN/advanced/assist',
+              },
             ],
           },
         ],
@@ -112,7 +120,8 @@ function getEnSidebar(title) {
       children: [
         '/guide/',
         '/advanced/theme-config',
-        '/advanced/third-part'
+        '/advanced/third-part',
+        '/advanced/assist',
       ],
     },
   ];
@@ -126,7 +135,8 @@ function getZhSidebar(title) {
       children: [
         '/zh-CN/guide/',
         '/zh-CN/advanced/theme-config',
-        '/zh-CN/advanced/third-part'
+        '/zh-CN/advanced/third-part',
+        '/zh-CN/advanced/assist',
       ],
     },
   ];

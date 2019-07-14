@@ -105,7 +105,10 @@ function popAlert(status, text, delay) {
         duration: 300
       }).velocity('reverse', {
         delay: delay * 1000 || 5000,
-        duration: 260
+        duration: 260,
+        complete: function() {
+          $('.stun-alert').css('display', 'none');
+        }
       })
   });
 }
