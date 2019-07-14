@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.1.0 (2019-07-14)
+
+### Bug Fixes
+
+* Solve the sidebar was not fixed when post had no subtitles ([34703e5](https://github.com/liuyib/hexo-theme-stun/commit/34703e5))
+
+### Features
+
+* Add button of copy codeblock && perfect animation ([dd0856f](https://github.com/liuyib/hexo-theme-stun/commit/dd0856f))
+* You can use left and right arrows of keyboard to switch post ([e4bdca1](https://github.com/liuyib/hexo-theme-stun/commit/e4bdca1))
+* Add gitalk comment ([0cf4db1](https://github.com/liuyib/hexo-theme-stun/commit/0cf4db1))
+* Add auto adjust height of sidebar when it arrive footer ([e3083af](https://github.com/liuyib/hexo-theme-stun/commit/e3083af))
+
 ### 1.0.3 (2019-07-12)
 
 ### Features

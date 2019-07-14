@@ -14,4 +14,18 @@ n/layout.pug block content include ./_mixins/posts-sort.pug include ./_mixins/po
 
 原因是没有安装对 `pug` 的支持。文档和 READMD 都有提到：
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/FAQ/20190629092535.png)
+```
+主题依赖于 pug 和 stylus，请执行指令。
+
+$ npm install --save-dev hexo-render-pug hexo-renderer-stylus
+```
+
+### 文章置顶失效
+
+文章置顶功能依赖于 `hexo-generator-index-pin-top` 插件，并且需要将原有的 `hexo-generator-index` 插件卸载。如果你设置了文章置顶，但没有生效，很可能是因为没有卸载原有的插件。
+
+执行下面这条指令将其卸载，然后重启服务器即可：
+
+``` bash
+$ npm uninstall hexo-generator-index --save
+```
