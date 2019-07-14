@@ -377,9 +377,18 @@ gitalk:
   # Available values: en, zh-CN, es-ES, fr, ru, zh-TW
   language: 
 
+# Livere
+# See: https://www.livere.com/
 livere:
   enable: false
   uid: 
+
+# Disqus
+# See: https://disqus.com/
+disqus:
+  enable: false
+  shortname: 
+  count: true
 
 # ---------------------------------------------------------------
 # Statistics and Analytics config

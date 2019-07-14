@@ -12,3 +12,6 @@ else if theme.gitalk && theme.gitalk.enable
 else if theme.livere && theme.livere.enable
   div#comments.comments.main-content-layout
     div#lv-container(data-id="city" data-uid=theme.livere.uid)
+else if theme.disqus && theme.disqus.enable
+  div#comments.comments.main-content-layout
+    div#disqus_thread
