@@ -4,14 +4,12 @@ script(src="https://cdn.jsdelivr.net/npm/js-md5@latest/src/md5.min.js")
 
 -
   let lang = _.get(theme, 'gitalk.language')
-    ? theme.gitalk.language : (config.language
-    ? config.language : (window.navigator.language ||
-      window.navigator.userLanguage));
+    ? theme.gitalk.language : config.language;
 
 script.
   window.onload = function() {
     let gitalk = new Gitalk({
-      id: md5(decodeURI(location.pathname)),
+      id: md5('!{ page.path }'),
       clientID: '!{ theme.gitalk.client_id }',
       clientSecret: '!{ theme.gitalk.client_secret }',
       repo: '!{ theme.gitalk.repo }',
