@@ -46,11 +46,11 @@ header:
     # In site directory (source/uploads): /uploads/avatar.png
     # You can also use a link of image.
     url: 
-  # Blur filter effect of the header background.
-  blur_effect:
+  # Mask effect of the top background image.
+  mask:
     enable: false
-    # Degree of blur.
-    level: 15px
+    # Opacity of mask (value: 0 ~ 1).
+    opacity: 0.5
 
 # Creative Commons 4.0 International License.
 creative_commons:
