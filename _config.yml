@@ -341,7 +341,7 @@ reward:
 # ---------------------------------------------------------------
 
 # Gitment
-# See: https://github.com/imsun/gitment
+# See: https://github.com/imsun/gitment/
 gitment:
   enable: false
   # Github username.
@@ -356,7 +356,7 @@ gitment:
   lazy: true
 
 # Gittalk
-# See: https://github.com/gitalk/gitalk
+# See: https://github.com/gitalk/gitalk/
 gitalk:
   enable: false
   # Github username.
@@ -377,6 +377,33 @@ gitalk:
   # Available values: en, zh-CN, es-ES, fr, ru, zh-TW
   language: 
 
+# Valine
+# See: https://valine.js.org/quickstart.html
+valine:
+  enable: false
+  # Your leancloud application appid.
+  appid: 
+  # Your leancloud application appkey.
+  appkey: 
+  # Mail notifier.
+  notify: true
+  # Verification code.
+  verify: true
+  # Comment box placeholder.
+  placeholder: Just go go
+  # Gravatar style.
+  avatar: mp
+  # Custom comment header.
+  meta: nick,mail,link
+  # Pagination size.
+  pageSize: 10
+  # Article reading statistics.
+  visitor: false
+  # Whether to record the commenter IP.
+  recordIP: false
+  # language, available values: en, zh-cn.
+  language: 
+
 # Livere
 # See: https://www.livere.com/
 livere:
@@ -394,8 +421,10 @@ disqus:
 # Statistics and Analytics config
 # ---------------------------------------------------------------
 
+# Busuanzi statistics
+# See: https://busuanzi.ibruce.info/
 busuanzi:
-  enable: true
+  enable: false
   site:
     # Only show by icon.
     icon_only: false
