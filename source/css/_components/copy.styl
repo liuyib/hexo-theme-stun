@@ -4,7 +4,6 @@
   right: 0
   width: 1.5rem
   height: 1.5rem
-  line-height: .5rem
   // Eliminate the problem of blank nodes occupying size
   // due to the "inline-block" attribute.
   font-size: 0
@@ -14,3 +13,14 @@
 
   .fa
     font-size: 14px
+    transform: translateY(65%)
+
+.highlight
+  figcaption.custom
+    padding: .1rem 0
+    font-size: 0
+
+    span
+      margin: 0 1rem 0 .6rem
+      font-size: $font-size-large
+      color: alpha($highlight-header-color, .5)

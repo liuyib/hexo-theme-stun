@@ -311,7 +311,7 @@ highlight_theme: light
 
 # Code wrap.
 # values: true or false
-code_word_wrap: true
+code_word_wrap: false
 
 # Horizonal alignment of img.
 # values:

@@ -1,25 +1,22 @@
 @require './theme.styl'
 @require './diff.styl'
 
-languages = 'js' 'javascript' 'python' 'ruby' 'xml' 'html' 'css' 'perl' 'sql' 'coffeescript' 'java' 'scala' 'kotlin' 'c' 'c\+\+' 'go' 'less' 'sass' 'scss' 'stylus' 'styl' 'typescript' 'ts' 'bash' 'yml' 'gradle'
+languages = 'js' 'javascript' 'python' 'ruby' 'xml' 'html' 'css' 'php' 'sql' 'coffeescript' 'java' 'bash' 'markdown' 'kotlin' 'c' 'c\+\+' 'c#' 'go' 'golang' 'less' 'sass' 'scss' 'stylus' 'styl' 'typescript' 'ts' 'yml' 'yaml' 'matlab' 'objectivec' 'makefile' 'scala' 'gradle' 'swift' 'rust' 'lua' 'lisp' 'fortran' 'dart' 'perl'
 $wordWrap = hexo-config('code_word_wrap')
 
-addLanguagesType()
-  for lang in languages
-    .code-highlight
-      figure.highlight{'.' + lang}
-        & > figcaption
-          padding: .1rem 0
+for lang in languages
+  .code-highlight
+    figure.highlight{'.' + lang}
+      & figcaption:not(.custom)
+        padding: .1rem 0
 
-          span
-            &:before
-              content: lang
-              margin: 0 1rem 0 .5rem
-              color: alpha($highlight-header-color, .5)
+        span
+          &::before
+            content: lang
+            margin: 0 .6rem
+            color: alpha($highlight-header-color, .5)
 
-addLanguagesType()
-
-$code-block
+$codeblockStyle
   overflow: auto
   margin: .5rem 0
   min-width: 100%
@@ -37,7 +34,7 @@ $code-block
     font-family: $code-font-family
 
   pre
-    @extend $code-block
+    @extend $codeblockStyle
     padding: .5rem
 
     code
@@ -46,7 +43,7 @@ $code-block
       text-shadow: none
 
   .highlight
-    @extend $code-block
+    @extend $codeblockStyle
     position: relative
     margin-bottom: 1rem
     border-radius: 1px
@@ -62,7 +59,9 @@ $code-block
 
     // Code block header
     figcaption
+      display: block
       overflow: hidden
+      width: 100%
       color: $highlight-header-color
       background-color: $highlight-header-bg-color
 
@@ -105,7 +104,7 @@ $code-block
       height: $line-height
 
       if ($wordWrap)
-        &:before
+        &::before
           content: counter(line)
           display: inline-block
           margin: 0 1rem 0 0
