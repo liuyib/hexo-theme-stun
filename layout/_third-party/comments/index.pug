@@ -9,3 +9,5 @@ if page.comments
     include ./disqus.pug
   else if theme.valine && theme.valine.enable
     include ./valine.pug
+else if theme.valine && theme.valine.enable && theme.valine.visitor
+    include ./valine.pug

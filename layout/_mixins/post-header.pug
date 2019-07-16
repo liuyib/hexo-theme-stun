@@ -52,8 +52,15 @@ mixin postHeader(post)
             span= _p("post.reading_time") + " "
           span= min2read(post.content, {cn: postReadingTime.speed.zh, en: postReadingTime.speed.en}) + " m"
 
-      //- Can`t show the result of busuanzi counting in post list,
-      //- because will conflict by ID selector.
+      if theme.valine && theme.valine.enable && theme.valine.visitor
+        span(id=url_for(post.path) data-flag-title=post.title).leancloud_visitors
+          i.fa.fa-eye
+          if !theme.post_meta.icon_only
+            span= _p("post.reading_count") + " "
+          span.leancloud-visitors-count
+
+      //- Can`t show the result of busuanzi counting in homepage,
+      //-   because will conflict by ID selector.
       if is_post()
         if theme.busuanzi.enable && theme.busuanzi.post_pv.enable
           span.post-meta-reading-count
