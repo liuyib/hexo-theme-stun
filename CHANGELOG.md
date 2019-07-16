@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.1.1 (2019-07-16)
+
+### Bug Fixes
+
+* Solve peoblem of repeating initial comment by gitalk & gitment ([6a16476](https://github.com/liuyib/hexo-theme-stun/commit/6a16476))
+
+### Features
+
+* Add reading statistics of valine ([b4e313a](https://github.com/liuyib/hexo-theme-stun/commit/b4e313a))
+* Add valine comment ([170fcb3](https://github.com/liuyib/hexo-theme-stun/commit/170fcb3))
+* Add mask effect of top image & remove blur effect ([7667e19](https://github.com/liuyib/hexo-theme-stun/commit/7667e19))
+* Add disqus comment ([a2016e8](https://github.com/liuyib/hexo-theme-stun/commit/a2016e8))
+* Add livere comment ([a9579eb](https://github.com/liuyib/hexo-theme-stun/commit/a9579eb))
+
 ## 1.1.0 (2019-07-14)
 
 ### Bug Fixes
