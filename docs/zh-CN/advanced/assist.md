@@ -2,7 +2,7 @@
 
 ## 快捷键
 
-- 快速切换文章 <Badge text="stable"/> <Badge text="v1.0.4"/>
+- 快速切换文章 <Badge text="beta" type="warn"/> <Badge text="v1.0.4"/>
 
 当你浏览文章时，如果不想通过鼠标点击按钮来切换文章，那么你可以使用键盘的左右箭头（`←`，`→`）来快速切换文章。
 

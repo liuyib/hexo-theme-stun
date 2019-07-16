@@ -10,12 +10,12 @@
 
 首先，你需要分清下面这两个配置文件的作用：
 
-- hexo 根目录下的 `_config.yml`。这是站点配置文件，里面的配置作用于整个网站。
+- Hexo 根目录下的 `_config.yml`。这是站点配置文件，里面的配置作用于整个网站。
 - stun 根目录下的 `_config.yml`。这是主题配置文件，里面的配置只对当前主题生效。
 
 ## 保留主题配置数据
 
-如果你不想每次升级主题时，都要进行如下重复的操作：先将主题配置文件复制一份，等主题升级后再复制回去。那么你可以进行以下操作：将主题配置文件复制到 hexo 根目录下的 `source/_data/stun.yml` 文件中（没有此目录和文件就新建。目录名称不能改变，文件名称可以是任意的）。
+如果你不想每次升级主题时，都要进行如下重复的操作：先将主题配置文件复制一份，等主题升级后再复制回去。那么你可以进行以下操作：将主题配置文件复制到 **Hexo 根目录**下的 `source/_data/stun.yml` 文件中（没有此目录和文件就新建。目录名称不能改变，文件名称可以是任意的）。
 
 > 如果你进行了上述操作，当你需要修改主题配置时，只需要修改 `stun.yml` 文件即可。更新主题时，主题根目录下的 `_config.yml` 文件（可能）会更新，而你对主题配置的数据仍保留在 `stun.yml` 文件中。
 
@@ -25,7 +25,7 @@
 
 ## 国际化（i18n）
 
-修改**站点**配置文件（不是主题配置文件）：
+修改 **Hexo 根目录**下的配置文件（不是主题配置文件）`_config.yml`：
 
 ``` yaml
 language: zh-CN # 可选值 zh-CN 或 en-US
@@ -39,7 +39,7 @@ language: zh-CN # 可选值 zh-CN 或 en-US
 
 - 添加路径
 
-修改 `stun.yml` 文件：
+修改你的主题配置文件：
 
 ``` yaml
 menu:
@@ -52,7 +52,7 @@ menu:
 
 - 添加图标 
 
-修改 `stun.yml` 文件：
+修改你的主题配置文件：
 
 ``` yaml
 menu:
@@ -79,7 +79,7 @@ menu_settings:
 
 - 新建页面
 
-在 hexo 根目录执行命令：
+在 **Hexo 根目录**下执行命令：
 
 ``` bash
 $ hexo new page xxx # xxx 表示页面名称
@@ -88,9 +88,9 @@ $ hexo new page xxx # xxx 表示页面名称
 执行这条命令后，会在如下目录生成文件：`source/xxx/index.md`
 
 ::: warning 注意
-新建的页面名称，需要和 `stun.yml` 文件中添加的页面路径名称保持一致。
+新建的页面名称，需要和主题文件中添加的页面路径名称保持一致。
 
-e.g. 你在 `stun.yml` 中设置了如下路径：
+e.g. 你在主题文件中设置了如下路径：
 ``` yaml
 menu:
   about: /about-me
@@ -131,7 +131,7 @@ nav:
 
 ## Favicon <Badge text="stable"/>
 
-设置网站图标（favicon），修改 `stun.yml` 文件：
+设置网站图标（favicon），修改你的主题配置文件：
 
 ``` yaml
 favicon:
@@ -145,7 +145,7 @@ favicon:
 
 ## 网站顶部栏信息 <Badge text="stable"/>
 
-修改 `stun.yml` 文件：
+修改你的主题配置文件：
 
 ``` yaml
 header:
@@ -159,17 +159,16 @@ header:
     enable: true
     # 填写图片路径或链接
     url: https://xxxxx.png
-  # 模糊滤镜效果（对网站顶部图片进行模糊）
-  blur_effect:
-    # 是否启用
+  # 顶部背景图的遮罩效果
+  mask:
     enable: false
-    # 模糊程度（支持所有 CSS 长度单位）
-    level: 15px
+    # 透明度（取值：0 ~ 1）
+    opacity: 0.5
 ```
 
-其中 `blur_effect` <Badge text="beta" type="warn"/>，效果如下（没有启用模糊滤镜效果）：
-
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190619210340.jpg)
+::: warning 注意
+`mask` 选项，即遮罩效果，从 `v1.1.1` 版本开始支持。`blur_effect` 选项，即模糊滤镜效果，从 `v1.1.1` 版本开始弃用。
+:::
 
 ## 指定顶部图 <Badge text="stable"/>
 
@@ -186,7 +185,7 @@ top_image: https://xxxxx.jpg
 
 ## 知识共享许可协议（cc） <Badge text="stable"/>
 
-修改 `stun.yml` 文件：
+修改你的主题配置文件：
 
 ``` yaml
 creative_commons:
@@ -207,9 +206,9 @@ creative_commons:
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190619210339.png)
 
-## 返回顶部 <Badge text="stable"/>
+## 返回顶部 <Badge text="beta" type="warn"/>
 
-修改 `stun.yml` 文件：
+修改你的主题配置文件：
 
 ``` yaml
 back2top:
@@ -230,7 +229,7 @@ back2top:
 
 ## 网站底部栏信息 <Badge text="stable"/>
 
-修改 `stun.yml` 文件：
+修改你的主题配置文件：
 
 ``` yaml
 footer:
@@ -293,7 +292,7 @@ footer:
 
 ## 侧边栏设置 <Badge text="beta" type="warn"/>
 
-修改 `stun.yml` 文件：
+修改你的主题配置文件：
 
 ``` yaml
 sidebar:
@@ -311,7 +310,7 @@ sidebar:
 
 ## 侧边栏作者信息 <Badge text="stable"/>
 
-修改 `stun.yml` 文件：
+修改你的主题配置文件：
 
 ``` yaml
 author:
@@ -333,7 +332,7 @@ author:
 
 ## 友链 <Badge text="stable"/>
 
-修改 `stun.yml` 文件：
+修改你的主题配置文件：
 
 ``` yaml
 # `||` 分隔符前面表示友链的链接或信息，后面表示友链图标。
@@ -368,7 +367,7 @@ social_setting:
 
 ## 文章目录 <Badge text="stable"/>
 
-修改 `stun.yml` 文件：
+修改你的主题配置文件：
 
 ``` yaml
 toc:
@@ -390,7 +389,7 @@ toc:
 
 ## 订阅设置 <Badge text="stable"/>
 
-设置邮件订阅和 RSS 订阅，修改 `stun.yml` 文件：
+设置邮件订阅和 RSS 订阅，修改你的主题配置文件：
 
 ``` yaml
 feed:
@@ -402,7 +401,7 @@ feed:
   rss: 
 ```
 
-开启 RSS 订阅之前，你需要安装 hexo 插件：[hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed)。然后在**站点**的 `_config.yml` 文件中添加配置项（关于各个配置项的具体含义，请自行查看插件的文档）：
+开启 RSS 订阅之前，你需要安装 hexo 插件：[hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed)。然后在 **Hexo 根目录**下的配置文件 `_config.yml` 中添加配置项（关于各个配置项的具体含义，请自行查看插件的文档）：
 
 ``` yaml
 feed:
@@ -422,7 +421,7 @@ feed:
 
 ## 文章阅读进度条 <Badge text="stable"/>
 
-修改 `stun.yml` 文件：
+修改你的主题配置文件：
 
 ``` yaml
 reading_progress:
@@ -442,7 +441,7 @@ reading_progress:
 
 ## 文章顶部信息 <Badge text="stable"/>
 
-修改 `stun.yml` 文件：
+修改你的主题配置文件：
 
 ``` yaml
 post_meta:
@@ -461,7 +460,7 @@ post_meta:
     # 图标名称在这里查找
     icon: calendar-check-o
   # 文章预计的阅读时间
-  # 启用这个功能之前，你首先需要在 hexo 根目录安装依赖：
+  # 启用这个功能之前，你首先需要在 Hexo 根目录安装依赖：
   # `npm install hexo-wordcount --save`，然后重启 hexo 服务器。
   reading_time:
     # 是否启用
@@ -475,7 +474,7 @@ post_meta:
       # 英文的阅读速度
       en: 80
   # 文章字数统计
-  # 启用这个功能之前，你首先需要在 hexo 根目录安装依赖：
+  # 启用这个功能之前，你首先需要在 Hexo 根目录安装依赖：
   # `npm install hexo-wordcount --save`，然后重启 hexo 服务器。
   word_count:
     # 是否启用
@@ -492,7 +491,7 @@ post_meta:
 该功能从 `v1.0.1` 版本开始支持，在 `v1.0.3` 版本中对配置项进行了更改。
 :::
 
-如果你想设置首页 或 归档页的文章列表是否分页，可以修改 `stun.yml` 文件：
+如果你想设置首页 或 归档页的文章列表是否分页，可以修改你的主题配置文件：
 
 ``` yaml
 post_list:
@@ -510,7 +509,7 @@ post_list:
 
 ## 文章列表封面图片 <Badge text="stable"/> <Badge text="v1.0.3"/>
 
-如果你为一篇文章单独设置了顶部图，并且想要在文章列表中作为封面图片显示，可以修改 `stun.yml` 文件：
+如果你为一篇文章单独设置了顶部图，并且想要在文章列表中作为封面图片显示，可以修改你的主题配置文件：
 
 ``` yaml
 post_list:
@@ -531,7 +530,7 @@ post_list:
 该功能从 `v1.0.0-beta.0` 版本开始支持，在 `v1.0.3` 版本中对配置项进行了更改。
 :::
 
-在文章末尾显示文章的所有标签，修改 `stun.yml` 文件：
+在文章末尾显示文章的所有标签，修改你的主题配置文件：
 
 ``` yaml
 post_widget:
@@ -549,7 +548,7 @@ post_widget:
 该功能从 `v1.0.0-beta.1` 版本开始支持，在 `v1.0.3` 版本中对配置项进行了更改。
 :::
 
-在文章末尾自动添加文章结束的提示信息，修改 `stun.yml` 文件：
+在文章末尾自动添加文章结束的提示信息，修改你的主题配置文件：
 
 ``` yaml
 post_widget:
@@ -569,7 +568,7 @@ post_widget:
 
 如果想要保留文章摘要，需要**手动**在文章的 markdown 源文件中添加 `<!-- more -->` 标记。标记之前的部分都会被保留为文章摘要，显示在文章列表中。
 
-如果想要自动保留文章摘要，可以通过修改 `stun.yml` 文件：
+如果想要自动保留文章摘要，可以通过修改你的主题配置文件：
 
 ``` yaml
 auto_excerpt:
@@ -581,7 +580,7 @@ auto_excerpt:
 
 由于自动保留摘要的效果并不理想，所以这里不建议开启。
 
-## 文章置顶 <Badge text="beta" type="warn"/>
+## 文章置顶 <Badge text="stable"/>
 
 想要使用文章置顶功能，首先你需要安装 hexo 插件 [hexo-generator-index-pin-top](https://github.com/netcan/hexo-generator-index-pin-top)，然后执行命令：
 
@@ -613,7 +612,7 @@ stick_top:
 
 ## 代码高亮 <Badge text="stable"/>
 
-设置代码高亮以及高亮样式，修改 `stun.yml` 文件：
+设置代码高亮以及高亮样式，修改你的主题配置文件：
 
 ``` yaml
 highlight_theme: light
@@ -635,7 +634,7 @@ highlight_theme: light
 
 ## 代码换行 <Badge text="stable"/>
 
-设置代码溢出时，是否换行，修改 `stun.yml` 文件：
+设置代码溢出时，是否换行，修改你的主题配置文件：
 
 ``` yaml
 code_word_wrap: true
@@ -655,7 +654,7 @@ code_word_wrap: true
 
 ## 图片水平对齐方式 <Badge text="beta" type="warn"/>
 
-设置文章中图片的水平对齐方式，修改 `stun.yml` 文件：
+设置文章中图片的水平对齐方式，修改你的主题配置文件：
 
 ``` yaml
 img_horizonal_align: 
@@ -685,7 +684,7 @@ img_horizonal_align:
 
 ## 文字与图片的垂直对齐方式 <Badge text="beta" type="warn"/>
 
-如果你没有手动设置**图片的水平对齐方式**（手动设置了请忽略此配置项），那么图片将支持和文字在同一行内显示。此时，如果你想设置文字与图片的垂直对齐方式，修改 `stun.yml` 文件：
+如果你没有手动设置**图片的水平对齐方式**（手动设置了请忽略此配置项），那么图片将支持和文字在同一行内显示。此时，如果你想设置文字与图片的垂直对齐方式，修改你的主题配置文件：
 
 ``` yaml
 text_vertical_align_with_img: bottom
@@ -709,7 +708,7 @@ text_vertical_align_with_img: bottom
 
 ## 赞赏码 <Badge text="stable"/>
 
-设置文章的赞赏码，修改 `stun.yml` 文件：
+设置文章的赞赏码，修改你的主题配置文件：
 
 ``` yaml
 # Reward
@@ -728,7 +727,7 @@ reward:
 
 ## 标签云 <Badge text="beta" type="warn"/>
 
-如果你启用了 `tags` 页面，想要对其进行设置，修改 `stun.yml` 文件：
+如果你启用了 `tags` 页面，想要对其进行设置，修改你的主题配置文件：
 
 ``` yaml
 tag_cloud:
@@ -750,7 +749,7 @@ tag_cloud:
 
 1. 使用 HTML 中的 `img` 标签，通过 `style` 属性控制图片大小。
 2. 使用 hexo 提供的语法 `{% https://xxxxx.png width height %}`，填入图片地址和宽、高即可。
-3. stun 提供了一个便捷的方法来指定图片大小，你只需要在图片路径后面添加 `?size=宽度x高度` <Badge text="stable"/> 后缀即可。例如：
+3. stun 主题提供了一个便捷的方法来指定图片大小，你只需要在图片路径后面添加 `?size=宽度x高度` <Badge text="stable"/> 后缀即可。例如：
 
 ``` markdown
 ![](https://xxxxx.png?size=200x100)

@@ -43,7 +43,7 @@ gitment:
 ``` yaml
 gitalk:
   # 是否启用
-  enable: true
+  enable: false
   # Github 用户名
   owner: 
   # Github 仓库名（需要是公开的仓库）
@@ -63,14 +63,79 @@ gitalk:
 
 如果你遇到了问题，请查看 Gitalk 的文档：[https://github.com/gitalk/gitalk](https://github.com/gitalk/gitalk)
 
+### Valine <Badge text="stable"/> <Badge text="v1.1.1"/>
+
+Valine 评论系统依赖于 LeanCloud，所以你需要[登录](https://leancloud.cn/dashboard/login.html#/signin)或[注册](https://leancloud.cn/dashboard/login.html#/signup) LeanCloud，获取 `APP ID` 和 `APP Key`。详细步骤，请查看：[https://valine.js.org/quickstart.html](https://valine.js.org/quickstart.html)
+
+``` yaml
+valine:
+  enable: false
+  # 你的 LeanCloud app appid
+  appid: 
+  # 你的 LeanCloud app appkey
+  appkey: 
+  # 是否启用评论回复邮件提醒
+  notify: true
+  # 是否启用评论验证码
+  verify: true
+  # 评论框占位提示符
+  placeholder: Just go go
+  # Gravatar 头像展示方式
+  avatar: mp
+  # 评论者相关属性（默认：昵称、邮件、网址）
+  meta: nick,mail,link
+  # 评论列表分页，每页条数
+  pageSize: 10
+  # 是否启用文章访问量统计
+  visitor: false
+  # 是否记录评论者IP
+  recordIP: false
+  # 多语言支持，可选值：zh-cn, en
+  language: 
+```
+
+完成上述步骤之后，你还需要在 LeanCloud 中新建 或 选择一个名为 `Comment` 的 Class 才能使用 Valine。详细步骤，请查看：[https://valine.js.org/quickstart.html#评论数据管理](https://valine.js.org/quickstart.html#评论数据管理)
+
+### Livere（来必力）<Badge text="stable"/> <Badge text="v1.1.1"/>
+
+进入来必力[官网](https://livere.com/)注册账号，登录，点击安装，选择合适的版本后，会显示安装代码，在代码中可以找到你的 `uid`，例如：
+
+``` html
+<div id="lv-container" data-id="city" data-uid="这里是你的 uid">
+```
+
+然后将 `uid` 填入主题的配置文件即可：
+
+``` yaml
+livere:
+  enable: false
+  uid: 
+```
+
+### Disqus <Badge text="stable"/> <Badge text="v1.1.1"/>
+
+进入 Disqus [官网](https://disqus.com/)注册账号，登录，点击 `I want to install Disqus on my site`，在 `Website Name` 字段中，输入你的网站的名称（可以是任意的），然后选择好 `Category` 和 `Language` 字段后，点击 `Create Site`。
+
+这里输入的网站名称，就是你的 `shortname`，将其填入主题的配置文件即可：
+
+``` yaml
+disqus:
+  enable: false
+  shortname: 
+  # 是否显示文章的评论数
+  count: true
+```
+
 ## 统计与分析
 
 ### 卜蒜子统计 <Badge text="stable"/>
 
+修改主题配置文件：
+
 ``` yaml
 busuanzi:
   # 是否启用
-  enable: true
+  enable: false
   site:
     # 是否只显示图标
     icon_only: false
@@ -133,7 +198,7 @@ busuanzi:
 
 4. 修改 Hexo 配置
 
-修改你的**站点**配置文件 `_config.yml`，添加 `applicationID` & `apiKey` & `indexName` 选项。
+修改你 **Hexo 根目录**下的配置文件 `_config.yml`，添加 `applicationID` & `apiKey` & `indexName` 选项。
 
 ``` yaml
 algolia:
@@ -167,7 +232,7 @@ $ hexo algolia
 
 6. 修改 stun 配置
 
-在你的主题配置文件 `stun.yml` 或 `_config.yml` 中，修改以下配置项。
+修改你的主题配置文件：
 
 ``` yaml
 algolia_search:
