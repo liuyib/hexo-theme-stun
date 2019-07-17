@@ -32,6 +32,19 @@ sidebar:
   tags: Tags
   read_info: You have read
 
+# 社交链接
+social:
+  github: Github
+  google: Google
+  twitter: Twitter
+  youtube: Youtube
+  segmentfault: Segmentfault
+  zhihu: Zhihu
+  weibo: Weibo
+  wechat: Wechat
+  telegram: Telegram
+  qq: QQ
+
 # Post
 post:
   created: Created
@@ -78,10 +91,3 @@ footer:
   theme: Theme
   uv: Visitors
   pv: Views
-
-notification:
-  alert:
-    success: Success Tips
-    info: Informational Notes
-    warning: Warning
-    error: Error

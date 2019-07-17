@@ -29,7 +29,7 @@ aside#sidebar
               - let socialLinkIcon = _.trim(_.get(socialItem, '[1]'))
               span.sidebar-social-item
                 a(href=socialLinkPath target="_blank"
-                    title=`${name} → ${socialLinkPath}`)
+                    data-popover=_p(`social.${name}`) data-popover-pos="up")
 
                   if socialLinkIcon && socialLinkIcon.match("origin:")
                     span!= socialLinkIcon.split("origin:")[1]
@@ -45,7 +45,7 @@ aside#sidebar
           - let feedEmail = theme.feed.email
           if feedEmail
             span.sidebar-feed-email
-              a(href=feedEmail target="_blank" title=`email → ${feedEmail}`)
+              a(href=feedEmail target="_blank")
                 i.fa.fa-envelope.sidebar-feed-icon
                 span Email
                 span= _p("sidebar.subscribe")
@@ -53,7 +53,7 @@ aside#sidebar
           - let feedRSS = theme.feed.rss
           if feedRSS
             span.sidebar-feed-rss
-              a(href=url_for(feedRSS) target="_blank" title=`rss → ${url_for(feedRSS)}`)
+              a(href=url_for(feedRSS) target="_blank")
                 i.fa.fa-rss.sidebar-feed-icon
                 span RSS
                 span= _p("sidebar.subscribe")
@@ -85,7 +85,8 @@ aside#sidebar
         - let ccLanguage = (themeCC.language && themeCC.language.toLowerCase()) || "en"
         - let ccURL = `https://creativecommons.org/licenses/${ccLicense}/4.0/deed.${ccLanguage}`
         div.sidebar-cc
-          a(href=ccURL target="_blank")
+          a(href=ccURL target="_blank"
+              data-popover="Creative Commons" data-popover-pos="up")
             img(src=url_for(`/${theme.images}/cc-${ccLicense}.svg`) alt="creative commons")
 
     if theme.reading_progress.enable && is_post()

@@ -273,8 +273,8 @@ post_list:
   paginate:
     home: true
     archives: false
-  # Whether to show the top image of post.
-  top_image:
+  # Whether to show the cover image of post.
+  cover_image:
     home: false
 
 # The widget of post.

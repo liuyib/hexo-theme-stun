@@ -3,8 +3,8 @@ script(src='https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js')
 
 script.
   window.onload = function() {
-    var GUEST_INFO = ['nick', 'mail', 'link'];
-    var guest_info = '!{ theme.valine.meta }';
+    let GUEST_INFO = ['nick', 'mail', 'link'];
+    let guest_info = '!{ theme.valine.meta }';
 
     guest_info = guest_info.split(',').filter(function(item) {
       return GUEST_INFO.indexOf(item) > -1;

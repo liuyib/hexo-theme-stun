@@ -12,13 +12,15 @@ $back-to-top-hover-color = convert(
   hexo-config('back2top.icon.hover_color') || '#999')
 
 .back-top-inner
-  transform: rotate($back-to-top-rotate)
-
   i
     font-size: 1.5rem
     color: $back-to-top-color
     transition: color .2s
+    transform: rotate($back-to-top-rotate)
 
     &:hover
       color: $back-to-top-hover-color
       cursor: pointer
+  
+  &[data-popover][data-popover-pos="up"]:hover::before
+    transform: translate(-50%, -125%)

@@ -1,5 +1,38 @@
 clearAStyle()
   border-bottom: 0
-  
+
   &:hover
     border-bottom: 0
+
+$popover-bg-color = alpha(#000, .7)
+
+[data-popover]
+  position: relative
+
+// UI components of "popover"
+[data-popover]::before
+  position: absolute
+  top: 0
+  left: 50%
+  z-index: $z-index1
+  font-family: sans-serif, Arial
+  font-size: $font-size-base
+  font-weight: normal
+  font-style: normal
+  white-space: nowrap
+  color: #fff
+  background-color: $popover-bg-color
+  opacity: 0
+  text-shadow: none
+  transition: opacity .2s, transform .2s
+  transform: translate(-50%, -70%)
+  pointer-events: none
+
+[data-popover]::before
+  content: attr(data-popover)
+  border-radius: 4px
+  padding: .2rem .6rem
+
+[data-popover][data-popover-pos="up"]:hover::before
+  opacity: 1
+  transform: translate(-50%, -115%)
