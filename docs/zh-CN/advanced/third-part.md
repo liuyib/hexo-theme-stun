@@ -24,7 +24,9 @@ gitment:
   owner: 
   # Github 仓库名（需要是公开的仓库）
   repo: 
+  # Github 应用程序客户端 ID
   client_id: 
+  # Github 应用程序客户端密钥
   client_secret: 
   # 是否启用懒加载（如果启用，只有手动点击显示按钮才会显示评论）
   lazy: false
@@ -32,7 +34,7 @@ gitment:
 
 如果你遇到了问题，请查看 Gitment 的文档：[https://github.com/imsun/gitment](https://github.com/imsun/gitment)
 
-### Gitalk <Badge text="stable"/> <Badge text="v1.0.4"/>
+### Gitalk <Badge text="stable"/> <Badge text="v1.1.0"/>
 
 首先，你需要注册一个新的 **GitHub Application** 来授权，点击[这里](https://github.com/settings/applications/new)注册。这样可以获取所需的 `client ID` 和 `client secret`。
 
@@ -54,10 +56,10 @@ gitalk:
   client_secret: 
   # GitHub 仓库所有者和合作者，只有这些人可以初始化 Gitalk
   admin: 
-  # 类似 B 站的关灯模式
+  # 类似于 B 站的关灯模式
   distraction_free_mode: true
   # 如果你想让每一个参观你网站的人看到统一的语言，你可以在这里设置，
-  # 可选值有：en, zh-CN, es-ES, fr, ru, zh-TW
+  # 可选值：en, zh-CN, es-ES, fr, ru, zh-TW
   language: 
 ```
 
@@ -140,7 +142,7 @@ busuanzi:
     # 是否只显示图标
     icon_only: false
     # 统计站点 UV 数量
-    # 关于 UV 和 PV 的概念：https://zhuanlan.zhihu.com/p/27672009
+    # 关于 UV 和 PV 的概念：https://zhuanlan.zhihu.com/p/27672009/
     uv:
       # 是否启用
       enable: true
@@ -237,7 +239,7 @@ $ hexo algolia
 ``` yaml
 algolia_search:
   # 是否启用
-  enable: true
+  enable: false
   hits:
     # 每一页显示的搜索结果数量
     per_page: 10

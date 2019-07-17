@@ -2,7 +2,7 @@
 
 ::: tip 前言
 - 修改配置文件、安装新的依赖等，都需要重启 hexo 服务器。
-- 没有特别说明最早开始支持的版本的配置项，默认从 `v1.0.0` 版本开始支持。
+- 没有特别说明，配置项默认从 `v1.0.0` 版本开始支持。
 - 稳定的配置项使用 <Badge text="stable"/> 标明，表示基本不会变动；不稳定的配置项使用 <Badge text="beta" type="warn"/> 标明，表示未来可能会变动甚至删除。
 :::
 
@@ -156,7 +156,7 @@ header:
   # 顶部背景图片
   bg_image:
     # 是否启用
-    enable: true
+    enable: false
     # 填写图片路径或链接
     url: https://xxxxx.png
   # 顶部背景图的遮罩效果
@@ -192,14 +192,14 @@ creative_commons:
   # 是否启用
   enable: true
   # 可选值: BY | BY-SA | BY-ND | BY-NC | BY-NC-SA | BY-NC-ND
-  # 详情请访问: https://creativecommons.org/share-your-work/licensing-types-examples
+  # 详情请访问: https://creativecommons.org/share-your-work/licensing-types-examples/
   license: BY-NC-SA
-  # 在侧边栏中显示
+  # 是否在侧边栏中显示
   sidebar: true
-  # 在文章底部显示
+  # 是否在文章底部显示
   post: true
-  # 设置许可协议的显示语言（当用户点击查看许可协议时，会以你设置的语言进行显示）
-  language: zh # zh 或 en 等等，支持 30 多种语言。
+  # 设置许可协议的显示语言，默认值：en（当用户查看许可协议时，会以你设置的语言进行显示）
+  language: 
 ```
 
 效果如下：
@@ -236,7 +236,7 @@ footer:
   # 顶部背景图
   bg_image:
     # 是否启用
-    enable: true
+    enable: false
     # 填写图片路径或链接
     url: https://xxxxx.png
   # 版权信息
@@ -273,7 +273,7 @@ footer:
     enable: true
     # 显示版本号（例如：vX.X.X）
     version: true
-  # 备案信息（只有中国开发者会用到）详情: http://www.miitbeian.gov.cn
+  # 备案信息（只有中国开发者会用到）详情: http://www.miitbeian.gov.cn/
   beian:
     # 是否启用
     enable: false
@@ -325,17 +325,17 @@ author:
     # 头像透明度（取值：0 ~ 1）
     opacity: 1
     # 鼠标 hover 动画，可选值：trun 或 shake
-    animation: shake
-  # 格言（也可以是任意一句想写的话）
+    animation: trun
+  # 格言（可以是任意一句想写的话）
   motto: hello world
 ```
 
-## 友链 <Badge text="stable"/>
+## 社交链接 <Badge text="stable"/>
 
 修改你的主题配置文件：
 
 ``` yaml
-# `||` 分隔符前面表示友链的链接或信息，后面表示友链图标。
+# `||` 分隔符前面表示社交链接的链接或信息，后面表示社交链接图标。
 # 图标的名称在这里查找：https://fontawesome.com/v4.7.0/icons/
 # 如果你找不到想要的图标，可以考虑用文字来代替图标显示。
 # 通过添加 `origin:` 前缀即可显示文字。例如：`origin:知` 会以 `知` 代替图标显示。
@@ -350,20 +350,49 @@ social:
   wechat: yournumber || weixin
   telegram: yournumber || telegram
   qq: yournumber || qq
-  # 你可以手动添加这里没有的友链
+  # 你可以自行添加这里没有的社交链接，格式如下：
   # xxx: xxx || (origin:)xxx
 
-# 友链的一些设置
+# 社交链接的一些设置
 social_setting:
   # 是否启用
   enable: true
   # 是否只显示图标
   icon_only: true
-  # 友链之间的排列方式，取值同 CSS 的 "justify-content" 属性。
+  # 社交链接之间的排列方式，取值同 CSS 的 "justify-content" 属性。
   # 可选值：flex-start | center | flex-end | space-between 等。
-  # 更多取值请查看：https://developer.mozilla.org/zh-CN/docs/Web/CSS/justify-content
+  # 更多取值请查看：https://developer.mozilla.org/zh-CN/docs/Web/CSS/justify-content/
   text_align: center
 ```
+
+当你添加一个主题配置文件里，默认没有的社交链接时，你需要进行国际化设置。这里以添加社交链接 `掘金` 为例，步骤如下：
+
+1. 修改主题配置文件
+
+``` yaml
+social:
+  juejin: https://juejin.im/timeline || origin:掘
+```
+
+2. 修改 `themes/stun/languages` 目录下的文件
+
+`zh-CN`:
+
+``` yaml
+social:
+  juejin: 掘金
+```
+
+`en`:
+
+``` yaml
+social:
+  juejin: juejin
+```
+
+效果如下：
+
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190717165333.png)
 
 ## 文章目录 <Badge text="stable"/>
 
@@ -515,7 +544,7 @@ post_list:
 post_list:
   # 文章列表里的文章的封面图片
   top_image:
-    home: true
+    home: false
 ```
 
 默认网站首页的文章列表开启分页，归档页面的文章列表不开启分页。
