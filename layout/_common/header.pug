@@ -9,11 +9,12 @@ header#header(
     div.header-nav-inner
       div.fa.fa-bars.header-nav-menu-icon
 
-      div.header-nav-search
-        if !theme.menu_settings.text_only
-          i.fa.fa-search
-        if !theme.menu_settings.icon_only
-          span!= _p("nav.search")
+      if theme.algolia_search && theme.algolia_search.enable
+        div.header-nav-search
+          if !theme.menu_settings.text_only
+            i.fa.fa-search
+          if !theme.menu_settings.icon_only
+            span!= _p("nav.search")
       
       div.header-nav-menu
         each value, name in (theme.menu || [])
