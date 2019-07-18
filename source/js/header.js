@@ -4,7 +4,6 @@ $(document).ready(function () {
   $(document).click(function () {
     $menu.removeClass('show');
   });
-  [1, 2, 3].forEach(item => item);
 
   $('.header-nav-menu a').click(function (e) {
     var ev = e || window.event;

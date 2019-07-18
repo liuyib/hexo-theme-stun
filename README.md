@@ -3,6 +3,9 @@
 <h3 align="center">一个漂亮、简洁的 hexo 主题</h3>
 
 <p align="center">
+  <a href="http://standardjs.com" target="_blank" rel="noopener noreferrer">
+    <img alt="js-standard-style" src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square">
+  </a>
   <a href="http://commitizen.github.io/cz-cli/" target="_blank" rel="noopener noreferrer">
     <img alt="Commitizen friendly" src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square">
   </a>

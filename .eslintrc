@@ -7,17 +7,17 @@
   "extends": "standard",
   "globals": {
     "Atomics": "readonly",
-    "SharedArrayBuffer": "readonly"
+    "SharedArrayBuffer": "readonly",
+    "CONFIG": "readonly",
+    "instantsearch": "readonly",
+    "debounce": "readonly",
+    "throttle": "readonly",
+    "isMobile": "readonly",
+    "codeToKeyCode": "readonly",
+    "popAlert": "readonly"
   },
   "parserOptions": {
-    "ecmaVersion": 2018,
-    "debounce": false,
-    "throttle": false,
-    "isMobile": false,
-    "codeToKeyCode": false,
-    "popAlert": false,
-    "instantsearch": false,
-    "GLOBAL_CONFIG": false
+    "ecmaVersion": 2018
   },
   "rules": {
     "indent": ["error", 2],

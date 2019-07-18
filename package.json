@@ -7,7 +7,9 @@
     "cz": "git cz",
     "release": "standard-version",
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:build": "vuepress build docs",
+    "lint": "eslint --ext .js source/js",
+    "lint:fix": "eslint --fix --ext .js source/js"
   },
   "repository": {
     "type": "git",
@@ -23,17 +25,22 @@
     "url": "https://github.com/liuyib/hexo-theme-stun/issues"
   },
   "dependencies": {
-    "eslint-config-standard": "^12.0.0",
     "nib": "^1.1.2"
   },
   "devDependencies": {
-    "@commitlint/cli": "^7.6.1",
-    "commitizen": "^3.1.1",
+    "@commitlint/cli": "^8.1.0",
+    "commitizen": "^3.1.2",
     "commitlint-config-cz": "^0.11.1",
     "cz-customizable": "^6.2.0",
+    "eslint": "^6.0.1",
+    "eslint-config-standard": "^13.0.1",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
     "husky": "^2.3.0",
     "standard-version": "^6.0.1",
-    "vuepress": "^0.14.11"
+    "vuepress": "^1.0.2"
   },
   "husky": {
     "hooks": {
