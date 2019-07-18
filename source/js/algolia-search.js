@@ -1,35 +1,36 @@
-$(document).ready(function() {
-  $('.header-nav-search').click(function() {
+$(document).ready(function () {
+  $('.header-nav-search').click(function () {
     $('body').css('overflow', 'hidden');
-    $('.algolia-popup').velocity('stop')
+    $('.algolia-popup')
+      .velocity('stop')
       .velocity('transition.expandIn', {
         duration: 300,
         complete: function () {
-          $('.algolia-popup input').focus()
+          $('.algolia-popup input').focus();
         }
-      })
-    $('.algolia-mask').velocity('stop')
+      });
+    $('.algolia-mask')
+      .velocity('stop')
       .velocity('transition.fadeIn', {
         duration: 300
-      })
+      });
   });
 
-  $('.algolia-mask, .algolia-close')
-    .on('click', function () {
-      closeSearch();
-    });
-  
+  $('.algolia-mask, .algolia-close').on('click', function () {
+    closeSearch();
+  });
+
   $(document).on('keydown', function (e) {
-    var e = e || window.event;
-    
+    var ev = e || window.event;
+
     // Escape <=> 27
-    if (e.keyCode === codeToKeyCode('Escape')) {
+    if (ev.keyCode === codeToKeyCode('Escape')) {
       closeSearch();
     }
   });
 
   var algolia = CONFIG.algolia;
-  
+
   if (!(algolia.appId && algolia.apiKey && algolia.indexName)) {
     return console.error('Algolia setting is invalid.');
   }
@@ -65,19 +66,21 @@ $(document).ready(function() {
       container: '#algolia-hits',
       templates: {
         item: function (data) {
-          var link = data.permalink ? data.permalink : (CONFIG.root + data.path)
+          var link = data.permalink ? data.permalink : CONFIG.root + data.path;
           return (
-            '<a href="' + link + '" class="algolia-hit-item-link">' +
+            '<a href="' +
+            link +
+            '" class="algolia-hit-item-link">' +
             data._highlightResult.title.value +
             '</a>'
-          )
+          );
         },
         empty: function (data) {
           return (
             '<div id="algolia-hits-empty">' +
             algolia.languages.hits_empty.replace(/\$\{query}/, data.query) +
             '</div>'
-          )
+          );
         }
       },
       cssClasses: {
@@ -85,9 +88,9 @@ $(document).ready(function() {
       }
     })
   );
-  
+
   // The stats of search results.
-  if (!!$('#algolia-stats')[0]) {
+  if ($('#algolia-stats')[0]) {
     search.addWidget(
       instantsearch.widgets.stats({
         container: '#algolia-stats',
@@ -95,11 +98,13 @@ $(document).ready(function() {
           body: function (data) {
             var stats = algolia.languages.hits_stats
               .replace(/\$\{hits}/, data.nbHits)
-              .replace(/\$\{time}/, data.processingTimeMS)
+              .replace(/\$\{time}/, data.processingTimeMS);
             return (
               stats +
               '<span class="algolia-logo pull-right">' +
-              '  <img src="' + CONFIG.root + 'images/algolia.svg" alt="Algolia" />' +
+              '  <img src="' +
+              CONFIG.root +
+              'images/algolia.svg" alt="Algolia" />' +
               '</span>'
             );
           }
@@ -132,15 +137,17 @@ $(document).ready(function() {
 
   search.start();
 
-  function closeSearch() {
+  function closeSearch () {
     $('body').css('overflow', 'auto');
-    $('.algolia-popup').velocity('stop')
+    $('.algolia-popup')
+      .velocity('stop')
       .velocity('transition.expandOut', {
         duration: 300
-      })
-    $('.algolia-mask').velocity('stop')
+      });
+    $('.algolia-mask')
+      .velocity('stop')
       .velocity('transition.fadeOut', {
         duration: 300
-      })
+      });
   }
 });

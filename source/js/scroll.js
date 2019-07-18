@@ -1,49 +1,62 @@
-$(document).ready(function() {
+$(document).ready(function () {
   // The previous distance from the page to the top.
   var prevScrollTop = 0;
-  
+
   // Initial run.
   headerNavScroll();
   backToTop();
 
-  $(window).scroll(throttle(function () {
-    headerNavScroll();
-    backToTop();
-  }, 20, 100));
-  
+  $(window).scroll(
+    throttle(
+      function () {
+        headerNavScroll();
+        backToTop();
+      },
+      20,
+      100
+    )
+  );
+
   // Click the heading.
   $('.main-content')
     .find('h1,h2,h3,h4,h5,h6')
     .on('click', function () {
-      scrollHeadingToTop('#' + $(this).attr('id'))
+      scrollHeadingToTop('#' + $(this).attr('id'));
     });
 
   // Click the post toc.
   $('.toc-link').on('click', function (e) {
-    e.preventDefault();
+    var ev = e || window.event;
 
+    ev.preventDefault();
     scrollHeadingToTop($(this).attr('href'));
   });
 
   $('#back-top').click(function () {
-    $('body').velocity('stop')
+    $('body')
+      .velocity('stop')
       .velocity('scroll', {
         duration: 500,
         easing: 'easeOutQuart'
       });
 
     if (CONFIG.back2top_animation) {
-      $('#back-top').velocity({
-        translateY: '-100vh',
-      }, {
-        duration: 500
-      }).velocity('reverse', {
-        duration: 10
-      });
+      $('#back-top')
+        .velocity(
+          {
+            translateY: '-100vh'
+          },
+          {
+            duration: 500
+          }
+        )
+        .velocity('reverse', {
+          duration: 10
+        });
     }
   });
 
-  function headerNavScroll() {
+  function headerNavScroll () {
     var scrollTop = $(window).scrollTop();
     var delta = scrollTop - prevScrollTop;
 
@@ -70,15 +83,16 @@ $(document).ready(function() {
     prevScrollTop = scrollTop;
   }
 
-  function scrollHeadingToTop(anchor) {
-    $(anchor).velocity('stop')
+  function scrollHeadingToTop (anchor) {
+    $(anchor)
+      .velocity('stop')
       .velocity('scroll', {
         duration: 500,
         easing: 'easeOutSine'
       });
   }
 
-  function backToTop() {
+  function backToTop () {
     var scrollTop = $(window).scrollTop();
 
     if (scrollTop !== 0) {

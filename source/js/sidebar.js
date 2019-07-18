@@ -1,7 +1,7 @@
-$(document).ready(function() {
+$(document).ready(function () {
   var $toc = $('.sidebar-toc');
   var $view = $('.sidebar-overview');
-  
+
   // The heading that reached the top currently.
   var currHeading = null;
   // The heading that reached the top last time.
@@ -11,14 +11,13 @@ $(document).ready(function() {
   var isTocScroll = false;
 
   // Distance from sidebar to top.
-  var SIDEBAR_STICKY_TOP = 
-    parseInt(CONFIG.sidebar_offsetTop);
-  
+  var SIDEBAR_STICKY_TOP = parseInt(CONFIG.sidebar_offsetTop);
+
   // Is toc in anime.
   var isAnime = false;
   // Is toc in max heihgt.
   var isMaxH = true;
-  
+
   // Initial run
   autoSpreadToc();
   scrollTocToMiddle();
@@ -33,14 +32,14 @@ $(document).ready(function() {
     sidebarSticky();
     sidebarAdjustHeight();
   });
-  
+
   $('.sidebar-nav-toc').click(function () {
     $('.sidebar-nav-toc').toggleClass('current');
     $('.sidebar-nav-overview').toggleClass('current');
-    
+
     $toc.css('display', 'block');
     $toc.velocity('fadeIn');
-    
+
     $view.css('display', 'none');
     $view.velocity('fadeOut');
   });
@@ -56,34 +55,36 @@ $(document).ready(function() {
     $view.velocity('fadeIn');
   });
 
-  if ($('.main-content, .main-content-layout').height() <
-      $('#sidebar').height()) {
+  if (
+    $('.main-content, .main-content-layout').height() < $('#sidebar').height()
+  ) {
     $('#main').css('min-height', $('#main').height());
   }
 
   // Automatically expand items in the article directory
   //   based on the scrolling of heading in the article.
-  function autoSpreadToc() {
+  function autoSpreadToc () {
     var $postBody = $('.post-body');
     var $firsetChild = $postBody.find('h1,h2,h3,h4,h5,h6').first();
-    
+
     // All heading are not to the top.
-    if ($postBody[0] && (!!$firsetChild[0] && 
-        $firsetChild.offset().top - $(window).scrollTop() > 0)) {
+    if (
+      $postBody[0] &&
+      (!!$firsetChild[0] &&
+        $firsetChild.offset().top - $(window).scrollTop() > 0)
+    ) {
       $('.sidebar-toc li').removeClass('active current');
 
       return;
     }
 
-    $postBody.find('h1,h2,h3,h4,h5,h6')
-      .each(function (index, item) {
-        if (item && (item.getBoundingClientRect().top < 0)) {
-          currHeading = $(item).attr('id');
-        }
-      });
-      
+    $postBody.find('h1,h2,h3,h4,h5,h6').each(function (index, item) {
+      if (item && item.getBoundingClientRect().top < 0) {
+        currHeading = $(item).attr('id');
+      }
+    });
+
     if (currHeading === lastHeading) {
-      return;
     } else {
       var targetLink = $(`.sidebar-toc a[href="#${currHeading}"]`);
 
@@ -100,32 +101,30 @@ $(document).ready(function() {
   }
 
   // Scroll the post toc to the middle.
-  function scrollTocToMiddle() {
+  function scrollTocToMiddle () {
     var $toc = $('.sidebar-toc');
     var $currLink = $('.sidebar-toc .current a');
-    
+
     if ($currLink[0] && $toc[0]) {
       var tocTop = $currLink.offset().top - $toc.offset().top;
-      
-      isTocScroll = (tocTop > $toc.height() ||
-        tocTop < 0) ? true : false;
+
+      isTocScroll = !!(tocTop > $toc.height() || tocTop < 0);
     }
-    
+
     if (isTocScroll) {
-      $currLink.velocity('stop')
-        .velocity('scroll', {
-          container: $toc,
-          offset: -($toc.height() / 2),
-          duration: 500,
-          easing: 'easeOutQuart'
-        });
+      $currLink.velocity('stop').velocity('scroll', {
+        container: $toc,
+        offset: -($toc.height() / 2),
+        duration: 500,
+        easing: 'easeOutQuart'
+      });
     }
   }
-  
+
   // Sticky the sidebar when it arrived the top.
-  function sidebarSticky() {
+  function sidebarSticky () {
     var mainInner = $('.main-inner')[0];
-    
+
     if (mainInner) {
       var targetY = mainInner.getBoundingClientRect().top;
 
@@ -138,50 +137,58 @@ $(document).ready(function() {
   }
 
   // Auto adjust the height of sidebar when it arrive footer.
-  function sidebarAdjustHeight() {
-    var footerTop = $('#footer').offset().top
+  function sidebarAdjustHeight () {
+    var footerTop = $('#footer').offset().top;
     var footerH = $('#footer')[0].getBoundingClientRect().height;
-    var sidebarTop = $('.sidebar-inner').offset().top
+    var sidebarTop = $('.sidebar-inner').offset().top;
     var sidebarH = $('.sidebar-inner')[0].getBoundingClientRect().height;
 
     if (!isAnime && sidebarTop + sidebarH > footerTop) {
-      var targetTocH =
-        parseInt($('.sidebar-toc').css('max-height')) - footerH;
+      var targetTocH = parseInt($('.sidebar-toc').css('max-height')) - footerH;
       isAnime = true;
-      
-      $('.sidebar-toc').velocity({
-        maxHeight: targetTocH
-      }, {
-        duration: 300,
-        complete: function () {
-          isAnime = false;
-          isMaxH = false;
+
+      $('.sidebar-toc').velocity(
+        {
+          maxHeight: targetTocH
+        },
+        {
+          duration: 300,
+          complete: function () {
+            isAnime = false;
+            isMaxH = false;
+          }
         }
-      });
-    } else if (!isMaxH && !isAnime && $(window).height() <
-        $('#footer')[0].getBoundingClientRect().top) {
+      );
+    } else if (
+      !isMaxH &&
+      !isAnime &&
+      $(window).height() < $('#footer')[0].getBoundingClientRect().top
+    ) {
       isAnime = true;
-      
-      $('.sidebar-toc').velocity({
-        maxHeight: '70vh'
-      }, {
-        duration: 240,
-        complete: function () {
-          isAnime = false;
-          isMaxH = true;
+
+      $('.sidebar-toc').velocity(
+        {
+          maxHeight: '70vh'
+        },
+        {
+          duration: 240,
+          complete: function () {
+            isAnime = false;
+            isMaxH = true;
+          }
         }
-      });
+      );
     }
   }
 
   // Update the reading progress lines of post.
-  function readProgress() {
+  function readProgress () {
     var $post = $('.main-content');
-    var scrollH = ($post[0] &&
-      $post[0].getBoundingClientRect().top * -1) || 0;
-    
-    var percent = parseInt((scrollH / Math.abs(($post.height() -
-      $(window).height()))) * 100);
+    var scrollH = ($post[0] && $post[0].getBoundingClientRect().top * -1) || 0;
+
+    var percent = parseInt(
+      (scrollH / Math.abs($post.height() - $(window).height())) * 100
+    );
     percent = percent > 100 ? 100 : percent < 0 ? 0 : percent;
     percent += '%';
 
