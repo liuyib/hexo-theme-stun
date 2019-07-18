@@ -20,6 +20,20 @@ if (hexo-config('sidebar.enable'))
     $content-position
       float: left
 
+if (hexo-config('word_wrap.link'))
+  $link-word-wrap
+    white-space: normal
+    word-break: break-all
+else
+  $link-word-wrap
+    white-space: normal
+    word-break: normal
+
+.home-content,
+.main-content,
+.main-content-layout
+  @extend $link-word-wrap
+
 .home-content
   font-size: $font-main-base
   @extend $content-position

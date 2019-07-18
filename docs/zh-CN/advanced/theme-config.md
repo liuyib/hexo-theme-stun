@@ -789,3 +789,30 @@ tag_cloud:
 如果你想修改主题的样式，强烈推荐将样式代码写在 `source/css/_custom` 目录下的 `index.styl` 文件中。这样，当主题更新时，不会覆盖你已经修改了的样式代码。
 
 当然，你也可以进行模块化分类：在该目录下新建样式文件，然后通过 `@import xxx` 语句在同目录下的 `index.styl` 文件中引入你新建的样式文件即可。
+
+### 添加 Emoji 支持
+
+如果想要使用 Emoji，你可以直接在[这里](http://emojihomepage.com/)复制粘贴使用。如果你更喜欢使用 Emoji 代码，例如：`:sparkles:` 将会显示为 :sparkles:, 那么你需要安装插件 [hexo-filter-github-emojis](https://github.com/crimx/hexo-filter-github-emojis) 来支持这种语法。
+
+安装这个插件，请在 hexo 根目录下，执行指令：
+
+``` bash
+$ npm install hexo-filter-github-emojis --save
+```
+
+如果你不喜欢 `::` 的语法，你可以使用下面这种方法代替：
+
+``` text
+{% github_emoji sparkles %}
+```
+
+如果你需要某个 markdown 文件不解析这种语法，可以在 markdown 文件里的 `front-matter` 中，设置 `no-emoji: true`。这样 `::` 会保持原来的样子。
+
+``` yaml
+---
+title: Hello World
+no-emoji: true
+---
+```
+
+有关该插件的更详尽的用法，请自行查阅其[文档](https://github.com/crimx/hexo-filter-github-emojis)。查看所有支持的 Emoji 请访问：[Github Emojis API](https://api.github.com/emojis) 或者 [Emoji Cheat Sheet](http://www.webpagefx.com/tools/emoji-cheat-sheet/)。
