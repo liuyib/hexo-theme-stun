@@ -19,7 +19,8 @@ module.exports = {
       'docs',
       'style',
       'test',
-      'chore'
+      'chore',
+      'revert'
     ]]
   }
 };
