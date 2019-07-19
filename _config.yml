@@ -317,6 +317,9 @@ highlight_theme: light
 # values: true or false.
 code_word_wrap: false
 
+word_wrap:
+  link: true
+
 # Horizonal alignment of img.
 # values:
 # - left
@@ -465,6 +468,39 @@ algolia_search:
     show_stats: true
 
 # ---------------------------------------------------------------
+# Background config
+# ---------------------------------------------------------------
+
+# Canvas-ribbon
+# Dependencies: https://github.com/hustcc/ribbon.js
+canvas_ribbon:
+  enable: false
+  # The width of the ribbon.
+  size: 300
+  # The transparency of the ribbon.
+  alpha: 0.6
+  # The display level of the ribbon.
+  zIndex: -1
+
+# Canvas-nest
+# Dependencies: https://github.com/hustcc/canvas-nest.js
+canvas_nest:
+  enable: false
+  # Display on mobile or not
+  onmobile: true
+  # RGB values, use ',' to separate
+  # Color for lines
+  color: "0,0,255"
+  # Color for points
+  pointColor: "0,0,255"
+  # The opacity of line: 0 ~ 1
+  opacity: 0.6
+  # The number of lines
+  count: 99
+  # z-index property of the background
+  zIndex: -1
+
+# ---------------------------------------------------------------
 # Other config
 # ---------------------------------------------------------------
 
@@ -488,11 +524,19 @@ js: js
 # In theme directory (source/images).
 images: images
 
-# CND for third libs
+# Set a CDN address for the vendor you want to customize.
+# ---------------------------------------------------------------
+#! Do not edit the follow configs.
+#! Unless you know what you are doing.
+# ---------------------------------------------------------------
 cdn:
   css:
     fontawesome: https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css
+
   js:
-    jquery: https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js
-    velocity: https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js
-    velocity-ui: https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js
+    jquery: https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js
+    velocity: https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js
+    velocity-ui: https://cdn.jsdelivr.net/npm/velocity-ui-pack@1.2.2/velocity.ui.min.js
+
+  canvas_ribbon: https://cdn.jsdelivr.net/npm/ribbon.js@latest/dist/ribbon.min.js
+  canvas_nest: https://cdn.jsdelivr.net/npm/canvas-nest.js@latest/dist/canvas-nest.js

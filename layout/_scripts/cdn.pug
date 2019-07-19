@@ -1,0 +1,19 @@
+//- Reset `window.Promise` when it was not a function.
+//- IE refers the element whose id is `Promise` as `window.Promise`, this causes Velocity throwing an exception
+script.
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+
+if theme.cdn && theme.cdn.js
+  each url in theme.cdn.js
+    if url
+      script(src=url_for(url))
+
+if theme.canvas_ribbon && theme.canvas_ribbon.enable
+  - let ribbon = theme.canvas_ribbon;
+  script(src=theme.cdn.canvas_ribbon size=ribbon.size alpha=ribbon.alpha zIndex=ribbon.zIndex)
+
+if theme.canvas_nest && theme.canvas_nest.enable
+  - let nest = theme.canvas_nest;
+  script(src=theme.cdn.canvas_nest color=nest.color pointColor=nest.pointColor opacity=nest.opacity count=nest.count zIndex=nest.zIndex)

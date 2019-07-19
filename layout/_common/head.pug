@@ -48,11 +48,6 @@ if theme.cdn && theme.cdn.css
 
 link(rel="stylesheet" href=`${url_for(theme.css)}/index.css?v=${stun_env("version")}`)
 
-if theme.cdn && theme.cdn.js
-  each url in theme.cdn.js
-    if url
-      script(src=url_for(url))
-
 include ../_third-party/analytics/index.pug
 include ../_third-party/search/index.pug
 include ../_third-party/comments/index.pug
