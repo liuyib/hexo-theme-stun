@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.1.2 (2019-07-20)
+
+### Bug Fixes
+
+* Solve not show the button of copy when can't detect lang of code ([2663889](https://github.com/liuyib/hexo-theme-stun/commit/2663889))
+
+### Features
+
+* Add mathjax & katex support ([8f8cac2](https://github.com/liuyib/hexo-theme-stun/commit/8f8cac2))
+* Add canvas_ribbon & canvas_nest ([99b8eca](https://github.com/liuyib/hexo-theme-stun/commit/99b8eca))
+* Add UI component of popover & do some optimization ([584af05](https://github.com/liuyib/hexo-theme-stun/commit/584af05))
+
 ### 1.1.1 (2019-07-16)
 
 ### Bug Fixes
