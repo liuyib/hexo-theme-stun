@@ -4,6 +4,33 @@
 第三方支持正在不断加入中 (๑•̀ㅂ•́)و✧
 :::
 
+## 添加 Emoji 支持
+
+如果想要使用 Emoji，你可以直接在[这里](http://emojihomepage.com/)复制粘贴使用。如果你更喜欢使用 Emoji 代码，例如：`:sparkles:` 将会显示为 :sparkles:, 那么你需要安装插件 [hexo-filter-github-emojis](https://github.com/crimx/hexo-filter-github-emojis) 来支持这种语法。
+
+安装这个插件，请在 hexo 根目录下，执行指令：
+
+``` bash
+$ npm install hexo-filter-github-emojis --save
+```
+
+如果你不喜欢 `::` 的语法，你可以使用下面这种方法代替：
+
+``` text
+{% github_emoji sparkles %}
+```
+
+如果你需要某个 markdown 文件不解析这种语法，可以在 markdown 文件里的 `front-matter` 中，设置 `no-emoji: true`。这样 `::` 会保持原来的样子。
+
+``` yaml
+---
+title: Hello World
+no-emoji: true
+---
+```
+
+有关该插件的更详尽的用法，请自行查阅其[文档](https://github.com/crimx/hexo-filter-github-emojis)。查看所有支持的 Emoji 请访问：[Github Emojis API](https://api.github.com/emojis) 或者 [Emoji Cheat Sheet](http://www.webpagefx.com/tools/emoji-cheat-sheet/)。
+
 ## 评论系统
 
 ### Gitment <Badge text="stable"/>
@@ -164,7 +191,7 @@ busuanzi:
     icon: eye
 ```
 
-## 搜索支持
+## 搜索系统
 
 ### Algolia 搜索 <Badge text="stable"/> <Badge text="v1.0.3"/>
 
@@ -249,3 +276,161 @@ algolia_search:
 ```
 
 到这里，不出意外的话，你就可以使用 Algolia 搜索网站里的文章标题了。
+
+## 数学公式
+
+想要解析页面中的数学公式，首先，你需要修改主题配置文件，启用该功能，并选择解析引擎（默认是 mathjax 引擎）。
+
+``` yaml
+math:
+  # 是否启用
+  enable: true
+
+  # 如果设为 true，将会为每一个页面启用该功能
+  # 如果设为 false，只有在 `Front-matter` 中设置了 `math: true` 的页面，才会启用该功能
+  per_page: false
+
+  # 解析引擎，可选值：mathjax 或 katex（全小写）
+  engine: mathjax
+```
+
+然后，你需要根据下面 MathJax 或 KaTex 的说明进一步配置。
+
+::: tip
+MathJax 与 KaTex 相比之下，[KaTex 引擎速度更快](https://www.intmath.com/cg5/katex-mathjax-comparison.php)，但 [KaTex 支持的语法更少](https://github.com/KaTeX/KaTeX/wiki/Things-that-KaTeX-does-not-%28yet%29-support)，这里是 [KaTex 所支持的所有语法](https://katex.org/docs/supported.html)。
+:::
+
+### MathJax <Badge text="stable"/> <Badge text="v1.1.2"/>
+
+使用 mathjax 作为引擎，首先，你需要更换一个支持 MathJax 的 markdown 渲染器：
+
+- [hexo-renderer-kramed](https://github.com/sun11/hexo-renderer-kramed)
+- [hexo-renderer-pandoc](https://github.com/wzpan/hexo-renderer-pandoc)
+
+两者选择其一即可。
+
+1. 安装，执行指令。
+
+``` bash
+# 卸载原来的渲染器
+$ npm un hexo-renderer-marked --save
+# 安装新的渲染器
+$ npm i hexo-renderer-kramed --save # 或 npm i hexo-renderer-pandoc --save
+```
+
+2. 在主题配置文件中，选择 mathjax 引擎。
+
+``` yaml
+math:
+  ...
+  # 全小写
+  engine: mathjax
+```
+
+3. 重启 hexo 服务器。
+
+``` bash
+$ hexo clean && hexo s
+```
+
+### KaTex <Badge text="stable"/> <Badge text="v1.1.2"/>
+
+使用 katex 作为引擎，不需要引入 `katex.min.js`。相应的，你只需要更换一个支持 KaTex 的 markdown 渲染器。
+
+首先，卸载原来的 markdown 渲染器，例如：
+
+``` bash
+npm un hexo-renderer-marked --save
+# 或
+npm un hexo-renderer-kramed --save
+# 或
+npm un hexo-renderer-pandoc --save
+
+# 以及
+npm un hexo-math --save
+```
+
+如果你安装过这些，都需要卸载。你可以到 hexo 根目录下的 `package.json` 文件中，查看安装了哪些插件。然后，安装新的 markdown 渲染器：
+
+- [hexo-renderer-markdown-it-plus](https://github.com/CHENXCHEN/hexo-renderer-markdown-it-plus)
+- [hexo-renderer-markdown-it](https://github.com/hexojs/hexo-renderer-markdown-it)
+
+两者选择其一即可。
+
+- 如果你选择 `hexo-renderer-markdown-it-plus` 作为渲染器。
+
+1. 安装，执行指令。
+
+``` bash
+$ npm i hexo-renderer-markdown-it-plus --save
+```
+
+2. 在主题配置文件中，选择 katex 引擎。
+
+``` yaml
+math:
+  ...
+  engine: katex
+```
+
+3. 重启 hexo 服务器。
+
+``` bash
+$ hexo clean && hexo s
+```
+
+- 如果你选择 `hexo-renderer-markdown-it` 作为渲染器。
+
+你需要额外安装 `markdown-it-katex`。
+
+1. 安装，执行指令。
+
+``` bash
+$ npm i hexo-renderer-markdown-it --save
+$ npm i markdown-it-katex --save
+```
+
+2. 修改站点配置文件
+
+添加 或 修改 `hexo-renderer-markdown-it` 的配置项。
+
+``` yaml
+markdown:
+  render:
+    html: true
+    xhtmlOut: false
+    breaks: true
+    linkify: true
+    typographer: true
+    quotes: '“”‘’'
+  plugins:
+    - markdown-it-katex
+```
+
+有关 `hexo-renderer-markdown-it` 所有的配置项，在[这里](https://github.com/hexojs/hexo-renderer-markdown-it/wiki/Advanced-Configuration#all-options-configuration)查看。
+
+3. 选择 katex 引擎 和 重启 hexo 服务器的步骤同上。
+
+### 插件
+
+Stun 主题默认提供了一些 MathJax 和 Katex 的插件。
+
+- mhchem
+
+mhchem 是 MathJax 的插件，你可以使用这个插件来渲染化学方程式。详情请看：[MathJax/mhchem Manual](https://mhchem.github.io/MathJax-mhchem/)。
+
+- Copy-tex
+
+Copy-tex 是 KaTex 的插件，当启用这个插件之后，你只需要单击公式即可复制其源码。详情请看：[Copy-tex extension](https://github.com/KaTeX/KaTeX/tree/master/contrib/copy-tex)。
+
+效果如下：
+
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190720153859.gif)
+
+### 使用
+
+按照上述步骤配置之后，你就可以在 markdown 源文件中，使用数学公式了。使用 `$$...$$` 包裹的字符，即可被识别为数学公式，但是会另起一行来显示。如果想要公式和文字在同一行显示，需要使用 `$...$` 来包括字符。
+
+效果如下：
+
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190720160555.png)

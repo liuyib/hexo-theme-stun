@@ -15,7 +15,7 @@
 
 ## 保留主题配置数据
 
-如果你不想每次升级主题时，都要进行如下重复的操作：先将主题配置文件复制一份，等主题升级后再复制回去。那么你可以进行以下操作：将主题配置文件复制到 **Hexo 根目录**下的 `source/_data/stun.yml` 文件中（没有此目录和文件就新建。目录名称不能改变，文件名称可以是任意的）。
+如果你不想每次升级主题时，都要进行如下重复的操作：先将主题配置文件复制一份，等主题升级后再复制回去。那么你可以进行以下操作：将主题配置文件复制到 Hexo 根目录下的 `source/_data/stun.yml` 文件中（没有此目录和文件就新建。目录名称不能改变，文件名称可以是任意的）。
 
 > 如果你进行了上述操作，当你需要修改主题配置时，只需要修改 `stun.yml` 文件即可。更新主题时，主题根目录下的 `_config.yml` 文件（可能）会更新，而你对主题配置的数据仍保留在 `stun.yml` 文件中。
 
@@ -25,7 +25,7 @@
 
 ## 国际化（i18n）
 
-修改 **Hexo 根目录**下的配置文件（不是主题配置文件）`_config.yml`：
+修改站点配置文件（不是主题配置文件）`_config.yml`：
 
 ``` yaml
 language: zh-CN # 可选值 zh-CN 或 en-US
@@ -39,7 +39,7 @@ language: zh-CN # 可选值 zh-CN 或 en-US
 
 - 添加路径
 
-修改你的主题配置文件：
+修改主题配置文件：
 
 ``` yaml
 menu:
@@ -52,7 +52,7 @@ menu:
 
 - 添加图标 
 
-修改你的主题配置文件：
+修改主题配置文件：
 
 ``` yaml
 menu:
@@ -79,7 +79,7 @@ menu_settings:
 
 - 新建页面
 
-在 **Hexo 根目录**下执行命令：
+在 Hexo 根目录下执行命令：
 
 ``` bash
 $ hexo new page xxx # xxx 表示页面名称
@@ -131,7 +131,7 @@ nav:
 
 ## Favicon <Badge text="stable"/>
 
-设置网站图标（favicon），修改你的主题配置文件：
+设置网站图标（favicon），修改主题配置文件：
 
 ``` yaml
 favicon:
@@ -145,7 +145,7 @@ favicon:
 
 ## 网站顶部栏信息 <Badge text="stable"/>
 
-修改你的主题配置文件：
+修改主题配置文件：
 
 ``` yaml
 header:
@@ -172,7 +172,7 @@ header:
 
 ## 指定顶部图 <Badge text="stable"/>
 
-如果想要为某个页面或某篇文章单独指定顶部图，你只需要在页面或文章 markdown 源文件的 [front-matter](https://hexo.io/zh-cn/docs/front-matter) 中，添加 `top_image` 项，然后填入的图片 url 或路径即可。例如：
+如果想要为某个页面或某篇文章单独指定顶部图，你只需要在页面或文章 markdown 源文件的 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 中，添加 `top_image` 项，然后填入的图片 url 或路径即可。例如：
 
 
 ``` yaml
@@ -185,7 +185,7 @@ top_image: https://xxxxx.jpg
 
 ## 知识共享许可协议（cc） <Badge text="stable"/>
 
-修改你的主题配置文件：
+修改主题配置文件：
 
 ``` yaml
 creative_commons:
@@ -208,7 +208,7 @@ creative_commons:
 
 ## 返回顶部 <Badge text="beta" type="warn"/>
 
-修改你的主题配置文件：
+修改主题配置文件：
 
 ``` yaml
 back2top:
@@ -229,7 +229,7 @@ back2top:
 
 ## 网站底部栏信息 <Badge text="stable"/>
 
-修改你的主题配置文件：
+修改主题配置文件：
 
 ``` yaml
 footer:
@@ -292,7 +292,7 @@ footer:
 
 ## 侧边栏设置 <Badge text="beta" type="warn"/>
 
-修改你的主题配置文件：
+修改主题配置文件：
 
 ``` yaml
 sidebar:
@@ -310,7 +310,7 @@ sidebar:
 
 ## 侧边栏作者信息 <Badge text="stable"/>
 
-修改你的主题配置文件：
+修改主题配置文件：
 
 ``` yaml
 author:
@@ -332,7 +332,9 @@ author:
 
 ## 社交链接 <Badge text="stable"/>
 
-修改你的主题配置文件：
+修改主题配置文件：
+
+> 不想启用的社交链接，直接注释掉就行了。
 
 ``` yaml
 # `||` 分隔符前面表示社交链接的链接或信息，后面表示社交链接图标。
@@ -365,7 +367,7 @@ social_setting:
   text_align: center
 ```
 
-当你添加一个主题配置文件里，默认没有的社交链接时，你需要进行国际化设置。这里以添加社交链接 `掘金` 为例，步骤如下：
+当你添加一个默认没有的社交链接时，你需要进行国际化设置。这里以添加链接 `掘金` 为例，步骤如下：
 
 1. 修改主题配置文件
 
@@ -373,6 +375,8 @@ social_setting:
 social:
   juejin: https://juejin.im/timeline || origin:掘
 ```
+
+> 由于 fontawesome 中找不到掘金的 logo，所以这里使用 `掘` 字来代替显示。
 
 2. 修改 `themes/stun/languages` 目录下的文件
 
@@ -396,7 +400,7 @@ social:
 
 ## 文章目录 <Badge text="stable"/>
 
-修改你的主题配置文件：
+修改主题配置文件：
 
 ``` yaml
 toc:
@@ -409,7 +413,7 @@ toc:
   # 是否始终展开所有文章目录。true：始终展开，false：当文章中对应的标题到达顶部时自动展开。
   expand_all: false
   # 生成目录时，解析 h 标签的最大深度。
-  # 你可以在文章的 markdown 源文件的 front-matter 中，通过添加 `toc_max_depth` 字段，
+  # 你可以在文章的 markdown 源文件的 Front-matter 中，通过添加 `toc_max_depth` 字段，
   #   来指定某篇文章生成目录时，解析 h 标签的最大深度。
   max_depth: 6
 ```
@@ -418,7 +422,7 @@ toc:
 
 ## 订阅设置 <Badge text="stable"/>
 
-设置邮件订阅和 RSS 订阅，修改你的主题配置文件：
+设置邮件订阅和 RSS 订阅，修改主题配置文件：
 
 ``` yaml
 feed:
@@ -430,7 +434,7 @@ feed:
   rss: 
 ```
 
-开启 RSS 订阅之前，你需要安装 hexo 插件：[hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed)。然后在 **Hexo 根目录**下的配置文件 `_config.yml` 中添加配置项（关于各个配置项的具体含义，请自行查看插件的文档）：
+开启 RSS 订阅之前，你需要安装 hexo 插件：[hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed)。然后在站点配置文件 `_config.yml` 中添加配置项（关于各个配置项的具体含义，请自行查看插件的文档）：
 
 ``` yaml
 feed:
@@ -446,11 +450,11 @@ feed:
   icon: icon.png
 ```
 
-配置完成之后，访问你设置的订阅地址即可看到 RSS 订阅信息。
+配置完成之后，访问你设置的订阅地址，如：`https://yoursite.com/atom.xml`，即可看到 RSS 订阅信息。
 
 ## 文章阅读进度条 <Badge text="stable"/>
 
-修改你的主题配置文件：
+修改主题配置文件：
 
 ``` yaml
 reading_progress:
@@ -462,15 +466,13 @@ reading_progress:
   height: 1px
 ```
 
-默认启用。
-
 侧边栏所有效果如下：
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190619211446.png)
 
 ## 文章顶部信息 <Badge text="stable"/>
 
-修改你的主题配置文件：
+修改主题配置文件：
 
 ``` yaml
 post_meta:
@@ -520,7 +522,7 @@ post_meta:
 该功能从 `v1.0.1` 版本开始支持，在 `v1.0.3` 版本中对配置项进行了更改。
 :::
 
-如果你想设置首页 或 归档页的文章列表是否分页，可以修改你的主题配置文件：
+如果你想设置首页 或 归档页的文章列表是否分页，可以修改主题配置文件：
 
 ``` yaml
 post_list:
@@ -532,22 +534,26 @@ post_list:
     archives: false
 ```
 
+默认网站首页的文章列表开启分页，归档页面的文章列表不开启分页。
+
 分页效果如下：
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190713173927.png)
 
-## 文章列表封面图片 <Badge text="stable"/> <Badge text="v1.0.3"/>
+## 文章列表封面图片 <Badge text="stable"/> <Badge text="v1.1.2"/>
 
-如果你为一篇文章单独设置了顶部图，并且想要在文章列表中作为封面图片显示，可以修改你的主题配置文件：
+::: tip
+该功能从 `v1.0.3` 版本开始支持，在 `v1.1.2` 版本中对配置项进行了更改。
+:::
+
+如果你为一篇文章单独设置了顶部图，并且想使用这个顶部图作为文章列表的封面图片来显示，可以修改主题配置文件：
 
 ``` yaml
 post_list:
   # 文章列表里的文章的封面图片
-  top_image:
+  cover_image:
     home: false
 ```
-
-默认网站首页的文章列表开启分页，归档页面的文章列表不开启分页。
 
 封面图片效果如下：
 
@@ -559,7 +565,7 @@ post_list:
 该功能从 `v1.0.0-beta.0` 版本开始支持，在 `v1.0.3` 版本中对配置项进行了更改。
 :::
 
-在文章末尾显示文章的所有标签，修改你的主题配置文件：
+在文章末尾显示文章的所有标签，修改主题配置文件：
 
 ``` yaml
 post_widget:
@@ -577,7 +583,7 @@ post_widget:
 该功能从 `v1.0.0-beta.1` 版本开始支持，在 `v1.0.3` 版本中对配置项进行了更改。
 :::
 
-在文章末尾自动添加文章结束的提示信息，修改你的主题配置文件：
+在文章末尾自动添加文章结束的提示信息，修改主题配置文件：
 
 ``` yaml
 post_widget:
@@ -597,7 +603,7 @@ post_widget:
 
 如果想要保留文章摘要，需要**手动**在文章的 markdown 源文件中添加 `<!-- more -->` 标记。标记之前的部分都会被保留为文章摘要，显示在文章列表中。
 
-如果想要自动保留文章摘要，可以通过修改你的主题配置文件：
+如果想要自动保留文章摘要，可以通过修改主题配置文件：
 
 ``` yaml
 auto_excerpt:
@@ -618,7 +624,7 @@ $ npm uninstall hexo-generator-index --save
 $ npm install hexo-generator-index-pin-top --save
 ```
 
-最后，在文章的 `front-matter` 中，使用 `top: true` 来实现置顶。
+最后，在文章的 `Front-matter` 中，使用 `top: true` 来实现置顶。
 
 设置文章置顶后，在文章列表中，可以看到表示置顶的图标。你可以对图标进行设置，修改 `stum.yml` 文件：
 
@@ -641,7 +647,7 @@ stick_top:
 
 ## 代码高亮 <Badge text="stable"/>
 
-设置代码高亮以及高亮样式，修改你的主题配置文件：
+设置代码高亮以及高亮样式，修改主题配置文件：
 
 ``` yaml
 highlight_theme: light
@@ -661,29 +667,27 @@ highlight_theme: light
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608175154.png)
 
-## 代码换行 <Badge text="stable"/>
+## 代码溢出换行 <Badge text="stable"/>
 
-设置代码溢出时，是否换行，修改你的主题配置文件：
+修改主题配置文件：
 
 ``` yaml
-code_word_wrap: true
+code_word_wrap: false
 ```
 
-默认换行。如果设为不换行，当代码溢出时，显示水平滚动条。
+默认溢出不换行。效果分别如下：
 
-效果分别如下：
-
-- `code_word_wrap: true`
+- 代码溢出换行
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608214540.png)
 
-- `code_word_wrap: false`
+- 代码溢出不换行
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608214539.png)
 
 ## 图片水平对齐方式 <Badge text="beta" type="warn"/>
 
-设置文章中图片的水平对齐方式，修改你的主题配置文件：
+设置文章中图片的水平对齐方式，修改主题配置文件：
 
 ``` yaml
 img_horizonal_align: 
@@ -713,7 +717,7 @@ img_horizonal_align:
 
 ## 文字与图片的垂直对齐方式 <Badge text="beta" type="warn"/>
 
-如果你没有手动设置**图片的水平对齐方式**（手动设置了请忽略此配置项），那么图片将支持和文字在同一行内显示。此时，如果你想设置文字与图片的垂直对齐方式，修改你的主题配置文件：
+如果你没有手动设置**图片的水平对齐方式**（手动设置了请忽略此配置项），那么图片将支持和文字在同一行内显示。此时，如果你想设置文字与图片的垂直对齐方式，修改主题配置文件：
 
 ``` yaml
 text_vertical_align_with_img: bottom
@@ -737,7 +741,7 @@ text_vertical_align_with_img: bottom
 
 ## 赞赏码 <Badge text="stable"/>
 
-设置文章的赞赏码，修改你的主题配置文件：
+设置文章的赞赏码，修改主题配置文件：
 
 ``` yaml
 # Reward
@@ -750,13 +754,13 @@ reward:
   wechat: https://xxxxx.png
 ```
 
-默认不启用，启用后效果如下：
+效果如下：
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608175556.png)
 
 ## 标签云 <Badge text="beta" type="warn"/>
 
-如果你启用了 `tags` 页面，想要对其进行设置，修改你的主题配置文件：
+如果你启用了 `tags` 页面，想要对其进行设置，修改主题配置文件：
 
 ``` yaml
 tag_cloud:
@@ -790,29 +794,30 @@ tag_cloud:
 
 当然，你也可以进行模块化分类：在该目录下新建样式文件，然后通过 `@import xxx` 语句在同目录下的 `index.styl` 文件中引入你新建的样式文件即可。
 
-### 添加 Emoji 支持
+## 总结 Front-matter
 
-如果想要使用 Emoji，你可以直接在[这里](http://emojihomepage.com/)复制粘贴使用。如果你更喜欢使用 Emoji 代码，例如：`:sparkles:` 将会显示为 :sparkles:, 那么你需要安装插件 [hexo-filter-github-emojis](https://github.com/crimx/hexo-filter-github-emojis) 来支持这种语法。
+这里总结一下，Stun 主题中，特有的几种 `Front-matter`。
 
-安装这个插件，请在 hexo 根目录下，执行指令：
+- `top_image: https://xxxx.jpg`
 
-``` bash
-$ npm install hexo-filter-github-emojis --save
-```
+用于设置文章顶部的大图。详情：[指定顶部图](http://localhost:8080/hexo-theme-stun/zh-CN/advanced/theme-config.html#指定顶部图)
 
-如果你不喜欢 `::` 的语法，你可以使用下面这种方法代替：
+- `toc_max_depth: 6`
 
-``` text
-{% github_emoji sparkles %}
-```
+用于设置文章中，解析标题生成目录的最大深度。取值 `1 ~ 6`。例如：`toc_max_depth: 3`，只会解析文中的 `h1`, `h2`, `h3` 来生成目录。详情：[文章目录](http://localhost:8080/hexo-theme-stun/zh-CN/advanced/theme-config.html#文章目录)
 
-如果你需要某个 markdown 文件不解析这种语法，可以在 markdown 文件里的 `front-matter` 中，设置 `no-emoji: true`。这样 `::` 会保持原来的样子。
+- `math: true`
 
-``` yaml
+是否需要解析数学公式。详情：[数学公式](http://localhost:8080/hexo-theme-stun/zh-CN/advanced/third-part.html#数学公式)
+
 ---
-title: Hello World
-no-emoji: true
----
-```
 
-有关该插件的更详尽的用法，请自行查阅其[文档](https://github.com/crimx/hexo-filter-github-emojis)。查看所有支持的 Emoji 请访问：[Github Emojis API](https://api.github.com/emojis) 或者 [Emoji Cheat Sheet](http://www.webpagefx.com/tools/emoji-cheat-sheet/)。
+下面是安装某些插件后，可以设置的 `Front-matter`。
+
+- `top: true`
+
+文章是否置顶。详情：[文章置顶](http://localhost:8080/hexo-theme-stun/zh-CN/advanced/theme-config.html#文章置顶)
+
+- `no-emoji: true`
+
+是否解析文章中的 emoji 代码。详情：[添加-emoji-支持](http://localhost:8080/hexo-theme-stun/zh-CN/advanced/third-part.html#%E6%B7%BB%E5%8A%A0-emoji-%E6%94%AF%E6%8C%81)

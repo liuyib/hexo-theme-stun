@@ -12,7 +12,7 @@ $ git clone https://github.com/liuyib/hexo-theme-stun.git themes/stun
 
 - 安装 pug 和 stylus
 
-如果你没有安装对 pug、stylus 的支持，请执行指令（如果你不确定，直接执行指令就好了）。
+主题依赖于 pug 和 stylus，请执行指令。
 
 ``` bash
 $ npm install --save-dev hexo-render-pug hexo-renderer-stylus
@@ -20,15 +20,19 @@ $ npm install --save-dev hexo-render-pug hexo-renderer-stylus
 
 ## 使用
 
-修改 hexo 根目录下的 _config.yml 文件。
+修改 hexo 根目录下的 `_config.yml` 文件。
 
-``` yaml
+``` yml
 theme: stun
 ```
 
-## 更新
+然后，启动 hexo 服务器即可。
 
-进入 Hexo 根目录，执行指令。
+``` bash
+$ hexo clean && hexo s
+```
+
+## 更新
 
 ``` bash
 $ cd themes/stun

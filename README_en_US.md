@@ -30,7 +30,7 @@ If you are using the stun theme and would like it to be shown here, you can fill
 
 ## Installation
 
-- Install stun
+- Install `stun`
 
 Enter your hexo directory, run this.
 
@@ -48,10 +48,16 @@ $ npm install --save-dev hexo-render-pug hexo-renderer-stylus
 
 ## How to use
 
-Modify the `_config.yml` file in your hexo root directory.
+Change the `_config.yml` file in your hexo root directory.
 
 ``` yml
 theme: stun
+```
+
+Run your hexo server.
+
+``` bash
+$ hexo clean && hexo s
 ```
 
 ## Update
@@ -62,13 +68,13 @@ $ cd themes/stun
 $ git pull
 ```
 
-## Configuration
+## Documentation
 
 Please see: [https://liuyib.github.io/hexo-theme-stun/](https://liuyib.github.io/hexo-theme-stun/)
 
 ## Question
 
-If you have problems with your use, please read [documentation](https://liuyib.github.io/hexo-theme-stun/zh-CN/) firstly, or check [FAQ](https://github.com/liuyib/hexo-theme-stun/blob/master/FAQ.md). When the above methods can't solve your problem, then mention `issue`.
+If you have problems with your use, please read [documentation](https://liuyib.github.io/hexo-theme-stun/zh-CN/) firstly, or check [FAQ](https://github.com/liuyib/hexo-theme-stun/blob/master/FAQ.md). When the above methods can't solve your problem, then mention `issue` :hugs:.
 
 ## Browser Support
 
@@ -76,4 +82,4 @@ IE not supported.
 
 ## License
 
-[MIT](https://github.com/liuyib/hexo-theme-stun/blob/master/LICENSE)
+[MIT](https://github.com/liuyib/hexo-theme-stun/blob/master/LICENSE) Copyright (c) 2019 liuyib

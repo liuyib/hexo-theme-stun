@@ -56,6 +56,12 @@ $ npm install --save-dev hexo-render-pug hexo-renderer-stylus
 theme: stun
 ```
 
+然后，启动 hexo 服务器即可。
+
+``` bash
+$ hexo clean && hexo s
+```
+
 ## 更新
 
 ``` bash
@@ -64,13 +70,13 @@ $ cd themes/stun
 $ git pull
 ```
 
-## 配置
+## 文档
 
 请查看：[https://liuyib.github.io/hexo-theme-stun/zh-CN/](https://liuyib.github.io/hexo-theme-stun/zh-CN/)
 
 ## 问题
 
-如果使用时出现问题，首先请仔细阅读[文档](https://liuyib.github.io/hexo-theme-stun/zh-CN/)，或者查看[常见问题](https://github.com/liuyib/hexo-theme-stun/blob/master/FAQ.md)。当以上的方法都无法解决你的问题时，再去提 `issue`。
+如果使用时出现问题，首先请仔细阅读[文档](https://liuyib.github.io/hexo-theme-stun/zh-CN/)，或者查看[常见问题](https://github.com/liuyib/hexo-theme-stun/blob/master/FAQ.md)。当以上的方法都无法解决你的问题时，再去提 `issue` :hugs:。
 
 ## 浏览器支持
 
@@ -78,4 +84,4 @@ $ git pull
 
 ## 开源协议
 
-[MIT](https://github.com/liuyib/hexo-theme-stun/blob/master/LICENSE)
+[MIT](https://github.com/liuyib/hexo-theme-stun/blob/master/LICENSE) Copyright (c) 2019 liuyib
