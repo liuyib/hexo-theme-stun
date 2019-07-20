@@ -2,6 +2,7 @@ $(document).ready(function () {
   // The previous distance from the page to the top.
   var prevScrollTop = 0;
 
+  addContainerToTable();
   // Initial run.
   headerNavScroll();
   backToTop();
@@ -100,5 +101,11 @@ $(document).ready(function () {
     } else {
       $('#back-top').css('display', 'none');
     }
+  }
+
+  // Add a container outside the tables to make it scroll when needed.
+  function addContainerToTable () {
+    var $wrapper = $('<div style="overflow: auto"></div>');
+    $('table').wrap($wrapper);
   }
 });

@@ -1,0 +1,41 @@
+script(type="text/x-mathjax-config").
+  var mathjaxMhchem = '';
+
+  if (!!'!{theme.math.mathjax.mhchem}') {
+    mathjaxMhchem = '!{theme.math.mathjax.mhchem}'
+    MathJax.Ajax.config.path['mhchem'] = mathjaxMhchem;
+  }
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      extensions: [mathjaxMhchem],
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+
+script(type="text/x-mathjax-config").
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i++) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+
+script(src=theme.math.mathjax.cdn async)
