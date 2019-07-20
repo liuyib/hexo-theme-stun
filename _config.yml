@@ -498,6 +498,38 @@ canvas_nest:
   zIndex: -1
 
 # ---------------------------------------------------------------
+# Math and Chart config
+# ---------------------------------------------------------------
+math:
+  enable: true
+
+  # Only the page which has `math: true` in Front-matter will render.
+  # If true, it will load mathjax / katex srcipt EVERY PAGE.
+  per_page: false
+
+  engine: katex
+
+  # See: https://github.com/mathjax/MathJax/
+  # hexo-renderer-pandoc (or hexo-renderer-kramed) needed to full MathJax support.
+  mathjax:
+    cdn: https://cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+
+    # See: https://mhchem.github.io/MathJax-mhchem/
+    mhchem:
+      enable: false
+      mhchem_js: https://cdn.jsdelivr.net/npm/mathjax-mhchem@3.3.2/mhchem.min.js
+  
+  # hexo-renderer-markdown-it-plus (or hexo-renderer-markdown-it with markdown-it-katex plugin) needed to full Katex support.
+  katex:
+    cdn: https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css
+
+    copy_tex:
+      # See: https://github.com/KaTeX/KaTeX/tree/master/contrib/copy-tex
+      enable: true
+      copy_tex_js: https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/copy-tex.min.js
+      copy_tex_css: https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/copy-tex.css
+
+# ---------------------------------------------------------------
 # Other config
 # ---------------------------------------------------------------
 
