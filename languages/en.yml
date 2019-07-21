@@ -91,3 +91,8 @@ footer:
   theme: Theme
   uv: Visitors
   pv: Views
+
+notification:
+  copy:
+    success: Copy Success
+    error: Copy Error

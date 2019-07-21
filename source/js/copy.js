@@ -13,7 +13,7 @@ $(document).ready(function test () {
           <span>${lang}</span>
         </figcaption>`)[0];
 
-      item.insertBefore(codeHeader, $(item).find('table')[0]);
+      item.insertBefore(codeHeader, $(item).children().first()[0]);
     }
   });
 
@@ -24,52 +24,13 @@ $(document).ready(function test () {
 
   $('figure.highlight figcaption').append($copyIcon);
   $('.copy-button').on('click', function () {
-    var codeContainer = $(this)
-      .parent('figcaption')
-      .siblings('table')
-      .find('td.code')[0];
+    var codeContainer =
+      $(this).parent('figcaption').parent('figure').find('td.code')[0];
 
-    if (copy(codeContainer)) {
-      popAlert('success', '复制成功', 4);
+    if (Stun.utils.copyText(codeContainer)) {
+      Stun.utils.popAlert('success', CONFIG.notification.copy_success);
     } else {
-      popAlert('error', '复制失败');
+      Stun.utils.popAlert('error', CONFIG.notification.copy_error);
     }
   });
-
-  /**
-   * Copy code
-   * @param {HTMLElement} container Container of code.
-   */
-  function copy (container) {
-    try {
-      var selection = window.getSelection();
-      var range = document.createRange();
-
-      // Select text by the content of node.
-      range.selectNodeContents(container);
-      selection.removeAllRanges();
-      selection.addRange(range);
-
-      var text = selection.toString();
-      var input = document.createElement('input');
-
-      // Create a temporary input to make the
-      // execCommand command take effect.
-      input.style.display = 'none';
-      input.setAttribute('readonly', 'readonly');
-      input.setAttribute('value', text);
-      document.body.appendChild(input);
-      input.setSelectionRange(0, -1);
-
-      if (document.execCommand('copy')) {
-        document.execCommand('copy');
-        document.body.removeChild(input);
-
-        return true;
-      }
-      document.body.removeChild(input);
-    } catch (e) {
-      return false;
-    }
-  }
 });

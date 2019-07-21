@@ -91,3 +91,8 @@ footer:
   theme: 主题
   uv: 访问人数
   pv: 浏览总量
+
+notification:
+  copy:
+    success: 复制成功
+    error: 复制失败

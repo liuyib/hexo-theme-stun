@@ -9,12 +9,8 @@
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly",
     "CONFIG": "readonly",
-    "instantsearch": "readonly",
-    "debounce": "readonly",
-    "throttle": "readonly",
-    "isMobile": "readonly",
-    "codeToKeyCode": "readonly",
-    "popAlert": "readonly"
+    "Stun": "readonly",
+    "instantsearch": "readonly"
   },
   "parserOptions": {
     "ecmaVersion": 2018

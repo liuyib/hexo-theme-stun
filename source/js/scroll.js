@@ -2,21 +2,13 @@ $(document).ready(function () {
   // The previous distance from the page to the top.
   var prevScrollTop = 0;
 
-  addContainerToTable();
   // Initial run.
   headerNavScroll();
-  backToTop();
 
   $(window).scroll(
-    throttle(
-      function () {
-        headerNavScroll();
-        backToTop();
-      },
-      20,
-      100
-    )
-  );
+    Stun.utils.throttle(function () {
+      headerNavScroll();
+    }, 20, 100));
 
   // Click the heading.
   $('.main-content')
@@ -26,35 +18,11 @@ $(document).ready(function () {
     });
 
   // Click the post toc.
-  $('.toc-link').on('click', function (e) {
-    var ev = e || window.event;
+  $('.toc-link').on('click', function (ev) {
+    var e = ev || window.event;
 
-    ev.preventDefault();
+    e.preventDefault();
     scrollHeadingToTop($(this).attr('href'));
-  });
-
-  $('#back-top').click(function () {
-    $('body')
-      .velocity('stop')
-      .velocity('scroll', {
-        duration: 500,
-        easing: 'easeOutQuart'
-      });
-
-    if (CONFIG.back2top_animation) {
-      $('#back-top')
-        .velocity(
-          {
-            translateY: '-100vh'
-          },
-          {
-            duration: 500
-          }
-        )
-        .velocity('reverse', {
-          duration: 10
-        });
-    }
   });
 
   function headerNavScroll () {
@@ -87,25 +55,6 @@ $(document).ready(function () {
   function scrollHeadingToTop (anchor) {
     $(anchor)
       .velocity('stop')
-      .velocity('scroll', {
-        duration: 500,
-        easing: 'easeOutSine'
-      });
-  }
-
-  function backToTop () {
-    var scrollTop = $(window).scrollTop();
-
-    if (scrollTop !== 0) {
-      $('#back-top').css('display', 'block');
-    } else {
-      $('#back-top').css('display', 'none');
-    }
-  }
-
-  // Add a container outside the tables to make it scroll when needed.
-  function addContainerToTable () {
-    var $wrapper = $('<div style="overflow: auto"></div>');
-    $('table').wrap($wrapper);
+      .velocity('scroll', { easing: 'easeOutSine' });
   }
 });

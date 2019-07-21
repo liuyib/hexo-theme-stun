@@ -17,11 +17,25 @@
   } 
 
 script.
+  let Stun = window.Stun || {};
   let CONFIG = {
     root: '!{ config.root }',
-    back2top_animation: !{ theme.back2top.icon.animation },
-    sidebar_offsetTop: '!{ theme.sidebar.offsetTop }',
     algolia: !{algolia},
+    notification: {
+      copy_success: '!{ _p("notification.copy.success") }',
+      copy_error: '!{ _p("notification.copy.error") }'
+    },
+    shortcuts: {
+      switch_post: !{ theme.shortcuts.switch_post.enable }
+    },
+    back2top: {
+      enable: !{ theme.back2top.enable },
+      animation: !{ theme.back2top.icon.animation }
+    },
+    sidebar: {
+      offsetTop: '!{ theme.sidebar.offsetTop }'
+    },
+    reward: !{ theme.reward.enable }
   };
 
   window.CONFIG = CONFIG;

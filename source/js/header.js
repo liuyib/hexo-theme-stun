@@ -5,10 +5,10 @@ $(document).ready(function () {
     $menu.removeClass('show');
   });
 
-  $('.header-nav-menu a').click(function (e) {
-    var ev = e || window.event;
+  $('.header-nav-menu a').click(function (ev) {
+    var e = ev || window.event;
 
-    ev.stopPropagation();
+    e.stopPropagation();
   });
 
   $('.header-nav-menu-icon').click(function () {

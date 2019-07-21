@@ -20,11 +20,11 @@ $(document).ready(function () {
     closeSearch();
   });
 
-  $(document).on('keydown', function (e) {
-    var ev = e || window.event;
+  $(document).on('keydown', function (ev) {
+    var e = ev || window.event;
 
     // Escape <=> 27
-    if (ev.keyCode === codeToKeyCode('Escape')) {
+    if (e.keyCode === Stun.utils.codeToKeyCode('Escape')) {
       closeSearch();
     }
   });

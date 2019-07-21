@@ -11,7 +11,7 @@ $(document).ready(function () {
   var isTocScroll = false;
 
   // Distance from sidebar to top.
-  var SIDEBAR_STICKY_TOP = parseInt(CONFIG.sidebar_offsetTop);
+  var SIDEBAR_STICKY_TOP = parseInt(CONFIG.sidebar.offsetTop);
 
   // Is toc in anime.
   var isAnime = false;
@@ -21,16 +21,16 @@ $(document).ready(function () {
   // Initial run
   autoSpreadToc();
   scrollTocToMiddle();
-  readProgress();
   sidebarSticky();
   sidebarAdjustHeight();
+  readProgress();
 
   $(window).scroll(function () {
     autoSpreadToc();
     scrollTocToMiddle();
-    readProgress();
     sidebarSticky();
     sidebarAdjustHeight();
+    readProgress();
   });
 
   $('.sidebar-nav-toc').click(function () {
@@ -55,9 +55,8 @@ $(document).ready(function () {
     $view.velocity('fadeIn');
   });
 
-  if (
-    $('.main-content, .main-content-layout').height() < $('#sidebar').height()
-  ) {
+  if ($('.main-content, .main-content-layout').height() <
+      $('#sidebar').height()) {
     $('#main').css('min-height', $('#main').height());
   }
 
@@ -68,11 +67,8 @@ $(document).ready(function () {
     var $firsetChild = $postBody.find('h1,h2,h3,h4,h5,h6').first();
 
     // All heading are not to the top.
-    if (
-      $postBody[0] &&
-      (!!$firsetChild[0] &&
-        $firsetChild.offset().top - $(window).scrollTop() > 0)
-    ) {
+    if ($postBody[0] && (!!$firsetChild[0] &&
+        $firsetChild.offset().top - $(window).scrollTop() > 0)) {
       $('.sidebar-toc li').removeClass('active current');
 
       return;
@@ -84,8 +80,7 @@ $(document).ready(function () {
       }
     });
 
-    if (currHeading === lastHeading) {
-    } else {
+    if (currHeading !== lastHeading) {
       var targetLink = $(`.sidebar-toc a[href="#${currHeading}"]`);
 
       // If the relevant "<a>" is not found, remain the state of the toc,
@@ -144,39 +139,33 @@ $(document).ready(function () {
     var sidebarH = $('.sidebar-inner')[0].getBoundingClientRect().height;
 
     if (!isAnime && sidebarTop + sidebarH > footerTop) {
-      var targetTocH = parseInt($('.sidebar-toc').css('max-height')) - footerH;
+      var targetTocH =
+        parseInt($('.sidebar-toc').css('max-height')) - footerH;
       isAnime = true;
 
-      $('.sidebar-toc').velocity(
-        {
-          maxHeight: targetTocH
-        },
-        {
-          duration: 300,
-          complete: function () {
-            isAnime = false;
-            isMaxH = false;
-          }
+      $('.sidebar-toc').velocity({
+        maxHeight: targetTocH
+      }, {
+        duration: 300,
+        complete: function () {
+          isAnime = false;
+          isMaxH = false;
         }
+      }
       );
-    } else if (
-      !isMaxH &&
-      !isAnime &&
-      $(window).height() < $('#footer')[0].getBoundingClientRect().top
-    ) {
+    } else if (!isMaxH && !isAnime && $(window).height() <
+        $('#footer')[0].getBoundingClientRect().top) {
       isAnime = true;
 
-      $('.sidebar-toc').velocity(
-        {
-          maxHeight: '70vh'
-        },
-        {
-          duration: 240,
-          complete: function () {
-            isAnime = false;
-            isMaxH = true;
-          }
+      $('.sidebar-toc').velocity({
+        maxHeight: '70vh'
+      }, {
+        duration: 240,
+        complete: function () {
+          isAnime = false;
+          isMaxH = true;
         }
+      }
       );
     }
   }
@@ -186,9 +175,8 @@ $(document).ready(function () {
     var $post = $('.main-content');
     var scrollH = ($post[0] && $post[0].getBoundingClientRect().top * -1) || 0;
 
-    var percent = parseInt(
-      (scrollH / Math.abs($post.height() - $(window).height())) * 100
-    );
+    var percent = parseInt((scrollH /
+      Math.abs($post.height() - $(window).height())) * 100);
     percent = percent > 100 ? 100 : percent < 0 ? 0 : percent;
     percent += '%';
 
