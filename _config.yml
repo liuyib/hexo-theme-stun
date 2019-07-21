@@ -533,6 +533,14 @@ math:
 # Other config
 # ---------------------------------------------------------------
 
+# The shortcuts of the site.
+shortcuts:
+  # Switch to the prev / next post by key.
+  # "Ctrl + ←" is the shortcuts to prev post.
+  # "Ctrl + →" is the shortcuts to next post.
+  switch_post:
+    enable: false
+
 # Tag cloud
 # If not used, comment it or ignore it.
 tag_cloud:
