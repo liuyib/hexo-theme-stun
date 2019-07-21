@@ -31,6 +31,8 @@ no-emoji: true
 
 有关该插件的更详尽的用法，请自行查阅其[文档](https://github.com/crimx/hexo-filter-github-emojis)。查看所有支持的 Emoji 请访问：[Github Emojis API](https://api.github.com/emojis) 或者 [Emoji Cheat Sheet](http://www.webpagefx.com/tools/emoji-cheat-sheet/)。
 
+> 你也可以通过更换 markdown 渲染器 `hexo-renderer-markdown-it-plus` 来支持 Emoji。详情请看：[https://github.com/CHENXCHEN/hexo-renderer-markdown-it-plus](https://github.com/CHENXCHEN/hexo-renderer-markdown-it-plus)。
+
 ## 评论系统
 
 ### Gitment <Badge text="stable"/>
@@ -241,7 +243,6 @@ algolia:
 Algolia 要求用户手动通过提供的 API 上传它们的搜索数据。在 Hexo 根目录中安装 `hexo-algolia`。这个插件将会搜索你的网站并将数据上传到 Algolia。
 
 ``` bash
-$ cd hexo
 $ npm install --save hexo-algolia
 ```
 
@@ -279,7 +280,7 @@ algolia_search:
 
 ## 数学公式
 
-想要解析页面中的数学公式，首先，你需要修改主题配置文件，启用该功能，并选择解析引擎（默认是 mathjax 引擎）。
+想要解析页面中的数学公式，首先，你需要修改主题配置文件，启用该功能，并选择解析引擎（默认是 katex 引擎）。
 
 ``` yaml
 math:
@@ -291,7 +292,7 @@ math:
   per_page: false
 
   # 解析引擎，可选值：mathjax 或 katex（全小写）
-  engine: mathjax
+  engine: katex
 ```
 
 然后，你需要根据下面 MathJax 或 KaTex 的说明进一步配置。
@@ -340,14 +341,14 @@ $ hexo clean && hexo s
 首先，卸载原来的 markdown 渲染器，例如：
 
 ``` bash
-npm un hexo-renderer-marked --save
+$ npm un hexo-renderer-marked --save
 # 或
-npm un hexo-renderer-kramed --save
+$ npm un hexo-renderer-kramed --save
 # 或
-npm un hexo-renderer-pandoc --save
+$ npm un hexo-renderer-pandoc --save
 
 # 以及
-npm un hexo-math --save
+$ npm un hexo-math --save
 ```
 
 如果你安装过这些，都需要卸载。你可以到 hexo 根目录下的 `package.json` 文件中，查看安装了哪些插件。然后，安装新的 markdown 渲染器：

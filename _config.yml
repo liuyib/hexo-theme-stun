@@ -501,7 +501,7 @@ canvas_nest:
 # Math and Chart config
 # ---------------------------------------------------------------
 math:
-  enable: true
+  enable: false
 
   # Only the page which has `math: true` in Front-matter will render.
   # If true, it will load mathjax / katex srcipt EVERY PAGE.
