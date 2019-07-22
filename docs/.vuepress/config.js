@@ -66,6 +66,10 @@ module.exports = {
                 text: 'Assist function',
                 link: '/advanced/assist',
               },
+              {
+                text: 'Optimization',
+                link: '/advanced/optimize',
+              },
             ],
           },
         ],
@@ -104,6 +108,10 @@ module.exports = {
                 text: '辅助功能',
                 link: '/zh-CN/advanced/assist',
               },
+              {
+                text: '优化建议',
+                link: '/zh-CN/advanced/optimize',
+              },
             ],
           },
         ],
@@ -122,6 +130,7 @@ function getEnSidebar(title) {
         '/advanced/theme-config',
         '/advanced/third-part',
         '/advanced/assist',
+        '/advanced/optimize',
       ],
     },
   ];
@@ -137,6 +146,7 @@ function getZhSidebar(title) {
         '/zh-CN/advanced/theme-config',
         '/zh-CN/advanced/third-part',
         '/zh-CN/advanced/assist',
+        '/zh-CN/advanced/optimize',
       ],
     },
   ];

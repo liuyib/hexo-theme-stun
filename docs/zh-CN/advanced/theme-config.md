@@ -113,14 +113,14 @@ menu:
 
 找到 languages 目录下的语言文件进行修改。例如，自定义页面名称为 `read`，修改如下：
 
-`zh-CN.yml`
+`zh-CN.yml`：
 
 ``` yaml
 nav:
   read: 阅读
 ```
 
-`en.yml`
+`en.yml`：
 
 ``` yaml
 nav:
@@ -128,6 +128,99 @@ nav:
 ```
 
 这样就完成了自定义页面的添加。
+
+## 总结 Front-matter
+
+`Front-matter` 在 Hexo 主题中，占据了极其重要的地位，如果你还不了解 `Front-matter`，可以查看这里：[https://hexo.io/zh-cn/docs/front-matter](https://hexo.io/zh-cn/docs/front-matter)。
+
+下面是 Hexo 中默认的 `Front-matter`，Stun 主题完美支持了它们（除了 `layout`）。
+
+- `title` - 标题
+- `date` - 文件建立日期
+- `updated` - 文件更新日期
+
+例如：
+
+``` yaml
+title: Hello Stun
+date: 2019-5-15 22:54:49
+updated: 2019-5-16 10:23:46
+```
+
+效果如下：
+
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190722105740.png)
+
+> Hexo 会帮你记录文件的更新日期，所以一般不需要手动指定 `updated` 字段。并且当你使用 `hexo new xxx` 指令生成文件时，Hexo 会帮你添加好 `title` 和 `date` 字段。因此这三个字段一般不需要手动设置。
+
+- `comments` - 是否开启评论功能
+
+在 Stun 主题中，如果你启用了某个评论系统，默认是对所有通过 markdown 文件生成的页面（除首页，归档页，单个分类页，单个标签页以外的所有页面）生效。因此，你可以使用该字段单独设置某个页面 / 文章是否启用评论。
+
+- `permalink` - 覆盖文章网址
+
+使用该字段可以为某篇文章单独指定一个网址。
+
+- `categories` - 设置文章分类
+
+你可以同时设置几个同级分类，例如：
+
+``` yaml
+categories:
+- foo
+- bar
+- baz
+```
+
+也可以设置层级分类，例如：
+
+``` yaml
+categories:
+- [foo, bar, baz]
+```
+
+- `tags` - 设置文章标签
+
+标签只能设置为同级的。也就是说，如果你将标签设置为：
+
+``` yaml
+tags:
+- [foo, bar, baz]
+```
+
+那么它会被解析为 `foo,bar,baz`，也就是一个标签。
+
+- `layout` - 布局
+
+> 该字段在相册页面中会用到，目前 Stun 还没有开发相册页面，所以暂时不支持此字段。
+
+---
+
+下面是 Stun 主题中，**特有的**几种 `Front-matter`。
+
+- `top_image: https://xxxx.jpg`
+
+用于设置文章顶部的大图。详情：[指定顶部图](http://localhost:8080/hexo-theme-stun/zh-CN/advanced/theme-config.html#指定顶部图)
+
+- `toc_max_depth: 6`
+
+用于设置文章中，解析标题生成目录的最大深度。取值 `1 ~ 6`。例如：`toc_max_depth: 3`，只会解析文中的 `h1`, `h2`, `h3` 来生成目录。详情：[文章目录](http://localhost:8080/hexo-theme-stun/zh-CN/advanced/theme-config.html#文章目录)
+
+- `math: true`
+
+是否需要解析数学公式。详情：[数学公式](http://localhost:8080/hexo-theme-stun/zh-CN/advanced/third-part.html#数学公式)
+
+---
+
+下面是安装某些插件后，可以设置的 `Front-matter`。
+
+- `top: true`
+
+文章是否置顶。详情：[文章置顶](http://localhost:8080/hexo-theme-stun/zh-CN/advanced/theme-config.html#文章置顶)
+
+- `no-emoji: true`
+
+是否解析文章中的 emoji 代码。详情：[添加-emoji-支持](http://localhost:8080/hexo-theme-stun/zh-CN/advanced/third-part.html#%E6%B7%BB%E5%8A%A0-emoji-%E6%94%AF%E6%8C%81)
 
 ## Favicon <Badge text="stable"/>
 
@@ -794,30 +887,20 @@ tag_cloud:
 
 当然，你也可以进行模块化分类：在该目录下新建样式文件，然后通过 `@import xxx` 语句在同目录下的 `index.styl` 文件中引入你新建的样式文件即可。
 
-## 总结 Front-matter
+### 标识外部链接  <Badge text="stable"/> <Badge text="v1.1.3"/>
 
-这里总结一下，Stun 主题中，特有的几种 `Front-matter`。
+从 `v1.1.3` 版本开始，除了侧边栏，顶部栏以外的区域，Stun 主题默认会在具有 `target="_blank"` 属性的链接后面加上一个 Icon，用于标识这是一个外部链接。
 
-- `top_image: https://xxxx.jpg`
+你可以通过修改主题配置文件，来设置 Icon 以及是否启用这一功能：
 
-用于设置文章顶部的大图。详情：[指定顶部图](http://localhost:8080/hexo-theme-stun/zh-CN/advanced/theme-config.html#指定顶部图)
-
-- `toc_max_depth: 6`
-
-用于设置文章中，解析标题生成目录的最大深度。取值 `1 ~ 6`。例如：`toc_max_depth: 3`，只会解析文中的 `h1`, `h2`, `h3` 来生成目录。详情：[文章目录](http://localhost:8080/hexo-theme-stun/zh-CN/advanced/theme-config.html#文章目录)
-
-- `math: true`
-
-是否需要解析数学公式。详情：[数学公式](http://localhost:8080/hexo-theme-stun/zh-CN/advanced/third-part.html#数学公式)
-
----
-
-下面是安装某些插件后，可以设置的 `Front-matter`。
-
-- `top: true`
-
-文章是否置顶。详情：[文章置顶](http://localhost:8080/hexo-theme-stun/zh-CN/advanced/theme-config.html#文章置顶)
-
-- `no-emoji: true`
-
-是否解析文章中的 emoji 代码。详情：[添加-emoji-支持](http://localhost:8080/hexo-theme-stun/zh-CN/advanced/third-part.html#%E6%B7%BB%E5%8A%A0-emoji-%E6%94%AF%E6%8C%81)
+``` yaml
+external_link:
+  icon:
+    # 是否启用
+    enable: true
+    # 建议使用名为 `external-link` 的图标
+    # 图标名称在这里查找：https://fontawesome.com/v4.7.0/icons/
+    name: external-link
+    # 请使用引号包括值（支持所有 CSS 单位）
+    color: "#aaa"
+```

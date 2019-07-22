@@ -412,7 +412,7 @@ markdown:
 
 3. 选择 katex 引擎 和 重启 hexo 服务器的步骤同上。
 
-### 插件
+### 相关插件
 
 Stun 主题默认提供了一些 MathJax 和 Katex 的插件。
 
@@ -428,7 +428,7 @@ Copy-tex 是 KaTex 的插件，当启用这个插件之后，你只需要单击�
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190720153859.gif)
 
-### 使用
+### 如何使用
 
 按照上述步骤配置之后，你就可以在 markdown 源文件中，使用数学公式了。使用 `$$...$$` 包裹的字符，即可被识别为数学公式，但是会另起一行来显示。如果想要公式和文字在同一行显示，需要使用 `$...$` 来包括字符。
 

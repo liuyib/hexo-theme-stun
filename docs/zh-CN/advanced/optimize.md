@@ -1,0 +1,35 @@
+# 优化建议
+
+## 打包、压缩文件
+
+Stun 主题的源码中，`HTML`, `CSS`, `JavaScript`, `图片` 等资源文件是没有打包压缩的。**绝大部分的 Hexo 主题也是如此**。庆幸的是 Hexo 提供了相关的插件，来帮助用户解决这一问题。
+
+这里推荐使用 [hexo-all-minifier](https://github.com/chenzhutian/hexo-all-minifier) 插件，它集成了 `html-minifier`, `clean-css`, `uglify` 和 `imagemin`。只需安装和简单的配置即可使用。
+
+- 安装
+
+在 Hexo 根目录下执行指令。
+
+> 一定要在 Git Bash 中执行，在 Window 的 PowerShell 或 CMD 中执行可能会失败。建议养成在 Git Bash 中执行 npm 指令的好习惯！
+
+``` bash
+$ npm install hexo-all-minifier --save
+```
+
+如果是 Mac 用户，你还需要执行下面的指令。
+
+``` bash
+$ brew install libtool automake autoconf nasm
+```
+
+- 使用
+
+在站点配置文件中，添加以下字段即可使用。
+
+``` yaml
+all_minifier: true
+```
+
+如果你使用插件时**遇到了问题** 或者 想进行**更详细的设置**，请查看插件的文档：[https://github.com/chenzhutian/hexo-all-minifier/blob/master/README.md](https://github.com/chenzhutian/hexo-all-minifier/blob/master/README.md)
+
+> 安装这个插件后，不管使用哪一个主题，都可以生效，所以强烈推荐使用。
