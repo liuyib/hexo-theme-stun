@@ -138,6 +138,7 @@ Stun.utils = Stun.$u = {
       }
       document.body.removeChild(input);
     } catch (e) {
+      console.log(e);
       return false;
     }
   },
@@ -241,4 +242,5 @@ Stun.utils = Stun.$u = {
 $(document).ready(function () {
   Stun.utils.addContainerToTable();
   Stun.utils.adjustImageSize();
+  Stun.utils.copyText()
 });

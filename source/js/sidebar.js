@@ -151,8 +151,7 @@ $(document).ready(function () {
           isAnime = false;
           isMaxH = false;
         }
-      }
-      );
+      });
     } else if (!isMaxH && !isAnime && $(window).height() <
         $('#footer')[0].getBoundingClientRect().top) {
       isAnime = true;
@@ -165,8 +164,7 @@ $(document).ready(function () {
           isAnime = false;
           isMaxH = true;
         }
-      }
-      );
+      });
     }
   }
 
