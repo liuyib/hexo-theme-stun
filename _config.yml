@@ -533,6 +533,17 @@ math:
 # Other config
 # ---------------------------------------------------------------
 
+# The links with `target="_blank"` attribute.
+external_link:
+  # Adding an icon make it easier for users to know that this is an external link.
+  icon:
+    enable: true
+    # Icon name in FontAwesome, see: https://fontawesome.com/v4.7.0/icons/
+    # `external-link` is recommended.
+    name: external-link
+    # Please use the quote to wrap value (All CSS size units are supported).
+    color: "#aaa"
+
 # The shortcuts of the site.
 shortcuts:
   # Switch to the prev / next post by key.

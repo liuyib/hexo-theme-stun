@@ -160,6 +160,17 @@ Stun.utils = Stun.$u = {
       }
     });
   },
+  /**
+   * Add a mark icon to the link with `target="_blank"` attribute.
+   * @param {String} selector Any Jquery selector.
+   */
+  addIconToExternalLink: function (selector) {
+    if (!$(selector)[0]) return;
+    
+    var $icon = $(`<i class="external-link fa fa-${
+      CONFIG.external_link.icon_name}"></i>`);
+    $(selector).find('a[target="_blank"]').append($icon);
+  },
   // Back the page to top.
   back2Top: function () {
     function runBack2Top () {
@@ -181,7 +192,7 @@ Stun.utils = Stun.$u = {
       runBack2Top();
     });
 
-    $('#back-top').click(function () {
+    $('#back-top').on('click', function () {
       $('body').velocity('stop').velocity('scroll');
 
       if (CONFIG.back2top_animation) {

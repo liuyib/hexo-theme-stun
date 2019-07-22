@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $('.header-nav-search').click(function () {
+  $('.header-nav-search').on('click', function () {
     $('body').css('overflow', 'hidden');
     $('.algolia-popup')
       .velocity('stop')

@@ -33,7 +33,7 @@ $(document).ready(function () {
     readProgress();
   });
 
-  $('.sidebar-nav-toc').click(function () {
+  $('.sidebar-nav-toc').on('click', function () {
     $('.sidebar-nav-toc').toggleClass('current');
     $('.sidebar-nav-overview').toggleClass('current');
 
@@ -44,7 +44,7 @@ $(document).ready(function () {
     $view.velocity('fadeOut');
   });
 
-  $('.sidebar-nav-overview').click(function () {
+  $('.sidebar-nav-overview').on('click', function () {
     $('.sidebar-nav-toc').toggleClass('current');
     $('.sidebar-nav-overview').toggleClass('current');
 
