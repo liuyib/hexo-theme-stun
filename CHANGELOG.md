@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.1.3 (2019-07-22)
+
+### Features
+
+* Add the copy button in copyright of posts ([26155b7](https://github.com/liuyib/hexo-theme-stun/commit/26155b7))
+* Add a mark icon to external icon ([2f11fd7](https://github.com/liuyib/hexo-theme-stun/commit/2f11fd7))
+* Add support for front-matter: link ([79b73bf](https://github.com/liuyib/hexo-theme-stun/commit/79b73bf))
+
 ### 1.1.2 (2019-07-20)
 
 ### Bug Fixes

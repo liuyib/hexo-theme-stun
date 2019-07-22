@@ -3,7 +3,7 @@
 ::: tip 前言
 - 修改配置文件、安装新的依赖等，都需要重启 hexo 服务器。
 - 没有特别说明，配置项默认从 `v1.0.0` 版本开始支持。
-- 稳定的配置项使用 <Badge text="stable"/> 标明，表示基本不会变动；不稳定的配置项使用 <Badge text="beta" type="warn"/> 标明，表示未来可能会变动甚至删除。
+- 稳定的配置使用 <Badge text="stable"/> 标明，表示基本不会变动。不稳定的配置使用 <Badge text="beta" type="warn"/> 标明，表示未来可能会变动甚至删除。目前还不支持的配置使用 <Badge text="not support" type="error"/> 标明。最早开始支持的版本号使用 <Badge text="v x.x.x"/> 标明。与主题无关的配置项使用 <Badge text="disrelated" type="warning"/> 标明。
 :::
 
 ## 配置文件
@@ -133,11 +133,11 @@ nav:
 
 `Front-matter` 在 Hexo 主题中，占据了极其重要的地位，如果你还不了解 `Front-matter`，可以查看这里：[https://hexo.io/zh-cn/docs/front-matter](https://hexo.io/zh-cn/docs/front-matter)。
 
-下面是 Hexo 中默认的 `Front-matter`，Stun 主题完美支持了它们（除了 `layout`）。
+下面是 Hexo 中默认提供的几种 `Front-matter` 属性。
 
-- `title` - 标题
-- `date` - 文件建立日期
-- `updated` - 文件更新日期
+- `title` <Badge text="stable"/> - 标题
+- `date` <Badge text="stable"/> - 文件建立日期
+- `updated` <Badge text="stable"/> - 文件更新日期
 
 例如：
 
@@ -151,17 +151,17 @@ updated: 2019-5-16 10:23:46
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190722105740.png)
 
-> Hexo 会帮你记录文件的更新日期，所以一般不需要手动指定 `updated` 字段。并且当你使用 `hexo new xxx` 指令生成文件时，Hexo 会帮你添加好 `title` 和 `date` 字段。因此这三个字段一般不需要手动设置。
+> Hexo 会帮你记录文件的更新日期，所以一般不需要手动指定 `updated` 属性。并且当你使用 `hexo new xxx` 指令生成文件时，Hexo 会帮你添加好 `title` 和 `date` 属性。因此这三个属性一般不需要手动设置。
 
-- `comments` - 是否开启评论功能
+- `comments` <Badge text="stable"/> - 是否开启评论功能
 
-在 Stun 主题中，如果你启用了某个评论系统，默认是对所有通过 markdown 文件生成的页面（除首页，归档页，单个分类页，单个标签页以外的所有页面）生效。因此，你可以使用该字段单独设置某个页面 / 文章是否启用评论。
+在 Stun 主题中，如果你启用了某个评论系统，默认是对所有通过 markdown 文件生成的页面（除首页，归档页，单个分类页，单个标签页以外的所有页面）生效。因此，你可以使用该属性单独设置某个页面 / 文章是否启用评论。
 
-- `permalink` - 覆盖文章网址
+- `permalink` <Badge text="stable"/> - 覆盖文章网址
 
-使用该字段可以为某篇文章单独指定一个网址。
+使用该属性可以为某篇文章单独指定一个网址。
 
-- `categories` - 设置文章分类
+- `categories` <Badge text="stable"/> - 设置文章分类
 
 你可以同时设置几个同级分类，例如：
 
@@ -179,7 +179,7 @@ categories:
 - [foo, bar, baz]
 ```
 
-- `tags` - 设置文章标签
+- `tags` <Badge text="stable"/> - 设置文章标签
 
 标签只能设置为同级的。也就是说，如果你将标签设置为：
 
@@ -190,35 +190,54 @@ tags:
 
 那么它会被解析为 `foo,bar,baz`，也就是一个标签。
 
-- `layout` - 布局
+- `layout` <Badge text="not support" type="error"/> - 布局
 
-> 该字段在相册页面中会用到，目前 Stun 还没有开发相册页面，所以暂时不支持此字段。
+> Stun 主题目前暂时还不支持，最近的版本中考虑进行支持。
+
+还有几种 `Front-matter` 属性在 Hexo 文档中并没有出现（也许是 Hexo 的文档没有更新吧），但在官方提供的主题开发测试文件中出现。按照测试文件的要求，一个合格的 Hexo 都应该支持它们。这些属性如下：
+
+- `link` <Badge text="stable"/> <Badge text="v1.1.3"/>
+
+如果为某篇文章指定该属性，当点击该文章标题时，应该在新窗口或新的标签页中打开链接地址。
+
+- `photos` <Badge text="not support" type="error"/>
+
+> Stun 主题目前暂时还不支持，最近的版本中考虑进行支持。
+
+用于指定一些图片，这些图片应该全部被显示在文章中。例如：
+
+``` yaml
+photos:
+- http://xxxxx1.jpg
+- http://xxxxx2.jpg
+- http://xxxxx3.jpg
+```
 
 ---
 
-下面是 Stun 主题中，**特有的**几种 `Front-matter`。
+下面是 Stun 主题中，特有的几种 `Front-matter` 属性。
 
-- `top_image: https://xxxx.jpg`
+- `top_image: https://xxxx.jpg` <Badge text="stable"/>
 
 用于设置文章顶部的大图。详情：[指定顶部图](http://localhost:8080/hexo-theme-stun/zh-CN/advanced/theme-config.html#指定顶部图)
 
-- `toc_max_depth: 6`
+- `toc_max_depth: 6` <Badge text="stable"/>
 
 用于设置文章中，解析标题生成目录的最大深度。取值 `1 ~ 6`。例如：`toc_max_depth: 3`，只会解析文中的 `h1`, `h2`, `h3` 来生成目录。详情：[文章目录](http://localhost:8080/hexo-theme-stun/zh-CN/advanced/theme-config.html#文章目录)
 
-- `math: true`
+- `math: true` <Badge text="stable"/> <Badge text="v1.1.2"/>
 
 是否需要解析数学公式。详情：[数学公式](http://localhost:8080/hexo-theme-stun/zh-CN/advanced/third-part.html#数学公式)
 
 ---
 
-下面是安装某些插件后，可以设置的 `Front-matter`。
+下面是安装某些插件后，可以设置的几种 `Front-matter` 属性。
 
-- `top: true`
+- `top: true` <Badge text="stable"/>
 
 文章是否置顶。详情：[文章置顶](http://localhost:8080/hexo-theme-stun/zh-CN/advanced/theme-config.html#文章置顶)
 
-- `no-emoji: true`
+- `no-emoji: true` <Badge text="disrelated" type="warning"/>
 
 是否解析文章中的 emoji 代码。详情：[添加-emoji-支持](http://localhost:8080/hexo-theme-stun/zh-CN/advanced/third-part.html#%E6%B7%BB%E5%8A%A0-emoji-%E6%94%AF%E6%8C%81)
 
@@ -337,7 +356,7 @@ footer:
     # 是否启用
     enable: true
     # 显示的文字信息，例如：xxx All Rights Reserved.
-    # 如果不设置，将显示 hexo 配置文件中的 author 字段的内容
+    # 如果不设置，将显示 hexo 配置文件中的 author 属性的内容
     text: 
     # 开始时间（如果不设置，将显示最新的年份）
     since: 
@@ -506,7 +525,7 @@ toc:
   # 是否始终展开所有文章目录。true：始终展开，false：当文章中对应的标题到达顶部时自动展开。
   expand_all: false
   # 生成目录时，解析 h 标签的最大深度。
-  # 你可以在文章的 markdown 源文件的 Front-matter 中，通过添加 `toc_max_depth` 字段，
+  # 你可以在文章的 markdown 源文件的 Front-matter 中，通过添加 `toc_max_depth` 属性，
   #   来指定某篇文章生成目录时，解析 h 标签的最大深度。
   max_depth: 6
 ```

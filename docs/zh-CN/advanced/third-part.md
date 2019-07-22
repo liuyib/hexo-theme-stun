@@ -4,7 +4,7 @@
 第三方支持正在不断加入中 (๑•̀ㅂ•́)و✧
 :::
 
-## 添加 Emoji 支持
+## 添加 Emoji 支持 <Badge text="disrelated" type="warning"/>
 
 如果想要使用 Emoji，你可以直接在[这里](http://emojihomepage.com/)复制粘贴使用。如果你更喜欢使用 Emoji 代码，例如：`:sparkles:` 将会显示为 :sparkles:, 那么你需要安装插件 [hexo-filter-github-emojis](https://github.com/crimx/hexo-filter-github-emojis) 来支持这种语法。
 
@@ -416,11 +416,11 @@ markdown:
 
 Stun 主题默认提供了一些 MathJax 和 Katex 的插件。
 
-- mhchem
+- mhchem <Badge text="stable"/> <Badge text="v1.1.2"/>
 
 mhchem 是 MathJax 的插件，你可以使用这个插件来渲染化学方程式。详情请看：[MathJax/mhchem Manual](https://mhchem.github.io/MathJax-mhchem/)。
 
-- Copy-tex
+- Copy-tex <Badge text="stable"/> <Badge text="v1.1.2"/>
 
 Copy-tex 是 KaTex 的插件，当启用这个插件之后，你只需要单击公式即可复制其源码。详情请看：[Copy-tex extension](https://github.com/KaTeX/KaTeX/tree/master/contrib/copy-tex)。
 

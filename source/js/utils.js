@@ -138,7 +138,6 @@ Stun.utils = Stun.$u = {
       }
       document.body.removeChild(input);
     } catch (e) {
-      console.log(e);
       return false;
     }
   },
