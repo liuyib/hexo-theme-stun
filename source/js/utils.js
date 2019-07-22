@@ -184,7 +184,7 @@ Stun.utils = Stun.$u = {
     $('#back-top').click(function () {
       $('body').velocity('stop').velocity('scroll');
 
-      if (CONFIG.back2top.animation) {
+      if (CONFIG.back2top_animation) {
         $('#back-top')
           .velocity({ translateY: '-100vh' }, { duration: 500 })
           .velocity('reverse', { duration: 10 });

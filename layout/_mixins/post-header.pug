@@ -17,7 +17,7 @@ mixin postHeader(post)
 
           if !theme.post_meta.icon_only
             span= _p("post.posted") + " "
-          span= post.date ? full_date(post.date, "YYYY-MM-DD") : 'none'
+          span= full_date(post.date, "YYYY-MM-DD")
       
       if theme.post_meta.updated.enable
         span.post-meta-update
@@ -25,7 +25,7 @@ mixin postHeader(post)
 
           if !theme.post_meta.icon_only
             span= _p("post.updated") + " "
-          span= post.updated ? full_date(post.updated, "YYYY-MM-DD") : 'none'
+          span= full_date(post.updated, "YYYY-MM-DD")
       
       if theme.post_meta.word_count.enable
         span.post-meta-word-count
@@ -42,7 +42,8 @@ mixin postHeader(post)
           
           if !theme.post_meta.icon_only
             span= _p("post.reading_time") + " "
-          span= min2read(post.content, {cn: postReadingTime.speed.zh, en: postReadingTime.speed.en}) + " m"
+          - let READING_TIME_UNIT = "m";
+          span= min2read(post.content, {cn: postReadingTime.speed.zh, en: postReadingTime.speed.en}) + READING_TIME_UNIT
 
       if theme.valine && theme.valine.enable && theme.valine.visitor
         span(id=url_for(post.path) data-flag-title=post.title).leancloud_visitors

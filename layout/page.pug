@@ -10,17 +10,14 @@ block content
       - let start_color = theme.tag_cloud ? theme.tag_cloud.start_color : "#a4d8fa"
       - let end_color = theme.tag_cloud ? theme.tag_cloud.end_color : "#1b9ef3"
       div.tag-cloud-item!= tagcloud({min_font: min_font, max_font: max_font, amount: theme.tag_cloud.max_amount, color: true, start_color, end_color})
-
   else if (page.title === "categories")
     div.category.main-content
       div.category-title= _p("page.categories") + " - "
         span.category-num= site.categories.length
       != list_categories()
-
   else if (page.title === "about")
     div.about.main-content.code-highlight
       != page.content
-
   else
     div.about.main-content.code-highlight
       != page.content

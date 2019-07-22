@@ -14,7 +14,7 @@ mixin articleSort(posts)
           time.article-sort-item__time= full_date(post.date, "MM-DD")
           h2.article-sort-item__title
             if post.link
-              a(href=url_for(post.link) target="_blank")= post.title || post.link
+              a(href=url_for(post.link) target="_blank" rel="noopener")= post.title || post.link
             else
               a(href=url_for(post.path))= post.title || _p('post.untitled')
 

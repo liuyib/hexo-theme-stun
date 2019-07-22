@@ -22,7 +22,7 @@ footer#footer
           span= footer.copyright.text || config.author + "."
 
         if footer.copyright.enable && footer.beian.enable
-          span.footer-separator |
+          span.footer-separator= "|"
     
         if footer.beian.enable
           span!= footer.beian.icp
@@ -31,17 +31,19 @@ footer#footer
       div
         if footer.powered.enable
           span.footer-powered
-            != _p("footer.powered", link_to("http://hexo.io/", "hexo", {external: true}))
+            - let HEXO_URL = "http://hexo.io/";
+            != _p("footer.powered", link_to(HEXO_URL, "hexo", { external: true }))
           
           if footer.powered.version
             span= " v" + hexo_env("version") + "."
         
         if footer.powered.enable && footer.theme.enable
-          span.footer-separator |
+          span.footer-separator= "|"
 
         if footer.theme.enable
           span= _p("footer.theme") + " - "
-            != link_to("https://github.com/liuyib/hexo-theme-stun/", "stun", {external: true})
+            - let STUN_URL = "https://github.com/liuyib/hexo-theme-stun/";
+            != link_to(STUN_URL, "stun", { external: true })
         
           if footer.theme.version
             span= " v" + stun_env("version") + "."
