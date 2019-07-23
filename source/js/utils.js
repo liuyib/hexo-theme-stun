@@ -78,14 +78,14 @@ Stun.utils = Stun.$u = {
     };
 
     if (!$('.stun-alert')[0]) {
-      var $alert = $(`
-        <div class="stun-message">
-          <div class="stun-alert stun-alert-${status}">
-            <i class="stun-alert-icon fa fa-${icon[status]}"></i>
-            <span class="stun-alert-description">${text}</span>
-          </div>
-        </div>
-      `);
+      var $alert = $(
+        '<div class="stun-message">' +
+          '<div class="stun-alert stun-alert-' + status + '">' +
+            '<i class="stun-alert-icon fa fa-' + icon[status] + '"></i>' +
+            '<span class="stun-alert-description">' + text + '</span>' +
+          '</div>' +
+        '</div>'
+      );
 
       $('body').append($alert);
     }
@@ -167,8 +167,11 @@ Stun.utils = Stun.$u = {
   addIconToExternalLink: function (selector) {
     if (!$(selector)[0]) return;
     
-    var $icon = $(`<i class="external-link fa fa-${
-      CONFIG.external_link.icon_name}"></i>`);
+    var $icon = $(
+      '<i class="external-link fa fa-' +
+        CONFIG.external_link.icon_name +
+      '"></i>'
+    );
     $(selector).find('a[target="_blank"]').append($icon);
   },
   // Back the page to top.

@@ -4,7 +4,7 @@ script(src="https://cdn.jsdelivr.net/npm/js-md5@latest/src/md5.min.js")
 
 script.
   function renderGitment() {
-    let gitment = new Gitment({
+    var gitment = new Gitment({
       id: md5('!{ page.path }'),
       owner: "!{ theme.gitment.owner }",
       repo: "!{ theme.gitment.repo }",

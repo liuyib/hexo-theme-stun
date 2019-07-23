@@ -1,6 +1,6 @@
 mixin articleSort(posts)
   section.article-sort
-    - let year, tmpYear
+    - var year, tmpYear
     - posts.each(function (post) {
       if post.date
         - tmpYear = full_date(post.date, "YYYY")

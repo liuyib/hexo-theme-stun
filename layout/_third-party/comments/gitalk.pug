@@ -3,12 +3,12 @@ script(src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js")
 script(src="https://cdn.jsdelivr.net/npm/js-md5@latest/src/md5.min.js")
 
 -
-  let lang = _.get(theme, 'gitalk.language')
+  var lang = _.get(theme, 'gitalk.language')
     ? theme.gitalk.language : config.language;
 
 script.
   window.onload = function() {
-    let gitalk = new Gitalk({
+    var gitalk = new Gitalk({
       id: md5('!{ page.path }'),
       clientID: '!{ theme.gitalk.client_id }',
       clientSecret: '!{ theme.gitalk.client_secret }',

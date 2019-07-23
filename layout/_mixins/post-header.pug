@@ -36,13 +36,13 @@ mixin postHeader(post)
           span= wordcount(post.content)
       
       if theme.post_meta.reading_time.enable
-        - let postReadingTime = theme.post_meta.reading_time
+        - var postReadingTime = theme.post_meta.reading_time
         span.post-meta-reading-time
           i(class=`fa fa-${postReadingTime.icon}`)
           
           if !theme.post_meta.icon_only
             span= _p("post.reading_time") + " "
-          - let READING_TIME_UNIT = "m";
+          - var READING_TIME_UNIT = "m";
           span= min2read(post.content, {cn: postReadingTime.speed.zh, en: postReadingTime.speed.en}) + READING_TIME_UNIT
 
       if theme.valine && theme.valine.enable && theme.valine.visitor

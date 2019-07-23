@@ -1,9 +1,9 @@
 footer#footer
   -
-    let footer = theme.footer
-    let nowYear = new Date().getFullYear()
-    let startYear = footer.copyright.enable ? footer.copyright.since || nowYear : nowYear
-    let endYear = footer.copyright.enable ? footer.copyright.end || nowYear : nowYear
+    var footer = theme.footer
+    var nowYear = new Date().getFullYear()
+    var startYear = footer.copyright.enable ? footer.copyright.since || nowYear : nowYear
+    var endYear = footer.copyright.enable ? footer.copyright.end || nowYear : nowYear
 
   div.footer-inner
     if footer.copyright.enable || footer.beian.enable
@@ -31,7 +31,7 @@ footer#footer
       div
         if footer.powered.enable
           span.footer-powered
-            - let HEXO_URL = "http://hexo.io/";
+            - var HEXO_URL = "http://hexo.io/";
             != _p("footer.powered", link_to(HEXO_URL, "hexo", { external: true }))
           
           if footer.powered.version
@@ -42,7 +42,7 @@ footer#footer
 
         if footer.theme.enable
           span= _p("footer.theme") + " - "
-            - let STUN_URL = "https://github.com/liuyib/hexo-theme-stun/";
+            - var STUN_URL = "https://github.com/liuyib/hexo-theme-stun/";
             != link_to(STUN_URL, "stun", { external: true })
         
           if footer.theme.version

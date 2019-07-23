@@ -68,17 +68,15 @@ $(document).ready(function () {
         item: function (data) {
           var link = data.permalink ? data.permalink : CONFIG.root + data.path;
           return (
-            '<a href="' +
-            link +
-            '" class="algolia-hit-item-link">' +
-            data._highlightResult.title.value +
+            '<a href="' + link + '" class="algolia-hit-item-link">' +
+              data._highlightResult.title.value +
             '</a>'
           );
         },
         empty: function (data) {
           return (
             '<div id="algolia-hits-empty">' +
-            algolia.languages.hits_empty.replace(/\$\{query}/, data.query) +
+              algolia.languages.hits_empty.replace(/\$\{query}/, data.query) +
             '</div>'
           );
         }
@@ -102,9 +100,8 @@ $(document).ready(function () {
             return (
               stats +
               '<span class="algolia-logo pull-right">' +
-              '  <img src="' +
-              CONFIG.root +
-              'images/algolia.svg" alt="Algolia" />' +
+                '<img src="' + CONFIG.root +
+                'images/algolia.svg" alt="Algolia" />' +
               '</span>'
             );
           }

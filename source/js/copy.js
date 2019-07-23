@@ -7,26 +7,24 @@ $(document).ready(function test () {
       var lang = item
         .getAttribute('class')
         .split(/\s/)
-        .filter(e => e !== CODEBLOCK_CLASS_NAME);
-      var codeHeader = $(`
-        <figcaption class="custom">
-          <span>${lang}</span>
-        </figcaption>
-      `)[0];
+        .filter(function (e) { return e !==  CODEBLOCK_CLASS_NAME});
+      var codeHeader = $(
+        '<figcaption class="custom">' +
+          '<span>' + lang + '</span>' +
+        '</figcaption>'
+      )[0];
 
       item.insertBefore(codeHeader, $(item).children().first()[0]);
     }
   });
 
-  var $copyIcon = $(`
-    <div class="copy-button">
-      <i class="fa fa-clipboard"></i>
-    </div>
-  `);
-  var COPY_BUTTON_WRAPPER = `
-    figure.highlight figcaption,
-    .post-footer-copyright
-  `;
+  var $copyIcon = $(
+    '<div class="copy-button">' +
+      '<i class="fa fa-clipboard"></i>' +
+    '</div>'
+  );
+  var COPY_BUTTON_WRAPPER =
+    'figure.highlight figcaption, .post-footer-copyright';
 
   // Add a copy button to the selected elements.
   $(COPY_BUTTON_WRAPPER).append($copyIcon);

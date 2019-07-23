@@ -81,7 +81,7 @@ $(document).ready(function () {
     });
 
     if (currHeading !== lastHeading) {
-      var targetLink = $(`.sidebar-toc a[href="#${currHeading}"]`);
+      var targetLink = $('.sidebar-toc a[href="#' + currHeading + '"]');
 
       // If the relevant "<a>" is not found, remain the state of the toc,
       //   either, remove styles for all active states.

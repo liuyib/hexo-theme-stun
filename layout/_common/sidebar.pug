@@ -1,6 +1,6 @@
 aside#sidebar
   div.sidebar-inner
-    - let isShowPostToc = theme.toc.enable && is_post()
+    - var isShowPostToc = theme.toc.enable && is_post()
     if isShowPostToc
       div.sidebar-nav
         span.sidebar-nav-toc.current= _p("sidebar.catalog")
@@ -8,7 +8,7 @@ aside#sidebar
     
     section(class=`${isShowPostToc ? "" : "hide"}`).sidebar-toc
       if page.content
-        - let tocMaxDepth = page.toc_max_depth || theme.toc.max_depth || 6
+        - var tocMaxDepth = page.toc_max_depth || theme.toc.max_depth || 6
         div!= toc(page.content, {list_number: theme.toc.number, max_depth: tocMaxDepth})
 
     section(class=`${isShowPostToc ? "hide" : ""}`).sidebar-overview
@@ -24,9 +24,9 @@ aside#sidebar
         div.sidebar-social
           for value, name in (theme.social || [])
             if name && value
-              - let socialItem = value.split('||')
-              - let socialLinkPath = _.trim(_.get(socialItem, '[0]'))
-              - let socialLinkIcon = _.trim(_.get(socialItem, '[1]'))
+              - var socialItem = value.split('||')
+              - var socialLinkPath = _.trim(_.get(socialItem, '[0]'))
+              - var socialLinkIcon = _.trim(_.get(socialItem, '[1]'))
               span.sidebar-social-item
                 a(href=socialLinkPath target="_blank" rel="noopener"
                     data-popover=_p(`social.${name}`) data-popover-pos="up")
@@ -42,7 +42,7 @@ aside#sidebar
       
       if theme.feed.enable
         div.sidebar-feed
-          - let feedEmail = theme.feed.email
+          - var feedEmail = theme.feed.email
           if feedEmail
             span.sidebar-feed-email
               a(href=feedEmail target="_blank" rel="noopener")
@@ -50,7 +50,7 @@ aside#sidebar
                 span Email
                 span= _p("sidebar.subscribe")
           
-          - let feedRSS = theme.feed.rss
+          - var feedRSS = theme.feed.rss
           if feedRSS
             span.sidebar-feed-rss
               a(href=url_for(feedRSS) target="_blank" rel="noopener")
@@ -59,9 +59,9 @@ aside#sidebar
                 span= _p("sidebar.subscribe")
       
       if theme.menu
-        - let menuArchives   = _.trim(_.get(theme.menu.archives.split('||'), '[0]'))
-        - let menuCategories = _.trim(_.get(theme.menu.categories.split('||'), '[0]'))
-        - let menuTags       = _.trim(_.get(theme.menu.tags.split('||'), '[0]'))
+        - var menuArchives   = _.trim(_.get(theme.menu.archives.split('||'), '[0]'))
+        - var menuCategories = _.trim(_.get(theme.menu.categories.split('||'), '[0]'))
+        - var menuTags       = _.trim(_.get(theme.menu.tags.split('||'), '[0]'))
         div.sidebar-state
           if theme.menu.archives
             div.sidebar-state-item.sidebar-state-posts
@@ -80,10 +80,10 @@ aside#sidebar
                 div.sidebar-state-item-name= _p("sidebar.tags")
       
       if theme.creative_commons.enable && theme.creative_commons.sidebar
-        - let themeCC = theme.creative_commons
-        - let ccLicense = themeCC.license && themeCC.license.toLowerCase()
-        - let ccLanguage = (themeCC.language && themeCC.language.toLowerCase()) || "en"
-        - let ccURL = `https://creativecommons.org/licenses/${ccLicense}/4.0/deed.${ccLanguage}`
+        - var themeCC = theme.creative_commons
+        - var ccLicense = themeCC.license && themeCC.license.toLowerCase()
+        - var ccLanguage = (themeCC.language && themeCC.language.toLowerCase()) || "en"
+        - var ccURL = `https://creativecommons.org/licenses/${ccLicense}/4.0/deed.${ccLanguage}`
         div.sidebar-cc
           a(href=ccURL target="_blank" rel="noopener"
               data-popover="Creative Commons" data-popover-pos="up")

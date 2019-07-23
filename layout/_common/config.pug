@@ -1,6 +1,6 @@
 -
-  let algolia = 'undefined';
-  let env = process.env;
+  var algolia = 'undefined';
+  var env = process.env;
 
   if (theme.algolia_search.enable) {
     algolia = JSON.stringify({
@@ -17,8 +17,8 @@
   } 
 
 script.
-  let Stun = window.Stun || {};
-  let CONFIG = {
+  var Stun = window.Stun || {};
+  var CONFIG = {
     root: '!{ config.root }',
     algolia: !{algolia},
     notification: {

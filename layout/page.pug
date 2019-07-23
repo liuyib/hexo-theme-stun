@@ -5,10 +5,10 @@ block content
     div.tag-cloud.main-content-layout
       div.tag-cloud-title= _p("page.tags") + " - "
         span.tag-cloud-num= site.tags.length
-      - let min_font = theme.tag_cloud ? theme.tag_cloud.min_size : 14
-      - let max_font = theme.tag_cloud ? theme.tag_cloud.max_size : 20
-      - let start_color = theme.tag_cloud ? theme.tag_cloud.start_color : "#a4d8fa"
-      - let end_color = theme.tag_cloud ? theme.tag_cloud.end_color : "#1b9ef3"
+      - var min_font = theme.tag_cloud ? theme.tag_cloud.min_size : 14
+      - var max_font = theme.tag_cloud ? theme.tag_cloud.max_size : 20
+      - var start_color = theme.tag_cloud ? theme.tag_cloud.start_color : "#a4d8fa"
+      - var end_color = theme.tag_cloud ? theme.tag_cloud.end_color : "#1b9ef3"
       div.tag-cloud-item!= tagcloud({min_font: min_font, max_font: max_font, amount: theme.tag_cloud.max_amount, color: true, start_color, end_color})
   else if (page.title === "categories")
     div.category.main-content
