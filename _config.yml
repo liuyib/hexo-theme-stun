@@ -533,6 +533,13 @@ math:
 # Other config
 # ---------------------------------------------------------------
 
+# Google AdSense
+google_adsense:
+  enable: false
+  js_src: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js
+  client: 
+  enable_page_level_ads: true
+
 # The links with `target="_blank"` attribute.
 external_link:
   # Adding an icon make it easier for users to know that this is an external link.
