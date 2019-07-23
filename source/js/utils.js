@@ -172,7 +172,7 @@ Stun.utils = Stun.$u = {
         CONFIG.external_link.icon_name +
       '"></i>'
     );
-    $(selector).find('a[target="_blank"]').append($icon);
+    $icon.insertAfter($(selector).find('a[target="_blank"]'));
   },
   // Back the page to top.
   back2Top: function () {

@@ -4,20 +4,21 @@ section#recent-posts
     article.post-item
       +postHeader(post)
 
-      if theme.post_list.cover_image.home && post.cover_image
-        img(src=post.cover_image)
+      if !post.link
+        if theme.post_list.cover_image.home && post.cover_image
+          img(src=post.cover_image)
 
-      if post.top
-        include ./sticky-top.pug
+        if post.top
+          include ./sticky-top.pug
 
-      if theme.auto_excerpt && theme.auto_excerpt.enable
-        - const content = strip_html(post.content)
-        - var excerpt = content.substring(0, theme.auto_excerpt.length)
-        - content.length > theme.auto_excerpt.length ? excerpt += '......' : ''
-        div!= excerpt
-      else
-        div.post-excerpt!= post.excerpt
-      
-      div.post-btn
-        a(href=url_for(post.path))= _p("post.read_more") + " »"
+        if theme.auto_excerpt && theme.auto_excerpt.enable
+          - const content = strip_html(post.content)
+          - var excerpt = content.substring(0, theme.auto_excerpt.length)
+          - content.length > theme.auto_excerpt.length ? excerpt += '......' : ''
+          div!= excerpt
+        else
+          div.post-excerpt!= post.excerpt
+        
+        div.post-btn
+          a(href=url_for(post.path))= _p("post.read_more") + " »"
   - })
