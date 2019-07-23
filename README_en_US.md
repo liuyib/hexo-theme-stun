@@ -78,7 +78,9 @@ If you have problems with your use, please read [documentation](https://liuyib.g
 
 ## Browser Support
 
-IE not supported.
+| <img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/35.1.0/internet-explorer/internet-explorer_32x32.png" alt="IE" width="32px" height="32px" /></br> IE | <img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/35.1.0/edge/edge_32x32.png" alt="Edge" width="32px" height="32px" /></br> Edge | <img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/35.1.0/firefox/firefox_32x32.png" alt="Firefox" width="32px" height="32px" /></br> Firefox | <img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/35.1.0/chrome/chrome_32x32.png" alt="Chrome" width="32px" height="32px" /></br> Chrome | <img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/35.1.0/safari/safari_32x32.png" alt="Safari" width="32px" height="32px" /></br> Safari | <img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/35.1.0/opera/opera_32x32.png" alt="Opera" width="32px" height="32px" /></br> Opera |
+| --- | --- | --- | --- | --- | --- |
+| Not Support | 12+ | 28+ | 21+ | 6.1+ | 12.1+ |
 
 ## License
 
