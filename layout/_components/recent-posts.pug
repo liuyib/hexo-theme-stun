@@ -5,8 +5,8 @@ section#recent-posts
       +postHeader(post)
 
       if !post.link
-        if theme.post_list.cover_image.home && post.cover_image
-          img(src=post.cover_image)
+        if theme.post_list.cover_image.home && post.top_image
+          img(src=post.top_image)
 
         if post.top
           include ./sticky-top.pug
