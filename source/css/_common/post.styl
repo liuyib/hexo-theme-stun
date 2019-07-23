@@ -1,11 +1,12 @@
 $img_horizonal_align
   margin: auto
+
 if (hexo-config('img_horizonal_align') == 'left')
   $img_horizonal_align
     margin: 0 auto 0 0
 else if (hexo-config('img_horizonal_align') == 'right')
   $img_horizonal_align
-    margin: 0 0 0 auto  
+    margin: 0 0 0 auto
 
 .post-body,
 #recent-posts
@@ -27,10 +28,10 @@ else if (hexo-config('img_horizonal_align') == 'right')
     if (hexo-config('post_widget.end_text.horizon_line'))
       border-top: 1px dashed #e6e6e6
       padding: 1rem 0 0
-  
+
     span
       margin: 0 .1rem
-  
+
   &-copyright
     position: relative
 

@@ -9,7 +9,7 @@
 使用 `stun` 主题运行后，浏览器里显示：
 
 `
-n/layout.pug block content include ./_mixins/posts-sort.pug include ./_mixins/post-header.pug div.home-content.code-highlight if theme.post_list_paged.home include ./_components/recent-posts.pug include ./_components/pagination.pug else include ./_components/recent-posts.pug
+n/layout.pug block content include ./_mixins/posts-sort.pug include ./_mixins/post-header.pug div.content.code-highlight if theme.post_list_paged.home include ./_components/recent-posts.pug include ./_components/pagination.pug else include ./_components/recent-posts.pug
 `
 
 原因是没有安装对 `pug` 的支持。文档和 READMD 都有提到：

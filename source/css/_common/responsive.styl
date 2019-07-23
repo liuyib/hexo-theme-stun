@@ -17,12 +17,7 @@
   #sidebar
     display: none
 
-  .main-content,
-  .home-content
-    float: none
-    margin: 0 auto
-
-  .main-content-layout
+  .content
     float: none
     margin: 0 auto
 
@@ -32,12 +27,8 @@
 // $md-width: 992px
 // -----------------------------------------
 @media screen and (min-width: $md-width)
-  .main-content-layout,
-  .main-content,
+  .content,
   .comments
-    width: $main-desktop
-
-  .home-content
     width: $main-desktop
 
 @media screen and (max-width: $md-width)
@@ -52,14 +43,8 @@
   #main
     margin-bottom: 2rem
 
-  .main-content
+  .content
     padding: 1.2rem
-    width: 100%
-
-  .home-content
-    width: 100%
-
-  .main-content-layout
     width: 100%
 
 // sm-width: 768px
@@ -102,7 +87,7 @@
 
     .site-info-subtitle
       font-size: 1rem
-  
+
   div.algolia-popup
     left: 0
     margin: 0 1rem
@@ -128,14 +113,14 @@
   .header-nav-search
     span
       display: none
-    
+
   div.algolia-results
     max-height: 10rem
-    
+
     .algolia-hit-item
       margin: 0
 
-  .main-content
+  .content
     padding: 1rem
 
   .post-header
@@ -160,8 +145,8 @@
       margin: 0 0 1.5rem
       padding: 1rem 1.2rem
 
-  .main-content-layout
-    padding: 1.20rem
+  .content
+    padding: 1.2rem
 
   .archive-inner
     margin-left: .5rem

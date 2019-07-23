@@ -4,12 +4,9 @@
   right: 1.5rem
   bottom: 5vh
 
-$back-to-top-rotate = convert(
-  hexo-config('back2top.icon.rotate') || '0')
-$back-to-top-color = convert(
-  hexo-config('back2top.icon.color') || '#666')
-$back-to-top-hover-color = convert(
-  hexo-config('back2top.icon.hover_color') || '#999')
+$back-to-top-rotate = convert(hexo-config('back2top.icon.rotate') || '0')
+$back-to-top-color = convert(hexo-config('back2top.icon.color') || '#666')
+$back-to-top-hover-color = convert(hexo-config('back2top.icon.hover_color') || '#999')
 
 .back-top-inner
   i
@@ -21,6 +18,6 @@ $back-to-top-hover-color = convert(
     &:hover
       color: $back-to-top-hover-color
       cursor: pointer
-  
-  &[data-popover][data-popover-pos="up"]:hover::before
+
+  &[data-popover][data-popover-pos='up']:hover::before
     transform: translate(-50%, -125%)

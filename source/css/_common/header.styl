@@ -1,10 +1,8 @@
-$header-height = convert(
-  hexo-config('header.height') || '80vh')
+$header-height = convert(hexo-config('header.height') || '80vh')
 
 if (hexo-config('header.height'))
   if (match('%', hexo-config('header.height')))
-    $header-height = unit(convert(
-      hexo-config('header.height')), 'vh')
+    $header-height = unit(convert(hexo-config('header.height')), 'vh')
 
 #header
   display: flex
@@ -17,8 +15,8 @@ if (hexo-config('header.height'))
   background-attachment: fixed
   background-position: center
   background-size: cover
-  flex-direction: column
   transition: height .5s
+  flex-direction: column
 
 $header-nav-color
   .header-nav-menu a,
@@ -32,13 +30,11 @@ $header-nav-color
       &::after
         color: $header-nav-link-hover-color
 
-$header-nav-height = convert(
-  hexo-config('header.nav_height') || '50px')
+$header-nav-height = convert(hexo-config('header.nav_height') || '50px')
 
 if (hexo-config('header.nav_height'))
   if (match('%', hexo-config('header.nav_height')))
-    $header-nav-height = unit(convert(
-      hexo-config('header.nav_height')), 'vh')
+    $header-nav-height = unit(convert(hexo-config('header.nav_height')), 'vh')
 
 .header-nav
   position: fixed
@@ -89,17 +85,17 @@ $header-nav-item
   span
     float: left
     margin: 0 1rem 0 0
-  
+
   a
     clearAStyle()
     display: block
     text-decoration: none
     transition: color .2s ease
     @extend $header-nav-item
-  
+
   &.show
-    opacity: 1
     visibility: visible
+    opacity: 1
 
 .header-nav-search
   float: right
@@ -116,8 +112,7 @@ $header-nav-item
   flex-direction: column
 
   if (hexo-config('header.mask.enable'))
-    background-color: alpha(#000, 
-      hexo-config('header.mask.opacity'))
+    background-color: alpha(#000, hexo-config('header.mask.opacity'))
 
 .header-info-inner
   display: flex

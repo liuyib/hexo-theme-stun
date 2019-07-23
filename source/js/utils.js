@@ -141,6 +141,10 @@ Stun.utils = Stun.$u = {
       return false;
     }
   },
+  // Wrap images with fancybox support.
+  wrapImageWithFancyBox: function () {
+
+  },
   // Add a container outside the tables to make it scroll when needed.
   addContainerToTable: function () {
     var $wrapper = $('<div style="overflow: auto"></div>');
@@ -166,13 +170,17 @@ Stun.utils = Stun.$u = {
    */
   addIconToExternalLink: function (selector) {
     if (!$(selector)[0]) return;
-    
+
     var $icon = $(
       '<i class="external-link fa fa-' +
         CONFIG.external_link.icon_name +
       '"></i>'
     );
-    $icon.insertAfter($(selector).find('a[target="_blank"]'));
+    // Insert icon after link.
+    // $icon.insertAfter($(selector).find('a[target="_blank"]'));
+
+    // Insert icon inner link.
+    $(selector).find('a[target="_blank"]').append($icon);
   },
   // Back the page to top.
   back2Top: function () {
@@ -244,5 +252,5 @@ Stun.utils = Stun.$u = {
 $(document).ready(function () {
   Stun.utils.addContainerToTable();
   Stun.utils.adjustImageSize();
-  Stun.utils.copyText()
+  Stun.utils.copyText();
 });

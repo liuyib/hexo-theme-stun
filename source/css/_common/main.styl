@@ -1,3 +1,19 @@
+setUlStyle(content, hoverColor)
+  &::before
+    content: content
+    position: absolute
+    top: .04em
+    left: -1.5em
+    line-height: $line-height-base
+    color: $ul-list-color
+    transition: color .2s ease
+    transform: scale(.6)
+    @extend $font-face
+
+  &:hover
+    &::before
+      color: hoverColor
+
 #container
   display: flex
   min-height: 100vh
@@ -12,6 +28,7 @@
 
 $content-position
   margin: 0 auto
+
 if (hexo-config('sidebar.enable'))
   if (hexo-config('sidebar.position') == 'left')
     $content-position
@@ -20,9 +37,125 @@ if (hexo-config('sidebar.enable'))
     $content-position
       float: left
 
-.home-content
-  font-size: $font-main-base
+.headings
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6
+    position: relative
+    margin: 1.5rem 0 1rem
+    font-weight: $font-weight-bolder
+    line-height: $line-height-h
+    color: lighten($h-color, 15%)
+    cursor: pointer
+
+    if ($icon-h-link)
+      &:not(.post-title)::after
+        content: $icon-h-link
+        height: 100%
+        line-height: $line-height-h
+        color: $h-link-logo-color
+        opacity: 0
+        transition: opacity .1s ease
+        @extend $font-face
+
+    &:hover
+      &::after
+        opacity: 1
+
+  for size in 1 .. 6
+    h{size}
+      font-size: $h-font-size[size - 1]
+
+      &::after
+        margin-left: .8rem - .1 * size
+
+.content
   @extend $content-position
+  border-radius: 5px
+  padding: 2rem
+  font-size: $font-main-base
+  background-color: $white
+
+  & > :first-child
+    margin-top: 0
+
+  & > :last-child
+    margin-bottom: 0
 
   img
     max-width: 100%
+    vertical-align: convert(hexo-config('text_vertical_align_with_img') || 'bottom')
+
+  ul,
+  ol
+    margin: .5rem 0
+    padding-left: 2em
+
+  li
+    position: relative
+
+    if ($icon-ul-list-1 && ($icon-ul-list-2 && $icon-ul-list-3))
+      list-style-type: none
+
+  ul
+    li
+      setUlStyle($icon-ul-list-1, $ul-list-hover-color)
+
+      ul
+        li
+          setUlStyle($icon-ul-list-2, $ul-list-hover-color)
+
+          ul
+            li
+              setUlStyle($icon-ul-list-3, $ul-list-hover-color)
+
+  ol
+    counter-reset: ol-li
+
+    & > li
+      &::before
+        content: counter(ol-li) '.'
+        position: absolute
+        left: -1.5em
+        text-align: right
+        color: $blue-light
+        counter-increment: ol-li
+
+  blockquote
+    margin: 0 0 1rem
+
+    & > :first-child
+      margin-top: 0
+
+    & > :last-child
+      margin-bottom: 0
+
+    & + blockquote
+      padding-top: 0
+
+    figure
+      margin-top: 0
+      margin-bottom: 0
+
+    cite
+      &::before
+        content: '--'
+        padding: 0 .2em
+
+  table
+    border-spacing: 0
+    border-collapse: collapse
+    margin: 0 auto 1rem
+    min-width: 100%
+
+    th,
+    td
+      border: 1px solid #eee
+
+.home-content
+  @extend .headings
+  padding: 0
+  background-color: transparent

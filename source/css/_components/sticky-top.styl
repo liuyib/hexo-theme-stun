@@ -5,11 +5,8 @@ else
   $stick-top-position
     right: 1.5rem
 
-$stick-top-rotate = convert(
-  hexo-config('stick_top.rotate' || '0deg'))
-
-$stick-top-color = convert(
-  hexo-config('stick_top.color' || '#999'))
+$stick-top-rotate = convert(hexo-config('stick_top.rotate' || '0deg'))
+$stick-top-color = convert(hexo-config('stick_top.color' || '#999'))
 
 .sticky-top
   position: absolute
@@ -19,10 +16,10 @@ $stick-top-color = convert(
   line-height: 1.5rem
   text-align: center
   @extend $stick-top-position
-  
+
   i
     color: $stick-top-color
     transform: scale(1.2) rotate($stick-top-rotate)
-  
+
   &[data-popover][data-popover-pos='up']:hover::before
     transform: translate(-50%, -100%)

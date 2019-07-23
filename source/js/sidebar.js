@@ -55,8 +55,7 @@ $(document).ready(function () {
     $view.velocity('fadeIn');
   });
 
-  if ($('.main-content, .main-content-layout').height() <
-      $('#sidebar').height()) {
+  if ($('.content').height() < $('#sidebar').height()) {
     $('#main').css('min-height', $('#main').height());
   }
 
@@ -170,7 +169,7 @@ $(document).ready(function () {
 
   // Update the reading progress lines of post.
   function readProgress () {
-    var $post = $('.main-content');
+    var $post = $('.content');
     var scrollH = ($post[0] && $post[0].getBoundingClientRect().top * -1) || 0;
 
     var percent = parseInt((scrollH /

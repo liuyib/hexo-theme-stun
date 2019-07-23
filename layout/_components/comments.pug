@@ -1,5 +1,5 @@
 if theme.gitment && theme.gitment.enable
-  div#comments.comments.main-content-layout
+  div#comments.comments.content
     if theme.gitment.lazy
       div#gitment-button(onclick="showGitment()")
         != _p("comment.gitment.button")
@@ -7,13 +7,13 @@ if theme.gitment && theme.gitment.enable
     else
       div#gitment-container
 else if theme.gitalk && theme.gitalk.enable
-  div#comments.comments.main-content-layout
+  div#comments.comments.content
     div#gitalk-container
 else if theme.livere && theme.livere.enable
-  div#comments.comments.main-content-layout
+  div#comments.comments.content
     div#lv-container(data-id="city" data-uid=theme.livere.uid)
 else if theme.disqus && theme.disqus.enable
-  div#comments.comments.main-content-layout
+  div#comments.comments.content
     div#disqus_thread
 else if theme.valine && theme.valine.enable
-  div#comments.comments.main-content-layout
+  div#comments.comments.content

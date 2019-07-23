@@ -2,7 +2,7 @@ extends ./_common/layout.pug
 
 block content
   if (page.title === "tags")
-    div.tag-cloud.main-content-layout
+    div.content.tag-cloud
       div.tag-cloud-title= _p("page.tags") + " - "
         span.tag-cloud-num= site.tags.length
       - var min_font = theme.tag_cloud ? theme.tag_cloud.min_size : 14
@@ -11,13 +11,13 @@ block content
       - var end_color = theme.tag_cloud ? theme.tag_cloud.end_color : "#1b9ef3"
       div.tag-cloud-item!= tagcloud({min_font: min_font, max_font: max_font, amount: theme.tag_cloud.max_amount, color: true, start_color, end_color})
   else if (page.title === "categories")
-    div.category.main-content
+    div.content.category
       div.category-title= _p("page.categories") + " - "
         span.category-num= site.categories.length
       != list_categories()
   else if (page.title === "about")
-    div.about.main-content.code-highlight
+    div.content.headings.code-highlight
       != page.content
   else
-    div.about.main-content.code-highlight
+    div.content.headings.code-highlight
       != page.content

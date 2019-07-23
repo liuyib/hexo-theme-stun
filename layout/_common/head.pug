@@ -46,6 +46,9 @@ if theme.cdn && theme.cdn.css
     if url
       link(rel="stylesheet" href=url_for(url))
 
+if theme.fancybox
+  link(rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css")
+
 link(rel="stylesheet" href=`${url_for(theme.css)}/index.css?v=${stun_env("version")}`)
 
 include ../_third-party/analytics/index.pug

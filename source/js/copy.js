@@ -7,7 +7,7 @@ $(document).ready(function test () {
       var lang = item
         .getAttribute('class')
         .split(/\s/)
-        .filter(function (e) { return e !==  CODEBLOCK_CLASS_NAME});
+        .filter(function (e) { return e !== CODEBLOCK_CLASS_NAME; });
       var codeHeader = $(
         '<figcaption class="custom">' +
           '<span>' + lang + '</span>' +
@@ -38,7 +38,7 @@ $(document).ready(function test () {
     } else { // Copy text.
       container = $(this).parent()[0];
     }
-    
+
     if (Stun.utils.copyText(container)) {
       Stun.utils.popAlert('success', CONFIG.notification.copy_success);
     } else {
