@@ -1,10 +1,10 @@
-$(document).ready(function test () {
+$(document).ready(function () {
   var CODEBLOCK_CLASS_NAME = 'highlight';
   var $codeBlocks = $('figure.highlight');
 
-  $codeBlocks.each(function test (index, item) {
-    if (!$(item).find('figcaption')[0]) {
-      var lang = item
+  $codeBlocks.each(function () {
+    if (!$(this).find('figcaption')[0]) {
+      var lang = this
         .getAttribute('class')
         .split(/\s/)
         .filter(function (e) { return e !== CODEBLOCK_CLASS_NAME; });
@@ -14,7 +14,7 @@ $(document).ready(function test () {
         '</figcaption>'
       )[0];
 
-      item.insertBefore(codeHeader, $(item).children().first()[0]);
+      this.insertBefore(codeHeader, $(this).children().first()[0]);
     }
   });
 

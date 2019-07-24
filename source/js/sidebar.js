@@ -63,7 +63,8 @@ $(document).ready(function () {
   //   based on the scrolling of heading in the article.
   function autoSpreadToc () {
     var $postBody = $('.post-body');
-    var $firsetChild = $postBody.find('h1,h2,h3,h4,h5,h6').first();
+    var $headings = $postBody.find('h1,h2,h3,h4,h5,h6');
+    var $firsetChild = $headings.first();
 
     // All heading are not to the top.
     if ($postBody[0] && (!!$firsetChild[0] &&
@@ -73,9 +74,9 @@ $(document).ready(function () {
       return;
     }
 
-    $postBody.find('h1,h2,h3,h4,h5,h6').each(function (index, item) {
-      if (item && item.getBoundingClientRect().top < 0) {
-        currHeading = $(item).attr('id');
+    $headings.each(function () {
+      if (this.getBoundingClientRect().top < 0) {
+        currHeading = $(this).attr('id');
       }
     });
 
@@ -106,12 +107,14 @@ $(document).ready(function () {
     }
 
     if (isTocScroll) {
-      $currLink.velocity('stop').velocity('scroll', {
-        container: $toc,
-        offset: -($toc.height() / 2),
-        duration: 500,
-        easing: 'easeOutQuart'
-      });
+      $currLink
+        .velocity('stop')
+        .velocity('scroll', {
+          container: $toc,
+          offset: -($toc.height() / 2),
+          duration: 500,
+          easing: 'easeOutQuart'
+        });
     }
   }
 
@@ -170,7 +173,8 @@ $(document).ready(function () {
   // Update the reading progress lines of post.
   function readProgress () {
     var $post = $('.content');
-    var scrollH = ($post[0] && $post[0].getBoundingClientRect().top * -1) || 0;
+    var scrollH = ($post[0] &&
+      $post[0].getBoundingClientRect().top * -1) || 0;
 
     var percent = parseInt((scrollH /
       Math.abs($post.height() - $(window).height())) * 100);

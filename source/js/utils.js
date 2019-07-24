@@ -152,24 +152,24 @@ Stun.utils = Stun.$u = {
   },
   // Adjust the size of images by the parameter "size".
   adjustImageSize: function () {
-    $('img').each(function (index, img) {
-      if (img.src.includes('?size=')) {
-        var size = img.src.split('?size=')[1] &&
-          img.src.split('?size=')[1].toLowerCase();
+    $('img').each(function () {
+      if (this.src.includes('?size=')) {
+        var size = this.src.split('?size=')[1] &&
+          this.src.split('?size=')[1].toLowerCase();
         var w = size.split('x')[0];
         var h = size.split('x')[1];
 
-        $(img).css('width', w);
-        $(img).css('height', h);
+        $(this).css('width', w);
+        $(this).css('height', h);
       }
     });
   },
   /**
    * Add a mark icon to the link with `target="_blank"` attribute.
-   * @param {String} selector Any Jquery selector.
+   * @param {String} wrapper Any Jquery wrapper.
    */
-  addIconToExternalLink: function (selector) {
-    if (!$(selector)[0]) return;
+  addIconToExternalLink: function (wrapper) {
+    if (!$(wrapper)[0]) return;
 
     var $icon = $(
       '<i class="external-link fa fa-' +
@@ -177,10 +177,10 @@ Stun.utils = Stun.$u = {
       '"></i>'
     );
     // Insert icon after link.
-    // $icon.insertAfter($(selector).find('a[target="_blank"]'));
+    // $icon.insertAfter($(wrapper).find('a[target="_blank"]'));
 
     // Insert icon inner link.
-    $(selector).find('a[target="_blank"]').append($icon);
+    $(wrapper).find('a[target="_blank"]').append($icon);
   },
   // Back the page to top.
   back2Top: function () {
