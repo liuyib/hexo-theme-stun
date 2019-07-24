@@ -78,3 +78,9 @@
 
     &::after
       content: ')'
+
+// Gallery in post / page.
+.post-g-img
+  if hexo-config('gallery_waterfall.enable')
+    width: convert(hexo-config('gallery_waterfall.col_width') || '220px')
+    margin-bottom: convert(hexo-config('gallery_waterfall.gap_y') || '10px')

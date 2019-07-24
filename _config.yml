@@ -443,9 +443,9 @@ busuanzi:
       icon: eye
   # Number of page view to a post.
   post_pv:
+    enable: true
     # Only show by icon.
     icon_only: false
-    enable: true
     # Icon name in FontAwesome, see: https://fontawesome.com/v4.7.0/icons/
     icon: eye
 
@@ -532,6 +532,18 @@ math:
 # ---------------------------------------------------------------
 # Other config
 # ---------------------------------------------------------------
+
+# Fancybox
+# See: https://fancyapps.com/fancybox/3/
+fancybox: false
+
+# If you are use "photos" attribute in the Front-matter,
+#   you can enable this to show images in waterfalls flow.
+gallery_waterfall:
+  enable: false
+  col_width: 220px
+  gap_x: 10px
+  gap_y: 10px
 
 # Google AdSense
 google_adsense:

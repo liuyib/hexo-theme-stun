@@ -143,7 +143,55 @@ Stun.utils = Stun.$u = {
   },
   // Wrap images with fancybox support.
   wrapImageWithFancyBox: function () {
+    $('.content img').not(':hidden').each(function () {
+      var $img = $(this);
+      var imgTitle = $img.attr('title') || $img.attr('alt');
+      var $imgWrap = $img.parent('a');
 
+      if (!$imgWrap[0]) {
+        var imgSrc = $img.attr('data-original') || $img.attr('src');
+
+        $imgWrap = $img.wrap('<a class="fancybox" href="' + imgSrc +
+          '" itemscope itemtype="http://schema.org/ImageObject" itemprop="url"></a>'
+        ).parent('a');
+
+        if ($img.is('.post-gallery img')) {
+          $imgWrap.attr('data-fancybox', 'gallery');
+        } else {
+          $imgWrap.attr('data-fancybox', 'default');
+        }
+      }
+
+      if (imgTitle) {
+        $imgWrap.attr('title', imgTitle).attr('data-caption', imgTitle);
+      }
+    });
+
+    $().fancybox({
+      selector: '[data-fancybox]',
+      loop: true,
+      transitionEffect: 'slide',
+      buttons: [
+        'share',
+        'slideShow',
+        'fullScreen',
+        'download',
+        'thumbs',
+        'close'
+      ]
+    });
+  },
+  galleryWaterFall: function () {
+    var colWidth = parseInt(CONFIG.waterfall_col_width);
+    var colGap = parseInt(CONFIG.waterfall_gap.x);
+    
+    $('.post-gallery').masonry({
+      itemSelector: '.post-g-img',
+      columnWidth: colWidth,
+      percentPosition: true,
+      gutter: colGap,
+      transitionDuration: 0
+    });
   },
   // Add a container outside the tables to make it scroll when needed.
   addContainerToTable: function () {

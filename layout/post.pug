@@ -7,6 +7,9 @@ block content
     +postHeader(page)
     
     div.post-body
+      if page.photos && page.photos.length
+        include ./_components/gallery.pug
+      
       != page.content
 
     footer.post-footer

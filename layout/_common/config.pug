@@ -22,6 +22,12 @@ script.
     root: '!{ config.root }',
     algolia: !{ algolia },
     fancybox: !{ theme.fancybox },
+    gallery_waterfall: !{ theme.gallery_waterfall.enable },
+    waterfall_col_width: '!{ theme.gallery_waterfall.col_width }',
+    waterfall_gap: {
+      x: '!{ theme.gallery_waterfall.gap_x }',
+      y: '!{ theme.gallery_waterfall.gap_y }'
+    },
     notification: {
       copy_success: '!{ _p("notification.copy.success") }',
       copy_error: '!{ _p("notification.copy.error") }'

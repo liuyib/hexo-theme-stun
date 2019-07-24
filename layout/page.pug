@@ -3,6 +3,9 @@ extends ./_common/layout.pug
 block content
   if (page.title === "tags")
     div.content.tag-cloud
+      if page.photos && page.photos.length
+        include ./_components/gallery.pug
+      
       div.tag-cloud-title= _p("page.tags") + " - "
         span.tag-cloud-num= site.tags.length
       - var min_font = theme.tag_cloud ? theme.tag_cloud.min_size : 14
@@ -12,12 +15,21 @@ block content
       div.tag-cloud-item!= tagcloud({min_font: min_font, max_font: max_font, amount: theme.tag_cloud.max_amount, color: true, start_color, end_color})
   else if (page.title === "categories")
     div.content.category
+      if page.photos && page.photos.length
+        include ./_components/gallery.pug
+      
       div.category-title= _p("page.categories") + " - "
         span.category-num= site.categories.length
       != list_categories()
   else if (page.title === "about")
     div.content.headings.code-highlight
+      if page.photos && page.photos.length
+        include ./_components/gallery.pug
+      
       != page.content
   else
     div.content.headings.code-highlight
+      if page.photos && page.photos.length
+        include ./_components/gallery.pug
+    
       != page.content
