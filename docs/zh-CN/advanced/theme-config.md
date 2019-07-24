@@ -11,16 +11,16 @@
 首先，你需要分清下面这两个配置文件的作用：
 
 - Hexo 根目录下的 `_config.yml`。这是站点配置文件，里面的配置作用于整个网站。
-- stun 根目录下的 `_config.yml`。这是主题配置文件，里面的配置只对当前主题生效。
+- Stun 根目录下的 `_config.yml`。这是主题配置文件，里面的配置只对当前主题生效。
 
 ## 保留主题配置数据
 
-如果你不想每次升级主题时，都要进行如下重复的操作：先将主题配置文件复制一份，等主题升级后再复制回去。那么你可以进行以下操作：将主题配置文件复制到 Hexo 根目录下的 `source/_data/stun.yml` 文件中（没有此目录和文件就新建。目录名称不能改变，文件名称可以是任意的）。
+如果你不想每次升级主题时，都要进行如下重复的操作：先将主题配置文件复制一份，等主题升级后再复制回去。那么你可以进行以下设置：将主题配置文件复制到 Hexo 根目录下的 `source/_data/stun.yml` 文件中（没有此目录和文件就新建。目录名称不能改变，文件名称可以是任意的）。
 
-> 如果你进行了上述操作，当你需要修改主题配置时，只需要修改 `stun.yml` 文件即可。更新主题时，主题根目录下的 `_config.yml` 文件（可能）会更新，而你对主题配置的数据仍保留在 `stun.yml` 文件中。
+如果你进行了上述操作，当你需要修改主题配置时，只需要修改 `stun.yml` 文件即可。更新主题时，主题根目录下的 `_config.yml` 文件（可能）会更新，而你对主题配置的数据仍保留在 `stun.yml` 文件中。
 
-::: warning 注意
-上面这种做法虽然方便你保留主题的配置数据，但是当主题 `_config.yml` 文件的配置项更改时，如果你不及时手动更新 `stun.yml` 文件，主题很可能会报错。
+::: warning 注意 ！！！
+上面这种做法虽然方便你保留主题的配置数据，但是当更新主题后，配置文件变动时，如果你不及时手动更新 `stun.yml` 文件，主题很可能会报错。也就是说你必须同步 `stun.yml` 文件和主题的 `_config.yml` 文件。所以，如果更新主题后，Hexo 服务器启动报错，首先应该想到的就是同步这两个文件。
 :::
 
 ## 国际化（i18n）
@@ -31,11 +31,11 @@
 language: zh-CN # 可选值 zh-CN 或 en-US
 ```
 
-语言文件在主题文件夹的 languages 目录下。stun 主题默认有 `zh-CN.yml` 和 `en.yml` 两种语言文件，如果需要支持其他语言，请自行编写语言文件。语言文件的命名规则要求符合 [RFC 4646](http://www.ietf.org/rfc/rfc4646.txt) 标准，你可以在[这里](https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry)找到各种语言的缩写。
+语言文件在主题文件夹的 languages 目录下。Stun 主题默认有 `zh-CN.yml` 和 `en.yml` 两种语言文件，如果需要支持其他语言，请自行编写语言文件。语言文件的命名请参考：[https://github.com/theme-next/hexo-theme-next/tree/master/languages](https://github.com/theme-next/hexo-theme-next/tree/master/languages)
 
 ## 顶部菜单栏 <Badge text="stable"/>
 
-网站顶部菜单栏默认有 `/` 和 `/archives` 两个路径，它们分别对应于网站首页和归档页。如果你想添加：`categories`、`tags`、`about` 页面，你需要进行以下操作：
+网站顶部菜单栏默认有 `/` 和 `/archives` 两个路径，它们分别对应于网站首页和归档页。如果你想添加：`categories`、`tags`、`about` 等页面，你需要进行以下操作：
 
 - 添加路径
 
@@ -61,6 +61,7 @@ menu:
   categories: /categories/ || th
   tags: /tags/ || tags
   about: /about/ || user
+  # xxx: 路径 || 图标名称
 ```
 
 在路径后面添加 `||` 分隔符，然后添加你想要显示的图标名称。图标名称在这里获取：[https://fontawesome.com/v4.7.0/icons/](https://fontawesome.com/v4.7.0/icons/)
@@ -82,22 +83,10 @@ menu_settings:
 在 Hexo 根目录下执行命令：
 
 ``` bash
-$ hexo new page xxx # xxx 表示页面名称
+$ hexo new page xxx # xxx 表示页面名称，需要和对应的路径名称保持一致
 ```
 
-执行这条命令后，会在如下目录生成文件：`source/xxx/index.md`
-
-::: warning 注意
-新建的页面名称，需要和主题文件中添加的页面路径名称保持一致。
-
-e.g. 你在主题文件中设置了如下路径：
-``` yaml
-menu:
-  about: /about-me
-```
-
-那么你应该执行命令：`hexo new page about-me`，这样才能在访问该路径时，找到对应的文件。
-:::
+执行这条命令后，会在以下目录生成文件：`source/xxx/index.md`
 
 ## 自定义页面 <Badge text="stable"/>
 
@@ -107,7 +96,7 @@ menu:
 - 添加图标
 - 执行命令，新建页面
 
-这三步的操作步骤[同上](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/theme-config.html#%E9%A1%B6%E9%83%A8%E8%8F%9C%E5%8D%95%E6%A0%8F)。
+这三步的操作步骤同[设置顶部菜单栏](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/theme-config.html#%E9%A1%B6%E9%83%A8%E8%8F%9C%E5%8D%95%E6%A0%8F)。
 
 - 国际化设置
 
@@ -129,9 +118,9 @@ nav:
 
 这样就完成了自定义页面的添加。
 
-## 总结 Front-matter
+## Front-matter
 
-`Front-matter` 在 Hexo 主题中，占据了极其重要的地位，如果你还不了解 `Front-matter`，可以查看这里：[https://hexo.io/zh-cn/docs/front-matter](https://hexo.io/zh-cn/docs/front-matter)。
+`Front-matter` 在 Hexo 主题中，占据了极其重要的地位。如果你还不了解 `Front-matter`，可以查看这里：[https://hexo.io/zh-cn/docs/front-matter](https://hexo.io/zh-cn/docs/front-matter)。
 
 下面是 Hexo 中默认提供的几种 `Front-matter` 属性。
 
@@ -151,7 +140,9 @@ updated: 2019-5-16 10:23:46
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190722105740.png)
 
-> Hexo 会帮你记录文件的更新日期，所以一般不需要手动指定 `updated` 属性。并且当你使用 `hexo new xxx` 指令生成文件时，Hexo 会帮你添加好 `title` 和 `date` 属性。因此这三个属性一般不需要手动设置。
+::: tip
+Hexo 会帮你记录文件的更新日期，所以一般不需要手动指定 `updated` 属性。并且当你使用 `hexo new xxx` 指令生成文件时，Hexo 会帮你添加好 `title` 和 `date` 属性。因此这三个属性一般不需要手动设置。
+:::
 
 - `comments` <Badge text="stable"/> - 是否开启评论功能
 
@@ -181,7 +172,7 @@ categories:
 
 - `tags` <Badge text="stable"/> - 设置文章标签
 
-标签只能设置为同级的。也就是说，如果你将标签设置为：
+标签**只能设置为同级的**。也就是说，如果你将标签设置为：
 
 ``` yaml
 tags:
@@ -194,17 +185,15 @@ tags:
 
 > Stun 主题目前暂时还不支持，最近的版本中考虑进行支持。
 
-还有几种 `Front-matter` 属性在 Hexo 文档中并没有出现（也许是 Hexo 的文档没有更新吧），但在官方提供的主题开发测试文件中出现。按照测试文件的要求，一个合格的 Hexo 都应该支持它们。这些属性如下：
+还有几种 `Front-matter` 属性在 Hexo 文档中并没有出现（也许是 Hexo 的文档没有更新吧），但在 Hexo 官方提供的主题开发测试文件中出现。按照测试文件的要求，一个合格的 Hexo 主题都应该支持它们。这些属性如下：
 
-- `link` <Badge text="stable"/> <Badge text="v1.1.3"/>
+- `link` <Badge text="stable"/> <Badge text="v1.1.3"/> - 链接
 
-如果为某篇文章指定该属性，当点击该文章标题时，应该在新窗口或新的标签页中打开链接地址。
+如果指定该属性，当点击该文章标题时，应该在新窗口或新的标签页中，打开所指定的链接地址。
 
-- `photos` <Badge text="not support" type="error"/>
+- `photos` <Badge text="stable"/> <Badge text="v1.1.4"/> - 图片
 
-> Stun 主题目前暂时还不支持，最近的版本中考虑进行支持。
-
-用于指定一些图片，这些图片应该全部被显示在文章中。例如：
+用于指定一些图片，这些图片会显示在文章中，Stun 主题将其显示在文章最顶部。使用如下：
 
 ``` yaml
 photos:
@@ -213,9 +202,38 @@ photos:
 - http://xxxxx3.jpg
 ```
 
+默认情况下，这些图片会按照文档流的方式显示，效果如下：
+
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190724170139.png)
+
+为了优化这些图片的显示效果，Stun 主题提供了**瀑布流布局** <Badge text="beta" type="warning"/> <Badge text="v1.1.4"/>（**只对文章中通过 `Front-matter` 的 `photos` 属性指定的图片起作用**），修改主题配置文件：
+
+``` yaml
+gallery_waterfall:
+  # 是否启用
+  enable: false
+  # 瀑布流中每一列的宽度
+  col_width: 220px
+  # 图片之间的水平间隙
+  gap_x: 10px
+  # 图片之间的垂直间隙
+  gap_y: 10px
+```
+
+效果如下：
+
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190724170138.png)
+
+::: tip
+- 启用瀑布流效果后，还可以再启用 [fancybox 效果](http://localhost:8080/hexo-theme-stun/zh-CN/advanced/assist.html#fancybox)。
+- 通常利用 `photos` 这个属性，来建立一个相册页面 或 专门展示图片的文章。
+:::
+
 ---
 
 下面是 Stun 主题中，特有的几种 `Front-matter` 属性。
+
+> 这些属性在后面的文档中会有详细说明，这里可以跳过。
 
 - `top_image: https://xxxx.jpg` <Badge text="stable"/>
 
@@ -232,6 +250,8 @@ photos:
 ---
 
 下面是安装某些插件后，可以设置的几种 `Front-matter` 属性。
+
+> 这些属性在后面的文档中会有详细说明，这里可以跳过。
 
 - `top: true` <Badge text="stable"/>
 
@@ -253,7 +273,7 @@ favicon:
   # safari_pinned_tab: /imgs/logo-stun.svg
 ```
 
-有关 favicon 的详细介绍，请访问：[https://developers.google.com/web/fundamentals/design-and-ux/browser-customization/](https://developers.google.com/web/fundamentals/design-and-ux/browser-customization/)
+有关 favicon 的相关知识，请访问：[https://developers.google.com/web/fundamentals/design-and-ux/browser-customization/](https://developers.google.com/web/fundamentals/design-and-ux/browser-customization/)
 
 ## 网站顶部栏信息 <Badge text="stable"/>
 
@@ -279,13 +299,12 @@ header:
 ```
 
 ::: warning 注意
-`mask` 选项，即遮罩效果，从 `v1.1.1` 版本开始支持。`blur_effect` 选项，即模糊滤镜效果，从 `v1.1.1` 版本开始弃用。
+其中 `mask` 选项，即遮罩效果，从 `v1.1.1` 版本开始支持。`blur_effect` 选项，即模糊滤镜效果，从 `v1.1.1` 版本开始弃用。
 :::
 
 ## 指定顶部图 <Badge text="stable"/>
 
 如果想要为某个页面或某篇文章单独指定顶部图，你只需要在页面或文章 markdown 源文件的 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 中，添加 `top_image` 项，然后填入的图片 url 或路径即可。例如：
-
 
 ``` yaml
 ---
@@ -446,7 +465,7 @@ author:
 
 修改主题配置文件：
 
-> 不想启用的社交链接，直接注释掉就行了。
+> 如果不想启用某个社交链接，直接注释掉即可。
 
 ``` yaml
 # `||` 分隔符前面表示社交链接的链接或信息，后面表示社交链接图标。
@@ -473,7 +492,7 @@ social_setting:
   enable: true
   # 是否只显示图标
   icon_only: true
-  # 社交链接之间的排列方式，取值同 CSS 的 "justify-content" 属性。
+  # 社交链接之间的排列方式，取值同 CSS 的 "justify-content" 属性（兼容性自知）。
   # 可选值：flex-start | center | flex-end | space-between 等。
   # 更多取值请查看：https://developer.mozilla.org/zh-CN/docs/Web/CSS/justify-content/
   text_align: center
@@ -490,7 +509,9 @@ social:
 
 > 由于 fontawesome 中找不到掘金的 logo，所以这里使用 `掘` 字来代替显示。
 
-2. 修改 `themes/stun/languages` 目录下的文件
+2. 国际化
+
+修改 `themes/stun/languages` 目录下的文件。
 
 `zh-CN`:
 
@@ -685,7 +706,7 @@ post_widget:
   tags: true
 ```
 
-默认启用。效果如下：
+效果如下：
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190713173926.png)
 
@@ -709,8 +730,6 @@ post_widget:
 
 效果如下：![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190619210335.png)
 
-默认启用。
-
 ## 文章摘要 <Badge text="stable"/>
 
 如果想要保留文章摘要，需要**手动**在文章的 markdown 源文件中添加 `<!-- more -->` 标记。标记之前的部分都会被保留为文章摘要，显示在文章列表中。
@@ -725,7 +744,7 @@ auto_excerpt:
   length: 150
 ```
 
-由于自动保留摘要的效果并不理想，所以这里不建议开启。
+> 由于自动保留摘要的效果并不理想，所以这里不建议开启。
 
 ## 文章置顶 <Badge text="stable"/>
 
@@ -738,7 +757,7 @@ $ npm install hexo-generator-index-pin-top --save
 
 最后，在文章的 `Front-matter` 中，使用 `top: true` 来实现置顶。
 
-设置文章置顶后，在文章列表中，可以看到表示置顶的图标。你可以对图标进行设置，修改 `stum.yml` 文件：
+设置文章置顶后，在文章列表中可以看到表示置顶的图标。你可以对图标进行设置，修改主题配置文件：
 
 ``` yaml
 stick_top:
@@ -893,7 +912,7 @@ tag_cloud:
 ### 设置图片大小
 
 1. 使用 HTML 中的 `img` 标签，通过 `style` 属性控制图片大小。
-2. 使用 hexo 提供的语法 `{% https://xxxxx.png width height %}`，填入图片地址和宽、高即可。
+2. 使用 hexo 提供的语法 `{% https://xxxxx.png width height %}`，填入宽、高即可设置大小。
 3. stun 主题提供了一个便捷的方法来指定图片大小，你只需要在图片路径后面添加 `?size=宽度x高度` <Badge text="stable"/> 后缀即可。例如：
 
 ``` markdown
@@ -902,9 +921,9 @@ tag_cloud:
 
 ### 自定义样式 <Badge text="stable"/> <Badge text="v1.0.3"/>
 
-如果你想修改主题的样式，强烈推荐将样式代码写在 `source/css/_custom` 目录下的 `index.styl` 文件中。这样，当主题更新时，不会覆盖你已经修改了的样式代码。
+如果你想修改主题的样式，推荐将样式代码添加到 `source/css/_custom` 目录下的 `index.styl` 文件中。这样，当主题更新时，不会覆盖你已经修改了的样式代码。
 
-当然，你也可以进行模块化分类：在该目录下新建样式文件，然后通过 `@import xxx` 语句在同目录下的 `index.styl` 文件中引入你新建的样式文件即可。
+> 当然，你也可以进行模块化分类：在该目录下新建样式文件，然后通过 `@import xxx` 语句在同目录下的 `index.styl` 文件中引入你新建的样式文件。
 
 ### 标识外部链接  <Badge text="stable"/> <Badge text="v1.1.3"/>
 

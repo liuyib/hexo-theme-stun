@@ -6,7 +6,9 @@
 
 ## 添加 Emoji 支持 <Badge text="disrelated" type="warning"/>
 
-如果想要使用 Emoji，你可以直接在[这里](http://emojihomepage.com/)复制粘贴使用。如果你更喜欢使用 Emoji 代码，例如：`:sparkles:` 将会显示为 :sparkles:, 那么你需要安装插件 [hexo-filter-github-emojis](https://github.com/crimx/hexo-filter-github-emojis) 来支持这种语法。
+如果想要使用 Emoji，你可以直接在[这里](http://emojihomepage.com/)复制粘贴使用。
+
+如果你更喜欢使用 Emoji 代码，例如：`:sparkles:` 将会显示为 :sparkles:, 那么你需要安装插件 [hexo-filter-github-emojis](https://github.com/crimx/hexo-filter-github-emojis) 来支持这种语法。
 
 安装这个插件，请在 hexo 根目录下，执行指令：
 
