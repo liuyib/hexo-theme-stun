@@ -437,3 +437,68 @@ Copy-tex 是 KaTex 的插件，当启用这个插件之后，你只需要单击�
 效果如下：
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190720160555.png)
+
+## 广告
+
+广告接入。
+
+### 谷歌广告
+
+首先登录谷歌广告[官网](https://www.google.com/adsense)，选择添加广告，在给你的一段代码中找到 `client_id`，通常以 `ca-pub-` 开头。然后修改主题配置文件：
+
+``` yaml
+google_adsense:
+  # 是否启用
+  enable: false
+  # 如果和你的代码中的地址不一样，请更换
+  js_src: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js
+  # 填写你的 client-id
+  client: 
+  enable_page_level_ads: true
+```
+
+## 特效
+
+### Ribbon
+
+修改主题配置文件：
+
+``` yaml
+canvas_ribbon:
+  # 是否启用
+  enable: false
+  # ribbon 的宽度
+  size: 300
+  # ribbon 的透明度
+  alpha: 0.6
+  # ribbon 的层级
+  zIndex: -1
+```
+
+效果如下：
+
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190725220144.png)
+
+### Particle / Nest
+
+修改主题配置文件：
+
+``` yaml
+canvas_nest:
+  # 是否启用
+  enable: false
+  # 是否在移动端显示
+  onmobile: true
+  # 线条的颜色（RGB 值，请使用 "," 分隔）
+  color: "0,0,0"
+  # 线条的透明度
+  opacity: 0.6
+  # 线条数目
+  count: 99
+  # 效果的层级
+  zIndex: -1
+```
+
+效果如下：
+
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190725220344.png)
