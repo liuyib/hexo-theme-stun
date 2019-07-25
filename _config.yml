@@ -487,9 +487,7 @@ canvas_nest:
   onmobile: true
   # RGB values, use ',' to separate
   # Color for lines
-  color: "0,0,255"
-  # Color for points
-  pointColor: "0,0,255"
+  color: "0,0,0"
   # The opacity of line: 0 ~ 1
   opacity: 0.6
   # The number of lines
@@ -606,4 +604,4 @@ cdn:
     velocity-ui: https://cdn.jsdelivr.net/npm/velocity-ui-pack@1.2.2/velocity.ui.min.js
 
   canvas_ribbon: https://cdn.jsdelivr.net/npm/ribbon.js@latest/dist/ribbon.min.js
-  canvas_nest: https://cdn.jsdelivr.net/npm/canvas-nest.js@latest/dist/canvas-nest.js
+  canvas_nest: https://cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1.0.0/canvas-nest.min.js
