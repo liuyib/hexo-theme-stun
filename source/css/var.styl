@@ -202,15 +202,6 @@ $z-index2 = 1002
 $z-index3 = 1003
 
 // -------------------------------------------
-// Layout
-// -------------------------------------------
-// Width
-$main-sidebar-gap  = 30px
-$main-desktop      = 992px
-$content-desktop   = $main-desktop + convert(
-  hexo-config('sidebar.width') || '300px') + $main-sidebar-gap
-
-// -------------------------------------------
 // Responsive layout
 // -------------------------------------------
 // Subtract 0.02px to prevent bugs when certain device sizes
@@ -219,3 +210,14 @@ $xs-width = 576px - 0.02px
 $sm-width = 768px - 0.02px
 $md-width = 992px - 0.02px
 $lg-width = 1200px - 0.02px
+
+// -------------------------------------------
+// Layout
+// -------------------------------------------
+// Width
+$sidebar-width         = 300px
+$side-main-gap         = 20px
+$content-width         = $md-width
+$main-aside-gap        = $font-size-rem * 2
+$main-width            = $sidebar-width + $content-width + $side-main-gap
+$main-responsive-width = $main-width + $main-aside-gap

@@ -20,22 +20,12 @@ setUlStyle(content, hoverColor)
   flex-direction: column
 
 #main
-  margin-bottom: 3rem
+  margin: 1.5rem 0
   flex: 1 auto
 
 .main-inner
   margin: 0 auto
-
-$content-position
-  margin: 0 auto
-
-if (hexo-config('sidebar.enable'))
-  if (hexo-config('sidebar.position') == 'left')
-    $content-position
-      float: right
-  else
-    $content-position
-      float: left
+  width: calc(100% - 2rem)
 
 .headings
   h1,
@@ -73,11 +63,20 @@ if (hexo-config('sidebar.enable'))
         margin-left: .8rem - .1 * size
 
 .content
-  @extend $content-position
   border-radius: 5px
   padding: 2rem
   font-size: $font-main-base
   background-color: $white
+
+  if (hexo-config('sidebar.enable'))
+    width: calc(100% - 320px)
+    if (hexo-config('sidebar.position') == 'left')
+      float: right
+    else
+      float: left
+  else
+    margin: 0 auto
+    width: calc(100% - 200px)
 
   & > :first-child
     margin-top: 0

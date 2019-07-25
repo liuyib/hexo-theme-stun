@@ -184,7 +184,7 @@ Stun.utils = Stun.$u = {
   galleryWaterFall: function () {
     var colWidth = parseInt(CONFIG.waterfall_col_width);
     var colGap = parseInt(CONFIG.waterfall_gap.x);
-    
+
     $('.post-gallery').masonry({
       itemSelector: '.post-g-img',
       columnWidth: colWidth,

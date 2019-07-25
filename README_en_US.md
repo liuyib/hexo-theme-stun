@@ -74,12 +74,12 @@ Please see: [https://liuyib.github.io/hexo-theme-stun/](https://liuyib.github.io
 
 ## Question
 
-If you have problems with your use, please read [documentation](https://liuyib.github.io/hexo-theme-stun/zh-CN/) firstly, or check [FAQ](https://github.com/liuyib/hexo-theme-stun/blob/master/FAQ.md). When the above methods can't solve your problem, then mention `issue` :hugs:.
+If you have problems, please read [documentation](https://liuyib.github.io/hexo-theme-stun/zh-CN/) firstly, or check [FAQ](https://github.com/liuyib/hexo-theme-stun/blob/master/FAQ.md). You can open an `issue` when the above methods can't help you :hugs:.
 
 ## Browser Support
 
 | <img src="https://raw.githubusercontent.com/liuyib/picBed/master/collection/20190723235410.png" alt="IE" width="32px" height="32px" /></br> IE | <img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/35.1.0/edge/edge_64x64.png" alt="Edge" width="32px" height="32px" /></br> Edge | <img src="https://raw.githubusercontent.com/liuyib/picBed/master/collection/20190723235406.png" alt="Firefox" width="32px" height="32px" /></br> Firefox | <img src="https://raw.githubusercontent.com/liuyib/picBed/master/collection/20190723235407.png" alt="Chrome" width="32px" height="32px" /></br> Chrome | <img src="https://raw.githubusercontent.com/liuyib/picBed/master/collection/20190723235409.png" alt="Safari" width="32px" height="32px" /></br> Safari | <img src="https://raw.githubusercontent.com/liuyib/picBed/master/collection/20190723235411.png" alt="Opera" width="32px" height="32px" /></br> Opera |
-| --- | --- | --- | --- | --- | --- |
+| :---: | :---: | :---: |:---: | :---: | :---: |
 | Not Support | 12+ | 28+ | 21+ | 6.1+ | 12.1+ |
 
 ## License

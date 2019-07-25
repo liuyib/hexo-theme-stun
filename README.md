@@ -76,12 +76,12 @@ $ git pull
 
 ## 问题
 
-如果使用时出现问题，首先请仔细阅读[文档](https://liuyib.github.io/hexo-theme-stun/zh-CN/)，或者查看[常见问题](https://github.com/liuyib/hexo-theme-stun/blob/master/FAQ.md)。当以上的方法都无法解决你的问题时，再去提 `issue` :hugs:。
+如果遇到问题，首先请仔细阅读[文档](https://liuyib.github.io/hexo-theme-stun/zh-CN/)，或者查看[常见问题](https://github.com/liuyib/hexo-theme-stun/blob/master/FAQ.md)。当以上的方法都无法帮助你时，再去提出 `issue`:hugs:。
 
 ## 浏览器支持
 
 | <img src="https://raw.githubusercontent.com/liuyib/picBed/master/collection/20190723235410.png" alt="IE" width="32px" height="32px" /></br> IE | <img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/35.1.0/edge/edge_64x64.png" alt="Edge" width="32px" height="32px" /></br> Edge | <img src="https://raw.githubusercontent.com/liuyib/picBed/master/collection/20190723235406.png" alt="Firefox" width="32px" height="32px" /></br> Firefox | <img src="https://raw.githubusercontent.com/liuyib/picBed/master/collection/20190723235407.png" alt="Chrome" width="32px" height="32px" /></br> Chrome | <img src="https://raw.githubusercontent.com/liuyib/picBed/master/collection/20190723235409.png" alt="Safari" width="32px" height="32px" /></br> Safari | <img src="https://raw.githubusercontent.com/liuyib/picBed/master/collection/20190723235411.png" alt="Opera" width="32px" height="32px" /></br> Opera |
-| --- | --- | --- | --- | --- | --- |
+| :---: | :---: | :---: |:---: | :---: | :---: |
 | Not Support | 12+ | 28+ | 21+ | 6.1+ | 12.1+ |
 
 ## 开源协议

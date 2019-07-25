@@ -1,53 +1,43 @@
-// $content-desktop: 1340px
+// $main-width: A calc value.
 // -----------------------------------------
-@media screen and (min-width: $content-desktop)
+@media screen and (min-width: $main-responsive-width)
   #header
     width: 100%
 
   .header-nav-inner
-    width: $content-desktop
+    width: $main-width
 
   .main-inner
-    width: $content-desktop
+    width: $main-width
 
-@media screen and (max-width: $content-desktop)
-  .header-nav-inner
-    width: 100%
-
-  #sidebar
-    display: none
-
-  .content
-    float: none
-    margin: 0 auto
-
-  .comments
-    margin: 1.5rem auto 0
-
-// $md-width: 992px
+// $md-width: 992px - 0.02px
 // -----------------------------------------
-@media screen and (min-width: $md-width)
-  .content,
-  .comments
-    width: $main-desktop
-
 @media screen and (max-width: $md-width)
   #header,
   #footer
     background-attachment: local
 
   #header
-    height: 50vh
+    height: 340px
 
-  #header,
   #main
-    margin-bottom: 2rem
+    margin: 1rem 0
 
-  .content
-    padding: 1.2rem
+  #sidebar
+    display: none
+
+  .main-inner
     width: 100%
 
-// sm-width: 768px
+  .content
+    padding: 0 .8rem
+    width: 100%
+
+  #recent-posts article.post-item
+    margin: 0 0 1rem
+    padding: .8rem 1rem
+
+// sm-width: 768px - 0.02px
 // -----------------------------------------
 @media screen and (min-width: $sm-width)
   .header-nav-inner
@@ -83,7 +73,7 @@
 
   .header-info-inner
     .site-info-title
-      font-size: 3rem
+      font-size: 3.25rem
 
     .site-info-subtitle
       font-size: 1rem
@@ -93,15 +83,21 @@
     margin: 0 1rem
     width: calc(100% - 2rem)
 
-// $xs-width: 576px
+// $xs-width: 576px - 0.02px
 // -----------------------------------------
 @media screen and (max-width: $xs-width)
   #header
     height: 240px
 
-  #header,
   #main
-    margin-bottom: 1.5rem
+    margin: .8rem 0
+
+  .content
+    padding: 0 .6rem
+
+  #recent-posts article.post-item
+    margin: 0 0 .8rem
+    padding: .6rem .8rem
 
   .header-info-inner
     .site-info-title
@@ -120,9 +116,6 @@
     .algolia-hit-item
       margin: 0
 
-  .content
-    padding: 1rem
-
   .post-header
     .post-title
       font-size: 1.25rem
@@ -139,14 +132,6 @@
 
   .reward-qr
     flex-direction: column
-
-  #recent-posts
-    article.post-item
-      margin: 0 0 1.5rem
-      padding: 1rem 1.2rem
-
-  .content
-    padding: 1.2rem
 
   .archive-inner
     margin-left: .5rem
