@@ -182,14 +182,15 @@ Stun.utils = Stun.$u = {
     });
   },
   galleryWaterFall: function () {
-    var colWidth = parseInt(CONFIG.waterfall_col_width);
-    var colGap = parseInt(CONFIG.waterfall_gap.x);
+    var gConfig = CONFIG.gallery_waterfall;
+    var colWidth = parseInt(gConfig.col_width);
+    var colGapX = parseInt(gConfig.gap_x);
 
     $('.post-gallery').masonry({
       itemSelector: '.post-g-img',
       columnWidth: colWidth,
       percentPosition: true,
-      gutter: colGap,
+      gutter: colGapX,
       transitionDuration: 0
     });
   },
@@ -221,7 +222,7 @@ Stun.utils = Stun.$u = {
 
     var $icon = $(
       '<i class="external-link fa fa-' +
-        CONFIG.external_link.icon_name +
+        CONFIG.external_link.icon.name +
       '"></i>'
     );
     // Insert icon after link.
@@ -254,7 +255,7 @@ Stun.utils = Stun.$u = {
     $('#back-top').on('click', function () {
       $('body').velocity('stop').velocity('scroll');
 
-      if (CONFIG.back2top_animation) {
+      if (CONFIG.back2top.animation) {
         $('#back-top')
           .velocity({ translateY: '-100vh' }, { duration: 500 })
           .velocity('reverse', { duration: 10 });
