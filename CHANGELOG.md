@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.1.4 (2019-07-25)
+
+### Bug Fixes
+
+* Solve that external icon showing on new line ([3a08c20](https://github.com/liuyib/hexo-theme-stun/commit/3a08c20))
+* Solve that can't click header item when notice component alert ([3cab3f3](https://github.com/liuyib/hexo-theme-stun/commit/3cab3f3))
+
+### Features
+
+* Support fancybox & 'photos' attribute of front-matter ([23cf50f](https://github.com/liuyib/hexo-theme-stun/commit/23cf50f))
+* Add advertising support by google adsense ([b192294](https://github.com/liuyib/hexo-theme-stun/commit/b192294))
+
 ### 1.1.3 (2019-07-22)
 
 ### Features
