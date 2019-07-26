@@ -7,7 +7,7 @@ mixin postHeader(post)
         a(href=url_for(post.link) target="_blank").post-title-wrapper
           h1.post-title= post.title || post.link
       else
-        a(href=url_for(post.canonical_path)).post-title-wrapper
+        a(href=url_for(post.path)).post-title-wrapper
           h1.post-title= post.title || _p("post.untitled")
     
     if !post.link

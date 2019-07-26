@@ -1,10 +1,12 @@
 extends ./_common/layout.pug
 
 block content
+  include ./_mixins/gallery.pug
+
   if (page.title === "tags")
     div.content.tag-cloud
       if page.photos && page.photos.length
-        include ./_components/gallery.pug
+        +gallery(page)
       
       div.tag-cloud-title= _p("page.tags") + " - "
         span.tag-cloud-num= site.tags.length
@@ -16,7 +18,7 @@ block content
   else if (page.title === "categories")
     div.content.category
       if page.photos && page.photos.length
-        include ./_components/gallery.pug
+        +gallery(page)
       
       div.category-title= _p("page.categories") + " - "
         span.category-num= site.categories.length
@@ -24,12 +26,12 @@ block content
   else if (page.title === "about")
     div.content.headings.code-highlight
       if page.photos && page.photos.length
-        include ./_components/gallery.pug
+        +gallery(page)
       
       != page.content
   else
     div.content.headings.code-highlight
       if page.photos && page.photos.length
-        include ./_components/gallery.pug
+        +gallery(page)
     
       != page.content

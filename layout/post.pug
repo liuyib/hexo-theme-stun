@@ -2,13 +2,14 @@ extends ./_common/layout.pug
 
 block content
   include ./_mixins/post-header.pug
+  include ./_mixins/gallery.pug
   
   div.content.headings.code-highlight
     +postHeader(page)
     
     div.post-body
       if page.photos && page.photos.length
-        include ./_components/gallery.pug
+        +gallery(page)
       
       != page.content
 

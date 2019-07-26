@@ -1,43 +1,49 @@
-#recent-posts
-  .post-header
-    margin-bottom: 1.5rem
+.post-header
+  margin-bottom: 1.5rem
 
-  .post-excerpt
-    margin-bottom: 2em
+.post-excerpt
+  margin-bottom: 2em
 
-  .post-item
-    position: relative
-    margin: 0 0 1.5rem
+.post-item
+  position: relative
+  margin: 0 0 1.5rem
+  border-radius: 5px
+  padding: 1.5rem 2rem
+  width: 100%
+  background-color: $white
+
+  & > :first-child,
+  .post-excerpt > :first-child
+    margin-top: 0
+
+  & > :last-child,
+  .post-excerpt > :last-child
+    margin-bottom: 0
+
+.sticky-top
+  top: 1rem
+
+.post-btn
+  display: flex
+
+  a
+    clearAStyle()
+    display: inline-block
+    margin: 0 auto
     border-radius: 5px
-    padding: 1.5rem 2rem
-    width: 100%
-    background-color: $white
+    padding: 0 .6em
+    text-align: center
+    color: $white
+    background-color: $home-post-read-more-color
+    transition: background-color .2s ease
+    cursor: pointer
 
-    & > :first-child,
-    .post-excerpt > :first-child
-      margin-top: 0
+    &:hover
+      background-color: $home-post-read-more-hover-color
 
-    & > :last-child,
-    .post-excerpt > :last-child
-      margin-bottom: 0
+.post-link
+  .post-header
+    margin: 0 0 .5rem
 
-  .sticky-top
-    top: 1rem
-
-  .post-btn
-    display: flex
-
-    a
-      clearAStyle()
-      display: inline-block
-      margin: 0 auto
-      border-radius: 5px
-      padding: 0 .6em
-      text-align: center
-      color: $white
-      background-color: $home-post-read-more-color
-      transition: background-color .2s ease
-      cursor: pointer
-
-      &:hover
-        background-color: $home-post-read-more-hover-color
+  .post-title-wrapper
+    margin: 0

@@ -1,24 +1,31 @@
 section#recent-posts
+  include ../_mixins/gallery.pug
+
   - var postLists = theme.post_list.paginate.home ? page.posts : site.posts
   - postLists.each(function (post) {
-    article.post-item
+    article(class=`${post.link ? 'post-link' : ''}`).post-item
       +postHeader(post)
 
+      if post.top
+        include ./sticky-top.pug
+      
+      if theme.post_list.cover_image.home && post.top_image
+        img(src=post.top_image)
+      
+      if post.photos && post.photos.length
+        +gallery(post)
+      
+      if theme.auto_excerpt && theme.auto_excerpt.enable
+        - const content = strip_html(post.content)
+        - var excerpt = content.substring(0, theme.auto_excerpt.length)
+        - content.length > theme.auto_excerpt.length ? excerpt += '......' : ''
+        div!= excerpt
+      else if post.excerpt
+        div.post-excerpt!= post.excerpt
+      else
+        div.post-excerpt!= post.content
+
       if !post.link
-        if theme.post_list.cover_image.home && post.top_image
-          img(src=post.top_image)
-
-        if post.top
-          include ./sticky-top.pug
-
-        if theme.auto_excerpt && theme.auto_excerpt.enable
-          - const content = strip_html(post.content)
-          - var excerpt = content.substring(0, theme.auto_excerpt.length)
-          - content.length > theme.auto_excerpt.length ? excerpt += '......' : ''
-          div!= excerpt
-        else
-          div.post-excerpt!= post.excerpt
-        
         div.post-btn
           a(href=url_for(post.path))= _p("post.read_more") + " »"
   - })
