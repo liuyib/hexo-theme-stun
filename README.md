@@ -28,13 +28,13 @@
 
 > 一个新的 hexo 主题，希望多多支持。目前在全力开发 & 维护中，有问题可以 issue 或 email 我。
 
-## 演示
+## :sparkles: 演示
 
 - [liuyib`s Blog](https://liuyib.github.io/)
 
 如果你正在使用 stun 主题，并希望像上面一样，在这里展示出来，你可以通过 [PR](https://github.com/liuyib/hexo-theme-stun/pulls) 将你的网站链接填写在这里。
 
-## 安装
+## :package: 安装
 
 - 安装 stun
 
@@ -52,7 +52,7 @@ $ git clone https://github.com/liuyib/hexo-theme-stun.git themes/stun
 $ npm install --save-dev hexo-render-pug hexo-renderer-stylus
 ```
 
-## 使用
+## :hammer: 使用
 
 修改 hexo 根目录下的 `_config.yml` 文件。
 
@@ -66,7 +66,7 @@ theme: stun
 $ hexo clean && hexo s
 ```
 
-## 更新
+## :art: 更新
 
 ``` bash
 $ cd themes/stun
@@ -74,20 +74,20 @@ $ cd themes/stun
 $ git pull
 ```
 
-## 文档
+## :page_facing_up: 文档
 
 请查看：[https://liuyib.github.io/hexo-theme-stun/zh-CN/](https://liuyib.github.io/hexo-theme-stun/zh-CN/)
 
-## 问题
+## :question: 问题
 
 如果遇到问题，首先请仔细阅读[文档](https://liuyib.github.io/hexo-theme-stun/zh-CN/)，或者查看[常见问题](https://github.com/liuyib/hexo-theme-stun/blob/master/FAQ.md)。当以上的方法都无法帮助你时，再去提出 `issue`:hugs:。
 
-## 浏览器支持
+## :computer: 浏览器支持
 
 | <img src="https://raw.githubusercontent.com/liuyib/picBed/master/collection/20190723235410.png" alt="IE" width="32px" height="32px" /></br> IE | <img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/35.1.0/edge/edge_64x64.png" alt="Edge" width="32px" height="32px" /></br> Edge | <img src="https://raw.githubusercontent.com/liuyib/picBed/master/collection/20190723235406.png" alt="Firefox" width="32px" height="32px" /></br> Firefox | <img src="https://raw.githubusercontent.com/liuyib/picBed/master/collection/20190723235407.png" alt="Chrome" width="32px" height="32px" /></br> Chrome | <img src="https://raw.githubusercontent.com/liuyib/picBed/master/collection/20190723235409.png" alt="Safari" width="32px" height="32px" /></br> Safari | <img src="https://raw.githubusercontent.com/liuyib/picBed/master/collection/20190723235411.png" alt="Opera" width="32px" height="32px" /></br> Opera |
 | :---: | :---: | :---: |:---: | :---: | :---: |
 | Not Support | 12+ | 28+ | 21+ | 6.1+ | 12.1+ |
 
-## 开源协议
+## :handshake: 开源协议
 
 [MIT](https://github.com/liuyib/hexo-theme-stun/blob/master/LICENSE) Copyright (c) 2019 liuyib

@@ -26,13 +26,13 @@
 
 [English](https://github.com/liuyib/hexo-theme-stun/blob/master/README_en_US.md) | [中文简体](https://github.com/liuyib/hexo-theme-stun/blob/master/README.md)
 
-## Demo
+## :sparkles: Demo
 
 - [liuyib`s Blog](https://liuyib.github.io/)
 
 If you are using the stun theme and would like it to be shown here, you can fill in your website link by [PR](https://github.com/liuyib/hexo-theme-stun/pulls).
 
-## Installation
+## :package: Install
 
 - Install `stun`
 
@@ -50,7 +50,7 @@ The theme depends on `pug` and `stylus`, please run this.
 $ npm install --save-dev hexo-render-pug hexo-renderer-stylus
 ```
 
-## How to use
+## :hammer: Usage
 
 Change the `_config.yml` file in your hexo root directory.
 
@@ -64,7 +64,7 @@ Run your hexo server.
 $ hexo clean && hexo s
 ```
 
-## Update
+## :art: Update
 
 ``` bash
 $ cd themes/stun
@@ -72,20 +72,20 @@ $ cd themes/stun
 $ git pull
 ```
 
-## Documentation
+## :page_facing_up: Documentation
 
 Please see: [https://liuyib.github.io/hexo-theme-stun/](https://liuyib.github.io/hexo-theme-stun/)
 
-## Question
+## :question: Question
 
 If you have problems, please read [documentation](https://liuyib.github.io/hexo-theme-stun/zh-CN/) firstly, or check [FAQ](https://github.com/liuyib/hexo-theme-stun/blob/master/FAQ.md). You can open an `issue` when the above methods can't help you :hugs:.
 
-## Browser Support
+## :computer: Browser Support
 
 | <img src="https://raw.githubusercontent.com/liuyib/picBed/master/collection/20190723235410.png" alt="IE" width="32px" height="32px" /></br> IE | <img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/35.1.0/edge/edge_64x64.png" alt="Edge" width="32px" height="32px" /></br> Edge | <img src="https://raw.githubusercontent.com/liuyib/picBed/master/collection/20190723235406.png" alt="Firefox" width="32px" height="32px" /></br> Firefox | <img src="https://raw.githubusercontent.com/liuyib/picBed/master/collection/20190723235407.png" alt="Chrome" width="32px" height="32px" /></br> Chrome | <img src="https://raw.githubusercontent.com/liuyib/picBed/master/collection/20190723235409.png" alt="Safari" width="32px" height="32px" /></br> Safari | <img src="https://raw.githubusercontent.com/liuyib/picBed/master/collection/20190723235411.png" alt="Opera" width="32px" height="32px" /></br> Opera |
 | :---: | :---: | :---: |:---: | :---: | :---: |
 | Not Support | 12+ | 28+ | 21+ | 6.1+ | 12.1+ |
 
-## License
+## :handshake: License
 
 [MIT](https://github.com/liuyib/hexo-theme-stun/blob/master/LICENSE) Copyright (c) 2019 liuyib
