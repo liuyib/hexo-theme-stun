@@ -1,6 +1,6 @@
 aside#sidebar
   div.sidebar-inner
-    - var isShowPostToc = theme.toc.enable && is_post()
+    - var isShowPostToc = page.toc === false ? page.toc : (theme.toc.enable && is_post())
     if isShowPostToc
       div.sidebar-nav
         span.sidebar-nav-toc.current= _p("sidebar.catalog")

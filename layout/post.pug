@@ -20,7 +20,8 @@ block content
           span= _p("post.end")
           span= "------"
     
-      if theme.creative_commons.enable && theme.creative_commons.post
+      - let themeConfigCC = theme.creative_commons.enable && theme.creative_commons.post
+      if page.copyright === false ? page.copyright : themeConfigCC
         include ./_components/copyright.pug
 
       if theme.post_widget.tags
@@ -30,7 +31,7 @@ block content
             each tag in page.tags.data
               span!= link_to(tag.permalink, tag.name)
       
-      if theme.reward && theme.reward.enable
+      if page.reward === false ? page.reward : (theme.reward && theme.reward.enable)
         include ./_components/reward.pug
       
       include ./_components/pagination.pug

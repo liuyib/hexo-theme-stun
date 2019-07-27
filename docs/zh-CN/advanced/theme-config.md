@@ -225,7 +225,7 @@ gallery_waterfall:
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190724170138.png)
 
 ::: tip
-- 启用瀑布流效果后，还可以再启用 [fancybox 效果](http://localhost:8080/hexo-theme-stun/zh-CN/advanced/assist.html#fancybox)。
+- 启用瀑布流效果后，还可以再启用 [fancybox 效果](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/assist.html#fancybox)。
 - 通常利用 `photos` 这个属性，来建立一个相册页面 或 专门展示图片的文章。
 :::
 
@@ -237,15 +237,27 @@ gallery_waterfall:
 
 - `top_image: https://xxxx.jpg` <Badge text="stable"/>
 
-用于设置文章顶部的大图。详情：[指定顶部图](http://localhost:8080/hexo-theme-stun/zh-CN/advanced/theme-config.html#指定顶部图)
+用于设置文章顶部的大图。详情：[指定顶部图](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/theme-config.html#指定顶部图)
 
 - `toc_max_depth: 6` <Badge text="stable"/>
 
-用于设置文章中，解析标题生成目录的最大深度。取值 `1 ~ 6`。例如：`toc_max_depth: 3`，只会解析文中的 `h1`, `h2`, `h3` 来生成目录。详情：[文章目录](http://localhost:8080/hexo-theme-stun/zh-CN/advanced/theme-config.html#文章目录)
+用于设置文章中，解析标题生成目录的最大深度。取值 `1 ~ 6`。例如：`toc_max_depth: 3`，只会解析文中的 `h1`, `h2`, `h3` 来生成目录。详情：[文章目录](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/theme-config.html#文章目录)
 
 - `math: true` <Badge text="stable"/> <Badge text="v1.1.2"/>
 
-是否需要解析数学公式。详情：[数学公式](http://localhost:8080/hexo-theme-stun/zh-CN/advanced/third-part.html#数学公式)
+是否需要解析数学公式。详情：[数学公式](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/third-part.html#数学公式)
+
+- `toc: true` <Badge text="stable"/> <Badge text="v1.2.0"/>
+
+文章是否启用目录。会覆盖主题配置文件中的全局设置。详情：[文章目录](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/theme-config.html#%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95)
+
+- `reward: true` <Badge text="stable"/> <Badge text="v1.2.0"/>
+
+文章是否启用打赏功能。会覆盖主题配置文件中的全局设置。详情：[赞赏码](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/theme-config.html#%E8%B5%9E%E8%B5%8F%E7%A0%81)
+
+- `copyright: true` <Badge text="stable"/> <Badge text="v1.2.0"/>
+
+文章是否启用版权信息。会覆盖主题配置文件中的全局设置。详情：[知识共享许可协议（cc）](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/theme-config.html#%E7%9F%A5%E8%AF%86%E5%85%B1%E4%BA%AB%E8%AE%B8%E5%8F%AF%E5%8D%8F%E8%AE%AE%EF%BC%88cc%EF%BC%89)
 
 ---
 
@@ -255,11 +267,11 @@ gallery_waterfall:
 
 - `top: true` <Badge text="stable"/>
 
-文章是否置顶。详情：[文章置顶](http://localhost:8080/hexo-theme-stun/zh-CN/advanced/theme-config.html#文章置顶)
+文章是否置顶。详情：[文章置顶](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/theme-config.html#文章置顶)
 
 - `no-emoji: true` <Badge text="disrelated" type="warning"/>
 
-是否解析文章中的 emoji 代码。详情：[添加-emoji-支持](http://localhost:8080/hexo-theme-stun/zh-CN/advanced/third-part.html#%E6%B7%BB%E5%8A%A0-emoji-%E6%94%AF%E6%8C%81)
+是否解析文章中的 emoji 代码。详情：[添加-emoji-支持](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/third-part.html#%E6%B7%BB%E5%8A%A0-emoji-%E6%94%AF%E6%8C%81)
 
 ## Favicon <Badge text="stable"/>
 
@@ -551,7 +563,7 @@ toc:
   max_depth: 6
 ```
 
-其中 `expand_all` <Badge text="v1.0.2"/>
+其中 `expand_all` <Badge text="v1.0.2"/>。可以在文章的 markdown 源文件中的 `Front-matter` 里，指定 `toc: true / false` 来设置某篇文章是否启用目录。
 
 ## 订阅设置 <Badge text="stable"/>
 
