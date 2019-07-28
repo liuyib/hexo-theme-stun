@@ -142,8 +142,6 @@ sidebar:
   position: right
   # Sidebar offset from top menubar (Only px units are supported).
   offsetTop: 20px
-  # Define the sidebar width, 260px ~ 360px is better (All CSS size units are supported).
-  width: 300px
   # Horizon line.
   horizon_line: true
 
@@ -534,6 +532,13 @@ math:
 # Fancybox
 # See: https://fancyapps.com/fancybox/3/
 fancybox: false
+
+# Whether to enlarge the image when clicked.
+zoom_image:
+  enable: true
+  # The color of mask.
+  # Please use the quote to wrap value (All CSS size units are supported).
+  mask_color: "rgba(0,0,0,0.6)"
 
 # If you are use "photos" attribute in the Front-matter,
 #   you can enable this to show images in waterfalls flow.

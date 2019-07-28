@@ -5,7 +5,7 @@ Stun.utils = Stun.$u = {
    * Debounce
    * @param {Object} func Callback function
    * @param {Number} wait Waiting time
-   * @param {Number} immediate Time interval for immediate run
+   * @param {Boolean} immediate Run immediately
    */
   debounce: function (func, wait, immediate) {
     var timeout;
@@ -13,42 +13,58 @@ Stun.utils = Stun.$u = {
     return function () {
       var context = this;
       var args = arguments;
-      var later = function () {
-        timeout = null;
-        if (!immediate) func.apply(context, args);
-      };
-      var callNow = immediate && !timeout;
 
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-
-      if (callNow) func.apply(context, args);
+      if (timeout) clearTimeout(timeout);
+      if (immediate) {
+        var callNow = !timeout;
+        timeout = setTimeout(function () {
+          timeout = null;
+        }, wait);
+        if (callNow) func.apply(context, args);
+      } else {
+        timeout = setTimeout(function () {
+          func.apply(context, args);
+        }, wait);
+      }
     };
   },
   /**
    * Throttle
    * @param {Object} func Callback function
    * @param {Number} wait Waiting time
-   * @param {Number} mustRun Time interval for must run
+   * @param {Object} options leading: Boolean, trailing: Boolean
    */
-  throttle: function (func, wait, mustRun) {
-    var timeout;
-    var startTime = new Date();
+  throttle: function (func, wait, options) {
+    var timeout, context, args;
+    var previous = 0;
+    if (!options) options = {};
 
-    return function () {
-      var context = this;
-      var args = arguments;
-      var curTime = new Date();
+    var later = function () {
+      previous = options.leading === false ? 0 : new Date().getTime();
+      timeout = null;
+      func.apply(context, args);
+      if (!timeout) context = args = null;
+    };
 
-      clearTimeout(timeout);
-
-      if (curTime - startTime >= mustRun) {
+    var throttled = function () {
+      var now = new Date().getTime();
+      if (!previous && options.leading === false) previous = now;
+      var remaining = wait - (now - previous);
+      context = this;
+      args = arguments;
+      if (remaining <= 0 || remaining > wait) {
+        if (timeout) {
+          clearTimeout(timeout);
+          timeout = null;
+        }
+        previous = now;
         func.apply(context, args);
-        startTime = curTime;
-      } else {
-        timeout = setTimeout(func, wait);
+        if (!timeout) context = args = null;
+      } else if (!timeout && options.trailing !== false) {
+        timeout = setTimeout(later, remaining);
       }
     };
+    return throttled;
   },
   /**
    * Change the event code to keyCode.
@@ -155,7 +171,7 @@ Stun.utils = Stun.$u = {
           '" itemscope itemtype="http://schema.org/ImageObject" itemprop="url"></a>'
         ).parent('a');
 
-        if ($img.is('.post-gallery img')) {
+        if ($img.is('.gallery img')) {
           $imgWrap.attr('data-fancybox', 'gallery');
         } else {
           $imgWrap.attr('data-fancybox', 'default');
@@ -186,8 +202,8 @@ Stun.utils = Stun.$u = {
     var colWidth = parseInt(gConfig.col_width);
     var colGapX = parseInt(gConfig.gap_x);
 
-    $('.post-gallery').masonry({
-      itemSelector: '.post-g-img',
+    $('.gallery').masonry({
+      itemSelector: '.gallery-image',
       columnWidth: colWidth,
       percentPosition: true,
       gutter: colGapX,
@@ -213,12 +229,10 @@ Stun.utils = Stun.$u = {
       }
     });
   },
-  /**
-   * Add a mark icon to the link with `target="_blank"` attribute.
-   * @param {String} wrapper Any Jquery wrapper.
-   */
-  addIconToExternalLink: function (wrapper) {
-    if (!$(wrapper)[0]) return;
+  // Add a mark icon to the link with `target="_blank"` attribute.
+  addIconToExternalLink: function () {
+    var CONTAINER = '.content, #footer';
+    if (!$(CONTAINER)[0]) return;
 
     var $icon = $(
       '<i class="external-link fa fa-' +
@@ -226,10 +240,10 @@ Stun.utils = Stun.$u = {
       '"></i>'
     );
     // Insert icon after link.
-    // $icon.insertAfter($(wrapper).find('a[target="_blank"]'));
+    // $icon.insertAfter($(CONTAINER).find('a[target="_blank"]'));
 
     // Insert icon inner link.
-    $(wrapper).find('a[target="_blank"]').append($icon);
+    $(CONTAINER).find('a[target="_blank"]').append($icon);
   },
   // Back the page to top.
   back2Top: function () {
@@ -285,7 +299,7 @@ Stun.utils = Stun.$u = {
     $('.reward-button').on('click', function () {
       var $container = $('.reward-qr-wrapper');
 
-      if ($container.css('display') === 'block') {
+      if ($container.is(':visible')) {
         $container.css('display', 'none');
       } else {
         $container
@@ -295,6 +309,79 @@ Stun.utils = Stun.$u = {
           });
       }
     });
+  },
+  // Click to zoom in image, without fancybox.
+  registerClickToZoomImage: function () {
+    $('.content img').not(':hidden').each(function () {
+      $(this).addClass('zoom-image');
+    });
+
+    var $newImgMask = $('<div class="zoom-image-mask"></div>');
+    var $newImg = $('<img>');
+    var isZoom = false;
+
+    $(window).on('scroll', function () {
+      if (isZoom) {
+        isZoom = false;
+        setTimeout(closeZoom, 200);
+      }
+    });
+
+    $(document).on('click', function () {
+      closeZoom();
+    });
+
+    $('.zoom-image').on('click', function (ev) {
+      var e = ev || window.event;
+      e.stopPropagation();
+      isZoom = true;
+
+      var imgRect = this.getBoundingClientRect();
+      var imgW = $(this).width();
+      var imgH = $(this).height();
+      var imgOuterW = $(this).outerWidth();
+      var imgOuterH = $(this).outerHeight();
+      var winW = $(window).width();
+      var winH = $(window).height();
+      var scaleX = winW / imgW;
+      var scaleY = winH / imgH;
+      var scale = (scaleX < scaleY ? scaleX : scaleY) || 1;
+      var translateX = winW / 2 - (imgRect.x + imgOuterW / 2);
+      var translateY = winH / 2 - (imgRect.y + imgOuterH / 2);
+
+      $newImg.attr('class', this.className);
+      $newImg.attr('src', this.src);
+      $newImg.addClass('show');
+      $newImg.css({
+        left: $(this).offset().left + (imgOuterW - imgW) / 2,
+        top: $(this).offset().top + (imgOuterH - imgH) / 2,
+        width: imgW,
+        height: imgH
+      });
+
+      $(this).addClass('hide');
+      $('body').append($newImgMask).append($newImg);
+      $newImgMask.velocity({ opacity: 1 });
+      $newImg.velocity({
+        translateX: translateX,
+        translateY: translateY,
+        scale: scale
+      }, {
+        duration: 300,
+        easing: [0.2, 0, 0.2, 1]
+      });
+    });
+
+    function closeZoom () {
+      $newImg.velocity('reverse');
+      $newImgMask.velocity('reverse', {
+        complete: function () {
+          $('.zoom-image.show').remove();
+          $('.zoom-image-mask').remove();
+          $('.zoom-image').removeClass('hide');
+        }
+      });
+    }
   }
 };
 

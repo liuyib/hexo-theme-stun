@@ -35,6 +35,11 @@
     gallery_waterfall = JSON.stringify(theme.gallery_waterfall);
   }
 
+  var zoom_image = 'undefined';
+  if (theme.zoom_image.enable) {
+    zoom_image = JSON.stringify(theme.zoom_image);
+  }
+
   var external_link = 'undefined';
   if (theme.external_link.icon.enable) {
     external_link = JSON.stringify({
@@ -63,6 +68,7 @@ script.
     back2top: !{ back2top },
     reward: !{ theme.reward.enable },
     fancybox: !{ theme.fancybox },
+    zoom_image: !{ zoom_image },
     gallery_waterfall: !{ gallery_waterfall },
     external_link: !{ external_link },
     shortcuts: !{ shortcuts },
