@@ -1,4 +1,4 @@
 mixin gallery(post)
-  div.post-gallery(itemscope itemtype="http://schema.org/ImageGallery")
+  div.gallery(itemscope itemtype="http://schema.org/ImageGallery")
     each photo in post.photos
-      img(src=url_for(photo) itemprop="contentUrl").post-g-img
+      img(src=url_for(photo) itemprop="contentUrl").gallery-image

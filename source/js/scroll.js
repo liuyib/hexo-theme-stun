@@ -5,10 +5,9 @@ $(document).ready(function () {
   // Initial run.
   headerNavScroll();
 
-  $(window).scroll(
-    Stun.utils.throttle(function () {
-      headerNavScroll();
-    }, 20, 100));
+  $(window).scroll(function () {
+    headerNavScroll();
+  });
 
   // Click the heading.
   $('.content')
