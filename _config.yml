@@ -531,6 +531,7 @@ zoom_image:
 
 # If you are use "photos" attribute in the Front-matter,
 #   you can enable this to show images in waterfalls flow.
+# See: https://github.com/desandro/masonry/
 gallery_waterfall:
   enable: false
   col_width: 220px

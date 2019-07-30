@@ -81,7 +81,7 @@ Stun.utils = Stun.$u = {
   },
   /**
    * A UI component for notification prompts.
-   * @param {String} status The Status of message.
+   * @param {String} status The Status of message. Values: success / info / warning / error.
    * @param {String} text The text to show.
    * @param {Number} delay Message stay time (unit is 's', default 5s).
    */
@@ -202,12 +202,14 @@ Stun.utils = Stun.$u = {
     var colWidth = parseInt(gConfig.col_width);
     var colGapX = parseInt(gConfig.gap_x);
 
-    $('.gallery').masonry({
-      itemSelector: '.gallery-image',
-      columnWidth: colWidth,
-      percentPosition: true,
-      gutter: colGapX,
-      transitionDuration: 0
+    this.waitAllImageLoad('.gallery img', function () {
+      $('.gallery').masonry({
+        itemSelector: '.gallery-image',
+        columnWidth: colWidth,
+        percentPosition: true,
+        gutter: colGapX,
+        transitionDuration: 0
+      });
     });
   },
   // Add a container outside the tables to make it scroll when needed.
@@ -377,6 +379,29 @@ Stun.utils = Stun.$u = {
         }
       });
     }
+  },
+  /**
+   * Wait for all images to load.
+   * @param {String} selector jQuery selector.
+   * @param {Function} callback Callback.
+   */
+  waitAllImageLoad: function (selector, callback) {
+    var imgDefereds = [];
+
+    $(selector).each(function () {
+      var dfd = $.Deferred();
+      $(this).bind('load', function () {
+        dfd.resolve();
+      });
+
+      if (this.complete) {
+        setTimeout(function () {
+          dfd.resolve();
+        }, 500);
+      }
+      imgDefereds.push(dfd);
+    });
+    $.when.apply(null, imgDefereds).then(callback);
   }
 };
 
