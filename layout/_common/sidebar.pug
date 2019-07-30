@@ -29,7 +29,8 @@ aside#sidebar
               - var socialLinkIcon = _.trim(_.get(socialItem, '[1]'))
               span.sidebar-social-item
                 a(href=socialLinkPath target="_blank" rel="noopener"
-                    data-popover=_p(`social.${name}`) data-popover-pos="up")
+                    data-popover=_p(`social.${name}`) data-popover-pos=`${
+                      theme.social_setting.icon_only ? 'up' : 'none'}`)
 
                   if socialLinkIcon && socialLinkIcon.match("origin:")
                     span!= socialLinkIcon.split("origin:")[1]
@@ -64,17 +65,17 @@ aside#sidebar
         - var menuTags       = _.trim(_.get(theme.menu.tags.split('||'), '[0]'))
         div.sidebar-state
           if theme.menu.archives
-            div.sidebar-state-item.sidebar-state-posts
+            span.sidebar-state-item.sidebar-state-posts
               a(href=menuArchives)
                 div.sidebar-state-item-count= site.posts.length
                 div.sidebar-state-item-name= _p("sidebar.articles")
           if theme.menu.categories
-            div.sidebar-state-item.sidebar-state-categories
+            span.sidebar-state-item.sidebar-state-categories
               a(href=menuCategories)
                 div.sidebar-state-item-count= site.categories.length
                 div.sidebar-state-item-name= _p("sidebar.categories")
           if theme.menu.tags
-            div.sidebar-state-item.sidebar-state-tags
+            span.sidebar-state-item.sidebar-state-tags
               a(href=menuTags)
                 div.sidebar-state-item-count= site.tags.length
                 div.sidebar-state-item-name= _p("sidebar.tags")

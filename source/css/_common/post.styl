@@ -1,19 +1,15 @@
-$img_horizonal_align
-  margin: auto
-
-if (hexo-config('img_horizonal_align') == 'left')
-  $img_horizonal_align
-    margin: 0 auto 0 0
-else if (hexo-config('img_horizonal_align') == 'right')
-  $img_horizonal_align
-    margin: 0 0 0 auto
-
 .post-body,
 #recent-posts
   if (hexo-config('img_horizonal_align'))
     img
       display: block
-      @extend $img_horizonal_align
+
+      if (hexo-config('img_horizonal_align') == 'left')
+        margin: 0 auto 0 0
+      else if (hexo-config('img_horizonal_align') == 'right')
+        margin: 0 0 0 auto
+      else
+        margin: auto
 
 .post-body
   #more
@@ -31,9 +27,6 @@ else if (hexo-config('img_horizonal_align') == 'right')
 
     span
       margin: 0 .1rem
-
-  &-copyright
-    position: relative
 
   &-tags
     margin-bottom: 1rem

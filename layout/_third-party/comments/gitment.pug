@@ -23,6 +23,10 @@ script.
         document.getElementById("gitment-container").style.display = "block";
         renderGitment();
       }
+
+      document.getElementById('gitment-button').onclick = function () {
+        showGitment();
+      };
     } else {
       renderGitment();
     }

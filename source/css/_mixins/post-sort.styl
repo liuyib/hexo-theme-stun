@@ -1,8 +1,9 @@
 .article-sort-item
-  display: flex
+  display: inline-block
   position: relative
   margin-bottom: .8rem
   padding-left: 1.4rem
+  width: 100%
   align-items: center
 
   h2
@@ -38,13 +39,17 @@
     font-weight: $font-weight-bolder
 
   &__time
+    display: inline-block
     margin-right: 1rem
     font-size: $font-main-base
+    vertical-align: middle
     color: $archives-right-time-color
     transform: translate(0, 8%)
 
   &__title
+    display: inline-block
     max-width: 80%
+    vertical-align: middle
 
     a
       clearAStyle()

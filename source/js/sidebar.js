@@ -55,10 +55,6 @@ $(document).ready(function () {
     $view.velocity('fadeIn');
   });
 
-  if ($('.content').height() < $('#sidebar').height()) {
-    $('#main').css('min-height', $('#main').height());
-  }
-
   // Automatically expand items in the article directory
   //   based on the scrolling of heading in the article.
   function autoSpreadToc () {

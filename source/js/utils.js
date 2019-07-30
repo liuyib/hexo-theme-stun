@@ -246,8 +246,8 @@ Stun.utils = Stun.$u = {
     $(CONTAINER).find('a[target="_blank"]').append($icon);
   },
   // Back the page to top.
-  back2Top: function () {
-    function runBack2Top () {
+  back2top: function () {
+    function back2topHandler () {
       var $top = $('#back-top');
       var scrollTop = $(window).scrollTop();
 
@@ -258,13 +258,8 @@ Stun.utils = Stun.$u = {
       }
     }
 
-    $(window).on('load', function () {
-      runBack2Top();
-    });
-
-    $(window).on('scroll', function () {
-      runBack2Top();
-    });
+    $(window).on('load', back2topHandler);
+    $(window).on('scroll', back2topHandler);
 
     $('#back-top').on('click', function () {
       $('body').velocity('stop').velocity('scroll');

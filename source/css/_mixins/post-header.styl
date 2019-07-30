@@ -1,70 +1,74 @@
 .post-header
+  position: relative
   margin: 0 0 1.5rem
   text-align: center
-
-  .post-title-wrapper
-    display: inline-block
-    position: relative
-    margin: 0 0 1rem
-    border-width: 0
-    word-wrap: break-word
-    color: $post-info-title-color
-
-    .post-title
-      cursor: pointer
 
   .post-title
     display: inline-block
     margin: 0
-    font-size: $font-post-title
     cursor: auto
 
-    &::before
-      content: ''
-      visibility: hidden
-      position: absolute
-      bottom: 0
-      left: 0
-      width: 100%
-      height: 2px
-      background-color: #000
-      transition-timing-function: ease
-      transition-duration: .2s
-      transform: scaleX(0)
+    &-link
+      clearAStyle()
+      display: inline-block
+      position: relative
+      font-size: inherit
+      word-wrap: break-word
+      word-break: break-word
+      color: $post-info-title-color
+      cursor: pointer
 
-    &:hover::before
-      visibility: visible
-      transform: scaleX(1)
+      &::before
+        content: ''
+        visibility: hidden
+        position: absolute
+        bottom: 0
+        left: 0
+        width: 100%
+        height: 2px
+        background-color: #000
+        transition-timing-function: ease
+        transition-duration: .2s
+        transform: scaleX(0)
 
-  &-meta
-    *::before,
-    *::after
-      margin-right: .2rem
-      @extend $font-face
+      &:hover::before
+        visibility: visible
+        transform: scaleX(1)
 
-    & > span
-      &:not(:first-child)::before
-        content: '•'
-        margin: 0 .3rem
-        color: #666
+.post-meta
+  i
+    margin-right: .2rem
 
-    &-create
-      color: $post-info-create-color
+  & > span
+    &:not(:first-child)::before
+      content: '•'
+      margin: 0 .3rem
+      color: #666
 
-    &-update
-      color: $post-info-update-color
+.post-create
+  color: $post-info-create-color
 
-    &-word-count
-      color: $post-info-word-count-color
+.post-update
+  color: $post-info-update-color
 
-    &-reading-time
-      color: $post-info-reading-time-color
+.post-word-count
+  color: $post-info-word-count-color
 
-    &-reading-count
-      color: $post-info-reading-count-color
+.post-reading-time
+  color: $post-info-reading-time-color
 
-  .leancloud_visitors
-    color: $post-info-reading-count-color
+.post-reading-count
+  color: $post-info-reading-count-color
 
-  .external-link
-    font-size: 1.5em
+.leancloud_visitors
+  color: $post-info-reading-count-color
+
+.post-link
+  .post-header
+    margin: 0 0 .5rem
+
+  .post-title-wrapper
+    margin: 0
+
+  .post-excerpt
+    margin: 0

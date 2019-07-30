@@ -186,10 +186,6 @@ social_setting:
   enable: false
   # Only show by icon.
   icon_only: true
-  # Available values are equal to "justify-content" attribute in CSS.
-  # e.g. flex-start | center | flex-end | space-between, etc.
-  # For details, please see: https://developer.mozilla.org/zh-CN/docs/Web/CSS/justify-content/
-  text_align: center
 
 # Table Of Contents in the Sidebar.
 toc:
@@ -323,13 +319,6 @@ code_word_wrap: false
 # 
 # If you empty it, images will show by default.
 img_horizonal_align: 
-
-# Vertical alignment of text and images.
-# values:
-# - top
-# - middle
-# - bottom
-text_vertical_align_with_img: bottom
 
 # Reward
 reward:
@@ -471,7 +460,7 @@ algolia_search:
 canvas_ribbon:
   enable: false
   # The width of the ribbon.
-  size: 300
+  size: 120
   # The transparency of the ribbon.
   alpha: 0.6
   # The display level of the ribbon.

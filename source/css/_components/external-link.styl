@@ -1,10 +1,12 @@
-$external-link-icon-color = convert(hexo-config('external_link.icon.color') || '#aaa')
-
 .external-link
   margin: 0 .1em 0 .2em
   font-size: .9em
-  color: $external-link-icon-color
+  color: convert(hexo-config('external_link.icon.color') || '#aaa')
 
 .footer-inner
   .external-link
     color: #fff
+
+.post-title-link
+  .external-link
+    font-size: .7em

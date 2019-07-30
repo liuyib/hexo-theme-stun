@@ -1,7 +1,7 @@
 $(document).ready(function () {
   CONFIG.shortcuts.switch_post && Stun.utils.registerSwitchPost();
   CONFIG.reward && Stun.utils.registerShowReward();
-  CONFIG.back2top && Stun.utils.back2Top();
+  CONFIG.back2top && Stun.utils.back2top();
   CONFIG.gallery_waterfall && Stun.utils.galleryWaterFall();
   CONFIG.external_link && Stun.utils.addIconToExternalLink();
 

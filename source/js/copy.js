@@ -24,7 +24,7 @@ $(document).ready(function () {
     '</div>'
   );
   var COPY_BUTTON_WRAPPER =
-    'figure.highlight figcaption, .post-footer-copyright';
+    'figure.highlight figcaption, .post-copyright';
 
   // Add a copy button to the selected elements.
   $(COPY_BUTTON_WRAPPER).append($copyIcon);

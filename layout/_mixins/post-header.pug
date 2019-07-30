@@ -1,19 +1,24 @@
 mixin postHeader(post)
-  div.post-header
+  header.post-header
+    if post.top
+      include ../_components/sticky-top.pug
+  
     if is_post()
       h1.post-title= post.title || _p("post.untitled")
     else
       if post.link
-        a(href=url_for(post.link) target="_blank").post-title-wrapper
-          h1.post-title= post.title || post.link
+        h1.post-title
+          a(href=url_for(post.link) target="_blank"
+          ).post-title-link= post.title || post.link
       else
-        a(href=url_for(post.path)).post-title-wrapper
-          h1.post-title= post.title || _p("post.untitled")
+        h1.post-title
+          a(href=url_for(post.path)
+          ).post-title-link= post.title || _p("post.untitled")
     
     if !post.link
-      div.post-header-meta
+      div.post-meta
         if theme.post_meta.created.enable
-          span.post-header-meta-create
+          span.post-create
             i(class=`fa fa-${theme.post_meta.created.icon}`)
 
             if !theme.post_meta.icon_only
@@ -21,7 +26,7 @@ mixin postHeader(post)
             span= full_date(post.date, "YYYY-MM-DD")
         
         if theme.post_meta.updated.enable
-          span.post-header-meta-update
+          span.post-update
             i(class=`fa fa-${theme.post_meta.updated.icon}`)
 
             if !theme.post_meta.icon_only
@@ -29,7 +34,7 @@ mixin postHeader(post)
             span= full_date(post.updated, "YYYY-MM-DD")
         
         if theme.post_meta.word_count.enable
-          span.post-header-meta-word-count
+          span.post-word-count
             i(class=`fa fa-${theme.post_meta.word_count.icon}`)
 
             if !theme.post_meta.icon_only
@@ -38,7 +43,7 @@ mixin postHeader(post)
         
         if theme.post_meta.reading_time.enable
           - var postReadingTime = theme.post_meta.reading_time
-          span.post-header-meta-reading-time
+          span.post-reading-time
             i(class=`fa fa-${postReadingTime.icon}`)
             
             if !theme.post_meta.icon_only
@@ -57,7 +62,7 @@ mixin postHeader(post)
         //-   because will conflict by ID selector.
         if is_post()
           if theme.busuanzi.enable && theme.busuanzi.post_pv.enable
-            span.post-header-meta-reading-count
+            span.post-reading-count
               i(class=`fa fa-${theme.busuanzi.post_pv.icon}`)
               
               if !theme.post_meta.icon_only && !theme.busuanzi.post_pv.icon_only

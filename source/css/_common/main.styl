@@ -15,13 +15,10 @@ setUlStyle(content, hoverColor)
       color: hoverColor
 
 #container
-  display: flex
   min-height: 100vh
-  flex-direction: column
 
 #main
   margin: 1.5rem 0
-  flex: 1 auto
 
 .main-inner
   margin: 0 auto
@@ -64,12 +61,13 @@ setUlStyle(content, hoverColor)
 
 .content
   border-radius: 5px
-  padding: 2rem
+  padding: 1.5rem 2rem
   font-size: $font-main-base
   background-color: $white
 
   if (hexo-config('sidebar.enable'))
     width: calc(100% - 320px)
+
     if (hexo-config('sidebar.position') == 'left')
       float: right
     else
@@ -78,15 +76,13 @@ setUlStyle(content, hoverColor)
     margin: 0 auto
     width: calc(100% - 200px)
 
-  & > :first-child
-    margin-top: 0
-
-  & > :last-child
-    margin-bottom: 0
+  a
+    word-wrap: break-word
+    word-break: break-word
 
   img
     max-width: 100%
-    vertical-align: convert(hexo-config('text_vertical_align_with_img') || 'bottom')
+    vertical-align: bottom
 
   ul,
   ol
@@ -143,16 +139,9 @@ setUlStyle(content, hoverColor)
       &::before
         content: '--'
         padding: 0 .2em
-
-  table
-    border-spacing: 0
-    border-collapse: collapse
-    margin: 0 auto 1rem
-    min-width: 100%
-
-    th,
-    td
-      border: 1px solid #eee
+  
+  iframe
+    max-width: 100%
 
 .home-content
   @extend .headings

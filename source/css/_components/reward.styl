@@ -1,16 +1,15 @@
 #reward
-  display: flex
-  flex-direction: column
+  text-align: center
 
 .reward-button
-  margin: 1rem auto 1.5rem
+  display: inline-block
+  margin: 1rem 0 1.5rem
   border-radius: 10px
   padding: .2rem 1rem
   color: $white
   background-color: $reward-btn-color
   transition: background-color .2s
   cursor: pointer
-  justify-content: center
 
   &:hover
     background-color: $reward-btn-hover-color
@@ -19,13 +18,12 @@
   display: none
 
 .reward-qr
-  display: flex
+  overflow: hidden
 
   &-alipay,
   &-wechat
-    margin: 0 auto
-    text-align: center
-    justify-content: center
+    display: inline-block
+    margin: 0 2rem
 
     img
       width: 200px

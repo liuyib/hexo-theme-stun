@@ -1,42 +1,40 @@
 .comments
-  display: flex
   margin: 1.5rem 0 0
-  flex-direction: column
 
   a
-    text-decoration: none !important
-
-  // Gitment
-  #gitment-container
-    width: 100%
-
-  #gitment-button
-    margin: 0 auto
-    border-radius: 10px
-    padding: .2rem 1rem
-    text-align: center
-    color: $white
-    background-color: alpha($blue-light, .8)
-    transition: background-color .2s
-    cursor: pointer
-
-    &:hover
-      background-color: $blue-light
-
-  a.gitment-editor-avatar
     clearAStyle()
 
-  // Gitalk
-  #gitalk-container
-    width: 100%
+// Gitment
+#gitment-container
+  width: 100%
 
-    & > :first-child
-      margin: 0 auto
+#gitment-button
+  text-align: center
 
-  // Livere
-  #lv-container
-    width: 100%
+.gitment-button-inner
+  display: inline-block
+  border-radius: 10px
+  padding: .2rem 1rem
+  color: $white
+  background-color: alpha($blue-light, .8)
+  transition: background-color .2s
+  cursor: pointer
 
-  // Disqus
-  #disqus_thread
-    width: 100%
+  &:hover
+    background-color: $blue-light
+
+// Gitalk
+#gitalk-container
+  width: 100%
+
+  .gt-meta
+    margin-top: 0
+    padding-top: 0
+
+// Livere
+#lv-container
+  width: 100%
+
+// Disqus
+#disqus_thread
+  width: 100%

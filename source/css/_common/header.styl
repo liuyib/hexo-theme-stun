@@ -1,11 +1,9 @@
-$header-height = convert(hexo-config('header.height') || '80vh')
-
-if (hexo-config('header.height'))
-  if (match('%', hexo-config('header.height')))
-    $header-height = unit(convert(hexo-config('header.height')), 'vh')
+if (hexo-config('header.height') && match('%', hexo-config('header.height')))
+  $header-height = unit(convert(hexo-config('header.height')), 'vh')
+else
+  $header-height = convert(hexo-config('header.height') || '80vh')
 
 #header
-  display: flex
   position: relative
   height: $header-height
   font-size: $font-header-base
@@ -15,7 +13,6 @@ if (hexo-config('header.height'))
   background-position: center
   background-size: cover
   transition: height .5s
-  flex-direction: column
 
 $header-nav-color
   .header-nav-menu a,
@@ -29,11 +26,10 @@ $header-nav-color
       &::after
         color: $header-nav-link-hover-color
 
-$header-nav-height = convert(hexo-config('header.nav_height') || '50px')
-
-if (hexo-config('header.nav_height'))
-  if (match('%', hexo-config('header.nav_height')))
-    $header-nav-height = unit(convert(hexo-config('header.nav_height')), 'vh')
+if (hexo-config('header.nav_height') && match('%', hexo-config('header.nav_height')))
+  $header-nav-height = unit(convert(hexo-config('header.nav_height')), 'vh')
+else
+  $header-nav-height = convert(hexo-config('header.nav_height') || '50px')
 
 .header-nav
   position: fixed
@@ -72,7 +68,7 @@ $header-nav-item
   line-height: $header-nav-height
 
 .header-nav-menu
-  float: left
+  display: inline-block
   height: 100%
   transition: opacity .5s
 
@@ -84,6 +80,9 @@ $header-nav-item
   span
     float: left
     margin: 0 1rem 0 0
+
+    &:last-child
+      margin: 0
 
   a
     clearAStyle()
@@ -105,29 +104,32 @@ $header-nav-item
     cursor: pointer
 
 .header-info
-  display: flex
+  position: relative
+  height: 100%
   text-align: center
-  flex: 1
-  flex-direction: column
 
   if (hexo-config('header.mask.enable'))
     background-color: alpha(#000, hexo-config('header.mask.opacity'))
 
 .header-info-inner
-  display: flex
+  display: inline-block
+  position: absolute
+  top: 50%
+  left: 0
+  padding: 0 .5rem
   width: 100%
-  height: 100%
-  flex-direction: column
-  justify-content: center
+  transform: translateY(-50%)
 
-  .site-info-title
-    font-size: 4rem
-    font-weight: $font-weight-bolder
-    color: #f9f9f9
-    transition: font-size .3s
+.header-info-title
+  margin-bottom: .5rem
+  font-size: 4rem
+  font-weight: $font-weight-bolder
+  line-height: 4rem
+  color: #f9f9f9
+  transition: font-size .3s
 
-  .site-info-subtitle
-    font-size: 1.2rem
-    font-weight: $font-weight-normal
-    color: #f9f9f9
-    transition: font-size .3s
+.header-info-subtitle
+  font-size: 1.1rem
+  font-weight: $font-weight-normal
+  color: #f9f9f9
+  transition: font-size .3s

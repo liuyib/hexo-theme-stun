@@ -24,12 +24,10 @@
   background-color: $white-light
 
 .algolia-input-wrapper
-  display: flex
   margin: 1rem 0
-  flex-direction: column
 
   .ais-search-box
-    margin: auto
+    max-width: 100%
 
   input
     border: 2px solid alpha($blue-light, .5)
@@ -41,9 +39,6 @@
     &:hover,
     &:focus
       border-color: $blue-light
-
-  .ais-search-box
-    max-width: 100%
 
 .algolia-close
   position: absolute

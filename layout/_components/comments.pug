@@ -1,8 +1,8 @@
 if theme.gitment && theme.gitment.enable
   div#comments.comments.content
     if theme.gitment.lazy
-      div#gitment-button(onclick="showGitment()")
-        != _p("comment.gitment.button")
+      div#gitment-button
+        div.gitment-button-inner!= _p("comment.gitment.button")
       div#gitment-container(style="display: none")
     else
       div#gitment-container

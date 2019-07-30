@@ -1,12 +1,4 @@
-if (hexo-config('stick_top.position') == 'left')
-  $stick-top-position
-    left: 1.5rem
-else
-  $stick-top-position
-    right: 1.5rem
-
 $stick-top-rotate = convert(hexo-config('stick_top.rotate' || '0deg'))
-$stick-top-color = convert(hexo-config('stick_top.color' || '#999'))
 
 .sticky-top
   position: absolute
@@ -15,11 +7,22 @@ $stick-top-color = convert(hexo-config('stick_top.color' || '#999'))
   height: 1.5rem
   line-height: 1.5rem
   text-align: center
-  @extend $stick-top-position
+
+  if (hexo-config('stick_top.position') == 'left')
+    left: 0
+  else
+    right: 0
 
   i
-    color: $stick-top-color
+    color: convert(hexo-config('stick_top.color' || '#999'))
     transform: scale(1.2) rotate($stick-top-rotate)
 
   &[data-popover][data-popover-pos='up']:hover::before
     transform: translate(-50%, -100%)
+
+.archive-inner,
+.category-inner,
+.tag-inner
+  .sticky-top
+    top: 50%
+    transform: translate(0, -50%)

@@ -9,6 +9,11 @@ clearImgStyle()
   border-radius: 0
   padding: 0
 
+.clearfix::after
+  content: ''
+  display: table
+  clear: both
+
 $popover-bg-color = alpha(#000, .7)
 
 [data-popover]
