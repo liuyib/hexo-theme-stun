@@ -8,7 +8,7 @@ mixin postHeader(post)
     else
       if post.link
         h1.post-title
-          a(href=url_for(post.link) target="_blank"
+          a(href=url_for(post.link) target="_blank" rel="noopener"
           ).post-title-link= post.title || post.link
       else
         h1.post-title

@@ -197,6 +197,7 @@ Stun.utils = Stun.$u = {
       ]
     });
   },
+  // Display the image in the gallery as a waterfall.
   galleryWaterFall: function () {
     var gConfig = CONFIG.gallery_waterfall;
     var colWidth = parseInt(gConfig.col_width);
@@ -212,40 +213,34 @@ Stun.utils = Stun.$u = {
       });
     });
   },
-  // Add a container outside the tables to make it scroll when needed.
-  addContainerToTable: function () {
-    var $wrapper = $('<div style="overflow: auto"></div>');
-    $('table').wrap($wrapper);
-  },
-  // Adjust the size of images by the parameter "size".
-  adjustImageSize: function () {
-    $('img').each(function () {
-      if (this.src.includes('?size=')) {
-        var size = this.src.split('?size=')[1] &&
-          this.src.split('?size=')[1].toLowerCase();
-        var w = size.split('x')[0];
-        var h = size.split('x')[1];
-
-        $(this).css('width', w);
-        $(this).css('height', h);
-      }
+  lazyLoadImages: function () {
+    $('.content img').not(':hidden').each(function () {
+      var $img = $(this);
+      var PLACEHOLDER =
+        'data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=';
+      
+      $img.attr('class', 'lazyload');
+      $img.attr('data-original', $img.attr('src'));
+      $img.attr('src', PLACEHOLDER);
     });
+    $('.content').find('img').lazyload();
   },
   // Add a mark icon to the link with `target="_blank"` attribute.
-  addIconToExternalLink: function () {
-    var CONTAINER = '.content, #footer';
-    if (!$(CONTAINER)[0]) return;
+  addIconToExternalLink: function (container) {
+    if (!$(container)[0]) return;
 
+    var $wrapper = $('<span class="external-link"></span>');
     var $icon = $(
-      '<i class="external-link fa fa-' +
+      '<i class="fa fa-' +
         CONFIG.external_link.icon.name +
       '"></i>'
     );
-    // Insert icon after link.
-    // $icon.insertAfter($(CONTAINER).find('a[target="_blank"]'));
-
-    // Insert icon inner link.
-    $(CONTAINER).find('a[target="_blank"]').append($icon);
+    
+    $(container)
+      .find('a[target="_blank"]')
+      .wrap($wrapper)
+      .parent('.external-link')
+      .append($icon);
   },
   // Back the page to top.
   back2top: function () {
@@ -404,9 +399,3 @@ Stun.utils = Stun.$u = {
     $.when.apply(null, imgDefereds).then(callback);
   }
 };
-
-$(document).ready(function () {
-  Stun.utils.addContainerToTable();
-  Stun.utils.adjustImageSize();
-  Stun.utils.copyText();
-});
