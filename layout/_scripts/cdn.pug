@@ -16,6 +16,9 @@ if theme.fancybox
 if theme.gallery_waterfall
   script(src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js")
 
+if theme.lazyload
+  script(src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.min.js")
+
 if theme.canvas_ribbon && theme.canvas_ribbon.enable
   - var ribbon = theme.canvas_ribbon;
   script(src=theme.cdn.canvas_ribbon size=ribbon.size alpha=ribbon.alpha zIndex=ribbon.zIndex)

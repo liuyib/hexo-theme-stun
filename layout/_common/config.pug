@@ -35,6 +35,11 @@
     gallery_waterfall = JSON.stringify(theme.gallery_waterfall);
   }
 
+  var lazyload = 'undefined';
+  if (theme.lazyload.enable) {
+    lazyload = JSON.stringify(theme.lazyload);
+  }
+
   var zoom_image = 'undefined';
   if (theme.zoom_image.enable) {
     zoom_image = JSON.stringify(theme.zoom_image);
@@ -70,6 +75,7 @@ script.
     fancybox: !{ theme.fancybox },
     zoom_image: !{ zoom_image },
     gallery_waterfall: !{ gallery_waterfall },
+    lazyload: !{ lazyload },
     external_link: !{ external_link },
     shortcuts: !{ shortcuts },
     notification: !{ notification }

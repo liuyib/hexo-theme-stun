@@ -1,19 +1,5 @@
 # 辅助功能
 
-## FancyBox <Badge text="stable"/> <Badge text="v1.1.4"/>
-
-如果想要使用 fancybox 功能，只需要修改主题配置文件即可：
-
-``` yaml
-fancybox: true
-```
-
-效果如下：
-
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190724173526.png)
-
-你可以在这里在线体验效果：[https://liuyib.github.io/2019/05/15/hello-stun/index.html](https://liuyib.github.io/2019/05/15/hello-stun/index.html)
-
 ## 快捷键
 
 - 快速切换文章 <Badge text="beta" type="warn"/> <Badge text="v1.1.3"/>

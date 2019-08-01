@@ -3,8 +3,7 @@ $(document).ready(function () {
   CONFIG.reward && Stun.utils.registerShowReward();
   CONFIG.back2top && Stun.utils.back2top();
   CONFIG.gallery_waterfall && Stun.utils.galleryWaterFall();
-  
-  // CONFIG.lazyload && Stun.utils.lazyLoadImages();
+  CONFIG.lazyload && Stun.utils.lazyLoadImages();
   
   if (CONFIG.external_link) {
     var WRAPPER = '.archive-inner, .post-title, #footer';

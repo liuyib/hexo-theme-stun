@@ -538,6 +538,13 @@ gallery_waterfall:
   gap_x: 10px
   gap_y: 10px
 
+# Lazy load the images of post.
+# See: https://github.com/tuupola/lazyload
+lazyload:
+  enable: false
+  # Available values: gif | block
+  placeholder: gif
+
 # Google AdSense
 google_adsense:
   enable: false

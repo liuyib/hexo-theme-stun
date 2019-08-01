@@ -213,17 +213,9 @@ Stun.utils = Stun.$u = {
       });
     });
   },
+  // Lazy load the images of post.
   lazyLoadImages: function () {
-    $('.content img').not(':hidden').each(function () {
-      var $img = $(this);
-      var PLACEHOLDER =
-        'data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=';
-      
-      $img.attr('class', 'lazyload');
-      $img.attr('data-original', $img.attr('src'));
-      $img.attr('src', PLACEHOLDER);
-    });
-    $('.content').find('img').lazyload();
+    $('img.lazyload').lazyload();
   },
   // Add a mark icon to the link with `target="_blank"` attribute.
   addIconToExternalLink: function (container) {
