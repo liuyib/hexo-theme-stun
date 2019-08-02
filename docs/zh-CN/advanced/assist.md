@@ -86,3 +86,37 @@ Hexo 主题一般都会扩展一些自己特有的标签插件，在这方面做
 3. 重启 Hexo 服务器，效果如下。
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190802171506.png)
+
+### Bootstrap 标注 <Badge text="stable"/> <Badge text="v1.2.0"/>
+
+语法如下：
+
+```
+{% note [type] [no-icon] %}
+**header text**
+
+any text
+{% endnote %}
+```
+
+> 标签内可以是任意文字，支持 markdown 和 HTML 语法。
+
+参数：
+
+`[type]`：标注类型
+
+`[no-icon]`：是否显示 ICON
+
+举例：
+
+```
+{% note success %}
+**Success**
+
+This is success note.
+{% endnote %}
+```
+
+全部效果如下：
+
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190802221712.png)
