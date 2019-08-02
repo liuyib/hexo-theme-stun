@@ -27,7 +27,7 @@ sidebar:
   overview: Overview
   catalog: Catalog
   subscribe: Subscribe
-  articles: Articles
+  archives: Archives
   categories: Categories
   tags: Tags
   read_info: You have read
@@ -92,6 +92,7 @@ footer:
   uv: Visitors
   pv: Views
 
+# Global notification
 notification:
   copy:
     success: Copy Success

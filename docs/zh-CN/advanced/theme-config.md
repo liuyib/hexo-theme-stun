@@ -941,7 +941,7 @@ external_link:
     color: "#aaa"
 ```
 
-## FancyBox <Badge text="stable"/> <Badge text="v1.1.4"/>
+### FancyBox <Badge text="stable"/> <Badge text="v1.1.4"/>
 
 如果想要使用 fancybox 功能，只需要修改主题配置文件即可：
 

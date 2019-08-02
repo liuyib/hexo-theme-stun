@@ -27,7 +27,7 @@ sidebar:
   overview: 站点概览
   catalog: 文章目录
   subscribe: 订阅
-  articles: 文章
+  archives: 归档
   categories: 分类
   tags: 标签
   read_info: 你已阅读了
@@ -92,6 +92,7 @@ footer:
   uv: 访问人数
   pv: 浏览总量
 
+# 全局消息提示信息
 notification:
   copy:
     success: 复制成功
