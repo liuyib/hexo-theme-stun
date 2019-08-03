@@ -41,13 +41,14 @@ if theme.favicon.small
 if theme.favicon.safari_pinned_tab
   link(rel="mask-icon" href=`${url_for(theme.favicon.safari_pinned_tab)}?v=${stun_env("version")}` color="#333")
 
-if theme.cdn && theme.cdn.css
-  each url in theme.cdn.css
-    if url
-      link(rel="stylesheet" href=url_for(url))
+- var fontawesome_css = 'https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css'
+- if (theme.cdn.fontawesome_css) fontawesome_css = theme.cdn.fontawesome_css
+link(rel="stylesheet" href=fontawesome_css)
 
 if theme.fancybox
-  link(rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css")
+  - var fancybox_css = 'https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css'
+  - if (theme.cdn.fontawesome) fancybox_css = theme.cdn.fontawesome
+  link(rel="stylesheet" href=fancybox_css)
 
 link(rel="stylesheet" href=`${url_for(theme.css)}/index.css?v=${stun_env("version")}`)
 

@@ -1,1 +1,6 @@
-script(async src="https://cdn.jsdelivr.net/gh/sukkaw/busuanzi@2.3/bsz.pure.mini.js")
+-
+  var busuanzi_js = "https://cdn.jsdelivr.net/gh/sukkaw/busuanzi@latest/bsz.pure.mini.js"
+  
+  if (theme.cdn.busuanzi) busuanzi_js = theme.cdn.busuanzi
+
+script(async src=busuanzi_js)

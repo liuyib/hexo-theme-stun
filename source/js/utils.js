@@ -227,7 +227,7 @@ Stun.utils = Stun.$u = {
         CONFIG.external_link.icon.name +
       '"></i>'
     );
-    
+
     $(container)
       .find('a[target="_blank"]')
       .wrap($wrapper)

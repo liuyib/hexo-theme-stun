@@ -593,17 +593,107 @@ images: images
 
 # Set a CDN address for the vendor you want to customize.
 # ---------------------------------------------------------------
-#! Do not edit the follow configs.
-#! Unless you know what you are doing.
+# !!! Do not edit the follow configs.
+# !!! Unless you know what you are doing.
 # ---------------------------------------------------------------
 cdn:
-  css:
-    fontawesome: https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css
+  # Using version: 4.7.0
+  # See: https://fontawesome.com/
+  # Example:
+  # fontawesome: //cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css
+  # fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
+  fontawesome: 
 
-  js:
-    jquery: https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js
-    velocity: https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js
-    velocity-ui: https://cdn.jsdelivr.net/npm/velocity-ui-pack@1.2.2/velocity.ui.min.js
+  # Using version: 3.4.1
+  # Example:
+  # jquery: //cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js
+  # jquery: //cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js
+  jquery: 
+  
+  # Using version: 1.5.2
+  # See: http://velocityjs.org/
+  # Example:
+  # velocity: //cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js
+  # velocity: //cdnjs.cloudflare.com/ajax/libs/velocity/1.5.2/velocity.min.js
+  # velocity_ui: //cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js
+  # velocity_ui: //cdnjs.cloudflare.com/ajax/libs/velocity/1.5.2/velocity.ui.min.js
+  velocity: 
+  velocity_ui: 
 
-  canvas_ribbon: https://cdn.jsdelivr.net/npm/ribbon.js@latest/dist/ribbon.min.js
-  canvas_nest: https://cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1.0.0/canvas-nest.min.js
+  # gitalk & js-md5
+  # Using version: latest & latest
+  # See: https://github.com/gitalk/gitalk/, https://github.com/emn178/js-md5/
+  # Example:
+  # gitalk_js: //cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js
+  # gitalk_css: //cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.css
+  # md5: //cdn.jsdelivr.net/npm/js-md5@latest/src/md5.min.js
+  gitalk_js: 
+  gitalk_css: 
+  md5: 
+
+  # gitment & js-md5
+  # Using version: latest & latest
+  # See: https://github.com/gitalk/gitalk/, https://github.com/emn178/js-md5/
+  # Example:
+  # gitment_js: //cdn.jsdelivr.net/npm/gitment/dist/gitment.browser.min.js
+  # gitment_css: //cdn.jsdelivr.net/npm/gitment/style/default.min.css
+  # md5: //cdn.jsdelivr.net/npm/js-md5@latest/src/md5.min.js
+  gitment_js: 
+  gitment_css: 
+  md5:
+
+  # valine & leancloud-storage
+  # Using version: latest & latest
+  # See: https://github.com/xCss/Valine/, https://www.npmjs.com/package/leancloud-storage/
+  # Example:
+  # valine: //cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js
+  # leancloud_storage: //cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js
+  valine: 
+  leancloud_storage: 
+
+  # busuanzi
+  # Using version: latest
+  # See: https://busuanzi.ibruce.info/
+  # Example:
+  # busuanzi: //cdn.jsdelivr.net/gh/sukkaw/busuanzi@latest/bsz.pure.mini.js
+  busuanzi: 
+  
+  # Using version: 2.1.1
+  # See: https://busuanzi.ibruce.info/
+  # Example:
+  # instantsearch_js: //cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.js
+  # instantsearch_css: //cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.css
+  instantsearch_js: 
+  instantsearch_css: 
+
+  # Using version: latest
+  # See: https://github.com/hustcc/ribbon.js
+  # Example:
+  # canvas_ribbon: //cdn.jsdelivr.net/npm/ribbon.js@latest/dist/ribbon.min.js
+  canvas_ribbon: 
+  
+  # Using version: latest
+  # See: https://github.com/hustcc/canvas-nest.js
+  # Example:
+  # canvas_nest: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@latest/canvas-nest.min.js
+  canvas_nest: 
+
+  # Using version: 3.5.7
+  # See: https://www.fancyapps.com/fancybox/3/
+  # Example:
+  # fancybox_js: //cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js
+  # fancybox_css: //cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css
+  fancybox_js: 
+  fancybox_css: 
+
+  # Using version: 4.2.2
+  # See: https://masonry.desandro.com/
+  # Example:
+  # masonry: //cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js
+  masonry: 
+
+  # Using version: 2.0.0-rc.2
+  # See: https://github.com/tuupola/lazyload/
+  # Example:
+  # lazyload: //cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.min.js
+  lazyload: 

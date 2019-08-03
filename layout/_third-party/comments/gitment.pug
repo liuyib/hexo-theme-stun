@@ -1,6 +1,15 @@
-link(href="https://cdn.jsdelivr.net/npm/gitment/style/default.min.css" rel="stylesheet" type="text/css")
-script(src="https://cdn.jsdelivr.net/npm/gitment/dist/gitment.browser.min.js")
-script(src="https://cdn.jsdelivr.net/npm/js-md5@latest/src/md5.min.js")
+-
+  var gitment_js = "https://cdn.jsdelivr.net/npm/gitment/dist/gitment.browser.min.js"
+  var gitment_css = "https://cdn.jsdelivr.net/npm/gitment/style/default.min.css"
+  var gitment_md5 = "https://cdn.jsdelivr.net/npm/js-md5@latest/src/md5.min.js"
+
+  if (theme.cdn.gitment_js) gitment_js = theme.cdn.gitment_js
+  if (theme.cdn.gitment_css) gitment_css = theme.cdn.gitment_css
+  if (theme.cdn.md5) gitment_md5 = theme.cdn.md5
+
+link(href=gitment_css rel="stylesheet" type="text/css")
+script(src=gitment_js)
+script(src=gitment_md5)
 
 script.
   function renderGitment() {
