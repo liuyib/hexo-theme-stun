@@ -6,9 +6,8 @@ var pathFn = require('path');
 var fs = require('hexo-fs');
 
 function table(args) {
-  args = args.join(' ').split(',');
   var path = pathFn.join(hexo.source_dir, args[0]);
-  var headers = args.slice(1);
+  var headers = args[1].split(',');
 
   fs.exists(path).then(function(exist) {
     if (!exist) {
@@ -17,24 +16,24 @@ function table(args) {
     }
   });
 
-  return fs.readFile(path).then(function(data) {
-    if (!data) {
+  return fs.readFile(path).then(function(datas) {
+    if (!datas) {
       hexo.log.warn('Include file empty.');
       return;
     }    
 
-    var data = JSON.parse(data);
+    var datas = JSON.parse(datas);
     var result = '<table><thead><tr>';
 
-    headers.forEach(item => {
-      result += `<th>${item.trim()}</th>`;
+    headers.forEach(header => {
+      result += `<th>${header}</th>`;
     });
     result += '</tr></thead><tbody>';
-    data.forEach(item => {
+    datas.forEach(data => {
       result += '<tr style="text-align: center;">';
-      for (const key in item) {
-        if (item.hasOwnProperty(key)) {
-          const value = item[key];
+      for (const key in data) {
+        if (data.hasOwnProperty(key)) {
+          const value = data[key];
           
           result += `<td>${value}</td>`
         }

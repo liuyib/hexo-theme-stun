@@ -3,7 +3,9 @@
 'use strict';
 
 function note(args, content) {
-  return `<div class="note-plugin ${args.join(' ')}">
+  var args = args.join(' ');
+
+  return `<div class="note-plugin ${args}">
             ${hexo.render
               .renderSync({ text: content, engine: 'markdown' })
               .split('\n')

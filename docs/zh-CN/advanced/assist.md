@@ -36,19 +36,19 @@ Hexo 主题一般都会扩展一些自己特有的标签插件，在这方面做
 
 此外，Stun 主题也有自己扩展的一些标签插件，这些标签插件如下：
 
-### 插入表格数据 <Badge text="stable"/> <Badge text="v1.2.0"/>
+### 插入表格数据 <Badge text="beta" type="warning"/> <Badge text="v1.2.0"/>
 
 如果想要在文章中显示一个表格，你可以使用 markdown 原生支持的语法，但是如果你想要让表格里的数据存储在外部文件中，那么你可以使用下面这种语法：
 
 ```
-{% table [path], [thead1, thead2, ...] %}
+{% table [path] [thead1,thead2,...] %}
 ```
 
 参数：
 
 `[path]`：数据文件的路径
 
-`[thead1, thead2, ...]`：表格头部的文字（表格有几列就要写几项）
+`[thead1,thead2,...]`：表格头部的文字（用半角逗号分隔，逗号前后不要有空格）
 
 ::: warning
 数据文件必须放在 `/source/` 目录下，建议放在 `/source/_data/` 目录下。
@@ -80,14 +80,14 @@ Hexo 主题一般都会扩展一些自己特有的标签插件，在这方面做
 2. 在文章或页面的 markdown 源文件中，插入如下标签。
 
 ```
-{% table _data/reward.json, 时间, 赞助人, 金额, 留言 %}
+{% table _data/reward.json 时间,赞助人,金额,留言 %}
 ```
 
 3. 重启 Hexo 服务器，效果如下。
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190802171506.png)
 
-### Bootstrap 标注 <Badge text="stable"/> <Badge text="v1.2.0"/>
+### Bootstrap 标注 <Badge text="beta" type="warning"/> <Badge text="v1.2.0"/>
 
 语法如下：
 
@@ -109,14 +109,34 @@ any text
 
 举例：
 
-```
+```md
+<!-- header icon -->
 {% note success %}
 **Success**
 
+This is success note.
+{% endnote %}
+
+<!-- header no-icon -->
+{% note success no-icon %}
+**Success**
+
+This is success note.
+{% endnote %}
+
+<!-- no-header icon -->
+{% note success %}
+This is success note.
+{% endnote %}
+
+<!-- no-header no-icon -->
+{% note success no-icon %}
 This is success note.
 {% endnote %}
 ```
 
 全部效果如下：
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190802221712.png)
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190803082614.png)
+
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190803081736.png)
