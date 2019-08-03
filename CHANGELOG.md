@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.2.0 (2019-08-03)
+
+### Bug Fixes
+
+* Change the cdn of canvas-nest to fix the problem of display ([1ae8079](https://github.com/liuyib/hexo-theme-stun/commit/1ae8079))
+
+### Features
+
+* Add tag plugin of 'friends' ([6c09945](https://github.com/liuyib/hexo-theme-stun/commit/6c09945))
+* Add tag plugin of 'note' ([c9d5e81](https://github.com/liuyib/hexo-theme-stun/commit/c9d5e81))
+* Add tag plugin of 'table' ([1d86188](https://github.com/liuyib/hexo-theme-stun/commit/1d86188))
+* Add lazyload of images ([0699e51](https://github.com/liuyib/hexo-theme-stun/commit/0699e51))
+* Add enlarge the image when clicked without dependencies ([6a8023a](https://github.com/liuyib/hexo-theme-stun/commit/6a8023a))
+* Add support with toc & reward & copyright in front-matter ([350fc82](https://github.com/liuyib/hexo-theme-stun/commit/350fc82))
+
 ### 1.1.4 (2019-07-25)
 
 ### Bug Fixes

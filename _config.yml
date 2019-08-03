@@ -629,7 +629,7 @@ cdn:
   # md5: //cdn.jsdelivr.net/npm/js-md5@latest/src/md5.min.js
   gitalk_js: 
   gitalk_css: 
-  md5: 
+  gitalk_md5: 
 
   # gitment & js-md5
   # Using version: latest & latest
@@ -640,7 +640,7 @@ cdn:
   # md5: //cdn.jsdelivr.net/npm/js-md5@latest/src/md5.min.js
   gitment_js: 
   gitment_css: 
-  md5:
+  gitment_md5: 
 
   # valine & leancloud-storage
   # Using version: latest & latest
