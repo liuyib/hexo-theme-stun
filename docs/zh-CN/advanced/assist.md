@@ -85,7 +85,7 @@ Hexo 主题一般都会扩展一些自己特有的标签插件，在这方面做
 
 3. 重启 Hexo 服务器，效果如下。
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190802171506.png)
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190803141118.png)
 
 ### Bootstrap 标注 <Badge text="beta" type="warning"/> <Badge text="v1.2.0"/>
 
@@ -140,3 +140,61 @@ This is success note.
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190803082614.png)
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190803081736.png)
+
+### 友链 <Badge text="beta" type="warning"/> <Badge text="v1.2.0"/>
+
+语法如下：
+
+```
+{% friends [path] %}
+```
+
+参数：
+
+`[path]`：数据文件的路径
+
+::: warning
+数据文件必须放在 `/source/` 目录下，建议放在 `/source/_data/` 目录下。
+:::
+
+举例：
+
+1. 在 `/source/_data/` 目录下新建文件 `friends.json`，填入数据。
+
+``` json
+[
+  {
+    "avatar": "https://placehold.it/100x100.jpg",
+    "name": "张三",
+    "introduction": "李四是大佬，李四是大佬，李四是大佬，李四是大佬，李四是大佬",
+    "url": "https://liuyib.github.io/"
+  },
+  {
+    "avatar": "https://placehold.it/100x100.jpg",
+    "name": "李四",
+    "introduction": "我不是大佬，我不是大佬，我不是大佬，我不是大佬，我不是大佬",
+    "url": "https://liuyib.github.io/"
+  },
+  {
+    "avatar": "https://placehold.it/100x100.jpg",
+    "name": "王五",
+    "introduction": "我是小白",
+    "url": "https://liuyib.github.io/"
+  },
+  ...
+]
+```
+
+::: warning
+数据的格式要和上面保持一致，即要有：`avatar`、`name`、`introduction`、`url` 几个字段。
+:::
+
+2. 在文章或页面的 markdown 源文件中，插入如下标签。
+
+```
+{% friends _data/friends.json %}
+```
+
+3. 重启 Hexo 服务器，效果如下。
+
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190803141110.png)

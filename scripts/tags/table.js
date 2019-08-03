@@ -23,7 +23,7 @@ function table(args) {
     }    
 
     var datas = JSON.parse(datas);
-    var result = '<table><thead><tr>';
+    var result = '<table class="table-plugin"><thead><tr>';
 
     headers.forEach(header => {
       result += `<th>${header}</th>`;

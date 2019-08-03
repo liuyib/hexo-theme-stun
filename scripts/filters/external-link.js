@@ -18,6 +18,8 @@ hexo.extend.filter.register('after_post_render', function(data) {
   $('a').each(function() {
     var href = $(this).attr('href');
     if (!href) return;
+    var className = $(this).attr('class');
+    if (className && className.indexOf('friends-item') !== -1) return;
 
     var data = url.parse(href);
 
