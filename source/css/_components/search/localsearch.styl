@@ -1,0 +1,37 @@
+.localsearch-input-wrapper
+  input
+    width: 100%
+
+.localsearch-result
+  overflow: auto
+  max-height: calc(80vh - 6rem)
+
+  b
+    border-bottom: 1px dashed red
+    color: red
+
+  & > ul
+    margin: 0
+    padding-left: 1.4rem
+
+    li
+      &:not(:last-child)
+        margin-bottom: 1rem
+
+      &::after
+        content: ''
+        display: block
+        border-bottom: 1px dashed #ccc
+        padding-bottom: .5rem
+        width: 100%
+
+  &-title
+    clearAStyle()
+    font-weight: $font-weight-bold
+    color: #222
+
+  &-content
+    overflow: hidden
+    width: 100%
+    max-height: 5rem
+    color: #666

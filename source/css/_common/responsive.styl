@@ -78,7 +78,8 @@
     .header-info-subtitle
       font-size: 1rem
 
-  div.algolia-popup
+  div.algolia-popup,
+  div.localsearch-popup
     left: 0
     margin: 0 1rem
     width: calc(100% - 2rem)
@@ -153,3 +154,11 @@
 
   .gallery-image
     width: 100%
+
+  div.algolia-popup,
+  div.localsearch-popup
+    padding: .8rem .6rem 1rem
+
+  div.localsearch-result
+    & > ul
+      padding-left: 1rem

@@ -11,8 +11,6 @@ html(lang=config.language)
       if theme.back2top.enable
         include ../_components/back2top.pug
     
-    if theme.algolia_search.enable
-        include ../_components/search/algolia.pug
-    
+    include ../_components/search/index.pug
     include ../_scripts/cdn.pug
     include ../_scripts/common.pug
