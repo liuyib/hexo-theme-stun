@@ -1,5 +1,7 @@
 $(document).ready(function () {
-  $('.header-nav-search').on('click', function () {
+  $('.header-nav-search').on('click', function (e) {
+    e.stopPropagation();
+
     $('body').css('overflow', 'hidden');
     $('.algolia-popup')
       .velocity('stop')
@@ -20,9 +22,7 @@ $(document).ready(function () {
     closeSearch();
   });
 
-  $(document).on('keydown', function (ev) {
-    var e = ev || window.event;
-
+  $(document).on('keydown', function (e) {
     // Escape <=> 27
     if (e.keyCode === Stun.utils.codeToKeyCode('Escape')) {
       closeSearch();

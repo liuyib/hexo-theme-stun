@@ -5,8 +5,7 @@ $(document).ready(function () {
     $menu.removeClass('show');
   });
 
-  $('.header-nav-menu a').on('click', function (ev) {
-    var e = ev || window.event;
+  $('.header-nav-menu a').on('click', function (e) {
     e.stopPropagation();
   });
 

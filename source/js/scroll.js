@@ -17,9 +17,7 @@ $(document).ready(function () {
     });
 
   // Click the post toc.
-  $('.toc-link').on('click', function (ev) {
-    var e = ev || window.event;
-
+  $('.toc-link').on('click', function (e) {
     e.preventDefault();
     scrollHeadingToTop($(this).attr('href'));
   });

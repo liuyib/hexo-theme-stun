@@ -74,7 +74,8 @@ Stun.utils = Stun.$u = {
     var codes = {
       ArrowLeft: 37,
       ArrowRight: 39,
-      Escape: 27
+      Escape: 27,
+      Enter: 13
     };
 
     return codes[code];
@@ -264,8 +265,7 @@ Stun.utils = Stun.$u = {
   registerSwitchPost: function () {
     var _this = this;
 
-    $(document).on('keydown', function (ev) {
-      var e = ev || window.event;
+    $(document).on('keydown', function (e) {
       var isPrev = e.keyCode === _this.codeToKeyCode('ArrowLeft');
       var isNext = e.keyCode === _this.codeToKeyCode('ArrowRight');
 
@@ -315,8 +315,7 @@ Stun.utils = Stun.$u = {
       closeZoom();
     });
 
-    $('.zoom-image').on('click', function (ev) {
-      var e = ev || window.event;
+    $('.zoom-image').on('click', function (e) {
       e.stopPropagation();
       isZoom = true;
 

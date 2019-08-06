@@ -62,14 +62,19 @@ post:
     author: Author
     link: Link
     license_title: Copyright
-    license_content: 'All articles in this blog are licensed under 
-      <a href="%s" rel="external nofollow" target="_blank">%s</a> unless stating additionally'
+    license_content: All articles in this blog are licensed under 
+      <a href="%s" rel="external nofollow" target="_blank">%s</a> unless stating additionally
 
-# Search
+# Algolia search
 algolia_search:
   input_placeholder: Search for Posts
   hits_empty: "We didn't find any results for the search: ${query}"
   hits_stats: "${hits} results found in ${time} ms"
+
+# Local search
+local_search:
+  input_placeholder: Start to search
+  hits_empty: We didn't find any results for the search
 
 # Reward
 reward:
@@ -87,7 +92,7 @@ back2top: Back to top
 
 # Site footer
 footer:
-  powered: 'Powered by %s'
+  powered: Powered by %s
   theme: Theme
   uv: Visitors
   pv: Views

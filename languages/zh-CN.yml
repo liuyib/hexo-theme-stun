@@ -56,20 +56,25 @@ post:
   read_more: 阅读全文
   fire: 热度
   sticky: 置顶文章
-  untitled: ( 文章未命名 )
+  untitled: ( 文章无标题 )
   end: 本文结束，感谢您的阅读
   copyright:
     author: 本文作者
     link: 本文链接
     license_title: 版权声明
-    license_content: '本博客所有文章除特别声明外，均采用 
-      <a href="%s" rel="external nofollow" target="_blank">%s</a> 许可协议。转载请注明出处！'
+    license_content: 本博客所有文章除特别声明外，均采用 
+      <a href="%s" rel="external nofollow" target="_blank">%s</a> 许可协议。转载请注明出处！
 
 # Algolia 搜索
 algolia_search:
   input_placeholder: 搜索文章
   hits_empty: "没有找到任何搜索结果：${query}"
   hits_stats: "找到 ${hits} 条搜索结果，耗时 ${time} 毫秒"
+
+# 本地搜索
+local_search:
+  input_placeholder: 开始搜索
+  hits_empty: 没有找到任何搜索结果
 
 # 打赏
 reward:
@@ -87,7 +92,7 @@ back2top: 回到顶部
 
 # 网站底部
 footer:
-  powered: '由 %s 强力驱动'
+  powered: 由 %s 强力驱动
   theme: 主题
   uv: 访问人数
   pv: 浏览总量
