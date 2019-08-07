@@ -1,30 +1,36 @@
 # 第三方支持
 
-::: tip 期待 stun 变得更好
-第三方支持正在不断加入中 (๑•̀ㅂ•́)و✧
-:::
-
 ## 添加 Emoji 支持 <Badge text="disrelated" type="warning"/>
 
 如果想要使用 Emoji，你可以直接在[这里](http://emojihomepage.com/)复制粘贴使用。
 
 如果你更喜欢使用 Emoji 代码，例如：`:sparkles:` 将会显示为 :sparkles:, 那么你需要安装插件 [hexo-filter-github-emojis](https://github.com/crimx/hexo-filter-github-emojis) 来支持这种语法。
 
-安装这个插件，请在 hexo 根目录下，执行指令：
+使用步骤如下：
 
-``` bash
+1. 安装插件
+
+在 hexo 根目录下，执行指令：
+
+```bash
 $ npm install hexo-filter-github-emojis --save
+```
+
+2. 重启 hexo 服务器
+
+```bash
+$ hexo clean && hexo s
 ```
 
 如果你不喜欢 `::` 的语法，你可以使用下面这种方法代替：
 
-``` text
+```text
 {% github_emoji sparkles %}
 ```
 
 如果你需要某个 markdown 文件不解析这种语法，可以在 markdown 文件里的 `front-matter` 中，设置 `no-emoji: true`。这样 `::` 会保持原来的样子。
 
-``` yaml
+```yaml
 ---
 title: Hello World
 no-emoji: true
@@ -47,18 +53,18 @@ no-emoji: true
 
 然后修改 `stun.yml`：
 
-``` yaml
+```yaml
 gitment:
   # 是否启用
   enable: false
   # Github 用户名
-  owner: 
+  owner:
   # Github 仓库名（需要是公开的仓库）
-  repo: 
+  repo:
   # Github 应用程序客户端 ID
-  client_id: 
+  client_id:
   # Github 应用程序客户端密钥
-  client_secret: 
+  client_secret:
   # 是否启用懒加载（如果启用，只有手动点击显示按钮才会显示评论）
   lazy: false
 ```
@@ -73,25 +79,25 @@ gitment:
 您必须在 `Authorization callback URL` 字段中指定网站的 URL。
 :::
 
-``` yaml
+```yaml
 gitalk:
   # 是否启用
   enable: false
   # Github 用户名
-  owner: 
+  owner:
   # Github 仓库名（需要是公开的仓库）
-  repo: 
+  repo:
   # Github 应用程序客户端 ID
-  client_id: 
+  client_id:
   # Github 应用程序客户端密钥
-  client_secret: 
+  client_secret:
   # GitHub 仓库所有者和合作者，只有这些人可以初始化 Gitalk
-  admin: 
+  admin:
   # 类似于 B 站的关灯模式
   distraction_free_mode: true
   # 如果你想让每一个参观你网站的人看到统一的语言，你可以在这里设置，
   # 可选值：en, zh-CN, es-ES, fr, ru, zh-TW
-  language: 
+  language:
 ```
 
 如果你遇到了问题，请查看 Gitalk 的文档：[https://github.com/gitalk/gitalk](https://github.com/gitalk/gitalk)
@@ -100,13 +106,13 @@ gitalk:
 
 Valine 评论系统依赖于 LeanCloud，所以你需要[登录](https://leancloud.cn/dashboard/login.html#/signin)或[注册](https://leancloud.cn/dashboard/login.html#/signup) LeanCloud，获取 `APP ID` 和 `APP Key`。详细步骤，请查看：[https://valine.js.org/quickstart.html](https://valine.js.org/quickstart.html)
 
-``` yaml
+```yaml
 valine:
   enable: false
   # 你的 LeanCloud app appid
-  appid: 
+  appid:
   # 你的 LeanCloud app appkey
-  appkey: 
+  appkey:
   # 是否启用评论回复邮件提醒
   notify: true
   # 是否启用评论验证码
@@ -124,7 +130,7 @@ valine:
   # 是否记录评论者IP
   recordIP: false
   # 多语言支持，可选值：zh-cn, en
-  language: 
+  language:
 ```
 
 完成上述步骤之后，你还需要在 LeanCloud 中新建 或 选择一个名为 `Comment` 的 Class 才能使用 Valine。详细步骤，请查看：[https://valine.js.org/quickstart.html#评论数据管理](https://valine.js.org/quickstart.html#评论数据管理)
@@ -133,16 +139,16 @@ valine:
 
 进入来必力[官网](https://livere.com/)注册账号，登录，点击安装，选择合适的版本后，会显示安装代码，在代码中可以找到你的 `uid`，例如：
 
-``` html
-<div id="lv-container" data-id="city" data-uid="这里是你的 uid">
+```html
+<div id="lv-container" data-id="city" data-uid="这里是你的 uid"></div>
 ```
 
 然后将 `uid` 填入主题的配置文件即可：
 
-``` yaml
+```yaml
 livere:
   enable: false
-  uid: 
+  uid:
 ```
 
 ### Disqus <Badge text="stable"/> <Badge text="v1.1.1"/>
@@ -151,10 +157,10 @@ livere:
 
 这里输入的网站名称，就是你的 `shortname`，将其填入主题的配置文件即可：
 
-``` yaml
+```yaml
 disqus:
   enable: false
-  shortname: 
+  shortname:
   # 是否显示文章的评论数
   count: true
 ```
@@ -165,7 +171,7 @@ disqus:
 
 修改主题配置文件：
 
-``` yaml
+```yaml
 busuanzi:
   # 是否启用
   enable: false
@@ -233,7 +239,7 @@ busuanzi:
 
 修改你 **Hexo 根目录**下的配置文件 `_config.yml`，添加 `applicationID` & `apiKey` & `indexName` 选项。
 
-``` yaml
+```yaml
 algolia:
   applicationID: '填入你的 Application ID'
   apiKey: '填入你的 Search-only API key'
@@ -244,13 +250,13 @@ algolia:
 
 Algolia 要求用户手动通过提供的 API 上传它们的搜索数据。在 Hexo 根目录中安装 `hexo-algolia`。这个插件将会搜索你的网站并将数据上传到 Algolia。
 
-``` bash
+```bash
 $ npm install --save hexo-algolia
 ```
 
 运行下面这些指令，上传索引数据。
 
-``` bash
+```bash
 $ export HEXO_ALGOLIA_INDEXING_KEY=你的Search-Only API key # 在 Git Bash 中使用这条指令
 # set HEXO_ALGOLIA_INDEXING_KEY=你的Search-Only API key    # 在 Windows 命令行中使用这条指令
 $ hexo clean
@@ -262,11 +268,11 @@ $ hexo algolia
 2. 如果你发现搜索到的结果有重复的或者有旧的数据，你需要去 Algolia 官网，清除上传的数据，然后执行上面这三条指令，重新上传索引数据即可。
 :::
 
-6. 修改 stun 配置
+6. 修改主题配置
 
 修改你的主题配置文件：
 
-``` yaml
+```yaml
 algolia_search:
   # 是否启用
   enable: false
@@ -278,13 +284,79 @@ algolia_search:
     show_stats: true
 ```
 
-到这里，不出意外的话，你就可以使用 Algolia 搜索网站里的文章标题了。
+7. 重启 hexo 服务器。
+
+```bash
+$ hexo clean && hexo s
+```
+
+到这里不出意外的话，你就可以使用 Algolia 搜索网站里的文章标题了。
+
+### 本地搜索 <Badge text="Stable"/> <Badge text="v1.2.1"/>
+
+从 `v1.2.1` 版本开始，Stun 原生支持本地搜索功能，和 Algolia 相比，该功能的好处如下：
+
+- 搜索次数无限制
+- 支持多关键词搜素（在搜索框中，用空格将关键词隔开）
+- 既能搜索文章标题，又能搜索文章内容
+- 搜索速度快
+
+想启用这一功能，首先需要安装插件 [hexo-generator-search](https://github.com/wzpan/hexo-generator-search)，这个插件用来**将网站的文章信息生成索引数据**。
+
+使用步骤如下：
+
+1. 安装插件
+
+在 Hexo 根目录下执行指令：
+
+```bash
+$ npm install hexo-generator-search --save
+```
+
+2. 配置插件
+
+找到 Hexo 根目录下的 `_config.yml` 文件，添加以下字段：
+
+```yaml
+search:
+  path: search.json
+  field: post
+  content: true
+```
+
+有关插件的详尽信息和上述参数的含义，请查看插件的[文档](https://github.com/wzpan/hexo-generator-search)。
+
+3. 生成数据
+
+安装上述插件后，在 Hexo 根目录下执行指令：
+
+```bash
+$ hexo g
+```
+
+这样会在你网站根目录下的 `public` 的文件夹中，生成 `search.json` 文件，Stun 主题的本地搜索功能就是利用这个文件里的数据实现的。
+
+4. 修改主题配置
+
+修改主题配置文件：
+
+```yaml
+local_search:
+  # 是否启用
+  enable: true
+```
+
+5. 重启 hexo 服务器
+
+```bash
+$ hexo clean && hexo s
+```
 
 ## 数学公式
 
-想要解析页面中的数学公式，首先，你需要修改主题配置文件，启用该功能，并选择解析引擎（默认是 katex 引擎）。
+想要解析页面中的数学公式，首先，你需要修改主题配置文件，启用该功能，并选择解析引擎（默认是 katex 引擎）：
 
-``` yaml
+```yaml
 math:
   # 是否启用
   enable: true
@@ -314,7 +386,7 @@ MathJax 与 KaTex 相比之下，[KaTex 引擎速度更快](https://www.intmath.
 
 1. 安装，执行指令。
 
-``` bash
+```bash
 # 卸载原来的渲染器
 $ npm un hexo-renderer-marked --save
 # 安装新的渲染器
@@ -323,7 +395,7 @@ $ npm i hexo-renderer-kramed --save # 或 npm i hexo-renderer-pandoc --save
 
 2. 在主题配置文件中，选择 mathjax 引擎。
 
-``` yaml
+```yaml
 math:
   ...
   # 全小写
@@ -332,7 +404,7 @@ math:
 
 3. 重启 hexo 服务器。
 
-``` bash
+```bash
 $ hexo clean && hexo s
 ```
 
@@ -342,7 +414,7 @@ $ hexo clean && hexo s
 
 首先，卸载原来的 markdown 渲染器，例如：
 
-``` bash
+```bash
 $ npm un hexo-renderer-marked --save
 # 或
 $ npm un hexo-renderer-kramed --save
@@ -364,13 +436,13 @@ $ npm un hexo-math --save
 
 1. 安装，执行指令。
 
-``` bash
+```bash
 $ npm i hexo-renderer-markdown-it-plus --save
 ```
 
 2. 在主题配置文件中，选择 katex 引擎。
 
-``` yaml
+```yaml
 math:
   ...
   engine: katex
@@ -378,7 +450,7 @@ math:
 
 3. 重启 hexo 服务器。
 
-``` bash
+```bash
 $ hexo clean && hexo s
 ```
 
@@ -388,7 +460,7 @@ $ hexo clean && hexo s
 
 1. 安装，执行指令。
 
-``` bash
+```bash
 $ npm i hexo-renderer-markdown-it --save
 $ npm i markdown-it-katex --save
 ```
@@ -397,7 +469,7 @@ $ npm i markdown-it-katex --save
 
 添加 或 修改 `hexo-renderer-markdown-it` 的配置项。
 
-``` yaml
+```yaml
 markdown:
   render:
     html: true
@@ -446,14 +518,14 @@ Copy-tex 是 KaTex 的插件，当启用这个插件之后，你只需要单击�
 
 首先登录谷歌广告[官网](https://www.google.com/adsense)，选择添加广告，在给你的一段代码中找到 `client_id`，通常以 `ca-pub-` 开头。然后修改主题配置文件：
 
-``` yaml
+```yaml
 google_adsense:
   # 是否启用
   enable: false
   # 如果和你的代码中的地址不一样，请更换
   js_src: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js
   # 填写你的 client-id
-  client: 
+  client:
   enable_page_level_ads: true
 ```
 
@@ -463,7 +535,7 @@ google_adsense:
 
 修改主题配置文件：
 
-``` yaml
+```yaml
 canvas_ribbon:
   # 是否启用
   enable: false
@@ -483,14 +555,14 @@ canvas_ribbon:
 
 修改主题配置文件：
 
-``` yaml
+```yaml
 canvas_nest:
   # 是否启用
   enable: false
   # 是否在移动端显示
   onmobile: true
   # 线条的颜色（RGB 值，请使用 "," 分隔）
-  color: "0,0,0"
+  color: '0,0,0'
   # 线条的透明度
   opacity: 0.6
   # 线条数目

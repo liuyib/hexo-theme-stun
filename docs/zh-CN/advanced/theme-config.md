@@ -1,10 +1,11 @@
 # 主题配置
 
 ::: tip 前言
+
 - 修改配置文件、安装新的依赖等，都需要重启 hexo 服务器。
 - 没有特别说明，配置项默认从 `v1.0.0` 版本开始支持。
 - 稳定的配置使用 <Badge text="Stable"/> 标明，表示基本不会变动。不稳定的配置使用 <Badge text="Beta" type="warn"/> 标明，表示未来可能会变动甚至删除。目前还不支持的配置使用 <Badge text="Not Support" type="error"/> 标明。被废弃的配置使用 <Badge text="Deprecated" type="error"/> 标明。最早开始支持的版本号使用 <Badge text="v x.x.x"/> 标明。与主题无关的配置项使用 <Badge text="Disrelated" type="warning"/> 标明。
-:::
+  :::
 
 ## 配置文件
 
@@ -21,6 +22,8 @@
 
 Stun 主题利用该功能实现了平滑升级的特性，使用步骤如下：将主题目录下的 `_config.yml` 文件复制到博客根目录下的 `/source/_data/` 中，并重命名为主题名称。例如使用 `stun` 主题，那么就叫做 `stun.yml` 。如果 `source` 目录下没有 `_data` 文件夹请自行创建。
 
+这两个文件的关系为 `stun.yml` 覆盖 `_config.yml`，也就是说，想要修改配置时，只需要修改 `stun.yml` 里的即可（修改 `_config.yml` 里的不会生效）。这样就实现了平滑升级，更新时 `_config.yml` （可能）会更新，而你的配置数据保留在 `stun.yml` 中。
+
 ::: warning 注意 ！！！
 **主题更新后，如果主题目录下的 `_config.yml` 文件里出现了新的选项，那么你必须从该文件中将它们复制到 `/source/_data/stun.yml` 中，并设置它们的值为你想要的选项。**
 
@@ -31,7 +34,7 @@ Stun 主题利用该功能实现了平滑升级的特性，使用步骤如下：
 
 修改站点配置文件（不是主题配置文件）`_config.yml`：
 
-``` yaml
+```yaml
 language: zh-CN # 可选值 zh-CN 或 en-US
 ```
 
@@ -45,7 +48,7 @@ language: zh-CN # 可选值 zh-CN 或 en-US
 
 修改主题配置文件：
 
-``` yaml
+```yaml
 menu:
   home: /
   archives: /archives/
@@ -54,11 +57,11 @@ menu:
   about: /about/
 ```
 
-- 添加图标 
+- 添加图标
 
 修改主题配置文件：
 
-``` yaml
+```yaml
 menu:
   home: / || home
   archives: /archives/ || folder-open
@@ -74,7 +77,7 @@ menu:
 
 你可以通过修改 `menu_settings` <Badge text="Stable"/> 配置项来控制菜单项的图标或文字是否显示：
 
-``` yaml
+```yaml
 menu_settings:
   # 是否只显示图标
   icon_only: false
@@ -86,7 +89,7 @@ menu_settings:
 
 在 Hexo 根目录下执行命令：
 
-``` bash
+```bash
 $ hexo new page xxx # xxx 表示页面名称，需要和对应的路径名称保持一致
 ```
 
@@ -108,14 +111,14 @@ $ hexo new page xxx # xxx 表示页面名称，需要和对应的路径名称保
 
 `zh-CN.yml`：
 
-``` yaml
+```yaml
 nav:
   read: 阅读
 ```
 
 `en.yml`：
 
-``` yaml
+```yaml
 nav:
   read: Read
 ```
@@ -134,7 +137,7 @@ nav:
 
 例如：
 
-``` yaml
+```yaml
 title: Hello Stun
 date: 2019-5-15 22:54:49
 updated: 2019-5-16 10:23:46
@@ -160,27 +163,27 @@ Hexo 会帮你记录文件的更新日期，所以一般不需要手动指定 `u
 
 你可以同时设置几个同级分类，例如：
 
-``` yaml
+```yaml
 categories:
-- foo
-- bar
-- baz
+  - foo
+  - bar
+  - baz
 ```
 
 也可以设置层级分类，例如：
 
-``` yaml
+```yaml
 categories:
-- [foo, bar, baz]
+  - [foo, bar, baz]
 ```
 
 - `tags` <Badge text="Stable"/> - 设置文章标签
 
 标签**只能设置为同级的**。也就是说，如果你将标签设置为：
 
-``` yaml
+```yaml
 tags:
-- [foo, bar, baz]
+  - [foo, bar, baz]
 ```
 
 那么它会被解析为 `foo,bar,baz`，也就是一个标签。
@@ -199,11 +202,11 @@ tags:
 
 用于指定一些图片，这些图片会显示在文章中，Stun 主题将其显示在文章最顶部。使用如下：
 
-``` yaml
+```yaml
 photos:
-- http://xxxxx1.jpg
-- http://xxxxx2.jpg
-- http://xxxxx3.jpg
+  - http://xxxxx1.jpg
+  - http://xxxxx2.jpg
+  - http://xxxxx3.jpg
 ```
 
 默认情况下，这些图片会按照文档流的方式显示，效果如下：
@@ -212,7 +215,7 @@ photos:
 
 为了优化这些图片的显示效果，Stun 主题提供了**瀑布流布局** <Badge text="Stable"/> <Badge text="v1.1.4"/>（**只对文章中通过 `Front-matter` 的 `photos` 属性指定的图片起作用**），修改主题配置文件：
 
-``` yaml
+```yaml
 gallery_waterfall:
   # 是否启用
   enable: false
@@ -229,9 +232,10 @@ gallery_waterfall:
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190724170138.png)
 
 ::: tip
+
 - 启用瀑布流效果后，还可以再启用 [fancybox 效果](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/assist.html#fancybox)。
 - 通常利用 `photos` 这个属性，来建立一个**相册页面** 或 **专门展示图片的文章**。
-:::
+  :::
 
 ---
 
@@ -281,7 +285,7 @@ gallery_waterfall:
 
 设置网站图标（favicon），修改主题配置文件：
 
-``` yaml
+```yaml
 favicon:
   small: /imgs/favicon-16x16-stun.png
   medium: /imgs/favicon-32x32-stun.png
@@ -293,7 +297,7 @@ favicon:
 
 修改主题配置文件：
 
-``` yaml
+```yaml
 header:
   # 网站顶部的高度（设置为百分数，表示所占屏幕高度的百分比。支持所有 CSS 长度单位）
   height: 80%
@@ -320,19 +324,20 @@ header:
 
 如果想要为某个页面或某篇文章单独指定顶部图，你只需要在页面或文章 markdown 源文件的 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 中，添加 `top_image` 项，然后填入的图片 url 或路径即可。例如：
 
-``` yaml
+```yaml
 ---
 title: Hello Stun
 date: 2019-05-15 22:54:49
 top_image: https://xxxxx.jpg
 ---
+
 ```
 
 ## 知识共享许可协议（cc） <Badge text="Stable"/>
 
 修改主题配置文件：
 
-``` yaml
+```yaml
 creative_commons:
   # 是否启用
   enable: true
@@ -344,7 +349,7 @@ creative_commons:
   # 是否在文章底部显示
   post: true
   # 设置许可协议的显示语言，默认值：en（当用户查看许可协议时，会以你设置的语言进行显示）
-  language: 
+  language:
 ```
 
 效果如下：
@@ -355,7 +360,7 @@ creative_commons:
 
 修改主题配置文件：
 
-``` yaml
+```yaml
 back2top:
   # 是否启用
   enable: true
@@ -368,15 +373,15 @@ back2top:
     # 图标的旋转角度（角度的单位是：deg）
     rotate: -45deg
     # 请使用引号包裹颜色值（支持所有 CSS 颜色单位）
-    color: "#49b1f5"
-    hover_color: "#fc6423"
+    color: '#49b1f5'
+    hover_color: '#fc6423'
 ```
 
 ## 网站底部栏信息 <Badge text="Stable"/>
 
 修改主题配置文件：
 
-``` yaml
+```yaml
 footer:
   # 顶部背景图
   bg_image:
@@ -390,11 +395,11 @@ footer:
     enable: true
     # 显示的文字信息，例如：xxx All Rights Reserved.
     # 如果不设置，将显示 hexo 配置文件中的 author 属性的内容
-    text: 
+    text:
     # 开始时间（如果不设置，将显示最新的年份）
-    since: 
+    since:
     # 结束时间（如果不设置，将显示最新的年份）
-    end: 
+    end:
   # 时间和文字信息之间的图标
   icon:
     # 是否启用
@@ -405,7 +410,7 @@ footer:
     # 心跳动画
     animation: true
     # 请使用引号包裹颜色值（支持所有 CSS 颜色单位）
-    color: "#ff0000"
+    color: '#ff0000'
   # Hexo 链接（Powered by Hexo）
   powered:
     # 是否启用
@@ -423,12 +428,12 @@ footer:
     # 是否启用
     enable: false
     # 备案 XXXXXXXX 号
-    icp: 
+    icp:
   # 任何自定义文本，支持 HTML（例如：托管于 <a href="https://pages.github.com/" rel="noopener" target="_blank">Github Pages</a>）
   custom:
     # 是否启用
     enable: false
-    text: 
+    text:
 ```
 
 效果如下：
@@ -439,7 +444,7 @@ footer:
 
 修改主题配置文件：
 
-``` yaml
+```yaml
 sidebar:
   # 是否启用
   enable: true
@@ -459,7 +464,7 @@ sidebar:
 
 修改主题配置文件：
 
-``` yaml
+```yaml
 author:
   # 是否启用
   enable: true
@@ -483,7 +488,7 @@ author:
 
 > 如果不想启用某个社交链接，直接注释掉即可。
 
-``` yaml
+```yaml
 # `||` 分隔符前面表示社交链接的链接或信息，后面表示社交链接图标。
 # 图标的名称在这里查找：https://fontawesome.com/v4.7.0/icons/
 # 如果你找不到想要的图标，可以考虑用文字来代替图标显示。
@@ -518,7 +523,7 @@ social_setting:
 
 1. 修改主题配置文件
 
-``` yaml
+```yaml
 social:
   juejin: https://juejin.im/timeline || origin:掘
 ```
@@ -531,14 +536,14 @@ social:
 
 `zh-CN`:
 
-``` yaml
+```yaml
 social:
   juejin: 掘金
 ```
 
 `en`:
 
-``` yaml
+```yaml
 social:
   juejin: juejin
 ```
@@ -551,7 +556,7 @@ social:
 
 修改主题配置文件：
 
-``` yaml
+```yaml
 toc:
   # 是否启用
   enable: true
@@ -573,19 +578,19 @@ toc:
 
 设置邮件订阅和 RSS 订阅，修改主题配置文件：
 
-``` yaml
+```yaml
 feed:
   # 是否启用
   enable: false
   # 邮件订阅地址 (例如：http://eepurl.com/guAE6j).
-  email: 
+  email:
   # RSS 订阅地址 (例如：/atom.xml)
-  rss: 
+  rss:
 ```
 
 开启 RSS 订阅之前，你需要安装 hexo 插件：[hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed)。然后在站点配置文件 `_config.yml` 中添加配置项（关于各个配置项的具体含义，请自行查看插件的文档）：
 
-``` yaml
+```yaml
 feed:
   type: atom
   # 这是 RSS 订阅的地址（可以随意设置，和上面 rss 配置项对应）
@@ -605,12 +610,12 @@ feed:
 
 修改主题配置文件：
 
-``` yaml
+```yaml
 reading_progress:
   # 是否启用
   enable: true
   # 请使用引号包裹颜色值（支持所有 CSS 颜色单位）
-  color: "#fc6423"
+  color: '#fc6423'
   # 进度条高度（支持所有 CSS 长度单位）
   height: 1px
 ```
@@ -623,7 +628,7 @@ reading_progress:
 
 修改主题配置文件：
 
-``` yaml
+```yaml
 post_meta:
   # 是否只显示图标
   icon_only: false
@@ -673,7 +678,7 @@ post_meta:
 
 如果你想设置首页 或 归档页的文章列表是否分页，可以修改主题配置文件：
 
-``` yaml
+```yaml
 post_list:
   # 是否分页
   paginate:
@@ -697,7 +702,7 @@ post_list:
 
 如果你为一篇文章单独设置了顶部图，并且想使用这个顶部图作为文章列表的封面图片来显示，可以修改主题配置文件：
 
-``` yaml
+```yaml
 post_list:
   # 文章列表里的文章的封面图片
   cover_image:
@@ -716,7 +721,7 @@ post_list:
 
 在文章末尾显示文章的所有标签，修改主题配置文件：
 
-``` yaml
+```yaml
 post_widget:
   # 是否在文章末尾显示文章标签
   tags: true
@@ -734,7 +739,7 @@ post_widget:
 
 在文章末尾自动添加文章结束的提示信息，修改主题配置文件：
 
-``` yaml
+```yaml
 post_widget:
   # 在文章底部显示 “本文结束” 的提示信息
   end_text:
@@ -752,7 +757,7 @@ post_widget:
 
 如果想要自动保留文章摘要，可以通过修改主题配置文件：
 
-``` yaml
+```yaml
 auto_excerpt:
   # 是否启用
   enable: false
@@ -766,7 +771,7 @@ auto_excerpt:
 
 想要使用文章置顶功能，首先你需要安装 hexo 插件 [hexo-generator-index-pin-top](https://github.com/netcan/hexo-generator-index-pin-top)，然后执行命令：
 
-``` bash
+```bash
 $ npm uninstall hexo-generator-index --save
 $ npm install hexo-generator-index-pin-top --save
 ```
@@ -775,7 +780,7 @@ $ npm install hexo-generator-index-pin-top --save
 
 设置文章置顶后，在文章列表中可以看到表示置顶的图标。你可以对图标进行设置，修改主题配置文件：
 
-``` yaml
+```yaml
 stick_top:
   # 图标的位置（可选值为：left 和 right）
   position: right
@@ -785,7 +790,7 @@ stick_top:
   # 图标的旋转角度（角度的单位是：deg）
   rotate: 45deg
   # 请使用引号包裹颜色值（支持所有 CSS 颜色单位）
-  color: "#999"
+  color: '#999'
 ```
 
 效果如下：
@@ -796,7 +801,7 @@ stick_top:
 
 设置代码高亮以及高亮样式，修改主题配置文件：
 
-``` yaml
+```yaml
 highlight_theme: light
 ```
 
@@ -818,7 +823,7 @@ highlight_theme: light
 
 修改主题配置文件：
 
-``` yaml
+```yaml
 code_word_wrap: false
 ```
 
@@ -836,8 +841,8 @@ code_word_wrap: false
 
 设置文章中图片的水平对齐方式，修改主题配置文件：
 
-``` yaml
-img_horizonal_align: 
+```yaml
+img_horizonal_align:
 ```
 
 可选的值有：`left`, `center`, `right`。默认值为空，即不设置。
@@ -846,7 +851,7 @@ img_horizonal_align:
 
 效果分别如下：
 
-- 设为默认值，即 `img_horizonal_align: ` 设为空。
+- 设为默认值，即 `img_horizonal_align:` 设为空。
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608220937.png)
 
@@ -872,7 +877,7 @@ img_horizonal_align:
 
 设置文章的赞赏码，修改主题配置文件：
 
-``` yaml
+```yaml
 # Reward
 reward:
   # 是否启用
@@ -891,11 +896,11 @@ reward:
 
 如果你启用了 `tags` 页面，想要对其进行设置，修改主题配置文件：
 
-``` yaml
+```yaml
 tag_cloud:
   # 请使用引号包裹颜色值（只支持十六进制的颜色值）
-  start_color: "#a4d8fa"
-  end_color: "#49b1f5"
+  start_color: '#a4d8fa'
+  end_color: '#49b1f5'
   # 标签最大、最小的尺寸
   min_size: 24
   max_size: 34
@@ -913,7 +918,7 @@ tag_cloud:
 2. 使用 hexo 提供的语法 `{% https://xxxxx.png width height %}`，填入宽、高即可设置大小。
 3. stun 主题提供了一个便捷的方法来指定图片大小，你只需要在图片路径后面添加 `?size=宽度x高度` <Badge text="Stable"/> 后缀即可。例如：
 
-``` markdown
+```markdown
 ![](https://xxxxx.png?size=200x100)
 ```
 
@@ -923,13 +928,13 @@ tag_cloud:
 
 > 当然，你也可以进行模块化分类：在该目录下新建样式文件，然后通过 `@import xxx` 语句在同目录下的 `index.styl` 文件中引入你新建的样式文件。
 
-### 标识外部链接  <Badge text="Stable"/> <Badge text="v1.1.3"/>
+### 标识外部链接 <Badge text="Stable"/> <Badge text="v1.1.3"/>
 
 从 `v1.1.3` 版本开始，除了侧边栏，顶部栏以外的区域，Stun 主题默认会在具有 `target="_blank"` 属性的链接后面加上一个 Icon，用于标识这是一个外部链接。
 
 你可以通过修改主题配置文件，来设置 Icon 以及是否启用这一功能：
 
-``` yaml
+```yaml
 external_link:
   icon:
     # 是否启用
@@ -938,14 +943,14 @@ external_link:
     # 图标名称在这里查找：https://fontawesome.com/v4.7.0/icons/
     name: external-link
     # 请使用引号包括值（支持所有 CSS 单位）
-    color: "#aaa"
+    color: '#aaa'
 ```
 
 ### FancyBox <Badge text="stable"/> <Badge text="v1.1.4"/>
 
 如果想要使用 fancybox 功能，只需要修改主题配置文件即可：
 
-``` yaml
+```yaml
 fancybox: true
 ```
 
@@ -959,12 +964,12 @@ fancybox: true
 
 从 `v1.2.0` 版本开始，Stun 主题开始支持图片点击放大的效果（无第三方依赖）。你可以配置该功能，修改主题配置文件：
 
-``` yaml
+```yaml
 zoom_image:
   # 是否启用
   enable: true
   # 遮罩的颜色
-  mask_color: "rgba(0,0,0,0.6)"
+  mask_color: 'rgba(0,0,0,0.6)'
 ```
 
 ::: tip
@@ -975,7 +980,7 @@ zoom_image:
 
 从 `v1.2.0` 版本开始，Stun 主题开始支持图片懒加载，但是**该功能只对文章页面起作用**。你可以配置该功能，修改主题配置文件：
 
-``` yaml
+```yaml
 lazyload:
   # 是否启用
   enable: true

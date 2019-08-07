@@ -451,6 +451,11 @@ algolia_search:
     # Whether to show stats of search.
     show_stats: true
 
+# Local Search
+# See: https://github.com/wzpan/hexo-generator-search/
+local_search:
+  enable: false
+
 # ---------------------------------------------------------------
 # Background config
 # ---------------------------------------------------------------
