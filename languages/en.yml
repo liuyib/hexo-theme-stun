@@ -73,7 +73,7 @@ algolia_search:
 
 # Local search
 local_search:
-  input_placeholder: Start to search
+  input_placeholder: Search for Posts
   hits_empty: We didn't find any results for the search
 
 # Reward
