@@ -48,7 +48,7 @@ aside#sidebar
             span.sidebar-feed-email
               a(href=feedEmail target="_blank" rel="noopener")
                 i.fa.fa-envelope.sidebar-feed-icon
-                span Email
+                span= "Email "
                 span= _p("sidebar.subscribe")
           
           - var feedRSS = theme.feed.rss
@@ -56,7 +56,7 @@ aside#sidebar
             span.sidebar-feed-rss
               a(href=url_for(feedRSS) target="_blank" rel="noopener")
                 i.fa.fa-rss.sidebar-feed-icon
-                span RSS
+                span= "RSS "
                 span= _p("sidebar.subscribe")
       
       if theme.menu
