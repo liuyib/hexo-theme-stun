@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.2.2 (2019-08-08)
+
+### Features
+
+* Add pwa manifest ([4e6294a](https://github.com/liuyib/hexo-theme-stun/commit/4e6294a))
+
 ## 1.2.1 (2019-08-08)
 
 ### Features
