@@ -1,5 +1,100 @@
 # 第三方支持
 
+## PWA <Badge text="Stable"/> <Badge text="v1.2.2"/>
+
+想要使用 PWA 特性，需要安装插件 [hexo-offline](https://github.com/JLHwung/hexo-offline)，使用步骤如下：
+
+1、安装插件
+
+```bash
+$ npm install hexo-offline --save
+```
+
+2、配置插件
+
+找到 Hexo 根目录下的 _config.yml 文件，添加以下字段：
+
+``` yaml
+offline:
+  # 缓存的最大文件大小，以字节为单位
+  maximumFileSizeToCacheInBytes: 5242880
+  # 静态文件，如果你的站点使用了例如 webp 格式的文件，请将文件类型添加进去
+  staticFileGlobs:
+    - public/**/*.{js,html,css,png,jpg,gif,svg,eot,ttf,woff,woff2}
+  stripPrefix: public
+  verbose: true
+  # 缓存 CDN 资源（如果你不需要，则不用配置该项）
+  runtimeCaching:
+    - urlPattern: /*
+      handler: cacheFirst
+      options:
+        origin: # 替换成你 CDN 的域名
+```
+
+有关插件的详尽信息，请查看插件的[文档](https://github.com/JLHwung/hexo-offline)。
+
+3、修改主题配置
+
+修改主题配置文件：
+
+```yaml
+pwa:
+  # 是否启用
+  enable: true
+  manifest: /manifest.json
+  theme_color: "#54bcff"
+```
+
+4、创建 `manifest.json` 文件
+
+你可以通过 [Web App Manifest](https://app-manifest.firebaseapp.com/) 网站来快速生成 `manifest.json` 文件。`manifest.json` 文件的内容如下：
+
+```json
+{
+  "name": "xxx", // 应用全称
+  "short_name": "xxx", // 应用简称
+  "theme_color": "#ffffff", // 匹配浏览器的地址栏颜色
+  "background_color": "#ffffff", // 加载应用时的背景色
+  "display": "standalone", // 首选显示模式。其他选项有：fullscreen, minimal-ui, browser
+  "scope": "/",
+  "start_url": "/",
+  "icons": [ // 该数组指定图标参数，用来适配不同设备（格式为 png，至少包含一个 192px*192px 的图标）
+    {
+      "src": "images/icons/favicon-48x48.png", // 图标文件的路径，需在 source/ 目录下自行创建
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icons/favicon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icons/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icons/favicon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icons/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "splash_pages": null // 配置自定义启动动画。
+}
+```
+
+5、重启 hexo 服务器
+
+```bash
+$ hexo clean && hexo s
+```
+
 ## 添加 Emoji 支持 <Badge text="disrelated" type="warning"/>
 
 如果想要使用 Emoji，你可以直接在[这里](http://emojihomepage.com/)复制粘贴使用。

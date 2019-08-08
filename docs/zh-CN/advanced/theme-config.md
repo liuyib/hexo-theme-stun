@@ -287,10 +287,11 @@ gallery_waterfall:
 
 ```yaml
 favicon:
-  small: /imgs/favicon-16x16-stun.png
-  medium: /imgs/favicon-32x32-stun.png
-  # apple_touch_icon: /imgs/apple-touch-icon-stun.png
-  # safari_pinned_tab: /imgs/logo-stun.svg
+  small: /images/icons/favicon-16x16.png
+  medium: /images/icons/favicon-32x32.png
+  # apple_touch_icon: /images/icons/apple-touch-icon.png
+  # safari_pinned_tab: /images/icons/logo-stun.svg
+  # msapplication: /images/icons/favicon-144x144.png
 ```
 
 ## 网站顶部栏信息 <Badge text="Stable"/>
