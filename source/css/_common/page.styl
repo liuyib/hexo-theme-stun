@@ -17,7 +17,6 @@
   position: relative
   margin-bottom: 1.3rem
   padding-left: 1.4rem
-  font-size: $font-main-base
 
   &::before
     content: ''
@@ -39,8 +38,7 @@
     clearAStyle()
 
   &-title
-    padding: 0 0 1.8rem
-    font-size: $font-post-title
+    font-size: $font-size-base + 10px
     text-align: center
     cursor: default
 
@@ -60,15 +58,18 @@
     &:hover
       color: $categories-link-hover-color
 
-  .category-list-item
-    &::before
-      color: $categories-list-dot-color
+  &-list
+    margin-top: 0 !important
 
-    &:hover
+    &-item
       &::before
-        color: $categories-list-dot-hover-color
+        color: $categories-list-dot-color
 
-  .category-list-count
+      &:hover
+        &::before
+          color: $categories-list-dot-hover-color
+
+  &-count
     padding-left: .3em
     font-size: $font-size-base
     color: $categories-post-count-color

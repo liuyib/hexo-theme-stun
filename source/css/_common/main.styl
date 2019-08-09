@@ -15,6 +15,7 @@ setUlStyle(content, hoverColor)
       color: hoverColor
 
 #container
+  overflow: hidden
   min-height: 100vh
 
 #main
@@ -32,7 +33,6 @@ setUlStyle(content, hoverColor)
   h5,
   h6
     position: relative
-    margin: 1.5rem 0 1rem
     font-weight: $font-weight-bolder
     line-height: $line-height-h
     color: lighten($h-color, 15%)
@@ -139,7 +139,7 @@ setUlStyle(content, hoverColor)
       &::before
         content: '--'
         padding: 0 .2em
-  
+
   iframe
     max-width: 100%
 
