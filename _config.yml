@@ -36,7 +36,7 @@ favicon:
   # msapplication: /images/icons/favicon-144x144.png
 
 # PWA
-# See: https://github.com/JLHwung/hexo-offline/
+# See: https://github.com/lavas-project/hexo-pwa/
 pwa:
   enable: false
   manifest: /manifest.json

@@ -2,36 +2,56 @@
 
 ## PWA <Badge text="Stable"/> <Badge text="v1.2.2"/>
 
-想要使用 PWA 特性，需要安装插件 [hexo-offline](https://github.com/JLHwung/hexo-offline)，使用步骤如下：
+如果你想要使网站支持 PWA 特性，需要安装插件 [hexo-pwa](https://github.com/lavas-project/hexo-pwa)，该插件可以使你的网站具有以下功能：
+
+- [Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) - 用户可以将您的站点添加到移动主屏幕
+- [Service Worker](https://developers.google.com/web/fundamentals/primers/service-workers/) - 让您的网站离线可用
+
+使用步骤如下：
 
 1、安装插件
 
 ```bash
-$ npm install hexo-offline --save
+$ npm install --save hexo-pwa
 ```
 
 2、配置插件
 
-找到 Hexo 根目录下的 _config.yml 文件，添加以下字段：
+找到 Hexo 根目录下的 `_config.yml` 文件，添加以下字段：
 
 ``` yaml
-offline:
-  # 缓存的最大文件大小，以字节为单位
-  maximumFileSizeToCacheInBytes: 5242880
-  # 静态文件，如果你的站点使用了例如 webp 格式的文件，请将文件类型添加进去
-  staticFileGlobs:
-    - public/**/*.{js,html,css,png,jpg,gif,svg,eot,ttf,woff,woff2}
-  stripPrefix: public
-  verbose: true
-  # 缓存 CDN 资源（如果你不需要，则不用配置该项）
-  runtimeCaching:
-    - urlPattern: /*
-      handler: cacheFirst
-      options:
-        origin: # 替换成你 CDN 的域名
+pwa:
+  manifest:
+    # Manifest 文件名和路径
+    path: /manifest.json
+  serviceWorker:
+    # Service Worker 的文件名和路径
+    path: /sw.js
+    # 在 / 路径（首页）下，预加载的文章数
+    preload:
+      urls:
+        - /
+      posts: 5
+    # 具体请查看：https://googlechromelabs.github.io/sw-toolbox/api.html#options
+    opts:
+      # 网络请求超时自动返回到缓存过的响应的时间
+      networkTimeoutSeconds: 5
+    routes:
+      # 缓存你的静态资源，例如你使用了 webp 格式的图片，将其添加进去
+      - pattern: !!js/regexp /.*\.(js|css|html|jpg|jpeg|png|svg|gif|json|xml|eot|ttf|woff|woff2)$/
+        # 缓存策略，可选值：cacheFirst, networkFirst, cacheOnly, networkOnly, fastest
+        # 每个值的具体含义请查看：https://googlechromelabs.github.io/sw-toolbox/api.html#handlers
+        strategy: cacheFirst
+      - pattern: !!js/regexp /\//
+        strategy: networkFirst
+      # 如果你想缓存 CDN 资源，请像下面这样进行设置
+      - pattern: !!js/regexp /cdn.jsdelivr.net/
+        strategy: cacheFirst
+  # Hexo 插件的优先级，默认为 10
+  priority: 5
 ```
 
-有关插件的详尽信息，请查看插件的[文档](https://github.com/JLHwung/hexo-offline)。
+有关插件的详尽信息，请查看插件的[文档](https://github.com/lavas-project/hexo-pwa)。
 
 3、修改主题配置
 
