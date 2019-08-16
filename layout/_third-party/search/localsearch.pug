@@ -1,6 +1,6 @@
 if theme.local_search.enable
   script.
-    window.onload = function () {
+    window.addEventListener('load', function () {
       $('.header-nav-search').on('click', function (e) {
         e.stopPropagation();
 
@@ -254,4 +254,4 @@ if theme.local_search.enable
             duration: 300
           });
       }
-    };
+    });

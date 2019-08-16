@@ -16,7 +16,7 @@ script(src=gitalk_md5)
     ? theme.gitalk.language : config.language;
 
 script.
-  window.onload = function() {
+  window.addEventListener('load', function () {
     var gitalk = new Gitalk({
       id: md5('!{ page.path }'),
       clientID: '!{ theme.gitalk.client_id }',
@@ -28,4 +28,4 @@ script.
       language: '!{ lang }'
     });
     gitalk.render('gitalk-container');
-  };
+  });

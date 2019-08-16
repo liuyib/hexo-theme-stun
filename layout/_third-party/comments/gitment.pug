@@ -25,7 +25,7 @@ script.
     gitment.render("gitment-container")
   }
 
-  window.onload = function() {
+  window.addEventListener('load', function () {
     if (!{theme.gitment.lazy}) {
       function showGitment() {
         document.getElementById("gitment-button").style.display = "none";
@@ -39,4 +39,4 @@ script.
     } else {
       renderGitment();
     }
-  };
+  });

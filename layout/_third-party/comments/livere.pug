@@ -1,5 +1,5 @@
 script.
-  window.onload = function() {
+  window.addEventListener('load', function () {
     (function(d, s) {
       var j, e = d.getElementsByTagName(s)[0];
       if (typeof LivereTower === 'function') { return; }
@@ -9,4 +9,4 @@ script.
       j.async = true;
       e.parentNode.insertBefore(j, e);
     })(document, 'script');
-  };
+  });

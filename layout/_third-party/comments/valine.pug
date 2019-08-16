@@ -9,7 +9,7 @@ script(src=leancloud_storage_js)
 script(src=valine_js)
 
 script.
-  window.onload = function() {
+  window.addEventListener('load', function () {
     var GUEST_INFO = ['nick', 'mail', 'link'];
     var guest_info = '!{ theme.valine.meta }';
 
@@ -31,4 +31,4 @@ script.
       recordIP: !{ theme.valine.recordIP },
       lang: '!{ theme.valine.language }' || 'zh-cn'
     });
-  };
+  });
