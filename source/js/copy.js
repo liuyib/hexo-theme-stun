@@ -10,7 +10,7 @@ $(document).ready(function () {
         .filter(function (e) { return e !== CODEBLOCK_CLASS_NAME; });
       var codeHeader = $(
         '<figcaption class="custom">' +
-          '<span>' + lang + '</span>' +
+          '<div class="custom-lang">' + lang + '</div>' +
         '</figcaption>'
       )[0];
 

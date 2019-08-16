@@ -8,7 +8,7 @@ for lang in languages
   .highlight{'.' + lang}
     figcaption
       span
-        &::before
+        &:first-child::before
           content: lang
           margin: 0 .6rem
           color: alpha($highlight-header-color, .5)
@@ -44,20 +44,22 @@ for lang in languages
     background-color: $highlight-header-bg-color
 
     span
-      float: left
-      color: $highlight-header-color
+      &:first-child
+        float: left
+        color: $highlight-header-color
 
-    a
-      float: right
-      margin-right: 2rem
-      border-bottom: 0
+    span
+      &:nth-child(2)
+        float: right
+        margin-right: 2rem
 
   figcaption.custom
     padding: .1rem 0
     min-height: 1.5rem
 
-    span
-      margin: 0 1rem 0 .6rem
+    .custom-lang
+      float: left
+      margin: 0 .6rem
       color: alpha($highlight-header-color, .5)
 
   .gutter,
