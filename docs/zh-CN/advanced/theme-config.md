@@ -14,6 +14,8 @@
 - Hexo 根目录下的 `_config.yml`。这是站点配置文件，里面的配置作用于整个网站。
 - Stun 根目录下的 `_config.yml`。这是主题配置文件，里面的配置只对当前主题生效。
 
+至于配置的时候，需要修改哪一个配置文件，文档里会指出。
+
 ## 平滑升级 <Badge text="Stable"/>
 
 更新 Hexo 主题时，一般都会有这样的经历：先将主题目录下的 `_config.yml` 文件备份，更新完主题后，再将备份的数据复制粘贴还原回去。
@@ -30,84 +32,59 @@ Stun 主题利用该功能实现了平滑升级的特性，使用步骤如下：
 如果你使用了平滑升级这一特性，那么 `/themes/stun/_config.yml` 和 `/source/_data/stun.yml` 这两个文件里的选项没有同步，是更新主题后，启动报错的最主要的原因！
 :::
 
-## 国际化（i18n）
+## 国际化（i18n）<Badge text="Stable"/>
 
-修改站点配置文件（不是主题配置文件）`_config.yml`：
+修改 Hexo 根目录下的 `_config.yml` 文件：
 
 ```yaml
 language: zh-CN # 可选值 zh-CN 或 en-US
 ```
 
-语言文件在主题文件夹的 languages 目录下。Stun 主题默认有 `zh-CN.yml` 和 `en.yml` 两种语言文件，如果需要支持其他语言，请自行编写语言文件。语言文件的命名请参考：[https://github.com/theme-next/hexo-theme-next/tree/master/languages](https://github.com/theme-next/hexo-theme-next/tree/master/languages)
+语言文件在主题文件夹的 `languages` 目录下。Stun 主题默认有 `zh-CN.yml` 和 `en.yml` 两种语言文件，如果需要支持其他语言，请自行编写语言文件。语言文件的命名请参考：[https://github.com/theme-next/hexo-theme-next/tree/master/languages](https://github.com/theme-next/hexo-theme-next/tree/master/languages)
 
-## 顶部菜单栏 <Badge text="Stable"/>
+## 添加新页面 <Badge text="Stable"/>
 
-网站顶部菜单栏默认有 `/` 和 `/archives` 两个路径，它们分别对应于网站首页和归档页。如果你想添加：`categories`、`tags`、`about` 等页面，你需要进行以下操作：
+Stun 主题内置了三种页面：分类页、标签页、关于页。想启用这些页面，只需要在 Hexo 根目录下执行命令：
 
-- 添加路径
+``` bash
+# 启用分类页，执行这条指令
+$ hexo new page categories
 
-修改主题配置文件：
+# 启用标签页，执行这条指令
+$ hexo new page tags
 
-```yaml
-menu:
-  home: /
-  archives: /archives/
-  categories: /categories/
-  tags: /tags/
-  about: /about/
+# 启用关于页，执行这条指令
+$ hexo new page about
 ```
 
-- 添加图标
+除了上述三种内置页面外，如果你想使用自定义页面，需要执行如下步骤：
 
-修改主题配置文件：
+以添加**阅读**页面为例。
 
-```yaml
+1. 修改主题配置文件
+
+``` yaml
 menu:
-  home: / || home
-  archives: /archives/ || folder-open
-  categories: /categories/ || th
-  tags: /tags/ || tags
-  about: /about/ || user
+  # 格式如下
   # xxx: 路径 || 图标名称
+  read: /read/ || book
 ```
 
-在路径后面添加 `||` 分隔符，然后添加你想要显示的图标名称。图标名称在这里获取：[https://fontawesome.com/v4.7.0/icons/](https://fontawesome.com/v4.7.0/icons/)
-
+> 图标的名称在这里获取：[https://fontawesome.com/v4.7.0/icons/](https://fontawesome.com/v4.7.0/icons/)。
+>
 > 如果只添加路径，没有添加图标名称，会使用默认图标进行显示。
 
-你可以通过修改 `menu_settings` <Badge text="Stable"/> 配置项来控制菜单项的图标或文字是否显示：
+2. 创建页面文件
 
-```yaml
-menu_settings:
-  # 是否只显示图标
-  icon_only: false
-  # 是否只显示文字
-  text_only: false
+在 Hexo 根目录下执行指令：
+
+``` bash
+$ hexo new page read
 ```
 
-- 新建页面
+3. 国际化设置
 
-在 Hexo 根目录下执行命令：
-
-```bash
-$ hexo new page xxx # xxx 表示页面名称，需要和对应的路径名称保持一致
-```
-
-执行这条命令后，会在以下目录生成文件：`source/xxx/index.md`，然后重启 Hexo 服务器即可。
-
-## 自定义页面 <Badge text="Stable"/>
-
-如果你想在网站顶部菜单栏中添加自定义页面（除**分类页**、**标签页**、**关于页**以外的页面），请进行以下操作：
-
-- 添加路径
-- 添加图标
-- 执行命令，新建页面
-
-这三步的操作步骤同[设置顶部菜单栏](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/theme-config.html#%E9%A1%B6%E9%83%A8%E8%8F%9C%E5%8D%95%E6%A0%8F)。
-
-- 国际化设置
-
-找到 `languages` 目录下的语言文件进行修改。例如，自定义页面名称为 `read`，修改如下：
+找到 `languages` 目录下的语言文件进行修改：
 
 `zh-CN.yml`：
 
@@ -123,7 +100,17 @@ nav:
   read: Read
 ```
 
-这样就完成了自定义页面的添加。重启 Hexo 服务器即可看到效果。
+这样就完成了自定义页面的添加。
+
+另外，你可以通过修改主题配置文件里的 `menu_settings` 字段，来设置图标和文字是否显示：
+
+```yaml
+menu_settings:
+  # 是否只显示图标
+  icon_only: false
+  # 是否只显示文字
+  text_only: false
+```
 
 ## Front-matter
 
@@ -289,6 +276,7 @@ gallery_waterfall:
 favicon:
   small: /images/icons/favicon-16x16.png
   medium: /images/icons/favicon-32x32.png
+  # 如果你不懂，请忽略下面这些
   # apple_touch_icon: /images/icons/apple-touch-icon.png
   # safari_pinned_tab: /images/icons/logo-stun.svg
   # msapplication: /images/icons/favicon-144x144.png
@@ -331,10 +319,9 @@ title: Hello Stun
 date: 2019-05-15 22:54:49
 top_image: https://xxxxx.jpg
 ---
-
 ```
 
-## 知识共享许可协议（cc） <Badge text="Stable"/>
+## 知识共享许可协议（cc）<Badge text="Stable"/>
 
 修改主题配置文件：
 
@@ -529,7 +516,7 @@ social:
   juejin: https://juejin.im/timeline || origin:掘
 ```
 
-> 由于 fontawesome 中找不到掘金的 logo，所以这里使用 `掘` 字来代替显示。
+> 由于 Font Awesome 中找不到掘金的 logo，所以这里使用 `掘` 字来代替显示。
 
 2. 国际化
 
@@ -546,8 +533,10 @@ social:
 
 ```yaml
 social:
-  juejin: juejin
+  juejin: JueJin
 ```
+
+> 这里是对鼠标经过图标时，显示的提示文字进行国际化设置。
 
 效果如下：
 
@@ -589,7 +578,9 @@ feed:
   rss:
 ```
 
-开启 RSS 订阅之前，你需要安装 hexo 插件：[hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed)。然后在站点配置文件 `_config.yml` 中添加配置项（关于各个配置项的具体含义，请自行查看插件的文档）：
+想要使用邮件订阅，你需要自己构建 或 使用第三方提供的邮件订阅服务。例如我的邮件订阅地址：[http://eepurl.com/guAE6j](http://eepurl.com/guAE6j)
+
+开启 RSS 订阅之前，你需要安装 hexo 插件：[hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed)。然后在 Hexo 根目录下的 `_config.yml` 文件中添加配置项（关于各个配置项的具体含义，请自行查看插件的文档）：
 
 ```yaml
 feed:

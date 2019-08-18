@@ -26,7 +26,7 @@
 
 [English](https://github.com/liuyib/hexo-theme-stun/blob/master/README_en_US.md) | [中文简体](https://github.com/liuyib/hexo-theme-stun/blob/master/README.md)
 
-> 一个新的 hexo 主题，希望多多支持。目前在全力开发 & 维护中，有问题可以 issue 或 email 我。
+> 关于主题有什么问题，可以 [Issue](https://github.com/liuyib/hexo-theme-stun/issues) 或 email 我，也可以在 [Gitter](https://gitter.im/liuyib/hexo-theme-stun?utm_source=badge) 里一起交流。
 
 ## :sparkles: 演示
 

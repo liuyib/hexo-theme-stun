@@ -24,7 +24,7 @@ $ brew install libtool automake autoconf nasm
 
 - 使用
 
-在站点配置文件中，添加以下字段即可使用。
+在 Hexo 根目录下的 `_config.yml` 文件中，添加以下字段即可使用。
 
 ``` yaml
 all_minifier: true

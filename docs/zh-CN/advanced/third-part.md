@@ -109,7 +109,7 @@ pwa:
 }
 ```
 
-5、重启 hexo 服务器
+5、重启 Hexo 服务器
 
 ```bash
 $ hexo clean && hexo s
@@ -125,13 +125,13 @@ $ hexo clean && hexo s
 
 1. 安装插件
 
-在 hexo 根目录下，执行指令：
+在 Hexo 根目录下，执行指令：
 
 ```bash
 $ npm install hexo-filter-github-emojis --save
 ```
 
-2. 重启 hexo 服务器
+2. 重启 Hexo 服务器
 
 ```bash
 $ hexo clean && hexo s
@@ -352,7 +352,7 @@ busuanzi:
 
 4. 修改 Hexo 配置
 
-修改你 **Hexo 根目录**下的配置文件 `_config.yml`，添加 `applicationID` & `apiKey` & `indexName` 选项。
+修改 Hexo 根目录下的 `_config.yml` 文件，添加 `applicationID` & `apiKey` & `indexName` 选项。
 
 ```yaml
 algolia:
@@ -399,7 +399,7 @@ algolia_search:
     show_stats: true
 ```
 
-7. 重启 hexo 服务器。
+7. 重启 Hexo 服务器。
 
 ```bash
 $ hexo clean && hexo s
@@ -461,7 +461,7 @@ local_search:
   enable: true
 ```
 
-5. 重启 hexo 服务器
+5. 重启 Hexo 服务器
 
 ```bash
 $ hexo clean && hexo s
@@ -517,7 +517,7 @@ math:
   engine: mathjax
 ```
 
-3. 重启 hexo 服务器。
+3. 重启 Hexo 服务器。
 
 ```bash
 $ hexo clean && hexo s
@@ -540,7 +540,7 @@ $ npm un hexo-renderer-pandoc --save
 $ npm un hexo-math --save
 ```
 
-如果你安装过这些，都需要卸载。你可以到 hexo 根目录下的 `package.json` 文件中，查看安装了哪些插件。然后，安装新的 markdown 渲染器：
+如果你安装过这些，都需要卸载。你可以到 Hexo 根目录下的 `package.json` 文件中，查看安装了哪些插件。然后，安装新的 markdown 渲染器：
 
 - [hexo-renderer-markdown-it-plus](https://github.com/CHENXCHEN/hexo-renderer-markdown-it-plus)
 - [hexo-renderer-markdown-it](https://github.com/hexojs/hexo-renderer-markdown-it)
@@ -599,7 +599,7 @@ markdown:
 
 有关 `hexo-renderer-markdown-it` 所有的配置项，在[这里](https://github.com/hexojs/hexo-renderer-markdown-it/wiki/Advanced-Configuration#all-options-configuration)查看。
 
-3. 选择 katex 引擎 和 重启 hexo 服务器的步骤同上。
+3. 选择 katex 引擎 和 重启 Hexo 服务器的步骤同上。
 
 ### 相关插件
 
@@ -626,8 +626,6 @@ Copy-tex 是 KaTex 的插件，当启用这个插件之后，你只需要单击�
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190720160555.png)
 
 ## 广告
-
-广告接入。
 
 ### 谷歌广告
 
