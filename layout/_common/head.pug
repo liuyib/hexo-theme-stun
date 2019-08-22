@@ -52,6 +52,9 @@ if theme.favicon.msapplication
   meta(name="msapplication-TileImage" content=`${url_for(theme.favicon.msapplication)}`)
   meta(name="msapplication-TileColor" content="#000000")
 
+if theme.feed && theme.feed.rss
+  link(rel="alternate", href=url_for(theme.feed.rss), type="application/atom+xml")
+
 link(rel="dns-prefetch" href="https://cdn.jsdelivr.net")
 
 - var fontawesome_css = 'https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css'
