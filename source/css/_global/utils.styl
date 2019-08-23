@@ -1,3 +1,5 @@
+// Clear global style
+// ----------------------------------------
 clearAStyle()
   border-bottom: 0
 
@@ -9,17 +11,21 @@ clearImgStyle()
   border-radius: 0
   padding: 0
 
+// Clear float
+// ----------------------------------------
 .clearfix::after
   content: ''
   display: table
   clear: both
 
+// UI component
+// ----------------------------------------
 $popover-bg-color = alpha(#000, .7)
 
+// UI components of "popover"
 [data-popover]
   position: relative
 
-// UI components of "popover"
 [data-popover]::before
   position: absolute
   top: 0
@@ -46,3 +52,19 @@ $popover-bg-color = alpha(#000, .7)
 [data-popover][data-popover-pos='up']:hover::before
   opacity: 1
   transform: translate(-50%, -115%)
+
+// Animation class
+// ----------------------------------------
+.anime-close
+  &::before,
+  &::after
+    transition: transform .25s
+    transform: rotate(-45deg)
+
+  &::after
+    transform: rotate(-135deg)
+
+  &:hover
+    &::before,
+    &::after
+      transform: rotate(0)

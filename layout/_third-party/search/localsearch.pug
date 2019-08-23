@@ -5,15 +5,15 @@ if theme.local_search.enable
         e.stopPropagation();
 
         $('body').css('overflow', 'hidden');
-        $('.localsearch-popup')
+        $('.search-popup')
           .velocity('stop')
           .velocity('transition.expandIn', {
             duration: 300,
             complete: function () {
-              $('.localsearch-popup input').focus();
+              $('.search-popup input').focus();
             }
           });
-        $('.localsearch-mask')
+        $('.search-mask')
           .velocity('stop')
           .velocity('transition.fadeIn', {
             duration: 300
@@ -22,7 +22,7 @@ if theme.local_search.enable
         initSearch();
       });
 
-      $('.localsearch-mask, .localsearch-close').on('click', function () {
+      $('.search-mask, .search-close').on('click', function () {
         closeSearch();
       });
 
@@ -59,8 +59,8 @@ if theme.local_search.enable
               };
             }).get() : res;
 
-            var $input = $('.localsearch-input-wrapper input');
-            var $result = $('.localsearch-result');
+            var $input = $('.search-input input');
+            var $result = $('.search-results');
 
             // 搜索对象（标题、内容）的权重，影响显示顺序
             var WEIGHT = { title: 100, content: 1 };
@@ -221,9 +221,9 @@ if theme.local_search.enable
               });
               
               matchPosts.forEach(function (post) {
-                resultInnerHtml += '<li><a class="localsearch-result-title" href="' + post.url + '">';
+                resultInnerHtml += '<li><a class="search-results-title" href="' + post.url + '">';
                 resultInnerHtml += post.title;
-                resultInnerHtml += '</a><div class="localsearch-result-content">';
+                resultInnerHtml += '</a><div class="search-results-content">';
                 resultInnerHtml += post.content;
                 resultInnerHtml += '</div></li>';
               });
@@ -243,12 +243,12 @@ if theme.local_search.enable
 
       function closeSearch () {
         $('body').css('overflow', 'auto');
-        $('.localsearch-popup')
+        $('.search-popup')
           .velocity('stop')
           .velocity('transition.expandOut', {
             duration: 300
           });
-        $('.localsearch-mask')
+        $('.search-mask')
           .velocity('stop')
           .velocity('transition.fadeOut', {
             duration: 300

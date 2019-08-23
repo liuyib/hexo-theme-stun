@@ -1,14 +1,14 @@
-.localsearch-input-wrapper
+.search-input
   input
     width: 100%
 
-.localsearch-result
-  overflow: auto
+.search-results
   max-height: calc(80vh - 6rem)
 
   b
     border-bottom: 1px dashed red
     color: red
+    transition: color .2s
 
   & > ul
     margin: 0
@@ -18,17 +18,23 @@
       &:not(:last-child)
         margin-bottom: 1rem
 
-      &::after
-        content: ''
-        display: block
-        border-bottom: 1px dashed #ccc
-        padding-bottom: .5rem
-        width: 100%
+        &::after
+          content: ''
+          display: block
+          border-bottom: 1px dashed #ccc
+          padding-bottom: .5rem
+          width: 100%
 
   &-title
     clearAStyle()
     font-weight: $font-weight-bold
     color: #222
+
+    &:hover
+      color: $blue-light
+      
+      b
+        color: $blue-light
 
   &-content
     overflow: hidden

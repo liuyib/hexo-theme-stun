@@ -81,8 +81,7 @@
     .header-info-subtitle
       font-size: 1rem
 
-  div.algolia-popup,
-  div.localsearch-popup
+  div.search-popup
     top: 0
     left: 0
     margin: 0
@@ -91,7 +90,7 @@
     height: 100vh
     max-height: 100vh
 
-  div.localsearch-result
+  div.search-results
     max-height: calc(100vh - 6rem)
 
 // $xs-width: 576px - 0.02px
@@ -135,11 +134,8 @@
     span
       display: none
 
-  div.algolia-results
-    max-height: 10rem
-
-    .algolia-hit-item
-      margin: 0
+  .algolia-hit-item
+    margin: 0
 
   .post-header
     font-size: $font-size-base
@@ -179,11 +175,10 @@
   .gallery-image
     width: 100%
 
-  div.algolia-popup,
-  div.localsearch-popup
+  div.search-popup
     padding: .8rem .6rem 1rem
 
-  div.localsearch-result
+  div.search-results
     & > ul
       padding-left: 1rem
 

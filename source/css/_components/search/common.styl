@@ -1,5 +1,4 @@
-.algolia-mask,
-.localsearch-mask
+.search-mask
   display: none
   position: fixed
   top: 0
@@ -9,8 +8,7 @@
   height: 100%
   background-color: alpha($black-dark, .7)
 
-.algolia-popup,
-.localsearch-popup
+.search-popup
   display: none
   position: fixed
   top: 10%
@@ -25,8 +23,7 @@
   color: $font-color
   background-color: $white-light
 
-.algolia-input-wrapper,
-.localsearch-input-wrapper
+.search-input
   margin: 1.2rem 0 1rem
 
   input
@@ -41,17 +38,31 @@
     &:focus
       border-color: $blue-light
 
-.algolia-close,
-.localsearch-close
+.search-close
   position: absolute
-  top: 0
-  right: .6rem
+  top: .5rem
+  right: .5rem
+  width: 1rem
+  height: 1rem
   font-size: 1.25em
   color: $black-light
+  transform: translateZ(0)
   cursor: pointer
 
-.algolia-results,
-.localsearch-results
+  &::before,
+  &::after
+    content: ''
+    display: block
+    position: absolute
+    top: 50%
+    margin-top: -.1rem
+    width: 1rem
+    height: .2rem
+    background-color: $black-light
+  
+  @extend .anime-close
+
+.search-results
   overflow-x: hidden
   overflow-y: scroll
   max-height: 16rem
