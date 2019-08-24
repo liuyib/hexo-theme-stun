@@ -7,7 +7,7 @@ block content
     div.content.tag-cloud
       if page.photos && page.photos.length
         +gallery(page)
-      
+
       div.tag-cloud-title= _p("page.tags") + " - "
         span.tag-cloud-num= site.tags.length
       - var min_font = theme.tag_cloud ? theme.tag_cloud.min_size : 14
@@ -19,7 +19,7 @@ block content
     div.content.category
       if page.photos && page.photos.length
         +gallery(page)
-      
+
       div.category-title= _p("page.categories") + " - "
         span.category-num= site.categories.length
       != list_categories()
@@ -27,11 +27,11 @@ block content
     div.content.headings.code-highlight
       if page.photos && page.photos.length
         +gallery(page)
-      
+
       != page.content
   else
     div.content.headings.code-highlight
       if page.photos && page.photos.length
         +gallery(page)
-    
+
       != page.content

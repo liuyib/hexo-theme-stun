@@ -5,14 +5,14 @@ section#recent-posts.recent-posts
   - postLists.each(function (post) {
     article(class=`${post.link ? 'post-link' : ''}`).post
       +postHeader(post)
-      
+
       div.post-body
         if theme.post_list.cover_image.home && post.top_image
           img(src=post.top_image)
-        
+
         if post.photos && post.photos.length
           +gallery(post)
-        
+
         if theme.auto_excerpt && theme.auto_excerpt.enable
           - const content = strip_html(post.content)
           - var excerpt = content.substring(0, theme.auto_excerpt.length)

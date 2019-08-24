@@ -15,7 +15,7 @@ nav#paginator
           a(href=url_for(page.prev.path))
             i.fa.fa-chevron-left
             span.title= page.prev.title || _p("post.untitled")
-      
+
       if (page.next)
         div.article-next.pull-right
           a(href=url_for(page.next.path))

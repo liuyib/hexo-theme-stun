@@ -32,7 +32,7 @@ meta(name="apple-mobile-web-app-status-bar-style" content="black")
 if theme.pwa && theme.pwa.enable
   if theme.pwa.theme_color
     meta(name="theme-color" content=theme.pwa.theme_color)
-  
+
   if theme.pwa.manifest
     link(rel="manifest" href=`${url_for(theme.pwa.manifest)}?v=${stun_env("version")}`)
 

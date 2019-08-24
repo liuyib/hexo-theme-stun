@@ -3,14 +3,14 @@ extends ./_common/layout.pug
 block content
   include ./_mixins/post-header.pug
   include ./_mixins/gallery.pug
-  
+
   div.content.headings.code-highlight
     +postHeader(page)
-    
+
     div.post-body
       if page.photos && page.photos.length
         +gallery(page)
-      
+
       != page.content
 
     footer.post-footer
@@ -19,7 +19,7 @@ block content
           span= "------"
           span= _p("post.end")
           span= "------"
-    
+
       - let themeConfigCC = theme.creative_commons.enable && theme.creative_commons.post
       if page.copyright === false ? page.copyright : themeConfigCC
         include ./_components/copyright.pug
@@ -30,8 +30,8 @@ block content
             i.fa.fa-tags.icon
             each tag in page.tags.data
               span!= link_to(tag.permalink, tag.name)
-      
+
       if page.reward === false ? page.reward : (theme.reward && theme.reward.enable)
         include ./_components/reward.pug
-      
+
       include ./_components/pagination.pug

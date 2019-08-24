@@ -122,8 +122,7 @@ if theme.local_search.enable
 
                         // 索引位置相同的关键词，保留长度较长的
                         titleHitSlice.forEach(function (hit) {
-                          if (hit.index === index &&
-                              hit.word.length < word.length) {
+                          if (hit.index === index && hit.word.length < word.length) {
                             hit.word = word;
                             hasMatch = true;
                           }

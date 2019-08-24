@@ -4,11 +4,11 @@ mixin articleSort(posts)
     - posts.each(function (post) {
       if post.date
         - tmpYear = full_date(post.date, "YYYY")
-      
+
       if tmpYear !== year
         - year = tmpYear
         time.article-sort-item.year= year
-      
+
       post.article-sort-item
         if post.date
           time.article-sort-item__time= full_date(post.date, "MM-DD")

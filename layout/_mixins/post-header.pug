@@ -2,7 +2,7 @@ mixin postHeader(post)
   header.post-header
     if post.top
       include ../_components/sticky-top.pug
-  
+
     if is_post()
       h1.post-title= post.title || _p("post.untitled")
     else
@@ -14,7 +14,7 @@ mixin postHeader(post)
         h1.post-title
           a(href=url_for(post.path)
           ).post-title-link= post.title || _p("post.untitled")
-    
+
     if !post.link
       div.post-meta
         if theme.post_meta.created.enable
@@ -24,7 +24,7 @@ mixin postHeader(post)
             if !theme.post_meta.icon_only
               span= _p("post.posted") + " "
             span= full_date(post.date, "YYYY-MM-DD")
-        
+
         if theme.post_meta.updated.enable
           span.post-update
             i(class=`fa fa-${theme.post_meta.updated.icon}`)
@@ -32,7 +32,7 @@ mixin postHeader(post)
             if !theme.post_meta.icon_only
               span= _p("post.updated") + " "
             span= full_date(post.updated, "YYYY-MM-DD")
-        
+
         if theme.post_meta.word_count.enable
           span.post-word-count
             i(class=`fa fa-${theme.post_meta.word_count.icon}`)
@@ -40,12 +40,12 @@ mixin postHeader(post)
             if !theme.post_meta.icon_only
               span= _p("post.word_count") + " "
             span= wordcount(post.content)
-        
+
         if theme.post_meta.reading_time.enable
           - var postReadingTime = theme.post_meta.reading_time
           span.post-reading-time
             i(class=`fa fa-${postReadingTime.icon}`)
-            
+
             if !theme.post_meta.icon_only
               span= _p("post.reading_time") + " "
             - var READING_TIME_UNIT = "m";
@@ -64,8 +64,8 @@ mixin postHeader(post)
           if theme.busuanzi.enable && theme.busuanzi.post_pv.enable
             span.post-reading-count
               i(class=`fa fa-${theme.busuanzi.post_pv.icon}`)
-              
+
               if !theme.post_meta.icon_only && !theme.busuanzi.post_pv.icon_only
                 span= _p("post.reading_count") + " "
-              
+
               span#busuanzi_value_page_pv

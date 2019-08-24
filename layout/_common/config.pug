@@ -1,5 +1,5 @@
 -
-  var algolia = 'undefined';
+  var algolia = "undefined";
   var env = process.env;
   if (theme.algolia_search.enable) {
     algolia = JSON.stringify({
@@ -15,14 +15,14 @@
     });
   } 
 
-  var sidebar = 'undefined';
+  var sidebar = "undefined";
   if (theme.sidebar.enable) {
     sidebar = JSON.stringify({
       offsetTop: theme.sidebar.offsetTop
     });
   }
 
-  var back2top = 'undefined';
+  var back2top = "undefined";
   if (theme.back2top.enable) {
     back2top = JSON.stringify({
       enable: theme.back2top.enable,
@@ -30,22 +30,22 @@
     });
   }
 
-  var gallery_waterfall = 'undefined';
+  var gallery_waterfall = "undefined";
   if (theme.gallery_waterfall.enable) {
     gallery_waterfall = JSON.stringify(theme.gallery_waterfall);
   }
 
-  var lazyload = 'undefined';
+  var lazyload = "undefined";
   if (theme.lazyload.enable) {
     lazyload = JSON.stringify(theme.lazyload);
   }
 
-  var zoom_image = 'undefined';
+  var zoom_image = "undefined";
   if (theme.zoom_image.enable) {
     zoom_image = JSON.stringify(theme.zoom_image);
   }
 
-  var external_link = 'undefined';
+  var external_link = "undefined";
   if (theme.external_link.icon.enable) {
     external_link = JSON.stringify({
       icon: {
