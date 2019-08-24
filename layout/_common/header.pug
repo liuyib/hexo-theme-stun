@@ -19,9 +19,9 @@ header#header(
       div.header-nav-menu
         each value, name in (theme.menu || [])
           if name && value
-            - var menuItem = value.split('||')
-            - var menuItemPath = _.trim(_.get(menuItem, '[0]'))
-            - var menuItemIcon = _.trim(_.get(menuItem, '[1]'))
+            - var menuItem = value.split("||")
+            - var menuItemPath = _.trim(_.get(menuItem, "[0]"))
+            - var menuItemIcon = _.trim(_.get(menuItem, "[1]"))
             span
               a(href=menuItemPath ? menuItemPath : "/")
                 if !theme.menu_settings.text_only

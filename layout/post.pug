@@ -20,7 +20,7 @@ block content
           span= _p("post.end")
           span= "------"
 
-      - let themeConfigCC = theme.creative_commons.enable && theme.creative_commons.post
+      - var themeConfigCC = theme.creative_commons.enable && theme.creative_commons.post
       if page.copyright === false ? page.copyright : themeConfigCC
         include ./_components/copyright.pug
 

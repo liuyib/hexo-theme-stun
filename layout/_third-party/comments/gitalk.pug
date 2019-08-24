@@ -1,18 +1,15 @@
 -
   var gitalk_js = "https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"
-  var gitalk_css = "https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.css"
   var gitalk_md5 = "https://cdn.jsdelivr.net/npm/js-md5@latest/src/md5.min.js"
 
   if (theme.cdn.gitalk_js) gitalk_js = theme.cdn.gitalk_js
-  if (theme.cdn.gitalk_css) gitalk_css = theme.cdn.gitalk_css
   if (theme.cdn.gitalk_md5) gitalk_md5 = theme.cdn.gitalk_md5
 
-link(href=gitalk_css rel="stylesheet" type="text/css")
 script(src=gitalk_js)
 script(src=gitalk_md5)
 
 -
-  var lang = _.get(theme, 'gitalk.language')
+  var lang = _.get(theme, "gitalk.language")
     ? theme.gitalk.language : config.language;
 
 script.

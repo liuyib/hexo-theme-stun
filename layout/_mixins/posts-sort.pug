@@ -16,7 +16,7 @@ mixin articleSort(posts)
             if post.link
               a(href=url_for(post.link) target="_blank" rel="noopener")= post.title || post.link
             else
-              a(href=url_for(post.path))= post.title || _p('post.untitled')
+              a(href=url_for(post.path))= post.title || _p("post.untitled")
 
         if post.top
           include ../_components/sticky-top.pug

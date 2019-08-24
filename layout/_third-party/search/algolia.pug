@@ -1,9 +1,5 @@
 -
   var instantsearch_js = "https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.js"
-  var instantsearch_css = "https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.css"
-
   if (theme.cdn.instantsearch_js) instantsearch_js = theme.cdn.instantsearch_js
-  if (theme.cdn.instantsearch_css) instantsearch_css = theme.cdn.instantsearch_css
 
-link(href=instantsearch_css rel="stylesheet" type="text/css")
 script(src=instantsearch_js defer)

@@ -24,13 +24,13 @@ aside#sidebar
         div.sidebar-social
           for value, name in (theme.social || [])
             if name && value
-              - var socialItem = value.split('||')
-              - var socialLinkPath = _.trim(_.get(socialItem, '[0]'))
-              - var socialLinkIcon = _.trim(_.get(socialItem, '[1]'))
+              - var socialItem = value.split("||")
+              - var socialLinkPath = _.trim(_.get(socialItem, "[0]"))
+              - var socialLinkIcon = _.trim(_.get(socialItem, "[1]"))
               span.sidebar-social-item
                 a(href=socialLinkPath target="_blank" rel="noopener"
                     data-popover=_p(`social.${name}`) data-popover-pos=`${
-                      theme.social_setting.icon_only ? 'up' : 'none'}`)
+                      theme.social_setting.icon_only ? "up" : "none"}`)
 
                   if socialLinkIcon && socialLinkIcon.match("origin:")
                     span!= socialLinkIcon.split("origin:")[1]
@@ -60,9 +60,9 @@ aside#sidebar
                 span= _p("sidebar.subscribe")
       
       if theme.menu
-        - var menuArchives   = _.trim(_.get(theme.menu.archives.split('||'), '[0]'))
-        - var menuCategories = _.trim(_.get(theme.menu.categories.split('||'), '[0]'))
-        - var menuTags       = _.trim(_.get(theme.menu.tags.split('||'), '[0]'))
+        - var menuArchives   = _.trim(_.get(theme.menu.archives.split("||"), "[0]"))
+        - var menuCategories = _.trim(_.get(theme.menu.categories.split("||"), "[0]"))
+        - var menuTags       = _.trim(_.get(theme.menu.tags.split("||"), "[0]"))
         div.sidebar-state
           if theme.menu.archives
             span.sidebar-state-item.sidebar-state-posts
