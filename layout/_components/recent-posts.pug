@@ -1,4 +1,5 @@
 section#recent-posts.recent-posts
+  include ../_mixins/post-header.pug
   include ../_mixins/gallery.pug
 
   - var postLists = theme.post_list.paginate.home ? page.posts : site.posts
@@ -13,6 +14,7 @@ section#recent-posts.recent-posts
         if post.photos && post.photos.length
           +gallery(post)
 
+        - var isExcerpt = true
         if theme.auto_excerpt && theme.auto_excerpt.enable
           - const content = strip_html(post.content)
           - var excerpt = content.substring(0, theme.auto_excerpt.length)
@@ -21,9 +23,10 @@ section#recent-posts.recent-posts
         else if post.excerpt
           div.post-excerpt!= post.excerpt
         else
+          - isExcerpt = false
           div.post-excerpt!= post.content
 
-        if !post.link
+        if !post.link && isExcerpt
           div.post-btn
             a(href=url_for(post.path))= _p("post.read_more") + " »"
   - })
