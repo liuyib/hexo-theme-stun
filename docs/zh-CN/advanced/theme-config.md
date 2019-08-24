@@ -46,7 +46,7 @@ language: zh-CN # 可选值 zh-CN 或 en-US
 
 Stun 主题内置了三种页面：分类页、标签页、关于页。想启用这些页面，需要按照如下步骤操作：
 
-1. 在 Hexo 根目录下执行命令。
+1. 在 Hexo 根目录下执行命令
 
 ``` bash
 # 启用分类页，执行这条指令
@@ -59,7 +59,7 @@ $ hexo new page tags
 $ hexo new page about
 ```
 
-2. 然后修改主题配置文件，将对应的项取消注释。
+2. 然后修改主题配置文件，将对应的项取消注释
 
 ``` yaml
 menu:
@@ -75,7 +75,7 @@ menu:
 
 以添加**阅读**页面为例。
 
-1. 修改主题配置文件，添加相应的菜单项。
+1. 修改主题配置文件，添加相应的菜单项
 
 ``` yaml
 menu:
@@ -88,7 +88,7 @@ menu:
 >
 > 如果只添加路径，没有添加图标名称，会使用默认图标进行显示。
 
-2. 创建页面文件。
+2. 创建页面文件
 
 在 Hexo 根目录下执行指令：
 
@@ -96,7 +96,7 @@ menu:
 $ hexo new page reading
 ```
 
-3. 国际化设置。
+3. 国际化设置
 
 找到 `languages` 目录下的语言文件进行修改：
 
@@ -264,6 +264,10 @@ gallery_waterfall:
 
 用于设置文章中，解析标题生成目录的最大深度。取值 `1 ~ 6`。例如：`toc_max_depth: 3`，只会解析文中的 `h1`, `h2`, `h3` 来生成目录。详情：[文章目录](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/theme-config.html#文章目录)
 
+- `quicklink: true` <Badge text="Stable"/> <Badge text="v1.2.3"/>
+
+是否在浏览器空闲时间预取可视区内的链接，以加快后续页面的加载速度。详情：[](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/theme-config.html#)
+
 - `math: true` <Badge text="Stable"/> <Badge text="v1.1.2"/>
 
 是否需要解析数学公式。详情：[数学公式](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/third-part.html#数学公式)
@@ -302,7 +306,7 @@ gallery_waterfall:
 favicon:
   small: /images/icons/favicon-16x16.png
   medium: /images/icons/favicon-32x32.png
-  # 如果你不懂，请忽略下面这些
+  # ！！如果你不懂，请忽略下面这些！！
   # apple_touch_icon: /images/icons/apple-touch-icon.png
   # safari_pinned_tab: /images/icons/logo-stun.svg
   # msapplication: /images/icons/favicon-144x144.png
@@ -370,7 +374,7 @@ creative_commons:
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190619210339.png)
 
-## 返回顶部 <Badge text="Beta" type="warn"/>
+## 返回顶部 <Badge text="Stable"/>
 
 修改主题配置文件：
 
@@ -454,7 +458,7 @@ footer:
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190623192514.png)
 
-## 侧边栏设置 <Badge text="Beta" type="warn"/>
+## 侧边栏设置 <Badge text="Stable"/>
 
 修改主题配置文件：
 
@@ -510,14 +514,14 @@ author:
 social:
   github: https://github.com/ || github
   google: https://plus.google.com/ || google
-  twitter: https://twitter.com/ || twitter
-  youtube: https://youtube.com/ || youtube
-  segmentfault: https://segmentfault.com/ || origin:sf
-  zhihu: https://www.zhihu.com/ || origin:知
-  weibo: https://weibo.com/ || weibo
-  wechat: yournumber || weixin
-  telegram: yournumber || telegram
-  qq: yournumber || qq
+  # twitter: https://twitter.com/ || twitter
+  # youtube: https://youtube.com/ || youtube
+  # segmentfault: https://segmentfault.com/ || origin:sf
+  # weibo: https://weibo.com/ || weibo
+  # zhihu: https://www.zhihu.com/ || origin:知
+  # wechat: yournumber || weixin
+  # telegram: yournumber || telegram
+  # qq: yournumber || qq
   # 你可以自行添加这里没有的社交链接，格式如下：
   # xxx: xxx || (origin:)xxx
 
@@ -535,7 +539,7 @@ social_setting:
 
 当你添加一个默认没有的社交链接时，你需要进行国际化设置。这里以添加链接 `掘金` 为例，步骤如下：
 
-1. 修改主题配置文件。
+1. 修改主题配置文件
 
 ```yaml
 social:
@@ -544,7 +548,7 @@ social:
 
 > 由于 Font Awesome 中找不到掘金的 logo，所以这里使用 `掘` 字来代替显示。
 
-2. 国际化设置。
+2. 国际化设置
 
 修改 `themes/stun/languages` 目录下的文件。
 
@@ -855,7 +859,7 @@ code_word_wrap: false
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608214539.png)
 
-## 图片水平对齐方式 <Badge text="Beta" type="warn"/>
+## 图片水平对齐方式 <Badge text="Stable"/>
 
 设置文章中图片的水平对齐方式，修改主题配置文件：
 
@@ -910,7 +914,7 @@ reward:
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608175556.png)
 
-## 标签云 <Badge text="Beta" type="warn"/>
+## 标签云 <Badge text="Stable"/>
 
 如果你启用了 `tags` 页面，想要对其进行设置，修改主题配置文件：
 
@@ -964,7 +968,7 @@ external_link:
     color: '#aaa'
 ```
 
-### FancyBox <Badge text="stable"/> <Badge text="v1.1.4"/>
+### FancyBox <Badge text="Stable"/> <Badge text="v1.1.4"/>
 
 如果想要使用 fancybox 功能，只需要修改主题配置文件即可：
 
@@ -994,7 +998,7 @@ zoom_image:
 如果你启用了 fancybox，那么主题会优先使用 fancybox 效果。
 :::
 
-### 图片懒加载 <Badge text="beta" type="warning"/> <Badge text="v1.2.0"/>
+### 图片懒加载 <Badge text="Stable"/> <Badge text="v1.2.0"/>
 
 从 `v1.2.0` 版本开始，Stun 主题开始支持图片懒加载，但是**该功能只对文章页面起作用**。你可以配置该功能，修改主题配置文件：
 

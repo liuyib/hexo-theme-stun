@@ -9,13 +9,13 @@
 
 使用步骤如下：
 
-1、安装插件
+1. 安装插件
 
 ```bash
 $ npm install --save hexo-pwa
 ```
 
-2、配置插件
+2. 配置插件
 
 找到 Hexo 根目录下的 `_config.yml` 文件，添加以下字段：
 
@@ -53,7 +53,7 @@ pwa:
 
 有关插件的详尽信息，请查看插件的[文档](https://github.com/lavas-project/hexo-pwa)。
 
-3、修改主题配置
+3. 修改主题配置
 
 修改主题配置文件：
 
@@ -65,7 +65,7 @@ pwa:
   theme_color: "#54bcff"
 ```
 
-4、创建 `manifest.json` 文件
+4. 创建 `manifest.json` 文件
 
 你可以通过 [Web App Manifest](https://app-manifest.firebaseapp.com/) 网站来快速生成 `manifest.json` 文件。`manifest.json` 文件的内容如下：
 
@@ -109,17 +109,53 @@ pwa:
 }
 ```
 
-5、重启 Hexo 服务器
+5. 重启 Hexo 服务器
 
 ```bash
 $ hexo clean && hexo s
 ```
 
-## 添加 Emoji 支持 <Badge text="disrelated" type="warning"/>
+## 启用 Quicklink <Badge text="Stable"/> <Badge text="v1.2.3"/>
+
+如果想要使用 [quicklink](https://github.com/GoogleChromeLabs/quicklink/)，使浏览器在空闲时间预取可视区内的链接，以加快后续页面的加载速度。你需要按照如下步骤设置：
+
+1. 修改主题配置文件
+
+``` yaml
+quicklink:
+  # 是否启用。这里启用之后并不会对所有页面生效，你还需要进行下面的设置
+  enable: true
+
+  # 设置 home 页面和 archive 页面是否启用
+  home: true
+  archive: true
+
+  # 当浏览器 load 事件触发后，开始初始化 quicklink
+  delay: true
+  # 自定义一个时间，必须进行预取。这里默认 10s
+  timeout: 10000
+  # 启用 fetch() 或回退到 XHR
+  priority: true
+
+  # 设置忽略预取的链接类型
+  # ！！如果你不懂，请忽略这一项！！
+  # 例如：
+  # ignores:
+  #   - /\/api\/?/
+  #   - uri => uri.includes('.zip')
+  #   - (uri, el) => el.hasAttribute('nofollow')
+  ignores:
+```
+
+2. 添加 `Front-Matter`
+
+上一步只是设置了 home 页面和 archive 页面是否启用 quicklink，对于其他页面或文章，你必须手动设置：在页面或文章的 markdown 文件的 `Front-Matter` 中，添加 `quicklink: true`。
+
+## 添加 Emoji 支持 <Badge text="Disrelated" type="warning"/>
 
 如果想要使用 Emoji，你可以直接在[这里](http://emojihomepage.com/)复制粘贴使用。
 
-如果你更喜欢使用 Emoji 代码，例如：`:sparkles:` 将会显示为 :sparkles:, 那么你需要安装插件 [hexo-filter-github-emojis](https://github.com/crimx/hexo-filter-github-emojis) 来支持这种语法。
+如果你更喜欢使用 Emoji 代码，例如：将 `:sparkles:` 解析为 :sparkles:, 那么你需要安装插件 [hexo-filter-github-emojis](https://github.com/crimx/hexo-filter-github-emojis) 来支持这种语法。
 
 使用步骤如下：
 
@@ -158,7 +194,7 @@ no-emoji: true
 
 ## 评论系统
 
-### Gitment <Badge text="stable"/>
+### Gitment <Badge text="Stable"/>
 
 首先，你需要注册一个新的 **GitHub Application** 来授权，点击[这里](https://github.com/settings/applications/new)注册。这样可以获取所需的 `client ID` 和 `client secret`。
 
@@ -186,7 +222,7 @@ gitment:
 
 如果你遇到了问题，请查看 Gitment 的文档：[https://github.com/imsun/gitment](https://github.com/imsun/gitment)
 
-### Gitalk <Badge text="stable"/> <Badge text="v1.1.0"/>
+### Gitalk <Badge text="Stable"/> <Badge text="v1.1.0"/>
 
 首先，你需要注册一个新的 **GitHub Application** 来授权，点击[这里](https://github.com/settings/applications/new)注册。这样可以获取所需的 `client ID` 和 `client secret`。
 
@@ -217,7 +253,7 @@ gitalk:
 
 如果你遇到了问题，请查看 Gitalk 的文档：[https://github.com/gitalk/gitalk](https://github.com/gitalk/gitalk)
 
-### Valine <Badge text="stable"/> <Badge text="v1.1.1"/>
+### Valine <Badge text="Stable"/> <Badge text="v1.1.1"/>
 
 Valine 评论系统依赖于 LeanCloud，所以你需要[登录](https://leancloud.cn/dashboard/login.html#/signin)或[注册](https://leancloud.cn/dashboard/login.html#/signup) LeanCloud，获取 `APP ID` 和 `APP Key`。详细步骤，请查看：[https://valine.js.org/quickstart.html](https://valine.js.org/quickstart.html)
 
@@ -250,7 +286,7 @@ valine:
 
 完成上述步骤之后，你还需要在 LeanCloud 中新建 或 选择一个名为 `Comment` 的 Class 才能使用 Valine。详细步骤，请查看：[https://valine.js.org/quickstart.html#评论数据管理](https://valine.js.org/quickstart.html#评论数据管理)
 
-### Livere（来必力）<Badge text="stable"/> <Badge text="v1.1.1"/>
+### Livere（来必力）<Badge text="Stable"/> <Badge text="v1.1.1"/>
 
 进入来必力[官网](https://livere.com/)注册账号，登录，点击安装，选择合适的版本后，会显示安装代码，在代码中可以找到你的 `uid`，例如：
 
@@ -266,7 +302,7 @@ livere:
   uid:
 ```
 
-### Disqus <Badge text="stable"/> <Badge text="v1.1.1"/>
+### Disqus <Badge text="Stable"/> <Badge text="v1.1.1"/>
 
 进入 Disqus [官网](https://disqus.com/)注册账号，登录，点击 `I want to install Disqus on my site`，在 `Website Name` 字段中，输入你的网站的名称（可以是任意的），然后选择好 `Category` 和 `Language` 字段后，点击 `Create Site`。
 
@@ -282,7 +318,7 @@ disqus:
 
 ## 统计与分析
 
-### 卜蒜子统计 <Badge text="stable"/>
+### 卜蒜子统计 <Badge text="Stable"/>
 
 修改主题配置文件：
 
@@ -318,7 +354,7 @@ busuanzi:
 
 ## 搜索系统
 
-### Algolia 搜索 <Badge text="stable"/> <Badge text="v1.0.3"/>
+### Algolia 搜索 <Badge text="Stable"/> <Badge text="v1.0.3"/>
 
 如果你想使用 Algolia 搜索的话，并不会像其他配置那样，修改一下配置项就好了。你需要按照以下步骤进行配置：
 
@@ -490,7 +526,7 @@ math:
 MathJax 与 KaTex 相比之下，[KaTex 引擎速度更快](https://www.intmath.com/cg5/katex-mathjax-comparison.php)，但 [KaTex 支持的语法更少](https://github.com/KaTeX/KaTeX/wiki/Things-that-KaTeX-does-not-%28yet%29-support)，这里是 [KaTex 所支持的所有语法](https://katex.org/docs/supported.html)。
 :::
 
-### MathJax <Badge text="stable"/> <Badge text="v1.1.2"/>
+### MathJax <Badge text="Stable"/> <Badge text="v1.1.2"/>
 
 使用 mathjax 作为引擎，首先，你需要更换一个支持 MathJax 的 markdown 渲染器：
 
@@ -523,7 +559,7 @@ math:
 $ hexo clean && hexo s
 ```
 
-### KaTex <Badge text="stable"/> <Badge text="v1.1.2"/>
+### KaTex <Badge text="Stable"/> <Badge text="v1.1.2"/>
 
 使用 katex 作为引擎，不需要引入 `katex.min.js`。相应的，你只需要更换一个支持 KaTex 的 markdown 渲染器。
 
@@ -605,11 +641,11 @@ markdown:
 
 Stun 主题默认提供了一些 MathJax 和 Katex 的插件。
 
-- mhchem <Badge text="stable"/> <Badge text="v1.1.2"/>
+- mhchem <Badge text="Stable"/> <Badge text="v1.1.2"/>
 
 mhchem 是 MathJax 的插件，你可以使用这个插件来渲染化学方程式。详情请看：[MathJax/mhchem Manual](https://mhchem.github.io/MathJax-mhchem/)。
 
-- Copy-tex <Badge text="stable"/> <Badge text="v1.1.2"/>
+- Copy-tex <Badge text="Stable"/> <Badge text="v1.1.2"/>
 
 Copy-tex 是 KaTex 的插件，当启用这个插件之后，你只需要单击公式即可复制其源码。详情请看：[Copy-tex extension](https://github.com/KaTeX/KaTeX/tree/master/contrib/copy-tex)。
 
@@ -627,7 +663,7 @@ Copy-tex 是 KaTex 的插件，当启用这个插件之后，你只需要单击�
 
 ## 广告
 
-### 谷歌广告
+### 谷歌广告 <Badge text="Stable"/> <Badge text="v1.1.4"/>
 
 首先登录谷歌广告[官网](https://www.google.com/adsense)，选择添加广告，在给你的一段代码中找到 `client_id`，通常以 `ca-pub-` 开头。然后修改主题配置文件：
 
@@ -644,7 +680,7 @@ google_adsense:
 
 ## 特效
 
-### Ribbon
+### Ribbon <Badge text="Stable"/> <Badge text="v1.1.2"/>
 
 修改主题配置文件：
 
@@ -664,7 +700,7 @@ canvas_ribbon:
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190725220144.png)
 
-### Particle / Nest
+### Particle / Nest <Badge text="Stable"/> <Badge text="v1.1.2"/>
 
 修改主题配置文件：
 

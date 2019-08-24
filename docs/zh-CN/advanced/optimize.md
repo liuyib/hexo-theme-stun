@@ -1,6 +1,6 @@
 # 优化建议
 
-## 打包、压缩资源文件 <Badge text="disrelated" type="warning"/>
+## 打包、压缩资源文件 <Badge text="Disrelated" type="warning"/>
 
 Stun 主题的源码中，`HTML`, `CSS`, `JavaScript`, `图片` 等资源文件是没有打包压缩的。**绝大部分的 Hexo 主题也是如此**。庆幸的是 Hexo 提供了相关的插件，来帮助用户解决这一问题。
 

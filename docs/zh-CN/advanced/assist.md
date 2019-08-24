@@ -2,7 +2,7 @@
 
 ## 快捷键
 
-### 快速切换文章 <Badge text="beta" type="warn"/> <Badge text="v1.1.3"/>
+### 快速切换文章 <Badge text="Beta" type="warn"/> <Badge text="v1.1.3"/>
 
 ::: tip
 该功能在 `v1.1.0` 版本中快捷键为（`←`：切换到上一篇文章，`→`：切换到下一篇文章），在 `v1.1.3` 版本中快捷键修改为（Ctrl + `←`，Ctrl + `→`）。
@@ -24,7 +24,7 @@ shortcuts:
 
 > 考虑到这里的快捷键可能会和用户系统或软件的冲突，所以在 Stun 主题 `v1.1.3` 版本中，这个功能加入了配置项，用户可以自己决定是否开启，默认不启用。并且在 Stun 主题以后的版本中，可能会留出配置项让用户自定义快捷键。
 
-### 快速关闭搜索框 <Badge text="stable"/> <Badge text="v1.0.3"/>
+### 快速关闭搜索框 <Badge text="Stable"/> <Badge text="v1.0.3"/>
 
 关闭搜索框有三种方式，1. 点击关闭按钮，2. 点击蒙版，3. 按下 `Esc` 键。
 
@@ -36,7 +36,7 @@ Hexo 主题一般都会扩展一些自己特有的标签插件，在这方面做
 
 此外，Stun 主题也有自己扩展的一些标签插件，这些标签插件如下：
 
-### 插入表格数据 <Badge text="beta" type="warning"/> <Badge text="v1.2.0"/>
+### 插入表格数据 <Badge text="Stable"/> <Badge text="v1.2.0"/>
 
 如果想要在文章中显示一个表格，你可以使用 markdown 原生支持的语法，但是如果你想要让表格里的数据存储在外部文件中，那么你可以使用下面这种语法：
 
@@ -87,7 +87,7 @@ Hexo 主题一般都会扩展一些自己特有的标签插件，在这方面做
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190803141118.png)
 
-### Bootstrap 标注 <Badge text="beta" type="warning"/> <Badge text="v1.2.0"/>
+### Bootstrap 标注 <Badge text="Stable"/> <Badge text="v1.2.0"/>
 
 语法如下：
 
@@ -141,7 +141,7 @@ This is success note.
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190803081736.png)
 
-### 友链 <Badge text="beta" type="warning"/> <Badge text="v1.2.0"/>
+### 友链 <Badge text="Stable"/> <Badge text="v1.2.0"/>
 
 语法如下：
 
