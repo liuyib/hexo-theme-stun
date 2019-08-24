@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.2.3 (2019-08-24)
+
+### Bug Fixes
+
+* Solve the local search can't work when use some comment system ([bc8c2bd](https://github.com/liuyib/hexo-theme-stun/commit/bc8c2bd))
+
+### Features
+
+* Add quicklink support ([9c06aa4](https://github.com/liuyib/hexo-theme-stun/commit/9c06aa4))
+
 ## 1.2.2 (2019-08-08)
 
 ### Features
