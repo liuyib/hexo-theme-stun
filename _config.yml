@@ -540,6 +540,26 @@ math:
       copy_tex_css: https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/copy-tex.css
 
 # ---------------------------------------------------------------
+# Webmaster tools verification config
+# ---------------------------------------------------------------
+
+# Google Webmaster tools verification setting
+# See: https://www.google.com/webmasters/
+google_site_verification:
+
+# Bing Webmaster tools verification setting
+# See: https://www.bing.com/webmaster/
+bing_site_verification:
+
+# Baidu Webmaster tools verification setting
+# See: https://ziyuan.baidu.com/site/
+baidu_site_verification:
+
+# 360 Webmaster tools verification setting
+# see http://zhanzhang.so.com/
+qihu360_site_verification:
+
+# ---------------------------------------------------------------
 # Other config
 # ---------------------------------------------------------------
 

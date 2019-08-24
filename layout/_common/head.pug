@@ -29,6 +29,15 @@ meta(name="format-detection" content="telephone=no")
 meta(name="apple-mobile-web-app-capable" content="yes")
 meta(name="apple-mobile-web-app-status-bar-style" content="black")
 
+if theme.google_site_verification
+  meta(name="google-site-verification" content=theme.google_site_verification)
+if theme.bing_site_verification
+  meta(name="msvalidate.01" content=theme.bing_site_verification)
+if theme.baidu_site_verification
+  meta(name="baidu-site-verification" content=theme.baidu_site_verification)
+if theme.qihu360_site_verification
+  meta(name="360-site-verification" content=theme.qihu360_site_verification)
+
 if theme.pwa && theme.pwa.enable
   if theme.pwa.theme_color
     meta(name="theme-color" content=theme.pwa.theme_color)
@@ -38,16 +47,12 @@ if theme.pwa && theme.pwa.enable
 
 if theme.favicon.small
   link(rel="icon" href=`${url_for(theme.favicon.small)}?v=${stun_env("version")}` type="image/png" sizes="16x16")
-
 if theme.favicon.medium
   link(rel="icon" href=`${url_for(theme.favicon.medium)}?v=${stun_env("version")}` type="image/png" sizes="32x32")
-
 if theme.favicon.apple_touch_icon
   link(rel="apple-touch-icon" href=`${url_for(theme.favicon.apple_touch_icon)}?v=${stun_env("version")}` sizes="180x180")
-
 if theme.favicon.safari_pinned_tab
   link(rel="mask-icon" href=`${url_for(theme.favicon.safari_pinned_tab)}?v=${stun_env("version")}` color="#54bcff")
-
 if theme.favicon.msapplication
   meta(name="msapplication-TileImage" content=`${url_for(theme.favicon.msapplication)}`)
   meta(name="msapplication-TileColor" content="#000000")
