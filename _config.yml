@@ -444,6 +444,18 @@ busuanzi:
     # Icon name in FontAwesome, see: https://fontawesome.com/v4.7.0/icons/
     icon: eye
 
+# Google analytics ID
+# See: https://analytics.google.com/
+google_analytics:
+
+# Baidu analytics ID
+# See: https://tongji.baidu.com/
+baidu_analytics:
+
+# Tencent analytics ID
+# See: https://v2.ta.qq.com/
+tencent_analytics:
+
 # ---------------------------------------------------------------
 # Search config
 # ---------------------------------------------------------------
