@@ -5,7 +5,7 @@
 - 修改配置文件、安装新的依赖等，都需要重启 hexo 服务器。
 - 没有特别说明，配置项默认从 `v1.0.0` 版本开始支持。
 - 稳定的配置使用 <Badge text="Stable"/> 标明，表示基本不会变动。不稳定的配置使用 <Badge text="Beta" type="warn"/> 标明，表示未来可能会变动甚至删除。目前还不支持的配置使用 <Badge text="Not Support" type="error"/> 标明。被废弃的配置使用 <Badge text="Deprecated" type="error"/> 标明。最早开始支持的版本号使用 <Badge text="v x.x.x"/> 标明。与主题无关的配置项使用 <Badge text="Disrelated" type="warning"/> 标明。
-  :::
+:::
 
 ## 配置文件
 
@@ -44,7 +44,9 @@ language: zh-CN # 可选值 zh-CN 或 en-US
 
 ## 添加新页面 <Badge text="Stable"/>
 
-Stun 主题内置了三种页面：分类页、标签页、关于页。想启用这些页面，只需要在 Hexo 根目录下执行命令：
+Stun 主题内置了三种页面：分类页、标签页、关于页。想启用这些页面，需要按照如下步骤操作：
+
+1. 在 Hexo 根目录下执行命令。
 
 ``` bash
 # 启用分类页，执行这条指令
@@ -57,32 +59,44 @@ $ hexo new page tags
 $ hexo new page about
 ```
 
-除了上述三种内置页面外，如果你想使用自定义页面，需要执行如下步骤：
+2. 然后修改主题配置文件，将对应的项取消注释。
+
+``` yaml
+menu:
+  home: / || home
+  archives: /archives/ || folder-open
+  # categories: /categories/ || th
+  # tags: /tags/ || tags
+  # about: /about/ || user
+  # xxx: /xxx/ || xxx
+```
+
+除了使用上述三种内置页面外，如果你想使用自定义页面，需要执行如下步骤：
 
 以添加**阅读**页面为例。
 
-1. 修改主题配置文件
+1. 修改主题配置文件，添加相应的菜单项。
 
 ``` yaml
 menu:
   # 格式如下
   # xxx: 路径 || 图标名称
-  read: /read/ || book
+  reading: /reading/ || book
 ```
 
 > 图标的名称在这里获取：[https://fontawesome.com/v4.7.0/icons/](https://fontawesome.com/v4.7.0/icons/)。
 >
 > 如果只添加路径，没有添加图标名称，会使用默认图标进行显示。
 
-2. 创建页面文件
+2. 创建页面文件。
 
 在 Hexo 根目录下执行指令：
 
 ``` bash
-$ hexo new page read
+$ hexo new page reading
 ```
 
-3. 国际化设置
+3. 国际化设置。
 
 找到 `languages` 目录下的语言文件进行修改：
 
@@ -90,14 +104,14 @@ $ hexo new page read
 
 ```yaml
 nav:
-  read: 阅读
+  reading: 阅读
 ```
 
 `en.yml`：
 
 ```yaml
 nav:
-  read: Read
+  reading: Reading
 ```
 
 这样就完成了自定义页面的添加。
@@ -112,11 +126,11 @@ menu_settings:
   text_only: false
 ```
 
-## Front-matter
+## Front-Matter
 
-`Front-matter` 在 Hexo 主题中，占据了极其重要的地位。如果你还不了解 `Front-matter`，可以查看这里：[https://hexo.io/zh-cn/docs/front-matter](https://hexo.io/zh-cn/docs/front-matter)。
+`Front-Matter` 在 Hexo 主题中，占据了极其重要的地位。如果你还不了解 `Front-Matter`，可以查看这里：[https://hexo.io/zh-cn/docs/Front-Matter](https://hexo.io/zh-cn/docs/Front-Matter)。
 
-下面是 Hexo 中默认提供的几种 `Front-matter` 属性。
+下面是 Hexo 中默认提供的几种 `Front-Matter` 属性。
 
 - `title` <Badge text="Stable"/> - 标题
 - `date` <Badge text="Stable"/> - 文件建立日期
@@ -175,11 +189,23 @@ tags:
 
 那么它会被解析为 `foo,bar,baz`，也就是一个标签。
 
-- `layout` <Badge text="Not Support" type="error"/> - 布局
+- `layout` <Badge text="Stable"/> - 是否处理 markdown 源文件
 
-> Stun 主题目前暂时还不支持，最近的版本中考虑进行支持。
+如果你不想你的文章或页面被处理，可以将 `Front-Matter` 中的 `layout` 设为 `false`。例如：
 
-还有几种 `Front-matter` 属性在 Hexo 文档中并没有出现（也许是 Hexo 的文档没有更新吧），但在 Hexo 官方提供的主题开发测试文件中出现。按照测试文件的要求，一个合格的 Hexo 主题都应该支持它们。这些属性如下：
+设置了 `layout: false`：
+
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190820175118.png)
+
+> 可以看到，设置了 `layout: false` 后，不对 markdown 文件做任何处理，直接将文件的原始内容显示出来。
+
+没有设置 `layout: false` 的默认情况下或设置了 `layout: true`：
+
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190820175119.png)
+
+---
+
+下面几种 `Front-Matter` 属性在 Hexo 文档中并没有出现（也许是 Hexo 的文档没有更新吧），但在 Hexo 官方提供的主题开发测试文件中出现。按照测试文件的要求，一个合格的 Hexo 主题都应该支持它们。这些属性如下：
 
 - `link` <Badge text="Stable"/> <Badge text="v1.1.3"/> - 链接
 
@@ -200,7 +226,7 @@ photos:
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190724170139.png)
 
-为了优化这些图片的显示效果，Stun 主题提供了**瀑布流布局** <Badge text="Stable"/> <Badge text="v1.1.4"/>（**只对文章中通过 `Front-matter` 的 `photos` 属性指定的图片起作用**），修改主题配置文件：
+为了优化这些图片的显示效果，Stun 主题提供了**瀑布流布局** <Badge text="Stable"/> <Badge text="v1.1.4"/>，如果想启用这一布局，你需要修改主题配置文件：
 
 ```yaml
 gallery_waterfall:
@@ -221,12 +247,12 @@ gallery_waterfall:
 ::: tip
 
 - 启用瀑布流效果后，还可以再启用 [fancybox 效果](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/assist.html#fancybox)。
-- 通常利用 `photos` 这个属性，来建立一个**相册页面** 或 **专门展示图片的文章**。
-  :::
+- 通常利用 `photos` 这个属性，来建立一个**相册页面**或**专门展示图片的文章**。例如：[https://liuyib.github.io/gallery/](https://liuyib.github.io/gallery/)
+:::
 
 ---
 
-下面是 Stun 主题中，特有的几种 `Front-matter` 属性。
+下面是 Stun 主题中，特有的几种 `Front-Matter` 属性。
 
 > 这些属性在后面的文档中会有详细说明，这里可以跳过。
 
@@ -256,7 +282,7 @@ gallery_waterfall:
 
 ---
 
-下面是安装某些插件后，可以设置的几种 `Front-matter` 属性。
+下面是安装某些插件后，可以设置的几种 `Front-Matter` 属性。
 
 > 这些属性在后面的文档中会有详细说明，这里可以跳过。
 
@@ -311,7 +337,7 @@ header:
 
 ## 指定顶部图 <Badge text="Stable"/>
 
-如果想要为某个页面或某篇文章单独指定顶部图，你只需要在页面或文章 markdown 源文件的 [Front-matter](https://hexo.io/zh-cn/docs/front-matter) 中，添加 `top_image` 项，然后填入的图片 url 或路径即可。例如：
+如果想要为某个页面或某篇文章单独指定顶部图，你只需要在页面或文章 markdown 源文件的 [Front-Matter](https://hexo.io/zh-cn/docs/Front-Matter) 中，添加 `top_image` 项，然后填入的图片 url 或路径即可。例如：
 
 ```yaml
 ---
@@ -509,7 +535,7 @@ social_setting:
 
 当你添加一个默认没有的社交链接时，你需要进行国际化设置。这里以添加链接 `掘金` 为例，步骤如下：
 
-1. 修改主题配置文件
+1. 修改主题配置文件。
 
 ```yaml
 social:
@@ -518,7 +544,7 @@ social:
 
 > 由于 Font Awesome 中找不到掘金的 logo，所以这里使用 `掘` 字来代替显示。
 
-2. 国际化
+2. 国际化设置。
 
 修改 `themes/stun/languages` 目录下的文件。
 
@@ -557,12 +583,12 @@ toc:
   # 是否始终展开所有文章目录。true：始终展开，false：当文章中对应的标题到达顶部时自动展开。
   expand_all: false
   # 生成目录时，解析 h 标签的最大深度。
-  # 你可以在文章的 markdown 源文件的 Front-matter 中，通过添加 `toc_max_depth` 属性，
+  # 你可以在文章的 markdown 源文件的 Front-Matter 中，通过添加 `toc_max_depth` 属性，
   #   来指定某篇文章生成目录时，解析 h 标签的最大深度。
   max_depth: 6
 ```
 
-其中 `expand_all` <Badge text="v1.0.2"/>。可以在文章的 markdown 源文件中的 `Front-matter` 里，指定 `toc: true / false` 来设置某篇文章是否启用目录。
+其中 `expand_all` <Badge text="v1.0.2"/>。可以在文章的 markdown 源文件中的 `Front-Matter` 里，指定 `toc: true / false` 来设置某篇文章是否启用目录。
 
 ## 订阅设置 <Badge text="Stable"/>
 
@@ -768,7 +794,7 @@ $ npm uninstall hexo-generator-index --save
 $ npm install hexo-generator-index-pin-top --save
 ```
 
-最后，在文章的 `Front-matter` 中，使用 `top: true` 来实现置顶。
+最后，在文章的 `Front-Matter` 中，使用 `top: true` 来实现置顶。
 
 设置文章置顶后，在文章列表中可以看到表示置顶的图标。你可以对图标进行设置，修改主题配置文件：
 

@@ -86,7 +86,7 @@ $ git pull
 
 | <img src="https://raw.githubusercontent.com/liuyib/picBed/master/collection/20190723235410.png" alt="IE" width="32px" height="32px" /></br> IE | <img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/35.1.0/edge/edge_64x64.png" alt="Edge" width="32px" height="32px" /></br> Edge | <img src="https://raw.githubusercontent.com/liuyib/picBed/master/collection/20190723235406.png" alt="Firefox" width="32px" height="32px" /></br> Firefox | <img src="https://raw.githubusercontent.com/liuyib/picBed/master/collection/20190723235407.png" alt="Chrome" width="32px" height="32px" /></br> Chrome | <img src="https://raw.githubusercontent.com/liuyib/picBed/master/collection/20190723235409.png" alt="Safari" width="32px" height="32px" /></br> Safari | <img src="https://raw.githubusercontent.com/liuyib/picBed/master/collection/20190723235411.png" alt="Opera" width="32px" height="32px" /></br> Opera |
 | :---: | :---: | :---: |:---: | :---: | :---: |
-| 9+ | 12+ | 41+ | 42+ | 10+ | 29+ |
+| Not Supported | 12+ | 41+ | 45+ | 10+ | 32+ |
 
 ## :handshake: 开源协议
 
