@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.2.4 (2019-08-25)
+
+### Features
+
+* Add google & bing & baidu & 360 webmaster tools verification ([b9204b5](https://github.com/liuyib/hexo-theme-stun/commit/b9204b5))
+* Add google & tencent & baidu analytics support ([aa202be](https://github.com/liuyib/hexo-theme-stun/commit/aa202be))
+* Add secondary menu support ([90acfdc](https://github.com/liuyib/hexo-theme-stun/commit/90acfdc))
+
 ### 1.2.3 (2019-08-24)
 
 ### Bug Fixes
