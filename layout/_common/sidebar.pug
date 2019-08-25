@@ -22,7 +22,7 @@ aside#sidebar
 
       if theme.social_setting.enable
         div.sidebar-social
-          for value, name in (theme.social || [])
+          for value, name in (theme.social || {})
             if name && value
               - var socialItem = value.split("||")
               - var socialLinkPath = _.trim(_.get(socialItem, "[0]"))

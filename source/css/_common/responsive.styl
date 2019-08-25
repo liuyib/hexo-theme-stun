@@ -46,11 +46,11 @@
     visibility: hidden
     border-radius: 3px
     height: auto
-    background-color: alpha($header-nav-bg-color, .7)
+    background-color: $header-nav-bg-color
     opacity: 0
     transform: translate(-1.5rem, 2.5rem)
 
-    span
+    .menu-item
       float: none
       margin: 0
 
@@ -66,6 +66,12 @@
   .header-nav-menu-icon
     display: block
     float: left
+
+  .header-nav-submenu
+    top: 0
+    right: 0
+    left: 100%
+    width: 100%
 
   .friends-plugin
     .friends-item

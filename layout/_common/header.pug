@@ -1,3 +1,5 @@
+include ../_mixins/multi-menu.pug
+
 header#header(
   style=`background-image: url(${
     page.top_image ? page.top_image :
@@ -17,18 +19,7 @@ header#header(
             span!= _p("nav.search")
 
       div.header-nav-menu
-        each value, name in (theme.menu || [])
-          if name && value
-            - var menuItem = value.split("||")
-            - var menuItemPath = _.trim(_.get(menuItem, "[0]"))
-            - var menuItemIcon = _.trim(_.get(menuItem, "[1]"))
-            span
-              a(href=menuItemPath ? menuItemPath : "/")
-                if !theme.menu_settings.text_only
-                  i(class=`fa fa-${menuItemIcon ?
-                    menuItemIcon : "question-circle-o"}`)
-                if !theme.menu_settings.icon_only
-                  != _p(`nav.${name}`)
+        +multiMenu(theme.menu)
 
   div.header-info
     div.header-info-inner
