@@ -87,8 +87,8 @@ aside#sidebar
         - var ccURL = `https://creativecommons.org/licenses/${ccLicense}/4.0/deed.${ccLanguage}`
         div.sidebar-cc
           a(href=ccURL target="_blank" rel="noopener"
-              data-popover="Creative Commons" data-popover-pos="up")
-            img(src=url_for(`/${theme.images}/cc-${ccLicense}.svg`) alt="creative commons")
+              data-popover=_p("prompt.creative_commons") data-popover-pos="up")
+            img(src=url_for(`/${theme.images}/cc-${ccLicense}.svg`) alt=_p("creative_commons"))
 
     if theme.reading_progress.enable && is_post()
       div.sidebar-progress

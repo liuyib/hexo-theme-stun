@@ -19,7 +19,9 @@ $(document).ready(function () {
   });
 
   var $copyIcon = $(
-    '<div class="copy-button">' +
+    '<div class="copy-button" data-popover=' +
+      CONFIG.prompt.copy_code +
+      ' data-popover-pos="up">' +
       '<i class="fa fa-clipboard"></i>' +
     '</div>'
   );
@@ -40,9 +42,9 @@ $(document).ready(function () {
     }
 
     if (Stun.utils.copyText(container)) {
-      Stun.utils.popAlert('success', CONFIG.notification.copy_success);
+      Stun.utils.popAlert('success', CONFIG.prompt.copy_success);
     } else {
-      Stun.utils.popAlert('error', CONFIG.notification.copy_error);
+      Stun.utils.popAlert('error', CONFIG.prompt.copy_error);
     }
   });
 });

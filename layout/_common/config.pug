@@ -59,9 +59,11 @@
     switch_post: theme.shortcuts.switch_post.enable
   });
 
-  var notification = JSON.stringify({
-    copy_success: _p("notification.copy.success"),
-    copy_error: _p("notification.copy.error")
+  var prompt = JSON.stringify({
+    copy_success: _p("prompt.copy.success"),
+    copy_error: _p("prompt.copy.error"),
+    creative_commons: _p("prompt.creative_commons"),
+    copy_code: _p("prompt.copy_code")
   });
 
 script.
@@ -78,7 +80,7 @@ script.
     lazyload: !{ lazyload },
     external_link: !{ external_link },
     shortcuts: !{ shortcuts },
-    notification: !{ notification }
+    prompt: !{ prompt }
   };
 
   window.CONFIG = CONFIG;

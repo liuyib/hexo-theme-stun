@@ -18,11 +18,11 @@ clearImgStyle()
   display: table
   clear: both
 
-// UI component
+// UI components
 // ----------------------------------------
 $popover-bg-color = alpha(#000, .7)
 
-// UI components of "popover"
+// "Popover" component
 [data-popover]
   position: relative
 
@@ -52,6 +52,51 @@ $popover-bg-color = alpha(#000, .7)
 [data-popover][data-popover-pos='up']:hover::before
   opacity: 1
   transform: translate(-50%, -115%)
+
+// "Alert" component
+.stun-message
+  position: fixed
+  top: 1rem
+  left: 50%
+  z-index: $z-index2
+  transform: translateX(-50%)
+
+.stun-alert
+  position: relative
+  border-radius: 3px
+  padding: 8px 12px
+  font-size: $font-size-large
+  line-height: 1rem
+  color: $black-light
+  background-color: #fff
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .15)
+
+  &-success
+    color: $alert-success
+
+    & ~ i
+      color: $alert-success
+
+  &-info
+    color: $alert-info
+
+    & ~ i
+      color: $alert-info
+
+  &-warning
+    color: $alert-warning
+
+    & ~ i
+      color: $alert-warning
+
+  &-error
+    color: $alert-error
+
+    & ~ i
+      color: $alert-error
+
+  &-description
+    margin-left: .5rem
 
 // Animation class
 // ----------------------------------------

@@ -81,7 +81,7 @@ Stun.utils = Stun.$u = {
     return codes[code];
   },
   /**
-   * A UI component for notification prompts.
+   * "Alert" component
    * @param {String} status The Status of message. Values: success / info / warning / error.
    * @param {String} text The text to show.
    * @param {Number} delay Message stay time (unit is 's', default 5s).

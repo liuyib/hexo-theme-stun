@@ -11,16 +11,18 @@ for lang in languages
         &:first-child::before
           content: lang
           margin: 0 .6rem
-          color: alpha($highlight-header-color, .5)
+          color: $highlight-code-lang-color
 
 .highlight
-  overflow: auto
   position: relative
   margin: .5rem 0 1rem
   min-width: 100%
   line-height: $line-height-code-block
   color: $highlight-color
   background-color: $highlight-background
+
+  .copy-button i
+    color: $copy-button-color
 
   pre,
   code
@@ -34,7 +36,7 @@ for lang in languages
       counter-reset: line
 
   td
-    border: 0
+    border-width: 0
 
   figcaption
     overflow: hidden
@@ -46,7 +48,7 @@ for lang in languages
     span
       &:first-child
         float: left
-        color: $highlight-header-color
+        color: $highlight-code-note-color
 
     span
       &:nth-child(2)
@@ -60,22 +62,25 @@ for lang in languages
     .custom-lang
       float: left
       margin: 0 .6rem
-      color: alpha($highlight-header-color, .5)
+      color: $highlight-code-lang-color
 
-  .gutter,
   .code
-    padding: .4rem .5rem
+    if ($wordWrap)
+      padding: 0
+    else
+      padding: 0 0 0 .4rem
 
   .gutter
+    padding: .4rem .6rem
     width: 1rem
-    background-color: $highlight-gutter-bg-color
+    background-color: $highlight-side-bg-color
 
     if ($wordWrap)
       display: none
 
     pre
       text-align: right
-      color: $highlight-gutter-color
+      color: $highlight-side-color
       background-color: inherit
 
   if ($wordWrap)
@@ -83,91 +88,93 @@ for lang in languages
       &::before
         content: counter(line)
         display: inline-block
-        margin: 0 1rem 0 0
-        width: 1rem
+        margin: 0 .4rem 0 0
+        box-sizing: content-box
+        padding: 0 .8rem 0 .4rem
+        min-width: 1rem
         text-align: right
-        color: $highlight-gutter-color
+        color: $highlight-side-color
+        background-color: $highlight-side-bg-color
         counter-increment: line
 
-  pre
-    .variable,
-    .attribute
-      color: $highlight-red
+.variable,
+.attribute
+  color: $highlight-red
 
-    .number,
-    .preprocessor,
-    .literal,
-    .params,
-    .constant,
-    .number,
-    .command
-      color: $highlight-orange
+.number,
+.preprocessor,
+.literal,
+.params,
+.constant,
+.number,
+.command
+  color: $highlight-orange
 
-    .built_in
-      color: $highlight-yellow
+.built_in
+  color: $highlight-yellow
 
-    .special,
-    .formula,
-    .class,
-    .string,
-    .value,
-    .inheritance,
-    .header,
-    .regexp,
-    .tag
-      color: $highlight-green
+.special,
+.formula,
+.class,
+.string,
+.value,
+.inheritance,
+.header,
+.regexp,
+.tag
+  color: $highlight-green
 
-    .keyword,
-    .title
-      color: $highlight-aqua
+.keyword,
+.title
+  color: $highlight-aqua
 
-    .function,
-    .title
-      color: $highlight-blue
+.function,
+.title
+  color: $highlight-blue
 
-    .comment
-      color: $highlight-comment
+.comment
+  color: $highlight-comment
 
-  .ruby .constant,
-  .xml .tag .title,
-  .xml .pi,
-  .xml .doctype,
-  .html .doctype,
-  .css .id,
-  .tag .name,
-  .css .class,
-  .css .pseudo
-    color: $highlight-red
+.ruby .constant,
+.xml .tag .title,
+.xml .pi,
+.xml .doctype,
+.html .doctype,
+.css .id,
+.tag .name,
+.css .class,
+.css .pseudo
+  color: $highlight-red
 
-  .ruby .class .title,
-  .css .rules .attribute,
-  .ruby .symbol,
-  .xml .cdata
-    color: $highlight-green
+.ruby .class .title,
+.css .rules .attribute,
+.ruby .symbol,
+.xml .cdata
+  color: $highlight-green
 
-  .css .hexcolor,
-  .tag .string
-    color: $highlight-aqua
+.css .hexcolor,
+.tag .string
+  color: $highlight-aqua
 
-  .python .decorator,
-  .python .title,
-  .ruby .function .title,
-  .ruby .title .keyword,
-  .perl .sub,
-  .javascript .title,
-  .js .title,
-  .coffeescript .title
-    color: $highlight-blue
+.python .decorator,
+.python .title,
+.ruby .function .title,
+.ruby .title .keyword,
+.perl .sub,
+.javascript .title,
+.js .title,
+.coffeescript .title
+  color: $highlight-blue
 
-  .tag .attr,
-  .javascript .keyword,
-  .javascript .function,
-  .js .keyword,
-  .js .function
-    color: $highlight-purple
+.tag .attr,
+.javascript .keyword,
+.javascript .function,
+.js .keyword,
+.js .function
+  color: $highlight-purple
 
-  .diff .addition
-    background-color: $highlight-addition
+.diff .addition
+  background-color: $highlight-addition
 
-  .diff .deletion
-    background-color: $highlight-deletion
+.diff .deletion
+  background-color: $highlight-deletion

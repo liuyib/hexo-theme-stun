@@ -62,14 +62,14 @@ post:
     author: Author
     link: Link
     license_title: Copyright
-    license_content: All articles in this blog are licensed under 
+    license_content: All articles in this blog are licensed under
       <a href="%s" rel="external nofollow" target="_blank">%s</a> unless stating additionally
 
 # Algolia search
 algolia_search:
   input_placeholder: Search for Posts
   hits_empty: "We didn't find any results for the search: ${query}"
-  hits_stats: "${hits} results found in ${time} ms"
+  hits_stats: '${hits} results found in ${time} ms'
 
 # Local search
 local_search:
@@ -97,8 +97,13 @@ footer:
   uv: Visitors
   pv: Views
 
-# Global notification
-notification:
+# Prompt message
+prompt:
   copy:
     success: Copy Success
     error: Copy Error
+  creative_commons: Creative Commons
+  copy_code: Copy Code
+
+# Others
+creative_commons: Creative Commons

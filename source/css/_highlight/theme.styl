@@ -3,11 +3,13 @@ $highlight_theme = hexo-config('highlight_theme')
 if ($highlight_theme == 'light')
   $highlight-color           = #757575
   $highlight-background      = #f6f8fa
-  $highlight-gutter-color    = $highlight-color
-  $highlight-gutter-bg-color = $highlight-background
+  $highlight-side-color      = lighten($highlight-color, 60%)
+  $highlight-side-bg-color   = darken($highlight-background, 1%)
   $highlight-header-color    = $highlight-color
-  $highlight-header-bg-color = #eaf0f5
-  $highlight-code-type-color = $highlight-header-color
+  $highlight-header-bg-color = $highlight-side-bg-color
+  $highlight-code-lang-color = alpha($highlight-header-color, .6)
+  $highlight-code-note-color = $highlight-header-color
+  $copy-button-color         = alpha($highlight-header-color, .7)
   $highlight-comment         = #90a4ae
   $highlight-red             = #E53935
   $highlight-orange          = #F76D47
@@ -20,11 +22,13 @@ if ($highlight_theme == 'light')
 if ($highlight_theme == 'dark')
   $highlight-color           = #7a85b9
   $highlight-background      = #0f111a
-  $highlight-gutter-color    = $highlight-color
-  $highlight-gutter-bg-color = $highlight-background
+  $highlight-side-color      = darken($highlight-color, 50%)
+  $highlight-side-bg-color   = darken($highlight-background, 10%)
   $highlight-header-color    = $highlight-color
-  $highlight-header-bg-color = $highlight-gutter-bg-color
-  $highlight-code-type-color = $highlight-header-color
+  $highlight-header-bg-color = $highlight-side-bg-color
+  $highlight-code-lang-color = alpha($highlight-header-color, .6)
+  $highlight-code-note-color = $highlight-header-color
+  $copy-button-color         = alpha($highlight-header-color, .7)
   $highlight-comment         = #98a4d0
   $highlight-red             = #ff5370
   $highlight-orange          = #f78c6c
@@ -37,11 +41,13 @@ if ($highlight_theme == 'dark')
 if ($highlight_theme == 'ocean')
   $highlight-color           = #f8f8f2
   $highlight-background      = #304148
-  $highlight-gutter-color    = $highlight-color
-  $highlight-gutter-bg-color = $highlight-background
+  $highlight-side-color      = alpha($highlight-color, 20%)
+  $highlight-side-bg-color   = darken($highlight-background, 5%)
   $highlight-header-color    = $highlight-color
-  $highlight-header-bg-color = $highlight-gutter-bg-color
-  $highlight-code-type-color = $highlight-header-color
+  $highlight-header-bg-color = $highlight-side-bg-color
+  $highlight-code-lang-color = alpha($highlight-header-color, .5)
+  $highlight-code-note-color = $highlight-header-color
+  $copy-button-color         = alpha($highlight-header-color, .6)
   $highlight-comment         = #65737e
   $highlight-red             = #ec5f67
   $highlight-orange          = #f99157
