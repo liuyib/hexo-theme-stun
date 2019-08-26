@@ -8,12 +8,15 @@ title:
 
 # Header nav
 nav:
+  search: Search
+
+# Header menu
+menu:
   home: Home
   archives: Archives
   categories: Categories
   tags: Tags
   about: About
-  search: Search
 
 # archives page, categories page, tags page
 page:

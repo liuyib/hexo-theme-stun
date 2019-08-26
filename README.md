@@ -38,19 +38,19 @@
 
 - 安装 stun
 
-进入 hexo 根目录，执行指令。
+  进入 hexo 根目录，执行指令。
 
-``` bash
-$ git clone https://github.com/liuyib/hexo-theme-stun.git themes/stun
-```
+  ``` bash
+  $ git clone https://github.com/liuyib/hexo-theme-stun.git themes/stun
+  ```
 
 - 安装 pug 和 stylus
 
-主题依赖于 pug 和 stylus，请执行指令。
+  主题依赖于 pug 和 stylus，请在 hexo 根目录，执行指令。
 
-``` bash
-$ npm install --save-dev hexo-render-pug hexo-renderer-stylus
-```
+  ``` bash
+  $ npm install --save hexo-render-pug hexo-renderer-stylus
+  ```
 
 ## :hammer: 使用
 
@@ -60,7 +60,7 @@ $ npm install --save-dev hexo-render-pug hexo-renderer-stylus
 theme: stun
 ```
 
-然后，启动 hexo 服务器即可。
+然后，启动 hexo 服务器。
 
 ``` bash
 $ hexo clean && hexo s

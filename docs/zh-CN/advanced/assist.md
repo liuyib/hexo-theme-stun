@@ -109,7 +109,7 @@ any text
 
 举例：
 
-```md
+``` markdown
 <!-- header icon -->
 {% note success %}
 **Success**

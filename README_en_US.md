@@ -36,19 +36,19 @@ If you are using the stun theme and would like it to be shown here, you can fill
 
 - Install `stun`
 
-Enter your hexo directory, run this.
+  Enter your hexo directory, run this.
 
-``` bash
-$ git clone https://github.com/liuyib/hexo-theme-stun.git themes/stun
-```
+  ``` bash
+  $ git clone https://github.com/liuyib/hexo-theme-stun.git themes/stun
+  ```
 
 - Install `pug` and `stylus`
 
-The theme depends on `pug` and `stylus`, please run this.
+  The theme depends on `pug` and `stylus`, please run follow in your hexo directory.
 
-``` bash
-$ npm install --save-dev hexo-render-pug hexo-renderer-stylus
-```
+  ``` bash
+  $ npm install --save hexo-render-pug hexo-renderer-stylus
+  ```
 
 ## :hammer: Usage
 

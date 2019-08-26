@@ -8,27 +8,27 @@ Stun 主题的源码中，`HTML`, `CSS`, `JavaScript`, `图片` 等资源文件�
 
 - 安装
 
-在 Hexo 根目录下执行指令。
+  在 Hexo 根目录下执行指令。
 
-> 一定要在 Git Bash 中执行，在 Window 的 PowerShell 或 CMD 中执行可能会失败。建议养成在 Git Bash 中执行 npm 指令的好习惯！
+  > 一定要在 Git Bash 中执行，在 Window 的 PowerShell 或 CMD 中执行可能会失败。建议养成在 Git Bash 中执行 npm 指令的好习惯！
 
-``` bash
-$ npm install hexo-all-minifier --save
-```
+  ``` bash
+  $ npm install hexo-all-minifier --save
+  ```
 
-如果是 Mac 用户，你还需要执行下面的指令。
+  如果是 Mac 用户，你还需要执行下面的指令。
 
-``` bash
-$ brew install libtool automake autoconf nasm
-```
+  ``` bash
+  $ brew install libtool automake autoconf nasm
+  ```
 
 - 使用
 
-在 Hexo 根目录下的 `_config.yml` 文件中，添加以下字段即可使用。
+  在 Hexo 根目录下的 `_config.yml` 文件中，添加以下字段即可使用。
 
-``` yaml
-all_minifier: true
-```
+  ``` yaml
+  all_minifier: true
+  ```
 
 如果你使用插件时**遇到了问题** 或者 想进行**更详细的设置**，请查看插件的文档：[https://github.com/chenzhutian/hexo-all-minifier/blob/master/README.md](https://github.com/chenzhutian/hexo-all-minifier/blob/master/README.md)
 

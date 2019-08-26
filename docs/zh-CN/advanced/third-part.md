@@ -11,7 +11,7 @@
 
 1. 安装插件
 
-```bash
+``` bash
 $ npm install --save hexo-pwa
 ```
 
@@ -57,7 +57,7 @@ pwa:
 
 修改主题配置文件：
 
-```yaml
+``` yaml
 pwa:
   # 是否启用
   enable: true
@@ -69,7 +69,7 @@ pwa:
 
 你可以通过 [Web App Manifest](https://app-manifest.firebaseapp.com/) 网站来快速生成 `manifest.json` 文件。`manifest.json` 文件的内容如下：
 
-```json
+``` json
 {
   "name": "xxx", // 应用全称
   "short_name": "xxx", // 应用简称
@@ -111,7 +111,7 @@ pwa:
 
 5. 重启 Hexo 服务器
 
-```bash
+``` bash
 $ hexo clean && hexo s
 ```
 
@@ -163,25 +163,25 @@ quicklink:
 
 在 Hexo 根目录下，执行指令：
 
-```bash
+``` bash
 $ npm install hexo-filter-github-emojis --save
 ```
 
 2. 重启 Hexo 服务器
 
-```bash
+``` bash
 $ hexo clean && hexo s
 ```
 
 如果你不喜欢 `::` 的语法，你可以使用下面这种方法代替：
 
-```text
+```
 {% github_emoji sparkles %}
 ```
 
 如果你需要某个 markdown 文件不解析这种语法，可以在 markdown 文件里的 `front-matter` 中，设置 `no-emoji: true`。这样 `::` 会保持原来的样子。
 
-```yaml
+``` yaml
 ---
 title: Hello World
 no-emoji: true
@@ -204,7 +204,7 @@ no-emoji: true
 
 然后修改 `stun.yml`：
 
-```yaml
+``` yaml
 gitment:
   # 是否启用
   enable: false
@@ -230,7 +230,7 @@ gitment:
 您必须在 `Authorization callback URL` 字段中指定网站的 URL。
 :::
 
-```yaml
+``` yaml
 gitalk:
   # 是否启用
   enable: false
@@ -257,7 +257,7 @@ gitalk:
 
 Valine 评论系统依赖于 LeanCloud，所以你需要[登录](https://leancloud.cn/dashboard/login.html#/signin)或[注册](https://leancloud.cn/dashboard/login.html#/signup) LeanCloud，获取 `APP ID` 和 `APP Key`。详细步骤，请查看：[https://valine.js.org/quickstart.html](https://valine.js.org/quickstart.html)
 
-```yaml
+``` yaml
 valine:
   enable: false
   # 你的 LeanCloud app appid
@@ -290,13 +290,13 @@ valine:
 
 进入来必力[官网](https://livere.com/)注册账号，登录，点击安装，选择合适的版本后，会显示安装代码，在代码中可以找到你的 `uid`，例如：
 
-```html
+``` html
 <div id="lv-container" data-id="city" data-uid="这里是你的 uid"></div>
 ```
 
 然后将 `uid` 填入主题的配置文件即可：
 
-```yaml
+``` yaml
 livere:
   enable: false
   uid:
@@ -308,7 +308,7 @@ livere:
 
 这里输入的网站名称，就是你的 `shortname`，将其填入主题的配置文件即可：
 
-```yaml
+``` yaml
 disqus:
   enable: false
   shortname:
@@ -322,7 +322,7 @@ disqus:
 
 修改主题配置文件：
 
-```yaml
+``` yaml
 busuanzi:
   # 是否启用
   enable: false
@@ -350,6 +350,106 @@ busuanzi:
     enable: true
     # FontAwesome 图标名称
     icon: eye
+```
+
+### 谷歌分析
+
+1. 访问谷歌分析[官网](https://analytics.google.com/)
+2. 找到你的跟踪 ID
+
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190826162345.png)
+
+3. 修改主题配置文件
+
+``` yaml
+google_analytics: # 填入你的跟踪 ID
+```
+
+### 百度分析
+
+1. 访问百度分析[官网](https://tongji.baidu.com/)
+2. 找到你百度分析的统计代码
+
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190826162702.jpg)
+
+3. 修改主题配置文件
+
+``` yaml
+baidu_analytics: # 填入你的统计代码
+```
+
+### 腾讯分析
+
+1. 访问腾讯分析[官网](https://v2.ta.qq.com/)
+2. 找到你腾讯分析的统计代码
+
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190826162701.png)
+
+3. 修改主题配置文件
+
+``` yaml
+tencent_analytics: # 填入你的统计代码
+```
+
+## 添加站长管理工具
+
+用于优化 SEO，让你的网站更好的被搜索引擎找到，提升在搜索结果中的排名。
+
+### 谷歌站长
+
+1. 访问谷歌网站站长[官网](https://www.google.com/webmasters/)
+2. 根据提示将你的网站添加进去
+3. 在验证网站步骤中，选择 HTML tag，找到给你的 `meta` 标签里的内容
+
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190826170549.jpg)
+
+4. 修改主题配置文件
+
+``` yaml
+google_site_verification: # 将 meta 标签的内容填在这里
+```
+
+### 必应站长
+
+1. 访问必应网站站长[官网](https://www.bing.com/webmaster/)
+2. 在添加网站一栏里，将你的网站添加进去
+3. 跳转到一个表单页面，将其填写完整
+4. 跳转到一个验证页面，找到给你的 `meta` 标签里的内容
+
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190826165504.png)
+
+5. 修改主题配置文件
+
+``` yaml
+bing_site_verification: # 将 meta 标签的内容填在这里
+```
+
+### 百度站长
+
+1. 访问百度网站站长[官网](https://ziyuan.baidu.com/site/)
+2. 点击添加网站，将你的网站添加进去
+3. 在验证网站步骤中，选择 HTML 标签验证，找到给你的 `meta` 标签里的内容
+
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190826165502.png)
+
+5. 修改主题配置文件
+
+``` yaml
+baidu_site_verification: # 将 meta 标签的内容填在这里
+```
+
+### 360 站长
+
+1. 访问 360 网站站长[官网](http://zhanzhang.so.com/)
+2. 点击添加网站，将你的网站添加进去
+3. 在验证网站步骤中，选择代码验证，找到给你的 `meta` 标签里的内容
+
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190826165505.png)
+
+5. 修改主题配置文件
+
+``` yaml
+qihu_site_verification: # 将 meta 标签的内容填在这里
 ```
 
 ## 搜索系统
@@ -390,7 +490,7 @@ busuanzi:
 
 修改 Hexo 根目录下的 `_config.yml` 文件，添加 `applicationID` & `apiKey` & `indexName` 选项。
 
-```yaml
+``` yaml
 algolia:
   applicationID: '填入你的 Application ID'
   apiKey: '填入你的 Search-only API key'
@@ -401,13 +501,13 @@ algolia:
 
 Algolia 要求用户手动通过提供的 API 上传它们的搜索数据。在 Hexo 根目录中安装 `hexo-algolia`。这个插件将会搜索你的网站并将数据上传到 Algolia。
 
-```bash
+``` bash
 $ npm install --save hexo-algolia
 ```
 
 运行下面这些指令，上传索引数据。
 
-```bash
+``` bash
 $ export HEXO_ALGOLIA_INDEXING_KEY=你的Search-Only API key # 在 Git Bash 中使用这条指令
 # set HEXO_ALGOLIA_INDEXING_KEY=你的Search-Only API key    # 在 Windows 命令行中使用这条指令
 $ hexo clean
@@ -423,7 +523,7 @@ $ hexo algolia
 
 修改你的主题配置文件：
 
-```yaml
+``` yaml
 algolia_search:
   # 是否启用
   enable: false
@@ -437,7 +537,7 @@ algolia_search:
 
 7. 重启 Hexo 服务器。
 
-```bash
+``` bash
 $ hexo clean && hexo s
 ```
 
@@ -460,7 +560,7 @@ $ hexo clean && hexo s
 
 在 Hexo 根目录下执行指令：
 
-```bash
+``` bash
 $ npm install hexo-generator-search --save
 ```
 
@@ -468,7 +568,7 @@ $ npm install hexo-generator-search --save
 
 找到 Hexo 根目录下的 `_config.yml` 文件，添加以下字段：
 
-```yaml
+``` yaml
 search:
   path: search.json
   field: post
@@ -481,7 +581,7 @@ search:
 
 安装上述插件后，在 Hexo 根目录下执行指令：
 
-```bash
+``` bash
 $ hexo g
 ```
 
@@ -491,7 +591,7 @@ $ hexo g
 
 修改主题配置文件：
 
-```yaml
+``` yaml
 local_search:
   # 是否启用
   enable: true
@@ -499,7 +599,7 @@ local_search:
 
 5. 重启 Hexo 服务器
 
-```bash
+``` bash
 $ hexo clean && hexo s
 ```
 
@@ -507,7 +607,7 @@ $ hexo clean && hexo s
 
 想要解析页面中的数学公式，首先，你需要修改主题配置文件，启用该功能，并选择解析引擎（默认是 katex 引擎）：
 
-```yaml
+``` yaml
 math:
   # 是否启用
   enable: true
@@ -537,7 +637,7 @@ MathJax 与 KaTex 相比之下，[KaTex 引擎速度更快](https://www.intmath.
 
 1. 安装，执行指令。
 
-```bash
+``` bash
 # 卸载原来的渲染器
 $ npm un hexo-renderer-marked --save
 # 安装新的渲染器
@@ -546,7 +646,7 @@ $ npm i hexo-renderer-kramed --save # 或 npm i hexo-renderer-pandoc --save
 
 2. 在主题配置文件中，选择 mathjax 引擎。
 
-```yaml
+``` yaml
 math:
   ...
   # 全小写
@@ -555,7 +655,7 @@ math:
 
 3. 重启 Hexo 服务器。
 
-```bash
+``` bash
 $ hexo clean && hexo s
 ```
 
@@ -565,7 +665,7 @@ $ hexo clean && hexo s
 
 首先，卸载原来的 markdown 渲染器，例如：
 
-```bash
+``` bash
 $ npm un hexo-renderer-marked --save
 # 或
 $ npm un hexo-renderer-kramed --save
@@ -585,57 +685,57 @@ $ npm un hexo-math --save
 
 - 如果你选择 `hexo-renderer-markdown-it-plus` 作为渲染器。
 
-1. 安装，执行指令。
+  1. 安装，执行指令。
 
-```bash
-$ npm i hexo-renderer-markdown-it-plus --save
-```
+  ``` bash
+  $ npm i hexo-renderer-markdown-it-plus --save
+  ```
 
-2. 在主题配置文件中，选择 katex 引擎。
+  2. 在主题配置文件中，选择 katex 引擎。
 
-```yaml
-math:
-  ...
-  engine: katex
-```
+  ``` yaml
+  math:
+    ...
+    engine: katex
+  ```
 
-3. 重启 hexo 服务器。
+  3. 重启 hexo 服务器。
 
-```bash
-$ hexo clean && hexo s
-```
+  ``` bash
+  $ hexo clean && hexo s
+  ```
 
 - 如果你选择 `hexo-renderer-markdown-it` 作为渲染器。
 
-你需要额外安装 `markdown-it-katex`。
+  你需要额外安装 `markdown-it-katex`。
 
-1. 安装，执行指令。
+  1. 安装，执行指令。
 
-```bash
-$ npm i hexo-renderer-markdown-it --save
-$ npm i markdown-it-katex --save
-```
+  ``` bash
+  $ npm i hexo-renderer-markdown-it --save
+  $ npm i markdown-it-katex --save
+  ```
 
-2. 修改站点配置文件
+  2. 修改站点配置文件
 
-添加 或 修改 `hexo-renderer-markdown-it` 的配置项。
+  添加 或 修改 `hexo-renderer-markdown-it` 的配置项。
 
-```yaml
-markdown:
-  render:
-    html: true
-    xhtmlOut: false
-    breaks: true
-    linkify: true
-    typographer: true
-    quotes: '“”‘’'
-  plugins:
-    - markdown-it-katex
-```
+  ``` yaml
+  markdown:
+    render:
+      html: true
+      xhtmlOut: false
+      breaks: true
+      linkify: true
+      typographer: true
+      quotes: '“”‘’'
+    plugins:
+      - markdown-it-katex
+  ```
 
-有关 `hexo-renderer-markdown-it` 所有的配置项，在[这里](https://github.com/hexojs/hexo-renderer-markdown-it/wiki/Advanced-Configuration#all-options-configuration)查看。
+  有关 `hexo-renderer-markdown-it` 所有的配置项，在[这里](https://github.com/hexojs/hexo-renderer-markdown-it/wiki/Advanced-Configuration#all-options-configuration)查看。
 
-3. 选择 katex 引擎 和 重启 Hexo 服务器的步骤同上。
+  3. 选择 katex 引擎 和 重启 Hexo 服务器的步骤同上。
 
 ### 相关插件
 
@@ -643,15 +743,15 @@ Stun 主题默认提供了一些 MathJax 和 Katex 的插件。
 
 - mhchem <Badge text="Stable"/> <Badge text="v1.1.2"/>
 
-mhchem 是 MathJax 的插件，你可以使用这个插件来渲染化学方程式。详情请看：[MathJax/mhchem Manual](https://mhchem.github.io/MathJax-mhchem/)。
+  mhchem 是 MathJax 的插件，你可以使用这个插件来渲染化学方程式。详情请看：[MathJax/mhchem Manual](https://mhchem.github.io/MathJax-mhchem/)。
 
 - Copy-tex <Badge text="Stable"/> <Badge text="v1.1.2"/>
 
-Copy-tex 是 KaTex 的插件，当启用这个插件之后，你只需要单击公式即可复制其源码。详情请看：[Copy-tex extension](https://github.com/KaTeX/KaTeX/tree/master/contrib/copy-tex)。
+  Copy-tex 是 KaTex 的插件，当启用这个插件之后，你只需要单击公式即可复制其源码。详情请看：[Copy-tex extension](https://github.com/KaTeX/KaTeX/tree/master/contrib/copy-tex)。
 
-效果如下：
+  效果如下：
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190720153859.gif)
+  ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190720153859.gif)
 
 ### 如何使用
 
@@ -667,7 +767,7 @@ Copy-tex 是 KaTex 的插件，当启用这个插件之后，你只需要单击�
 
 首先登录谷歌广告[官网](https://www.google.com/adsense)，选择添加广告，在给你的一段代码中找到 `client_id`，通常以 `ca-pub-` 开头。然后修改主题配置文件：
 
-```yaml
+``` yaml
 google_adsense:
   # 是否启用
   enable: false
@@ -684,7 +784,7 @@ google_adsense:
 
 修改主题配置文件：
 
-```yaml
+``` yaml
 canvas_ribbon:
   # 是否启用
   enable: false
@@ -704,7 +804,7 @@ canvas_ribbon:
 
 修改主题配置文件：
 
-```yaml
+``` yaml
 canvas_nest:
   # 是否启用
   enable: false

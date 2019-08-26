@@ -12,7 +12,7 @@ mixin multiMenu(menu)
           if !theme.menu_settings.text_only && !!menuIcon
             i(class=`fa fa-${menuIcon}`)
           if !theme.menu_settings.icon_only
-            != _p(`nav.${name}`)
+            != _p(`menu.${name}`)
         if isSubMenu
           div.header-nav-submenu
             +multiMenu(theme.submenu[name])

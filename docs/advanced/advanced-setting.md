@@ -1,4 +1,4 @@
-# Theme config
+# Advanced setting
 
 **There is currently no English document, I will finish it as soon as possible. You can refer to the Chinese document first.**
 

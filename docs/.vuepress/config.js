@@ -49,14 +49,23 @@ module.exports = {
         nav: [
           {
             text: 'Guide',
-            link: '/guide/',
+            items: [
+              {
+                text: 'Quick start',
+                link: '/guide/quick-start',
+              },
+              {
+                text: 'Primary setting',
+                link: '/guide/primary-setting',
+              },
+            ],
           },
           {
             text: 'Advanced',
             items: [
               {
-                text: 'Theme Config',
-                link: '/advanced/theme-config',
+                text: 'Advanced setting',
+                link: '/advanced/advanced-setting',
               },
               {
                 text: 'Third part',
@@ -91,14 +100,23 @@ module.exports = {
         nav: [
           {
             text: '指南',
-            link: '/zh-CN/guide/',
+            items: [
+              {
+                text: '快速开始',
+                link: '/zh-CN/guide/quick-start',
+              },
+              {
+                text: '新手上路',
+                link: '/zh-CN/guide/primary-setting',
+              },
+            ],
           },
           {
             text: '高级设置',
             items: [
               {
-                text: '主题配置',
-                link: '/zh-CN/advanced/theme-config',
+                text: '新手进阶',
+                link: '/zh-CN/advanced/advanced-setting',
               },
               {
                 text: '第三方支持',
@@ -126,8 +144,9 @@ function getEnSidebar(title) {
       title,
       collapsable: false,
       children: [
-        '/guide/',
-        '/advanced/theme-config',
+        '/guide/quick-start',
+        '/guide/primary-setting',
+        '/advanced/advanced-setting',
         '/advanced/third-part',
         '/advanced/assist',
         '/advanced/optimize',
@@ -142,8 +161,9 @@ function getZhSidebar(title) {
       title,
       collapsable: false,
       children: [
-        '/zh-CN/guide/',
-        '/zh-CN/advanced/theme-config',
+        '/zh-CN/guide/quick-start',
+        '/zh-CN/guide/primary-setting',
+        '/zh-CN/advanced/advanced-setting',
         '/zh-CN/advanced/third-part',
         '/zh-CN/advanced/assist',
         '/zh-CN/advanced/optimize',

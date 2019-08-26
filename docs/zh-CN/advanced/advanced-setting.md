@@ -1,20 +1,4 @@
-# 主题配置
-
-::: tip 前言
-
-- 修改配置文件、安装新的依赖等，都需要重启 hexo 服务器。
-- 没有特别说明，配置项默认从 `v1.0.0` 版本开始支持。
-- 稳定的配置使用 <Badge text="Stable"/> 标明，表示基本不会变动。不稳定的配置使用 <Badge text="Beta" type="warn"/> 标明，表示未来可能会变动甚至删除。目前还不支持的配置使用 <Badge text="Not Support" type="error"/> 标明。被废弃的配置使用 <Badge text="Deprecated" type="error"/> 标明。最早开始支持的版本号使用 <Badge text="v x.x.x"/> 标明。与主题无关的配置项使用 <Badge text="Disrelated" type="warning"/> 标明。
-:::
-
-## 配置文件
-
-首先，你需要分清下面这两个配置文件的作用：
-
-- Hexo 根目录下的 `_config.yml`。这是站点配置文件，里面的配置作用于整个网站。
-- Stun 根目录下的 `_config.yml`。这是主题配置文件，里面的配置只对当前主题生效。
-
-至于配置的时候，需要修改哪一个配置文件，文档里会指出。
+# 新手进阶
 
 ## 平滑升级 <Badge text="Stable"/>
 
@@ -36,95 +20,11 @@ Stun 主题利用该功能实现了平滑升级的特性，使用步骤如下：
 
 修改 Hexo 根目录下的 `_config.yml` 文件：
 
-```yaml
+``` yaml
 language: zh-CN # 可选值 zh-CN 或 en-US
 ```
 
 语言文件在主题文件夹的 `languages` 目录下。Stun 主题默认有 `zh-CN.yml` 和 `en.yml` 两种语言文件，如果需要支持其他语言，请自行编写语言文件。语言文件的命名请参考：[https://github.com/theme-next/hexo-theme-next/tree/master/languages](https://github.com/theme-next/hexo-theme-next/tree/master/languages)
-
-## 添加新页面 <Badge text="Stable"/>
-
-Stun 主题内置了三种页面：分类页、标签页、关于页。想启用这些页面，需要按照如下步骤操作：
-
-1. 在 Hexo 根目录下执行命令
-
-``` bash
-# 启用分类页，执行这条指令
-$ hexo new page categories
-
-# 启用标签页，执行这条指令
-$ hexo new page tags
-
-# 启用关于页，执行这条指令
-$ hexo new page about
-```
-
-2. 然后修改主题配置文件，将对应的项取消注释
-
-``` yaml
-menu:
-  home: / || home
-  archives: /archives/ || folder-open
-  # categories: /categories/ || th
-  # tags: /tags/ || tags
-  # about: /about/ || user
-  # xxx: /xxx/ || xxx
-```
-
-除了使用上述三种内置页面外，如果你想使用自定义页面，需要执行如下步骤：
-
-以添加**阅读**页面为例。
-
-1. 修改主题配置文件，添加相应的菜单项
-
-``` yaml
-menu:
-  # 格式如下
-  # xxx: 路径 || 图标名称
-  reading: /reading/ || book
-```
-
-> 图标的名称在这里获取：[https://fontawesome.com/v4.7.0/icons/](https://fontawesome.com/v4.7.0/icons/)。
->
-> 如果只添加路径，没有添加图标名称，会使用默认图标进行显示。
-
-2. 创建页面文件
-
-在 Hexo 根目录下执行指令：
-
-``` bash
-$ hexo new page reading
-```
-
-3. 国际化设置
-
-找到 `languages` 目录下的语言文件进行修改：
-
-`zh-CN.yml`：
-
-```yaml
-nav:
-  reading: 阅读
-```
-
-`en.yml`：
-
-```yaml
-nav:
-  reading: Reading
-```
-
-这样就完成了自定义页面的添加。
-
-另外，你可以通过修改主题配置文件里的 `menu_settings` 字段，来设置图标和文字是否显示：
-
-```yaml
-menu_settings:
-  # 是否只显示图标
-  icon_only: false
-  # 是否只显示文字
-  text_only: false
-```
 
 ## Front-Matter
 
@@ -138,7 +38,7 @@ menu_settings:
 
 例如：
 
-```yaml
+``` yaml
 title: Hello Stun
 date: 2019-5-15 22:54:49
 updated: 2019-5-16 10:23:46
@@ -154,54 +54,54 @@ Hexo 会帮你记录文件的更新日期，所以一般不需要手动指定 `u
 
 - `comments` <Badge text="Stable"/> - 是否开启评论功能
 
-在 Stun 主题中，如果你启用了某个评论系统，默认是对所有通过 markdown 文件生成的页面（除首页，归档页，单个分类页，单个标签页以外的所有页面）生效。因此，你可以使用该属性单独设置某个页面 / 文章是否启用评论。
+  在 Stun 主题中，如果你启用了某个评论系统，默认是对所有通过 markdown 文件生成的页面（除首页，归档页，单个分类页，单个标签页以外的所有页面）生效。因此，你可以使用该属性单独设置某个页面 / 文章是否启用评论。
 
 - `permalink` <Badge text="Stable"/> - 覆盖文章网址
 
-使用该属性可以为某篇文章单独指定一个网址。
+  以为某篇文章单独指定一个网址。
 
 - `categories` <Badge text="Stable"/> - 设置文章分类
 
-你可以同时设置几个同级分类，例如：
+  你可以同时设置几个同级分类，例如：
 
-```yaml
-categories:
-  - foo
-  - bar
-  - baz
-```
+  ``` yaml
+  categories:
+    - foo
+    - bar
+    - baz
+  ```
 
-也可以设置层级分类，例如：
+  也可以设置层级分类，例如：
 
-```yaml
-categories:
-  - [foo, bar, baz]
-```
+  ``` yaml
+  categories:
+    - [foo, bar, baz]
+  ```
 
 - `tags` <Badge text="Stable"/> - 设置文章标签
 
-标签**只能设置为同级的**。也就是说，如果你将标签设置为：
+  标签**只能设置为同级的**。也就是说，如果你将标签设置为：
 
-```yaml
-tags:
-  - [foo, bar, baz]
-```
+  ``` yaml
+  tags:
+    - [foo, bar, baz]
+  ```
 
-那么它会被解析为 `foo,bar,baz`，也就是一个标签。
+  那么它会被解析为 `foo,bar,baz`，也就是一个标签。
 
 - `layout` <Badge text="Stable"/> - 是否处理 markdown 源文件
 
-如果你不想你的文章或页面被处理，可以将 `Front-Matter` 中的 `layout` 设为 `false`。例如：
+  如果你不想你的文章或页面被处理，可以将 `Front-Matter` 中的 `layout` 设为 `false`。例如：
 
-设置了 `layout: false`：
+  设置了 `layout: false`：
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190820175118.png)
+  ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190820175118.png)
 
-> 可以看到，设置了 `layout: false` 后，不对 markdown 文件做任何处理，直接将文件的原始内容显示出来。
+  > 可以看到，设置了 `layout: false` 后，不对 markdown 文件做任何处理，直接将文件的原始内容显示出来。
 
-没有设置 `layout: false` 的默认情况下或设置了 `layout: true`：
+  没有设置 `layout: false` 的默认情况下或设置了 `layout: true`：
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190820175119.png)
+  ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190820175119.png)
 
 ---
 
@@ -209,46 +109,46 @@ tags:
 
 - `link` <Badge text="Stable"/> <Badge text="v1.1.3"/> - 链接
 
-如果指定该属性，当点击该文章标题时，应该在新窗口或新的标签页中，打开所指定的链接地址。
+  如果指定该属性，当点击该文章标题时，应该在新窗口或新的标签页中，打开所指定的链接地址。
 
 - `photos` <Badge text="Stable"/> <Badge text="v1.1.4"/> - 图片
 
-用于指定一些图片，这些图片会显示在文章中，Stun 主题将其显示在文章最顶部。使用如下：
+  用于指定一些图片，这些图片会显示在文章中，Stun 主题将其显示在文章最顶部。使用如下：
 
-```yaml
-photos:
-  - http://xxxxx1.jpg
-  - http://xxxxx2.jpg
-  - http://xxxxx3.jpg
-```
+  ``` yaml
+  photos:
+    - http://xxxxx1.jpg
+    - http://xxxxx2.jpg
+    - http://xxxxx3.jpg
+  ```
 
-默认情况下，这些图片会按照文档流的方式显示，效果如下：
+  默认情况下，这些图片会按照文档流的方式显示，效果如下：
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190724170139.png)
+  ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190724170139.png)
 
-为了优化这些图片的显示效果，Stun 主题提供了**瀑布流布局** <Badge text="Stable"/> <Badge text="v1.1.4"/>，如果想启用这一布局，你需要修改主题配置文件：
+  为了优化这些图片的显示效果，Stun 主题提供了**瀑布流布局** <Badge text="Stable"/> <Badge text="v1.1.4"/>，如果想启用这一布局，你需要修改主题配置文件：
 
-```yaml
-gallery_waterfall:
-  # 是否启用
-  enable: false
-  # 瀑布流中每一列的宽度
-  col_width: 220px
-  # 图片之间的水平间隙
-  gap_x: 10px
-  # 图片之间的垂直间隙
-  gap_y: 10px
-```
+  ``` yaml
+  gallery_waterfall:
+    # 是否启用
+    enable: false
+    # 瀑布流中每一列的宽度
+    col_width: 220px
+    # 图片之间的水平间隙
+    gap_x: 10px
+    # 图片之间的垂直间隙
+    gap_y: 10px
+  ```
 
-效果如下：
+  效果如下：
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190724170138.png)
+  ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190724170138.png)
 
-::: tip
+  ::: tip
 
-- 启用瀑布流效果后，还可以再启用 [fancybox 效果](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/assist.html#fancybox)。
-- 通常利用 `photos` 这个属性，来建立一个**相册页面**或**专门展示图片的文章**。例如：[https://liuyib.github.io/gallery/](https://liuyib.github.io/gallery/)
-:::
+  - 启用瀑布流效果后，还可以再启用 [fancybox 效果](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/assist.html#fancybox)。
+  - 通常利用 `photos` 这个属性，来建立一个**相册页面**或**专门展示图片的文章**。例如：[https://liuyib.github.io/gallery/](https://liuyib.github.io/gallery/)
+  :::
 
 ---
 
@@ -258,31 +158,31 @@ gallery_waterfall:
 
 - `top_image: https://xxxx.jpg` <Badge text="Stable"/>
 
-用于设置文章顶部的大图。详情：[指定顶部图](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/theme-config.html#指定顶部图)
+  用于设置文章顶部的大图。详情：[指定顶部图](https://liuyib.github.io/hexo-theme-stun/zh-CN/guide/primary-setting.html#指定顶部图)
 
 - `toc_max_depth: 6` <Badge text="Stable"/>
 
-用于设置文章中，解析标题生成目录的最大深度。取值 `1 ~ 6`。例如：`toc_max_depth: 3`，只会解析文中的 `h1`, `h2`, `h3` 来生成目录。详情：[文章目录](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/theme-config.html#文章目录)
+  用于设置文章中，解析标题生成目录的最大深度。取值 `1 ~ 6`。例如：`toc_max_depth: 3`，只会解析文中的 `h1`, `h2`, `h3` 来生成目录。详情：[文章目录](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/advanced-setting.html#文章目录)
 
 - `quicklink: true` <Badge text="Stable"/> <Badge text="v1.2.3"/>
 
-是否在浏览器空闲时间预取可视区内的链接，以加快后续页面的加载速度。详情：[](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/theme-config.html#)
+  是否在浏览器空闲时间预取可视区内的链接，以加快后续页面的加载速度。详情：[启用 Quicklink](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/third-part.html#启用-quicklink)
 
 - `math: true` <Badge text="Stable"/> <Badge text="v1.1.2"/>
 
-是否需要解析数学公式。详情：[数学公式](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/third-part.html#数学公式)
+  是否需要解析数学公式。详情：[数学公式](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/third-part.html#数学公式)
 
 - `toc: true` <Badge text="Stable"/> <Badge text="v1.2.0"/>
 
-文章是否启用目录。会覆盖主题配置文件中的全局设置。详情：[文章目录](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/theme-config.html#%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95)
+  文章是否启用目录。会覆盖主题配置文件中的全局设置。详情：[文章目录](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/advanced-setting.html#文章目录)
 
 - `reward: true` <Badge text="Stable"/> <Badge text="v1.2.0"/>
 
-文章是否启用打赏功能。会覆盖主题配置文件中的全局设置。详情：[赞赏码](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/theme-config.html#%E8%B5%9E%E8%B5%8F%E7%A0%81)
+  文章是否启用打赏功能。会覆盖主题配置文件中的全局设置。详情：[启用赞赏码](https://liuyib.github.io/hexo-theme-stun/zh-CN/guide/primary-setting.html#启用赞赏码)
 
 - `copyright: true` <Badge text="Stable"/> <Badge text="v1.2.0"/>
 
-文章是否启用版权信息。会覆盖主题配置文件中的全局设置。详情：[知识共享许可协议（cc）](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/theme-config.html#%E7%9F%A5%E8%AF%86%E5%85%B1%E4%BA%AB%E8%AE%B8%E5%8F%AF%E5%8D%8F%E8%AE%AE%EF%BC%88cc%EF%BC%89)
+  文章是否启用版权信息。会覆盖主题配置文件中的全局设置。详情：[知识共享许可协议（cc）](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/advanced-setting.html#知识共享许可协议（cc）)
 
 ---
 
@@ -292,70 +192,82 @@ gallery_waterfall:
 
 - `top: true` <Badge text="Stable"/>
 
-文章是否置顶。详情：[文章置顶](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/theme-config.html#文章置顶)
+  文章是否置顶。详情：[文章置顶](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/advanced-setting.html#文章置顶)
 
 - `no-emoji: true` <Badge text="Disrelated" type="warning"/>
 
-是否解析文章中的 emoji 代码。详情：[添加-emoji-支持](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/third-part.html#%E6%B7%BB%E5%8A%A0-emoji-%E6%94%AF%E6%8C%81)
+  是否解析文章中的 emoji 代码。详情：[添加-emoji-支持](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/third-part.html#添加-emoji-支持)
 
-## Favicon <Badge text="Stable"/>
+## 二级导航栏菜单 <Badge text="Stable"/> <Badge text="v1.2.4"/>
 
-设置网站图标（favicon），修改主题配置文件：
+如果想要使用二级导航栏菜单，你需要修改主题配置文件：
 
-```yaml
-favicon:
-  small: /images/icons/favicon-16x16.png
-  medium: /images/icons/favicon-32x32.png
-  # ！！如果你不懂，请忽略下面这些！！
-  # apple_touch_icon: /images/icons/apple-touch-icon.png
-  # safari_pinned_tab: /images/icons/logo-stun.svg
-  # msapplication: /images/icons/favicon-144x144.png
+1. 修改 `menu` 字段
+
+``` yaml
+menu:
+  # 格式如下
+  # 名称: javascript:; || 图标
+  xxx: javascript:; || xxx
 ```
 
-## 网站顶部栏信息 <Badge text="Stable"/>
+注意！在 `||` 符号之前，你必须使用 `javascript:;` 作为占位符。
 
-修改主题配置文件：
+2. 修改 `submenu` 字段
 
-```yaml
-header:
-  # 网站顶部的高度（设置为百分数，表示所占屏幕高度的百分比。支持所有 CSS 长度单位）
-  height: 80%
-  # 顶部导航栏的高度（支持所有 CSS 长度单位）
-  nav_height: 50px
-  # 顶部背景图片
-  bg_image:
-    # 是否启用
-    enable: false
-    # 填写图片路径或链接
-    url: https://xxxxx.png
-  # 顶部背景图的遮罩效果
-  mask:
-    enable: false
-    # 透明度（取值：0 ~ 1）
-    opacity: 0.5
+``` yaml
+submenu:
+  xxx: # 这里的 xxx 与上述名称对应
+    xx1: /xx1/ || xx1 # 这里是子项，填写的值是：路径 || 图标
+    xx2: /xx2/ || xx2 # 这里是子项，填写的值是：路径 || 图标
 ```
 
-::: warning 注意
-其中 `mask` 选项，即遮罩效果，从 `v1.1.1` 版本开始支持。`blur_effect` 选项，即模糊滤镜效果，从 `v1.1.1` 版本开始弃用。
-:::
+3. 国际化设置
 
-## 指定顶部图 <Badge text="Stable"/>
+找到 `languages` 目录下的语言文件，选择你网站使用的那种语言进行修改，这里以中文作为举例：
 
-如果想要为某个页面或某篇文章单独指定顶部图，你只需要在页面或文章 markdown 源文件的 [Front-Matter](https://hexo.io/zh-cn/docs/Front-Matter) 中，添加 `top_image` 项，然后填入的图片 url 或路径即可。例如：
+`zh-CN.yml`：
 
-```yaml
----
-title: Hello Stun
-date: 2019-05-15 22:54:49
-top_image: https://xxxxx.jpg
----
+``` yaml
+xxx: 这是xxx对应的中文
+xx1: 这是xx1对应的中文
+xx2: 这是xx2对应的中文
 ```
+
+举例：
+
+1. 修改主题配置文件
+
+``` yaml
+menu:
+  friends: javascript:; || users
+
+submenu:
+  friends:
+    aaa: /aaa/ || male
+    bbb: /bbb/ || female
+```
+
+2. 国际化设置
+
+`zh-CN.yml`：
+
+``` yaml
+menu:
+  friends: 朋友
+  aaa: 小 A
+  bbb: 小 B
+```
+
+效果如下：
+
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190826161817.png)
 
 ## 知识共享许可协议（cc）<Badge text="Stable"/>
 
 修改主题配置文件：
 
-```yaml
+``` yaml
 creative_commons:
   # 是否启用
   enable: true
@@ -366,7 +278,7 @@ creative_commons:
   sidebar: true
   # 是否在文章底部显示
   post: true
-  # 设置许可协议的显示语言，默认值：en（当用户查看许可协议时，会以你设置的语言进行显示）
+  # 设置许可协议的显示语言，不设置默认为：en（当用户查看许可协议时，会以你设置的语言进行显示）
   language:
 ```
 
@@ -374,11 +286,11 @@ creative_commons:
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190619210339.png)
 
-## 返回顶部 <Badge text="Stable"/>
+## 返回顶部 <Badge text="Beta" type="warning"/>
 
 修改主题配置文件：
 
-```yaml
+``` yaml
 back2top:
   # 是否启用
   enable: true
@@ -395,11 +307,11 @@ back2top:
     hover_color: '#fc6423'
 ```
 
-## 网站底部栏信息 <Badge text="Stable"/>
+## 网站底部栏 <Badge text="Stable"/>
 
 修改主题配置文件：
 
-```yaml
+``` yaml
 footer:
   # 顶部背景图
   bg_image:
@@ -462,7 +374,7 @@ footer:
 
 修改主题配置文件：
 
-```yaml
+``` yaml
 sidebar:
   # 是否启用
   enable: true
@@ -478,105 +390,11 @@ sidebar:
 该配置项的 `width` 属性在 `v1.2.0` 版本中移除。
 :::
 
-## 侧边栏作者信息 <Badge text="Stable"/>
-
-修改主题配置文件：
-
-```yaml
-author:
-  # 是否启用
-  enable: true
-  # 侧边栏头像
-  avatar:
-    # 填写图片路径或链接
-    url: https://xxxxx.png
-    # 是否显示为圆形
-    rounded: true
-    # 头像透明度（取值：0 ~ 1）
-    opacity: 1
-    # 鼠标 hover 动画，可选值：trun 或 shake
-    animation: trun
-  # 格言（可以是任意一句想写的话）
-  motto: hello world
-```
-
-## 社交链接 <Badge text="Stable"/>
-
-修改主题配置文件：
-
-> 如果不想启用某个社交链接，直接注释掉即可。
-
-```yaml
-# `||` 分隔符前面表示社交链接的链接或信息，后面表示社交链接图标。
-# 图标的名称在这里查找：https://fontawesome.com/v4.7.0/icons/
-# 如果你找不到想要的图标，可以考虑用文字来代替图标显示。
-# 通过添加 `origin:` 前缀即可显示文字。例如：`origin:知` 会以 `知` 代替图标显示。
-social:
-  github: https://github.com/ || github
-  google: https://plus.google.com/ || google
-  # twitter: https://twitter.com/ || twitter
-  # youtube: https://youtube.com/ || youtube
-  # segmentfault: https://segmentfault.com/ || origin:sf
-  # weibo: https://weibo.com/ || weibo
-  # zhihu: https://www.zhihu.com/ || origin:知
-  # wechat: yournumber || weixin
-  # telegram: yournumber || telegram
-  # qq: yournumber || qq
-  # 你可以自行添加这里没有的社交链接，格式如下：
-  # xxx: xxx || (origin:)xxx
-
-# 社交链接的一些设置
-social_setting:
-  # 是否启用
-  enable: true
-  # 是否只显示图标
-  icon_only: true
-```
-
-::: danger <Badge text="Deprecated" type="error"/>
-其中，配置项 `social_setting` 的 `text_align` 属性在 `v1.2.0` 版本中移除。
-:::
-
-当你添加一个默认没有的社交链接时，你需要进行国际化设置。这里以添加链接 `掘金` 为例，步骤如下：
-
-1. 修改主题配置文件
-
-```yaml
-social:
-  juejin: https://juejin.im/timeline || origin:掘
-```
-
-> 由于 Font Awesome 中找不到掘金的 logo，所以这里使用 `掘` 字来代替显示。
-
-2. 国际化设置
-
-修改 `themes/stun/languages` 目录下的文件。
-
-`zh-CN`:
-
-```yaml
-social:
-  juejin: 掘金
-```
-
-`en`:
-
-```yaml
-social:
-  juejin: JueJin
-```
-
-> 这里是对鼠标经过图标时，显示的提示文字进行国际化设置。
-
-效果如下：
-
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190717165333.png)
-
 ## 文章目录 <Badge text="Stable"/>
 
 修改主题配置文件：
 
-```yaml
+``` yaml
 toc:
   # 是否启用
   enable: true
@@ -584,11 +402,11 @@ toc:
   number: true
   # 文本溢出是否换行
   wrap: true
-  # 是否始终展开所有文章目录。true：始终展开，false：当文章中对应的标题到达顶部时自动展开。
+  # 是否始终展开所有文章目录。true：始终展开，false：当文章中对应的标题到达顶部时自动展开
   expand_all: false
-  # 生成目录时，解析 h 标签的最大深度。
+  # 生成目录时，解析 h 标签的最大深度
   # 你可以在文章的 markdown 源文件的 Front-Matter 中，通过添加 `toc_max_depth` 属性，
-  #   来指定某篇文章生成目录时，解析 h 标签的最大深度。
+  #   来指定某篇文章生成目录时，解析 h 标签的最大深度
   max_depth: 6
 ```
 
@@ -598,11 +416,11 @@ toc:
 
 设置邮件订阅和 RSS 订阅，修改主题配置文件：
 
-```yaml
+``` yaml
 feed:
   # 是否启用
   enable: false
-  # 邮件订阅地址 (例如：http://eepurl.com/guAE6j).
+  # 邮件订阅地址 (例如：http://eepurl.com/guAE6j)
   email:
   # RSS 订阅地址 (例如：/atom.xml)
   rss:
@@ -612,7 +430,7 @@ feed:
 
 开启 RSS 订阅之前，你需要安装 hexo 插件：[hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed)。然后在 Hexo 根目录下的 `_config.yml` 文件中添加配置项（关于各个配置项的具体含义，请自行查看插件的文档）：
 
-```yaml
+``` yaml
 feed:
   type: atom
   # 这是 RSS 订阅的地址（可以随意设置，和上面 rss 配置项对应）
@@ -632,7 +450,7 @@ feed:
 
 修改主题配置文件：
 
-```yaml
+``` yaml
 reading_progress:
   # 是否启用
   enable: true
@@ -646,11 +464,11 @@ reading_progress:
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190619211446.png)
 
-## 文章顶部信息 <Badge text="Stable"/>
+## 文章头部信息 <Badge text="Stable"/>
 
 修改主题配置文件：
 
-```yaml
+``` yaml
 post_meta:
   # 是否只显示图标
   icon_only: false
@@ -668,7 +486,7 @@ post_meta:
     icon: calendar-check-o
   # 文章预计的阅读时间
   # 启用这个功能之前，你首先需要在 Hexo 根目录安装依赖：
-  # `npm install hexo-wordcount --save`，然后重启 hexo 服务器。
+  # `npm install hexo-wordcount --save`，然后重启 hexo 服务器
   reading_time:
     # 是否启用
     enable: false
@@ -682,7 +500,7 @@ post_meta:
       en: 80
   # 文章字数统计
   # 启用这个功能之前，你首先需要在 Hexo 根目录安装依赖：
-  # `npm install hexo-wordcount --save`，然后重启 hexo 服务器。
+  # `npm install hexo-wordcount --save`，然后重启 hexo 服务器
   word_count:
     # 是否启用
     enable: false
@@ -700,7 +518,7 @@ post_meta:
 
 如果你想设置首页 或 归档页的文章列表是否分页，可以修改主题配置文件：
 
-```yaml
+``` yaml
 post_list:
   # 是否分页
   paginate:
@@ -724,7 +542,7 @@ post_list:
 
 如果你为一篇文章单独设置了顶部图，并且想使用这个顶部图作为文章列表的封面图片来显示，可以修改主题配置文件：
 
-```yaml
+``` yaml
 post_list:
   # 文章列表里的文章的封面图片
   cover_image:
@@ -743,7 +561,7 @@ post_list:
 
 在文章末尾显示文章的所有标签，修改主题配置文件：
 
-```yaml
+``` yaml
 post_widget:
   # 是否在文章末尾显示文章标签
   tags: true
@@ -761,7 +579,7 @@ post_widget:
 
 在文章末尾自动添加文章结束的提示信息，修改主题配置文件：
 
-```yaml
+``` yaml
 post_widget:
   # 在文章底部显示 “本文结束” 的提示信息
   end_text:
@@ -773,27 +591,11 @@ post_widget:
 
 效果如下：![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190619210335.png)
 
-## 文章摘要 <Badge text="Stable"/>
-
-如果想要保留文章摘要，需要**手动**在文章的 markdown 源文件中添加 `<!-- more -->` 标记。标记之前的部分都会被保留为文章摘要，显示在文章列表中。
-
-如果想要自动保留文章摘要，可以通过修改主题配置文件：
-
-```yaml
-auto_excerpt:
-  # 是否启用
-  enable: false
-  # 自动保留的字数
-  length: 150
-```
-
-> 由于自动保留摘要的效果并不理想，所以这里不建议开启。
-
 ## 文章置顶 <Badge text="Stable"/>
 
 想要使用文章置顶功能，首先你需要安装 hexo 插件 [hexo-generator-index-pin-top](https://github.com/netcan/hexo-generator-index-pin-top)，然后执行命令：
 
-```bash
+``` bash
 $ npm uninstall hexo-generator-index --save
 $ npm install hexo-generator-index-pin-top --save
 ```
@@ -802,7 +604,7 @@ $ npm install hexo-generator-index-pin-top --save
 
 设置文章置顶后，在文章列表中可以看到表示置顶的图标。你可以对图标进行设置，修改主题配置文件：
 
-```yaml
+``` yaml
 stick_top:
   # 图标的位置（可选值为：left 和 right）
   position: right
@@ -823,7 +625,7 @@ stick_top:
 
 设置代码高亮以及高亮样式，修改主题配置文件：
 
-```yaml
+``` yaml
 highlight_theme: light
 ```
 
@@ -831,21 +633,21 @@ highlight_theme: light
 
 - `highlight_theme: light`
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608175153.png)
+  ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608175153.png)
 
 - `highlight_theme: dark`
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608175155.png)
+  ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608175155.png)
 
 - `highlight_theme: ocean`
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608175154.png)
+  ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608175154.png)
 
 ## 代码溢出换行 <Badge text="Stable"/>
 
 修改主题配置文件：
 
-```yaml
+``` yaml
 code_word_wrap: false
 ```
 
@@ -853,17 +655,17 @@ code_word_wrap: false
 
 - 代码溢出换行
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608214540.png)
+  ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608214540.png)
 
 - 代码溢出不换行
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608214539.png)
+  ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608214539.png)
 
 ## 图片水平对齐方式 <Badge text="Stable"/>
 
 设置文章中图片的水平对齐方式，修改主题配置文件：
 
-```yaml
+``` yaml
 img_horizonal_align:
 ```
 
@@ -875,19 +677,19 @@ img_horizonal_align:
 
 - 设为默认值，即 `img_horizonal_align:` 设为空。
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608220937.png)
+  ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608220937.png)
 
 - `img_horizonal_align: left`
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608215836.png)
+  ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608215836.png)
 
 - `img_horizonal_align: center`
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608215837.png)
+  ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608215837.png)
 
 - `img_horizonal_align: right`
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608215838.png)
+  ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608215838.png)
 
 ## 文字与图片的垂直对齐方式
 
@@ -895,30 +697,11 @@ img_horizonal_align:
 该配置项，即 `text_vertical_align_with_img` 在 `v1.2.0` 版本中移除。
 :::
 
-## 赞赏码 <Badge text="Stable"/>
-
-设置文章的赞赏码，修改主题配置文件：
-
-```yaml
-# Reward
-reward:
-  # 是否启用
-  enable: false
-  # 支付宝
-  alipay: https://xxxxx.png
-  # 微信
-  wechat: https://xxxxx.png
-```
-
-效果如下：
-
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608175556.png)
-
 ## 标签云 <Badge text="Stable"/>
 
 如果你启用了 `tags` 页面，想要对其进行设置，修改主题配置文件：
 
-```yaml
+``` yaml
 tag_cloud:
   # 请使用引号包裹颜色值（只支持十六进制的颜色值）
   start_color: '#a4d8fa'
@@ -940,7 +723,7 @@ tag_cloud:
 2. 使用 hexo 提供的语法 `{% https://xxxxx.png width height %}`，填入宽、高即可设置大小。
 3. stun 主题提供了一个便捷的方法来指定图片大小，你只需要在图片路径后面添加 `?size=宽度x高度` <Badge text="Stable"/> 后缀即可。例如：
 
-```markdown
+``` markdown
 ![](https://xxxxx.png?size=200x100)
 ```
 
@@ -956,7 +739,7 @@ tag_cloud:
 
 你可以通过修改主题配置文件，来设置 Icon 以及是否启用这一功能：
 
-```yaml
+``` yaml
 external_link:
   icon:
     # 是否启用
@@ -972,7 +755,7 @@ external_link:
 
 如果想要使用 fancybox 功能，只需要修改主题配置文件即可：
 
-```yaml
+``` yaml
 fancybox: true
 ```
 
@@ -986,7 +769,7 @@ fancybox: true
 
 从 `v1.2.0` 版本开始，Stun 主题开始支持图片点击放大的效果（无第三方依赖）。你可以配置该功能，修改主题配置文件：
 
-```yaml
+``` yaml
 zoom_image:
   # 是否启用
   enable: true
@@ -1002,7 +785,7 @@ zoom_image:
 
 从 `v1.2.0` 版本开始，Stun 主题开始支持图片懒加载，但是**该功能只对文章页面起作用**。你可以配置该功能，修改主题配置文件：
 
-```yaml
+``` yaml
 lazyload:
   # 是否启用
   enable: true
@@ -1014,8 +797,8 @@ lazyload:
 
 - `gif`
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190801204631.png)
+  ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190801204631.png)
 
 - `block`
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190801204629.png)
+  ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190801204629.png)
