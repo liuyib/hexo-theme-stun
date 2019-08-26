@@ -60,21 +60,21 @@ aside#sidebar
                 span= _p("sidebar.subscribe")
       
       if theme.menu
-        - var menuArchives   = _.trim(_.get(theme.menu.archives.split("||"), "[0]"))
-        - var menuCategories = _.trim(_.get(theme.menu.categories.split("||"), "[0]"))
-        - var menuTags       = _.trim(_.get(theme.menu.tags.split("||"), "[0]"))
         div.sidebar-state
           if theme.menu.archives
+            - var menuArchives = _.trim(_.get(theme.menu.archives.split("||"), "[0]"))
             span.sidebar-state-item.sidebar-state-posts
               a(href=menuArchives)
                 div.sidebar-state-item-count= site.posts.length
                 div.sidebar-state-item-name= _p("sidebar.archives")
           if theme.menu.categories
+            - var menuCategories = _.trim(_.get(theme.menu.categories.split("||"), "[0]"))
             span.sidebar-state-item.sidebar-state-categories
               a(href=menuCategories)
                 div.sidebar-state-item-count= site.categories.length
                 div.sidebar-state-item-name= _p("sidebar.categories")
           if theme.menu.tags
+            - var menuTags = _.trim(_.get(theme.menu.tags.split("||"), "[0]"))
             span.sidebar-state-item.sidebar-state-tags
               a(href=menuTags)
                 div.sidebar-state-item-count= site.tags.length

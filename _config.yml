@@ -65,7 +65,7 @@ header:
     url:
   # Mask effect of the top background image.
   mask:
-    enable: false
+    enable: true
     # Opacity of mask (value: 0 ~ 1).
     opacity: 0.5
 
@@ -662,8 +662,8 @@ tag_cloud:
   start_color: '#a4d8fa'
   end_color: '#49b1f5'
   # Size for tag.
-  min_size: 24
-  max_size: 34
+  min_size: 20
+  max_size: 30
   # Maximum number of tags displayed. Change it if you have more than 200 tags.
   max_amount: 200
 

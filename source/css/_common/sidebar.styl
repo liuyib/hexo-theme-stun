@@ -183,11 +183,18 @@ $avatar-animation = 'avatar-' + convert(hexo-config('author.avatar.animation') |
     &-email > a
       color: $sidebar-feed-email-color
 
+      &:hover
+        color: darken($sidebar-feed-email-color, 20%)
+
     &-rss > a
       color: $sidebar-feed-rss-color
 
+      &:hover
+        color: darken($sidebar-feed-rss-color, 20%)
+
   .sidebar-state
     padding: .5rem 0
+    text-align: center
 
     &-item
       display: inline-block
@@ -198,21 +205,33 @@ $avatar-animation = 'avatar-' + convert(hexo-config('author.avatar.animation') |
 
       &:last-child
         margin: 0
-        border: 0
+        border-width: 0
         padding: 0
 
       &-count
         font-weight: $font-weight-bold
         color: $black-dark
 
+      a
+        display: block
+
     &-posts > a
       color: $sidebar-state-post-color
+
+      &:hover
+        color: darken($sidebar-state-post-color, 30%)
 
     &-categories > a
       color: $sidebar-state-category-color
 
+      &:hover
+        color: darken($sidebar-state-category-color, 30%)
+
     &-tags > a
       color: $sidebar-state-tag-color
+
+      &:hover
+        color: darken($sidebar-state-tag-color, 30%)
 
   .sidebar-cc
     padding-top: .5rem
