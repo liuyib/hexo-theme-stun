@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.2.5 (2019-08-26)
+
+### Bug Fixes
+
+* **v1.2.4, v1.2.3:** Solve that can't start when update to v1.2.3/4 ([08bbc5a](https://github.com/liuyib/hexo-theme-stun/commit/08bbc5a))
+
 ### 1.2.4 (2019-08-25)
 
 ### Features
