@@ -2,15 +2,13 @@
   color: $selection-color
   background: $selection-bg
 
-:root
-  box-sizing: border-box
-
 *,
 *::before,
 *::after
   box-sizing: inherit
 
 html
+  box-sizing: border-box
   font-size: $font-size-rem
   line-height: 100%
 
@@ -27,8 +25,7 @@ a
   border-bottom: 1px solid $link-bottom-color
   text-decoration: none
   color: $link-color
-  outline: none
-  transition: .2s all ease
+  transition: .2s color ease, .2s border-bottom ease
   cursor: pointer
 
   &:hover

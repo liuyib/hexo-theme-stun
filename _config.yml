@@ -91,8 +91,6 @@ back2top:
     # Icon name in FontAwesome, see: https://fontawesome.com/v4.7.0/icons/
     # `rocket` is recommended.
     name: rocket
-    # Animation of rocket launch.
-    animation: true
     # Rotation Angle of icon.
     rotate: -45deg
     # Please use quote to wrap value (All CSS size units are supported).
@@ -126,7 +124,7 @@ footer:
     # `heart` is recommended with animation in red (#ff0000).
     name: heart
     # Heart beat animation.
-    animation: true
+    animation: false
     # Please use quote to wrap value (All CSS size units are supported).
     color: '#ff0000'
   # Hexo link (Powered by Hexo).
@@ -215,7 +213,7 @@ toc:
   # Maximum heading depth of generated toc. You can set it in the
   #   post through `toc_max_depth` in Front-matter.
   # e.g. value: 3, will use h1~3 to generated toc.
-  max_depth: 6
+  max_depth: 4
 
 # Subscribe of email and rss.
 feed:
@@ -685,7 +683,9 @@ cdn:
   # See: https://fontawesome.com/
   # Example:
   # fontawesome: //cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css
+  # fontawesome: //cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.2/css/all.min.css
   # fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
+  # fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css
   fontawesome:
 
   # Using version: 3.4.1
@@ -782,7 +782,7 @@ cdn:
   # lazyload: //cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.min.js
   lazyload:
 
-  # # Using version: latest
+  # Using version: latest
   # See: https://github.com/GoogleChromeLabs/quicklink/
   # Example:
   # quicklink: //cdn.jsdelivr.net/npm/quicklink@latest/dist/quicklink.umd.js

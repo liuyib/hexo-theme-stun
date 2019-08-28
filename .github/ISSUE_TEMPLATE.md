@@ -35,11 +35,10 @@ Please don`t open an issue that is not related to the theme, otherwise, it will 
 
 
 ## Actual behaviour <!-- 实际行为 -->
-
-
-
 <!-- Please give me the screenshots to locate the issue -->
 <!-- 请尽量提供截图来定位问题 -->
+
+
 
 ## Steps to reproduce the behaviour <!-- 重现步骤 -->
 

@@ -10,6 +10,7 @@ $sidebar-width = convert(hexo-config('sidebar.width') || '300px')
   width: $sidebar-width
   font-size: $font-sidebar-base
   background-color: $white
+  transform: translateZ(0)
 
   &.sticky
     position: fixed
@@ -241,6 +242,7 @@ $avatar-animation = 'avatar-' + convert(hexo-config('author.avatar.animation') |
       clearImgStyle()
 
 .sidebar-progress
+  overflow: hidden
   margin-top: .5em
   text-align: center
 
@@ -251,6 +253,8 @@ $avatar-animation = 'avatar-' + convert(hexo-config('author.avatar.animation') |
       margin: 0 .1em
 
   &-line
-    width: 0
+    width: 100%
     height: convert(hexo-config('reading_progress.height') || '1px')
     background-color: convert(hexo-config('reading_progress.color') || '$blue-light')
+    transition: transform .3s
+    transform: translateX(-100%)

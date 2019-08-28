@@ -66,6 +66,22 @@ Stun.utils = Stun.$u = {
     };
     return throttled;
   },
+  hasMobileUA: function () {
+    var nav = window.navigator;
+    var ua = nav.userAgent;
+    var pa = /iPad|iPhone|Android|Opera Mini|BlackBerry|webOS|UCWEB|Blazer|PSP|IEMobile|Symbian/g;
+
+    return pa.test(ua);
+  },
+  isTablet: function () {
+    return window.screen.width > 767 && window.screen.width < 992 && this.hasMobileUA();
+  },
+  isMobile: function () {
+    return window.screen.width < 767 && this.hasMobileUA();
+  },
+  isDesktop: function () {
+    return !this.isTablet() && !this.isMobile();
+  },
   /**
    * Change the event code to keyCode.
    * @param {String} code Event code
@@ -188,6 +204,7 @@ Stun.utils = Stun.$u = {
       selector: '[data-fancybox]',
       loop: true,
       transitionEffect: 'slide',
+      hash: false,
       buttons: [
         'share',
         'slideShow',
@@ -234,32 +251,6 @@ Stun.utils = Stun.$u = {
       .wrap($wrapper)
       .parent('.external-link')
       .append($icon);
-  },
-  // Back the page to top.
-  back2top: function () {
-    function back2topHandler () {
-      var $top = $('#back-top');
-      var scrollTop = $(window).scrollTop();
-
-      if (scrollTop !== 0) {
-        $top.css('visibility', 'visible');
-      } else {
-        $top.css('visibility', 'hidden');
-      }
-    }
-
-    $(window).on('load', back2topHandler);
-    $(window).on('scroll', back2topHandler);
-
-    $('#back-top').on('click', function () {
-      $('body').velocity('stop').velocity('scroll');
-
-      if (CONFIG.back2top.animation) {
-        $('#back-top')
-          .velocity({ translateY: '-100vh' }, { duration: 500 })
-          .velocity('reverse', { duration: 10 });
-      }
-    });
   },
   // Switch to the prev / next post by shortcuts.
   registerSwitchPost: function () {
@@ -366,6 +357,58 @@ Stun.utils = Stun.$u = {
       });
     }
   },
+  addCopyButtonToCopyright: function () {
+    $('figure.highlight').each(function () {
+      if (!$(this).find('figcaption')[0]) {
+        var CODEBLOCK_CLASS_NAME = 'highlight';
+        var lang = $(this)
+          .attr('class')
+          .split(/\s/)
+          .filter(function (e) { return e !== CODEBLOCK_CLASS_NAME; });
+        var $codeHeader = $(
+          '<figcaption class="custom">' +
+            '<div class="custom-lang">' + lang + '</div>' +
+          '</figcaption>'
+        );
+
+        $codeHeader.insertBefore($(this).children().first());
+      }
+    });
+
+    var $copyIcon = $(
+      '<div class="copy-button" data-popover=' +
+        CONFIG.prompt.copy_button +
+        ' data-popover-pos="up">' +
+        '<i class="fa fa-clipboard"></i>' +
+      '</div>'
+    );
+
+    var COPY_BUTTON_CONTAINER =
+      'figure.highlight figcaption, .post-copyright';
+    // Add a copy button to the selected elements.
+    $(COPY_BUTTON_CONTAINER).append($copyIcon);
+  },
+  registerCopyEvent: function () {
+    $('.copy-button').on('click', function () {
+      var container = null;
+      // Select the container of code block.
+      var codeContainer =
+        $(this).parents('figure.highlight').find('td.code')[0];
+
+      if (codeContainer) {
+        container = codeContainer;
+      } else {
+        // Select the container of text.
+        container = $(this).parent()[0];
+      }
+
+      if (Stun.utils.copyText(container)) {
+        Stun.utils.popAlert('success', CONFIG.prompt.copy_success);
+      } else {
+        Stun.utils.popAlert('error', CONFIG.prompt.copy_error);
+      }
+    });
+  },
   /**
    * Wait for all images to load.
    * @param {String} selector jQuery selector.
@@ -388,21 +431,5 @@ Stun.utils = Stun.$u = {
       imgDefereds.push(dfd);
     });
     $.when.apply(null, imgDefereds).then(callback);
-  },
-  hasMobileUA: function () {
-    var nav = window.navigator;
-    var ua = nav.userAgent;
-    var pa = /iPad|iPhone|Android|Opera Mini|BlackBerry|webOS|UCWEB|Blazer|PSP|IEMobile|Symbian/g;
-
-    return pa.test(ua);
-  },
-  isTablet: function () {
-    return window.screen.width > 767 && window.screen.width < 992 && this.hasMobileUA();
-  },
-  isMobile: function () {
-    return window.screen.width < 767 && this.hasMobileUA();
-  },
-  isDesktop: function () {
-    return !this.isTablet() && !this.isMobile();
   }
 };

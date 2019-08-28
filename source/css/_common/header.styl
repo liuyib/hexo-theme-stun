@@ -8,11 +8,13 @@ else
   height: $header-height
   font-size: $font-header-base
   background-color: $gray-dark
-  background-repeat: no-repeat
-  background-attachment: fixed
-  background-position: center
   background-size: cover
-  transition: height .5s
+
+  if (hexo-config('page.top_image'))
+    background: url(hexo-config('page.top_image') || ' ') no-repeat center center
+
+  if (hexo-config('header.bg_image.enable'))
+    background: url(hexo-config('header.bg_image.url') || ' ') no-repeat center center
 
 if (hexo-config('header.nav_height') && match('%', hexo-config('header.nav_height')))
   $header-nav-height = unit(convert(hexo-config('header.nav_height')), 'vh')
@@ -25,19 +27,17 @@ else
   z-index: $z-index1
   width: 100%
   height: $header-nav-height
-  transition: background-color .3s
-  animation-duration: .3s
-  animation-timing-function: ease
-  animation-fill-mode: both
+  transition: transform .3s, background-color .3s
+  will-change: transform
 
   &.fixed
     background-color: $header-nav-bg-color
 
   &.slider-down
-    animation-name: header-sliderDown
+    transform: translateY(0)
 
   &.slider-up
-    animation-name: header-sliderUp
+    transform: translateY(-100%)
 
 $header-nav-link-color
   color: $header-nav-link-color

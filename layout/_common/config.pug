@@ -18,7 +18,8 @@
   var sidebar = "undefined";
   if (theme.sidebar.enable) {
     sidebar = JSON.stringify({
-      offsetTop: theme.sidebar.offsetTop
+      offsetTop: theme.sidebar.offsetTop,
+      renderTocDepth: theme.toc.max_depth
     });
   }
 
@@ -63,7 +64,7 @@
     copy_success: _p("prompt.copy.success"),
     copy_error: _p("prompt.copy.error"),
     creative_commons: _p("prompt.creative_commons"),
-    copy_code: _p("prompt.copy_code")
+    copy_button: _p("prompt.copy_button")
   });
 
 script.

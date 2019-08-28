@@ -1,13 +1,10 @@
 include ../_mixins/multi-menu.pug
 
-header#header(
-  style=`background-image: url(${
-    page.top_image ? page.top_image :
-      theme.header.bg_image.enable ?
-        theme.header.bg_image.url : " "
-  })`
-)
-  nav.header-nav.slider-up
+header#header
+  div.loading-bar
+    div.progress
+
+  nav.header-nav
     div.header-nav-inner
       div.fa.fa-bars.header-nav-menu-icon
 
