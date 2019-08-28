@@ -85,16 +85,21 @@ $(document).ready(function () {
     headerNavScroll();
   }, 100));
 
-  // Click the heading.
-  $('.content')
-    .find('h1,h2,h3,h4,h5,h6')
-    .on('click', function () {
-      scrollHeadingToTop('#' + $(this).attr('id'));
+  Stun.utils.pjaxReloadScroll = function () {
+    // Click the heading.
+    $('.content')
+      .find('h1,h2,h3,h4,h5,h6')
+      .on('click', function () {
+        scrollHeadingToTop('#' + $(this).attr('id'));
+      });
+  
+    // Click the post toc.
+    $('.toc-link').on('click', function (e) {
+      e.preventDefault();
+      scrollHeadingToTop($(this).attr('href'));
     });
+  };
 
-  // Click the post toc.
-  $('.toc-link').on('click', function (e) {
-    e.preventDefault();
-    scrollHeadingToTop($(this).attr('href'));
-  });
+  // Initializaiton
+  Stun.utils.pjaxReloadScroll();
 });

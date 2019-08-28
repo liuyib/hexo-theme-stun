@@ -20,3 +20,6 @@ html(lang=config.language)
     include ../_third-party/comments/index.pug
     include ../_third-party/math/index.pug
     include ../_third-party/search/index.pug
+
+    if theme.pjax && theme.pjax.enable
+      include ../_third-party/pjax.pug

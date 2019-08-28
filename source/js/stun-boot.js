@@ -6,21 +6,26 @@ $(document).ready(function () {
     Stun.utils.addIconToExternalLink('#footer');
   }
 
-  Stun.utils.addCopyButtonToCopyright();
-  Stun.utils.registerCopyEvent();
-  CONFIG.reward && Stun.utils.registerShowReward();
-  CONFIG.gallery_waterfall && Stun.utils.galleryWaterFall();
-  CONFIG.lazyload && Stun.utils.lazyLoadImages();
+  Stun.utils.pjaxReloadBoot = function () {
+    this.addCopyButtonToCopyright();
+    this.registerCopyEvent();
+    CONFIG.reward && this.registerShowReward();
+    CONFIG.gallery_waterfall && this.galleryWaterFall();
+    CONFIG.lazyload && this.lazyLoadImages();
 
-  if (CONFIG.external_link) {
-    var WRAPPER = '.archive-inner, .post-title';
+    if (CONFIG.external_link) {
+      var WRAPPER = '.archive-inner, .post-title';
 
-    Stun.utils.addIconToExternalLink(WRAPPER);
-  }
+      this.addIconToExternalLink(WRAPPER);
+    }
 
-  if (CONFIG.fancybox) {
-    Stun.utils.wrapImageWithFancyBox();
-  } else if (CONFIG.zoom_image) {
-    Stun.utils.registerClickToZoomImage();
-  }
+    if (CONFIG.fancybox) {
+      this.wrapImageWithFancyBox();
+    } else if (CONFIG.zoom_image) {
+      this.registerClickToZoomImage();
+    }
+  };
+
+  // Initializaiton
+  Stun.utils.pjaxReloadBoot();
 });

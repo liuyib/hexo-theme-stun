@@ -627,6 +627,26 @@ quicklink:
   #   - (uri, el) => el.hasAttribute('nofollow')
   ignores:
 
+# Pjax
+# See: https://github.com/MoOx/pjax/
+pjax:
+  enable: true
+  # ! -----------------------------------------------------
+  # ! If you don't understand, please ignore the following.
+  # ! -----------------------------------------------------
+  # Please see: https://github.com/MoOx/pjax/#options
+  elements:
+  selectors:
+  switches:
+  switchesOptions:
+  history: true
+  scrollTo: false
+  scrollRestoration: false
+  cacheBust: false
+  debug: false
+  currentUrlFullReload: false
+  timeout: 0
+
 # Google AdSense
 google_adsense:
   enable: false
@@ -787,3 +807,9 @@ cdn:
   # Example:
   # quicklink: //cdn.jsdelivr.net/npm/quicklink@latest/dist/quicklink.umd.js
   quicklink:
+
+  # Using version: latest
+  # See: https://github.com/MoOx/pjax/
+  # Example:
+  # pjax: //cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js
+  pjax:

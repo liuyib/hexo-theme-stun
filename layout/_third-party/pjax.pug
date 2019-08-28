@@ -1,0 +1,86 @@
+-
+  var pjaxArgs = {
+    'elements': [
+      'a:not([target=_blank])'
+    ],
+    'selectors': [
+      'title',
+      'meta[name=description]',
+      '#main'
+    ],
+    'history': theme.pjax.history,
+    'scrollTo': theme.pjax.scrollTo,
+    'scrollRestoration': theme.pjax.scrollRestoration,
+    'cacheBust': theme.pjax.cacheBust,
+    'debug': theme.pjax.debug,
+    'currentUrlFullReload': theme.pjax.currentUrlFullReload,
+    'timeout': theme.pjax.timeout
+  };
+
+  if (theme.pjax.elements) {
+    pjaxArgs.elements.push(theme.pjax.elements);
+  }
+  if (theme.pjax.selectors) {
+    pjaxArgs.selectors.push(theme.pjax.selectors);
+  }
+  if (theme.pjax.selectors) {
+    pjaxArgs.switches = theme.pjax.selectors;
+  }
+  if (theme.pjax.selectors) {
+    pjaxArgs.switchesOptions = theme.pjax.selectors;
+  }
+
+  pjaxArgs = JSON.stringify(pjaxArgs)
+
+if theme.pjax && theme.pjax.enable
+  - var pjax_js = "https://cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js"
+  - if (theme.cdn.pjax) pjax_js = theme.cdn.pjax
+  script(src=pjax_js)
+
+script.
+  var header = document.querySelector('#header');
+  var headerHeight = header.offsetHeight;
+  var pjax = new Pjax(!{ pjaxArgs });
+  // 加载进度条的计时器
+  var loadingTimer = null;
+
+  // 重置页面 Y 方向上的滚动偏移量
+  document.addEventListener('pjax:send', function () {
+    $('html').velocity('scroll', {
+      duration: 500,
+      offset: $('#header').height(),
+      easing: 'easeInOutCubic'
+    });
+
+    var loadingBarWidth = 0;
+    var MAX_LOADING_WIDTH = 95;
+
+    $('.loading-bar .progress').css('transform', 'translateX(-100%)');
+    $('.loading-bar').addClass('loading');
+
+    clearInterval(loadingTimer);
+    loadingTimer = setInterval(function () {
+      loadingBarWidth += 2;
+
+      if (loadingBarWidth > MAX_LOADING_WIDTH) {
+        loadingBarWidth = MAX_LOADING_WIDTH;
+      }
+      $('.loading-bar .progress').css(
+        'transform', 'translateX(' + (loadingBarWidth - 100) + '%)'
+      );
+    }, 100);
+  }, false);
+
+  document.addEventListener('pjax:complete', function () {
+    clearInterval(loadingTimer);
+    $('.loading-bar .progress').css('transform', 'translateX(0%)');
+    setTimeout(function () {
+      $('.loading-bar').removeClass('loading');
+      $('.loading-bar .progress').css('transform', 'translateX(-100%)');
+    }, 400);
+
+    // 重载失效的函数，使其再执行一次
+    Stun.utils.pjaxReloadBoot();
+    Stun.utils.pjaxReloadScroll();
+    Stun.utils.pjaxReloadSidebar();
+  }, false);
