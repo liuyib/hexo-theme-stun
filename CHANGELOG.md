@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.3.0 (2019-08-28)
+
+### Bug Fixes
+
+* **#9:** Fix fancybox invalid when enable the lazyload of image ([13122eb](https://github.com/liuyib/hexo-theme-stun/commit/13122eb))
+
+### Features
+
+* Add pjax support ([0ca64cd](https://github.com/liuyib/hexo-theme-stun/commit/0ca64cd))
+
 ### 1.2.5 (2019-08-26)
 
 ### Bug Fixes
