@@ -12,8 +12,8 @@ html(lang=config.language)
         include ../_components/back2top.pug
 
     include ../_components/search/index.pug
-    include ../_scripts/cdn.pug
-    include ../_scripts/common.pug
+
+    include ../_scripts/vendors.pug
     include ../_third-party/quicklink.pug
     include ../_third-party/advertising/index.pug
     include ../_third-party/analytics/index.pug
@@ -23,3 +23,5 @@ html(lang=config.language)
 
     if theme.pjax && theme.pjax.enable
       include ../_third-party/pjax.pug
+
+    include ../_scripts/stun.pug
