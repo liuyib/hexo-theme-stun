@@ -174,6 +174,13 @@ Stun.utils = Stun.$u = {
       return false;
     }
   },
+  initTocDisplay: function () {
+    if ($('.post-body').find('h1,h2,h3,h4,h5,h6')[0]) return;
+
+    $('.sidebar-nav').addClass('hide');
+    $('.sidebar-toc').addClass('hide');
+    $('.sidebar-overview').removeClass('hide');
+  },
   // Wrap images with fancybox support.
   wrapImageWithFancyBox: function () {
     $('.content img').not(':hidden').each(function () {
@@ -223,7 +230,7 @@ Stun.utils = Stun.$u = {
     });
   },
   // Display the image in the gallery as a waterfall.
-  galleryWaterFall: function () {
+  showImageToWaterfall: function () {
     var gConfig = CONFIG.gallery_waterfall;
     var colWidth = parseInt(gConfig.col_width);
     var colGapX = parseInt(gConfig.gap_x);
@@ -239,7 +246,7 @@ Stun.utils = Stun.$u = {
     });
   },
   // Lazy load the images of post.
-  lazyLoadImages: function () {
+  lazyLoadImage: function () {
     $('img.lazyload').lazyload();
   },
   // Add a mark icon to the link with `target="_blank"` attribute.
@@ -260,7 +267,7 @@ Stun.utils = Stun.$u = {
       .append($icon);
   },
   // Switch to the prev / next post by shortcuts.
-  registerSwitchPost: function () {
+  registerHotkeyToSwitchPost: function () {
     var _this = this;
 
     $(document).on('keydown', function (e) {

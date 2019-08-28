@@ -92,7 +92,7 @@ $(document).ready(function () {
       .on('click', function () {
         scrollHeadingToTop('#' + $(this).attr('id'));
       });
-  
+
     // Click the post toc.
     $('.toc-link').on('click', function (e) {
       e.preventDefault();

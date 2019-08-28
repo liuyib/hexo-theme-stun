@@ -149,21 +149,21 @@ $(document).ready(function () {
     $('.sidebar-nav-toc').on('click', function () {
       $('.sidebar-nav-toc').toggleClass('current');
       $('.sidebar-nav-overview').toggleClass('current');
-  
+
       $tocWrapper.css('display', 'block');
       $tocWrapper.velocity('fadeIn');
-  
+
       $view.css('display', 'none');
       $view.velocity('fadeOut');
     });
-  
+
     $('.sidebar-nav-overview').on('click', function () {
       $('.sidebar-nav-toc').toggleClass('current');
       $('.sidebar-nav-overview').toggleClass('current');
-  
+
       $tocWrapper.css('display', 'none');
       $tocWrapper.velocity('fadeOut');
-  
+
       $view.css('display', 'block');
       $view.velocity('fadeIn');
     });
