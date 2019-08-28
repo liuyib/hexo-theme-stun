@@ -15,13 +15,13 @@ html(lang=config.language)
 
     include ../_scripts/vendors.pug
     include ../_third-party/quicklink.pug
-    include ../_third-party/advertising/index.pug
-    include ../_third-party/analytics/index.pug
-    include ../_third-party/comments/index.pug
-    include ../_third-party/math/index.pug
     include ../_third-party/search/index.pug
+    include ../_third-party/comments/index.pug
 
     if theme.pjax && theme.pjax.enable
       include ../_third-party/pjax.pug
 
+    include ../_third-party/analytics/busuanzi.pug
+    include ../_third-party/advertising/index.pug
+    include ../_third-party/math/index.pug
     include ../_scripts/stun.pug

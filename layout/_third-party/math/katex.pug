@@ -1,3 +1,16 @@
 if theme.math.katex.copy_tex.enable
   if theme.math.katex.copy_tex.copy_tex_js
-    script(async src=theme.math.katex.copy_tex.copy_tex_js)
+    script.
+      window.addEventListener('load', function () {
+        Stun.utils.pjaxReloadCopyKatex = function () {
+          (function(d, s) {
+            var d = document, s = d.createElement('script');
+            s.src = '!{ theme.math.katex.copy_tex.copy_tex_js }';
+            s.setAttribute('async', '');
+            (d.head || d.body).appendChild(s);
+          })(document, 'script');
+        };
+
+        // Initialization
+        Stun.utils.pjaxReloadCopyKatex();
+      }, false);

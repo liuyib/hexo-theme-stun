@@ -32,6 +32,28 @@
 
   pjaxArgs = JSON.stringify(pjaxArgs)
 
+  var enabledCommentName = '';
+  var isEnableComment = false;
+
+  if (page.comments) {
+    if (theme.gitment && theme.gitment.enable) {
+      isEnableComment = true;
+      enabledCommentName = 'Gitment';
+    } else if (theme.gitalk && theme.gitalk.enable) {
+      isEnableComment = true;
+      enabledCommentName = 'Gitalk';
+    } else if (theme.livere && theme.livere.enable) {
+      isEnableComment = true;
+      enabledCommentName = 'Livere';
+    } else if (theme.disqus && theme.disqus.enable) {
+      isEnableComment = true;
+      enabledCommentName = 'Disqus';
+    } else if (theme.valine && theme.valine.enable) {
+      isEnableComment = true;
+      enabledCommentName = 'Valine';
+    }
+  }
+
 if theme.pjax && theme.pjax.enable
   - var pjax_js = "https://cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js"
   - if (theme.cdn.pjax) pjax_js = theme.cdn.pjax
@@ -44,9 +66,13 @@ script.
     var pjax = new Pjax(!{ pjaxArgs });
     // 加载进度条的计时器
     var loadingTimer = null;
+    // 是否第一次加载 pjax
+    var isFirstLoad = true;
 
     // 重置页面 Y 方向上的滚动偏移量
     document.addEventListener('pjax:send', function () {
+      isFirstLoad = false;
+
       $('html').velocity('scroll', {
         duration: 500,
         offset: $('#header').height(),
@@ -84,5 +110,21 @@ script.
       Stun.utils.pjaxReloadBoot();
       Stun.utils.pjaxReloadScroll();
       Stun.utils.pjaxReloadSidebar();
+
+      // 重载评论
+      if (!{ isEnableComment }) {
+        var reloadFnName = 'pjaxReload' + '!{ enabledCommentName }';
+        var comment = Stun.utils[reloadFnName];
+
+        comment && comment();
+      }
+
+      // 重载 KaTex（只有当第一次加载 pjax 才重载）
+      if (isFirstLoad) {
+        Stun.utils.pjaxReloadCopyKatex();
+      }
+
+      // 重载 busuanzi
+      Stun.utils.pjaxReloadBusuanzi();
     }, false);
   }, false);

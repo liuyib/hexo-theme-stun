@@ -5,13 +5,19 @@ script.
     this.page.title = '!{ page.title }';
   };
 
-  (function() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://!{ theme.disqus.shortname }.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', '' + +new Date());
-    (d.head || d.body).appendChild(s);
-  })();
+  window.addEventListener('load', function () {
+    Stun.utils.pjaxReloadDisqus = function () {
+      (function(d, s) {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://!{ theme.disqus.shortname }.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      })(document, 'script');
+    };
+
+    // Initialization
+    Stun.utils.pjaxReloadDisqus();
+  }, false);
 
 if theme.disqus.count
-  script#dsq-count-scr(
-    src='https://' + theme.disqus.shortname + '.disqus.com/count.js' async)
+  script(async src='https://' + theme.disqus.shortname + '.disqus.com/count.js')#dsq-count-scr

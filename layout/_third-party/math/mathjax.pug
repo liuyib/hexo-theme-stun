@@ -1,8 +1,8 @@
 script(type="text/x-mathjax-config").
   var mathjaxMhchem = '';
 
-  if (!!'!{theme.math.mathjax.mhchem}') {
-    mathjaxMhchem = '!{theme.math.mathjax.mhchem}'
+  if (!{ theme.math.mathjax.mhchem.enable }) {
+    mathjaxMhchem = '!{ theme.math.mathjax.mhchem.mhchem_js }';
     MathJax.Ajax.config.path['mhchem'] = mathjaxMhchem;
   }
 
@@ -24,13 +24,12 @@ script(type="text/x-mathjax-config").
     MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
       if (data.display) {
         var next = data.script.nextSibling;
-        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
-        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling; }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next); }
       }
     });
   });
 
-script(type="text/x-mathjax-config").
   MathJax.Hub.Queue(function() {
     var all = MathJax.Hub.getAllJax(), i;
     for (i = 0; i < all.length; i++) {
@@ -38,4 +37,4 @@ script(type="text/x-mathjax-config").
     }
   });
 
-script(src=theme.math.mathjax.cdn async)
+script(async src=theme.math.mathjax.cdn)

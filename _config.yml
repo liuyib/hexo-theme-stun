@@ -524,6 +524,7 @@ math:
   # If true, it will load mathjax / katex srcipt EVERY PAGE.
   per_page: false
 
+  # value: mathjax / katex (suggest: katex)
   engine: katex
 
   # See: https://github.com/mathjax/MathJax/
@@ -601,31 +602,28 @@ lazyload:
 # See: https://github.com/GoogleChromeLabs/quicklink/
 quicklink:
   enable: false
-
   # Quicklink (quicklink.umd.js script) is loaded on demand.
   # Add `quicklink: true` in Front-matter of the page or post you need.
   # Home page and archive page can be controlled through home and archive options below.
   home: true
   archive: true
-
   # Initialize quicklink after the load event fires.
   delay: true
   # Custom a time in milliseconds by which the browser must execute prefetching.
   timeout: 10000
   # Enable fetch() or falls back to XHR.
   priority: true
-
   # For more flexibility you can add some patterns (RegExp, Function, or Array) to ignores.
   # See: https://github.com/GoogleChromeLabs/quicklink#custom-ignore-patterns
   # ! ---------------------------------------------------------------
   # ! Leave "ignores" as empty if you don't understand what it means.
   # ! ---------------------------------------------------------------
-  # Example:
-  # ignores:
-  #   - /\/api\/?/
-  #   - uri => uri.includes('.zip')
-  #   - (uri, el) => el.hasAttribute('nofollow')
   ignores:
+    - /\/api\/?/
+    - uri => uri.includes('.xml')
+    - uri => uri.includes('.zip')
+    - (uri, el) => el.hasAttribute('nofollow')
+    - (uri, el) => el.hasAttribute('noprefetch')
 
 # Pjax
 # See: https://github.com/MoOx/pjax/

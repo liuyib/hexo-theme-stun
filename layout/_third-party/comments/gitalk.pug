@@ -14,15 +14,20 @@ script(src=gitalk_md5)
 
 script.
   window.addEventListener('load', function () {
-    var gitalk = new Gitalk({
-      id: md5('!{ page.path }'),
-      clientID: '!{ theme.gitalk.client_id }',
-      clientSecret: '!{ theme.gitalk.client_secret }',
-      repo: '!{ theme.gitalk.repo }',
-      owner: '!{ theme.gitalk.owner }',
-      admin: ['!{ theme.gitalk.admin }'],
-      distractionFreeMode: '!{ theme.gitalk.distraction_free_mode }',
-      language: '!{ lang }'
-    });
-    gitalk.render('gitalk-container');
+    Stun.utils.pjaxReloadGitalk = function () {
+      var gitalk = new Gitalk({
+        id: md5('!{ page.path }'),
+        clientID: '!{ theme.gitalk.client_id }',
+        clientSecret: '!{ theme.gitalk.client_secret }',
+        repo: '!{ theme.gitalk.repo }',
+        owner: '!{ theme.gitalk.owner }',
+        admin: ['!{ theme.gitalk.admin }'],
+        distractionFreeMode: '!{ theme.gitalk.distraction_free_mode }',
+        language: '!{ lang }'
+      });
+      gitalk.render('gitalk-container');
+    };
+
+    // Initialization
+    Stun.utils.pjaxReloadGitalk();
   }, false);
