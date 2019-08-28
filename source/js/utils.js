@@ -180,9 +180,16 @@ Stun.utils = Stun.$u = {
       var $img = $(this);
       var imgTitle = $img.attr('title') || $img.attr('alt');
       var $imgWrap = $img.parent('a');
+      var imgSource = ['data-src', 'data-original', 'src'];
+      var imgSrc = '';
 
       if (!$imgWrap[0]) {
-        var imgSrc = $img.attr('data-original') || $img.attr('src');
+        for (var i = 0; i < imgSource.length; i++) {
+          if ($img.attr(imgSource[i])) {
+            imgSrc = $img.attr(imgSource[i]);
+            break;
+          }
+        }
 
         $imgWrap = $img.wrap('<a class="fancybox" href="' + imgSrc +
           '" itemscope itemtype="http://schema.org/ImageObject" itemprop="url"></a>'
