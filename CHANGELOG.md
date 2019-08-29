@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.3.1 (2019-08-29)
+
+### Bug Fixes
+
+* Fix busuanzi & math & comments invalid when enable pjax ([037bbc7](https://github.com/liuyib/hexo-theme-stun/commit/037bbc7))
+
+* Fix some third-party script invalid when pjax is enabled ([29b8d02](https://github.com/liuyib/hexo-theme-stun/commit/29b8d02))
+
 ### 1.3.0 (2019-08-28)
 
 ### Bug Fixes
