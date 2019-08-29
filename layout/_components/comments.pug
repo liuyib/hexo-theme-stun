@@ -1,19 +1,11 @@
-if theme.gitment && theme.gitment.enable
+if theme.disqus && theme.disqus.enable
   div#comments.comments.content
-    if theme.gitment.lazy
-      div#gitment-button
-        div.gitment-button-inner!= _p("comment.gitment.button")
-      div#gitment-container(style="display: none")
-    else
-      div#gitment-container
+    div#disqus_thread
+else if theme.valine && theme.valine.enable
+  div#comments.comments.content
 else if theme.gitalk && theme.gitalk.enable
   div#comments.comments.content
     div#gitalk-container
 else if theme.livere && theme.livere.enable
   div#comments.comments.content
     div#lv-container(data-id="city" data-uid=theme.livere.uid)
-else if theme.disqus && theme.disqus.enable
-  div#comments.comments.content
-    div#disqus_thread
-else if theme.valine && theme.valine.enable
-  div#comments.comments.content

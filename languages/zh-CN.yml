@@ -85,11 +85,6 @@ reward:
   alipay: 支付宝打赏
   wechat: 微信打赏
 
-# 评论
-comment:
-  gitment:
-    button: 显示 Gitment 评论
-
 # 回到顶部
 back2top: 回到顶部
 

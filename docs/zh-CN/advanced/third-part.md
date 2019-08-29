@@ -194,34 +194,6 @@ no-emoji: true
 
 ## 评论系统
 
-### Gitment <Badge text="Stable"/>
-
-首先，你需要注册一个新的 **GitHub Application** 来授权，点击[这里](https://github.com/settings/applications/new)注册。这样可以获取所需的 `client ID` 和 `client secret`。
-
-::: warning 注意
-您必须在 `Authorization callback URL` 字段中指定网站的 URL。
-:::
-
-然后修改 `stun.yml`：
-
-``` yaml
-gitment:
-  # 是否启用
-  enable: false
-  # Github 用户名
-  owner:
-  # Github 仓库名（需要是公开的仓库）
-  repo:
-  # Github 应用程序客户端 ID
-  client_id:
-  # Github 应用程序客户端密钥
-  client_secret:
-  # 是否启用懒加载（如果启用，只有手动点击显示按钮才会显示评论）
-  lazy: false
-```
-
-如果你遇到了问题，请查看 Gitment 的文档：[https://github.com/imsun/gitment](https://github.com/imsun/gitment)
-
 ### Gitalk <Badge text="Stable"/> <Badge text="v1.1.0"/>
 
 首先，你需要注册一个新的 **GitHub Application** 来授权，点击[这里](https://github.com/settings/applications/new)注册。这样可以获取所需的 `client ID` 和 `client secret`。

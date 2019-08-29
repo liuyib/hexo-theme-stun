@@ -345,21 +345,6 @@ reward:
 # Comment config
 # ---------------------------------------------------------------
 
-# Gitment
-# See: https://github.com/imsun/gitment/
-gitment:
-  enable: false
-  # Github username.
-  owner:
-  # Github repository.
-  repo:
-  # Github Application Client ID.
-  client_id:
-  # Github Application Client Secret.
-  client_secret:
-  # Enable / Disable Lazy load. Enable is recommended.
-  lazy: true
-
 # Gittalk
 # See: https://github.com/gitalk/gitalk/
 gitalk:
@@ -732,17 +717,6 @@ cdn:
   gitalk_js:
   gitalk_css:
   gitalk_md5:
-
-  # gitment & js-md5
-  # Using version: latest & latest
-  # See: https://github.com/gitalk/gitalk/, https://github.com/emn178/js-md5/
-  # Example:
-  # gitment_js: //cdn.jsdelivr.net/npm/gitment/dist/gitment.browser.min.js
-  # gitment_css: //cdn.jsdelivr.net/npm/gitment/style/default.min.css
-  # md5: //cdn.jsdelivr.net/npm/js-md5@latest/src/md5.min.js
-  gitment_js:
-  gitment_css:
-  gitment_md5:
 
   # valine & leancloud-storage
   # Using version: latest & latest

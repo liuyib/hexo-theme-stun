@@ -85,11 +85,6 @@ reward:
   alipay: Alipay
   wechat: Wechat
 
-# Comment
-comment:
-  gitment:
-    button: Show comments from Gitment
-
 # Back to top
 back2top: Back to top
 
