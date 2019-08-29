@@ -5,29 +5,33 @@
   if (theme.cdn.gitalk_js) gitalk_js = theme.cdn.gitalk_js
   if (theme.cdn.gitalk_md5) gitalk_md5 = theme.cdn.gitalk_md5
 
-script(src=gitalk_js)
-script(src=gitalk_md5)
+script(src=gitalk_js data-pjax)
+script(src=gitalk_md5 data-pjax)
 
 -
   var lang = _.get(theme, "gitalk.language")
     ? theme.gitalk.language : config.language;
 
-script.
-  window.addEventListener('load', function () {
-    Stun.utils.pjaxReloadGitalk = function () {
-      var gitalk = new Gitalk({
-        id: md5('!{ page.path }'),
-        clientID: '!{ theme.gitalk.client_id }',
-        clientSecret: '!{ theme.gitalk.client_secret }',
-        repo: '!{ theme.gitalk.repo }',
-        owner: '!{ theme.gitalk.owner }',
-        admin: ['!{ theme.gitalk.admin }'],
-        distractionFreeMode: '!{ theme.gitalk.distraction_free_mode }',
-        language: '!{ lang }'
-      });
-      gitalk.render('gitalk-container');
-    };
+script(data-pjax).
+  function loadGitalk () {
+    if (!document.getElementById('gitalk-container')) return;
 
-    // Initialization
-    Stun.utils.pjaxReloadGitalk();
-  }, false);
+    var gitalk = new Gitalk({
+      id: md5('!{ page.path }'),
+      clientID: '!{ theme.gitalk.client_id }',
+      clientSecret: '!{ theme.gitalk.client_secret }',
+      repo: '!{ theme.gitalk.repo }',
+      owner: '!{ theme.gitalk.owner }',
+      admin: ['!{ theme.gitalk.admin }'],
+      distractionFreeMode: '!{ theme.gitalk.distraction_free_mode }',
+      language: '!{ lang }'
+    });
+
+    gitalk.render('gitalk-container');
+  }
+
+  if (!{ theme.pjax.enable }) {
+    loadGitalk();
+  } else {
+    window.addEventListener('load', loadGitalk, false);
+  }

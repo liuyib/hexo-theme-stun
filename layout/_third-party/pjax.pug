@@ -4,9 +4,10 @@
       'a:not([target=_blank])'
     ],
     'selectors': [
-      'title',
+      'head title',
       'meta[name=description]',
-      '#main'
+      '#main',
+      '.pjax-reload'
     ],
     'history': theme.pjax.history,
     'scrollTo': theme.pjax.scrollTo,
@@ -32,28 +33,6 @@
 
   pjaxArgs = JSON.stringify(pjaxArgs)
 
-  var enabledCommentName = '';
-  var isEnableComment = false;
-
-  if (page.comments) {
-    if (theme.gitment && theme.gitment.enable) {
-      isEnableComment = true;
-      enabledCommentName = 'Gitment';
-    } else if (theme.gitalk && theme.gitalk.enable) {
-      isEnableComment = true;
-      enabledCommentName = 'Gitalk';
-    } else if (theme.livere && theme.livere.enable) {
-      isEnableComment = true;
-      enabledCommentName = 'Livere';
-    } else if (theme.disqus && theme.disqus.enable) {
-      isEnableComment = true;
-      enabledCommentName = 'Disqus';
-    } else if (theme.valine && theme.valine.enable) {
-      isEnableComment = true;
-      enabledCommentName = 'Valine';
-    }
-  }
-
 if theme.pjax && theme.pjax.enable
   - var pjax_js = "https://cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js"
   - if (theme.cdn.pjax) pjax_js = theme.cdn.pjax
@@ -61,8 +40,6 @@ if theme.pjax && theme.pjax.enable
 
 script.
   window.addEventListener('load', function () {
-    var header = document.querySelector('#header');
-    var headerHeight = header.offsetHeight;
     var pjax = new Pjax(!{ pjaxArgs });
     // 加载进度条的计时器
     var loadingTimer = null;
@@ -92,13 +69,14 @@ script.
         if (loadingBarWidth > MAX_LOADING_WIDTH) {
           loadingBarWidth = MAX_LOADING_WIDTH;
         }
+
         $('.loading-bar .progress').css(
           'transform', 'translateX(' + (loadingBarWidth - 100) + '%)'
         );
       }, 100);
     }, false);
 
-    document.addEventListener('pjax:complete', function () {
+    window.addEventListener('pjax:complete', function () {
       clearInterval(loadingTimer);
       $('.loading-bar .progress').css('transform', 'translateX(0%)');
       setTimeout(function () {
@@ -106,25 +84,16 @@ script.
         $('.loading-bar .progress').css('transform', 'translateX(-100%)');
       }, 400);
 
-      // 重载失效的函数，使其再执行一次
+      $('link[rel=prefetch], script[data-pjax-rm]').each(function () {
+        $(this).remove();
+      });
+
+      $('script[data-pjax], #pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+
       Stun.utils.pjaxReloadBoot();
       Stun.utils.pjaxReloadScroll();
       Stun.utils.pjaxReloadSidebar();
-
-      // 重载评论
-      if (!{ isEnableComment }) {
-        var reloadFnName = 'pjaxReload' + '!{ enabledCommentName }';
-        var comment = Stun.utils[reloadFnName];
-
-        comment && comment();
-      }
-
-      // 重载 KaTex（只有当第一次加载 pjax 才重载）
-      if (isFirstLoad) {
-        Stun.utils.pjaxReloadCopyKatex();
-      }
-
-      // 重载 busuanzi
-      Stun.utils.pjaxReloadBusuanzi();
     }, false);
   }, false);

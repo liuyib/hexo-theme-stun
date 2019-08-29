@@ -1,5 +1,5 @@
-script(async src=`https://www.googletagmanager.com/gtag/js?id=${theme.google_analytics}`)
-script.
+script(src=`https://www.googletagmanager.com/gtag/js?id=${theme.google_analytics}` async data-pjax)
+script(data-pjax).
   if (window.location.hostname !== 'localhost') {
     window.dataLayer = window.dataLayer || [];
     function gtag(){ dataLayer.push(arguments); }

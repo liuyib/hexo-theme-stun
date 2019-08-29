@@ -1,27 +1,5 @@
-if theme.busuanzi.enable
+if theme.busuanzi.enable && (theme.busuanzi.site.uv.enable || theme.busuanzi.site.pv.enable || theme.busuanzi.post_pv.enable)
   - var busuanzi_js = "https://cdn.jsdelivr.net/gh/sukkaw/busuanzi@latest/bsz.pure.mini.js"
   - if (theme.cdn.busuanzi) busuanzi_js = theme.cdn.busuanzi
 
-  script.
-    window.addEventListener('load', function () {
-      Stun.utils.pjaxReloadBusuanzi = function () {
-        (function(d, s) {
-          // Remove old script of busuanzi
-          var old = d.getElementById('busuazi_statistics');
-
-          if (old) {
-            var parent = d.querySelector('head');
-            parent.removeChild(old);
-          }
-
-          var d = document, s = d.createElement('script');
-          s.id = 'busuazi_statistics'
-          s.src = '!{ busuanzi_js }';
-          s.setAttribute('async', '');
-          (d.head || d.body).appendChild(s);
-        })(document, 'script');
-      };
-
-      // Initialization
-      Stun.utils.pjaxReloadBusuanzi();
-    }, false);
+  script(src=busuanzi_js async data-pjax)

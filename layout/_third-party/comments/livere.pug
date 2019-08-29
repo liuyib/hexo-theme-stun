@@ -1,17 +1,17 @@
-script.
-  window.addEventListener('load', function () {
-    Stun.utils.pjaxReloadLivere = function () {
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
+script(data-pjax).
+  function loadLivere () {
+    var d = document, s = d.createElement('script');
 
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    };
+    if (!d.getElementById('lv-container')) return;
+    if (typeof LivereTower === 'function') return;
 
-    // Initialization
-    Stun.utils.pjaxReloadLivere();
-  }, false);
+    s.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    s.setAttribute('data-pjax-rm', '');
+    (d.head || d.body).appendChild(s);
+  }
+
+  if (!{ theme.pjax.enable }) {
+    loadLivere();
+  } else {
+    window.addEventListener('load', loadLivere, false);
+  }

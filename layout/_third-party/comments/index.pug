@@ -1,4 +1,4 @@
-if page.comments
+if page.comments || theme.pjax.enable
   if theme.gitment && theme.gitment.enable
     include ./gitment.pug
   else if theme.gitalk && theme.gitalk.enable

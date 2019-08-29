@@ -71,7 +71,7 @@ if theme.fancybox
   - if (theme.cdn.fontawesome) fancybox_css = theme.cdn.fontawesome
   link(rel="stylesheet" href=fancybox_css type="text/css")
 
-if page.comments
+if page.comments || theme.pjax.enable
   if theme.gitalk && theme.gitalk.enable
     - var gitalk_css = "https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.css"
     - if (theme.cdn.gitalk_css) gitalk_css = theme.cdn.gitalk_css
@@ -95,6 +95,5 @@ if theme.baidu_analytics
 if theme.tencent_analytics
   link(rel="dns-prefetch" href="https://tajs.qq.com")
 
-include ../_third-party/math/katex_css.pug
 include ../_third-party/analytics/index.pug
 include ./config.pug

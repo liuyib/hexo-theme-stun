@@ -7,7 +7,7 @@ if theme.math.enable
         - isHomeHasMath = true
     - })
 
-  if !is_tag() && !is_category() && !is_archive()
+  if theme.pjax.enable || (!is_tag() && !is_category() && !is_archive())
     if theme.pjax.enable || isHomeHasMath || (theme.math.per_page || page.math)
       if theme.math.engine === "mathjax"
         include ./mathjax.pug

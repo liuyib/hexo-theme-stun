@@ -2,8 +2,9 @@ script.
   var _hmt = _hmt || [];
   (function() {
     var hm = document.createElement('script');
-    hm.setAttribute('async', '');
     hm.src = 'https://hm.baidu.com/hm.js?!{ theme.baidu_analytics }';
+    hm.async = true;
+    hm.setAttribute('data-pjax', '');
     var s = document.getElementsByTagName('script')[0]; 
     s.parentNode.insertBefore(hm, s);
   })();
