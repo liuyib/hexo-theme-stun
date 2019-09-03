@@ -6,7 +6,7 @@ $(document).ready(function () {
     $menu.removeClass('show');
   });
 
-  $('.header-nav-menu-icon').on('click', function (e) {
+  $('.header-nav-btn').on('click', function (e) {
     e.stopPropagation();
     $menu.toggleClass('show');
   });

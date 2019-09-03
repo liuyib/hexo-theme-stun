@@ -1,0 +1,127 @@
+::selection {
+  color: $selection-color;
+  background-color: $selection-bg;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: $font-size-rem;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $font-color;
+  background-color: $body-bg-color;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  font-family: $font-family-heading;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-heading;
+}
+
+for n in 1 .. 6 {
+  h{n} {
+    font-size: $font-size-heading-base - $font-size-heading-step * n;
+  }
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: $link-color;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+
+  &:hover {
+    color: $link-hover-color;
+  }
+}
+
+img,
+video,
+iframe {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 100%;
+}
+
+hr {
+  margin: 1rem 0;
+  border: 2px dashed $hr-color;
+  height: 0;
+}
+
+blockquote {
+  margin: 0;
+  border-left: 5px solid $quote-left-color;
+  padding: .5rem 1rem;
+  background-color: $quote-bg-color;
+
+  & cite::before {
+    content: '--';
+    padding: 0 .25rem;
+  }
+}
+
+code {
+  border-radius: 3px;
+  padding: 0 .3em;
+  font-family: $font-family-code;
+  font-size: .95em;
+  word-wrap: break-word;
+  color: $code-color;
+  background-color: $code-bg-color;
+}
+
+dt {
+  font-weight: $font-weight-bolder;
+}
+
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  margin: 0 0 1rem;
+  width: 100%;
+}
+
+table > tbody > tr {
+  &:nth-of-type(odd) {
+    background-color: $table-row-odd-bg-color;
+  }
+
+  &:hover {
+    background-color: $table-row-hover-bg-color;
+  }
+}
+
+th,
+td {
+  border: 1px solid $table-border-color;
+}

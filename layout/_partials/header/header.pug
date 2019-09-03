@@ -1,0 +1,22 @@
+include ../../_mixins/menu-item.pug
+
+- var fa_prefix = theme.fa_prefix || 'fa'
+
+nav.header-nav
+  div.header-nav-inner
+    div.header-nav-btn(class=`${fa_prefix} fa-bars`)
+
+    div.header-nav-menu
+      +menuItem(theme.menu)
+
+    if theme.algolia_search.enable || theme.local_search.enable
+      div.header-nav-search
+        if !theme.menu_settings.text_only
+          i(class=`${fa_prefix} fa-search`)
+        if !theme.menu_settings.icon_only
+          span!= __("nav.search")
+
+div.header-info
+  div.header-info-inner
+    div.header-info-title= config.title
+    div.header-info-subtitle= config.subtitle

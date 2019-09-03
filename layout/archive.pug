@@ -1,20 +1,12 @@
-extends ./_common/layout.pug
+extends ./_layout.pug
+
+include ./_mixins/posts-sort.pug
 
 block content
-  include ./_mixins/posts-sort.pug
+  div.archive
+    div.archive-total= site.posts.length === 0 ? __("page.articles-empty") : _p("page.articles-total", site.posts.length)
 
-  div.content
-    div.archive-inner
-      if (site.posts.length === 0)
-        div.article-sort-title= _p("page.articles-empty")
-      else
-        div.article-sort-title= _p("page.articles-total", site.posts.length)
+    +postSort(theme.post_list.paginate.archives ? page.posts : site.posts)
 
-      //- != console.log(page.posts)
-      if theme.post_list.paginate.archives
-        +articleSort(page.posts)
-      else
-        +articleSort(site.posts)
-
-    if theme.post_list.paginate.archives
-      include ./_components/pagination.pug
+  //- if theme.post_list.paginate.archives
+  //-   include ./_components/pagination.pug

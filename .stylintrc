@@ -1,6 +1,7 @@
 {
   "blocks": false,
-  "brackets": "never",
+  "brackets": "always",
+  "semicolons": "always",
   "colons": "always",
   "colors": "always",
   "commaSpace": "always",
@@ -34,7 +35,6 @@
     "showHeaders": false,
     "truncate": true
   },
-  "semicolons": "never",
   "sortOrder": [
     "content",
     "display",

@@ -1,9 +1,8 @@
-extends ./_common/layout.pug
+extends ./_layout.pug
 
 block content
-  div.content.home-content.code-highlight
-    if theme.post_list.paginate.home
-      include ./_components/recent-posts.pug
-      include ./_components/pagination.pug
-    else
-      include ./_components/recent-posts.pug
+  if theme.post_list.paginate.home
+    include ./_partials/post/recent-posts.pug
+  //-   include ./_components/pagination.pug
+  else
+    include ./_partials/post/recent-posts.pug

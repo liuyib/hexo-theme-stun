@@ -1,37 +1,31 @@
-extends ./_common/layout.pug
+extends ./_layout.pug
 
 block content
-  include ./_mixins/gallery.pug
+  //- include ./_mixins/gallery.pug
 
-  if (page.title === "tags")
-    div.content.tag-cloud
-      if page.photos && page.photos.length
-        +gallery(page)
-
-      div.tag-cloud-title= _p("page.tags") + " - "
-        span.tag-cloud-num= site.tags.length
+  if (page.type === "tags")
+    div.tagcloud
+      div.tagcloud-title= _p("page.tags") + " - "
+        span= site.tags.length
       - var min_font = theme.tag_cloud ? theme.tag_cloud.min_size : 14
       - var max_font = theme.tag_cloud ? theme.tag_cloud.max_size : 24
       - var start_color = theme.tag_cloud ? theme.tag_cloud.start_color : "#a4d8fa"
       - var end_color = theme.tag_cloud ? theme.tag_cloud.end_color : "#1b9ef3"
-      div.tag-cloud-item!= tagcloud({min_font: min_font, max_font: max_font, amount: theme.tag_cloud.max_amount, color: true, start_color, end_color})
-  else if (page.title === "categories")
-    div.content.category
-      if page.photos && page.photos.length
-        +gallery(page)
-
+      div.tagcloud-item!= tagcloud({min_font: min_font, max_font: max_font, amount: theme.tag_cloud.max_amount, color: true, start_color, end_color})
+  else if (page.type === "categories")
+    div.category
       div.category-title= _p("page.categories") + " - "
-        span.category-num= site.categories.length
+        span= site.categories.length
       != list_categories()
-  else if (page.title === "about")
-    div.content.headings.code-highlight
+  else if (page.type === "about")
+    div.headings.code-highlight
       if page.photos && page.photos.length
-        +gallery(page)
+        //- +gallery(page)
 
       != page.content
   else
-    div.content.headings.code-highlight
+    div.headings.code-highlight
       if page.photos && page.photos.length
-        +gallery(page)
+        //- +gallery(page)
 
       != page.content

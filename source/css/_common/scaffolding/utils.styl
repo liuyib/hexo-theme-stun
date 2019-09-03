@@ -1,0 +1,119 @@
+.clearfix {
+  clearfix();
+}
+
+// UI components
+// ----------------------------------------
+popover-bg-color = alpha(#000, .7);
+
+// "Popover" component
+[data-popover] {
+  position: relative;
+}
+
+[data-popover]::before {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: $z-index1;
+  font-family: sans-serif, Arial;
+  font-size: $font-size-base;
+  font-weight: normal;
+  font-style: normal;
+  white-space: nowrap;
+  color: #fff;
+  background-color: popover-bg-color;
+  opacity: 0;
+  text-shadow: none;
+  transition: opacity .2s, transform .2s;
+  transform: translate(-50%, -70%);
+  pointer-events: none;
+}
+
+[data-popover]::before {
+  content: attr(data-popover);
+  border-radius: 4px;
+  padding: .2rem .6rem;
+}
+
+[data-popover][data-popover-pos='up']:hover::before {
+  opacity: 1;
+  transform: translate(-50%, -115%);
+}
+
+// "Alert" component
+.stun-message {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  z-index: $z-index2;
+  transform: translateX(-50%);
+}
+
+.stun-alert {
+  position: relative;
+  border-radius: 3px;
+  padding: 8px 12px;
+  font-size: $font-size-large;
+  line-height: 1rem;
+  color: $black-light;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+
+  &-success {
+    color: $alert-success;
+
+    & ~ i {
+      color: $alert-success;
+    }
+  }
+
+  &-info {
+    color: $alert-info;
+
+    & ~ i {
+      color: $alert-info;
+    }
+  }
+
+  &-warning {
+    color: $alert-warning;
+
+    & ~ i {
+      color: $alert-warning;
+    }
+  }
+
+  &-error {
+    color: $alert-error;
+
+    & ~ i {
+      color: $alert-error;
+    }
+  }
+
+  &-description {
+    margin-left: .5rem;
+  }
+}
+
+// Animation class
+// ----------------------------------------
+.anime-close {
+  &::before,
+  &::after {
+    transition: transform .25s;
+    transform: rotate(-45deg);
+  }
+
+  &::after {
+    transform: rotate(-135deg);
+  }
+
+  &:hover {
+    &::before,
+    &::after {
+      transform: rotate(0);
+    }
+  }
+}

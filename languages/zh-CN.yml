@@ -1,10 +1,10 @@
 # 网站标题
 title:
   home: 首页
-  archives: 归档页
-  categories: 分类页
-  tags: 标签页
-  about: 关于页
+  archive: 归档
+  category: 分类
+  tag: 标签
+  about: 关于
 
 # 导航栏
 nav:

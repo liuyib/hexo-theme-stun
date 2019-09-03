@@ -1,0 +1,14 @@
+main#main
+  div.main-inner
+    if theme.sidebar.enable
+      include ./sidebar.pug
+
+    if body
+      div!= body
+    else
+      block content
+
+    //- if page.comments
+    //-   include ../_components/comments.pug
+
+    div.clearfix

@@ -1,10 +1,10 @@
 # Site title
 title:
-  home: Home page
-  archives: Archives page
-  categories: Categories page
-  tags: Tags page
-  about: About page
+  home: Home
+  archive: Archive
+  category: Category
+  tag: Tag
+  about: About
 
 # Header nav
 nav:

@@ -1,0 +1,21 @@
+mixin menuItem(menu)
+  each value, name in (menu || {})
+    if name && value
+      - var item = value.split('||')
+      - var menuPath = _.trim(_.get(item, '[0]'))
+      - var menuIcon = _.trim(_.get(item, '[1]'))
+      - var isSubMenu = false
+      - var fa_prefix = theme.fa_prefix || 'fa'
+
+      if menuPath.toLowerCase() === 'javascript:;'
+        - isSubMenu = true
+
+      div.header-nav-menu-item
+        a(href=menuPath ? menuPath : "#").header-nav-menu-item__a
+          if !theme.menu_settings.text_only && !!menuIcon
+            i(class=`${fa_prefix} fa-${menuIcon}`)
+          if !theme.menu_settings.icon_only
+            != __(`menu.${name}`)
+        if isSubMenu
+          div.header-nav-submenu
+            +menuItem(theme.submenu[name])

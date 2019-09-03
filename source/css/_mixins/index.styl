@@ -1,2 +1,97 @@
-@import './post-sort.styl'
-@import './post-header.styl'
+transition-ease() {
+  transition-delay: 0s;
+  transition-timing-function: ease;
+  transition-duration: .2s;
+}
+
+transition-ease-in() {
+  transition-delay: 0s;
+  transition-timing-function: ease-in;
+  transition-duration: .2s;
+}
+
+transition-ease-out() {
+  transition-delay: 0s;
+  transition-timing-function: ease-out;
+  transition-duration: .2s;
+}
+
+transition-ease-in-out() {
+  transition-delay: 0s;
+  transition-timing-function: ease-in-out;
+  transition-duration: .2s;
+}
+
+// < 576px
+mobile-small() {
+  @media (max-width: $xs-width) {
+    {block};
+  }
+}
+
+// < 768px
+mobile() {
+  @media (max-width: $sm-width) {
+    {block};
+  }
+}
+
+// < 992px
+tablet-mobile() {
+  @media (max-width: $md-width) {
+    {block};
+  }
+}
+
+// > 768px && < 992px
+tablet() {
+  @media (min-width: $sm-width) and (max-width: $md-width) {
+    {block};
+  }
+}
+
+// > 992px
+desktop() {
+  @media (min-width: $md-width) {
+    {block};
+  }
+}
+
+// > 1200px
+desktop-large() {
+  @media (min-width: $lg-width) {
+    {block};
+  }
+}
+
+clearfix() {
+  &::before,
+  &::after {
+    content: ' ';
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+word-wrap() {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+disable-user-select() {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+a-decoration() {
+  border-bottom: 1px solid $link-bottom-color;
+
+  &:hover {
+    border-bottom-color: $link-bottom-hover-color;
+  }
+}

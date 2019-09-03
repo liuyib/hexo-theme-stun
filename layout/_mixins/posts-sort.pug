@@ -1,5 +1,5 @@
-mixin articleSort(posts)
-  section.article-sort
+mixin postSort(posts)
+  section.archive-post
     - var year, tmpYear
     - posts.each(function (post) {
       if post.date
@@ -7,17 +7,17 @@ mixin articleSort(posts)
 
       if tmpYear !== year
         - year = tmpYear
-        time.article-sort-item.year= year
+        time.archive-post-item.year= year
 
-      post.article-sort-item
+      post.archive-post-item
         if post.date
-          time.article-sort-item__time= full_date(post.date, "MM-DD")
-          h2.article-sort-item__title
+          time.archive-post-item__time= full_date(post.date, "MM-DD")
+          h2.archive-post-item-title
             if post.link
-              a(href=url_for(post.link) target="_blank" rel="noopener")= post.title || post.link
+              a.archive-post-item-title__a(href=url_for(post.link) target="_blank" rel="noopener")= post.title || post.link
             else
-              a(href=url_for(post.path))= post.title || _p("post.untitled")
+              a.archive-post-item-title__a(href=url_for(post.path))= post.title || _p("post.untitled")
 
         if post.top
-          include ../_components/sticky-top.pug
+          include ../_partials/widgets/sticky-top.pug
     - })

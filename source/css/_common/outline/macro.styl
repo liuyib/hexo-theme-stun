@@ -1,0 +1,41 @@
+.container {
+  position: relative;
+}
+
+.main {
+  margin: 2rem auto;
+}
+
+.main-inner {
+  overflow: hidden;
+  margin: 0 auto;
+  width: $main-width;
+}
+
+.sidebar {
+  float: convert(hexo-config('sidebar.position'));
+  width: convert(hexo-config('sidebar.width') || '$sidebar-width');
+}
+
+if (hexo-config('sidebar.position') == 'left') {
+  .content {
+    float: right;
+  }
+} else if (hexo-config('sidebar.position') == 'right') {
+  .content {
+    float: left;
+  }
+}
+
+.content-inner {
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  width: $content-width;
+  height: 100%;
+  background-color: $white;
+
+  &.home {
+    padding: 0;
+    background-color: transparent;
+  }
+}
