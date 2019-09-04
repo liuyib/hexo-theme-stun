@@ -1,11 +1,13 @@
 extends ./_layout.pug
 
+include ./_mixins/post-list.pug
+
 block content
-  include ./_mixins/posts-sort.pug
+  div.single-tag
+    div.single-tag-name
+      span= __("page.tags") + " -- "
+      span= page.tag
 
-  div.content
-    div.tag-inner
-      div.article-sort-title= _p("page.tags") + " - " + page.tag
-      +articleSort(page.posts)
+    +postList(page.posts)
 
-    include ./_components/pagination.pug
+  //- include ./_components/pagination.pug

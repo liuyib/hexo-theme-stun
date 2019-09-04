@@ -1,12 +1,12 @@
 extends ./_layout.pug
 
-include ./_mixins/posts-sort.pug
+include ./_mixins/post-list.pug
 
 block content
   div.archive
-    div.archive-total= site.posts.length === 0 ? __("page.articles-empty") : _p("page.articles-total", site.posts.length)
+    div.archive-total= site.posts.length === 0 ? __("page.posts-empty") : _p("page.posts-total", site.posts.length)
 
-    +postSort(theme.post_list.paginate.archives ? page.posts : site.posts)
+    +postList(theme.post_list.paginate.archives ? page.posts : site.posts)
 
   //- if theme.post_list.paginate.archives
   //-   include ./_components/pagination.pug

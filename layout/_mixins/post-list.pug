@@ -1,0 +1,20 @@
+mixin postList(posts)
+  section.post-list
+    - var year, tmpYear
+    - posts.each(function (post) {
+      if post.date
+        - tmpYear = full_date(post.date, "YYYY")
+
+      if tmpYear !== year
+        - year = tmpYear
+        time.post-list-item.year= year
+
+      post.post-list-item
+        if post.date
+          time.post-list-item__time= full_date(post.date, "MM-DD")
+          h2.post-list-item-title
+            if post.link
+              a.post-list-item-title__a(href=url_for(post.link) target="_blank" rel="noopener")= post.title || post.link
+            else
+              a.post-list-item-title__a(href=url_for(post.path))= post.title || __("post.untitled")
+    - })

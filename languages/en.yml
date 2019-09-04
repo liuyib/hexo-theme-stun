@@ -22,8 +22,8 @@ menu:
 page:
   tags: Tags
   categories: Categories
-  articles-empty: No articles
-  articles-total: Total %s Articles, Go on!
+  posts-empty: No articles
+  posts-total: Total %s Articles, Go on!
 
 # Sidebarupdated
 sidebar:

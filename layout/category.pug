@@ -1,10 +1,13 @@
 extends ./_layout.pug
 
-include ./_mixins/posts-sort.pug
+include ./_mixins/post-list.pug
 
 block content
-  div.category
-    div.article-sort-title= __("page.categories") + " - " + page.category
-    +postSort(page.posts)
+  div.single-category
+    div.single-category-name
+      span= __("page.categories") + " -- "
+      span= page.category
+
+    +postList(page.posts)
 
     //- include ./_components/pagination.pug

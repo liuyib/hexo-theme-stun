@@ -22,8 +22,8 @@ menu:
 page:
   tags: 标签
   categories: 分类
-  articles-empty: 目前还没有文章哦！
-  articles-total: 目前共计 %s 篇文章，继续加油！
+  posts-empty: 目前还没有文章哦！
+  posts-total: 目前共计 %s 篇文章，继续加油！
 
 # 侧边栏
 sidebar:
