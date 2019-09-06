@@ -1,13 +1,13 @@
-.post-list {
+.post-timeline {
   position: relative;
 
   &::before {
     content: '';
     position: absolute;
-    top: $font-size-main;
-    bottom: $font-size-main;
+    top: 16px;
+    bottom: 16px;
     left: 0;
-    border-left: .3rem solid $post-list-line-color;
+    border-left: .3rem solid #c8edff;
     transform: translateX(-50%);
   }
 
@@ -24,21 +24,21 @@
       position: absolute;
       top: 50%;
       left: 0;
-      z-index: $z-index0;
-      border: .15rem solid $post-list-dot-color;
+      z-index: 1000;
+      border: .15rem solid #6ec5ff;
       border-radius: 50%;
       width: .6rem;
       height: .6rem;
-      background-color: $white;
+      background-color: #fff;
+      transition-delay: 0s;
+      transition-timing-function: ease;
+      transition-duration: .2s;
       transition-property: border-color;
-      transition-ease();
       transform: translate(-50%, -50%);
     }
 
-    &:hover {
-      &::before {
-        border-color: $post-list-dot-hover-color;
-      }
+    &:hover::before {
+      border-color: #fc6423;
     }
 
     &:last-child {
@@ -46,35 +46,37 @@
     }
 
     &.year {
-      font-weight: $font-weight-bolder;
+      font-weight: 700;
     }
 
     &__time {
       display: inline-block;
-      padding-right: 1rem;
-      width: 3rem;
+      margin-right: 1em; /* Affect the width of title */
+      width: 3em; /* Affect the width of title */
       vertical-align: middle;
-      color: $post-list-time-color;
+      color: #99a9bf;
       transform: translateY(3%);
     }
 
     &-title {
       display: inline-block;
       margin: 0;
-      width: calc(100% - 3rem);
-      font-size: $font-size-main + 2px;
+      width: calc(100% - 4em);
+      font-size: 1em;
       font-weight: normal;
       vertical-align: middle;
+    }
 
-      &__a {
-        color: $font-color;
-        transition-property: color;
-        transition-ease();
+    &-title__a {
+      color: #333;
+      transition-delay: 0s;
+      transition-timing-function: ease;
+      transition-duration: .2s;
+      transition-property: color;
+    }
 
-        &:hover {
-          color: $blue-light;
-        }
-      }
+    &-title__a:hover {
+      color: #49b1f5;
     }
   }
 }

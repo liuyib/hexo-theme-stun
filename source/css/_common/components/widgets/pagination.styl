@@ -1,89 +1,101 @@
-#paginator
-  overflow: hidden
-  margin-top: 1em
-  width: 100%
+.paginator {
+  margin-top: 1.5em;
+  border-radius: 5px;
+  text-align: center;
+  background-color: $white;
 
-.paginator-inner
-  border-radius: 5px
-  padding: .7em 0
-  text-align: center
-  background-color: $white
-
-  a.page-number
-    clearAStyle()
-    height: 100%
-    color: $pagination-item-color
-    background-color: $pagination-item-bg-color
-
-    &:hover
-      color: $pagination-item-hover-color
-      background-color: $pagination-item-hover-bg-color
+  &-inner {
+    padding: .8em 0;
+  }
 
   .space,
-  .page-number
-    display: inline-block
-    border-radius: 3px
-    width: 1.5em
-    height: 1.5em
-    line-height: 1.5em
-    vertical-align: middle
+  .page-number {
+    display: inline-block;
+    border-radius: 3px;
+    width: 1rem;
+    height: 1rem;
+    line-height: 1rem;
+    vertical-align: middle;
+  }
 
-  .page-number
-    margin: 0 .5em
+  .page-number {
+    margin: 0 .5em;
+    color: $pagination-item-color;
+    background-color: $pagination-item-bg-color;
+    transition-property: color, background-color;
+    transition-ease();
 
-  .space
-    margin: 0 .2em
+    &:hover {
+      color: $pagination-item-hover-color;
+      background-color: $pagination-item-hover-bg-color;
+    }
+  }
 
-  .current
-    color: $pagination-item-active-color
-    background-color: $pagination-item-active-bg-color
+  .current {
+    color: $pagination-item-active-color;
+    background-color: $pagination-item-active-bg-color;
+  }
 
   a.prev,
-  a.next
-    clearAStyle()
-    vertical-align: middle
-    color: $pagination-arrow-color
+  a.next {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    line-height: 1rem;
+    vertical-align: middle;
+    color: $pagination-arrow-color;
+    transition-property: color;
+    transition-ease();
 
-    &:hover
-      color: $pagination-arrow-hover-color
+    &:hover {
+      color: $pagination-arrow-hover-color;
+    }
+  }
 
-  a.prev
-    margin-right: .5em
+  a.prev {
+    margin-right: .2em;
+  }
 
-  a.next
-    margin-left: .5em
+  a.next {
+    margin-left: .2em;
+  }
 
-.post-paginator
-  overflow: hidden
-  border-top: 1px solid #e8e8e8
-  padding-top: 2em
+  // Pagination of post.
+  // ----------------------------------------
+  &-post {
+    border-top: 1px solid $pagination-line-color;
+    padding-top: 1.5rem;
 
-  .article-prev,
-  .article-next
-    width: 100%
+    &-prev,
+    &-next {
+      width: 100%;
 
-    a
-      clearAStyle()
-      word-break: break-all
-      color: $pagination-arrow-color
+      &__a {
+        color: $pagination-arrow-color;
+        word-wrap();
+        transition-property: color;
+        transition-ease();
 
-      &:hover
-        color: $pagination-arrow-hover-color
+        &:hover {
+          color: $pagination-arrow-hover-color;
+        }
+      }
+    }
 
-  .article-prev
-    text-align: left
+    &-prev {
+      text-align: left;
 
-    .title
-      margin-left: .3rem
+      i {
+        margin-right: .3rem;
+      }
+    }
 
-  .article-next
-    text-align: right
+    &-next {
+      text-align: right;
 
-    .title
-      margin-right: .3rem
-
-  .pull-left
-    float: left
-
-  .pull-right
-    float: right
+      i {
+        margin-left: .3rem;
+      }
+    }
+  }
+}

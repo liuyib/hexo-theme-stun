@@ -1,6 +1,6 @@
 extends ./_layout.pug
 
-include ./_mixins/post-list.pug
+include ./_mixins/post-timeline.pug
 
 block content
   div.single-tag
@@ -8,6 +8,6 @@ block content
       span= __("page.tags") + " -- "
       span= page.tag
 
-    +postList(page.posts)
+    +postTimeline(page.posts)
 
-  //- include ./_components/pagination.pug
+  include ./_partials/widgets/pagination.pug

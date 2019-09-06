@@ -1,11 +1,11 @@
-section#recent-posts.recent-posts
-  //- include ../_mixins/post-header.pug
+section.posts
+  include ../../_mixins/post-header.pug
   //- include ../_mixins/gallery.pug
 
   - var postLists = theme.post_list.paginate.home ? page.posts : site.posts
   - postLists.each(function (post) {
-    article(class=`${post.link ? "post-link" : ""}`).post
-      //- +postHeader(post)
+    article.post(class=`${post.link ? "post-link-title" : ""}`)
+      +postHeader(post)
 
       div.post-body
         if theme.post_list.cover_image.home && post.top_image
@@ -21,12 +21,12 @@ section#recent-posts.recent-posts
           - content.length > theme.auto_excerpt.length ? excerpt += "......" : ""
           div!= excerpt
         else if post.excerpt
-          div.post-excerpt!= post.excerpt
+          div.post-body-excerpt!= post.excerpt
         else
           - isExcerpt = false
-          div.post-excerpt!= post.content
+          div.post-body-excerpt!= post.content
 
         if !post.link && isExcerpt
-          div.post-btn
-            a(href=url_for(post.path))= _p("post.read_more") + " »"
+          div.post-body-more
+            a.post-body-more__a(href=url_for(post.path))= _p("post.read_more") + " »"
   - })

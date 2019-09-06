@@ -53,11 +53,11 @@ $line-height-codeblock  = 1.7  // can`t less 1.3
 $font-size-rem          = 20px // <html>
 $font-size-base         = 14px // <body>
 $font-size-header       = $font-size-base + 4px
-$font-size-sidebar      = $font-size-base
-$font-size-main         = $font-size-base
-$font-size-footer       = $font-size-base
-$font-size-heading-base = 1.875em
-$font-size-heading-step = .125em
+$font-size-sidebar      = $font-size-base + 2px
+$font-size-main         = $font-size-base + 2px
+$font-size-footer       = $font-size-base + 2px
+//                        h1    h2    h3    h4    h5    h6
+$font-size-headings     = 2em 1.5em 1.25em 1em .875em .85em
 
 // Font family
 $font-family-chinese    = 'PingFang SC', 'Microsoft YaHei'
@@ -93,6 +93,7 @@ $link-bottom-hover-color       = #7ebef1
 // Heading ( <h1~6> )
 $heading-color                 = #222
 $heading-logo-color            = $blue-light
+$heading-line-color            = #eaecef
 
 // Horizon line ( <hr> )
 $hr-color                      = #b8dcfd
@@ -154,13 +155,15 @@ $sidebar-state-category-color      = #5c5c5c
 $sidebar-state-tag-color           = #ff8956
 
 // Post
-$post-info-title-color             = #444
-$post-info-create-color            = #666
-$post-info-update-color            = $blue-light
-$post-info-word-count-color        = #666
-$post-info-reading-time-color      = $blue-light
-$post-info-reading-count-color     = $orange-dark
-$post-tags-icon-color              = $blue-light
+$post-title-color             = #444
+$post-create-color            = #666
+$post-update-color            = $blue-light
+$post-word-count-color        = #666
+$post-reading-time-color      = $blue-light
+$post-reading-count-color     = $orange-dark
+$post-end-color               = #b6b6b6
+$post-end-line-color          = #e4e4e4
+$post-tags-icon-color         = $blue-light
 
 // Post list (In the archive/tag/category page.)
 $post-list-line-color              = #c8edff
@@ -177,6 +180,7 @@ $pagination-item-active-color      = #f4f5f5
 $pagination-item-active-bg-color   = $blue-light
 $pagination-arrow-color            = $blue-light
 $pagination-arrow-hover-color      = $orange-dark
+$pagination-line-color             = #e8e8e8
 
 // Reward
 $reward-btn-color                  = #ff6868

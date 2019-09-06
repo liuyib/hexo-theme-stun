@@ -1,38 +1,109 @@
-.post-body,
-#recent-posts
-  if (hexo-config('img_horizonal_align'))
-    img
-      display: block
+.post-header {
+  position: relative;
+  margin: 0 0 1rem;
+  font-size: 1em;
+  text-align: center;
 
-      if (hexo-config('img_horizonal_align') == 'left')
-        margin: 0 auto 0 0
-      else if (hexo-config('img_horizonal_align') == 'right')
-        margin: 0 0 0 auto
-      else
-        margin: auto
+  &-title {
+    margin: 0;
+    cursor: auto;
 
-.post-body
-  #more
-    border: 0
+    &__a {
+      position: relative;
+      color: $post-title-color;
+      word-wrap();
 
-.post-footer
-  &-end
-    margin: 1rem 0 0
-    text-align: center
-    color: #b6b6b6
+      &::before {
+        content: '';
+        visibility: hidden;
+        position: absolute;
+        right: 0;
+        bottom: -4px;
+        left: 0;
+        height: 2px;
+        background-color: #000;
+        transition-property: transform;
+        transition-ease();
+        transform: scaleX(0);
+      }
 
-    if (hexo-config('post_widget.end_text.horizon_line'))
-      border-top: 1px dashed #e6e6e6
-      padding: 1rem 0 0
+      &:hover {
+        color: $post-title-color;
 
-    span
-      margin: 0 .1rem
+        &::before {
+          visibility: visible;
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
 
-  &-tags
-    margin-bottom: 1rem
+  &-meta {
+    i {
+      margin-right: .2rem;
+    }
 
-    .icon
-      color: $post-tags-icon-color
+    & > span {
+      &:not(:first-child)::before {
+        content: '•';
+        margin: 0 .3rem;
+        color: $black-light;
+      }
+    }
 
-    span
-      margin: 0 .5rem
+    &-create {
+      color: $post-create-color;
+    }
+
+    &-update {
+      color: $post-update-color;
+    }
+
+    &-word-count {
+      color: $post-word-count-color;
+    }
+
+    &-reading-time {
+      color: $post-reading-time-color;
+    }
+
+    &-reading-count {
+      color: $post-reading-count-color;
+    }
+
+    .leancloud_visitors {
+      color: $post-reading-count-color;
+    }
+  }
+}
+
+.post-footer {
+  &-end {
+    margin: 0 0 1rem;
+    text-align: center;
+    color: $post-end-color;
+
+    if (hexo-config('post_widget.end_text.horizon_line')) {
+      border-top: 1px dashed $post-end-line-color;
+      padding: 1rem 0 0;
+    }
+  }
+
+  &-tags {
+    margin: 0 0 1rem;
+
+    &-item {
+      margin: 0 .5rem;
+
+      &__i {
+        margin-right: .3rem;
+        color: $post-tags-icon-color;
+      }
+
+      &__a {
+        transition-property: color;
+        transition-ease();
+      }
+    }
+  }
+}

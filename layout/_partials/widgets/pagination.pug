@@ -1,23 +1,20 @@
--
-  var options = {
-    prev_text: '<i class="fa fa-chevron-left"></i>',
-    next_text: '<i class="fa fa-chevron-right"></i>',
-    mid_size: 1
-  }
+nav.paginator
+  - var fa_prefix = theme.fa_prefix || 'fa'
 
-nav#paginator
-  if (!is_post())
-    div.paginator-inner!= paginator(options)
+  if !is_post()
+    - var prev_text = `<i class="${fa_prefix} fa-chevron-left"></i>`
+    - var next_text = `<i class="${fa_prefix} fa-chevron-right"></i>`
+    div.paginator-inner!= paginator({ prev_text, next_text, mid_size: 1 })
   else
-    div.post-paginator
-      if (page.prev)
-        div.article-prev.pull-left
-          a(href=url_for(page.prev.path))
-            i.fa.fa-chevron-left
-            span.title= page.prev.title || _p("post.untitled")
+    div.paginator-post
+      if page.prev
+        div.paginator-post-prev
+          a.paginator-post-prev__a(href=url_for(page.prev.path))
+            i(class=`${fa_prefix} fa-chevron-left`)
+            span= page.prev.title || __("post.untitled")
 
-      if (page.next)
-        div.article-next.pull-right
-          a(href=url_for(page.next.path))
-            span.title= page.next.title || _p("post.untitled")
-            i.fa.fa-chevron-right
+      if page.next
+        div.paginator-post-next
+          a.paginator-post-next__a(href=url_for(page.next.path))
+            span= page.next.title || __("post.untitled")
+            i(class=`${fa_prefix} fa-chevron-right`)

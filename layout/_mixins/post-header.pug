@@ -1,53 +1,52 @@
 mixin postHeader(post)
   header.post-header
+    - var fa_prefix = theme.fa_prefix || 'fa'
+
     if post.top
-      include ../_components/sticky-top.pug
+      include ../_partials/widgets/sticky-top.pug
 
     if is_post()
-      h1.post-title= post.title || _p("post.untitled")
+      h1.post-header-title= post.title || __("post.untitled")
     else
-      if post.link
-        h1.post-title
-          a(href=url_for(post.link) target="_blank" rel="noopener"
-          ).post-title-link= post.title || post.link
-      else
-        h1.post-title
-          a(href=url_for(post.path)
-          ).post-title-link= post.title || _p("post.untitled")
+      h1.post-header-title
+        if post.link
+          a(href=url_for(post.link) target="_blank" rel="noopener" ).post-header-title__a= post.title || post.link
+        else
+          a(href=url_for(post.path)).post-header-title__a= post.title || __("post.untitled")
 
     if !post.link
-      div.post-meta
+      div.post-header-meta
         if theme.post_meta.created.enable
-          span.post-create
-            i(class=`fa fa-${theme.post_meta.created.icon}`)
+          span.post-header-meta-create
+            i(class=`${fa_prefix} fa-${theme.post_meta.created.icon}`)
 
             if !theme.post_meta.icon_only
-              span= _p("post.posted") + " "
+              span= __("post.posted") + " "
             span= full_date(post.date, "YYYY-MM-DD")
 
         if theme.post_meta.updated.enable
-          span.post-update
-            i(class=`fa fa-${theme.post_meta.updated.icon}`)
+          span.post-header-meta-update
+            i(class=`${fa_prefix} fa-${theme.post_meta.updated.icon}`)
 
             if !theme.post_meta.icon_only
-              span= _p("post.updated") + " "
+              span= __("post.updated") + " "
             span= full_date(post.updated, "YYYY-MM-DD")
 
         if theme.post_meta.word_count.enable
-          span.post-word-count
-            i(class=`fa fa-${theme.post_meta.word_count.icon}`)
+          span.post-header-meta-word-count
+            i(class=`${fa_prefix} fa-${theme.post_meta.word_count.icon}`)
 
             if !theme.post_meta.icon_only
-              span= _p("post.word_count") + " "
+              span= __("post.word_count") + " "
             span= wordcount(post.content)
 
         if theme.post_meta.reading_time.enable
           - var postReadingTime = theme.post_meta.reading_time
-          span.post-reading-time
-            i(class=`fa fa-${postReadingTime.icon}`)
+          span.post-header-meta-reading-time
+            i(class=`${fa_prefix} fa-${postReadingTime.icon}`)
 
             if !theme.post_meta.icon_only
-              span= _p("post.reading_time") + " "
+              span= __("post.reading_time") + " "
             - var READING_TIME_UNIT = "m";
             span= min2read(post.content, {cn: postReadingTime.speed.zh, en: postReadingTime.speed.en}) + READING_TIME_UNIT
 
@@ -55,17 +54,17 @@ mixin postHeader(post)
           span(id=url_for(post.path) data-flag-title=post.title).leancloud_visitors
             i.fa.fa-eye
             if !theme.post_meta.icon_only
-              span= _p("post.reading_count") + " "
+              span= __("post.reading_count") + " "
             span.leancloud-visitors-count
 
         //- Can`t show the result of busuanzi counting in homepage,
         //-   because will conflict by ID selector.
         if is_post()
           if theme.busuanzi.enable && theme.busuanzi.post_pv.enable
-            span.post-reading-count
-              i(class=`fa fa-${theme.busuanzi.post_pv.icon}`)
+            span.post-header-reading-count
+              i(class=`${fa_prefix} fa-${theme.busuanzi.post_pv.icon}`)
 
               if !theme.post_meta.icon_only && !theme.busuanzi.post_pv.icon_only
-                span= _p("post.reading_count") + " "
+                span= __("post.reading_count") + " "
 
               span#busuanzi_value_page_pv

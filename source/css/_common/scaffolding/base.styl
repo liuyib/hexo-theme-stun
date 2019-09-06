@@ -36,9 +36,9 @@ h6 {
   line-height: $line-height-heading;
 }
 
-for n in 1 .. 6 {
-  h{n} {
-    font-size: $font-size-heading-base - $font-size-heading-step * n;
+for size in 1 .. 6 {
+  h{size} {
+    font-size: $font-size-headings[size - 1]
   }
 }
 
@@ -76,7 +76,7 @@ hr {
 blockquote {
   margin: 0;
   border-left: 5px solid $quote-left-color;
-  padding: .5rem 1rem;
+  padding: 0 1rem;
   background-color: $quote-bg-color;
 
   & cite::before {

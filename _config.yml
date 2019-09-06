@@ -1,4 +1,40 @@
 # ---------------------------------------------------------------
+# Theme Core Configuration Settings
+# ---------------------------------------------------------------
+
+# Allow to cache content generation. Introduced in Stun v1.4.0
+cache: true
+
+# # Minify source files after hexo generator. Introduced in Stun v1.4.0
+# minify: true
+
+# ---------------------------------------------------------------
+# SEO Settings
+# ---------------------------------------------------------------
+
+# If true, will add site-subtitle to index page.
+# Remember to set up your site-subtitle in Hexo `_config.yml`.
+index_subtitle: false
+
+# Webmaster tools verification setting
+# ---------------------------------------------------------------
+# Google Webmaster tools verification setting
+# See: https://www.google.com/webmasters/
+google_site_verification:
+
+# Bing Webmaster tools verification setting
+# See: https://www.bing.com/webmaster/
+bing_site_verification:
+
+# Baidu Webmaster tools verification setting
+# See: https://ziyuan.baidu.com/site/
+baidu_site_verification:
+
+# 360 Webmaster tools verification setting
+# see http://zhanzhang.so.com/
+qihu360_site_verification:
+
+# ---------------------------------------------------------------
 # Menu config
 # ---------------------------------------------------------------
 
@@ -159,6 +195,7 @@ sidebar:
   offsetTop: 20px
   # Horizon line.
   horizon_line: true
+  width: 260px
 
 author:
   enable: true
@@ -316,23 +353,16 @@ stick_top:
 
 # Code highlight.
 # values:
-# - light
-# - dark
-# - ocean
+#   - light
+#   - dark
+#   - ocean
 highlight_theme: light
 
-# Code wrap
-# values: true or false.
+# Code wrap.
 code_word_wrap: false
 
-# Horizonal alignment of img.
-# values:
-# - left
-# - center
-# - right
-#
-# If you empty it, images will show by default.
-img_horizonal_align:
+# Add a line below h1, h2.
+heading_line: true
 
 # Reward
 reward:
@@ -533,26 +563,6 @@ math:
       copy_tex_css: https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/copy-tex.css
 
 # ---------------------------------------------------------------
-# Webmaster tools verification config
-# ---------------------------------------------------------------
-
-# Google Webmaster tools verification setting
-# See: https://www.google.com/webmasters/
-google_site_verification:
-
-# Bing Webmaster tools verification setting
-# See: https://www.bing.com/webmaster/
-bing_site_verification:
-
-# Baidu Webmaster tools verification setting
-# See: https://ziyuan.baidu.com/site/
-baidu_site_verification:
-
-# 360 Webmaster tools verification setting
-# see http://zhanzhang.so.com/
-qihu360_site_verification:
-
-# ---------------------------------------------------------------
 # Other config
 # ---------------------------------------------------------------
 
@@ -675,6 +685,11 @@ css: css
 js: js
 # In theme directory (source/images).
 images: images
+
+# The common prefix of the FontAwesome icon.
+# Using "fa" prefix in version 4.
+# Using "fas | far | fal | fad | fab" prefix in version 5.
+fa_prefix: fa
 
 # Set a CDN address for the vendor you want to customize.
 # ! -----------------------------------------------------

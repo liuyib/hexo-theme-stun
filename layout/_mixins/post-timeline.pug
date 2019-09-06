@@ -1,0 +1,20 @@
+mixin postTimeline(posts)
+  section.post-timeline
+    - var year, tmpYear
+    - posts.each(function (post) {
+      if post.date
+        - tmpYear = full_date(post.date, "YYYY")
+
+      if tmpYear !== year
+        - year = tmpYear
+        time.post-timeline-item.year= year
+
+      article.post-timeline-item
+        if post.date
+          time.post-timeline-item__time= full_date(post.date, "MM-DD")
+          h2.post-timeline-item-title
+            if post.link
+              a.post-timeline-item-title__a(href=url_for(post.link) target="_blank" rel="noopener")= post.title || post.link
+            else
+              a.post-timeline-item-title__a(href=url_for(post.path))= post.title || __("post.untitled")
+    - })
