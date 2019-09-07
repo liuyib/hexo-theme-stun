@@ -1,4 +1,4 @@
-section.posts
+section.post-list
   include ../../_mixins/post-header.pug
   //- include ../_mixins/gallery.pug
 
@@ -28,5 +28,5 @@ section.posts
 
         if !post.link && isExcerpt
           div.post-body-more
-            a.post-body-more__a(href=url_for(post.path))= _p("post.read_more") + " »"
+            a.post-body-more__a(href=url_for(post.path))= __("post.read_more") + " »"
   - })

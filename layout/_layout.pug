@@ -14,6 +14,9 @@ html(lang=config.language)
             div.content-inner(class=`${is_home() ? 'content-home' : ''}`)
               block content
 
+          if page.comments
+            include ./_partials/widgets/comments.pug
+
           aside#sidebar.sidebar
             div.sidebar-inner
               != partial('./_partials/sidebar/sidebar.pug', null, { cache: theme.cache })
@@ -24,8 +27,10 @@ html(lang=config.language)
         div.footer-inner
           != partial('./_partials/footer/footer.pug', null, { cache: theme.cache })
 
-    //-   if theme.back2top.enable
-    //-     include ../_components/back2top.pug
+      include ./_partials/widgets/loading-bar.pug
+
+      if theme.back2top.enable
+        include ./_partials/widgets/back2top.pug
 
     //- include ../_components/search/index.pug
 

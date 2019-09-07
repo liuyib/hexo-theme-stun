@@ -1,2 +1,4 @@
-div(data-popover=__("post.sticky") data-popover-pos="up").sticky-top
-  i(class=`${theme.fa_prefix || 'fa'} fa-${theme.stick_top.icon}`).sticky-top__i
+- var fa_prefix = theme.fa_prefix || 'fa'
+
+div.sticky-top(data-popover=__("post.sticky") data-popover-pos="up")
+  i.sticky-top__i(class=`${fa_prefix} fa-${theme.stick_top.icon}`)

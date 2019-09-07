@@ -1,11 +1,12 @@
-$highlight_theme = hexo-config('highlight_theme')
+highlight_theme = hexo-config('highlight_theme');
 
-if ($highlight_theme == 'light')
-  $highlight-addition = #deffe7
-  $highlight-deletion = #ffe8eb
-else if ($highlight_theme == 'dark')
-  $highlight-addition = alpha(#00ff00, .2)
-  $highlight-deletion = alpha(#ff0000, .2)
-else if ($highlight_theme == 'ocean')
-  $highlight-addition = alpha(#9bb955, .4)
-  $highlight-deletion = alpha(#ff0000, .2)
+if (highlight_theme == 'light') {
+  $highlight-addition = #deffe7;
+  $highlight-deletion = #ffe8eb;
+} else if (highlight_theme == 'dark') {
+  $highlight-addition = alpha(#00ff00, .2);
+  $highlight-deletion = alpha(#ff0000, .2);
+} else if (highlight_theme == 'ocean') {
+  $highlight-addition = alpha(#9bb955, .4);
+  $highlight-deletion = alpha(#ff0000, .2);
+}

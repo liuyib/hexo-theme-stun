@@ -27,13 +27,15 @@ hexo.extend.filter.register('after_post_render', function(data) {
     if (!data.protocol) return;
     if (data.hostname === siteHost) return;
 
+    var fa_prefix = theme.fa_prefix || 'fa';
+
     $(this).replaceWith(function() {
       return $(
         '<span class="external-link">' +
           '<a href="' + href + '" target="_blank" rel="noopener">' +
             $(this).html() +
           '</a>' +
-          '<i class="fa fa-external-link"></i>' +
+          '<i class="' + fa_prefix + ' fa-external-link"></i>' +
         '</span>'
       );
     });

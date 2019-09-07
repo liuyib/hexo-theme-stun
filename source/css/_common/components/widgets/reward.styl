@@ -1,0 +1,50 @@
+.reward {
+  text-align: center;
+
+  &-button {
+    display: inline-block;
+    margin: 1rem 0 1.5rem;
+    border-radius: 10px;
+    padding: .2rem 1rem;
+    color: $white;
+    background-color: $reward-btn-color;
+    transition-property: background-color;
+    cursor: pointer;
+    transition-ease();
+
+    &:hover {
+      background-color: $reward-btn-hover-color;
+    }
+  }
+
+  &-qr {
+    display: none;
+
+    &-alipay,
+    &-wechat {
+      display: inline-block;
+      margin: 0 2rem;
+
+      &__img {
+        width: 200px;
+        height: 200px;
+      }
+
+      &-text {
+        margin: .5rem 0;
+      }
+    }
+
+    &-alipay {
+      &-text {
+        color: $reward-alipay-color;
+      }
+    }
+
+    &-wechat {
+      &-text {
+        color: $reward-wechat-color;
+      }
+    }
+  }
+}

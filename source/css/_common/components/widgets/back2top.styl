@@ -1,30 +1,33 @@
-#back-top
-  position: fixed
-  right: 0
-  bottom: 5vh
-  transition: transform .5s
-  transform: translateX(100%)
+.back2top {
+  position: fixed;
+  right: 0;
+  bottom: 5vh;
+  transition-property: transform;
+  transform: translateX(100%);
+  cursor: pointer;
+  transition-ease();
 
-  &.show
-    transform: translateX(-100%)
+  &.show {
+    transform: translateX(-100%);
+  }
 
-  &.hide
-    transform: translateX(100%)
+  &.hide {
+    transform: translateX(100%);
+  }
 
-$back-to-top-rotate = convert(hexo-config('back2top.icon.rotate') || '0')
-$back-to-top-color = convert(hexo-config('back2top.icon.color') || '#666')
-$back-to-top-hover-color = convert(hexo-config('back2top.icon.hover_color') || '#999')
+  &-icon {
+    font-size: 1.5rem;
+    color: convert(hexo-config('back2top.icon.color') || '#666');
+    transition-property: color;
+    transform: rotate(convert(hexo-config('back2top.icon.rotate') || '0'));
+    transition-ease();
 
-.back-top-inner
-  i
-    font-size: 1.5rem
-    color: $back-to-top-color
-    transition: color .2s
-    transform: rotate($back-to-top-rotate)
+    &:hover {
+      color: convert(hexo-config('back2top.icon.hover_color') || '#999');
+    }
+  }
 
-    &:hover
-      color: $back-to-top-hover-color
-      cursor: pointer
-
-  &[data-popover][data-popover-pos='up']:hover::before
-    transform: translate(-50%, -125%)
+  &[data-popover][data-popover-pos='up']:hover::before {
+    transform: translate(-50%, -125%);
+  }
+}

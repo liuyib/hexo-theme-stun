@@ -1,21 +1,34 @@
-.comments
-  margin: 1.5rem 0 0
+.comments {
+  margin: 1.5rem 0 0;
+  width: $content-width;
 
-  a
-    clearAStyle()
+  if (hexo-config('sidebar.position') == 'left') {
+    float: right;
+  } else if (hexo-config('sidebar.position') == 'right') {
+    float: left;
+  }
 
-// Gitalk
-#gitalk-container
-  width: 100%
-
-  .gt-meta
-    margin-top: 0
-    padding-top: 0
-
-// Livere
-#lv-container
-  width: 100%
+  &-inner {
+    layout-card();
+  }
+}
 
 // Disqus
-#disqus_thread
-  width: 100%
+#disqus_thread {
+  width: 100%;
+}
+
+// Gitalk
+#gitalk-container {
+  width: 100%;
+
+  .gt-meta {
+    margin-top: 0;
+    padding-top: 0;
+  }
+}
+
+// Livere
+#lv-container {
+  width: 100%;
+}

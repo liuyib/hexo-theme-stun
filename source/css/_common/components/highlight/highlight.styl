@@ -1,105 +1,131 @@
-@require './theme.styl'
-@require './diff.styl'
+@require './theme.styl';
+@require './diff.styl';
 
-languages = 'js' 'javascript' 'python' 'ruby' 'xml' 'html' 'css' 'php' 'sql' 'coffeescript' 'java' 'bash' 'markdown' 'kotlin' 'c' 'c\+\+' 'c#' 'go' 'golang' 'less' 'sass' 'scss' 'stylus' 'styl' 'typescript' 'ts' 'yml' 'yaml' 'matlab' 'objectivec' 'makefile' 'scala' 'gradle' 'swift' 'rust' 'lua' 'lisp' 'fortran' 'dart' 'perl'
-$wordWrap = hexo-config('code_word_wrap')
+languages = 'js' 'javascript' 'python' 'ruby' 'xml' 'html' 'css' 'php' 'sql' 'coffeescript' 'java' 'bash' 'markdown' 'kotlin' 'c' 'c\+\+' 'c#' 'go' 'golang' 'less' 'sass' 'scss' 'stylus' 'styl' 'typescript' 'ts' 'yml' 'yaml' 'matlab' 'objectivec' 'makefile' 'scala' 'gradle' 'swift' 'rust' 'lua' 'lisp' 'fortran' 'dart' 'perl';
+wordWrap = hexo-config('code_word_wrap');
 
-for lang in languages
-  .highlight{'.' + lang}
-    figcaption
-      span
-        &:first-child::before
-          content: lang
-          margin: 0 .6rem
-          color: $highlight-code-lang-color
+for lang in languages {
+  .highlight{'.' + lang} {
+    figcaption {
+      span {
+        &:first-child::before {
+          content: lang;
+          margin: 0 .6rem 0 0;
+          color: $highlight-code-lang-color;
+        }
+      }
+    }
+  }
+}
 
-.highlight
-  position: relative
-  margin: .5rem 0 1rem
-  min-width: 100%
-  line-height: $line-height-code-block
-  color: $highlight-color
-  background-color: $highlight-background
+.highlight {
+  margin: 0 0 1rem;
+  width: 100%;
+  line-height: $line-height-codeblock;
+  color: $highlight-color;
+  background-color: $highlight-background;
 
-  .copy-button i
-    color: $copy-button-color
+  .copy-button i {
+    color: $copy-button-color;
+  }
 
   pre,
-  code
-    font-family: $code-font-family
+  code {
+    font-family: $font-family-code;
+  }
 
-  pre
-    margin: 0
+  pre {
+    margin: 0;
 
-    if ($wordWrap)
-      white-space: pre-wrap
-      counter-reset: line
+    if (wordWrap) {
+      white-space: pre-wrap;
+      counter-reset: line;
+    }
+  }
 
-  td
-    border-width: 0
+  td {
+    border-width: 0;
+  }
 
-  figcaption
-    overflow: hidden
-    padding: .1rem 0
-    width: 100%
-    color: $highlight-header-color
-    background-color: $highlight-header-bg-color
+  figcaption {
+    overflow: hidden;
+    position: relative;
+    padding: 0 .6rem;
+    width: 100%;
+    color: $highlight-header-color;
+    background-color: $highlight-header-bg-color;
 
-    span
-      &:first-child
-        float: left
-        color: $highlight-code-note-color
+    span {
+      &:first-child {
+        float: left;
+        color: $highlight-code-note-color;
+      }
+    }
 
-    span
-      &:nth-child(2)
-        float: right
-        margin-right: 2rem
+    span {
+      &:last-child {
+        float: right;
+        margin-right: 2rem;
+      }
+    }
+  }
 
-  figcaption.custom
-    padding: .1rem 0
-    min-height: 1.5rem
+  figcaption.custom {
+    padding: .1rem 0;
+    min-height: 1.5rem;
 
-    .custom-lang
-      float: left
-      margin: 0 .6rem
-      color: $highlight-code-lang-color
+    .custom-lang {
+      float: left;
+      margin: 0 .6rem;
+      color: $highlight-code-lang-color;
+    }
+  }
 
-  .code
-    if ($wordWrap)
-      padding: 0
-    else
-      padding: 0 0 0 .4rem
+  .code {
+    if (wordWrap) {
+      padding: 0;
+    } else {
+      padding: 0 0 0 .4rem;
+    }
+  }
 
-  .gutter
-    padding: .4rem .6rem
-    width: 1rem
-    background-color: $highlight-side-bg-color
+  .gutter {
+    padding: .4rem .6rem;
+    width: 1rem;
+    background-color: $highlight-side-bg-color;
 
-    if ($wordWrap)
-      display: none
+    if (wordWrap) {
+      display: none;
+    }
 
-    pre
-      text-align: right
-      color: $highlight-side-color
-      background-color: inherit
+    pre {
+      text-align: right;
+      color: $highlight-side-color;
+      background-color: inherit;
+    }
+  }
 
-  if ($wordWrap)
-    .line
-      &::before
-        content: counter(line)
-        display: inline-block
-        margin: 0 .4rem 0 0
-        box-sizing: content-box
-        padding: 0 .8rem 0 .4rem
-        min-width: 1rem
-        text-align: right
-        color: $highlight-side-color
-        background-color: $highlight-side-bg-color
-        counter-increment: line
+  if (wordWrap) {
+    .line {
+      &::before {
+        content: counter(line);
+        display: inline-block;
+        margin: 0 .4rem 0 0;
+        box-sizing: content-box;
+        padding: 0 .8rem 0 .4rem;
+        min-width: 1rem;
+        text-align: right;
+        color: $highlight-side-color;
+        background-color: $highlight-side-bg-color;
+        counter-increment: line;
+      }
+    }
+  }
 
   .variable,
-  .attribute
-    color: $highlight-red
+  .attribute {
+    color: $highlight-red;
+  }
 
   .number,
   .preprocessor,
@@ -107,11 +133,13 @@ for lang in languages
   .params,
   .constant,
   .number,
-  .command
-    color: $highlight-orange
+  .command {
+    color: $highlight-orange;
+  }
 
-  .built_in
-    color: $highlight-yellow
+  .built_in {
+    color: $highlight-yellow;
+  }
 
   .special,
   .formula,
@@ -121,19 +149,24 @@ for lang in languages
   .inheritance,
   .header,
   .regexp,
-  .tag
-    color: $highlight-green
+  .tag {
+    color: $highlight-green;
+  }
 
   .keyword,
-  .title
-    color: $highlight-aqua
+  .title {
+    color: $highlight-aqua;
+  }
 
   .function,
-  .title
-    color: $highlight-blue
+  .title {
+    color: $highlight-blue;
+  }
 
-  .comment
-    color: $highlight-comment
+  .comment {
+    color: $highlight-comment;
+  }
+}
 
 .ruby .constant,
 .xml .tag .title,
@@ -143,18 +176,21 @@ for lang in languages
 .css .id,
 .tag .name,
 .css .class,
-.css .pseudo
-  color: $highlight-red
+.css .pseudo {
+  color: $highlight-red;
+}
 
 .ruby .class .title,
 .css .rules .attribute,
 .ruby .symbol,
-.xml .cdata
-  color: $highlight-green
+.xml .cdata {
+  color: $highlight-green;
+}
 
 .css .hexcolor,
-.tag .string
-  color: $highlight-aqua
+.tag .string {
+  color: $highlight-aqua;
+}
 
 .python .decorator,
 .python .title,
@@ -163,18 +199,22 @@ for lang in languages
 .perl .sub,
 .javascript .title,
 .js .title,
-.coffeescript .title
-  color: $highlight-blue
+.coffeescript .title {
+  color: $highlight-blue;
+}
 
 .tag .attr,
 .javascript .keyword,
 .javascript .function,
 .js .keyword,
-.js .function
-  color: $highlight-purple
+.js .function {
+  color: $highlight-purple;
+}
 
-.diff .addition
-  background-color: $highlight-addition
+.diff .addition {
+  background-color: $highlight-addition;
+}
 
-.diff .deletion
-  background-color: $highlight-deletion
+.diff .deletion {
+  background-color: $highlight-deletion;
+}

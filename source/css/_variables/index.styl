@@ -35,11 +35,11 @@ $md-width = 992px - 0.02px
 $lg-width = 1200px - 0.02px
 
 // Width
-$sidebar-width         = 260px
-$side-main-gap         = 20px
-$content-width         = $md-width
-$main-aside-gap        = 40px
-$main-width            = $sidebar-width + $content-width + $side-main-gap
+$sidebar-width  = 260px
+$side-main-gap  = 20px
+$content-width  = $md-width
+$main-aside-gap = 40px
+$main-width     = $sidebar-width + $content-width + $side-main-gap
 
 // -------------------------------------------
 // Font, line-height
@@ -87,20 +87,16 @@ $body-bg-color                 = darken(#f4f5f5, 5%)
 // Link ( <a> )
 $link-color                    = #058ed2
 $link-hover-color              = #11a3eb
-$link-bottom-color             = #d9ecfb
+$link-bottom-color             = transparent
 $link-bottom-hover-color       = #7ebef1
 
 // Heading ( <h1~6> )
 $heading-color                 = #222
-$heading-logo-color            = $blue-light
+$heading-logo-color            = $orange-dark
 $heading-line-color            = #eaecef
 
 // Horizon line ( <hr> )
 $hr-color                      = #b8dcfd
-
-// Unordered list ( <ul> )
-$ul-list-color                 = $blue-light
-$ul-list-hover-color           = $orange-dark
 
 // Blockquote ( <blockquote> )
 $quote-bg-color                = #f6f6f6
@@ -117,8 +113,6 @@ $img-border-color              = #dadefb
 // -------------------------------------------
 // Header
 $header-nav-bg-color               = alpha(#2d2e30, .7)
-$header-nav-text-color             = $white-light
-$header-nav-text-hover-color       = $blue-light
 $header-nav-link-color             = $white-light
 $header-nav-link-hover-color       = $blue-light
 
@@ -155,21 +149,22 @@ $sidebar-state-category-color      = #5c5c5c
 $sidebar-state-tag-color           = #ff8956
 
 // Post
-$post-title-color             = #444
-$post-create-color            = #666
-$post-update-color            = $blue-light
-$post-word-count-color        = #666
-$post-reading-time-color      = $blue-light
-$post-reading-count-color     = $orange-dark
-$post-end-color               = #b6b6b6
-$post-end-line-color          = #e4e4e4
-$post-tags-icon-color         = $blue-light
+$post-title-color                  = #444
+$post-create-color                 = #666
+$post-update-color                 = $blue-light
+$post-word-count-color             = #666
+$post-reading-time-color           = $blue-light
+$post-reading-count-color          = $orange-dark
+$post-end-color                    = #b6b6b6
+$post-end-line-color               = #e4e4e4
+$post-tags-icon-color              = $blue-light
+$post-copyright-border-color       = #e6e6e6
+$post-copyright-shadow-color       = #f5f5f5
 
-// Post list (In the archive/tag/category page.)
-$post-list-line-color              = #c8edff
-$post-list-dot-color               = #6ec5ff
-$post-list-dot-hover-color         = $orange-dark
-$post-list-time-color              = #99a9bf
+// Post timeline (In the archive/tag/category page.)
+$post-timeline-line-color          = #c8edff
+$post-timeline-dot-color           = #6ec5ff
+$post-timeline-dot-hover-color     = $orange-dark
 
 // Pagination
 $pagination-item-color             = $blue-light
@@ -188,11 +183,14 @@ $reward-btn-hover-color            = #e45c5c
 $reward-alipay-color               = #1caceb
 $reward-wechat-color               = #3cb034
 
+$loading-bar-bg-color              = #77b6ff
+$loading-bar-shadow-color          = alpha(#77b6ff, .7)
+
 // Notification
 $alert-success                     = #52c41a
-$alert-info                        = #1890ff
-$alert-warning                     = #faad14
-$alert-error                       = #f5222d
+$alert-info-color                  = #1890ff
+$alert-warning-color               = #faad14
+$alert-error-color                 = #f5222d
 
 // -------------------------------------------
 // Icon font
@@ -206,16 +204,10 @@ $font-awesome
 
 $icon-heading-link        = '\f0c1'
 
-$icon-ul-list-dot         = '\f111'
-$icon-ul-list-dot-empty   = '\f10c'
-$icon-ul-list-square      = '\f0c8'
-
-$icon-hr                  = '\f0fb'
-
-$note-default             = '\f0a9'
-$note-success             = '\f058'
-$note-warning             = '\f06a'
-$note-danger              = '\f056'
+$icon-note-default        = '\f0a9'
+$icon-note-success        = '\f058'
+$icon-note-warning        = '\f06a'
+$icon-note-danger         = '\f056'
 
 // -------------------------------------------
 // Table

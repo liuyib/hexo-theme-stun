@@ -5,17 +5,17 @@
   var ccURL = `https://creativecommons.org/licenses/${ccLicense}/4.0/deed.${ccLanguage}`
 
 div.post-copyright
-  div.copyright-author
-    span.copyright-name!= _p("post.copyright.author") + ":"
-    span.copyright-value
+  div.post-copyright-author
+    span.post-copyright-author-name!= __("post.copyright.author") + ": "
+    span.post-copyright-author-value
       if (config.url && config.author)
         a(href=config.url)= config.author
-  div.copyright-link
-    span.copyright-name!= _p("post.copyright.link") + ":"
-    span.copyright-value
+  div.post-copyright-link
+    span.post-copyright-link-name!= __("post.copyright.link") + ": "
+    span.post-copyright-link-value
       if (config.url)
         a(href=page.permalink)= page.permalink
-  div.copyright-notice
-    span.copyright-name!= _p("post.copyright.license_title") + ":"
-    span.copyright-value
+  div.post-copyright-notice
+    span.post-copyright-notice-name!= __("post.copyright.license_title") + ": "
+    span.post-copyright-notice-value
       != _p("post.copyright.license_content", ccURL, ccLicense.toUpperCase())

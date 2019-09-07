@@ -1,10 +1,9 @@
-div#reward
-  div.reward-button!= _p("reward.btn_text")
-  div.reward-qr-wrapper
-    div.reward-qr
-      span.reward-qr-alipay
-        img(src=theme.reward.alipay)
-        div.reward-qr-alipay-text!= _p("reward.alipay")
-      span.reward-qr-wechat
-        img(src=theme.reward.wechat)
-        div.reward-qr-wechat-text!= _p("reward.wechat")
+div.reward
+  div.reward-button!= __("reward.btn_text")
+  div.reward-qr
+    span.reward-qr-alipay
+      img.reward-qr-alipay__img(src=theme.reward.alipay)
+      div.reward-qr-alipay-text!= __("reward.alipay")
+    span.reward-qr-wechat
+      img.reward-qr-wechat__img(src=theme.reward.wechat)
+      div.reward-qr-wechat-text!= __("reward.wechat")

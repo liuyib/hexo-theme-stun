@@ -4,6 +4,7 @@
 
 .main {
   margin: 2rem auto;
+  width: 100%;
 }
 
 .main-inner {
@@ -17,67 +18,91 @@
   width: convert(hexo-config('sidebar.width') || '$sidebar-width');
 }
 
-if (hexo-config('sidebar.position') == 'left') {
-  .content {
+.content {
+  width: $content-width;
+
+  if (hexo-config('sidebar.position') == 'left') {
     float: right;
-  }
-} else if (hexo-config('sidebar.position') == 'right') {
-  .content {
+  } else if (hexo-config('sidebar.position') == 'right') {
     float: left;
   }
-}
 
-.content-inner {
-  border-radius: 5px;
-  padding: 1rem 2rem;
-  width: $content-width;
-  height: 100%;
-  background-color: $white;
+  &-inner {
+    width: 100%;
+    height: 100%;
+    layout-card();
 
-  .post-body {
-    if (hexo-config('heading_line')) {
-      h1,
-      h2 {
-        border-bottom: 1px solid $heading-line-color;
-        padding-bottom: .3em;
+    a {
+      &:not(.heading-link):not(.paginator-post-next__a) {
+        border-bottom: 1px solid $link-bottom-color;
+        transition-property: border-color;
+        transition-ease();
+
+        &:hover {
+          border-bottom-color: $link-bottom-hover-color;
+        }
       }
     }
-  }
 
-  .external-link {
-    color: $gray-dark;
-
-    i {
-      margin: 0 .1rem 0 .15rem;
-      font-size: .9em;
-    }
-  }
-
-  .table-container {
-    overflow: auto;
-    margin-bottom: 1rem;
-
-    table {
-      margin: 0;
-    }
-  }
-
-  .heading-link {
-    color: $heading-color;
-
-    &::after {
-      content: $icon-heading-link;
-      margin-left: .3em;
-      color: $heading-logo-color;
-      opacity: 0;
-      @extend $font-awesome;
-      transition-property: opacity;
-      transition-ease();
+    img {
+      border: 1px solid $img-border-color;
+      border-radius: 3px;
+      padding: .2rem;
     }
 
-    &:hover {
+    .post-body {
+      if (hexo-config('heading_line')) {
+        h1,
+        h2 {
+          border-bottom: 1px solid $heading-line-color;
+          padding-bottom: .3em;
+        }
+      }
+    }
+
+    .external-link {
+      color: $gray-dark;
+
+      i {
+        margin: 0 .1rem 0 .15rem;
+        font-size: .9em;
+      }
+    }
+
+    .table-container {
+      overflow: auto;
+      margin-bottom: 1rem;
+    }
+
+    .table-plugin {
+      & tbody tr {
+        &:nth-of-type(odd) {
+          background-color: $table-row-odd-bg-color;
+        }
+
+        &:hover {
+          background-color: $table-row-hover-bg-color;
+        }
+      }
+    }
+
+    .heading-link {
+      color: $heading-color;
+
       &::after {
-        opacity: 1;
+        content: $icon-heading-link;
+        margin-left: .3em;
+        color: $heading-logo-color;
+        opacity: 0;
+        @extend $font-awesome;
+        transition-property: opacity;
+        transition-ease();
+      }
+
+      &:hover {
+        &::after {
+          opacity: 1;
+        }
       }
     }
   }

@@ -25,9 +25,10 @@ popover-bg-color = alpha(#000, .7);
   background-color: popover-bg-color;
   opacity: 0;
   text-shadow: none;
-  transition: opacity .2s, transform .2s;
+  transition-property: opacity, transform;
   transform: translate(-50%, -70%);
   pointer-events: none;
+  transition-ease();
 }
 
 [data-popover]::before {
@@ -61,34 +62,34 @@ popover-bg-color = alpha(#000, .7);
   box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
 
   &-success {
-    color: $alert-success;
+    color: $alert-success-color;
 
     & ~ i {
-      color: $alert-success;
+      color: $alert-success-color;
     }
   }
 
   &-info {
-    color: $alert-info;
+    color: $alert-info-color;
 
     & ~ i {
-      color: $alert-info;
+      color: $alert-info-color;
     }
   }
 
   &-warning {
-    color: $alert-warning;
+    color: $alert-warning-color;
 
     & ~ i {
-      color: $alert-warning;
+      color: $alert-warning-color;
     }
   }
 
   &-error {
-    color: $alert-error;
+    color: $alert-error-color;
 
     & ~ i {
-      color: $alert-error;
+      color: $alert-error-color;
     }
   }
 
@@ -102,8 +103,9 @@ popover-bg-color = alpha(#000, .7);
 .anime-close {
   &::before,
   &::after {
-    transition: transform .25s;
+    transition-property: transform;
     transform: rotate(-45deg);
+    transition-ease();
   }
 
   &::after {

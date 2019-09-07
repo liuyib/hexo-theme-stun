@@ -1,38 +1,38 @@
 extends ./_layout.pug
 
 block content
-  - var fa_prefix = theme.fa_prefix || 'fa'
+  div.post
+    - var fa_prefix = theme.fa_prefix || 'fa'
 
-  include ./_mixins/post-header.pug
-  //- include ./_mixins/gallery.pug
+    include ./_mixins/post-header.pug
+    //- include ./_mixins/gallery.pug
 
-  +postHeader(page)
+    +postHeader(page)
 
-  div.post-body
-    if page.photos && page.photos.length
-      //- +gallery(page)
-    != page.content
+    div.post-body
+      if page.photos && page.photos.length
+        //- +gallery(page)
+      != page.content
 
-  footer.post-footer
-    if theme.post_widget.end_text.enable
-      div.post-footer-end
-        span= "------ "
-        span= __("post.end")
-        span= " ------"
+    footer.post-footer
+      if theme.post_widget.end_text.enable
+        div.post-end
+          span= "------ "
+          span= __("post.end")
+          span= " ------"
 
-    - var themeConfigCC = theme.creative_commons.enable && theme.creative_commons.post
-    if page.copyright === false ? page.copyright : themeConfigCC
-      //- include ./_components/copyright.pug
+      if page.copyright || (theme.creative_commons.enable && theme.creative_commons.post)
+        include ./_partials/widgets/copyright.pug
 
-    if theme.post_widget.tags
-      if page.tags && page.tags.length > 0
-        div.post-footer-tags
-          each tag in page.tags.data
-            span.post-footer-tags-item
-              i.post-footer-tags-item__i(class=`${fa_prefix} fa-tags`)
-              a.post-footer-tags-item__a(href=tag.permalink)= tag.name
+      if theme.post_widget.tags
+        if page.tags && page.tags.length > 0
+          div.post-tags
+            each tag in page.tags.data
+              span.post-tags-item
+                i.post-tags-item__i(class=`${fa_prefix} fa-tags`)
+                a.post-tags-item__a(href=tag.permalink)= tag.name
 
-    //- if page.reward === false ? page.reward : (theme.reward && theme.reward.enable)
-    //-   include ./_components/reward.pug
+      if page.reward || (theme.reward && theme.reward.enable)
+        include ./_partials/widgets/reward.pug
 
-    include ./_partials/widgets/pagination.pug
+      include ./_partials/widgets/pagination.pug

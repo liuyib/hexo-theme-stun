@@ -8,9 +8,9 @@
       indexName: env.ALGOLIA_INDEX_NAME || config.algolia.indexName,
       hits: theme.algolia_search.hits,
       languages: {
-        input_placeholder: _p("algolia_search.input_placeholder"),
-        hits_empty: _p("algolia_search.hits_empty"),
-        hits_stats: _p("algolia_search.hits_stats")
+        input_placeholder: __("algolia_search.input_placeholder"),
+        hits_empty: __("algolia_search.hits_empty"),
+        hits_stats: __("algolia_search.hits_stats")
       }
     });
   } 
@@ -61,10 +61,10 @@
   });
 
   var prompt = JSON.stringify({
-    copy_success: _p("prompt.copy.success"),
-    copy_error: _p("prompt.copy.error"),
-    creative_commons: _p("prompt.creative_commons"),
-    copy_button: _p("prompt.copy_button")
+    copy_success: __("prompt.copy.success"),
+    copy_error: __("prompt.copy.error"),
+    creative_commons: __("prompt.creative_commons"),
+    copy_button: __("prompt.copy_button")
   });
 
 script.

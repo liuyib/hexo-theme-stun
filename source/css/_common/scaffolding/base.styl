@@ -38,7 +38,7 @@ h6 {
 
 for size in 1 .. 6 {
   h{size} {
-    font-size: $font-size-headings[size - 1]
+    font-size: $font-size-headings[size - 1];
   }
 }
 
@@ -107,18 +107,7 @@ dd {
 table {
   border-spacing: 0;
   border-collapse: collapse;
-  margin: 0 0 1rem;
   width: 100%;
-}
-
-table > tbody > tr {
-  &:nth-of-type(odd) {
-    background-color: $table-row-odd-bg-color;
-  }
-
-  &:hover {
-    background-color: $table-row-hover-bg-color;
-  }
 }
 
 th,

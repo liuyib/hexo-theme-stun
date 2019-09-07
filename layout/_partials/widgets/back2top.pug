@@ -1,3 +1,5 @@
-div#back-top
-  div(data-popover=_p("back2top") data-popover-pos="up").back-top-inner
-    i(class=`fa fa-${theme.back2top.icon.name}`)
+- var fa_prefix = theme.fa_prefix || 'fa'
+
+div#back2top.back2top
+  div(data-popover=__("back2top") data-popover-pos="up")
+    i.back2top-icon(class=`${fa_prefix} fa-${theme.back2top.icon.name}`)
