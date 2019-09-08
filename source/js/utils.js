@@ -111,11 +111,11 @@ Stun.utils = Stun.$u = {
     };
 
     if (!$('.stun-alert')[0]) {
-      var fa_prfix = CONFIG.fontawesome.prefix;
+      var faPrefix = CONFIG.fontawesome.prefix;
       var $alert = $(
         '<div class="stun-message">' +
           '<div class="stun-alert stun-alert-' + status + '">' +
-            '<i class="stun-alert-icon ' + fa_prfix + ' fa-' + icon[status] + '"></i>' +
+            '<i class="stun-alert-icon ' + faPrefix + ' fa-' + icon[status] + '"></i>' +
             '<span class="stun-alert-description">' + text + '</span>' +
           '</div>' +
         '</div>'
@@ -252,10 +252,10 @@ Stun.utils = Stun.$u = {
   addIconToExternalLink: function (container) {
     if (!$(container).length) return;
 
-    var fa_prfix = CONFIG.fontawesome.prefix;
+    var faPrefix = CONFIG.fontawesome.prefix;
     var $wrapper = $('<span class="external-link"></span>');
     var $icon = $(
-      '<i class="' + fa_prfix + ' fa-' +
+      '<i class="' + faPrefix + ' fa-' +
         CONFIG.external_link.icon.name +
       '"></i>'
     );
@@ -389,12 +389,12 @@ Stun.utils = Stun.$u = {
       }
     });
 
-    var fa_prfix = CONFIG.fontawesome.prefix;
+    var faPrefix = CONFIG.fontawesome.prefix;
     var $copyIcon = $(
       '<div class="copy-button" data-popover=' +
         CONFIG.prompt.copy_button +
         ' data-popover-pos="up">' +
-        '<i class="' + fa_prfix + ' fa-clipboard"></i>' +
+        '<i class="' + faPrefix + ' fa-clipboard"></i>' +
       '</div>'
     );
 

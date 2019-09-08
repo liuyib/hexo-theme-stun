@@ -1,4 +1,6 @@
 .sidebar {
+  width: convert(hexo-config('sidebar.width') || '$sidebar-width');
+
   .hide {
     display: none;
   }
@@ -6,7 +8,8 @@
   &-inner {
     border-radius: 5px;
     padding: 1rem;
-    width: convert(hexo-config('sidebar.width') || '$sidebar-width');
+    width: 100%;
+    height: 100%;
     font-size: $font-size-sidebar;
     background-color: $white;
   }

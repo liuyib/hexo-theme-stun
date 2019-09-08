@@ -39,7 +39,7 @@ if theme.pjax && theme.pjax.enable
   script(src=pjax_js)
 
 script.
-  window.addEventListener('load', function () {
+  window.addEventListener('DOMContentLoaded', function () {
     var pjax = new Pjax(!{ pjaxArgs });
     // 加载进度条的计时器
     var loadingTimer = null;

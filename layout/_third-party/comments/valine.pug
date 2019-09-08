@@ -36,5 +36,5 @@ script(data-pjax).
   if (!{ theme.pjax.enable }) {
     loadValine();
   } else {
-    window.addEventListener('load', loadValine, false);
+    window.addEventListener('DOMContentLoaded', loadValine, false);
   }

@@ -13,5 +13,5 @@ script(data-pjax).
   if (!{ theme.pjax.enable }) {
     loadLivere();
   } else {
-    window.addEventListener('load', loadLivere, false);
+    window.addEventListener('DOMContentLoaded', loadLivere, false);
   }

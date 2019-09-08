@@ -33,5 +33,5 @@ script(data-pjax).
   if (!{ theme.pjax.enable }) {
     loadGitalk();
   } else {
-    window.addEventListener('load', loadGitalk, false);
+    window.addEventListener('DOMContentLoaded', loadGitalk, false);
   }

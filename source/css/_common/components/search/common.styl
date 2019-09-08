@@ -9,6 +9,8 @@
   background-color: alpha($black-dark, .7);
 }
 
+search-popup-padding = 1rem;
+
 .search-popup {
   display: none;
   position: fixed;
@@ -17,22 +19,30 @@
   z-index: $z-index2;
   margin-left: -350px;
   border-radius: 5px;
-  padding: 1rem;
+  padding: search-popup-padding;
   width: 700px;
   max-height: 80%;
   font-size: $font-size-base + 2px;
   color: $font-color;
   background-color: $white-light;
+
+  &.show {
+    will-change: transform;
+  }
 }
 
+search-input-height = 2rem;
+search-input-padding = 1rem;
+
 .search-input {
-  margin: 1.2rem 0 1rem;
+  margin: search-input-padding 0;
 
   input {
     border: 2px solid alpha($blue-light, .5);
     border-radius: 2rem;
     padding: .2rem .8rem;
-    line-height: 1.3rem;
+    height: search-input-height;
+    line-height: search-input-height;
     outline: 0;
     transition: border-color .3s;
 

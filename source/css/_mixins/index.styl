@@ -22,48 +22,6 @@ transition-ease-in-out() {
   transition-duration: .2s;
 }
 
-// < 576px
-mobile-small() {
-  @media (max-width: $xs-width) {
-    {block};
-  }
-}
-
-// < 768px
-mobile() {
-  @media (max-width: $sm-width) {
-    {block};
-  }
-}
-
-// < 992px
-tablet-mobile() {
-  @media (max-width: $md-width) {
-    {block};
-  }
-}
-
-// > 768px && < 992px
-tablet() {
-  @media (min-width: $sm-width) and (max-width: $md-width) {
-    {block};
-  }
-}
-
-// > 992px
-desktop() {
-  @media (min-width: $md-width) {
-    {block};
-  }
-}
-
-// > 1200px
-desktop-large() {
-  @media (min-width: $lg-width) {
-    {block};
-  }
-}
-
 clearfix() {
   &::before,
   &::after {

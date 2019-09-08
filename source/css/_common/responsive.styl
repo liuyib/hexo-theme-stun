@@ -1,184 +1,163 @@
-// // $main-width: A calc value.
-// // -----------------------------------------
-// @media screen and (min-width: $main-width)
-//   #header
-//     width: 100%
+// $content-width: A calc value.
+// -----------------------------------------
+@media (min-width: $content-width + $content-aside-gap * 2) {
+  .header-nav-inner {
+    width: $content-width;
+  }
 
-//   .header-nav-inner
-//     width: $main-width
+  .main-inner {
+    width: $content-width;
+  }
+}
 
-//   .main-inner
-//     width: $main-width
+// $md-width: 992px - 0.02px
+// -----------------------------------------
+@media (min-width: $md-width) {
+  .header-nav-menu {
+    visibility: visible;
+    opacity: 1;
+  }
+}
 
-// // $md-width: 992px - 0.02px
-// // -----------------------------------------
-// @media screen and (min-width: $md-width)
-//   .header-nav-menu
-//     visibility: visible
-//     opacity: 1
+@media (max-width: $md-width) {
+  .header-inner {
+    height: 340px;
+  }
 
-// @media screen and (max-width: $md-width)
-//   #header
-//     height: 340px
-//     background-attachment: local
+  .main {
+    margin: 1rem 0;
+  }
 
-//   #footer
-//     background-attachment: local
+  .content {
+    width: 100%;
+  }
 
-//   #main
-//     margin: 1rem 0
+  .sidebar {
+    display: none;
+  }
 
-//   #sidebar
-//     display: none
+  .post-list .post {
+    margin: 0 0 1rem;
+    padding: 1rem;
+  }
 
-//   .main-inner
-//     width: 100%
+  .header-nav-btn {
+    display: block;
+    float: left;
+  }
 
-//   .content
-//     padding: .8rem
-//     width: 100%
+  .header-nav-menu {
+    display: inline-block;
+    border-radius: 3px;
+    width: auto;
+    height: auto;
+    background-color: $header-nav-bg-color;
+    transform: translate(-1.5rem, header-nav-height);
 
-//   #recent-posts article.post
-//     margin: 0 0 1rem
-//     padding: .8rem 1rem
+    &-item {
+      float: none;
+      margin: 0;
 
-//   .header-nav-menu
-//     visibility: hidden
-//     border-radius: 3px
-//     height: auto
-//     background-color: $header-nav-bg-color
-//     opacity: 0
-//     transform: translate(-1.5rem, 2.5rem)
+      &__a {
+        padding: 0 1.5rem;
+        text-align: left;
+        color: $white-light;
+        disable-user-select();
 
-//     .menu-item
-//       float: none
-//       margin: 0
+        &:hover {
+          color: $white-light;
+          background-color: $blue-lighter;
+        }
+      }
+    }
+  }
 
-//     a
-//       padding: 0 1rem
-//       color: $white-light !important
-//       user-select: none
+  .header-nav-submenu {
+    top: 0;
+    right: 0;
+    left: 100%;
+    width: 100%;
+  }
+}
 
-//       &:hover
-//         color: $white-light
-//         background-color: $blue-lighter
+// sm-width: 768px - 0.02px
+// -----------------------------------------
+@media (max-width: $sm-width) {
+  .header-info-title {
+    font-size: 3rem;
+  }
 
-//   .header-nav-btn
-//     display: block
-//     float: left
+  .header-info-subtitle {
+    font-size: .9rem;
+  }
 
-//   .header-nav-submenu
-//     top: 0
-//     right: 0
-//     left: 100%
-//     width: 100%
+  .search-popup {
+    top: 0;
+    left: 0;
+    margin: 0;
+    border-radius: 0;
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+  }
 
-//   .friends-plugin
-//     .friends-item
-//       width: calc(50% - 10px)
+  .search-results {
+    max-height: 'calc(100vh - %s)' % search-results-height;
+  }
+}
 
-// // sm-width: 768px - 0.02px
-// // -----------------------------------------
-// @media screen and (max-width: $sm-width)
-//   .header-info-inner
-//     .header-info-title
-//       font-size: 3.25rem
+// xs-width: 576px - 0.02px
+// -----------------------------------------
+@media (max-width: $xs-width) {
+  .header-inner {
+    height: 260px;
+  }
 
-//     .header-info-subtitle
-//       font-size: 1rem
+  .header-info-title {
+    font-size: 1.8rem;
+  }
 
-//   div.search-popup
-//     top: 0
-//     left: 0
-//     margin: 0
-//     border-radius: 0
-//     width: 100%
-//     height: 100vh
-//     max-height: 100vh
+  .header-info-subtitle {
+    font-size: $font-size-base;
+  }
 
-//   div.search-results
-//     max-height: calc(100vh - 6rem)
+  .main-inner {
+    width: 100%;
+  }
 
-// // $xs-width: 576px - 0.02px
-// // -----------------------------------------
-// @media screen and (min-width: $xs-width)
-//   .content
-//     font-size: $font-size-base + 2px
+  .content-inner {
+    padding: .6rem .8rem;
+    font-size: $font-size-base;
+  }
 
-//   .sidebar-inner
-//     font-size: $font-size-base + 2px
+  .archive {
+    margin-left: .5rem;
+  }
 
-//   .footer-inner
-//     font-size: $font-size-base + 2px
+  .header-nav-search {
+    span {
+      display: none;
+    }
+  }
 
-// @media screen and (max-width: $xs-width)
-//   #header
-//     height: 240px
+  .post-list .post {
+    margin: 0 0 .8rem;
+    padding: .8rem;
+  }
 
-//   #main
-//     margin: .8rem 0
+  .algolia-hit-item {
+    margin: 0;
+  }
 
-//   .content
-//     padding: .8rem .6rem
-//     font-size: $font-size-base
+  .gallery__img {
+    width: 100%;
+  }
 
-//   .home-content
-//     padding: 0
-
-//   #recent-posts article.post
-//     margin: 0 0 .8rem
-//     padding: .8rem
-
-//   .header-info-inner
-//     .header-info-title
-//       font-size: 1.8rem
-
-//     .header-info-subtitle
-//       font-size: $font-size-base
-
-//   .header-nav-search
-//     span
-//       display: none
-
-//   .algolia-hit-item
-//     margin: 0
-
-//   .post-header
-//     font-size: $font-size-base
-
-//     .post-title
-//       font-size: 1.2rem
-
-//     .post-meta
-//       &-create,
-//       &-read,
-//       &-word
-//         :first-child
-//           display: none
-
-//       .dot
-//         margin: 0 .3rem
-
-//   .archive-inner
-//     margin-left: .5rem
-
-//     .article-sort-title
-//       margin-bottom: .8rem
-
-//     .article-sort-item
-//       margin-bottom: .5rem
-
-//   .gallery-image
-//     width: 100%
-
-//   div.search-popup
-//     padding: .8rem .6rem 1rem
-
-//   div.search-results
-//     & > ul
-//       padding-left: 1rem
-
-//   .friends-plugin
-//     .friends-item
-//       padding: .5rem
-//       width: 100%
+  .friends-plugin {
+    .friends-item {
+      margin: 0;
+      padding: .5rem 1rem;
+      width: 100%;
+    }
+  }
+}

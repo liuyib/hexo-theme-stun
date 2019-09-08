@@ -69,7 +69,7 @@ $(document).ready(function () {
       }
     }
 
-    $(window).on('load', back2topHandler);
+    $(window).on('DOMContentLoaded', back2topHandler);
     $(window).on('scroll', Stun.utils.throttle(function () {
       back2topHandler();
     }, 500));

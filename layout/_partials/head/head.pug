@@ -6,7 +6,7 @@
   var keywords = config.author + ', ' + config.title
   var title_suffix = ' | ' + title
 
-  if (is_home()) title = title + (theme.index_subtitle ? subtitle : '')
+  if (is_home()) title = title + (theme.index_subtitle ? ' | ' + subtitle : '')
   else if (is_archive()) title = __('title.archive') + title_suffix
   else if (is_category()) title = __('title.category') + ': ' + page.category + title_suffix
   else if (is_tag()) title = __('title.tag') + ': ' + page.tag + title_suffix

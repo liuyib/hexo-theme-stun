@@ -4,8 +4,10 @@
   }
 }
 
+search-results-height = search-popup-padding * 2 + search-input-padding * 2 + search-input-height;
+
 .search-results {
-  max-height: calc(80vh - 6rem);
+  max-height: 'calc(80vh - %s)' % search-results-height;
 
   b {
     border-bottom: 1px dashed red;
