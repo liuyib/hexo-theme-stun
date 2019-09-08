@@ -15,6 +15,13 @@
     });
   } 
 
+  var fontawesome = "undefined";
+  if (theme.fa_prefix) {
+    fontawesome = JSON.stringify({
+      prefix: theme.fa_prefix
+    });
+  }
+
   var sidebar = "undefined";
   if (theme.sidebar.enable) {
     sidebar = JSON.stringify({
@@ -72,6 +79,7 @@ script.
   var CONFIG = {
     root: '!{ config.root }',
     algolia: !{ algolia },
+    fontawesome: !{ fontawesome },
     sidebar: !{ sidebar },
     back2top: !{ back2top },
     reward: !{ theme.reward.enable },

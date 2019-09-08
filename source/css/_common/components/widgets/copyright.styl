@@ -1,0 +1,27 @@
+.post-copyright {
+  position: relative;
+  margin: 0 0 1rem;
+  border: 1px solid $post-copyright-border-color;
+  padding: .8rem 1rem;
+  width: 100%;
+  transition-property: box-shadow;
+  transition-ease();
+
+  &:hover {
+    box-shadow: 0 0 5px 5px $post-copyright-shadow-color;
+  }
+
+  &-author,
+  &-link,
+  &-notice {
+    &-name {
+      font-weight: $font-weight-bold;
+      word-wrap();
+    }
+
+    &-value {
+      color: $font-color;
+      word-wrap();
+    }
+  }
+}

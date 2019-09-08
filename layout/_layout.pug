@@ -31,11 +31,10 @@ html(lang=config.language)
 
       if theme.back2top.enable
         include ./_partials/widgets/back2top.pug
+    include ./_partials/search/index.pug
 
-    //- include ../_components/search/index.pug
-
-    //- include ../_scripts/vendors.pug
-    //- include ../_third-party/search/index.pug
+    include ./_scripts/vendors.pug
+    include ./_third-party/search/index.pug
 
     //- if theme.pjax && theme.pjax.enable
     //-   include ../_third-party/pjax.pug
@@ -47,6 +46,6 @@ html(lang=config.language)
     //-   include ../_third-party/math/index.pug
     //-   include ../_third-party/quicklink.pug
 
-    //- include ../_third-party/comments/index.pug
-    //- include ../_third-party/advertising/index.pug
-    //- include ../_scripts/stun.pug
+    include ./_third-party/comments/index.pug
+    include ./_third-party/advertising/index.pug
+    include ./_scripts/stun.pug

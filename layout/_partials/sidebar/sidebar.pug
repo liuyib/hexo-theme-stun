@@ -1,4 +1,4 @@
-- var isShowToc = page.toc === false ? page.toc : (theme.toc.enable && is_post())
+- var isShowToc = page.toc || (theme.toc.enable && is_post())
 - var fa_prefix = theme.fa_prefix || 'fa'
 
 if isShowToc
@@ -17,7 +17,6 @@ section.sidebar-ov(class=`${isShowToc ? "hide" : ""}`)
     div.sidebar-ov-author
       if theme.author.avatar.url
         img.sidebar-ov-author__img(src=theme.author.avatar.url alt="avatar")
-
       if theme.author.motto
         p.sidebar-ov-author__p= theme.author.motto
 
@@ -87,8 +86,8 @@ section.sidebar-ov(class=`${isShowToc ? "hide" : ""}`)
         img(src=url_for(`/${theme.images}/cc-${ccLicense}.svg`) alt=__("creative_commons"))
 
 if theme.reading_progress.enable && is_post()
-  div.sidebar-progress
-    div.sidebar-progress-read
+  div.sidebar-reading
+    div.sidebar-reading-info
       span= __("sidebar.read_info") + " "
-      span.sidebar-progress-number
-    div.sidebar-progress-line
+      span.sidebar-reading-info-num
+    div.sidebar-reading-line

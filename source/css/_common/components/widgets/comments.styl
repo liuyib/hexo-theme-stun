@@ -1,15 +1,12 @@
 .comments {
   margin: 1.5rem 0 0;
   width: $content-width;
+  layout-card();
 
   if (hexo-config('sidebar.position') == 'left') {
     float: right;
   } else if (hexo-config('sidebar.position') == 'right') {
     float: left;
-  }
-
-  &-inner {
-    layout-card();
   }
 }
 

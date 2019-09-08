@@ -5,18 +5,19 @@ $(document).ready(function () {
   var isNavShow = true;
 
   function headerNavScroll () {
+    var $headerNav = $('.header-nav');
     var scrollTop = $(window).scrollTop();
     var delta = scrollTop - prevScrollTop;
 
     if (scrollTop === 0) {
-      $('.header-nav').removeClass('fixed');
-      $('.header-nav').removeClass('slider-up');
-      $('.header-nav').addClass('slider-down');
+      $headerNav.removeClass('fixed');
+      $headerNav.removeClass('slider-up');
+      $headerNav.addClass('slider-down');
 
       isNavFix = false;
     } else {
       if (!isNavFix) {
-        $('.header-nav').addClass('fixed');
+        $headerNav.addClass('fixed');
 
         isNavFix = true;
       }
@@ -25,13 +26,13 @@ $(document).ready(function () {
       // Make the state of nav bar not change due to tiny scrolling.
       if (Math.abs(delta) > MIN_SCROLL_TO_CHANGE_NAV) {
         if (isNavShow && delta > 0) {
-          $('.header-nav').removeClass('slider-down');
-          $('.header-nav').addClass('slider-up');
+          $headerNav.removeClass('slider-down');
+          $headerNav.addClass('slider-up');
 
           isNavShow = false;
         } else if (!isNavShow && delta < 0) {
-          $('.header-nav').removeClass('slider-up');
-          $('.header-nav').addClass('slider-down');
+          $headerNav.removeClass('slider-up');
+          $headerNav.addClass('slider-down');
 
           isNavShow = true;
         }
@@ -48,10 +49,11 @@ $(document).ready(function () {
   }
 
   var isBack2topShow = false;
+
   // Back the page to top.
   function back2top () {
     function back2topHandler () {
-      var $top = $('#back-top');
+      var $top = $('#back2top');
       var scrollTop = $(window).scrollTop();
 
       if (scrollTop !== 0) {
@@ -72,7 +74,7 @@ $(document).ready(function () {
       back2topHandler();
     }, 500));
 
-    $('#back-top').on('click', function () {
+    $('#back2top').on('click', function () {
       $('body').velocity('stop').velocity('scroll');
     });
   }
@@ -87,7 +89,7 @@ $(document).ready(function () {
 
   Stun.utils.pjaxReloadScroll = function () {
     // Click the heading.
-    $('.content')
+    $('#content')
       .find('h1,h2,h3,h4,h5,h6')
       .on('click', function () {
         scrollHeadingToTop('#' + $(this).attr('id'));

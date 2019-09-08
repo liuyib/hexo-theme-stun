@@ -1,9 +1,11 @@
-.table-plugin
-  thead
-    tr
-      background-color: #f8f8f8
+.table-plugin {
+  & tbody tr {
+    &:nth-of-type(odd) {
+      background-color: $table-row-odd-bg-color;
+    }
 
-  tbody
-    tr
-      &:nth-child(2n)
-        background-color: #f8f8f8
+    &:hover {
+      background-color: $table-row-hover-bg-color;
+    }
+  }
+}

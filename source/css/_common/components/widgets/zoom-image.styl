@@ -1,10 +1,3 @@
-
-// Gallery in post / page.
-.gallery-image {
-  margin-bottom: convert(hexo-config('gallery_waterfall.gap_y') || '10px');
-  width: convert(hexo-config('gallery_waterfall.col_width') || '220px');
-}
-
 .zoom-image-mask {
   position: fixed;
   top: 0;
@@ -26,7 +19,6 @@
   }
 
   &.show {
-    clearImgStyle();
     position: absolute;
     z-index: $z-index2;
     margin: 0;

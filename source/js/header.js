@@ -1,6 +1,6 @@
 $(document).ready(function () {
   var $menu = $('.header-nav-menu');
-  var $menuItem = $('.header-nav-menu .menu-item');
+  var $menuItem = $('.header-nav-menu-item');
 
   $(document).on('click', function () {
     $menu.removeClass('show');

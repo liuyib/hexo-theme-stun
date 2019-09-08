@@ -5,13 +5,13 @@ block content
     - var fa_prefix = theme.fa_prefix || 'fa'
 
     include ./_mixins/post-header.pug
-    //- include ./_mixins/gallery.pug
+    include ./_mixins/gallery.pug
 
     +postHeader(page)
 
     div.post-body
       if page.photos && page.photos.length
-        //- +gallery(page)
+        +gallery(page)
       != page.content
 
     footer.post-footer

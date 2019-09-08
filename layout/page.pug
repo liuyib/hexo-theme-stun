@@ -1,7 +1,7 @@
 extends ./_layout.pug
 
 block content
-  //- include ./_mixins/gallery.pug
+  include ./_mixins/gallery.pug
 
   if (page.type === "tags")
     div.tagcloud
@@ -18,14 +18,12 @@ block content
         span= site.categories.length
       != list_categories()
   else if (page.type === "about")
-    div.headings.code-highlight
+    div.about
       if page.photos && page.photos.length
-        //- +gallery(page)
-
+        +gallery(page)
       != page.content
   else
-    div.headings.code-highlight
+    div.custom
       if page.photos && page.photos.length
-        //- +gallery(page)
-
+        +gallery(page)
       != page.content

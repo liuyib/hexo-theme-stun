@@ -11,10 +11,9 @@ hexo.extend.filter.register('after_post_render', function (data) {
 
   $('h1,h2,h3,h4,h5,h6').each(function () {
     var $heading = $(this);
-    var $headingATag = $heading.find('a');
+    var headingTxt = $heading.text().trim();
 
-    $headingATag.addClass('heading-link');
-    $heading.html($headingATag.html($heading.text().trim()));
+    $heading.html('<span class="heading-link">' + headingTxt + '</span>');
   });
 
   data.content = $.html();

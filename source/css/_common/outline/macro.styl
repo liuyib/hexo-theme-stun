@@ -15,12 +15,16 @@
 
 .sidebar {
   float: convert(hexo-config('sidebar.position'));
-  width: convert(hexo-config('sidebar.width') || '$sidebar-width');
+
+  &.sticky {
+    position: fixed;
+    top: convert(hexo-config('sidebar.offsetTop') || '30px');
+    z-index: $z-index0;
+    transform: translateZ(0);
+  }
 }
 
 .content {
-  width: $content-width;
-
   if (hexo-config('sidebar.position') == 'left') {
     float: right;
   } else if (hexo-config('sidebar.position') == 'right') {
@@ -28,21 +32,9 @@
   }
 
   &-inner {
-    width: 100%;
+    width: $content-width;
     height: 100%;
     layout-card();
-
-    a {
-      &:not(.heading-link):not(.paginator-post-next__a) {
-        border-bottom: 1px solid $link-bottom-color;
-        transition-property: border-color;
-        transition-ease();
-
-        &:hover {
-          border-bottom-color: $link-bottom-hover-color;
-        }
-      }
-    }
 
     img {
       border: 1px solid $img-border-color;
@@ -60,43 +52,23 @@
       }
     }
 
-    .external-link {
-      color: $gray-dark;
-
-      i {
-        margin: 0 .1rem 0 .15rem;
-        font-size: .9em;
-      }
-    }
-
     .table-container {
       overflow: auto;
       margin-bottom: 1rem;
     }
 
-    .table-plugin {
-      & tbody tr {
-        &:nth-of-type(odd) {
-          background-color: $table-row-odd-bg-color;
-        }
-
-        &:hover {
-          background-color: $table-row-hover-bg-color;
-        }
-      }
-    }
-
     .heading-link {
       color: $heading-color;
+      cursor: pointer;
 
       &::after {
         content: $icon-heading-link;
         margin-left: .3em;
         color: $heading-logo-color;
         opacity: 0;
-        @extend $font-awesome;
         transition-property: opacity;
         transition-ease();
+        fontawesome-base();
       }
 
       &:hover {

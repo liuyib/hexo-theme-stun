@@ -1,6 +1,6 @@
 section.post-list
   include ../../_mixins/post-header.pug
-  //- include ../_mixins/gallery.pug
+  include ../../_mixins/gallery.pug
 
   - var postLists = theme.post_list.paginate.home ? page.posts : site.posts
   - postLists.each(function (post) {
@@ -12,7 +12,7 @@ section.post-list
           img(src=post.top_image)
 
         if post.photos && post.photos.length
-          //- +gallery(post)
+          +gallery(post)
 
         - var isExcerpt = true
         if theme.auto_excerpt && theme.auto_excerpt.enable

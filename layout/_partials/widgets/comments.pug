@@ -1,15 +1,11 @@
 if theme.disqus && theme.disqus.enable
   div#comments.comments
-    div.comment-inner
-      div#disqus_thread
+    div#disqus_thread
 else if theme.valine && theme.valine.enable
   div#comments.comments
-    div.comment-inner
 else if theme.gitalk && theme.gitalk.enable
   div#comments.comments
-    div.comment-inner
-      div#gitalk-container
+    div#gitalk-container
 else if theme.livere && theme.livere.enable
   div#comments.comments
-    div.comment-inner
-      div#lv-container(data-id="city" data-uid=theme.livere.uid)
+    div#lv-container(data-id="city" data-uid=theme.livere.uid)

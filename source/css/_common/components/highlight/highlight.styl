@@ -25,10 +25,6 @@ for lang in languages {
   color: $highlight-color;
   background-color: $highlight-background;
 
-  .copy-button i {
-    color: $copy-button-color;
-  }
-
   pre,
   code {
     font-family: $font-family-code;
@@ -48,24 +44,23 @@ for lang in languages {
   }
 
   figcaption {
-    overflow: hidden;
     position: relative;
-    padding: 0 .6rem;
+    padding: .1rem 0;
     width: 100%;
     color: $highlight-header-color;
     background-color: $highlight-header-bg-color;
+    clearfix();
 
     span {
       &:first-child {
         float: left;
+        margin-left: .5rem;
         color: $highlight-code-note-color;
       }
-    }
 
-    span {
-      &:last-child {
+      &.external-link {
         float: right;
-        margin-right: 2rem;
+        margin-right: 2em;
       }
     }
   }

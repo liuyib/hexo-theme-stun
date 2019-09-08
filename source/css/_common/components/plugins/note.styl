@@ -1,68 +1,90 @@
-.note-plugin
-  position: relative
-  margin: 1rem 0
-  border: 1px solid #eee
-  border-left-width: .35rem
-  padding: 0 1rem
-  line-height: 1.7em
-
-  &:not(.no-icon)
-    padding-left: 2rem
-
-    &::before
-      position: absolute
-      top: .8em
-      left: .6rem
-      font-family: 'FontAwesome'
-      font-size: $font-size-base + 6px
-
-    &.default::before
-      content: $icon-note-default
-      color: #777
-
-    &.success::before
-      content: $icon-note-success
-      color: #42b983
-
-    &.warning::before
-      content: $icon-note-warning
-      color: #ecc91e
-
-    &.danger::before
-      content: $icon-note-danger
-      color: #dc3b3b
-
-  &.default
-    border-left-color: #777
-
-    strong
-      color: #777
-
-  &.success
-    border-left-color: #42b983
-
-    strong
-      color: #42b983
-
-  &.warning
-    border-left-color: #ecc91e
-
-    strong
-      color: #ecc91e
-
-  &.danger
-    border-left-color: #dc3b3b
-
-    strong
-      color: #dc3b3b
+.note-plugin {
+  position: relative;
+  margin: 0 0 1rem;
+  border: 1px solid #eee;
+  border-left-width: .35rem;
+  padding: 0 1rem;
+  line-height: 1.7em;
 
   h1,
   h2,
   h3,
   h4,
   h5,
-  h6
-    margin: 0
+  h6 {
+    margin: 0;
+  }
 
-  strong
-    font-size: $font-size-base + 6px
+  p {
+    margin: 1em 0;
+  }
+
+  strong {
+    font-size: $font-size-base + 6px;
+  }
+
+  &:not(.no-icon) {
+    padding-left: 2rem;
+
+    &::before {
+      position: absolute;
+      top: 1.5rem;
+      left: .6rem;
+      fontawesome-base();
+      font-size: $font-size-base + 6px;
+      transform: translateY(-50%);
+    }
+
+    &.default::before {
+      content: $icon-note-default;
+      color: #777;
+    }
+
+    &.success::before {
+      content: $icon-note-success;
+      color: #42b983;
+    }
+
+    &.warning::before {
+      content: $icon-note-warning;
+      color: #ecc91e;
+    }
+
+    &.danger::before {
+      content: $icon-note-danger;
+      color: #dc3b3b;
+    }
+  }
+
+  &.default {
+    border-left-color: #777;
+
+    strong {
+      color: #777;
+    }
+  }
+
+  &.success {
+    border-left-color: #42b983;
+
+    strong {
+      color: #42b983;
+    }
+  }
+
+  &.warning {
+    border-left-color: #ecc91e;
+
+    strong {
+      color: #ecc91e;
+    }
+  }
+
+  &.danger {
+    border-left-color: #dc3b3b;
+
+    strong {
+      color: #dc3b3b;
+    }
+  }
+}

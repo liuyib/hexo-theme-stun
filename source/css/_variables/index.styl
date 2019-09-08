@@ -35,7 +35,7 @@ $md-width = 992px - 0.02px
 $lg-width = 1200px - 0.02px
 
 // Width
-$sidebar-width  = 260px
+$sidebar-width  = convert(hexo-config('sidebar.width') || '260px')
 $side-main-gap  = 20px
 $content-width  = $md-width
 $main-aside-gap = 40px
@@ -187,7 +187,7 @@ $loading-bar-bg-color              = #77b6ff
 $loading-bar-shadow-color          = alpha(#77b6ff, .7)
 
 // Notification
-$alert-success                     = #52c41a
+$alert-success-color               = #52c41a
 $alert-info-color                  = #1890ff
 $alert-warning-color               = #faad14
 $alert-error-color                 = #f5222d
@@ -195,13 +195,6 @@ $alert-error-color                 = #f5222d
 // -------------------------------------------
 // Icon font
 // -------------------------------------------
-$font-awesome
-  font: normal normal normal 14px/1 $font-family-icons;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
 $icon-heading-link        = '\f0c1'
 
 $icon-note-default        = '\f0a9'

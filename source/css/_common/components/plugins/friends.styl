@@ -1,46 +1,52 @@
-.friends-plugin
-  overflow: hidden
-  max-width: 100%
+.friends-plugin {
+  overflow: hidden;
+  max-width: 100%;
+}
 
-.friends-item
-  clearAStyle()
-  display: block
-  float: left
-  margin: 0 5px
-  padding: .5rem .5rem .5rem 1rem
-  width: calc(33.3% - 10px)
-  height: 100px
-  transition: background-color .3s
+.friends-item {
+  display: block;
+  float: left;
+  margin: 0 5px;
+  padding: .5rem .5rem .5rem 1rem;
+  width: calc(33.3% - 10px);
+  height: 100px;
+  transition: background-color .3s;
 
-  &:hover
-    background-color: alpha($blue-light, .1)
+  &:hover {
+    background-color: alpha($blue-light, .1);
+  }
 
-  .avatar
-    clearImgStyle()
-    display: inline-block
-    border-radius: 50%
-    width: 60px
-    height: 60px
-    vertical-align: middle
+  p {
+    margin: 0;
+  }
 
-  .info
-    display: inline-block
-    margin-left: 1rem
-    padding-top: .6rem
-    width: calc(100% - 60px - 1rem)
-    height: 100%
-    vertical-align: middle
-    color: $font-color
+  .avatar {
+    display: inline-block;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    vertical-align: middle;
+  }
+
+  .info {
+    display: inline-block;
+    margin-left: 1rem;
+    padding-top: .6rem;
+    width: calc(100% - 60px - 1rem);
+    height: 100%;
+    vertical-align: middle;
+    color: $font-color;
+  }
 
   .name,
-  .intro
-    overflow: hidden
-    white-space: nowrap
-    text-overflow: ellipsis
+  .intro {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
 
-  .intro
-    font-size: .9em
-    color: #999
-
-  p
-    margin: 0
+  .intro {
+    font-size: .9em;
+    color: #999;
+  }
+}

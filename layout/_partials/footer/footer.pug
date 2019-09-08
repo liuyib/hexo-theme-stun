@@ -32,7 +32,7 @@ if footerPowered || footerTheme
       if footer.powered.version
         span= " v" + hexo_env("version") + "."
     if footerPowered && footerTheme
-      span= " | "
+      span.separator= "|"
     if footerTheme
       span= __("footer.theme") + " - "
         - var STUN_URL = "https://github.com/liuyib/hexo-theme-stun/";
@@ -40,8 +40,8 @@ if footerPowered || footerTheme
       if footer.theme.version
         span= " v" + stun_env("version") + "."
 
-//- if theme.busuanzi.enable
-//-   include ../_components/analytics/busuanzi.pug
+if theme.busuanzi.enable
+  include ../analytics/busuanzi.pug
 
 if footer.custom.enable
   div

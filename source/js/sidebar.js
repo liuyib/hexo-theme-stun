@@ -6,13 +6,9 @@ $(document).ready(function () {
   var isRemoveTocClass = false;
   var tocDepth = CONFIG.sidebar.renderTocDepth;
   // Optimize selector by theme config.
-  var HEADING_SELECTOR = 'h1,h2,h3,h4,h5,h6'.slice(0, tocDepth * 3);
+  var HEADING_SELECTOR = 'h1,h2,h3,h4,h5,h6,'.slice(0, tocDepth * 3).slice(0, -1);
   var $postBody = $('.post-body');
   var $allTocItem = $('.sidebar-toc li');
-
-  if (tocDepth !== 6) {
-    HEADING_SELECTOR = HEADING_SELECTOR.slice(0, -1);
-  }
 
   // Automatically expand items in the article directory
   //   based on the scrolling of heading in the article.
@@ -42,43 +38,44 @@ $(document).ready(function () {
     }
 
     if (currHeading !== lastHeading) {
-      var targetLink = $('.sidebar-toc a[href="#' + currHeading + '"]');
+      var $targetLink = $('.sidebar-toc a[href="#' + currHeading + '"]');
 
       // If the relevant "<a>" is not found, remain the state of the toc,
       //   either, remove styles for all active states.
-      if (targetLink[0]) {
+      if ($targetLink[0]) {
         $allTocItem.removeClass('active current');
       }
-      targetLink.parents('li').addClass('active');
-      targetLink.parent().addClass('current');
+      $targetLink.parents('li').addClass('active');
+      $targetLink.parent().addClass('current');
       lastHeading = currHeading;
     }
   }
 
   // Whether toc needs scrolling.
   var isTocScroll = false;
+
   // Scroll the post toc to the middle.
   function scrollTocToMiddle () {
-    var $tocWrapperHeight = $('.sidebar-toc').height();
+    var $tocWrapHeight = $('.sidebar-toc').height();
     var $tocHeight = $('.sidebar-toc .toc').height();
 
-    if ($tocHeight <= $tocWrapperHeight) return;
+    if ($tocHeight <= $tocWrapHeight) return;
 
-    var $tocWrapper = $('.sidebar-toc');
+    var $tocWrap = $('.sidebar-toc');
     var $currTocItem = $('.sidebar-toc .current a');
 
-    if ($currTocItem[0] && $tocWrapper[0]) {
-      var tocTop = $currTocItem.offset().top - $tocWrapper.offset().top;
+    if ($currTocItem[0] && $tocWrap[0]) {
+      var tocTop = $currTocItem.offset().top - $tocWrap.offset().top;
 
-      isTocScroll = tocTop > $tocWrapperHeight || tocTop < 0;
+      isTocScroll = tocTop > $tocWrapHeight || tocTop < 0;
     }
 
     if (isTocScroll) {
       $currTocItem
         .velocity('stop')
         .velocity('scroll', {
-          container: $tocWrapper,
-          offset: (-$tocWrapperHeight / 2),
+          container: $tocWrap,
+          offset: (-$tocWrapHeight / 2),
           duration: 500,
           easing: 'easeOutQuart'
         });
@@ -91,28 +88,24 @@ $(document).ready(function () {
 
   // Sticky the sidebar when it arrived the top.
   function sidebarSticky () {
-    var mainInner = $('.main-inner')[0];
+    var targetY = $('#main')[0].getBoundingClientRect().top;
 
-    if (mainInner) {
-      var targetY = mainInner.getBoundingClientRect().top;
-
-      if (targetY < SIDEBAR_STICKY_TOP) {
-        if (!isSidebarSticky) {
-          $('.sidebar-inner').addClass('sticky');
-          isSidebarSticky = true;
-        }
-      } else {
-        if (isSidebarSticky) {
-          $('.sidebar-inner').removeClass('sticky');
-          isSidebarSticky = false;
-        }
+    if (targetY < SIDEBAR_STICKY_TOP) {
+      if (!isSidebarSticky) {
+        $('#sidebar').addClass('sticky');
+        isSidebarSticky = true;
+      }
+    } else {
+      if (isSidebarSticky) {
+        $('#sidebar').removeClass('sticky');
+        isSidebarSticky = false;
       }
     }
   }
 
   // Update the reading progress lines of post.
   function readProgress () {
-    var $post = $('.content');
+    var $post = $('#content');
     var scrollH = ($post[0] &&
       $post[0].getBoundingClientRect().top * -1) || 0;
 
@@ -120,8 +113,8 @@ $(document).ready(function () {
       Math.abs($post.height() - $(window).height())) * 100);
     percent = percent > 100 ? 100 : percent < 0 ? 0 : percent;
 
-    $('.sidebar-progress-number').html(percent);
-    $('.sidebar-progress-line').css(
+    $('.sidebar-reading-info-num').html(percent);
+    $('.sidebar-reading-line').css(
       'transform', 'translateX(' + (percent - 100) + '%)'
     );
   }
@@ -143,29 +136,35 @@ $(document).ready(function () {
   }, 150));
 
   Stun.utils.pjaxReloadSidebar = function () {
-    var $tocWrapper = $('.sidebar-toc');
-    var $view = $('.sidebar-overview');
+    var $navToc = $('.sidebar-nav-toc');
+    var $navOv = $('.sidebar-nav-ov');
+    var $tocWrap = $('.sidebar-toc');
+    var $overview = $('.sidebar-ov');
 
-    $('.sidebar-nav-toc').on('click', function () {
-      $('.sidebar-nav-toc').toggleClass('current');
-      $('.sidebar-nav-overview').toggleClass('current');
+    $navToc.on('click', function () {
+      if ($(this).hasClass('current')) return;
 
-      $tocWrapper.css('display', 'block');
-      $tocWrapper.velocity('fadeIn');
+      $navToc.addClass('current');
+      $navOv.removeClass('current');
 
-      $view.css('display', 'none');
-      $view.velocity('fadeOut');
+      $tocWrap.css('display', 'block');
+      $tocWrap.velocity('stop').velocity('fadeIn');
+
+      $overview.css('display', 'none');
+      $overview.velocity('stop').velocity('fadeOut');
     });
 
-    $('.sidebar-nav-overview').on('click', function () {
-      $('.sidebar-nav-toc').toggleClass('current');
-      $('.sidebar-nav-overview').toggleClass('current');
+    $navOv.on('click', function () {
+      if ($(this).hasClass('current')) return;
 
-      $tocWrapper.css('display', 'none');
-      $tocWrapper.velocity('fadeOut');
+      $navOv.addClass('current');
+      $navToc.removeClass('current');
 
-      $view.css('display', 'block');
-      $view.velocity('fadeIn');
+      $tocWrap.css('display', 'none');
+      $tocWrap.velocity('stop').velocity('fadeOut');
+
+      $overview.css('display', 'block');
+      $overview.velocity('stop').velocity('fadeIn');
     });
   };
 
