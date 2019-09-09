@@ -43,13 +43,9 @@ script.
     var pjax = new Pjax(!{ pjaxArgs });
     // 加载进度条的计时器
     var loadingTimer = null;
-    // 是否第一次加载 pjax
-    var isFirstLoad = true;
 
     // 重置页面 Y 方向上的滚动偏移量
     document.addEventListener('pjax:send', function () {
-      isFirstLoad = false;
-
       $('html').velocity('scroll', {
         duration: 500,
         offset: $('#header').height(),

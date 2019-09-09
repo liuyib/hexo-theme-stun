@@ -235,13 +235,16 @@ Stun.utils = Stun.$u = {
     var gConfig = CONFIG.gallery_waterfall;
     var colWidth = parseInt(gConfig.col_width);
     var colGapX = parseInt(gConfig.gap_x);
+    var GALLERY_IMG_SELECTOR = '.gallery__img';
 
-    $('.gallery').masonry({
-      itemSelector: '.gallery__img',
-      columnWidth: colWidth,
-      percentPosition: true,
-      gutter: colGapX,
-      transitionDuration: 0
+    this.waitAllImageLoad(GALLERY_IMG_SELECTOR, function () {
+      $('.gallery').masonry({
+        itemSelector: GALLERY_IMG_SELECTOR,
+        columnWidth: colWidth,
+        percentPosition: true,
+        gutter: colGapX,
+        transitionDuration: 0
+      });
     });
   },
   // Lazy load the images of post.

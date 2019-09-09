@@ -1,4 +1,4 @@
-script(data-pjax).
+script&attributes(dataPjax).
   function loadDisqus () {
     if (!document.getElementById('disqus_thread')) return;
     if (window.DISQUS) {
@@ -19,7 +19,7 @@ script(data-pjax).
         sc.src = 'https://!{ theme.disqus.shortname }.disqus.com/count.js';
         sc.id = 'dsq-count-scr';
         sc.async = true;
-        sc.setAttribute('data-pjax', '');
+        if (!{ pjax }) { sc.setAttribute('data-pjax', ''); }
         (d.head || d.body).appendChild(sc);
       }
 
@@ -28,7 +28,7 @@ script(data-pjax).
     }
   }
 
-  if (!{ theme.pjax.enable }) {
+  if (!{ pjax }) {
     loadDisqus();
   } else {
     window.addEventListener('DOMContentLoaded', loadDisqus, false);

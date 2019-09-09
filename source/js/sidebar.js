@@ -1,18 +1,18 @@
 $(document).ready(function () {
+  var tocDepth = CONFIG.sidebar.renderTocDepth;
+  // Optimize selector by theme config.
+  var HEADING_SELECTOR = 'h1,h2,h3,h4,h5,h6,'.slice(0, tocDepth * 3).slice(0, -1);
   // The heading that reached the top currently.
   var currHeading = null;
   // The heading that reached the top last time.
   var lastHeading = null;
   var isRemoveTocClass = false;
-  var tocDepth = CONFIG.sidebar.renderTocDepth;
-  // Optimize selector by theme config.
-  var HEADING_SELECTOR = 'h1,h2,h3,h4,h5,h6,'.slice(0, tocDepth * 3).slice(0, -1);
-  var $postBody = $('.post-body');
-  var $allTocItem = $('.sidebar-toc li');
 
   // Automatically expand items in the article directory
   //   based on the scrolling of heading in the article.
   function autoSpreadToc () {
+    var $postBody = $('.post-body');
+    var $allTocItem = $('.sidebar-toc li');
     var $headings = $postBody.find(HEADING_SELECTOR);
     var $firsetChild = $headings.first();
 
@@ -33,8 +33,6 @@ $(document).ready(function () {
       }
 
       return;
-    } else {
-      isRemoveTocClass = false;
     }
 
     if (currHeading !== lastHeading) {
@@ -140,7 +138,7 @@ $(document).ready(function () {
     var $navOv = $('.sidebar-nav-ov');
     var $tocWrap = $('.sidebar-toc');
     var $overview = $('.sidebar-ov');
-
+  
     $navToc.on('click', function () {
       if ($(this).hasClass('current')) return;
 

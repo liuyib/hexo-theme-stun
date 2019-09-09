@@ -36,10 +36,10 @@ $lg-width = 1200px - 0.02px
 
 // Width
 $sidebar-width          = convert(hexo-config('sidebar.width') || '260px')
-$main-width             = $md-width
-$main-sidebar-gap       = 30px
 $content-aside-gap      = 20px
-$content-width          = $main-width + $sidebar-width + $main-sidebar-gap
+$content-width          = $md-width
+$main-sidebar-gap       = 30px
+$main-width             = $content-width + $sidebar-width + $main-sidebar-gap
 
 // -------------------------------------------
 // Font, line-height

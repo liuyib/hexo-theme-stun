@@ -8,7 +8,7 @@
 script(src=leancloud_storage_js)
 script(src=valine_js)
 
-script(data-pjax).
+script&attributes(dataPjax).
   function loadValine () {
     var GUEST_INFO = ['nick', 'mail', 'link'];
     var guest_info = '!{ theme.valine.meta }';
@@ -33,7 +33,7 @@ script(data-pjax).
     });
   }
 
-  if (!{ theme.pjax.enable }) {
+  if (!{ pjax }) {
     loadValine();
   } else {
     window.addEventListener('DOMContentLoaded', loadValine, false);

@@ -5,14 +5,14 @@
   if (theme.cdn.gitalk_js) gitalk_js = theme.cdn.gitalk_js
   if (theme.cdn.gitalk_md5) gitalk_md5 = theme.cdn.gitalk_md5
 
-script(src=gitalk_js data-pjax)
-script(src=gitalk_md5 data-pjax)
+script(src=gitalk_js)&attributes(dataPjax)
+script(src=gitalk_md5)&attributes(dataPjax)
 
 -
   var lang = _.get(theme, "gitalk.language")
     ? theme.gitalk.language : config.language;
 
-script(data-pjax).
+script&attributes(dataPjax).
   function loadGitalk () {
     if (!document.getElementById('gitalk-container')) return;
 
@@ -30,7 +30,7 @@ script(data-pjax).
     gitalk.render('gitalk-container');
   }
 
-  if (!{ theme.pjax.enable }) {
+  if (!{ pjax }) {
     loadGitalk();
   } else {
     window.addEventListener('DOMContentLoaded', loadGitalk, false);

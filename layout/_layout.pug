@@ -1,3 +1,12 @@
+-
+  var pjax = false;
+  var dataPjax = {};
+
+  if (theme.pjax && theme.pjax.enable) {
+    pjax = true;
+    dataPjax = { 'data-pjax': '' };
+  }
+
 doctype html
 html(lang=config.language)
   head
@@ -14,12 +23,12 @@ html(lang=config.language)
             div.content-inner(class=`${is_home() ? 'content-home' : ''}`)
               block content
 
-          if page.comments
-            include ./_partials/widgets/comments.pug
-
           aside#sidebar.sidebar
             div.sidebar-inner
               != partial('./_partials/sidebar/sidebar.pug', null, { cache: theme.cache })
+
+          if page.comments
+            include ./_partials/widgets/comments.pug
 
           div.clearfix
 
@@ -42,9 +51,11 @@ html(lang=config.language)
       div#pjax-reload
         include ./_third-party/math/index.pug
         include ./_third-party/quicklink.pug
+        include ./_third-party/analytics/busuanzi.pug
     else
       include ./_third-party/math/index.pug
       include ./_third-party/quicklink.pug
+      include ./_third-party/analytics/busuanzi.pug
 
     include ./_third-party/comments/index.pug
     include ./_third-party/advertising/index.pug

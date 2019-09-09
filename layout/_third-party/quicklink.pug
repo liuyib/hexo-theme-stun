@@ -10,6 +10,9 @@ if theme.quicklink.enable
   if is_archive() && theme.quicklink.archive
     - loadQuicklink = true
 
+  if theme.pjax.enable
+    - loadQuicklink = true
+
   if loadQuicklink || ((page && page.quicklink) || (post && post.quicklink))
     script(src=quicklink_js)
     script.
@@ -21,8 +24,8 @@ if theme.quicklink.enable
         });
       }
 
-      if (!{ theme.quicklink.delay }) {
-        window.addEventListener('DOMContentLoaded', initQuicklink, false);
-      } else {
+      if (!{ pjax } || !{ !theme.quicklink.delay }) {
         initQuicklink();
+      } else {
+        window.addEventListener('DOMContentLoaded', initQuicklink, false);
       }
