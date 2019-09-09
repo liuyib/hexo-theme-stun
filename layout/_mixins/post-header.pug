@@ -63,8 +63,7 @@ mixin postHeader(post)
           if theme.busuanzi.enable && theme.busuanzi.post_pv.enable
             span.post-header-meta-reading-count
               i(class=`${fa_prefix} fa-${theme.busuanzi.post_pv.icon}`)
-
-              if !theme.post_meta.icon_only && !theme.busuanzi.post_pv.icon_only
+              if !theme.post_meta.icon_only && !theme.busuanzi.icon_only
                 span= __("post.reading_count") + " "
 
               span#busuanzi_value_page_pv

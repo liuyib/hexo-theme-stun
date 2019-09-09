@@ -5,8 +5,8 @@
 # Allow to cache content generation. Introduced in Stun v1.4.0
 cache: true
 
-# # Minify source files after hexo generator. Introduced in Stun v1.4.0
-# minify: true
+# Remove unnecessary files after hexo generate. Introduced in Stun v1.4.0
+shake_file: true
 
 # ---------------------------------------------------------------
 # SEO Settings
@@ -194,7 +194,8 @@ sidebar:
   # Sidebar offset from top menubar (Only px units are supported).
   offsetTop: 20px
   # Horizon line.
-  horizon_line: true
+  horizon_line: false
+  # Suggest: 240px ~ 300px
   width: 260px
 
 author:
@@ -206,7 +207,7 @@ author:
     # You can also use a link of image.
     url: /images/avatar.png
     # If true, the avatar would be displayed in a circle.
-    rounded: true
+    rounded: false
     # The value should be chosen from 0 to 1.
     opacity: 1
     # Mouse hover animation, available value: turn | shake.
@@ -445,25 +446,20 @@ disqus:
 # See: https://busuanzi.ibruce.info/
 busuanzi:
   enable: false
-  site:
-    # Only show by icon.
-    icon_only: false
-    # Number of unique visitor to the entire site.
-    uv:
-      enable: true
-      # Icon name in FontAwesome, see: https://fontawesome.com/v4.7.0/icons/
-      icon: user
-    # Number of page view to the entire site.
-    pv:
-      enable: true
-      # Icon name in FontAwesome, see: https://fontawesome.com/v4.7.0/icons/
-      icon: eye
+  # Only show by icon.
+  icon_only: false
+  # Number of unique visitor to the entire site.
+  site_uv:
+    enable: true
+    # Icon name in FontAwesome, see: https://fontawesome.com/v4.7.0/icons/
+    icon: user
+  # Number of page view to the entire site.
+  site_pv:
+    enable: true
+    icon: eye
   # Number of page view to a post.
   post_pv:
     enable: true
-    # Only show by icon.
-    icon_only: false
-    # Icon name in FontAwesome, see: https://fontawesome.com/v4.7.0/icons/
     icon: eye
 
 # Google analytics ID
@@ -623,7 +619,7 @@ quicklink:
 # Pjax
 # See: https://github.com/MoOx/pjax/
 pjax:
-  enable: true
+  enable: false
   # ! -----------------------------------------------------
   # ! If you don't understand, please ignore the following.
   # ! -----------------------------------------------------
@@ -673,8 +669,8 @@ tag_cloud:
   start_color: '#a4d8fa'
   end_color: '#49b1f5'
   # Size for tag.
-  min_size: 20
-  max_size: 30
+  min_size: 16
+  max_size: 26
   # Maximum number of tags displayed. Change it if you have more than 200 tags.
   max_amount: 200
 

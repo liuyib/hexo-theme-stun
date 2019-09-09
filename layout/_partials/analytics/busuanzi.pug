@@ -1,20 +1,20 @@
 - var fa_prefix = theme.fa_prefix || 'fa'
 
 div.busuanzi
-  if theme.busuanzi.site.uv.enable
+  if theme.busuanzi.site_uv.enable
     span.busuanzi-uv
       i(class=`${fa_prefix} fa-user`)
-      if !theme.busuanzi.site.icon_only
+      if !theme.busuanzi.icon_only
         span= __("footer.uv") + " "
       span#busuanzi_value_site_uv
 
-  if theme.busuanzi.site.uv.enable && theme.busuanzi.site.pv.enable
+  if theme.busuanzi.site_uv.enable && theme.busuanzi.site_pv.enable
     span.separator= "|"
 
-  if theme.busuanzi.site.pv.enable
+  if theme.busuanzi.site_pv.enable
     span.busuanzi-pv
       i(class=`${fa_prefix} fa-eye`)
-      if !theme.busuanzi.site.icon_only
+      if !theme.busuanzi.icon_only
         span= __("footer.pv") + " "
       span#busuanzi_value_site_pv
 
