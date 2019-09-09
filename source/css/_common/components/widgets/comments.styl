@@ -1,31 +1,39 @@
-.comments {
-  margin: 1.5rem 0 0;
-  width: $content-width;
-  layout-card();
+if (hexo-config('gitalk.enable') || hexo-config('valine.enable') || hexo-config('livere.enable') || hexo-config('disqus.enable')) {
+  .comments {
+    margin: 1.5rem 0 0;
+    width: $content-width;
+    layout-card();
 
-  if (hexo-config('sidebar.position') == 'left') {
-    float: right;
-  } else if (hexo-config('sidebar.position') == 'right') {
-    float: left;
+    if (hexo-config('sidebar.position') == 'left') {
+      float: right;
+    } else if (hexo-config('sidebar.position') == 'right') {
+      float: left;
+    }
   }
 }
 
-// Disqus
-#disqus_thread {
-  width: 100%;
-}
+if (hexo-config('gitalk.enable')) {
+  // Gitalk
+  #gitalk-container {
+    width: 100%;
 
-// Gitalk
-#gitalk-container {
-  width: 100%;
-
-  .gt-meta {
-    margin-top: 0;
-    padding-top: 0;
+    .gt-meta {
+      margin-top: 0;
+      padding-top: 0;
+    }
   }
 }
 
-// Livere
-#lv-container {
-  width: 100%;
+if (hexo-config('livere.enable')) {
+  // Livere
+  #lv-container {
+    width: 100%;
+  }
+}
+
+if (hexo-config('disqus.enable')) {
+  // Disqus
+  #disqus_thread {
+    width: 100%;
+  }
 }

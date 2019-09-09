@@ -17,10 +17,15 @@ hexo.extend.filter.register('after_post_render', function(data) {
 
   $('a').each(function() {
     var href = $(this).attr('href');
-    var className = $(this).attr('class');
 
     if (!href) return;
-    if (className && className.indexOf('friends-item') !== -1) return;
+
+    var className = $(this).attr('class');
+    var classNameWhitelist = [
+      'friends-plugin__item',
+    ];
+
+    if (className && classNameWhitelist.includes(className)) return;
 
     var data = url.parse(href);
 

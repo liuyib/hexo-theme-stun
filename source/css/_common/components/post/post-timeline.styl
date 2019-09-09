@@ -49,10 +49,13 @@
       font-weight: 700;
     }
 
+    time-width = 3em;
+    time-margin = 1em;
+
     &__time {
       display: inline-block;
-      margin-right: 1em; /* Affect the width of title */
-      width: 3em; /* Affect the width of title */
+      margin-right: time-margin;
+      width: time-width;
       vertical-align: middle;
       color: #99a9bf;
       transform: translateY(3%);
@@ -61,7 +64,7 @@
     &-title {
       display: inline-block;
       margin: 0;
-      width: calc(100% - 4em);
+      width: 'calc(100% - %s)' % (time-width + time-margin);
       font-size: 1em;
       font-weight: normal;
       vertical-align: middle;

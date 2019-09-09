@@ -25,11 +25,11 @@ function friends(args) {
     var result = '<div class="friends-plugin">';
 
     datas.forEach(data => {
-      result += `<a class="friends-item" href="${data.url}">`;
-      result += `<img class="avatar" src="${data.avatar}">`;
-      result += '<div class="info">';
-      result += `<p class="name">${data.name}</p>`;
-      result += `<p class="intro">${data.introduction}</p>`;
+      result += `<a class="friends-plugin__item" href="${data.url}">`;
+      result += `<img class="friends-plugin__item-avatar" src="${data.avatar}">`;
+      result += '<div class="friends-plugin__item-info">';
+      result += `<p class="friends-plugin__item-info__name">${data.name}</p>`;
+      result += `<p class="friends-plugin__item-info__intro">${data.introduction}</p>`;
       result += '</div>';
       result += '</a>';
     });

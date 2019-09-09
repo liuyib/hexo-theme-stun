@@ -32,8 +32,10 @@
     width: 100%;
   }
 
-  .sidebar {
-    display: none;
+  if (hexo-config('sidebar.enable')) {
+    .sidebar {
+      display: none;
+    }
   }
 
   .post-list .post {
@@ -91,18 +93,20 @@
     font-size: .9rem;
   }
 
-  .search-popup {
-    top: 0;
-    left: 0;
-    margin: 0;
-    border-radius: 0;
-    width: 100%;
-    height: 100vh;
-    max-height: 100vh;
-  }
+  if (hexo-config('algolia_search.enable') || hexo-config('local_search.enable')) {
+    .search-popup {
+      top: 0;
+      left: 0;
+      margin: 0;
+      border-radius: 0;
+      width: 100%;
+      height: 100vh;
+      max-height: 100vh;
+    }
 
-  .search-results {
-    max-height: 'calc(100vh - %s)' % search-results-height;
+    .search-results {
+      max-height: 'calc(100vh - %s)' % search-results-height;
+    }
   }
 }
 
@@ -145,8 +149,10 @@
     padding: .8rem;
   }
 
-  .algolia-hit-item {
-    margin: 0;
+  if (hexo-config('algolia_search.enable')) {
+    .algolia-hit-item {
+      margin: 0;
+    }
   }
 
   .gallery__img {

@@ -26,14 +26,16 @@
   font-size: $font-size-main;
 }
 
-.sidebar {
-  float: convert(hexo-config('sidebar.position'));
+if (hexo-config('sidebar.enable')) {
+  .sidebar {
+    float: convert(hexo-config('sidebar.position'));
 
-  &.sticky {
-    position: fixed;
-    top: convert(hexo-config('sidebar.offsetTop') || '30px');
-    z-index: $z-index0;
-    transform: translateZ(0);
+    &.sticky {
+      position: fixed;
+      top: convert(hexo-config('sidebar.offsetTop') || '30px');
+      z-index: $z-index0;
+      transform: translateZ(0);
+    }
   }
 }
 
