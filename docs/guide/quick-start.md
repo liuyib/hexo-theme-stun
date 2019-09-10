@@ -10,12 +10,12 @@
   $ git clone https://github.com/liuyib/hexo-theme-stun.git themes/stun
   ```
 
-- Install `pug` and `stylus`
+- Install dependency `pug`
 
-  The theme depends on `pug` and `stylus`, please run follow in your hexo directory.
+  Enter your hexo directory, run this.
 
   ``` bash
-  $ npm install --save hexo-render-pug hexo-renderer-stylus
+  $ npm install --save hexo-render-pug
   ```
 
 ## How to use

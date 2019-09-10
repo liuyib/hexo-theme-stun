@@ -2,7 +2,7 @@
 home: true
 heroImage: /logo.png
 actionText: 快速开始 →
-actionLink: /zh-CN/guide/
+actionLink: /zh-CN/guide/quick-start
 # features:
 #   - title: Simplicity First
 #     details: Minimal setup with markdown-centered project structure helps you focus on writing.

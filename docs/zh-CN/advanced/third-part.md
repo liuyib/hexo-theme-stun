@@ -145,11 +145,45 @@ quicklink:
   #   - uri => uri.includes('.zip')
   #   - (uri, el) => el.hasAttribute('nofollow')
   ignores:
+    - /\/api\/?/
+    - uri => uri.includes('.xml')
+    - uri => uri.includes('.zip')
+    - (uri, el) => el.hasAttribute('nofollow')
+    - (uri, el) => el.hasAttribute('noprefetch')
 ```
 
 2. 添加 `Front-Matter`
 
 上一步只是设置了 home 页面和 archive 页面是否启用 quicklink，对于其他页面或文章，你必须手动设置：在页面或文章的 markdown 文件的 `Front-Matter` 中，添加 `quicklink: true`。
+
+## 启用 Pjax <Badge text="Stable"/> <Badge text="v1.4.0"/>
+
+启用 Pjax 可以让你的博客在页面之间跳转时，只进行局部刷新。这样不仅可以改善用户浏览体验，更能提高页面的加载速度。如果想启用这一功能，你需要修改主题配置文件：
+
+``` yaml
+pjax:
+  enable: true
+  # ！！！如果你不了解 Pjax 的用法，请忽视下面的配置项
+  # 详参见: https://github.com/MoOx/pjax/#options
+  elements:
+  selectors:
+  switches:
+  switchesOptions:
+  history: true
+  scrollTo: false
+  scrollRestoration: false
+  cacheBust: false
+  debug: false
+  currentUrlFullReload: false
+  timeout: 0
+```
+
+::: warning 已知问题
+下面是启用 Pjax 之后，已知的一些问题。
+
+- 不兼容 MathJax（必须手动刷新页面一次后，MathJax 才能正常使用）
+- 不兼容评论（评论显示为空，必须手动刷新页面才能显示出用户的评论）
+:::
 
 ## 添加 Emoji 支持 <Badge text="Disrelated" type="warning"/>
 
@@ -298,29 +332,22 @@ disqus:
 busuanzi:
   # 是否启用
   enable: false
-  site:
-    # 是否只显示图标
-    icon_only: false
-    # 统计站点 UV 数量
-    # 关于 UV 和 PV 的概念：https://zhuanlan.zhihu.com/p/27672009/
-    uv:
-      # 是否启用
-      enable: true
-      # FontAwesome 图标名称: https://fontawesome.com/v4.7.0/icons/
-      icon: user
-    # 统计站点 PV 数量
-    pv:
-      # 是否启用
-      enable: true
-      # FontAwesome 图标名称
-      icon: eye
+  # 是否只显示图标
+  icon_only: false
+  # 统计站点 UV 数量
+  site_uv:
+    enable: true
+    # FontAwesome 图标名称: https://fontawesome.com/v4.7.0/icons/
+    icon: user
+  # 统计站点 PV 数量
+  site_pv:
+    enable: true
+    # FontAwesome 图标名称: https://fontawesome.com/v4.7.0/icons/
+    icon: eye
   # 统计每篇文章的 PV 数量
   post_pv:
-    # 是否只显示图标
-    icon_only: false
-    # 是否启用
     enable: true
-    # FontAwesome 图标名称
+    # FontAwesome 图标名称: https://fontawesome.com/v4.7.0/icons/
     icon: eye
 ```
 

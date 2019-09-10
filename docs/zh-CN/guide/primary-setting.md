@@ -18,7 +18,7 @@
 
 ## 添加新页面 <Badge text="Stable"/>
 
-Stun 主题内置了三种页面：分类页、标签页、关于页。默认没有启用。想启用这些页面，需要按照如下步骤操作：
+Stun 主题内置有：分类页、标签页。默认没有启用。想启用这些页面，需要按照如下步骤操作：
 
 1. 在 Hexo 根目录下执行命令
 
@@ -28,12 +28,21 @@ $ hexo new page categories
 
 # 启用标签页，执行这条指令
 $ hexo new page tags
-
-# 启用关于页，执行这条指令
-$ hexo new page about
 ```
 
-2. 然后修改主题配置文件，将 `categories` 或 `tags` 或 `about` 对应项取消注释
+2. 修改 Front-Matter
+
+找到 Hexo 根目录下的 `source/categories` 或 `source/tags` 文件夹中的 markdown 文件，添加 Front-Matter：
+
+``` yaml
+# 如果是分类页，添加这个
+type: "categories"
+
+# 如果是标签页，添加这个
+type: "tags"
+```
+
+3. 然后修改主题配置文件，将 `categories` 或 `tags` 对应项取消注释
 
 ``` yaml
 menu:
@@ -43,11 +52,10 @@ menu:
   archives: /archives/ || folder-open
   # categories: /categories/ || th
   # tags: /tags/ || tags
-  # about: /about/ || user
   # xxx: /xxx/ || xxx
 ```
 
-除了使用上述三种内置页面外，如果你想使用自定义页面，需要执行如下步骤：
+除了使用上述内置页面外，如果你想使用自定义页面，需要执行如下步骤：
 
 以添加**阅读**页面为例。
 
@@ -62,7 +70,7 @@ menu:
 
 > 图标的名称在这里获取：[https://fontawesome.com/v4.7.0/icons/](https://fontawesome.com/v4.7.0/icons/)。
 
-1. 创建页面文件
+2. 创建页面文件
 
 在 Hexo 根目录下执行指令：
 

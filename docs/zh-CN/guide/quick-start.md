@@ -10,12 +10,12 @@
   $ git clone https://github.com/liuyib/hexo-theme-stun.git themes/stun
   ```
 
-- 安装 pug 和 stylus
+- 安装依赖 pug
 
-  主题依赖于 pug 和 stylus，请在 hexo 根目录，执行指令。
+  进入 hexo 根目录，执行指令。
 
   ``` bash
-  $ npm install --save hexo-render-pug hexo-renderer-stylus
+  $ npm install --save hexo-render-pug
   ```
 
 ## 使用

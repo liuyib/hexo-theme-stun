@@ -383,7 +383,9 @@ sidebar:
   # 侧边栏距离顶部的距离（只支持 px 单位）
   offsetTop: 20px
   # 是否显示水平分割线
-  horizon_line: true
+  horizon_line: false
+  # 侧边栏宽度（建议宽度：240px ~ 340px）
+  width: 280px
 ```
 
 ::: danger <Badge text="Deprecated" type="error"/>
@@ -407,7 +409,7 @@ toc:
   # 生成目录时，解析 h 标签的最大深度
   # 你可以在文章的 markdown 源文件的 Front-Matter 中，通过添加 `toc_max_depth` 属性，
   #   来指定某篇文章生成目录时，解析 h 标签的最大深度
-  max_depth: 6
+  max_depth: 4
 ```
 
 其中 `expand_all` <Badge text="v1.0.2"/>。可以在文章的 markdown 源文件中的 `Front-Matter` 里，指定 `toc: true / false` 来设置某篇文章是否启用目录。
@@ -661,35 +663,11 @@ code_word_wrap: false
 
   ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608214539.png)
 
-## 图片水平对齐方式 <Badge text="Stable"/>
+## 图片水平对齐方式
 
-设置文章中图片的水平对齐方式，修改主题配置文件：
-
-``` yaml
-img_horizonal_align:
-```
-
-可选的值有：`left`, `center`, `right`。默认值为空，即不设置。
-
-> 默认情况下，图片显示居左，支持行内显示。如果你手动设置了图片的水平对齐方式，则图片不再支持行内显示。
-
-效果分别如下：
-
-- 设为默认值，即 `img_horizonal_align:` 设为空。
-
-  ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608220937.png)
-
-- `img_horizonal_align: left`
-
-  ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608215836.png)
-
-- `img_horizonal_align: center`
-
-  ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608215837.png)
-
-- `img_horizonal_align: right`
-
-  ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608215838.png)
+::: danger <Badge text="Deprecated" type="error"/>
+该配置项，即 `img_horizonal_align` 在 `v1.4.0` 版本中移除。
+:::
 
 ## 文字与图片的垂直对齐方式
 
