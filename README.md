@@ -26,13 +26,29 @@
 
 [English](https://github.com/liuyib/hexo-theme-stun/blob/master/README_en_US.md) | [中文简体](https://github.com/liuyib/hexo-theme-stun/blob/master/README.md)
 
-> 关于主题有什么问题，可以 [Issue](https://github.com/liuyib/hexo-theme-stun/issues) 或 email 我，也可以在 [Gitter](https://gitter.im/liuyib/hexo-theme-stun?utm_source=badge) 里一起交流。
-
 ## :sparkles: 演示
 
 - [liuyib`s Blog](https://liuyib.github.io/)
 
 如果你正在使用 stun 主题，并希望像上面一样，在这里展示出来，你可以通过 [PR](https://github.com/liuyib/hexo-theme-stun/pulls) 将你的网站链接填写在这里。
+
+## :crystal_ball: 特性
+
+- 简洁，快速，易用，可定制性高
+- 响应式设计
+- 二级导航菜单
+- 支持文章图片懒加载
+- 支持 `Pjax`
+- 支持 `PWA`
+- 支持 `Fancybox`
+- 支持 `Quicklink`
+- 支持 `MathJax`、`KaTex`
+- 支持 `Gitalk`、`Valine`、`Livere` 和 `Disqus` 评论
+- 瀑布流式的相册页面
+- 内置谷歌广告，一键开启
+- 代码高亮，多种配色可选
+- 好看的背景特效
+- 超详细配置文档
 
 ## :package: 安装
 
@@ -44,12 +60,12 @@
   $ git clone https://github.com/liuyib/hexo-theme-stun.git themes/stun
   ```
 
-- 安装 pug 和 stylus
+- 安装依赖 pug
 
-  主题依赖于 pug 和 stylus，请在 hexo 根目录，执行指令。
+  进入 hexo 根目录，执行指令。
 
   ``` bash
-  $ npm install --save hexo-render-pug hexo-renderer-stylus
+  $ npm install --save hexo-render-pug
   ```
 
 ## :hammer: 使用

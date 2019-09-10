@@ -120,52 +120,33 @@
       padding: .5rem 0;
       text-align: center;
 
-      &-item {
+      &__item {
         display: inline-block;
         margin: .2rem;
         text-align: center;
+        color: $white;
+        background-color: $sidebar-social-color;
+
+        &:hover {
+          color: $white;
+          background-color: $sidebar-social-hover-color;
+        }
 
         if (hexo-config('social_setting.icon_only')) {
           border-radius: 50%;
           width: 1.5rem;
           height: 1.5rem;
-          background-color: $sidebar-social-color;
           transition-property: background-color;
           transition-ease();
 
-          &:hover {
-            background-color: $sidebar-social-hover-color;
-          }
-
-          &__a {
-            display: inline-block;
-            width: 100%;
-            color: $white;
-
-            &:hover {
-              color: $white;
-            }
-
-            &--icon {
-              font-size: 1.2em;
-              line-height: 1.5rem;
-            }
+          &--icon {
+            font-size: 1.2em;
           }
         } else {
-          &__a {
-            display: block;
-            border-radius: 3px;
-            padding: 0 .4rem;
-            color: $white;
-            background-color: $sidebar-social-color;
-            transition-property: color, background-color;
-            transition-ease();
-
-            &:hover {
-              color: $white;
-              background-color: $sidebar-social-hover-color;
-            }
-          }
+          border-radius: 3px;
+          padding: 0 .4rem;
+          transition-property: color, background-color;
+          transition-ease();
 
           span {
             margin-left: .2rem;

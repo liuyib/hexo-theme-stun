@@ -32,6 +32,24 @@
 
 If you are using the stun theme and would like it to be shown here, you can fill in your website link by [PR](https://github.com/liuyib/hexo-theme-stun/pulls).
 
+## :crystal_ball: 特性
+
+- Simple, fast, easy to use, highly customizable
+- Responsive design
+- Secondary navigation menu
+- Support article image lazy loading
+- Support `Pjax`
+- Support `PWA`
+- Support `Fancybox`
+- Support `Quicklink`
+- Support `MathJax`、`KaTex`
+- Support `Gitalk`、`Valine`、`Livere` 和 `Disqus` comment
+- Album page of waterfall streaming
+- Built-in Google ads
+- Multiple code highlighting themes
+- Beautiful background effects
+- Detailed documentation
+
 ## :package: Install
 
 - Install `stun`
@@ -42,12 +60,12 @@ If you are using the stun theme and would like it to be shown here, you can fill
   $ git clone https://github.com/liuyib/hexo-theme-stun.git themes/stun
   ```
 
-- Install `pug` and `stylus`
+- Install dependency `pug`
 
-  The theme depends on `pug` and `stylus`, please run follow in your hexo directory.
+  Enter your hexo directory, run this.
 
   ``` bash
-  $ npm install --save hexo-render-pug hexo-renderer-stylus
+  $ npm install --save hexo-render-pug
   ```
 
 ## :hammer: Usage

@@ -27,17 +27,16 @@ section.sidebar-ov(class=`${isShowToc ? "hide" : ""}`)
           - var item = value.split("||")
           - var socialPath = _.trim(_.get(item, "[0]"))
           - var socialIcon = _.trim(_.get(item, "[1]"))
-          span.sidebar-ov-social-item
-            a.sidebar-ov-social-item__a(href=socialPath target="_blank" rel="noopener" data-popover=__(`social.${name}`)
-              data-popover-pos=`${theme.social_setting.icon_only ? "up" : "none"}`)
+          a.sidebar-ov-social__item(href=socialPath target="_blank" rel="noopener" data-popover=__(`social.${name}`)
+            data-popover-pos=`${theme.social_setting.icon_only ? "up" : "none"}`)
 
-              if socialIcon && socialIcon.match("origin:")
-                span.sidebar-ov-social-item__a--logo!= socialIcon.split("origin:")[1]
-              else
-                i.sidebar-ov-social-item__a--icon(class=`${fa_prefix} fa-${socialIcon ? socialIcon : "question-circle-o"}`)
+            if socialIcon && socialIcon.match("origin:")
+              span.sidebar-ov-social__item--logo!= socialIcon.split("origin:")[1]
+            else
+              i.sidebar-ov-social__item--icon(class=`${fa_prefix} fa-${socialIcon ? socialIcon : "question-circle-o"}`)
 
-              if !theme.social_setting.icon_only
-                span= name
+            if !theme.social_setting.icon_only
+              span= name
 
   if theme.feed.enable
     div.sidebar-ov-feed
