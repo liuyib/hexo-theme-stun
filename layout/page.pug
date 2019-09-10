@@ -17,13 +17,8 @@ block content
       div.category-total= __("page.categories") + " - "
         span= site.categories.length
       != list_categories()
-  else if (page.type === "about")
-    div.about
-      if page.photos && page.photos.length
-        +gallery(page)
-      != page.content
   else
-    div.custom
+    div.custom-page
       if page.photos && page.photos.length
         +gallery(page)
       != page.content

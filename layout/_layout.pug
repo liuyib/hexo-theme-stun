@@ -19,16 +19,16 @@ html(lang=config.language)
 
       main#main.main
         div.main-inner
-          div#content.content
-            div.content-inner(class=`${is_home() ? 'content-home' : ''}`)
+          div#content-wrap.content-wrap
+            div.content(class=`${is_home() ? 'content-home' : ''}`)
               block content
+
+            if page.comments
+              include ./_partials/widgets/comments.pug
 
           aside#sidebar.sidebar
             div.sidebar-inner
               != partial('./_partials/sidebar/sidebar.pug', null, { cache: theme.cache })
-
-          if page.comments
-            include ./_partials/widgets/comments.pug
 
           div.clearfix
 

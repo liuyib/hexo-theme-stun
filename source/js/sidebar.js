@@ -103,7 +103,7 @@ $(document).ready(function () {
 
   // Update the reading progress lines of post.
   function readProgress () {
-    var $post = $('#content');
+    var $post = $('#content-wrap');
     var scrollH = ($post[0] &&
       $post[0].getBoundingClientRect().top * -1) || 0;
 
@@ -138,7 +138,7 @@ $(document).ready(function () {
     var $navOv = $('.sidebar-nav-ov');
     var $tocWrap = $('.sidebar-toc');
     var $overview = $('.sidebar-ov');
-  
+
     $navToc.on('click', function () {
       if ($(this).hasClass('current')) return;
 

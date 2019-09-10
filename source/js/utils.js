@@ -304,7 +304,7 @@ Stun.utils = Stun.$u = {
   },
   // Click to zoom in image, without fancybox.
   registerClickToZoomImage: function () {
-    $('#content img').not(':hidden').each(function () {
+    $('#content-wrap img').not(':hidden').each(function () {
       $(this).addClass('zoom-image');
     });
 

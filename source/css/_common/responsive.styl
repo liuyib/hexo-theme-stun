@@ -28,7 +28,7 @@
     margin: 1rem 0;
   }
 
-  .content {
+  .content-wrap {
     width: 100%;
   }
 
@@ -129,13 +129,24 @@
     width: 100%;
   }
 
-  .content-inner {
+  .content,
+  .comments {
     padding: .6rem .8rem;
     font-size: $font-size-base;
   }
 
   .archive {
     margin-left: .5rem;
+
+    &-total {
+      padding-left: 1rem;
+    }
+  }
+
+  .post-timeline {
+    &-item {
+      padding-left: 1rem;
+    }
   }
 
   .header-nav-search {
@@ -160,7 +171,7 @@
   }
 
   .friends-plugin {
-    .friends-item {
+    &__item {
       margin: 0;
       padding: .5rem 1rem;
       width: 100%;
