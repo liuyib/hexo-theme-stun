@@ -45,7 +45,10 @@ $(document).ready(function () {
   function scrollHeadingToTop (anchor) {
     $(anchor)
       .velocity('stop')
-      .velocity('scroll', { easing: 'easeOutSine' });
+      .velocity('scroll', {
+        easing: 'ease-in-out',
+        duration: 600
+      });
   }
 
   var isBack2topShow = false;
