@@ -26,12 +26,6 @@
   font-size: $font-size-main;
 }
 
-if (hexo-config('sidebar.enable')) {
-  .sidebar {
-    float: convert(hexo-config('sidebar.position'));
-  }
-}
-
 .content-wrap {
   width: 'calc(100% - %s)' % ($sidebar-width + $main-sidebar-gap);
 

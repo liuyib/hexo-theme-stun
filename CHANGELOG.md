@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.4.1 (2019-09-11)
+
+See: [https://github.com/liuyib/hexo-theme-stun/releases/tag/v1.4.1](https://github.com/liuyib/hexo-theme-stun/releases/tag/v1.4.1)
+
 ## 1.4.0 (2019-09-09)
 
 See: [https://github.com/liuyib/hexo-theme-stun/releases/tag/v1.4.0](https://github.com/liuyib/hexo-theme-stun/releases/tag/v1.4.0)
