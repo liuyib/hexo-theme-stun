@@ -7,7 +7,6 @@ $(document).ready(function () {
   }
 
   Stun.utils.pjaxReloadBoot = function () {
-    this.initTocDisplay();
     this.addCopyButton();
     this.registerCopyEvent();
 

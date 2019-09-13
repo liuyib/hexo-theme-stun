@@ -2,6 +2,17 @@ $(document).ready(function () {
   var tocDepth = CONFIG.sidebar.renderTocDepth;
   // Optimize selector by theme config.
   var HEADING_SELECTOR = 'h1,h2,h3,h4,h5,h6,'.slice(0, tocDepth * 3).slice(0, -1);
+
+  function initTocDisplay () {
+    if ($('.post-body').find(HEADING_SELECTOR)[0]) {
+      return;
+    }
+
+    $('.sidebar-nav').addClass('hide');
+    $('.sidebar-toc').addClass('hide');
+    $('.sidebar-ov').removeClass('hide');
+  }
+
   // The heading that reached the top currently.
   var currHeading = null;
   // The heading that reached the top last time.
@@ -28,7 +39,7 @@ $(document).ready(function () {
     });
 
     // All heading are not to the top.
-    if ($postBody[0] && (!!$firsetChild[0] &&
+    if ($postBody[0] && ($firsetChild[0] &&
         $firsetChild.offset().top - $(window).scrollTop() > 0)) {
       if (!isRemoveTocClass) {
         $allTocItem.removeClass('active current');
@@ -58,7 +69,7 @@ $(document).ready(function () {
   // Scroll the post toc to the middle.
   function scrollTocToMiddle () {
     var $tocWrapHeight = $('.sidebar-toc').height();
-    var $tocHeight = $('.sidebar-toc .toc').height();
+    var $tocHeight = $('.sidebar-toc > div').height();
 
     if ($tocHeight <= $tocWrapHeight) {
       return;
@@ -88,7 +99,7 @@ $(document).ready(function () {
   // Distance from sidebar to top.
   var SIDEBAR_STICKY_TOP = parseInt(CONFIG.sidebar.offsetTop);
   var isSidebarSticky = false;
-  
+
   // Sticky the sidebar when it arrived the top.
   function sidebarSticky () {
     var $sidebar = $('.sidebar-inner');
@@ -175,6 +186,8 @@ $(document).ready(function () {
       $overview.css('display', 'block');
       $overview.velocity('stop').velocity('fadeIn');
     });
+
+    initTocDisplay();
   };
 
   // Initialization

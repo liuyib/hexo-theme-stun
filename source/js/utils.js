@@ -175,15 +175,6 @@ Stun.utils = Stun.$u = {
       return false;
     }
   },
-  initTocDisplay: function () {
-    if ($('.post-body').find('h1,h2,h3,h4,h5,h6')[0]) {
-      return;
-    }
-
-    $('.sidebar-nav').addClass('hide');
-    $('.sidebar-toc').addClass('hide');
-    $('.sidebar-ov').removeClass('hide');
-  },
   // Wrap images with fancybox support.
   wrapImageWithFancyBox: function () {
     $('.content img').not(':hidden').each(function () {
@@ -255,7 +246,7 @@ Stun.utils = Stun.$u = {
   },
   // Add a mark icon to the link with `target="_blank"` attribute.
   addIconToExternalLink: function (container) {
-    if (!$(container).length) {
+    if (!$(container)[0]) {
       return;
     }
 
