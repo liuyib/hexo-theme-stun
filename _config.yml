@@ -196,7 +196,7 @@ sidebar:
   # Horizon line.
   horizon_line: false
   # Suggest: 240px ~ 300px
-  width: 260px
+  width: 280px
 
 author:
   enable: true
@@ -620,6 +620,8 @@ quicklink:
 # See: https://github.com/MoOx/pjax/
 pjax:
   enable: false
+  # Scrolling to the second screen when the page loaded.
+  scrollTo2screen: false
   # ! -----------------------------------------------------
   # ! If you don't understand, please ignore the following.
   # ! -----------------------------------------------------
@@ -629,6 +631,7 @@ pjax:
   switches:
   switchesOptions:
   history: true
+  # If you enable this, you must set `scrollTo2screen: false` firstly.
   scrollTo: false
   scrollRestoration: false
   cacheBust: false

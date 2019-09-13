@@ -1,11 +1,7 @@
 -
   var pjaxArgs = {
-    'elements': [
-      'a:not([target=_blank])'
-    ],
     'selectors': [
       'head title',
-      'meta[name=description]',
       '#main',
       '.pjax-reload'
     ],
@@ -48,11 +44,13 @@ script.
     document.addEventListener('pjax:send', function () {
       $('.header-nav-menu').removeClass('show');
 
-      $('html').velocity('scroll', {
-        duration: 500,
-        offset: $('#header').height(),
-        easing: 'easeInOutCubic'
-      });
+      if (CONFIG.pjax.scrollTo2screen) {
+        $('html').velocity('scroll', {
+          duration: 500,
+          offset: $('#header').height(),
+          easing: 'easeInOutCubic'
+        });
+      }
 
       var loadingBarWidth = 0;
       var MAX_LOADING_WIDTH = 95;

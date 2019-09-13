@@ -53,6 +53,13 @@
     zoom_image = JSON.stringify(theme.zoom_image);
   }
 
+  var pjax_config = "undefined";
+  if (theme.pjax.enable) {
+    pjax_config = JSON.stringify({
+      scrollTo2screen: theme.pjax.scrollTo2screen
+    });
+  }
+
   var external_link = "undefined";
   if (theme.external_link.icon.enable) {
     external_link = JSON.stringify({
@@ -87,6 +94,7 @@ script.
     zoom_image: !{ zoom_image },
     gallery_waterfall: !{ gallery_waterfall },
     lazyload: !{ lazyload },
+    pjax: !{ pjax_config },
     external_link: !{ external_link },
     shortcuts: !{ shortcuts },
     prompt: !{ prompt }
