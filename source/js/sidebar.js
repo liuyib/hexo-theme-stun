@@ -98,7 +98,6 @@ $(document).ready(function () {
 
   // Distance from sidebar to top.
   var SIDEBAR_STICKY_TOP = parseInt(CONFIG.sidebar.offsetTop);
-  var isSidebarSticky = false;
 
   // Sticky the sidebar when it arrived the top.
   function sidebarSticky () {
@@ -107,15 +106,9 @@ $(document).ready(function () {
       document.getElementById('main').getBoundingClientRect().top;
 
     if (targetY < SIDEBAR_STICKY_TOP) {
-      if (!isSidebarSticky) {
-        $sidebar.addClass('sticky');
-        isSidebarSticky = true;
-      }
+      $sidebar.addClass('sticky');
     } else {
-      if (isSidebarSticky) {
-        $sidebar.removeClass('sticky');
-        isSidebarSticky = false;
-      }
+      $sidebar.removeClass('sticky');
     }
   }
 
