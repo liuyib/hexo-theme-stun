@@ -18,8 +18,11 @@ $(document).ready(function () {
 
     $headings.each(function () {
       var headingTop = this.getBoundingClientRect().top;
+      // The minimum distance from the top of the browser
+      //   when heading is marked as active in toc.
+      var MIN_HEIGHT_TO_TOP = 5;
 
-      if (headingTop < 0) {
+      if (headingTop <= MIN_HEIGHT_TO_TOP) {
         currHeading = this.getAttribute('id');
       }
     });
@@ -57,7 +60,9 @@ $(document).ready(function () {
     var $tocWrapHeight = $('.sidebar-toc').height();
     var $tocHeight = $('.sidebar-toc .toc').height();
 
-    if ($tocHeight <= $tocWrapHeight) return;
+    if ($tocHeight <= $tocWrapHeight) {
+      return;
+    }
 
     var $tocWrap = $('.sidebar-toc');
     var $currTocItem = $('.sidebar-toc .current a');
@@ -142,7 +147,9 @@ $(document).ready(function () {
     var $overview = $('.sidebar-ov');
 
     $navToc.on('click', function () {
-      if ($(this).hasClass('current')) return;
+      if ($(this).hasClass('current')) {
+        return;
+      }
 
       $navToc.addClass('current');
       $navOv.removeClass('current');
@@ -155,7 +162,9 @@ $(document).ready(function () {
     });
 
     $navOv.on('click', function () {
-      if ($(this).hasClass('current')) return;
+      if ($(this).hasClass('current')) {
+        return;
+      }
 
       $navOv.addClass('current');
       $navToc.removeClass('current');

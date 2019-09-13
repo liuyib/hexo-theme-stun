@@ -176,7 +176,9 @@ Stun.utils = Stun.$u = {
     }
   },
   initTocDisplay: function () {
-    if ($('.post-body').find('h1,h2,h3,h4,h5,h6')[0]) return;
+    if ($('.post-body').find('h1,h2,h3,h4,h5,h6')[0]) {
+      return;
+    }
 
     $('.sidebar-nav').addClass('hide');
     $('.sidebar-toc').addClass('hide');
@@ -253,7 +255,9 @@ Stun.utils = Stun.$u = {
   },
   // Add a mark icon to the link with `target="_blank"` attribute.
   addIconToExternalLink: function (container) {
-    if (!$(container).length) return;
+    if (!$(container).length) {
+      return;
+    }
 
     var faPrefix = CONFIG.fontawesome.prefix;
     var $wrapper = $('<span class="external-link"></span>');
