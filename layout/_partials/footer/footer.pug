@@ -14,6 +14,8 @@ if footerCopyright || footerBeian
       span!= `&copy; ${startYear}` + (startYear != endYear ? `-${endYear}` : "")
       if footer.icon.enable
         span(class=`${fa_prefix} fa-${footer.icon.name} footer-icon`)
+      else
+        span= " "
       span= footer.copyright.text || config.author + "."
     if footerCopyright && footerBeian
       span= " | "

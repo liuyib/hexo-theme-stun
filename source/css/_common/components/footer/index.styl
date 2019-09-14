@@ -1,3 +1,15 @@
+.footer {
+  &-icon {
+    margin: 0 .3rem;
+    font-size: 1em;
+    color: convert(hexo-config('footer.icon.color') || '#ff0000');
+
+    if (hexo-config('footer.icon.animation')) {
+      animation: footer-heart-beat 1.2s infinite;
+    }
+  }
+}
+
 .footer-inner {
   padding: 1rem;
   font-size: $font-size-footer;
@@ -22,15 +34,5 @@
 
   .separator {
     margin: 0 .5rem;
-  }
-
-  .footer-icon {
-    margin: 0 .2rem;
-    font-size: .9em;
-    color: convert(hexo-config('footer.icon.color') || '#ff0000');
-
-    if (hexo-config('footer.icon.animation')) {
-      animation: footer-heart-beat 1.2s infinite;
-    }
   }
 }
