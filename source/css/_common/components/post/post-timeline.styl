@@ -51,6 +51,7 @@
 
     time-width = 3em;
     time-margin = 1em;
+    sticky-top-width = 2em;
 
     &__time {
       display: inline-block;
@@ -61,10 +62,15 @@
       transform: translateY(3%);
     }
 
+    .sticky-top {
+      width: 2em;
+      height: 2em;
+    }
+
     &-title {
       display: inline-block;
       margin: 0;
-      width: 'calc(100% - %s)' % (time-width + time-margin);
+      width: 'calc(100% - %s)' % (time-width + time-margin + sticky-top-width);
       font-size: 1em;
       font-weight: normal;
       vertical-align: middle;

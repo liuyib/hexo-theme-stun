@@ -17,4 +17,7 @@ mixin postTimeline(posts)
               a(href=url_for(post.link) target="_blank" rel="noopener").post-timeline-item-title__a= post.title || post.link
             else
               a(href=url_for(post.path)).post-timeline-item-title__a= post.title || __("post.untitled")
+        
+        if post.top
+          include ../_partials/widgets/sticky-top.pug
     - })
