@@ -1,5 +1,6 @@
-- var isShowToc = page.toc || (theme.toc.enable && is_post())
-- var fa_prefix = theme.fa_prefix || 'fa'
+-
+  var fa_prefix = theme.fa_prefix || 'fa';
+  var isShowToc = is_post() && (!(page.toc === false) && (theme.toc && theme.toc.enable));
 
 if isShowToc
   div.sidebar-nav
