@@ -1,11 +1,13 @@
 .footer {
-  &-icon {
-    margin: 0 .3rem;
-    font-size: 1em;
-    color: convert(hexo-config('footer.icon.color') || '#ff0000');
+  if (hexo-config('footer.icon.enable')) {
+    &-icon {
+      margin: 0 .3rem;
+      font-size: 1em;
+      color: convert(hexo-config('footer.icon.color') || '#ff0000');
 
-    if (hexo-config('footer.icon.animation')) {
-      animation: footer-heart-beat 1.2s infinite;
+      if (hexo-config('footer.icon.animation')) {
+        animation: footer-heart-beat 1.2s infinite;
+      }
     }
   }
 }

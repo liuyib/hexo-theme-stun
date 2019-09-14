@@ -29,9 +29,10 @@ html(lang=config.language)
             if page.comments
               include ./_partials/widgets/comments.pug
 
-          aside#sidebar.sidebar
-            div.sidebar-inner
-              != partial('./_partials/sidebar/sidebar.pug', null, { cache: theme.cache })
+          if theme.sidebar.enable
+            aside#sidebar.sidebar
+              div.sidebar-inner
+                != partial('./_partials/sidebar/sidebar.pug', null, { cache: theme.cache })
 
           div.clearfix
 

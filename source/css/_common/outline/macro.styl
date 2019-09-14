@@ -15,7 +15,7 @@
 }
 
 .main {
-  margin: $main-sidebar-gap auto;
+  margin: 1.5rem auto;
   width: 100%;
   flex: 1 0 auto;
 }
@@ -27,12 +27,16 @@
 }
 
 .content-wrap {
-  width: 'calc(100% - %s)' % ($sidebar-width + $main-sidebar-gap);
+  if (hexo-config('sidebar.enable')) {
+    width: 'calc(100% - %s)' % ($sidebar-width + $main-sidebar-gap);
 
-  if (hexo-config('sidebar.position') == 'left') {
-    float: right;
-  } else if (hexo-config('sidebar.position') == 'right') {
-    float: left;
+    if (hexo-config('sidebar.position') == 'left') {
+      float: right;
+    } else if (hexo-config('sidebar.position') == 'right') {
+      float: left;
+    }
+  } else {
+    width: 100%;
   }
 }
 

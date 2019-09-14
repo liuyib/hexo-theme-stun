@@ -149,9 +149,11 @@
     }
   }
 
-  .header-nav-search {
-    span {
-      display: none;
+  if (hexo-config('algolia_search.enable') || hexo-config('local_search.enable')) {
+    .header-nav-search {
+      span {
+        display: none;
+      }
     }
   }
 
@@ -166,8 +168,10 @@
     }
   }
 
-  .gallery__img {
-    width: 100%;
+  if (hexo-config('gallery_waterfall.enable')) {
+    .gallery__img {
+      width: 100%;
+    }
   }
 
   .friends-plugin {
