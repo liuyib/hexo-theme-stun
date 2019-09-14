@@ -55,40 +55,38 @@ $(document).ready(function () {
 
   // Back the page to top.
   function back2top () {
-    function back2topHandler () {
-      var $top = $('#back2top');
-      var scrollTop = $(window).scrollTop();
+    var $back2top = $('#back2top');
+    var scrollTop = $(window).scrollTop();
 
-      if (scrollTop !== 0) {
-        if (!isBack2topShow) {
-          $top.addClass('show');
-          $top.removeClass('hide');
-          isBack2topShow = true;
-        }
-      } else {
-        $top.addClass('hide');
-        $top.removeClass('show');
-        isBack2topShow = false;
+    if (scrollTop !== 0) {
+      if (!isBack2topShow) {
+        $back2top.addClass('show');
+        $back2top.removeClass('hide');
+        isBack2topShow = true;
       }
+    } else {
+      $back2top.addClass('hide');
+      $back2top.removeClass('show');
+      isBack2topShow = false;
     }
-
-    $(window).on('DOMContentLoaded', back2topHandler);
-    $(window).on('scroll', Stun.utils.throttle(function () {
-      back2topHandler();
-    }, 500));
-
-    $('#back2top').on('click', function () {
-      $('body').velocity('stop').velocity('scroll');
-    });
   }
 
   // Initialization
   headerNavScroll();
   back2top();
 
+  $(window).on('DOMContentLoaded', back2top);
   $(window).on('scroll', Stun.utils.throttle(function () {
     headerNavScroll();
   }, 100));
+
+  $(window).on('scroll', Stun.utils.throttle(function () {
+    back2top();
+  }, 100));
+
+  $('#back2top').on('click', function () {
+    $('body').velocity('stop').velocity('scroll');
+  });
 
   Stun.utils.pjaxReloadScroll = function () {
     // Click the heading.
