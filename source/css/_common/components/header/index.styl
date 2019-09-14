@@ -9,10 +9,7 @@
     height: convert(hexo-config('header.height') || '80vh');
   }
 
-  if (hexo-config('page.top_image')) {
-    background: url(hexo-config('page.top_image')) no-repeat center center;
-    background-size: cover;
-  } else if (hexo-config('header.bg_image.enable')) {
+  if (hexo-config('header.bg_image.enable')) {
     background: url(hexo-config('header.bg_image.url')) no-repeat center center;
     background-size: cover;
   }

@@ -1,10 +1,16 @@
 -
+  var pjaxSelectors = [
+    'head title',
+    '#main',
+    '.pjax-reload'
+  ];
+
+  if (theme.header.bg_image.enable) {
+    pjaxSelectors.push('.header-inner');
+  }
+
   var pjaxArgs = {
-    'selectors': [
-      'head title',
-      '#main',
-      '.pjax-reload'
-    ],
+    'selectors': pjaxSelectors,
     'history': theme.pjax.history,
     'scrollTo': theme.pjax.scrollTo,
     'scrollRestoration': theme.pjax.scrollRestoration,

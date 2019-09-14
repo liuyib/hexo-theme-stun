@@ -14,7 +14,10 @@ html(lang=config.language)
   body
     div#container.container
       header#header.header
-        div.header-inner
+        div.header-inner(style=`${
+          theme.header.bg_image.enable &&
+            page.top_image ? 'background: url(' + page.top_image + ') no-repeat center/cover;' : ''
+        }`)
           != partial('./_partials/header/header.pug', null, { cache: theme.cache })
 
       main#main.main
