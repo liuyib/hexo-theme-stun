@@ -8,6 +8,6 @@ block content
       span= __("page.categories") + " -- "
       span= page.category
 
-    +postTimeline(page.posts)
+    +postTimeline(page.posts.data)
 
     include ./_partials/widgets/pagination.pug

@@ -388,10 +388,6 @@ sidebar:
   width: 280px
 ```
 
-::: danger <Badge text="Deprecated" type="error"/>
-该配置项的 `width` 属性在 `v1.2.0` 版本中移除。
-:::
-
 ## 文章目录 <Badge text="Stable"/>
 
 修改主题配置文件：
