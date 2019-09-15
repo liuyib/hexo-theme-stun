@@ -93,10 +93,13 @@
   if (hexo-config('post_widget.end_text.enable')) {
     &-end {
       margin: 0 0 1rem;
-      border-top: 1px dashed $post-end-line-color;
       padding: 1rem 0 0;
       text-align: center;
       color: $post-end-color;
+
+      if (hexo-config('post_widget.end_text.horizon_line')) {
+        border-top: 1px dashed $post-end-line-color;
+      }
     }
   }
 
