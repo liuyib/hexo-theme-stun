@@ -16,7 +16,11 @@ nav.header-nav
         if !theme.menu_settings.icon_only
           span!= __("nav.search")
 
-div.header-info
+div.header-info(style=`${
+    theme.header.bg_image.enable &&
+      page.top_image ? 'background: url(' + page.top_image + ') no-repeat center/cover;' : ''
+  }`)
+  div.header-info-mask
   div.header-info-inner
     div.header-info-title= config.title
     div.header-info-subtitle= config.subtitle

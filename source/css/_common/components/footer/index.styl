@@ -10,31 +10,31 @@
       }
     }
   }
-}
 
-.footer-inner {
-  padding: 1rem;
-  font-size: $font-size-footer;
-  text-align: center;
-  color: $footer-text-color;
-  background-color: $footer-bg-color;
+  &-inner {
+    padding: 1rem;
+    font-size: $font-size-footer;
+    text-align: center;
+    color: $footer-text-color;
+    background-color: $footer-bg-color;
 
-  if (hexo-config('footer.bg_image.enable')) {
-    background: url(hexo-config('footer.bg_image.url')) no-repeat center center;
-    background-size: cover;
-  }
-
-  a {
-    color: $footer-link-color;
-    transition-property: color;
-    transition-ease();
-
-    &:hover {
-      color: $footer-link-hover-color;
+    if (hexo-config('footer.bg_image.enable')) {
+      background: url(hexo-config('footer.bg_image.url')) no-repeat center center;
+      background-size: cover;
     }
-  }
 
-  .separator {
-    margin: 0 .5rem;
+    a {
+      color: $footer-link-color;
+      transition-property: color;
+      transition-ease();
+
+      &:hover {
+        color: $footer-link-hover-color;
+      }
+    }
+
+    .separator {
+      margin: 0 .5rem;
+    }
   }
 }

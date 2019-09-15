@@ -78,9 +78,6 @@ $(document).ready(function () {
   $(window).on('DOMContentLoaded', back2top);
   $(window).on('scroll', Stun.utils.throttle(function () {
     headerNavScroll();
-  }, 100));
-
-  $(window).on('scroll', Stun.utils.throttle(function () {
     back2top();
   }, 100));
 
