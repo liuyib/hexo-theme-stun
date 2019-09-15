@@ -30,7 +30,7 @@ shortcuts:
 
 ## 标签插件
 
-该功能相当于 Hexo 对 markdown 语法的一种扩展，用于快速在文章中插入指定的内容。你可以访问[这里](https://hexo.io/zh-cn/docs/tag-plugins)查看 Hexo 都支持哪些标签插件。
+该功能相当于 Hexo 对 Markdown 语法的一种扩展，用于快速在文章中插入指定的内容。你可以访问[这里](https://hexo.io/zh-cn/docs/tag-plugins)查看 Hexo 都支持哪些标签插件。
 
 Hexo 主题一般都会扩展一些自己特有的标签插件，在这方面做得最好的是 NexT 主题，你可以查看 NexT 主题所特有的标签插件：[https://theme-next.org/docs/tag-plugins/](https://theme-next.org/docs/tag-plugins/)。
 
@@ -38,7 +38,7 @@ Hexo 主题一般都会扩展一些自己特有的标签插件，在这方面做
 
 ### 插入表格数据 <Badge text="Stable"/> <Badge text="v1.2.0"/>
 
-如果想要在文章中显示一个表格，你可以使用 markdown 原生支持的语法，但是如果你想要让表格里的数据存储在外部文件中，那么你可以使用下面这种语法：
+如果想要在文章中显示一个表格，你可以使用 Markdown 原生支持的语法，但是如果你想要让表格里的数据存储在外部文件中，那么你可以使用下面这种语法：
 
 ```
 {% table [path] [thead1,thead2,...] %}
@@ -77,7 +77,7 @@ Hexo 主题一般都会扩展一些自己特有的标签插件，在这方面做
 ]
 ```
 
-2. 在文章或页面的 markdown 源文件中，插入如下标签。
+2. 在文章或页面的 Markdown 源文件中，插入如下标签。
 
 ```
 {% table _data/reward.json 时间,赞助人,金额,留言 %}
@@ -99,7 +99,7 @@ any text
 {% endnote %}
 ```
 
-> 标签内可以是任意文字，支持 markdown 和 HTML 语法。
+> 标签内可以是任意文字，支持 Markdown 和 HTML 语法。
 
 参数：
 
@@ -189,7 +189,7 @@ This is success note.
 数据的格式要和上面保持一致，即要有：`avatar`、`name`、`introduction`、`url` 几个字段。
 :::
 
-2. 在文章或页面的 markdown 源文件中，插入如下标签。
+2. 在文章或页面的 Markdown 源文件中，插入如下标签。
 
 ```
 {% friends _data/friends.json %}

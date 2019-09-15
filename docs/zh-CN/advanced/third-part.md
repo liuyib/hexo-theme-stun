@@ -154,7 +154,7 @@ quicklink:
 
 2. 添加 `Front-Matter`
 
-上一步只是设置了 home 页面和 archive 页面是否启用 quicklink，对于其他页面或文章，你必须手动设置：在页面或文章的 markdown 文件的 `Front-Matter` 中，添加 `quicklink: true`。
+上一步只是设置了 home 页面和 archive 页面是否启用 quicklink，对于其他页面或文章，你必须手动设置：在页面或文章的 Markdown 文件的 `Front-Matter` 中，添加 `quicklink: true`。
 
 ## 启用 Pjax <Badge text="Stable"/> <Badge text="v1.4.0"/>
 
@@ -163,6 +163,8 @@ quicklink:
 ``` yaml
 pjax:
   enable: true
+  # 是否在页面加载后，滚动到第二屏
+  scrollTo2screen: false
   # ！！！如果你不了解 Pjax 的用法，请忽视下面的配置项
   # 详参见: https://github.com/MoOx/pjax/#options
   elements:
@@ -181,8 +183,9 @@ pjax:
 ::: warning 已知问题
 下面是启用 Pjax 之后，已知的一些问题。
 
-- 不兼容 MathJax（必须手动刷新页面一次后，MathJax 才能正常使用）
+- 不兼容 MathJax（必须手动刷新页面一次后，MathJax 才能正常使用。KaTex 可以正常使用）
 - 不兼容评论（评论显示为空，必须手动刷新页面才能显示出用户的评论）
+- 解析数学公式、Quicklink 等，原来按需生效的设置将会对所有页面生效
 :::
 
 ## 添加 Emoji 支持 <Badge text="Disrelated" type="warning"/>
@@ -213,7 +216,7 @@ $ hexo clean && hexo s
 {% github_emoji sparkles %}
 ```
 
-如果你需要某个 markdown 文件不解析这种语法，可以在 markdown 文件里的 `front-matter` 中，设置 `no-emoji: true`。这样 `::` 会保持原来的样子。
+如果你需要某个 Markdown 文件不解析这种语法，可以在 Markdown 文件里的 `front-matter` 中，设置 `no-emoji: true`。这样 `::` 会保持原来的样子。
 
 ``` yaml
 ---
@@ -224,7 +227,7 @@ no-emoji: true
 
 有关该插件的更详尽的用法，请自行查阅其[文档](https://github.com/crimx/hexo-filter-github-emojis)。查看所有支持的 Emoji 请访问：[Github Emojis API](https://api.github.com/emojis) 或者 [Emoji Cheat Sheet](http://www.webpagefx.com/tools/emoji-cheat-sheet/)。
 
-> 你也可以通过更换 markdown 渲染器 `hexo-renderer-markdown-it-plus` 来支持 Emoji。详情请看：[https://github.com/CHENXCHEN/hexo-renderer-markdown-it-plus](https://github.com/CHENXCHEN/hexo-renderer-markdown-it-plus)。
+> 你也可以通过更换 Markdown 渲染器 `hexo-renderer-markdown-it-plus` 来支持 Emoji。详情请看：[https://github.com/CHENXCHEN/hexo-renderer-markdown-it-plus](https://github.com/CHENXCHEN/hexo-renderer-markdown-it-plus)。
 
 ## 评论系统
 
@@ -627,7 +630,7 @@ MathJax 与 KaTex 相比之下，[KaTex 引擎速度更快](https://www.intmath.
 
 ### MathJax <Badge text="Stable"/> <Badge text="v1.1.2"/>
 
-使用 mathjax 作为引擎，首先，你需要更换一个支持 MathJax 的 markdown 渲染器：
+使用 mathjax 作为引擎，首先，你需要更换一个支持 MathJax 的 Markdown 渲染器：
 
 - [hexo-renderer-kramed](https://github.com/sun11/hexo-renderer-kramed)
 - [hexo-renderer-pandoc](https://github.com/wzpan/hexo-renderer-pandoc)
@@ -660,9 +663,9 @@ $ hexo clean && hexo s
 
 ### KaTex <Badge text="Stable"/> <Badge text="v1.1.2"/>
 
-使用 katex 作为引擎，不需要引入 `katex.min.js`。相应的，你只需要更换一个支持 KaTex 的 markdown 渲染器。
+使用 katex 作为引擎，不需要引入 `katex.min.js`。相应的，你只需要更换一个支持 KaTex 的 Markdown 渲染器。
 
-首先，卸载原来的 markdown 渲染器，例如：
+首先，卸载原来的 Markdown 渲染器，例如：
 
 ``` bash
 $ npm un hexo-renderer-marked --save
@@ -675,7 +678,7 @@ $ npm un hexo-renderer-pandoc --save
 $ npm un hexo-math --save
 ```
 
-如果你安装过这些，都需要卸载。你可以到 Hexo 根目录下的 `package.json` 文件中，查看安装了哪些插件。然后，安装新的 markdown 渲染器：
+如果你安装过这些，都需要卸载。你可以到 Hexo 根目录下的 `package.json` 文件中，查看安装了哪些插件。然后，安装新的 Markdown 渲染器：
 
 - [hexo-renderer-markdown-it-plus](https://github.com/CHENXCHEN/hexo-renderer-markdown-it-plus)
 - [hexo-renderer-markdown-it](https://github.com/hexojs/hexo-renderer-markdown-it)
@@ -754,7 +757,7 @@ Stun 主题默认提供了一些 MathJax 和 Katex 的插件。
 
 ### 如何使用
 
-按照上述步骤配置之后，你就可以在 markdown 源文件中，使用数学公式了。使用 `$$...$$` 包裹的字符，即可被识别为数学公式，但是会另起一行来显示。如果想要公式和文字在同一行显示，需要使用 `$...$` 来包括字符。
+按照上述步骤配置之后，你就可以在 Markdown 源文件中，使用数学公式了。使用 `$$...$$` 包裹的字符，即可被识别为数学公式，但是会另起一行来显示。如果想要公式和文字在同一行显示，需要使用 `$...$` 来包括字符。
 
 效果如下：
 

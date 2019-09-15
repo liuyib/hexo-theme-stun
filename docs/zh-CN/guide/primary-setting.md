@@ -32,7 +32,7 @@ $ hexo new page tags
 
 2. 修改 Front-Matter
 
-找到 Hexo 根目录下的 `source/categories` 或 `source/tags` 文件夹中的 markdown 文件，添加 Front-Matter：
+找到 Hexo 根目录下的 `source/categories` 或 `source/tags` 文件夹中的 Markdown 文件，添加 Front-Matter：
 
 ``` yaml
 # 如果是分类页，添加这个
@@ -150,7 +150,7 @@ header:
 
 ### 指定顶部图 <Badge text="Stable"/>
 
-如果想要为某个页面或某篇文章单独指定顶部图，你需要在页面或文章 markdown 源文件的 [Front-Matter](https://hexo.io/zh-cn/docs/Front-Matter) 中，添加 `top_image` 项，然后填入的图片 url 或路径即可。例如：
+如果想要为某个页面或某篇文章单独指定顶部图，你需要在页面或文章 Markdown 源文件的 [Front-Matter](https://hexo.io/zh-cn/docs/Front-Matter) 中，添加 `top_image` 项，然后填入的图片 url 或路径即可。例如：
 
 ``` yaml
 ---
@@ -252,7 +252,7 @@ social:
 
 ## 文章摘要 <Badge text="Stable"/>
 
-如果想要保留文章摘要，需要**手动**在文章的 markdown 源文件中添加 `<!-- more -->` 标记。标记之前的部分都会被保留为文章摘要，显示在文章列表中。
+如果想要保留文章摘要，需要**手动**在文章的 Markdown 源文件中添加 `<!-- more -->` 标记。标记之前的部分都会被保留为文章摘要，显示在文章列表中。
 
 如果想要自动保留文章摘要，可以通过修改主题配置文件：
 
@@ -284,6 +284,12 @@ reward:
 效果如下：
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608175556.png)
+
+你可以在文章 Markdown 源文件中的 `Front-Matter` 里，设置 `reward: false` 来指定某篇文章不启用赞赏码。
+
+::: warning 注意
+如果主题配置文件中没有启用 `reward`，那么单独设置文章 `reward: true` 是没有效果的。
+:::
 
 ---
 

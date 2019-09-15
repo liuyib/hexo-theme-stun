@@ -54,7 +54,7 @@ Hexo 会帮你记录文件的更新日期，所以一般不需要手动指定 `u
 
 - `comments` <Badge text="Stable"/> - 是否开启评论功能
 
-  在 Stun 主题中，如果你启用了某个评论系统，默认是对所有通过 markdown 文件生成的页面（除首页，归档页，单个分类页，单个标签页以外的所有页面）生效。因此，你可以使用该属性单独设置某个页面 / 文章是否启用评论。
+  在 Stun 主题中，如果你启用了某个评论系统，默认是对所有通过 Markdown 文件生成的页面（除首页，归档页，单个分类页，单个标签页以外的所有页面）生效。因此，你可以使用该属性单独设置某个页面 / 文章是否启用评论。
 
 - `permalink` <Badge text="Stable"/> - 覆盖文章网址
 
@@ -89,7 +89,7 @@ Hexo 会帮你记录文件的更新日期，所以一般不需要手动指定 `u
 
   那么它会被解析为 `foo,bar,baz`，也就是一个标签。
 
-- `layout` <Badge text="Stable"/> - 是否处理 markdown 源文件
+- `layout` <Badge text="Stable"/> - 是否处理 Markdown 源文件
 
   如果你不想你的文章或页面被处理，可以将 `Front-Matter` 中的 `layout` 设为 `false`。例如：
 
@@ -97,7 +97,7 @@ Hexo 会帮你记录文件的更新日期，所以一般不需要手动指定 `u
 
   ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190820175118.png)
 
-  > 可以看到，设置了 `layout: false` 后，不对 markdown 文件做任何处理，直接将文件的原始内容显示出来。
+  > 可以看到，设置了 `layout: false` 后，不对 Markdown 文件做任何处理，直接将文件的原始内容显示出来。
 
   没有设置 `layout: false` 的默认情况下或设置了 `layout: true`：
 
@@ -286,6 +286,12 @@ creative_commons:
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190619210339.png)
 
+你可以在文章 Markdown 源文件中的 `Front-Matter` 里，设置 `copyright: false` 来指定某篇文章不启用知识共享许可协议。
+
+::: warning 注意
+如果主题配置文件中没有启用 `creative_commons`，那么单独设置文章 `copyright: true` 是没有效果的。
+:::
+
 ## 返回顶部 <Badge text="Beta" type="warning"/>
 
 修改主题配置文件：
@@ -381,7 +387,7 @@ sidebar:
   # 侧边栏位置，可选值有：left 或 right
   position: right
   # 侧边栏距离顶部的距离（只支持 px 单位）
-  offsetTop: 20px
+  offsetTop: 30px
   # 是否显示水平分割线
   horizon_line: false
   # 侧边栏宽度（建议宽度：240px ~ 340px）
@@ -403,12 +409,16 @@ toc:
   # 是否始终展开所有文章目录。true：始终展开，false：当文章中对应的标题到达顶部时自动展开
   expand_all: false
   # 生成目录时，解析 h 标签的最大深度
-  # 你可以在文章的 markdown 源文件的 Front-Matter 中，通过添加 `toc_max_depth` 属性，
+  # 你可以在文章 Markdown 源文件的 Front-Matter 中，通过添加 `toc_max_depth` 属性，
   #   来指定某篇文章生成目录时，解析 h 标签的最大深度
   max_depth: 4
 ```
 
-其中 `expand_all` <Badge text="v1.0.2"/>。可以在文章的 markdown 源文件中的 `Front-Matter` 里，指定 `toc: true / false` 来设置某篇文章是否启用目录。
+其中 `expand_all` <Badge text="v1.0.2"/>。在文章 Markdown 源文件中的 `Front-Matter` 里，设置 `toc: false` 来指定某篇文章不启用目录。
+
+::: warning 注意
+如果主题配置文件中没有启用 `toc`，那么单独设置文章 `toc: true` 是没有效果的。
+:::
 
 ## 订阅设置 <Badge text="Stable"/>
 

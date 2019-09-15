@@ -2,7 +2,7 @@
 
 div.busuanzi
   if theme.busuanzi.site_uv.enable
-    span.busuanzi-uv
+    span.busuanzi-site_uv
       i(class=`${fa_prefix} fa-user`)
       if !theme.busuanzi.icon_only
         span= __("footer.uv") + " "
@@ -12,7 +12,7 @@ div.busuanzi
     span.separator= "|"
 
   if theme.busuanzi.site_pv.enable
-    span.busuanzi-pv
+    span.busuanzi-site_pv
       i(class=`${fa_prefix} fa-eye`)
       if !theme.busuanzi.icon_only
         span= __("footer.pv") + " "
