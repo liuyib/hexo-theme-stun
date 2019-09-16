@@ -1,9 +1,14 @@
 -
-  var gitalk_js = "https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"
-  var gitalk_md5 = "https://cdn.jsdelivr.net/npm/js-md5@latest/src/md5.min.js"
+  var gitalk_js = "https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js";
+  var gitalk_md5 = "https://cdn.jsdelivr.net/npm/js-md5@latest/src/md5.min.js";
 
-  if (theme.cdn.gitalk_js) gitalk_js = theme.cdn.gitalk_js
-  if (theme.cdn.gitalk_md5) gitalk_md5 = theme.cdn.gitalk_md5
+  if (theme.cdn.gitalk_js) {
+    gitalk_js = theme.cdn.gitalk_js;
+  }
+
+  if (theme.cdn.gitalk_md5) {
+    gitalk_md5 = theme.cdn.gitalk_md5;
+  }
 
 script(src=gitalk_js)&attributes(dataPjax)
 script(src=gitalk_md5)&attributes(dataPjax)

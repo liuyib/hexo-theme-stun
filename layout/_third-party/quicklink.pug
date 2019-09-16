@@ -1,8 +1,11 @@
 if theme.quicklink.enable
   -
-    var quicklink_js = "https://cdn.jsdelivr.net/npm/quicklink@1.0.1/dist/quicklink.umd.js"
-    if (theme.cdn.quicklink) quicklink_js = theme.cdn.quicklink
-    var loadQuicklink = false
+    var loadQuicklink = false;
+    var quicklink_js = "https://cdn.jsdelivr.net/npm/quicklink@1.0.1/dist/quicklink.umd.js";
+
+    if (theme.cdn.quicklink) {
+      quicklink_js = theme.cdn.quicklink;
+    }
 
   if is_home() && theme.quicklink.home
     - loadQuicklink = true
