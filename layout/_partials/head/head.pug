@@ -1,21 +1,30 @@
 -
-  var title = __('title') !== 'title' ? __('title') : config.title
-  var subtitle = __('subtitle') !== 'subtitle' ? __('subtitle') : config.subtitle
-  var author = __('author') !== 'author' ? __('author') : config.author
-  var description = __('description') !== 'description' ? __('description') : config.description
-  var keywords = config.author + ', ' + config.title
-  var title_suffix = ' | ' + title
+  var title = __('title') !== 'title' ? __('title') : config.title;
+  var subtitle = __('subtitle') !== 'subtitle' ? __('subtitle') : config.subtitle;
+  var author = __('author') !== 'author' ? __('author') : config.author;
+  var description = __('description') !== 'description' ? __('description') : config.description;
+  var keywords = config.author + ', ' + config.title;
+  var title_suffix = ' | ' + title;
 
-  if (is_home()) title = title + (theme.index_subtitle ? ' | ' + subtitle : '')
-  else if (is_archive()) title = __('title.archive') + title_suffix
-  else if (is_category()) title = __('title.category') + ': ' + page.category + title_suffix
-  else if (is_tag()) title = __('title.tag') + ': ' + page.tag + title_suffix
-  else if (is_post()) title = page.title + title_suffix
-  else if (is_page())
-    if (page.type === 'tags') title = __('title.tag') + title_suffix
-    else if (page.type === 'categories') title = __('title.category') + title_suffix
-    else title = page.title + title_suffix
-  else title = page.title + title_suffix
+  if (is_home()) {
+    title = title + ((theme.index_subtitle && subtitle) ? (' | ' + subtitle) : '');
+  } else if (is_archive()) {
+    title = __('title.archive') + title_suffix;
+  } else if (is_category()) {
+    title = __('title.category') + ': ' + page.category + title_suffix;
+  } else if (is_tag()) {
+    title = __('title.tag') + ': ' + page.tag + title_suffix;
+  } else if (is_post()) {
+    title = page.title + title_suffix;
+  } else {
+    if (page.type === 'tags') {
+      title = __('title.tag') + title_suffix;
+    } else if (page.type === 'categories') {
+      title = __('title.category') + title_suffix;
+    } else {
+      title = page.title + title_suffix;
+    }
+  }
 
 meta(charset="UTF-8")
 meta(http-equiv="X-UA-Compatible" content="IE=edge")

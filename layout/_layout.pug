@@ -10,7 +10,7 @@
 doctype html
 html(lang=config.language)
   head
-    != partial('./_partials/head/head.pug', null, { cache: theme.cache })
+    include ./_partials/head/head.pug
   body
     div#container.container
       header#header.header
