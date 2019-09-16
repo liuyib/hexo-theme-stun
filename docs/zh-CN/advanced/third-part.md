@@ -607,7 +607,7 @@ $ hexo clean && hexo s
 
 ## 数学公式
 
-想要解析页面中的数学公式，首先，你需要修改主题配置文件，启用该功能，并选择解析引擎（默认是 katex 引擎）：
+想要解析页面中的数学公式，首先，你需要修改主题配置文件，启用该功能，并选择解析引擎（默认是 KaTex 引擎）：
 
 ``` yaml
 math:
@@ -622,7 +622,7 @@ math:
   engine: katex
 ```
 
-然后，你需要根据下面 MathJax 或 KaTex 的说明进一步配置。
+然后，你需要根据下面 MathJax 或 KaTex 的说明**进一步配置**。
 
 ::: tip
 MathJax 与 KaTex 相比之下，[KaTex 引擎速度更快](https://www.intmath.com/cg5/katex-mathjax-comparison.php)，但 [KaTex 支持的语法更少](https://github.com/KaTeX/KaTeX/wiki/Things-that-KaTeX-does-not-%28yet%29-support)，这里是 [KaTex 所支持的所有语法](https://katex.org/docs/supported.html)。
@@ -630,40 +630,38 @@ MathJax 与 KaTex 相比之下，[KaTex 引擎速度更快](https://www.intmath.
 
 ### MathJax <Badge text="Stable"/> <Badge text="v1.1.2"/>
 
-使用 mathjax 作为引擎，首先，你需要更换一个支持 MathJax 的 Markdown 渲染器：
+使用 MathJax 作为解析引擎，首先，你需要更换一个支持 MathJax 的 Markdown 渲染器：
 
 - [hexo-renderer-kramed](https://github.com/sun11/hexo-renderer-kramed)
-- [hexo-renderer-pandoc](https://github.com/wzpan/hexo-renderer-pandoc)
 
-两者选择其一即可。
+  1. 安装，执行指令。
 
-1. 安装，执行指令。
+  ``` bash
+  # 卸载原来安装的渲染器
+  $ npm un hexo-renderer-marked --save
 
-``` bash
-# 卸载原来的渲染器
-$ npm un hexo-renderer-marked --save
-# 安装新的渲染器
-$ npm i hexo-renderer-kramed --save # 或 npm i hexo-renderer-pandoc --save
-```
+  # 安装新的渲染器
+  $ npm i hexo-renderer-kramed --save
+  ```
 
-2. 在主题配置文件中，选择 mathjax 引擎。
+  2. 在主题配置文件中，选择 mathjax 引擎。
 
-``` yaml
-math:
-  ...
-  # 全小写
-  engine: mathjax
-```
+  ``` yaml
+  math:
+    ...
+    # 全小写
+    engine: mathjax
+  ```
 
-3. 重启 Hexo 服务器。
+  3. 重启 Hexo 服务器。
 
-``` bash
-$ hexo clean && hexo s
-```
+  ``` bash
+  $ hexo clean && hexo s
+  ```
 
 ### KaTex <Badge text="Stable"/> <Badge text="v1.1.2"/>
 
-使用 katex 作为引擎，不需要引入 `katex.min.js`。相应的，你只需要更换一个支持 KaTex 的 Markdown 渲染器。
+使用 katex 作为引擎，你只需要更换一个支持 KaTex 的 Markdown 渲染器。
 
 首先，卸载原来的 Markdown 渲染器，例如：
 
@@ -673,7 +671,6 @@ $ npm un hexo-renderer-marked --save
 $ npm un hexo-renderer-kramed --save
 # 或
 $ npm un hexo-renderer-pandoc --save
-
 # 以及
 $ npm un hexo-math --save
 ```
@@ -681,11 +678,6 @@ $ npm un hexo-math --save
 如果你安装过这些，都需要卸载。你可以到 Hexo 根目录下的 `package.json` 文件中，查看安装了哪些插件。然后，安装新的 Markdown 渲染器：
 
 - [hexo-renderer-markdown-it-plus](https://github.com/CHENXCHEN/hexo-renderer-markdown-it-plus)
-- [hexo-renderer-markdown-it](https://github.com/hexojs/hexo-renderer-markdown-it)
-
-两者选择其一即可。
-
-- 如果你选择 `hexo-renderer-markdown-it-plus` 作为渲染器。
 
   1. 安装，执行指令。
 
@@ -706,38 +698,6 @@ $ npm un hexo-math --save
   ``` bash
   $ hexo clean && hexo s
   ```
-
-- 如果你选择 `hexo-renderer-markdown-it` 作为渲染器。
-
-  你需要额外安装 `markdown-it-katex`。
-
-  1. 安装，执行指令。
-
-  ``` bash
-  $ npm i hexo-renderer-markdown-it --save
-  $ npm i markdown-it-katex --save
-  ```
-
-  2. 修改站点配置文件
-
-  添加 或 修改 `hexo-renderer-markdown-it` 的配置项。
-
-  ``` yaml
-  markdown:
-    render:
-      html: true
-      xhtmlOut: false
-      breaks: true
-      linkify: true
-      typographer: true
-      quotes: '“”‘’'
-    plugins:
-      - markdown-it-katex
-  ```
-
-  有关 `hexo-renderer-markdown-it` 所有的配置项，在[这里](https://github.com/hexojs/hexo-renderer-markdown-it/wiki/Advanced-Configuration#all-options-configuration)查看。
-
-  3. 选择 katex 引擎 和 重启 Hexo 服务器的步骤同上。
 
 ### 相关插件
 

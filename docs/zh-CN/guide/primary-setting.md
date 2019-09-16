@@ -85,7 +85,7 @@ $ hexo new page reading # 这里的 reading 对应你设置的路径
 `zh-CN.yml`：
 
 ``` yaml
-nav:
+menu:
   reading: 阅读
 ```
 
