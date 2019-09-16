@@ -37,9 +37,11 @@ popover-bg-color = alpha(#000, .7);
   padding: .2rem .6rem;
 }
 
-[data-popover][data-popover-pos='up']:hover::before {
-  opacity: 1;
-  transform: translate(-50%, -115%);
+@media (min-width: $md-width) {
+  [data-popover-pos='up']:hover::before {
+    opacity: 1;
+    transform: translate(-50%, -120%);
+  }
 }
 
 // "Alert" component
