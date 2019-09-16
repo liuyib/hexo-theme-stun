@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.5.0-beta.0 (2019-09-16)
+
+### Bug Fixes
+
+* Solved the problem that the same title in different pages ([57ef4c3](https://github.com/liuyib/hexo-theme-stun/commit/57ef4c3))
+* **#16:** Solved that mathjax is not working properly ([74188c6](https://github.com/liuyib/hexo-theme-stun/commit/74188c6)), closes [#16](https://github.com/liuyib/hexo-theme-stun/issues/16)
+* Supporting the config item for 'end_text: horizon_line' ([eea96d7](https://github.com/liuyib/hexo-theme-stun/commit/eea96d7))
+* Solved that set toc & copyright & reward invalid in front-matter ([6d4149c](https://github.com/liuyib/hexo-theme-stun/commit/6d4149c))
+* Solved that enable 	op_image is invalid ([2ff7190](https://github.com/liuyib/hexo-theme-stun/commit/2ff7190))
+* Solved that sidebar not sitcky sometimes ([fed19e0](https://github.com/liuyib/hexo-theme-stun/commit/fed19e0))
+* Resolve some problems of toc ([ebf5d11](https://github.com/liuyib/hexo-theme-stun/commit/ebf5d11))
+* **#14:** Resolve wrong display in toc when click heading in it ([8f06543](https://github.com/liuyib/hexo-theme-stun/commit/8f06543))
+
+### Features
+
+* Add the button of sticky-top in timeline of post ([7b859df](https://github.com/liuyib/hexo-theme-stun/commit/7b859df))
+* Add the config of scroll to second screen when pjax enabled ([ec6ac43](https://github.com/liuyib/hexo-theme-stun/commit/ec6ac43))
+
 ### 1.4.1 (2019-09-11)
 
 See: [https://github.com/liuyib/hexo-theme-stun/releases/tag/v1.4.1](https://github.com/liuyib/hexo-theme-stun/releases/tag/v1.4.1)
