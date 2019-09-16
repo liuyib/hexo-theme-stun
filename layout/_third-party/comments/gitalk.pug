@@ -19,10 +19,12 @@ script(src=gitalk_md5)&attributes(dataPjax)
 
 script&attributes(dataPjax).
   function loadGitalk () {
-    if (!document.getElementById('gitalk-container')) return;
+    if (!document.getElementById('gitalk-container')) {
+      return;
+    }
 
     var gitalk = new Gitalk({
-      id: md5('!{ page.path }'),
+      id: md5(window.location.pathname.slice(1)),
       clientID: '!{ theme.gitalk.client_id }',
       clientSecret: '!{ theme.gitalk.client_secret }',
       repo: '!{ theme.gitalk.repo }',
