@@ -99,7 +99,7 @@ header:
     # In site directory (source/uploads): /uploads/avatar.png
     # You can also use a link of image.
     url:
-  # Mask effect of the top background image.
+  # Mask effect of the background image.
   mask:
     enable: true
     # Opacity of mask (value: 0 ~ 1).
@@ -143,6 +143,11 @@ footer:
     # In site directory (source/uploads): /uploads/avatar.png
     # You can also use a link of image.
     url:
+  # Mask effect of the background image.
+  mask:
+    enable: false
+    # Opacity of mask (value: 0 ~ 1).
+    opacity: 0.5
   # Copyright information.
   copyright:
     enable: true

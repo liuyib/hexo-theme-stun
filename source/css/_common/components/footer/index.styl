@@ -12,15 +12,31 @@
   }
 
   &-inner {
+    position: relative;
     padding: 1rem;
     font-size: $font-size-footer;
     text-align: center;
     color: $footer-text-color;
     background-color: $footer-bg-color;
 
-    if (hexo-config('footer.bg_image.enable')) {
+    if (hexo-config('footer.bg_image.enable') && hexo-config('footer.bg_image.url')) {
+      z-index: $z-index-2;
       background: url(hexo-config('footer.bg_image.url')) no-repeat center center;
       background-size: cover;
+    }
+
+    if (hexo-config('footer.mask.enable')) {
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: $z-index-1;
+        width: 100%;
+        height: 100%;
+        background-color: alpha(#000, hexo-config('footer.mask.opacity'));
+      }
     }
 
     a {
