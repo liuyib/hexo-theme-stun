@@ -1,8 +1,8 @@
 -
   var footer = theme.footer;
   var nowYear = new Date().getFullYear();
-  var startYear = copyright ? footer.copyright.since || nowYear : nowYear;
-  var endYear = copyright ? footer.copyright.end || nowYear : nowYear;
+  var startYear = footer.copyright.since || nowYear;
+  var endYear = footer.copyright.end || nowYear;
   var fa_prefix = theme.fa_prefix || 'fa';
 
 - var footerCopyright = footer.copyright.enable
@@ -11,7 +11,7 @@
 if footerCopyright || footerBeian
   div
     if footerCopyright
-      span!= `&copy; ${startYear}` + (startYear != endYear ? `-${endYear}` : "")
+      span!= `&copy; ${startYear}` + ((startYear != endYear) ? `~${endYear}` : "")
       if footer.icon.enable
         span(class=`${fa_prefix} fa-${footer.icon.name} footer-icon`)
       else
