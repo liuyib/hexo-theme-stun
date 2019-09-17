@@ -93,11 +93,9 @@ if (hexo-config('sidebar.enable')) {
     }
 
     &-ov {
-      & > div {
+      & > div + div {
         if (hexo-config('sidebar.horizon_line')) {
-          &:not(:last-child) {
-            border-bottom: 1px dashed $sidebar-horizon-line-color;
-          }
+          border-top: 1px dashed $sidebar-horizon-line-color;
         }
       }
 
@@ -106,18 +104,20 @@ if (hexo-config('sidebar.enable')) {
           width: 100%;
           text-align: center;
 
-          &__img {
+          &__avatar {
+            margin: 0 auto;
             width: 120px;
             height: 120px;
-            opacity: hexo-config('author.avatar.opacity');
 
-            if (hexo-config('author.avatar.rounded')) {
-              border-radius: 50%;
-            } else {
-              border-radius: 2px;
+            &_img {
+              opacity: hexo-config('author.avatar.opacity');
+
+              if (hexo-config('author.avatar.rounded')) {
+                border-radius: 50%;
+              }
             }
 
-            &:hover {
+            &:hover &_img {
               animation: convert('avatar-' + (hexo-config('author.avatar.animation') || 'turn')) .8s both ease-out;
             }
           }

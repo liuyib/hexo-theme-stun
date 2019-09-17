@@ -17,7 +17,8 @@ section.sidebar-ov(class=`${isShowToc ? "hide" : ""}`)
   if theme.author.enable
     div.sidebar-ov-author
       if theme.author.avatar.url
-        img.sidebar-ov-author__img(src=theme.author.avatar.url alt="avatar")
+        div.sidebar-ov-author__avatar
+          img.sidebar-ov-author__avatar_img(src=theme.author.avatar.url alt="avatar")
       if theme.author.motto
         p.sidebar-ov-author__p= theme.author.motto
 

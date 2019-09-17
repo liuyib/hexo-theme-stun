@@ -101,7 +101,7 @@ header:
     url:
   # Mask effect of the background image.
   mask:
-    enable: true
+    enable: false
     # Opacity of mask (value: 0 ~ 1).
     opacity: 0.5
 
