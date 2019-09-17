@@ -28,7 +28,7 @@
 
 ## :sparkles: Demo
 
-- [liuyib`s Blog](https://liuyib.github.io/)
+- [Liuyib's Blog](https://liuyib.github.io/)
 
 If you are using the stun theme and would like it to be shown here, you can fill in your website link by [PR](https://github.com/liuyib/hexo-theme-stun/pulls).
 

@@ -1,7 +1,6 @@
 # 新手上路
 
 ::: tip 前言
-
 - 修改配置文件、安装新的依赖等，都需要重启 Hexo 服务器。
 - 没有特别说明，配置项默认从 `v1.0.0` 版本开始支持。
 - 稳定的配置使用 <Badge text="Stable"/> 标明，表示基本不会变动。不稳定的配置使用 <Badge text="Beta" type="warn"/> 标明，表示未来可能会变动甚至删除。目前还不支持的配置使用 <Badge text="Not Support" type="error"/> 标明。被废弃的配置使用 <Badge text="Deprecated" type="error"/> 标明。最早开始支持的版本号使用 <Badge text="v x.x.x"/> 标明。与主题无关的配置项使用 <Badge text="Disrelated" type="warning"/> 标明。
@@ -139,7 +138,7 @@ header:
     url: https://xxxxx.png
   # 顶部背景图的遮罩效果
   mask:
-    enable: true
+    enable: false
     # 透明度（取值：0 ~ 1）
     opacity: 0.5
 ```
@@ -237,7 +236,7 @@ social:
 
 找到 `languages` 目录下的语言文件，选择你网站使用的那种语言进行修改，这里以中文作为举例：
 
-`zh-CN`：
+`zh-CN.yml`：
 
 ``` yaml
 social:
