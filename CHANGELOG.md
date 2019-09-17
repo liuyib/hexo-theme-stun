@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.5.0 (2019-09-17)
+
+### Bug Fixes
+
+* Supporting the config item of 'copyright: since/end' in footer ([7310163](https://github.com/liuyib/hexo-theme-stun/commit/7310163))
+* **#15:** Delete the hover effect of the back2top button ([37a1e69](https://github.com/liuyib/hexo-theme-stun/commit/37a1e69)), closes [#15](https://github.com/liuyib/hexo-theme-stun/issues/15)
+* Solved the problem that gitalk invalid when enable pjax ([ce9ce4f](https://github.com/liuyib/hexo-theme-stun/commit/ce9ce4f))
+
+### Features
+
+* Add mask layer to footer ([20050f3](https://github.com/liuyib/hexo-theme-stun/commit/20050f3))
+
 ## 1.5.0-beta.0 (2019-09-16)
 
 ### Bug Fixes
