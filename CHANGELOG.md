@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.5.1 (2019-09-18)
+
+### Bug Fixes
+
+* Solved the problem that the image of post shows unexpectedly ([6cbc344](https://github.com/liuyib/hexo-theme-stun/commit/6cbc344))
+
+### Features
+
+* Displaying an icon in localsearch when search result is empty ([a64dd76](https://github.com/liuyib/hexo-theme-stun/commit/a64dd76))
+
 ## 1.5.0 (2019-09-17)
 
 ### Bug Fixes
