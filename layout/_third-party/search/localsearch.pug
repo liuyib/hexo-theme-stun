@@ -1,3 +1,5 @@
+- var fa_prefix = theme.fa_prefix || 'fa'
+
 script.
   window.addEventListener('DOMContentLoaded', function () {
     $('.header-nav-search').on('click', function (e) {
@@ -18,7 +20,7 @@ script.
         .velocity('transition.fadeIn', {
           duration: 300
         });
-      
+
       initSearch();
     });
 
@@ -35,13 +37,13 @@ script.
 
     var isXML = true;
     var search_path = '!{ config.search.path }';
-    
+
     if (!search_path) {
       search_path = 'search.xml';
     } else if (/json$/i.test(search_path)) {
       isXML = false;
     }
-    
+
     var path = '!{ config.root }' + search_path;
 
     function initSearch() {
@@ -76,12 +78,12 @@ script.
             if (keywords.length > 1) {
               keywords.push(searchText);
             }
-            
+
             // 防止未输入字符时搜索
             if (searchText.length > 0) {
               datas.forEach(function (data) {
                 var isMatch  = false;
-                
+
                 // 没有标题的文章使用预设的 i18n 变量代替
                 var title = (data.title && data.title.trim()) || '!{_p("post.untitled")}';
                 var titleLower = title && title.toLowerCase();
@@ -90,7 +92,7 @@ script.
                 var contentLower = content && content.toLowerCase();
                 // 删除重复的 /
                 var postURL = data.url && decodeURI(data.url).replace(/\/{2,}/, '/');
-                
+
                 // 标题中匹配到的关键词
                 var titleHitSlice = [];
                 // 内容中匹配到的关键词
@@ -107,7 +109,7 @@ script.
                     */
                   function getIndexByword (word, text, caseSensitive, weight) {
                     if (!word || !text) return [];
-                    
+
                     var startIndex = 0; // 每次匹配的开始索引
                     var index = -1;     // 匹配到的索引值
                     var result = [];    // 匹配结果
@@ -133,13 +135,13 @@ script.
 
                     return result;
                   }
-                  
+
                   titleHitSlice = titleHitSlice.concat(
                     getIndexByword(keyword, titleLower, false, WEIGHT.title));
                   contentHitSlice = contentHitSlice.concat(
                     getIndexByword(keyword, contentLower, false, WEIGHT.content));
                 });
-                
+
                 var hitTitle = titleHitSlice.length;
                 var hitContent = contentHitSlice.length;
 
@@ -154,7 +156,7 @@ script.
                       return left.index - right.index;
                     });
                   });
-                  
+
                   /**
                     * 给文本中匹配到的关键词添加标记，从而进行高亮显示
                     * @param {String} text 原文本
@@ -186,23 +188,28 @@ script.
 
                   var postData = {};
                   // 文章总的搜索权重
-                  var postWeight = titleHitSlice.length * 100 + contentHitSlice.length;
+                  var postWeight = titleHitSlice.length * WEIGHT.title + contentHitSlice.length * WEIGHT.content;
                   // 标记匹配关键词后的标题
                   var postTitle = highlightKeyword(title, titleHitSlice, 0, title.length) || title;
                   // 标记匹配关键词后的内容
                   var postContent;
-                  
+                  // 显示内容的长度
+                  var SHOW_WORD_LENGTH = 200;
+                  // 命中关键词前的字符显示长度
+                  var SHOW_WORD_FRONT_LENGTH = 20;
+                  var SHOW_WORD_END_LENGTH = SHOW_WORD_LENGTH - SHOW_WORD_FRONT_LENGTH;
+
                   // 截取匹配的第一个字符，前后共 200 个字符来显示
                   if (contentHitSlice.length > 0) {
                     var firstIndex = contentHitSlice[0].index;
-                    var start = firstIndex > 20 ? firstIndex - 20 : 0;
-                    var end = firstIndex + 180;
+                    var start = firstIndex > SHOW_WORD_FRONT_LENGTH ? firstIndex - SHOW_WORD_FRONT_LENGTH : 0;
+                    var end = firstIndex + SHOW_WORD_END_LENGTH;
 
                     postContent = highlightKeyword(content, contentHitSlice, start, end);
                   } else { // 未匹配到内容，直接截取前 200 个字符来显示
-                    postContent = content.slice(0, 200);
+                    postContent = content.slice(0, SHOW_WORD_LENGTH);
                   }
-                  
+
                   postData.title = postTitle;
                   postData.content = postContent;
                   postData.url = postURL;
@@ -212,21 +219,27 @@ script.
               });
             }
 
-            var resultInnerHtml = '<ul>';
-            
-            // 按权重递增的顺序排序，使权重大的优先显示
-            matchPosts.sort(function (left, right) {
-              return right.weight - left.weight;
-            });
-            
-            matchPosts.forEach(function (post) {
-              resultInnerHtml += '<li><a class="search-results-title" href="' + post.url + '">';
-              resultInnerHtml += post.title;
-              resultInnerHtml += '</a><div class="search-results-content">';
-              resultInnerHtml += post.content;
-              resultInnerHtml += '</div></li>';
-            });
-            resultInnerHtml += '</ul>';
+            var resultInnerHtml = '';
+
+            if (matchPosts.length) {
+              // 按权重递增的顺序排序，使权重大的优先显示
+              matchPosts.sort(function (left, right) {
+                return right.weight - left.weight;
+              });
+
+              resultInnerHtml += '<ul>';
+              matchPosts.forEach(function (post) {
+                resultInnerHtml += '<li><a class="search-results-title" href="' + post.url + '">';
+                resultInnerHtml += post.title;
+                resultInnerHtml += '</a><div class="search-results-content">';
+                resultInnerHtml += post.content;
+                resultInnerHtml += '</div></li>';
+              });
+              resultInnerHtml += '</ul>';
+            } else {
+              resultInnerHtml += '<div class="search-results-none"><i class="!{fa_prefix} fa-meh-o"></i></div>';
+            }
+
             $result.html(resultInnerHtml);
           };
 

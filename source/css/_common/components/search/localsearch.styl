@@ -10,8 +10,8 @@ search-results-height = search-popup-padding * 2 + search-input-padding * 2 + se
   max-height: 'calc(80vh - %s)' % search-results-height;
 
   b {
-    border-bottom: 1px dashed red;
-    color: red;
+    border-bottom: 1px dashed $red-dark;
+    color: $red-dark;
     transition-property: color;
     transition-ease();
   }
@@ -27,7 +27,7 @@ search-results-height = search-popup-padding * 2 + search-input-padding * 2 + se
         &::after {
           content: '';
           display: block;
-          border-bottom: 1px dashed #ccc;
+          border-bottom: 1px dashed $gray-light;
           padding-bottom: .5rem;
           width: 100%;
         }
@@ -37,7 +37,9 @@ search-results-height = search-popup-padding * 2 + search-input-padding * 2 + se
 
   &-title {
     font-weight: $font-weight-bold;
-    color: #222;
+    color: $black-dark;
+    transition-property: color;
+    transition-ease();
 
     &:hover {
       color: $blue-light;
@@ -52,6 +54,12 @@ search-results-height = search-popup-padding * 2 + search-input-padding * 2 + se
     overflow: hidden;
     width: 100%;
     max-height: 5rem;
-    color: #666;
+    color: $black-light;
+  }
+
+  &-none {
+    font-size: 3rem;
+    text-align: center;
+    color: $gray-dark;
   }
 }
