@@ -21,8 +21,7 @@
 
     if (hexo-config('footer.bg_image.enable') && hexo-config('footer.bg_image.url')) {
       z-index: $z-index-2;
-      background: url(hexo-config('footer.bg_image.url')) no-repeat center center;
-      background-size: cover;
+      background: url(hexo-config('footer.bg_image.url')) no-repeat center/cover;
     }
 
     if (hexo-config('footer.mask.enable')) {

@@ -1,33 +1,12 @@
 .header {
   &-inner {
-    position: relative;
     width: 100%;
     font-size: $font-size-header;
-    background-color: $header-nav-bg-color;
 
     if (hexo-config('header.height') && match('%', hexo-config('header.height'))) {
       height: unit(convert(hexo-config('header.height')), 'vh');
     } else {
       height: convert(hexo-config('header.height') || '80vh');
-    }
-
-    if (hexo-config('header.bg_image.enable') && hexo-config('header.bg_image.url')) {
-      background: url(hexo-config('header.bg_image.url')) no-repeat center center;
-      background-size: cover;
-    }
-
-    if (hexo-config('header.mask.enable')) {
-      &::before {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: $z-index0;
-        width: 100%;
-        height: 100%;
-        background-color: alpha(#000, hexo-config('header.mask.opacity'));
-      }
     }
   }
 
@@ -161,14 +140,39 @@
   }
 
   &-info {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    z-index: $z-index0;
-    padding: 0 .5rem;
+    position: relative;
     width: 100%;
-    text-align: center;
-    transform: translateY(-50%);
+    height: 100%;
+    background-color: $header-bg-color;
+
+    if (hexo-config('header.bg_image.enable') && hexo-config('header.bg_image.url')) {
+      background: url(hexo-config('header.bg_image.url')) no-repeat center / cover;
+    }
+
+    if (hexo-config('header.mask.enable')) {
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: $z-index0;
+        width: 100%;
+        height: 100%;
+        background-color: alpha(#000, hexo-config('header.mask.opacity'));
+      }
+    }
+
+    &-inner {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      z-index: $z-index0;
+      padding: 0 .5rem;
+      width: 100%;
+      text-align: center;
+      transform: translateY(-50%);
+    }
 
     &-title {
       margin-bottom: .5rem;
