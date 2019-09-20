@@ -1,3 +1,9 @@
+if (hexo-config('header.nav_height') && match('%', hexo-config('header.nav_height'))) {
+  header-nav-height = unit(convert(hexo-config('header.nav_height')), 'vh');
+} else {
+  header-nav-height = convert(hexo-config('header.nav_height') || '50px');
+}
+
 .header {
   &-inner {
     width: 100%;
@@ -8,12 +14,6 @@
     } else {
       height: convert(hexo-config('header.height') || '80vh');
     }
-  }
-
-  if (hexo-config('header.nav_height') && match('%', hexo-config('header.nav_height'))) {
-    header-nav-height = unit(convert(hexo-config('header.nav_height')), 'vh');
-  } else {
-    header-nav-height = convert(hexo-config('header.nav_height') || '50px');
   }
 
   &-nav {
