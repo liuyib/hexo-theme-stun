@@ -15,7 +15,7 @@ html(lang=config.language)
     div#container.container
       header#header.header
         div.header-inner
-          != partial('./_partials/header/header.pug', null, { cache: theme.cache })
+          include ./_partials/header/header.pug
 
       main#main.main
         div.main-inner
@@ -29,13 +29,13 @@ html(lang=config.language)
           if theme.sidebar.enable
             aside#sidebar.sidebar
               div.sidebar-inner
-                != partial('./_partials/sidebar/sidebar.pug', null, { cache: theme.cache })
+                include ./_partials/sidebar/sidebar.pug
 
           div.clearfix
 
       footer#footer.footer
         div.footer-inner
-          != partial('./_partials/footer/footer.pug', null, { cache: theme.cache })
+          include ./_partials/footer/footer.pug
 
       include ./_partials/widgets/loading-bar.pug
 

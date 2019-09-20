@@ -2,9 +2,6 @@
 # Theme Core Configuration Settings
 # ---------------------------------------------------------------
 
-# Allow to cache content generation. Introduced in Stun v1.4.0
-cache: true
-
 # Remove unnecessary files after hexo generate. Introduced in Stun v1.4.0
 shake_file: true
 
