@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.5.2 (2019-09-20)
+
+### Bug Fixes
+
+* Remove hexo cache to solve some problem ([2807baa](https://github.com/liuyib/hexo-theme-stun/commit/2807baa))
+
 ### 1.5.1 (2019-09-18)
 
 ### Bug Fixes
