@@ -61,32 +61,30 @@ script.
         });
       }
 
-      var loadingBarWidth = 0;
+      var loadingBarWidth = 20;
       var MAX_LOADING_WIDTH = 95;
 
-      $('.loading-bar .progress').css('transform', 'translateX(-100%)');
       $('.loading-bar').addClass('loading');
+      $('.loading-bar .progress').css('width', loadingBarWidth + '%');
 
       clearInterval(loadingTimer);
       loadingTimer = setInterval(function () {
-        loadingBarWidth += 2;
+        loadingBarWidth += 3;
 
         if (loadingBarWidth > MAX_LOADING_WIDTH) {
           loadingBarWidth = MAX_LOADING_WIDTH;
         }
 
-        $('.loading-bar .progress').css(
-          'transform', 'translateX(' + (loadingBarWidth - 100) + '%)'
-        );
-      }, 100);
+        $('.loading-bar .progress').css('width', loadingBarWidth + '%');
+      }, 500);
     }, false);
 
     window.addEventListener('pjax:complete', function () {
       clearInterval(loadingTimer);
-      $('.loading-bar .progress').css('transform', 'translateX(0%)');
+      $('.loading-bar .progress').css('width', '100%');
+      $('.loading-bar').removeClass('loading');
       setTimeout(function () {
-        $('.loading-bar').removeClass('loading');
-        $('.loading-bar .progress').css('transform', 'translateX(-100%)');
+        $('.loading-bar .progress').css('width', '0');
       }, 400);
 
       $('link[rel=prefetch], script[data-pjax-rm]').each(function () {

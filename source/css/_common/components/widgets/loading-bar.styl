@@ -4,18 +4,16 @@
   left: 0;
   z-index: 99999;
   opacity: 0;
-  transition-property: opacity;
-  transition-ease();
+  transition: opacity .4s linear;
 
   .progress {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 0;
     height: 2px;
     background-color: $loading-bar-bg-color;
     box-shadow: 0 0 10px $loading-bar-shadow-color;
-    transform: translateX(-100%);
   }
 
   &.loading {
@@ -23,9 +21,7 @@
     transition: none;
 
     .progress {
-      transition-property: transform;
-      transition-ease();
-      will-change: transform;
+      transition: width .4s ease;
     }
   }
 }
