@@ -57,22 +57,15 @@ if (hexo-config('header.nav_height') && match('%', hexo-config('header.nav_heigh
     }
 
     &-menu {
-      visibility: hidden;
+      display: none;
       height: 100%;
       line-height: header-nav-height;
-      opacity: 0;
-      transition-property: opacity;
-      transition-ease();
-
-      &.show {
-        visibility: visible;
-        opacity: 1;
-      }
 
       &-item {
         float: left;
         position: relative;
         margin: 0 1rem 0 0;
+        height: header-nav-height;
         text-align: center;
         cursor: pointer;
 
@@ -93,23 +86,23 @@ if (hexo-config('header.nav_height') && match('%', hexo-config('header.nav_heigh
     &-submenu {
       display: none;
       position: absolute;
-      right: -.4rem;
-      left: -.4rem;
+      left: 50%;
       border-radius: 3px;
+      width: auto;
       background-color: $header-nav-bg-color;
+      transform: translateX(-50%);
 
       .header-nav-menu-item {
         margin: 0;
         width: 100%;
         font-size: $font-size-header;
         line-height: 1;
+        line-height: header-nav-height;
         text-align: center;
-        transition-property: background-color;
-        transition-ease();
-        word-wrap();
+        white-space: nowrap;
 
         &__a {
-          line-height: header-nav-height;
+          padding: 0 .8rem;
         }
       }
     }

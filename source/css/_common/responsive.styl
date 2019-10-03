@@ -14,8 +14,7 @@
 // -----------------------------------------
 @media (min-width: $md-width) {
   .header-nav-menu {
-    visibility: visible;
-    opacity: 1;
+    display: block;
   }
 }
 
@@ -49,15 +48,18 @@
   }
 
   .header-nav-menu {
-    display: inline-block;
-    border-radius: 3px;
+    overflow: hidden;
+    position: absolute;
+    top: header-nav-height;
+    right: 0 - $content-aside-gap;
+    left: 0 - $content-aside-gap;
     width: auto;
     height: auto;
     background-color: $header-nav-bg-color;
-    transform: translate(-1.5rem, header-nav-height);
 
     &-item {
       float: none;
+      overflow: hidden;
       margin: 0;
 
       &__a {
@@ -75,10 +77,18 @@
   }
 
   .header-nav-submenu {
-    top: 0;
-    right: 0;
-    left: 100%;
+    display: block;
+    position: initial;
     width: 100%;
+    transform: translateX(0);
+
+    .header-nav-menu {
+      &-item {
+        &__a {
+          padding: 0 1rem 0 3rem;
+        }
+      }
+    }
   }
 }
 
