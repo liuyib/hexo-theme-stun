@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.5.3 (2019-10-03)
+
+### Bug Fixes
+
+* Solved that localsearch throw error when post has code snippet ([97fb081](https://github.com/liuyib/hexo-theme-stun/commit/97fb081))
+
+### Features
+
+* Add the info of theme in console ([0baa62f](https://github.com/liuyib/hexo-theme-stun/commit/0baa62f))
+
 ### 1.5.2 (2019-09-20)
 
 ### Bug Fixes
