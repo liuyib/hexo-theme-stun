@@ -10,9 +10,11 @@ Please don`t open an issue that is not related to the theme, otherwise, it will 
 
 ## I want to create a new issue <!-- 我想要创建一个新的 issue -->
 
-<!--  Please confirm whether you have read the following docs, especially FAQ & Documentation! (Use "x" to choose) -->
+<!--
+Please confirm whether you have read the following docs, especially FAQ & Documentation! (Use "x" to choose)
 
-<!-- 请确认是否阅读过以下资料, 尤其是FAQ和文档！(使用 "x" 选择) -->
+请确认是否阅读过以下资料, 尤其是FAQ和文档！(使用 "x" 选择)
+-->
 
 - [] Yes, I have read [FAQ](https://github.com/liuyib/hexo-theme-stun/blob/master/FAQ.md).
 - [] Yes, I have read [Hexo Docs page](https://hexo.io/docs/).
@@ -24,33 +26,41 @@ Please don`t open an issue that is not related to the theme, otherwise, it will 
 <!-- Stun 的版本 -->
 **Stun Version:** 
 
+
+<!-- Hexo 的版本 -->
+**Hexo Version:** 
+
+
 <!-- Windows / macOS / Linux / Android / iOS -->
 **Platform:** 
+
 
 <!-- Chrome / Safari / FireFox / ... -->
 **Browser:** 
 
+
 ## Expected behaviour <!-- 预期行为 -->
 
 
-
 ## Actual behaviour <!-- 实际行为 -->
-<!-- Please give me the screenshots to locate the issue -->
-<!-- 请尽量提供截图来定位问题 -->
+<!--
+Please give me the screenshots to locate the issue
 
+请尽量提供截图来定位问题
+-->
 
 
 ## Steps to reproduce the behaviour <!-- 重现步骤 -->
 
 
-
 ## Feature Request <!-- 功能方面的建议 -->
 
 
+<!--
+If you have any ideas of hexo-theme-stun, please write down here and we can have a discussion
 
-<!-- If you have any ideas of hexo-theme-stun, please write down here and we can have a discussion. -->
-
-<!-- 如果你有任何关于 hexo-theme-stun 的功能方面的想法，可以在这个部分里写下来我们一起讨论 -->
+如果你有任何关于 hexo-theme-stun 的功能方面的想法，可以在这个部分里写下来我们一起讨论
+-->
 
 ---
 
