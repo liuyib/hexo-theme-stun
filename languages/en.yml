@@ -75,7 +75,7 @@ algolia_search:
 
 # Local search
 local_search:
-  input_placeholder: Search for Posts
+  input_placeholder: Search for Posts (Support multiple keywords)
   hits_empty: We didn't find any results for the search
 
 # Reward

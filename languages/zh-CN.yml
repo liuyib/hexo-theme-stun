@@ -75,7 +75,7 @@ algolia_search:
 
 # 本地搜索
 local_search:
-  input_placeholder: 搜索文章
+  input_placeholder: 搜索文章（支持多关键词，请用空格分隔）
   hits_empty: 没有找到任何搜索结果
 
 # 打赏
