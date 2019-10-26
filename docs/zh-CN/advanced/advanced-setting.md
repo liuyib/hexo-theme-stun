@@ -56,6 +56,10 @@ Hexo 会帮你记录文件的更新日期，所以一般不需要手动指定 `u
 
   在 Stun 主题中，如果你启用了某个评论系统，默认是对所有通过 Markdown 文件生成的页面（除首页，归档页，单个分类页，单个标签页以外的所有页面）生效。因此，你可以使用该属性单独设置某个页面 / 文章是否启用评论。
 
+- `excerpt` <Badge text="Hexo 4.0"/> - 指定文章摘要
+
+  Hexo 3.9 及以前的版本中，只能通过添加 `<!-- more -->` 标记来保留文章摘要（当然 Stun 主题也提供了[自动保留摘要](http://liuyibo.top/hexo-theme-stun/zh-CN/guide/primary-setting.html#文章摘要)的功能）。在 Hexo 4.0 及以后的版本中，可以通过在 Front-Matter 中使用 `excerpt` 来设置文章摘要。
+
 - `permalink` <Badge text="Stable"/> - 覆盖文章网址
 
   以为某篇文章单独指定一个网址。
