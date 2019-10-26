@@ -4,7 +4,7 @@ nav.paginator
   if !is_post()
     - var prev_text = `<i class="${fa_prefix} fa-chevron-left"></i>`
     - var next_text = `<i class="${fa_prefix} fa-chevron-right"></i>`
-    div.paginator-inner!= paginator({ prev_text, next_text, mid_size: 1 })
+    div.paginator-inner!= paginator({ prev_text, next_text, mid_size: 1, escape: false })
   else
     div.paginator-post
       if page.prev
