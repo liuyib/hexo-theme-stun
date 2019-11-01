@@ -58,7 +58,7 @@ Hexo 会帮你记录文件的更新日期，所以一般不需要手动指定 `u
 
 - `excerpt` <Badge text="Hexo 4.0"/> - 指定文章摘要
 
-  Hexo 3.9 及以前的版本中，只能通过添加 `<!-- more -->` 标记来保留文章摘要（当然 Stun 主题也提供了[自动保留摘要](http://liuyibo.top/hexo-theme-stun/zh-CN/guide/primary-setting.html#文章摘要)的功能）。在 Hexo 4.0 及以后的版本中，可以通过在 Front-Matter 中使用 `excerpt` 来设置文章摘要。
+  Hexo 3.9 及以前的版本中，只能通过添加 `<!-- more -->` 标记来保留文章摘要（当然 Stun 主题也提供了[自动保留摘要](http://liuyib.github.io/hexo-theme-stun/zh-CN/guide/primary-setting.html#文章摘要)的功能）。在 Hexo 4.0 及以后的版本中，可以通过在 Front-Matter 中使用 `excerpt` 来设置文章摘要。
 
 - `permalink` <Badge text="Stable"/> - 覆盖文章网址
 
