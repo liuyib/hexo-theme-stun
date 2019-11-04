@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.5.4 (2019-11-04)
+
+### Bug Fixes
+
+* **#20:** Solved that the paginator can't show normally ([7d321bc](https://github.com/liuyib/hexo-theme-stun/commit/7d321bc)), closes [#20](https://github.com/liuyib/hexo-theme-stun/issues/20)
+
+### Features
+
+* Add the icon that prompt to scroll down in the header of site ([c05223a](https://github.com/liuyib/hexo-theme-stun/commit/c05223a))
+
 ### 1.5.3 (2019-10-03)
 
 ### Bug Fixes
