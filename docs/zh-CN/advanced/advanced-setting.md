@@ -329,6 +329,11 @@ footer:
     enable: false
     # 填写图片路径或链接
     url: https://xxxxx.png
+  # 底部图片遮罩
+  mask:
+    enable: false
+    # 遮罩透明度 (取值: 0 ~ 1).
+    opacity: 0.5
   # 版权信息
   copyright:
     # 是否启用

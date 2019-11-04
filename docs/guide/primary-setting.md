@@ -145,10 +145,15 @@ header:
     enable: false
     # Opacity of mask (value: 0 ~ 1).
     opacity: 0.5
+  # The icon that prompt to scroll down.
+  scroll_down_icon:
+    enable: false
+    animation: true
 ```
 
 ::: warning Note
-The `mask` option, the mask effect, is supported starting with the `v1.1.1` version. The `blur_effect` option, the blur filter effect, is deprecated starting with the `v1.1.1` version.
+- The `mask` option, the mask effect, is supported starting with the `v1.1.1` version. The `blur_effect` option, the blur filter effect, is deprecated starting with the `v1.1.1` version.
+- The `scroll_down_icon` option is supported starting with the `v1.5.4` version.
 :::
 
 ### Specify the top image <Badge text="Stable"/>

@@ -141,10 +141,16 @@ header:
     enable: false
     # 透明度（取值：0 ~ 1）
     opacity: 0.5
+  # 提示向下滚动的图标
+  scroll_down_icon:
+    enable: false
+    # 是否启用动画
+    animation: true
 ```
 
 ::: warning 注意
-其中 `mask` 选项，即遮罩效果，从 `v1.1.1` 版本开始支持。`blur_effect` 选项，即模糊滤镜效果，从 `v1.1.1` 版本开始弃用。
+- `mask` 选项，即遮罩效果，从 `v1.1.1` 版本开始支持。`blur_effect` 选项，即模糊滤镜效果，从 `v1.1.1` 版本开始弃用。
+- `scroll_down_icon` 选项从 `v1.5.4` 版本开始支持。
 :::
 
 ### 指定顶部图 <Badge text="Stable"/>
