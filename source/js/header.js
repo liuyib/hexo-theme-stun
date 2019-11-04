@@ -98,4 +98,17 @@ $(document).ready(function () {
 
     $submenu.length && $submenu.css('display', 'none');
   });
+
+  Stun.utils.pjaxReloadHeader = function () {
+    if (CONFIG.header.scrollDownIcon) {
+      $('.header-info-scrolldown').on('click', function () {
+        $('#container').velocity('scroll', {
+          offset: $('#header').height()
+        });
+      });
+    }
+  };
+
+  // Initializaiton
+  Stun.utils.pjaxReloadHeader();
 });

@@ -101,6 +101,10 @@ header:
     enable: false
     # Opacity of mask (value: 0 ~ 1).
     opacity: 0.5
+  # The icon that prompt to scroll down.
+  scroll_down_icon:
+    enable: false
+    animation: true
 
 # Creative Commons 4.0 International License.
 creative_commons:

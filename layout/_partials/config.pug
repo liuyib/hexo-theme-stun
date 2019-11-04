@@ -38,6 +38,13 @@
     });
   }
 
+  var header = "undefined";
+  if (theme.header) {
+    header = JSON.stringify({
+      scrollDownIcon: theme.header.scroll_down_icon.enable,
+    });
+  }
+
   var gallery_waterfall = "undefined";
   if (theme.gallery_waterfall.enable) {
     gallery_waterfall = JSON.stringify(theme.gallery_waterfall);
@@ -88,6 +95,7 @@ script.
     algolia: !{ algolia },
     fontawesome: !{ fontawesome },
     sidebar: !{ sidebar },
+    header: !{ header },
     back2top: !{ back2top },
     reward: !{ theme.reward.enable },
     fancybox: !{ theme.fancybox },

@@ -22,3 +22,7 @@ div.header-info(style=`${
   div.header-info-inner
     div.header-info-title= config.title
     div.header-info-subtitle= config.subtitle
+
+  if theme.header.scroll_down_icon && theme.header.scroll_down_icon.enable
+    div.header-info-scrolldown
+      i.fa.fa-angle-down.header-info-scrolldown__icon

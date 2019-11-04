@@ -180,5 +180,40 @@ if (hexo-config('header.nav_height') && match('%', hexo-config('header.nav_heigh
       font-weight: $font-weight-normal;
       color: $white-light;
     }
+
+    if (hexo-config('header.scroll_down_icon') && hexo-config('header.scroll_down_icon.enable')) {
+      &-scrolldown {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        z-index: $z-index2;
+        transform: translate3d(-50%, -.5rem, 0);
+        cursor: pointer;
+
+        if (hexo-config('header.scroll_down_icon.animation')) {
+          animation: arrowUpDown 1.5s infinite;
+
+          @keyframes arrowUpDown {
+            0%,
+            100% {
+              opacity: .8;
+              transform: translate3d(-50%, -.5rem, 0);
+            }
+
+            50% {
+              opacity: .4;
+              transform: translate3d(-50%, -1.5rem, 0);
+            }
+          }
+        }
+
+        &__icon {
+          font-size: 2rem;
+          font-weight: $font-weight-bolder;
+          text-align: center;
+          color: #fff;
+        }
+      }
+    }
   }
 }
