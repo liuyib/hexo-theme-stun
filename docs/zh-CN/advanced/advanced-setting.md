@@ -62,7 +62,7 @@ Hexo 会帮你记录文件的更新日期，所以一般不需要手动指定 `u
 
 - `permalink` <Badge text="Stable"/> - 覆盖文章网址
 
-  以为某篇文章单独指定一个网址。
+  为某篇文章单独指定一个网址。
 
 - `categories` <Badge text="Stable"/> - 设置文章分类
 
