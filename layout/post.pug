@@ -21,7 +21,7 @@ block content
           span= __("post.end")
           span= " ------"
 
-      if !(page.copyright === false) && (theme.creative_commons.enable && theme.creative_commons.post)
+      if (page.copyright !== false) && (theme.creative_commons.enable && theme.creative_commons.post)
         include ./_partials/widgets/copyright.pug
 
       if theme.post_widget.tags
@@ -32,7 +32,7 @@ block content
                 i.post-tags-item__i(class=`${fa_prefix} fa-tags`)
                 a.post-tags-item__a(href=tag.permalink)= tag.name
 
-      if !(page.reward === false) && (theme.reward && theme.reward.enable)
+      if (page.reward !== false) && (theme.reward && theme.reward.enable)
         include ./_partials/widgets/reward.pug
 
       include ./_partials/widgets/pagination.pug

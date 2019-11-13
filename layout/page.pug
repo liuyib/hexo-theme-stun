@@ -22,3 +22,6 @@ block content
       if page.photos && page.photos.length
         +gallery(page)
       != page.content
+
+  if (page.reward === true) && (theme.reward && theme.reward.enable)
+    include ./_partials/widgets/reward.pug
