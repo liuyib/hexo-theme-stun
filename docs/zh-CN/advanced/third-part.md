@@ -125,20 +125,17 @@ $ hexo clean && hexo s
 quicklink:
   # 是否启用。这里启用之后并不会对所有页面生效，你还需要进行下面的设置
   enable: true
-
   # 设置 home 页面和 archive 页面是否启用
   home: true
   archive: true
-
-  # 当浏览器 load 事件触发后，开始初始化 quicklink
+  # 当浏览器 DOMContentLoaded 事件触发后，开始初始化 quicklink
   delay: true
-  # 自定义一个时间，必须进行预取。这里默认 10s
+  # requestIdleCallback 超时时间（浏览器执行预取的时间（以毫秒为单位））
   timeout: 10000
   # 启用 fetch() 或回退到 XHR
   priority: true
-
   # 设置忽略预取的链接类型
-  # ！！如果你不懂，请忽略这一项！！
+  # ！！如果你不了解如何使用，请忽略这一项（默认即可）！！
   # 例如：
   # ignores:
   #   - /\/api\/?/
@@ -165,13 +162,14 @@ pjax:
   enable: true
   # 是否在页面加载后，滚动到第二屏
   scrollTo2screen: false
-  # ！！！如果你不了解 Pjax 的用法，请忽视下面的配置项
-  # 详参见: https://github.com/MoOx/pjax/#options
+  # ！！如果你不了解如何使用，请忽略下面的配置项（默认即可）！！
+  # 下面配置项的用法，请参见: https://github.com/MoOx/pjax/#options
   elements:
   selectors:
   switches:
   switchesOptions:
   history: true
+  # 如果启用这个配置项，必须设置 `scrollTo2screen: false`
   scrollTo: false
   scrollRestoration: false
   cacheBust: false
@@ -183,9 +181,8 @@ pjax:
 ::: warning 已知问题
 下面是启用 Pjax 之后，已知的一些问题。
 
-- 不兼容 MathJax（必须手动刷新页面一次后，MathJax 才能正常使用。KaTex 可以正常使用）
-- 不兼容评论（评论显示为空，必须手动刷新页面才能显示出用户的评论）
-- 解析数学公式、Quicklink 等，原来按需生效的设置将会对所有页面生效
+- 不兼容 MathJax（必须手动刷新页面一次后，MathJax 才能正常使用（KaTex 可以正常使用））
+- 解析数学公式、Quicklink 等设置，默认只会在启用了这些设置的页面加载相应的 JS、CSS 文件。如果启用了 Pjax，则会在所有页面加载。
 :::
 
 ## 添加 Emoji 支持 <Badge text="Disrelated" type="warning"/>
