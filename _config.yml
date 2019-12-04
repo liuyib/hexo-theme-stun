@@ -454,7 +454,7 @@ utterances:
   repo:
   # Choose the mapping between blog posts and GitHub issues.
   # Available values: pathname | url | title | og:title
-  mapping: pathname
+  mapping: title
   # Choose the label that will be assigned to issues created by Utterances.
   # Emoji are supported in label names.
   label: utterances
