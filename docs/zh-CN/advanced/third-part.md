@@ -330,7 +330,7 @@ disqus:
 
 Utterances 是一个基于 Github issues 的评论系统。使用之前需要确保你指定的 Github 仓库是公开的，并开启了 issues 功能。
 
-首先，将 [utterances app](https://github.com/apps/utterances) 安装在了你的 Github 仓库中。然后，修改以下配置项：
+首先，将 [utterances app](https://github.com/apps/utterances) 安装在了你的 Github 仓库中。然后，修改以下配置项（如果你不想麻烦，只需设置 `owner` 和 `repo` 即可正常使用）：
 
 ``` yaml
 utterances:
@@ -346,7 +346,8 @@ utterances:
   #        url: 使用博客的 URL 来新建 issues
   #      title: 使用博客的标题来新建 issues
   #   og:title: 使用页面中的 Open Graph title meta 来新建 issues（如果你不了解 Open Graph 协议，请查看：https://ogp.me/）
-  mapping: pathname
+  # （确保博客文章的 url path、url、标题、og:title 不重复，否则评论可能会冲突）
+  mapping: title
   # 选择 Utterances 创建 issues 时，使用的 label 名称（支持 Emoji）
   label: utterances
   # 选择 Utterances 评论的主题配色
@@ -358,7 +359,18 @@ utterances:
   script_url: https://utteranc.es/client.js
 ```
 
-想要预览 Utterances 的 `theme` 配置项的效果，你可以去官网查看：[https://utteranc.es/](https://utteranc.es/)
+想要预览 Utterances 的 `theme` 配置项的效果，你可以去官网查看：[https://utteranc.es/](https://utteranc.es/)。
+
+::: tip
+从 Gitalk 迁移到 Utterances，你只需要修改 Utterances 的配置选项，将 `mapping` 选项的值改为 `title`：
+
+``` yaml
+utterances:
+  mapping: title
+```
+
+同理，如果你使用 Utterances 时，是通过博客标题生成的 issues，那么静默兼容 Gitalk。
+:::
 
 ## 统计与分析
 
@@ -556,7 +568,7 @@ $ hexo algolia
 2. 如果你发现搜索到的结果有重复的或者有旧的数据，你需要去 Algolia 官网，清除上传的数据，然后执行上面这三条指令，重新上传索引数据即可。
 :::
 
-3. 修改主题配置
+6. 修改主题配置
 
 修改你的主题配置文件：
 
