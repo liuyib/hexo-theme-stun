@@ -62,7 +62,7 @@ pwa:
   # 是否启用
   enable: true
   manifest: /manifest.json
-  theme_color: "#54bcff"
+  theme_color: '#54bcff'
 ```
 
 4. 创建 `manifest.json` 文件
@@ -78,7 +78,8 @@ pwa:
   "display": "standalone", // 首选显示模式。其他选项有：fullscreen, minimal-ui, browser
   "scope": "/",
   "start_url": "/",
-  "icons": [ // 该数组指定图标参数，用来适配不同设备（格式为 png，至少包含一个 192px*192px 的图标）
+  "icons": [
+    // 该数组指定图标参数，用来适配不同设备（格式为 png，至少包含一个 192px*192px 的图标）
     {
       "src": "images/icons/favicon-48x48.png", // 图标文件的路径，需在 source/ 目录下自行创建
       "sizes": "48x48",
@@ -220,6 +221,7 @@ $ hexo clean && hexo s
 title: Hello World
 no-emoji: true
 ---
+
 ```
 
 有关该插件的更详尽的用法，请自行查阅其[文档](https://github.com/crimx/hexo-filter-github-emojis)。查看所有支持的 Emoji 请访问：[Github Emojis API](https://api.github.com/emojis) 或者 [Emoji Cheat Sheet](http://www.webpagefx.com/tools/emoji-cheat-sheet/)。
@@ -230,10 +232,12 @@ no-emoji: true
 
 ### Gitalk <Badge text="Stable"/> <Badge text="v1.1.0"/>
 
+Gitalk 是一个基于 Github issues 的评论系统。使用之前需要确保你指定的 Github 仓库是公开的，并开启了 issues 功能。
+
 首先，你需要注册一个新的 **GitHub Application** 来授权，点击[这里](https://github.com/settings/applications/new)注册。这样可以获取所需的 `client ID` 和 `client secret`。
 
 ::: warning 注意
-您必须在 `Authorization callback URL` 字段中指定网站的 URL。
+注册 GitHub Application 时，必须在 `Authorization callback URL` 字段中指定网站的 URL。
 :::
 
 ``` yaml
@@ -321,6 +325,40 @@ disqus:
   # 是否显示文章的评论数
   count: true
 ```
+
+### Utterances <Badge text="Stable"/> <Badge text="v1.5.5"/>
+
+Utterances 是一个基于 Github issues 的评论系统。使用之前需要确保你指定的 Github 仓库是公开的，并开启了 issues 功能。
+
+首先，将 [utterances app](https://github.com/apps/utterances) 安装在了你的 Github 仓库中。然后，修改以下配置项：
+
+``` yaml
+utterances:
+  # 是否启用
+  enable: false
+  # Github 用户名
+  owner:
+  # Github 仓库名（需要是公开的仓库）
+  repo:
+  # 选择 GitHub issues 和博客文章之间的映射关系
+  # 可选值: pathname | url | title | og:title
+  #   pathname: 使用博客 URL 中的 pathname 来新建 issues
+  #        url: 使用博客的 URL 来新建 issues
+  #      title: 使用博客的标题来新建 issues
+  #   og:title: 使用页面中的 Open Graph title meta 来新建 issues（如果你不了解 Open Graph 协议，请查看：https://ogp.me/）
+  mapping: pathname
+  # 选择 Utterances 创建 issues 时，使用的 label 名称（支持 Emoji）
+  label: utterances
+  # 选择 Utterances 评论的主题配色
+  # 可选值: github-light | github-dark | github-dark-orange | icy-dark | dark-blue | photon-dark
+  theme: github-light
+  # ! --------------------------------------------------------------------------------
+  # ! Utterances 依赖的脚本地址，不要随意修改。如果官网提供的地址和下面不同，你才需要手动设置
+  # ! --------------------------------------------------------------------------------
+  script_url: https://utteranc.es/client.js
+```
+
+想要预览 Utterances 的 `theme` 配置项的效果，你可以去官网查看：[https://utteranc.es/](https://utteranc.es/)
 
 ## 统计与分析
 
@@ -518,7 +556,7 @@ $ hexo algolia
 2. 如果你发现搜索到的结果有重复的或者有旧的数据，你需要去 Algolia 官网，清除上传的数据，然后执行上面这三条指令，重新上传索引数据即可。
 :::
 
-6. 修改主题配置
+3. 修改主题配置
 
 修改你的主题配置文件：
 
