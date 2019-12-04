@@ -444,6 +444,28 @@ disqus:
   shortname:
   count: true
 
+# Utterances
+# See: https://utteranc.es/
+utterances:
+  enable: false
+  # Github username.
+  owner:
+  # Github repository.
+  repo:
+  # Choose the mapping between blog posts and GitHub issues.
+  # Available values: pathname | url | title | og:title
+  mapping: pathname
+  # Choose the label that will be assigned to issues created by Utterances.
+  # Emoji are supported in label names.
+  label: utterances
+  # Choose an Utterances theme that matches your blog.
+  # Available values: github-light | github-dark | github-dark-orange | icy-dark | dark-blue | photon-dark
+  theme: github-light
+  # ! -------------------------------------------------------------------------------
+  # ! Don't set this unless the URL of the script in the official website is changed.
+  # ! -------------------------------------------------------------------------------
+  script_url: https://utteranc.es/client.js
+
 # ---------------------------------------------------------------
 # Statistics and Analytics config
 # ---------------------------------------------------------------

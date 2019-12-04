@@ -5,6 +5,8 @@ if page.comments || theme.pjax.enable
     include ./valine.pug
   else if theme.gitalk && theme.gitalk.enable
     include ./gitalk.pug
+  else if theme.utterances && theme.utterances.enable
+    include ./utterances.pug
   else if theme.livere && theme.livere.enable
     include ./livere.pug
 else if theme.valine && theme.valine.enable && theme.valine.visitor

@@ -7,6 +7,9 @@ else if theme.valine && theme.valine.enable
 else if theme.gitalk && theme.gitalk.enable
   div#comments.comments
     div#gitalk-container
+else if theme.utterances && theme.utterances.enable
+  div#comments.comments
+    div#utterances-container
 else if theme.livere && theme.livere.enable
   div#comments.comments
     div#lv-container(data-id="city" data-uid=theme.livere.uid)
