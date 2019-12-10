@@ -58,7 +58,7 @@ post:
   read_more: Read more
   fire: Heat
   sticky: Sticky top
-  untitled: ( Untitled )
+  untitled: "[ Untitled ]"
   end: End of text, thank you for reading
   copyright:
     author: Author
