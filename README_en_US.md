@@ -32,23 +32,23 @@
 
 If you are using the stun theme and would like it to be shown here, you can fill in your website link by [PR](https://github.com/liuyib/hexo-theme-stun/pulls).
 
-## :crystal_ball: 特性
+## :crystal_ball: Feature
 
 - Simple, fast, easy to use, highly customizable
 - Responsive design
 - Secondary navigation menu
 - Support article image lazy loading
-- Support `Pjax`
-- Support `PWA`
-- Support `Fancybox`
-- Support `Quicklink`
-- Support `MathJax`、`KaTex`
-- Support `Gitalk`、`Valine`、`Livere` 和 `Disqus` comment
-- Album page of waterfall streaming
-- Built-in Google ads
-- Multiple code highlighting themes
-- Beautiful background effects
-- Detailed documentation
+- Support [Pjax](https://github.com/defunkt/jquery-pjax)
+- Support [PWA](https://developers.google.com/web/progressive-web-apps)
+- Support [Fancybox](https://github.com/fancyapps/fancybox)
+- Support [Quicklink](https://github.com/GoogleChromeLabs/quicklink)
+- Support [MathJax](https://www.mathjax.org/)、[KaTex](https://katex.org/)
+- Support [Gitalk](https://github.com/gitalk/gitalk)、[Valine](https://valine.js.org/)、[Livere](https://livere.com/)、[Disqus](https://disqus.com/) and [Utterances](https://github.com/utterance/utterances) comments
+- [Album page](https://liuyib.github.io/gallery/) of waterfall streaming
+- Built-in [Google ads](https://www.google.cn/adsense/start/)
+- Multiple code [highlighting themes](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/advanced-setting.html#代码高亮)
+- Beautiful [background effects](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/third-part.html#ribbon)
+- Detailed [documentation](https://liuyib.github.io/hexo-theme-stun/)
 
 ## :package: Install
 
@@ -56,7 +56,7 @@ If you are using the stun theme and would like it to be shown here, you can fill
 
   Enter your hexo directory, run this.
 
-  ``` bash
+  ```bash
   $ git clone https://github.com/liuyib/hexo-theme-stun.git themes/stun
   ```
 
@@ -64,7 +64,7 @@ If you are using the stun theme and would like it to be shown here, you can fill
 
   Enter your hexo directory, run this.
 
-  ``` bash
+  ```bash
   $ npm install --save hexo-render-pug
   ```
 
@@ -72,19 +72,19 @@ If you are using the stun theme and would like it to be shown here, you can fill
 
 Change the `_config.yml` file in your hexo root directory.
 
-``` yml
+```yml
 theme: stun
 ```
 
 Run your hexo server.
 
-``` bash
+```bash
 $ hexo clean && hexo s
 ```
 
 ## :art: Update
 
-``` bash
+```bash
 $ cd themes/stun
 
 $ git pull

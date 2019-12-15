@@ -38,17 +38,17 @@
 - 响应式设计
 - 二级导航菜单
 - 支持文章图片懒加载
-- 支持 `Pjax`
-- 支持 `PWA`
-- 支持 `Fancybox`
-- 支持 `Quicklink`
-- 支持 `MathJax`、`KaTex`
-- 支持 `Gitalk`、`Valine`、`Livere` 和 `Disqus` 评论
-- 瀑布流式的相册页面
-- 内置谷歌广告，一键开启
-- 代码高亮，多种配色可选
-- 好看的背景特效
-- 超详细配置文档
+- 支持 [pjax](https://github.com/defunkt/jquery-pjax)
+- 支持 [PWA](https://developers.google.com/web/progressive-web-apps)
+- 支持 [fancybox](https://github.com/fancyapps/fancybox)
+- 支持 [quicklink](https://github.com/GoogleChromeLabs/quicklink)
+- 支持 [MathJax](https://www.mathjax.org/)、[KaTex](https://katex.org/)
+- 支持 [Gitalk](https://github.com/gitalk/gitalk)、[Valine](https://valine.js.org/)、[Livere](https://livere.com/)、[Disqus](https://disqus.com/) 和 [Utterances](https://github.com/utterance/utterances) 评论
+- 瀑布流式的[相册页面](https://liuyib.github.io/gallery/)
+- 内置[谷歌广告](https://www.google.cn/adsense/start/)，一键开启
+- 代码高亮，[多种配色](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/advanced-setting.html#代码高亮)可选
+- 好看的[背景特效](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/third-part.html#ribbon)
+- 超详细[配置文档](https://liuyib.github.io/hexo-theme-stun/)
 
 ## :package: 安装
 
@@ -56,7 +56,7 @@
 
   进入 hexo 根目录，执行指令。
 
-  ``` bash
+  ```bash
   $ git clone https://github.com/liuyib/hexo-theme-stun.git themes/stun
   ```
 
@@ -64,7 +64,7 @@
 
   进入 hexo 根目录，执行指令。
 
-  ``` bash
+  ```bash
   $ npm install --save hexo-render-pug
   ```
 
@@ -72,19 +72,19 @@
 
 修改 hexo 根目录下的 `_config.yml` 文件。
 
-``` yml
+```yml
 theme: stun
 ```
 
 然后，启动 hexo 服务器。
 
-``` bash
+```bash
 $ hexo clean && hexo s
 ```
 
 ## :art: 更新
 
-``` bash
+```bash
 $ cd themes/stun
 
 $ git pull
