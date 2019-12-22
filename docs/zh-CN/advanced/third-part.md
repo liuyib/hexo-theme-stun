@@ -450,7 +450,7 @@ tencent_analytics: # 填入你的统计代码
 2. 根据提示将你的网站添加进去
 3. 在验证网站步骤中，选择 HTML tag，找到给你的 `meta` 标签里的内容
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190826170549.jpg)
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20191222192304.jpg)
 
 4. 修改主题配置文件
 
@@ -465,7 +465,7 @@ google_site_verification: # 将 meta 标签的内容填在这里
 3. 跳转到一个表单页面，将其填写完整
 4. 跳转到一个验证页面，找到给你的 `meta` 标签里的内容
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190826165504.png)
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20191222192305.jpg)
 
 5. 修改主题配置文件
 
@@ -479,7 +479,7 @@ bing_site_verification: # 将 meta 标签的内容填在这里
 2. 点击添加网站，将你的网站添加进去
 3. 在验证网站步骤中，选择 HTML 标签验证，找到给你的 `meta` 标签里的内容
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190826165502.png)
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20191222192302.jpg)
 
 5. 修改主题配置文件
 
@@ -493,7 +493,7 @@ baidu_site_verification: # 将 meta 标签的内容填在这里
 2. 点击添加网站，将你的网站添加进去
 3. 在验证网站步骤中，选择代码验证，找到给你的 `meta` 标签里的内容
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190826165505.png)
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20191222192303.jpg)
 
 5. 修改主题配置文件
 

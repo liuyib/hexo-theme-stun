@@ -180,8 +180,7 @@ This is success note.
     "name": "王五",
     "introduction": "我是小白",
     "url": "https://liuyib.github.io/"
-  },
-  ...
+  }
 ]
 ```
 
