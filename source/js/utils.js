@@ -120,20 +120,21 @@ Stun.utils = Stun.$u = {
       error: 'times-circle'
     };
 
-    if (!$('.stun-alert')[0]) {
-      var faPrefix = CONFIG.fontawesome.prefix;
-      var $alert = $(
-        '<div class="stun-message">' +
-          '<div class="stun-alert stun-alert-' + status + '">' +
-            '<i class="stun-alert-icon ' + faPrefix + ' fa-' + icon[status] + '"></i>' +
-            '<span class="stun-alert-description">' + text + '</span>' +
-          '</div>' +
-        '</div>'
-      );
-
-      $('body').append($alert);
+    if ($('.stun-message').length !== 0) {
+      $('.stun-message').remove();
     }
 
+    var faPrefix = CONFIG.fontawesome.prefix;
+    var $alert = $(
+      '<div class="stun-message">' +
+        '<div class="stun-alert stun-alert-' + status + '">' +
+          '<i class="stun-alert-icon ' + faPrefix + ' fa-' + icon[status] + '"></i>' +
+          '<span class="stun-alert-description">' + text + '</span>' +
+        '</div>' +
+      '</div>'
+    );
+
+    $('body').append($alert);
     $(document).ready(function () {
       $('.stun-alert')
         .velocity('stop')
