@@ -26,7 +26,7 @@ function friends(args) {
 
     datas.forEach(data => {
       result += `<a class="friends-plugin__item" href="${data.url}">`;
-      result += `<img class="friends-plugin__item-avatar" src="${data.avatar}">`;
+      result += `<img class="friends-plugin__item-avatar" src="${data.avatar}" data-zoom="none">`;
       result += '<div class="friends-plugin__item-info">';
       result += `<p class="friends-plugin__item-info__name">${data.name}</p>`;
       result += `<p class="friends-plugin__item-info__intro">${data.introduction}</p>`;
