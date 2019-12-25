@@ -3,6 +3,7 @@ $(document).ready(function () {
   var $menuItem = $('.header-nav-menu > .header-nav-menu-item');
   var $allSubmenu = $('.header-nav-submenu');
   var isMenuShow = false;
+  var DESKTOP_WIDTH = 992 - 0.02;
 
   function closeAllMenuItem () {
     $menuItem.velocity({
@@ -11,7 +12,7 @@ $(document).ready(function () {
   }
 
   $(window).on('resize', function () {
-    if ($(this).width() > 992) {
+    if ($(this).width() > DESKTOP_WIDTH) {
       if (!$menu.is(':visible')) {
         $menu.css({ display: 'block', opacity: 1 });
       }
