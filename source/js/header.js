@@ -3,35 +3,34 @@ $(document).ready(function () {
   var $menuItem = $('.header-nav-menu > .header-nav-menu-item');
   var $allSubmenu = $('.header-nav-submenu');
   var isMenuShow = false;
-  var DESKTOP_WIDTH = 992 - 0.02;
+  var isSubmenuShow = false;
 
-  function closeAllMenuItem () {
+  function closeMenuItem () {
     $menuItem.velocity({
       height: $menuItem.height()
     });
   }
 
-  $(window).on('resize', function () {
-    if ($(this).width() > DESKTOP_WIDTH) {
-      if (!$menu.is(':visible')) {
-        $menu.css({ display: 'block', opacity: 1 });
+  function resetMenuStatus () {
+    $menuItem.velocity('stop').velocity({
+      height: $menuItem.height()
+    }, {
+      complete: function () {
+        $allSubmenu.css({ display: 'none', opacity: 0 });
       }
+    });
+  }
 
-      if ($allSubmenu.is(':visible')) {
-        closeAllMenuItem();
-        $allSubmenu.css({ display: 'none' });
-      }
-    } else {
-      $menu.css({ display: 'none', opacity: 0 });
-      isMenuShow = false;
+  $(window).on('resize', function () {
+    if (isSubmenuShow) {
+      resetMenuStatus();
+      isSubmenuShow = false;
     }
   });
 
   $(document).on('click', function () {
-    if (Stun.utils.isDesktop()) return;
-
     if ($menu.is(':visible')) {
-      closeAllMenuItem();
+      closeMenuItem();
       $menu.css({ display: 'none' });
       isMenuShow = false;
     }
@@ -54,34 +53,49 @@ $(document).ready(function () {
     });
 
     if (!isMenuShow) {
-      closeAllMenuItem();
+      closeMenuItem();
     }
   });
 
   $menuItem.on('click', function (e) {
-    if (Stun.utils.isDesktop()) return;
-
     var $submenu = $(this).find('.header-nav-submenu');
     var menuItemHeight = $menuItem.height();
     var submenuHeight = menuItemHeight + $submenu.height() * $submenu.length;
+    var menuShowHeight = 0;
 
     if ($submenu.length) {
       e.stopPropagation();
 
+      if ($(this).height() > menuItemHeight) {
+        isSubmenuShow = false;
+        menuShowHeight = menuItemHeight;
+      } else {
+        isSubmenuShow = true;
+        menuShowHeight = submenuHeight;
+      }
+
       // 手风琴效果
-      $(this).velocity('stop').velocity({
-        height: $(this).height() > menuItemHeight ? menuItemHeight : submenuHeight
-      }, {
-        duration: 300
-      }).siblings().velocity({
-        height: menuItemHeight
-      }, {
-        duration: 300
-      });
+      $(this)
+        .velocity('stop')
+        .velocity({
+          height: menuShowHeight
+        }, {
+          duration: 300
+        })
+        .siblings()
+        .velocity({
+          height: menuItemHeight
+        }, {
+          duration: 300
+        });
     }
   });
 
   $menuItem.on('mouseenter', function () {
+    if (isSubmenuShow) {
+      return;
+    }
+
     var $submenu = $(this).find('.header-nav-submenu');
 
     if ($submenu.length) {
@@ -95,9 +109,15 @@ $(document).ready(function () {
   });
 
   $menuItem.on('mouseleave', function () {
+    if (isSubmenuShow) {
+      return;
+    }
+
     var $submenu = $(this).find('.header-nav-submenu');
 
-    $submenu.length && $submenu.css('display', 'none');
+    if ($submenu.length) {
+      $submenu.css('display', 'none');
+    }
   });
 
   Stun.utils.pjaxReloadHeader = function () {
