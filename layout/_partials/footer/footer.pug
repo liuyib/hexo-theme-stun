@@ -11,7 +11,7 @@
 if footerCopyright || footerBeian
   div
     if footerCopyright
-      span!= `&copy; ${startYear}` + ((startYear != endYear) ? `~${endYear}` : "")
+      span!= `Copyright &copy; ${startYear}` + ((startYear != endYear) ? `~${endYear}` : "")
       if footer.icon.enable
         span(class=`${fa_prefix} fa-${footer.icon.name} footer-icon`)
       else
