@@ -5,7 +5,7 @@
 
   &-inner {
     padding: .8em 0;
-    background-color: $white;
+    background-color: var(--color-gray-150);
   }
 
   .space,
@@ -21,7 +21,6 @@
   .page-number {
     margin: 0 .5em;
     color: $pagination-item-color;
-    background-color: $pagination-item-bg-color;
     transition-property: color, background-color;
     transition-ease();
 
@@ -63,7 +62,7 @@
   // Pagination of post.
   // ----------------------------------------
   &-post {
-    border-top: 1px solid $pagination-line-color;
+    border-top: 1px solid var(--color-gray-250);
     padding-top: 1.5rem;
 
     &-prev,

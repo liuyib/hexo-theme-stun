@@ -1,11 +1,14 @@
 .table-plugin {
   & tbody tr {
+    transition: background-color;
+    transition-ease();
+    
     &:nth-of-type(odd) {
-      background-color: $table-row-odd-bg-color;
+      background-color: var(--color-gray-250);
     }
 
     &:hover {
-      background-color: $table-row-hover-bg-color;
+      background-color: var(--color-gray-300);
     }
   }
 }

@@ -1,14 +1,14 @@
 .post-copyright {
   position: relative;
   margin: 0 0 1rem;
-  border: 1px solid $post-copyright-border-color;
+  border: 1px solid var(--color-gray-250);
   padding: .8rem 1rem;
   width: 100%;
   transition-property: box-shadow;
   transition-ease();
 
   &:hover {
-    box-shadow: 0 0 5px 5px $post-copyright-shadow-color;
+    box-shadow: 0 0 12px 8px var(--color-gray-250);
   }
 
   &-author,
@@ -20,7 +20,7 @@
     }
 
     &-value {
-      color: $font-color;
+      color: var(--color-gray-800);
       word-wrap();
     }
   }

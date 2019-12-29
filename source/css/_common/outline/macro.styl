@@ -45,7 +45,7 @@
   layout-card();
 
   img {
-    border: 1px solid $img-border-color;
+    border: 1px solid var(--color-gray-300);
     border-radius: 3px;
     padding: .2rem;
   }
@@ -54,7 +54,7 @@
     if (hexo-config('heading_line')) {
       h1,
       h2 {
-        border-bottom: 1px solid $heading-line-color;
+        border-bottom: 1px solid var(--color-gray-250);
         padding-bottom: .3em;
       }
     }
@@ -66,7 +66,7 @@
   }
 
   .heading-link {
-    color: $heading-color;
+    color: var(--color-gray-950);
     cursor: pointer;
 
     &::after {

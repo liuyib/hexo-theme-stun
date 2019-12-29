@@ -1,3 +1,39 @@
+:root {
+  --color-gray-100: #ffffff;
+  --color-gray-150: #f9f9f9;
+  --color-gray-200: #f5f6f7;
+  --color-gray-250: #eaecef;
+  --color-gray-300: #dadde1;
+  --color-gray-400: #ccd0d5;
+  --color-gray-500: #bec3c9;
+  --color-gray-600: #8d949e;
+  --color-gray-650: #757474;
+  --color-gray-700: #606770;
+  --color-gray-800: #444950;
+  --color-gray-850: #303846;
+  --color-gray-900: #2c323c;
+  --color-gray-950: #1c1e21;
+  --color-font: var(--color-gray-900);
+}
+
+html.nightmode {
+  --color-gray-100: #1c1e21;
+  --color-gray-150: #2c323c;
+  --color-gray-200: #303846;
+  --color-gray-250: #444950;
+  --color-gray-300: #606770;
+  --color-gray-400: #757474;
+  --color-gray-500: #8d949e;
+  --color-gray-600: #bec3c9;
+  --color-gray-650: #ccd0d5;
+  --color-gray-700: #dadde1;
+  --color-gray-800: #eaecef;
+  --color-gray-850: #f5f6f7;
+  --color-gray-900: #f9f9f9;
+  --color-gray-950: #ffffff;
+  --color-font: var(--color-gray-600);
+}
+
 ::selection {
   color: $selection-color;
   background-color: $selection-bg;
@@ -20,8 +56,8 @@ body {
   font-family: $font-family-base;
   font-size: $font-size-base;
   line-height: $line-height-base;
-  color: $font-color;
-  background-color: $body-bg-color;
+  color: var(--color-font);
+  background-color: var(--color-gray-300);
 }
 
 h1,
@@ -79,9 +115,9 @@ hr {
 
 blockquote {
   margin: 0;
-  border-left: 5px solid $quote-left-color;
+  border-left: 5px solid var(--color-gray-300);
   padding: 0 1rem;
-  background-color: $quote-bg-color;
+  background-color: var(--color-gray-200);
 
   & cite::before {
     content: '--';
@@ -91,12 +127,12 @@ blockquote {
 
 code {
   border-radius: 3px;
-  padding: 0 .3em;
+  padding: 1px 5px;
   font-family: $font-family-code;
   font-size: .95em;
   word-wrap: break-word;
-  color: $code-color;
-  background-color: $code-bg-color;
+  color: var(--color-gray-700);
+  background-color: var(--color-gray-250);
 }
 
 dt {
@@ -116,5 +152,5 @@ table {
 
 th,
 td {
-  border: 1px solid $table-border-color;
+  border: 1px solid var(--color-gray-250);
 }

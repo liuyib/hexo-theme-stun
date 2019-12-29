@@ -84,6 +84,16 @@ pwa:
   manifest: /manifest.json
   theme_color: '#54bcff'
 
+# Whether to show the button of dark mode.
+night_mode:
+  enable: true
+  button:
+    color: '#fafafa'
+    bg_color: '#8c8a8a'
+  icon:
+    dark: 🌜
+    light: 🌞
+
 header:
   # Header height (Support for all types of CSS size units).
   height: 80%

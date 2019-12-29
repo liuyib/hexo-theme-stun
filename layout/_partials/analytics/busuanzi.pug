@@ -2,8 +2,8 @@
 
 div.busuanzi
   if theme.busuanzi.site_uv.enable
-    span.busuanzi-site_uv
-      i(class=`${fa_prefix} fa-user`)
+    span.busuanzi-site-uv
+      i(class=`${fa_prefix} fa-user`).busuanzi-site-uv__icon
       if !theme.busuanzi.icon_only
         span= __("footer.uv") + " "
       span#busuanzi_value_site_uv
@@ -12,8 +12,8 @@ div.busuanzi
     span.separator= "|"
 
   if theme.busuanzi.site_pv.enable
-    span.busuanzi-site_pv
-      i(class=`${fa_prefix} fa-eye`)
+    span.busuanzi-site-pv
+      i(class=`${fa_prefix} fa-eye`).busuanzi-site-pv__icon
       if !theme.busuanzi.icon_only
         span= __("footer.pv") + " "
       span#busuanzi_value_site_pv

@@ -2,8 +2,6 @@ $(document).ready(function () {
   var $menu = $('.header-nav-menu');
   var $menuItem = $('.header-nav-menu > .header-nav-menu-item');
   var $allSubmenu = $('.header-nav-submenu');
-  var isMenuShow = false;
-  var isSubmenuShow = false;
 
   function closeMenuItem () {
     $menuItem.velocity({
@@ -21,6 +19,9 @@ $(document).ready(function () {
     });
   }
 
+  var isMenuShow = false;
+  var isSubmenuShow = false;
+
   $(window).on('resize', function () {
     if (isSubmenuShow) {
       resetMenuStatus();
@@ -34,7 +35,52 @@ $(document).ready(function () {
       $menu.css({ display: 'none' });
       isMenuShow = false;
     }
+
+    if (isNightModeFocus) {
+      $nightMode.removeClass('mode--focus');
+      isNightModeFocus = false;
+    }
   });
+
+  function getNightMode () {
+    var nightMode = false;
+
+    try {
+      if (parseInt(Stun.utils.Cookies().get(NIGHT_MODE_COOKIES_KEY))) {
+        nightMode = true;
+      }
+    } catch (err) {}
+
+    return nightMode;
+  }
+
+  if (CONFIG.night_mode && CONFIG.night_mode.enable) {
+    var isNightMode = false;
+    var isNightModeFocus = false;
+    var NIGHT_MODE_COOKIES_KEY = 'night_mode';
+    var $nightMode = $('.mode');
+
+    if (getNightMode()) {
+      $nightMode.addClass('mode--checked');
+      $nightMode.addClass('mode--focus');
+      $('html').addClass('nightmode');
+      isNightMode = true;
+    } else {
+      isNightMode = false;
+    }
+
+    $('.mode').on('click', function (e) {
+      e.stopPropagation();
+
+      isNightMode = !isNightMode;
+      isNightModeFocus = !isNightModeFocus;
+      Stun.utils.Cookies().set(NIGHT_MODE_COOKIES_KEY, isNightMode ? 1 : 0);
+
+      $nightMode.toggleClass('mode--checked');
+      $nightMode.addClass('mode--focus');
+      $('html').toggleClass('nightmode');
+    });
+  }
 
   $('.header-nav-btn').on('click', function (e) {
     e.stopPropagation();

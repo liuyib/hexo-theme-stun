@@ -27,7 +27,7 @@ search-results-height = search-popup-padding * 2 + search-input-padding * 2 + se
         &::after {
           content: '';
           display: block;
-          border-bottom: 1px dashed $gray-light;
+          border-bottom: 1px dashed var(--color-gray-400);
           padding-bottom: .5rem;
           width: 100%;
         }
@@ -37,16 +37,12 @@ search-results-height = search-popup-padding * 2 + search-input-padding * 2 + se
 
   &-title {
     font-weight: $font-weight-bold;
-    color: $black-dark;
+    color: var(--color-gray-950);
     transition-property: color;
     transition-ease();
 
     &:hover {
       color: $blue-light;
-
-      b {
-        color: $blue-light;
-      }
     }
   }
 
@@ -54,12 +50,12 @@ search-results-height = search-popup-padding * 2 + search-input-padding * 2 + se
     overflow: hidden;
     width: 100%;
     max-height: 5rem;
-    color: $black-light;
+    color: var(--color-gray-600);
   }
 
   &-none {
     font-size: 3rem;
     text-align: center;
-    color: $gray-dark;
+    color: var(--color-gray-600);
   }
 }

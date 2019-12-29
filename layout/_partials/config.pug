@@ -45,6 +45,13 @@
     });
   }
 
+  var night_mode = "undefined";
+  if (theme.night_mode) {
+    night_mode = JSON.stringify({
+      enable: theme.night_mode.enable,
+    });
+  }
+
   var gallery_waterfall = "undefined";
   if (theme.gallery_waterfall.enable) {
     gallery_waterfall = JSON.stringify(theme.gallery_waterfall);
@@ -96,6 +103,7 @@ script.
     fontawesome: !{ fontawesome },
     sidebar: !{ sidebar },
     header: !{ header },
+    night_mode: !{ night_mode },
     back2top: !{ back2top },
     reward: !{ theme.reward.enable },
     fancybox: !{ theme.fancybox },

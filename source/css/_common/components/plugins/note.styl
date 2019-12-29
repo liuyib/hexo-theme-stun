@@ -1,7 +1,7 @@
 .note-plugin {
   position: relative;
   margin: 0 0 1rem;
-  border: 1px solid #eee;
+  border: 1px solid var(--color-gray-250);
   border-left-width: .35rem;
   padding: 0 1rem;
   line-height: 1.7em;
@@ -37,7 +37,7 @@
 
     &.default::before {
       content: $icon-note-default;
-      color: #777;
+      color: var(--color-gray-650);
     }
 
     &.success::before {
@@ -47,7 +47,7 @@
 
     &.warning::before {
       content: $icon-note-warning;
-      color: #ecc91e;
+      color: #e7c000;
     }
 
     &.danger::before {
@@ -57,10 +57,10 @@
   }
 
   &.default {
-    border-left-color: #777;
+    border-left-color: var(--color-gray-650);
 
     strong {
-      color: #777;
+      color: var(--color-gray-650);
     }
   }
 
@@ -73,10 +73,10 @@
   }
 
   &.warning {
-    border-left-color: #ecc91e;
+    border-left-color: #e7c000;
 
     strong {
-      color: #ecc91e;
+      color: #e7c000;
     }
   }
 

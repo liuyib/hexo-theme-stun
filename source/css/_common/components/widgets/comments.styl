@@ -21,6 +21,23 @@ if (hexo-config('gitalk.enable')) {
       margin-top: 0;
       padding-top: 0;
     }
+
+    .gt-comment-body {
+      color: var(--color-gray-850) !important;
+    }
+
+    .gt-comment-text,
+    .gt-comment-date {
+      color: var(--color-gray-600);
+    }
+
+    .gt-comment-content {
+      background-color: var(--color-gray-150);
+
+      &:hover {
+        box-shadow: 0 .625em 3.75em 0 var(--color-gray-300);
+      }
+    }
   }
 }
 
@@ -35,5 +52,6 @@ if (hexo-config('disqus.enable')) {
   // Disqus
   #disqus_thread {
     width: 100%;
+    background-color: #fff;
   }
 }

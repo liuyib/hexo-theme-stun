@@ -16,14 +16,14 @@
       border-radius: 50%;
       width: .9rem;
       height: .9rem;
-      background-color: $white;
+      background-color: var(--color-gray-250);
       transform: translate(-50%, -50%);
     }
 
     &::after {
       content: '';
       position: absolute;
-      top: 1em;
+      top: .6rem;
       bottom: 0;
       left: 0;
       border-left: .3rem dashed $post-timeline-line-color;
@@ -97,7 +97,7 @@
     &-count {
       margin-left: .3em;
       font-size: $font-size-base - 1px;
-      color: $category-post-count-color;
+      color: var(--color-gray-600);
 
       &::before {
         content: '(';

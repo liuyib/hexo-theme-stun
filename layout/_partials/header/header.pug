@@ -15,6 +15,10 @@ nav.header-nav
         if !theme.menu_settings.icon_only
           span!= __("nav.search")
 
+    if theme.night_mode && theme.night_mode.enable
+      div.header-nav-mode
+        include ../widgets/night-mode.pug
+
 div.header-info(style=`${
   theme.header.bg_image.enable &&
     page.top_image ? 'background: url(' + page.top_image + ') no-repeat center/cover;' : ''

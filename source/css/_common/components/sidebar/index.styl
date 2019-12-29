@@ -15,7 +15,7 @@ if (hexo-config('sidebar.enable')) {
       padding: 1rem;
       width: convert(hexo-config('sidebar.width') || '$sidebar-width');
       font-size: $font-size-sidebar;
-      background-color: $white;
+      background-color: var(--color-gray-150);
 
       &.sticky {
         position: fixed;
@@ -31,9 +31,9 @@ if (hexo-config('sidebar.enable')) {
 
       &-toc,
       &-ov {
-        border-bottom: 1px solid #fff;
+        border-bottom: 1px solid var(--color-gray-150);
         padding: .3em .5em;
-        color: $sidebar-nav-text-color;
+        color: var(--color-gray-800);
         transition: opacity .2s;
 
         &:hover {
@@ -95,7 +95,7 @@ if (hexo-config('sidebar.enable')) {
     &-ov {
       & > div + div {
         if (hexo-config('sidebar.horizon_line')) {
-          border-top: 1px dashed $sidebar-horizon-line-color;
+          border-top: 1px dashed var(--color-gray-300);
         }
       }
 
@@ -174,11 +174,11 @@ if (hexo-config('sidebar.enable')) {
             display: inline-block;
             margin: .2rem;
             text-align: center;
-            color: $white;
+            color: var(--color-gray-100);
             background-color: $sidebar-social-color;
 
             &:hover {
-              color: $white;
+              color: var(--color-gray-100);
               background-color: $sidebar-social-hover-color;
             }
 
@@ -260,7 +260,7 @@ if (hexo-config('sidebar.enable')) {
           transition-ease();
 
           &:not(:last-child) {
-            border-right: 1px solid $sidebar-horizon-line-color;
+            border-right: 1px dashed var(--color-gray-300);
           }
 
           &.posts {
@@ -272,10 +272,10 @@ if (hexo-config('sidebar.enable')) {
           }
 
           &.categories {
-            color: $sidebar-state-category-color;
+            color: var(--color-gray-700);
 
             &:hover {
-              color: darken($sidebar-state-category-color, 30%);
+              color: var(--color-gray-900);
             }
           }
 
@@ -289,7 +289,7 @@ if (hexo-config('sidebar.enable')) {
 
           &--count {
             font-weight: $font-weight-bold;
-            color: $black-dark;
+            color: var(--color-gray-950);
           }
         }
       }

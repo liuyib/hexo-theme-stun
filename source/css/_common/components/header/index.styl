@@ -53,7 +53,7 @@ if (hexo-config('header.nav_height') && match('%', hexo-config('header.nav_heigh
       display: none;
       padding: 0 .5rem;
       line-height: header-nav-height;
-      color: $header-nav-link-color;
+      color: $header-text-color;
     }
 
     &-menu {
@@ -76,7 +76,7 @@ if (hexo-config('header.nav_height') && match('%', hexo-config('header.nav_heigh
         &__a {
           display: block;
           padding: 0 .5rem;
-          color: $header-nav-link-color;
+          color: $header-text-color;
           transition-property: color;
           transition-ease();
         }
@@ -107,25 +107,34 @@ if (hexo-config('header.nav_height') && match('%', hexo-config('header.nav_heigh
       }
     }
 
-    if (hexo-config('algolia_search.enable') || hexo-config('local_search.enable')) {
-      &-search {
-        position: absolute;
-        top: 0;
-        right: 0;
+    if (hexo-config('night_mode.enable')) {
+      &-mode {
+        display: flex;
+        float: right;
         padding: 0 .5rem;
         height: 100%;
         line-height: header-nav-height;
-        color: $header-nav-link-color;
+        align-items: center;
+      }
+    }
+
+    if (hexo-config('algolia_search.enable') || hexo-config('local_search.enable')) {
+      &-search {
+        float: right;
+        padding: 0 .5rem;
+        height: 100%;
+        line-height: header-nav-height;
+        color: $header-text-color;
         transition-property: color;
         transition-ease-in-out();
         cursor: pointer;
 
         &:hover {
-          color: $header-nav-link-hover-color;
+          color: $header-menu-hover-color;
 
           i,
           span {
-            color: $header-nav-link-hover-color;
+            color: $header-menu-hover-color;
           }
         }
       }
@@ -172,13 +181,13 @@ if (hexo-config('header.nav_height') && match('%', hexo-config('header.nav_heigh
       font-size: 4rem;
       font-weight: $font-weight-bolder;
       line-height: 1.6em;
-      color: $white-light;
+      color: $header-text-color;
     }
 
     &-subtitle {
       font-size: 1.2rem;
       font-weight: $font-weight-normal;
-      color: $white-light;
+      color: $header-text-color;
     }
 
     if (hexo-config('header.scroll_down_icon') && hexo-config('header.scroll_down_icon.enable')) {

@@ -59,3 +59,15 @@ if (highlight_theme == 'ocean') {
   $highlight-blue            = #6699cc;
   $highlight-purple          = #c594c5;
 }
+
+if (hexo-config('night_mode.enable')) {
+  $highlight-color             = var(--color-gray-600);
+  $highlight-background        = var(--color-gray-150);
+  $highlight-side-color        = var(--color-gray-500);
+  $highlight-side-bg-color     = var(--color-gray-200);
+  $highlight-header-color      = var(--color-gray-400);
+  $highlight-header-bg-color   = $highlight-side-bg-color;
+  $highlight-code-lang-color   = var(--color-gray-600);
+  $highlight-code-note-color   = $highlight-header-color;
+  $copy-button-color           = var(--color-gray-600);
+}
