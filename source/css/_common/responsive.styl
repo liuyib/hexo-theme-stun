@@ -1,10 +1,12 @@
 // $main-width: A calc value.
 // -----------------------------------------
 @media (min-width: $main-width + $content-aside-gap * 2) {
-  .header-nav-inner {
-    width: $main-width;
+  if (hexo-config('sidebar.enable')) {
+    .header-nav-inner {
+      width: $main-width;
+    }
   }
-
+  
   .main-inner {
     width: $main-width;
   }
@@ -13,6 +15,12 @@
 // $md-width: 992px - 0.02px
 // -----------------------------------------
 @media (min-width: $md-width) {
+  if (!hexo-config('sidebar.enable')) {
+    .header-nav-inner {
+      width: $md-width;
+    }
+  }
+
   .header-nav-menu {
     display: inline-block !important;
     opacity: 1 !important;
