@@ -1,6 +1,9 @@
 $(document).ready(function () {
   Stun.utils.showThemeInConsole();
-  CONFIG.shortcuts.switch_post && Stun.utils.registerHotkeyToSwitchPost();
+
+  if (CONFIG.shortcuts && CONFIG.shortcuts.switch_post) {
+    Stun.utils.registerHotkeyToSwitchPost();
+  }
 
   // Not reload this, because it's changeless.
   if (CONFIG.external_link) {
@@ -16,9 +19,9 @@ $(document).ready(function () {
     CONFIG.gallery_waterfall && this.showImageToWaterfall();
 
     if (CONFIG.external_link) {
-      var WRAPPER = '.archive, .post-header-title';
+      var CONTAINER = '.archive, .post-header-title';
 
-      this.addIconToExternalLink(WRAPPER);
+      this.addIconToExternalLink(CONTAINER);
     }
 
     if (CONFIG.fancybox) {

@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  var tocDepth = CONFIG.sidebar.renderTocDepth;
+  var tocDepth = (CONFIG.sidebar && CONFIG.sidebar.tocMaxDepth) || 4;
   // Optimize selector by theme config.
   var HEADING_SELECTOR = 'h1,h2,h3,h4,h5,h6,'.slice(0, tocDepth * 3).slice(0, -1);
 
@@ -97,7 +97,11 @@ $(document).ready(function () {
   }
 
   // Distance from sidebar to top.
-  var SIDEBAR_STICKY_TOP = parseInt(CONFIG.sidebar.offsetTop);
+  var sidebarToTop = 0;
+
+  if (CONFIG.sidebar && CONFIG.sidebar.offsetTop) {
+    sidebarToTop = parseInt(CONFIG.sidebar.offsetTop);
+  }
 
   // Sticky the sidebar when it arrived the top.
   function sidebarSticky () {
@@ -105,7 +109,7 @@ $(document).ready(function () {
     var targetY =
       document.getElementById('main').getBoundingClientRect().top;
 
-    if (targetY < SIDEBAR_STICKY_TOP) {
+    if (targetY < sidebarToTop) {
       $sidebar.addClass('sticky');
     } else {
       $sidebar.removeClass('sticky');

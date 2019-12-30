@@ -41,7 +41,7 @@ script.
 
     var algolia = CONFIG.algolia;
 
-    if (!(algolia.appId && algolia.apiKey && algolia.indexName)) {
+    if (!algolia && !(algolia.appId && algolia.apiKey && algolia.indexName)) {
       return console.error('Algolia setting is invalid.');
     }
 

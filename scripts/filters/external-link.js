@@ -4,7 +4,7 @@
 
 hexo.extend.filter.register('after_post_render', function(data) {
   var theme = hexo.theme.config;
-  if (!theme.external_link.icon.enable) return;
+  if (!(theme.external_link && theme.external_link.icon && theme.external_link.icon.enable)) return;
 
   var url = require('url');
   var cheerio;

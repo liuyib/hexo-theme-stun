@@ -53,7 +53,7 @@ script.
     document.addEventListener('pjax:send', function () {
       $('.header-nav-menu').removeClass('show');
 
-      if (CONFIG.pjax.scrollTo2screen) {
+      if (CONFIG.pjax && CONFIG.pjax.scrollTo2screen) {
         $('html').velocity('scroll', {
           duration: 500,
           offset: $('#header').height(),
@@ -95,9 +95,9 @@ script.
         $(this).parent().append($(this).remove());
       });
 
-      Stun.utils.pjaxReloadBoot();
-      Stun.utils.pjaxReloadScroll();
-      Stun.utils.pjaxReloadHeader();
-      Stun.utils.pjaxReloadSidebar();
+      Stun.utils.pjaxReloadBoot && Stun.utils.pjaxReloadBoot();
+      Stun.utils.pjaxReloadScroll && Stun.utils.pjaxReloadScroll();
+      Stun.utils.pjaxReloadHeader && Stun.utils.pjaxReloadHeader();
+      Stun.utils.pjaxReloadSidebar && Stun.utils.pjaxReloadSidebar();
     }, false);
   }, false);

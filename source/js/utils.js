@@ -261,7 +261,7 @@ Stun.utils = Stun.$u = {
       $('.stun-message').remove();
     }
 
-    var faPrefix = CONFIG.fontawesome.prefix;
+    var faPrefix = (CONFIG.fontawesome && CONFIG.fontawesome.prefix) || 'fa';
     var $alert = $(
       '<div class="stun-message">' +
         '<div class="stun-alert stun-alert-' + status + '">' +
@@ -398,7 +398,7 @@ Stun.utils = Stun.$u = {
       return;
     }
 
-    var faPrefix = CONFIG.fontawesome.prefix;
+    var faPrefix = (CONFIG.fontawesome && CONFIG.fontawesome.prefix) || 'fa';
     var $wrapper = $('<span class="external-link"></span>');
     var $icon = $(
       '<i class="' + faPrefix + ' fa-' +
@@ -539,7 +539,7 @@ Stun.utils = Stun.$u = {
       }
     });
 
-    var faPrefix = CONFIG.fontawesome.prefix;
+    var faPrefix = (CONFIG.fontawesome && CONFIG.fontawesome.prefix) || 'fa';
     var $copyIcon = $(
       '<div class="copy-button" data-popover=' +
         CONFIG.prompt.copy_button +

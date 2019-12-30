@@ -4,7 +4,7 @@
 
 hexo.extend.filter.register('after_post_render', function(data) {
   var theme = hexo.theme.config;
-  if (!theme.lazyload.enable) return;
+  if (!(theme.lazyload && theme.lazyload.enable)) return;
 
   var cheerio;
 

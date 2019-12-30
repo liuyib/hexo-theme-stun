@@ -1,4 +1,4 @@
-if page.comments || theme.pjax.enable
+if page.comments || (theme.pjax && theme.pjax.enable)
   if theme.disqus && theme.disqus.enable
     include ./disqus.pug
   else if theme.valine && theme.valine.enable

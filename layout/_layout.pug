@@ -26,7 +26,7 @@ html(lang=config.language)
             if page.comments
               include ./_partials/widgets/comments.pug
 
-          if theme.sidebar.enable
+          if theme.sidebar && theme.sidebar.enable
             aside#sidebar.sidebar
               div.sidebar-inner
                 include ./_partials/sidebar/sidebar.pug
@@ -39,7 +39,7 @@ html(lang=config.language)
 
       include ./_partials/widgets/loading-bar.pug
 
-      if theme.back2top.enable
+      if theme.back2top && theme.back2top.enable
         include ./_partials/widgets/back2top.pug
     include ./_partials/search/index.pug
 

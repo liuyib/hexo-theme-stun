@@ -78,13 +78,13 @@ if theme.fancybox
   - if (theme.cdn.fancybox_css) fancybox_css = theme.cdn.fancybox_css
   link(rel="stylesheet" href=fancybox_css type="text/css")
 
-if page.comments || theme.pjax.enable
+if page.comments || (theme.pjax && theme.pjax.enable)
   if theme.gitalk && theme.gitalk.enable
     - var gitalk_css = "https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.css"
     - if (theme.cdn.gitalk_css) gitalk_css = theme.cdn.gitalk_css
     link(rel="stylesheet" href=gitalk_css type="text/css")
 
-if theme.algolia_search.enable
+if theme.algolia_search && theme.algolia_search.enable
   - var instantsearch_css = "https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.css"
   - if (theme.cdn.instantsearch_css) instantsearch_css = theme.cdn.instantsearch_css
   link(rel="stylesheet" href=instantsearch_css type="text/css")

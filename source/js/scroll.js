@@ -42,6 +42,9 @@ $(document).ready(function () {
     prevScrollTop = scrollTop;
   }
 
+  // Initializaiton
+  headerNavScroll();
+
   function scrollHeadingToTop (anchor) {
     $(anchor)
       .velocity('stop')
@@ -51,6 +54,7 @@ $(document).ready(function () {
       });
   }
 
+  var isBack2topEnable = CONFIG.back2top && CONFIG.back2top.enable;
   var isBack2topShow = false;
 
   // Back the page to top.
@@ -71,19 +75,22 @@ $(document).ready(function () {
     }
   }
 
-  // Initialization
-  headerNavScroll();
-  back2top();
+  if (isBack2topEnable) {
+    // Initializaiton
+    back2top();
 
-  $(window).on('DOMContentLoaded', back2top);
+    $('#back2top').on('click', function () {
+      $('body').velocity('stop').velocity('scroll');
+    });
+  }
+
   $(window).on('scroll', Stun.utils.throttle(function () {
     headerNavScroll();
-    back2top();
-  }, 100));
 
-  $('#back2top').on('click', function () {
-    $('body').velocity('stop').velocity('scroll');
-  });
+    if (isBack2topEnable) {
+      back2top();
+    }
+  }, 100));
 
   Stun.utils.pjaxReloadScroll = function () {
     // Click the heading.

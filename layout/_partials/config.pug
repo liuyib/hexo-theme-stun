@@ -1,7 +1,7 @@
 -
   var algolia = "undefined";
   var env = process.env;
-  if (theme.algolia_search.enable) {
+  if (theme.algolia_search && theme.algolia_search.enable) {
     algolia = JSON.stringify({
       appId: env.ALGOLIA_APP_ID || config.algolia.appId || config.algolia.applicationID,
       apiKey: env.ALGOLIA_API_KEY || config.algolia.apiKey,
@@ -23,25 +23,27 @@
   }
 
   var sidebar = "undefined";
-  if (theme.sidebar.enable) {
+  if (theme.sidebar && theme.sidebar.enable) {
     sidebar = JSON.stringify({
       offsetTop: theme.sidebar.offsetTop,
-      renderTocDepth: theme.toc.max_depth
+      tocMaxDepth: theme.toc.max_depth
     });
   }
 
   var back2top = "undefined";
-  if (theme.back2top.enable) {
+  if (theme.back2top && theme.back2top.enable) {
     back2top = JSON.stringify({
-      enable: theme.back2top.enable,
-      animation: theme.back2top.icon.animation
+      enable: theme.back2top.enable
     });
   }
 
   var header = "undefined";
   if (theme.header) {
+    var isScrollDownIcon =
+      (theme.header.scroll_down_icon && theme.header.scroll_down_icon.enable) || false;
+
     header = JSON.stringify({
-      scrollDownIcon: theme.header.scroll_down_icon.enable,
+      scrollDownIcon: isScrollDownIcon,
     });
   }
 
@@ -53,40 +55,60 @@
   }
 
   var gallery_waterfall = "undefined";
-  if (theme.gallery_waterfall.enable) {
+  if (theme.gallery_waterfall && theme.gallery_waterfall.enable) {
     gallery_waterfall = JSON.stringify(theme.gallery_waterfall);
   }
 
   var lazyload = "undefined";
-  if (theme.lazyload.enable) {
+  if (theme.lazyload && theme.lazyload.enable) {
     lazyload = JSON.stringify(theme.lazyload);
   }
 
   var zoom_image = "undefined";
-  if (theme.zoom_image.enable) {
+  if (theme.zoom_image && theme.zoom_image.enable) {
     zoom_image = JSON.stringify(theme.zoom_image);
   }
 
   var pjax_config = "undefined";
-  if (theme.pjax.enable) {
+  if (theme.pjax && theme.pjax.enable) {
     pjax_config = JSON.stringify({
       scrollTo2screen: theme.pjax.scrollTo2screen
     });
   }
 
   var external_link = "undefined";
-  if (theme.external_link.icon.enable) {
-    external_link = JSON.stringify({
-      icon: {
-        enable: theme.external_link.icon.enable,
-        name: theme.external_link.icon.name
+  if (theme.external_link) {
+    var iconConfig = {};
+    var iconEnable = false;
+    var iconName = '';
+
+    if (theme.external_link.icon) {
+      iconEnable = theme.external_link.icon.enable;
+
+      if (iconEnable) {
+        iconName = theme.external_link.icon.name;
       }
+
+      iconConfig = { enable: iconEnable, name: iconName }
+    }
+
+    external_link = JSON.stringify({
+      icon: iconConfig
     });
   }
 
-  var shortcuts = JSON.stringify({
-    switch_post: theme.shortcuts.switch_post.enable
-  });
+  var shortcuts = "undefined";
+  if (theme.shortcuts) {
+    isSwitchPost = false;
+
+    if (theme.shortcuts.switch_post && theme.shortcuts.switch_post.enable) {
+      isSwitchPost = true;
+    }
+
+    shortcuts = JSON.stringify({
+      switch_post: isSwitchPost
+    });
+  }
 
   var prompt = JSON.stringify({
     copy_success: __("prompt.copy.success"),
