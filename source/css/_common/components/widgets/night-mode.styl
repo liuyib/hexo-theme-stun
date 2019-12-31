@@ -18,7 +18,7 @@
   &--checked {
     .mode {
       &-thumb {
-        left: 27px;
+        transform: translateX(27px);
       }
     }
   }
@@ -86,7 +86,7 @@
     width: 22px;
     height: 22px;
     background-color: convert(hexo-config('night_mode.button.color') || '#fafafa');
-    transition: all .25s ease;
+    transition: transform .2s ease;
   }
 
   &-input {

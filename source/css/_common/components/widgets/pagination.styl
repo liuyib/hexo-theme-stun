@@ -21,8 +21,7 @@
   .page-number {
     margin: 0 .5em;
     color: $pagination-item-color;
-    transition-property: color, background-color;
-    transition-ease();
+    transition: color .2s ease, background-color .2s ease;
 
     &:hover {
       color: $pagination-item-hover-color;
@@ -43,8 +42,7 @@
     line-height: 1rem;
     vertical-align: middle;
     color: $pagination-arrow-color;
-    transition-property: color;
-    transition-ease();
+    transition: color .2s ease;
 
     &:hover {
       color: $pagination-arrow-hover-color;
@@ -72,8 +70,7 @@
       &__a {
         color: $pagination-arrow-color;
         word-wrap();
-        transition-property: color;
-        transition-ease();
+        transition: color .2s ease;
 
         &:hover {
           color: $pagination-arrow-hover-color;

@@ -23,9 +23,8 @@
           bottom: -4px;
           left: 0;
           height: 2px;
-          background-color: #000;
-          transition-property: transform;
-          transition-ease();
+          background-color: var(--color-gray-800);
+          transition: transform .2s ease-in-out;
           transform: scaleX(0);
         }
 
@@ -42,13 +41,13 @@
 
     &-meta {
       i {
-        margin-right: .2rem;
+        margin-right: .25rem;
       }
 
       & > span {
         &:not(:first-child)::before {
           content: '•';
-          margin: 0 .3rem;
+          margin: 0 .5rem;
           color: var(--color-gray-700);
         }
       }
@@ -117,8 +116,7 @@
         }
 
         &__a {
-          transition-property: color;
-          transition-ease();
+          transition: color .2s ease;
         }
       }
     }

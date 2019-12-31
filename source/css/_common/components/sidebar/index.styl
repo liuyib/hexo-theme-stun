@@ -186,8 +186,7 @@ if (hexo-config('sidebar.enable')) {
               border-radius: 50%;
               width: 1.5rem;
               height: 1.5rem;
-              transition-property: background-color;
-              transition-ease();
+              transition: background-color .2s ease;
 
               &--icon {
                 font-size: 1.2em;
@@ -195,8 +194,7 @@ if (hexo-config('sidebar.enable')) {
             } else {
               border-radius: 3px;
               padding: 0 .4rem;
-              transition-property: color, background-color;
-              transition-ease();
+              transition: color .2s ease, background-color .2s ease;
 
               span {
                 margin-left: .2rem;
@@ -221,8 +219,7 @@ if (hexo-config('sidebar.enable')) {
             width: 50%;
 
             &__a {
-              transition-property: color;
-              transition-ease();
+              transition: color .2s ease;
 
               &--icon {
                 margin-right: .2rem;
@@ -256,8 +253,7 @@ if (hexo-config('sidebar.enable')) {
           display: inline-block;
           width: 33.3%;
           line-height: 1.5em;
-          transition-property: color;
-          transition-ease();
+          transition: color .2s ease;
 
           &:not(:last-child) {
             border-right: 1px dashed var(--color-gray-300);
@@ -316,8 +312,7 @@ if (hexo-config('sidebar.enable')) {
           width: 100%;
           height: convert(hexo-config('reading_progress.height') || '1px');
           background-color: convert(hexo-config('reading_progress.color') || '#49b1f5');
-          transition-property: transform;
-          transition-ease();
+          transition: transform .2s ease;
           transform: translateX(-100%);
         }
       }

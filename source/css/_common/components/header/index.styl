@@ -22,8 +22,7 @@ if (hexo-config('header.nav_height') && match('%', hexo-config('header.nav_heigh
     z-index: $z-index1;
     width: 100%;
     height: header-nav-height;
-    transition-property: transform, background-color;
-    transition-ease();
+    transition: transform .2s ease, background-color .2s ease;
     will-change: transform;
 
     &.fixed {
@@ -77,8 +76,7 @@ if (hexo-config('header.nav_height') && match('%', hexo-config('header.nav_heigh
           display: block;
           padding: 0 .5rem;
           color: $header-text-color;
-          transition-property: color;
-          transition-ease();
+          transition: color .2s ease;
         }
       }
     }
@@ -125,8 +123,7 @@ if (hexo-config('header.nav_height') && match('%', hexo-config('header.nav_heigh
         height: 100%;
         line-height: header-nav-height;
         color: $header-text-color;
-        transition-property: color;
-        transition-ease-in-out();
+        transition: color .2s ease;
         cursor: pointer;
 
         &:hover {

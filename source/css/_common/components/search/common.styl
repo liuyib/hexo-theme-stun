@@ -43,14 +43,40 @@ search-input-padding = 1rem;
     padding: .2rem .8rem;
     height: search-input-height;
     line-height: search-input-height;
-    background-color: var(--color-gray-250);
+    color: var(--color-gray-950);
+    background-color: var(--color-gray-200);
     outline: 0;
     transition: border-color .3s;
+    user-select: none;
 
     &:hover,
     &:focus {
       border-color: $blue-light;
     }
+  }
+
+  input::-webkit-input-placeholder {
+    color: var(--color-gray-500);
+  }
+
+  input:-moz-placeholder {
+    color: var(--color-gray-500);
+  }
+
+  input::-moz-placeholder {
+    color: var(--color-gray-500);
+  }
+
+  input:-ms-input-placeholder {
+    color: var(--color-gray-500);
+  }
+
+  input::-ms-input-placeholder {
+    color: var(--color-gray-500);
+  }
+
+  input::placeholder {
+    color: var(--color-gray-500);
   }
 }
 
@@ -80,8 +106,7 @@ search-input-padding = 1rem;
 }
 
 .search-results {
-  overflow-x: hidden;
-  overflow-y: scroll;
+  overflow: auto;
   max-height: 16rem;
 
   em {

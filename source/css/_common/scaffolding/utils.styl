@@ -24,13 +24,12 @@
   font-style: normal;
   white-space: nowrap;
   color: #fff;
-  background-color: alpha(#000, .7);
+  background-color: alpha(#000, .9);
   opacity: 0;
   text-shadow: none;
-  transition-property: opacity, transform;
+  transition: opacity .2s ease, transform .2s ease;
   transform: translate(-50%, -70%);
   pointer-events: none;
-  transition-ease();
 }
 
 [data-popover]::before {
@@ -106,9 +105,8 @@
 .anime-close {
   &::before,
   &::after {
-    transition-property: transform;
+    transition: transform .2s ease;
     transform: rotate(-45deg);
-    transition-ease();
   }
 
   &::after {
