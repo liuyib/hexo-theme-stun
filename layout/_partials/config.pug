@@ -47,6 +47,17 @@
     });
   }
 
+  var post_widget = "undefined";
+  if (theme.post_widget) {
+    var end_text = (theme.post_widget.end_text && theme.post_widget.end_text.enable) || false;
+
+    if (end_text) {
+      post_widget = JSON.stringify({
+        end_text: end_text,
+      });
+    }
+  }
+
   var night_mode = "undefined";
   if (theme.night_mode) {
     night_mode = JSON.stringify({
@@ -125,6 +136,7 @@ script.
     fontawesome: !{ fontawesome },
     sidebar: !{ sidebar },
     header: !{ header },
+    post_widget: !{ post_widget },
     night_mode: !{ night_mode },
     back2top: !{ back2top },
     reward: !{ theme.reward.enable },

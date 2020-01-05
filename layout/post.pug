@@ -1,6 +1,7 @@
 extends ./_layout.pug
 
 block content
+  div#is-post
   div.post
     - var fa_prefix = theme.fa_prefix || 'fa'
 
@@ -17,9 +18,10 @@ block content
     footer.post-footer
       if theme.post_widget.end_text.enable
         div.post-end
-          span= "------ "
-          span= __("post.end")
-          span= " ------"
+          p
+            span= "------ "
+            span= __("post.end")
+            span= " ------"
 
       if (page.copyright !== false) && (theme.creative_commons.enable && theme.creative_commons.post)
         include ./_partials/widgets/copyright.pug

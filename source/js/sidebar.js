@@ -118,17 +118,58 @@ $(document).ready(function () {
 
   // Update the reading progress lines of post.
   function readProgress () {
-    var $post = $('#content-wrap');
-    var scrollH = ($post[0] &&
-      $post[0].getBoundingClientRect().top * -1) || 0;
+    // Not on post page.
+    if ($('#is-post').length === 0) {
+      return;
+    }
 
-    var percent = parseInt((scrollH /
-      Math.abs($post.height() - $(window).height())) * 100);
+    var $post = $('.content');
+    var postTop = $post.offset().top;
+    var postEndTop = 0;
+    var postEndHeight = 0;
+    var postReadingHeight = 0;
+    var isEnablePostEnd = false;
+    var percent = 0;
+
+    if (CONFIG.post_widget && CONFIG.post_widget.end_text) {
+      isEnablePostEnd = true;
+    }
+
+    if (isEnablePostEnd) {
+      postEndTop = $('.post-end').offset().top;
+      postEndHeight = $('.post-end').outerHeight();
+      postReadingHeight = postEndTop - postTop + postEndHeight;
+    } else {
+      postEndTop = $('.post-footer').offset().top;
+      postReadingHeight = postEndTop - postTop;
+    }
+
+    var windowHeight = $(window).height();
+    var postScrollTop = 0;
+
+    if ($post.length !== 0) {
+      postScrollTop =
+        parseInt($post[0].getBoundingClientRect().top * -1) + windowHeight;
+    }
+
+    var percentNum = Number($('.sidebar-reading-info-num').text());
+
+    postReadingHeight = parseInt(Math.abs(postReadingHeight));
+    percent = parseInt((postScrollTop / postReadingHeight) * 100);
     percent = percent > 100 ? 100 : percent < 0 ? 0 : percent;
 
-    $('.sidebar-reading-info-num').html(percent);
+    // Has reached the maximum or minimum
+    if (
+      (percent === 0 && percentNum === 0) ||
+      (percent === 100 && percentNum === 100)
+    ) {
+      return;
+    }
+
+    $('.sidebar-reading-info-num').text(percent);
     $('.sidebar-reading-line').css(
-      'transform', 'translateX(' + (percent - 100) + '%)'
+      'transform',
+      'translateX(' + (percent - 100) + '%)'
     );
   }
 
