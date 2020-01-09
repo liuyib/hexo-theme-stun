@@ -24,3 +24,7 @@ after_script:
 branches:
   only:
     - master
+
+env:
+  global:
+    - GH_REF: github.com/liuyib/hexo-theme-stun.git
