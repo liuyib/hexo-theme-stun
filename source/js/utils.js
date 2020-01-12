@@ -264,9 +264,9 @@ Stun.utils = Stun.$u = {
     var faPrefix = (CONFIG.fontawesome && CONFIG.fontawesome.prefix) || 'fa';
     var $alert = $(
       '<div class="stun-message">' +
-        '<div class="stun-alert stun-alert-' + status + '">' +
-          '<i class="stun-alert-icon ' + faPrefix + ' fa-' + icon[status] + '"></i>' +
-          '<span class="stun-alert-description">' + text + '</span>' +
+        `<div class="stun-alert stun-alert-${status}">` +
+          `<i class="stun-alert-icon ${faPrefix} fa-${icon[status]}"></i>` +
+          `<span class="stun-alert-description">${text}</span>` +
         '</div>' +
       '</div>'
     );
@@ -340,9 +340,10 @@ Stun.utils = Stun.$u = {
           }
         }
 
-        $imgWrap = $img.wrap('<a class="fancybox" href="' + imgSrc +
-          '" itemscope itemtype="http://schema.org/ImageObject" itemprop="url"></a>'
-        ).parent('a');
+        $imgWrap = $img.wrap(`
+          <a class="fancybox" href="${imgSrc}" itemscope
+            itemtype="http://schema.org/ImageObject" itemprop="url"></a>
+        `).parent('a');
 
         if ($img.is('.gallery img')) {
           $imgWrap.attr('data-fancybox', 'gallery');
@@ -399,12 +400,9 @@ Stun.utils = Stun.$u = {
     }
 
     var faPrefix = (CONFIG.fontawesome && CONFIG.fontawesome.prefix) || 'fa';
+    var extIconName = CONFIG.external_link.icon.name;
     var $wrapper = $('<span class="external-link"></span>');
-    var $icon = $(
-      '<i class="' + faPrefix + ' fa-' +
-        CONFIG.external_link.icon.name +
-      '"></i>'
-    );
+    var $icon = $(`<i class="${faPrefix} fa-${extIconName}"></i>`);
 
     $(container)
       .find('a[target="_blank"]')
@@ -531,7 +529,7 @@ Stun.utils = Stun.$u = {
           .filter(function (e) { return e !== CODEBLOCK_CLASS_NAME; });
         var $codeHeader = $(
           '<figcaption class="custom">' +
-            '<div class="custom-lang">' + lang + '</div>' +
+            `<div class="custom-lang">${lang}</div>` +
           '</figcaption>'
         );
 
@@ -541,15 +539,11 @@ Stun.utils = Stun.$u = {
 
     var faPrefix = (CONFIG.fontawesome && CONFIG.fontawesome.prefix) || 'fa';
     var $copyIcon = $(
-      '<div class="copy-button" data-popover=' +
-        CONFIG.prompt.copy_button +
-        ' data-popover-pos="up">' +
-        '<i class="' + faPrefix + ' fa-clipboard"></i>' +
+      `<div class="copy-button" data-popover="${CONFIG.prompt.copy_button}" data-popover-pos="up">` +
+        `<i class="${faPrefix} fa-clipboard"></i>` +
       '</div>'
     );
-
-    var COPY_BUTTON_CONTAINER =
-      'figure.highlight figcaption, .post-copyright';
+    var COPY_BUTTON_CONTAINER = 'figure.highlight figcaption, .post-copyright';
     // Add a copy button to the selected elements.
     $(COPY_BUTTON_CONTAINER).append($copyIcon);
   },

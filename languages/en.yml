@@ -59,7 +59,7 @@ post:
   fire: Heat
   sticky: Sticky top
   untitled: "[ Untitled ]"
-  end: End of text, thank you for reading
+  end: End of the article, thanks for your reading
   copyright:
     author: Author
     link: Link
@@ -100,7 +100,7 @@ prompt:
     success: Copy Success
     error: Copy Error
   creative_commons: Creative Commons
-  copy_button: Click to Copy
+  copy_button: Copy Code
 
 # Others
 creative_commons: Creative Commons

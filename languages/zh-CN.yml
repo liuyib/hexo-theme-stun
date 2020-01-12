@@ -100,7 +100,7 @@ prompt:
     success: 复制成功
     error: 复制失败
   creative_commons: 知识共享
-  copy_button: 点击复制
+  copy_button: 复制代码
 
 # 其他
 creative_commons: 知识共享
