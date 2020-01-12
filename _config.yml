@@ -82,14 +82,14 @@ favicon:
 pwa:
   enable: false
   manifest: /manifest.json
-  theme_color: '#54bcff'
+  theme_color: "#54bcff"
 
 # Whether to show the button of dark mode.
 night_mode:
   enable: true
   button:
-    color: '#fafafa'
-    bg_color: '#8c8a8a'
+    color: "#fafafa"
+    bg_color: "#8c8a8a"
   icon:
     dark: 🌜
     light: 🌞
@@ -148,9 +148,9 @@ back2top:
     # Rotation Angle of icon.
     rotate: -45deg
     # Please use quote to wrap value (All CSS size units are supported).
-    color: '#49b1f5'
+    color: "#49b1f5"
     # Colour when the mouse hovers it.
-    hover_color: '#fc6423'
+    hover_color: "#fc6423"
 
 # Footer of your site.
 footer:
@@ -185,7 +185,7 @@ footer:
     # Heart beat animation.
     animation: false
     # Please use quote to wrap value (All CSS size units are supported).
-    color: '#ff0000'
+    color: "#ff0000"
   # Hexo link (Powered by Hexo).
   powered:
     enable: true
@@ -289,7 +289,7 @@ feed:
 reading_progress:
   enable: true
   # Please use the quote to wrap value (All CSS size units are supported).
-  color: '#fc6423'
+  color: "#fc6423"
   # Support for all types of CSS size units.
   height: 1px
 
@@ -371,7 +371,7 @@ stick_top:
   # Rotation Angle of icon.
   rotate: 45deg
   # Please use the quote to wrap value (All CSS size units are supported).
-  color: '#999'
+  color: "#999"
 
 # Code highlight.
 # values:
@@ -558,9 +558,9 @@ canvas_nest:
   enable: false
   # Display on mobile or not
   onmobile: true
-  # RGB values, use ',' to separate
+  # RGB values, use "," to separate
   # Color for lines
-  color: '0,0,0'
+  color: "0,0,0"
   # The opacity of line: 0 ~ 1
   opacity: 0.6
   # The number of lines
@@ -614,7 +614,7 @@ zoom_image:
   enable: true
   # The color of mask.
   # Please use the quote to wrap value (All CSS size units are supported).
-  mask_color: 'rgba(0,0,0,0.6)'
+  mask_color: "rgba(0,0,0,0.6)"
 
 # If you are use "photos" attribute in the Front-matter,
 #   you can enable this to show images in waterfalls flow.
@@ -698,7 +698,7 @@ external_link:
     # `external-link` is recommended.
     name: external-link
     # Please use the quote to wrap value (All CSS size units are supported).
-    color: '#aaa'
+    color: "#aaa"
 
 # The shortcuts of the site.
 shortcuts:
@@ -712,8 +712,8 @@ shortcuts:
 # If not used, comment it or ignore it.
 tag_cloud:
   # Color for tag (please use the quote to wrap value, only support HEX).
-  start_color: '#a4d8fa'
-  end_color: '#49b1f5'
+  start_color: "#a4d8fa"
+  end_color: "#49b1f5"
   # Size for tag.
   min_size: 16
   max_size: 26
