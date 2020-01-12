@@ -29,12 +29,12 @@ $md-width = 992px - 0.02px
 $lg-width = 1200px - 0.02px
 
 // Width
-$sidebar-width          = convert(hexo-config('sidebar.width') || '280px')
-$content-aside-gap      = 20px
-$content-width          = $sm-width
-$main-sidebar-gap       = 30px
+$content-width          = convert(hexo-config('layout.content') || '$sm-width')
+$sidebar-width          = convert(hexo-config('layout.sidebar') || '300px')
+$content-sidebar-gap    = convert(hexo-config('layout.content_sidebar_gap') || '30px')
+$main-side-gap          = convert(hexo-config('layout.main_side_gap') || '20px')
 if (hexo-config('sidebar.enable')) {
-  $main-width           = $content-width + $sidebar-width + $main-sidebar-gap
+  $main-width           = $content-width + $sidebar-width + $content-sidebar-gap
 } else {
   $main-width           = $content-width
 }

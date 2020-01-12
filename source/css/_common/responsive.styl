@@ -1,6 +1,6 @@
 // $main-width: A calc value.
 // -----------------------------------------
-@media (min-width: $main-width + $content-aside-gap * 2) {
+@media (min-width: $main-width + $main-side-gap * 2) {
   if (hexo-config('sidebar.enable')) {
     .header-nav-inner {
       width: $main-width;
@@ -60,8 +60,8 @@
     overflow: hidden;
     position: absolute;
     top: header-nav-height;
-    right: 0 - $content-aside-gap;
-    left: 0 - $content-aside-gap;
+    right: 0 - $main-side-gap;
+    left: 0 - $main-side-gap;
     width: auto;
     height: auto;
     background-color: $header-nav-bg-color;
