@@ -23,7 +23,6 @@ if (hexo-config('header.nav_height') && match('%', hexo-config('header.nav_heigh
     width: 100%;
     height: header-nav-height;
     transition: transform .2s ease, background-color .2s ease;
-    will-change: transform;
 
     &.fixed {
       background-color: $header-nav-bg-color;
@@ -53,6 +52,17 @@ if (hexo-config('header.nav_height') && match('%', hexo-config('header.nav_heigh
       padding: 0 .5rem;
       line-height: header-nav-height;
       color: $header-text-color;
+      cursor: pointer;
+    }
+
+    &-menu-item,
+    &-submenu-item {
+      &__a {
+        display: block;
+        padding: 0 .5rem;
+        color: $header-text-color;
+        transition: color .2s ease;
+      }
     }
 
     &-menu {
@@ -71,26 +81,19 @@ if (hexo-config('header.nav_height') && match('%', hexo-config('header.nav_heigh
         &:last-child {
           margin: 0;
         }
-
-        &__a {
-          display: block;
-          padding: 0 .5rem;
-          color: $header-text-color;
-          transition: color .2s ease;
-        }
       }
     }
 
     &-submenu {
       display: none;
       position: absolute;
-      left: 50%;
+      right: -.5rem;
+      left: -.5rem;
       border-radius: 3px;
       width: auto;
       background-color: $header-nav-bg-color;
-      transform: translateX(-50%);
 
-      .header-nav-menu-item {
+      &-item {
         margin: 0;
         width: 100%;
         font-size: $font-size-header;
@@ -98,10 +101,6 @@ if (hexo-config('header.nav_height') && match('%', hexo-config('header.nav_heigh
         line-height: header-nav-height;
         text-align: center;
         white-space: nowrap;
-
-        &__a {
-          padding: 0 .8rem;
-        }
       }
     }
 

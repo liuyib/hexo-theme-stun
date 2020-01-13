@@ -1,4 +1,4 @@
-mixin menuItem(menu)
+mixin menuItem(menu, className)
   each value, name in (menu || {})
     if name && value
       - var item = value.split('||')
@@ -10,10 +10,10 @@ mixin menuItem(menu)
       if menuPath.toLowerCase() === 'javascript:;'
         - isSubMenu = true
 
-      div.header-nav-menu-item
-        a.header-nav-menu-item__a(
+      div(class=`header-nav-${className || ""}menu-item`)
+        a(
           href=isSubMenu ? "javascript:;" : menuPath
-          class=isSubMenu ? "nopointer" : ""
+          class=`header-nav-${className || ""}menu-item__a ${isSubMenu ? "nopointer" : ""}`
         )
           if !theme.menu_settings.text_only && !!menuIcon
             i(class=`${fa_prefix} fa-${menuIcon}`)
@@ -21,4 +21,4 @@ mixin menuItem(menu)
             != __(`menu.${name}`)
         if isSubMenu
           div.header-nav-submenu
-            +menuItem(theme.submenu[name])
+            +menuItem(theme.submenu[name], 'sub')
