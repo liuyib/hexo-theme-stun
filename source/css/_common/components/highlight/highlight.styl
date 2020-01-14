@@ -206,10 +206,30 @@ for lang in languages {
   color: $highlight-purple;
 }
 
-.diff .addition {
-  background-color: $highlight-addition;
+.diff {
+  .addition {
+    color: $highlight-addition-color;
+    background-color: $highlight-addition-bg-color;
+  }
+
+  .deletion {
+    color: $highlight-deletion-color;
+    background-color: $highlight-deletion-bg-color;
+  }
 }
 
-.diff .deletion {
-  background-color: $highlight-deletion;
+if (hexo-config('night_mode.enable')) {
+  .nightmode {
+    if (hexo-config('highlight_theme') == 'light') {
+      .diff {
+        .addition {
+          background-color: transparent;
+        }
+
+        .deletion {
+          background-color: transparent;
+        }
+      }
+    }
+  }
 }

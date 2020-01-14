@@ -1,12 +1,18 @@
 highlight_theme = hexo-config('highlight_theme');
 
 if (highlight_theme == 'light') {
-  $highlight-addition = #deffe7;
-  $highlight-deletion = #ffe8eb;
+  $highlight-addition-color    = #25a225;
+  $highlight-addition-bg-color = #f0fff4;
+  $highlight-deletion-color    = #dc4545;
+  $highlight-deletion-bg-color = #ffeef0;
 } else if (highlight_theme == 'dark') {
-  $highlight-addition = alpha(#00ff00, .2);
-  $highlight-deletion = alpha(#ff0000, .2);
+  $highlight-addition-color    = #25a225;
+  $highlight-addition-bg-color = transparent;
+  $highlight-deletion-color    = #dc4545;
+  $highlight-deletion-bg-color = transparent;
 } else if (highlight_theme == 'ocean') {
-  $highlight-addition = alpha(#9bb955, .4);
-  $highlight-deletion = alpha(#ff0000, .2);
+  $highlight-addition-color    = #25a225;
+  $highlight-addition-bg-color = transparent;
+  $highlight-deletion-color    = #dc4545;
+  $highlight-deletion-bg-color = transparent;
 }
