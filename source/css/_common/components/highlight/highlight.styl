@@ -2,7 +2,8 @@
 @require './diff.styl';
 
 languages = 'js' 'javascript' 'python' 'ruby' 'xml' 'html' 'css' 'php' 'sql' 'coffeescript' 'java' 'bash' 'markdown' 'kotlin' 'c' 'c\+\+' 'c#' 'go' 'golang' 'less' 'sass' 'scss' 'stylus' 'styl' 'typescript' 'ts' 'yml' 'yaml' 'matlab' 'objectivec' 'makefile' 'scala' 'gradle' 'swift' 'rust' 'lua' 'lisp' 'fortran' 'dart' 'perl';
-wordWrap = hexo-config('code_word_wrap');
+codeStyle = hexo-config('codeblock.style') || 'default';
+wordWrap = hexo-config('codeblock.word_wrap') || false;
 
 for lang in languages {
   .highlight{'.' + lang} {
@@ -25,6 +26,10 @@ for lang in languages {
   color: $highlight-color;
   background-color: $highlight-background;
 
+  if (codeStyle == 'simple' || (codeStyle == 'carbon')) {
+    border-radius: .25rem;
+  }
+
   pre,
   code {
     font-family: $font-family-code;
@@ -45,11 +50,19 @@ for lang in languages {
 
   figcaption {
     position: relative;
-    padding: .1rem 0;
     width: 100%;
     color: $highlight-header-color;
     background-color: $highlight-header-bg-color;
     clearfix();
+
+    if (codeStyle == 'carbon') {
+      border-top-left-radius: .25rem;
+      border-top-right-radius: .25rem;
+    }
+
+    if (codeStyle == 'default') {
+      padding: .1rem 0;
+    }
 
     span {
       &:first-child {
@@ -66,21 +79,45 @@ for lang in languages {
   }
 
   figcaption.custom {
-    padding: .1rem 0;
     min-height: 1.5rem;
+
+    if (codeStyle == 'carbon') {
+      display: flex;
+    }
 
     .custom-lang {
       float: left;
       margin: 0 .6rem;
       color: $highlight-code-lang-color;
     }
-  }
 
-  .code {
-    if (wordWrap) {
-      padding: 0;
-    } else {
-      padding: 0 0 0 .4rem;
+    if (codeStyle == 'carbon') {
+      .custom-carbon {
+        display: flex;
+        margin: .2rem 0 0 .5rem;
+        font-size: 0;
+        align-items: center;
+
+        &-dot {
+          display: inline-block;
+          margin: 0 4px;
+          border-radius: 50%;
+          width: 10px;
+          height: 10px;
+
+          &--red {
+            background-color: #ff5f56;
+          }
+
+          &--yellow {
+            background-color: #ffbd2e;
+          }
+
+          &--green {
+            background-color: #27c93f;
+          }
+        }
+      }
     }
   }
 
@@ -89,7 +126,7 @@ for lang in languages {
     width: 1rem;
     background-color: $highlight-side-bg-color;
 
-    if (wordWrap) {
+    if (wordWrap || (codeStyle == 'simple' || (codeStyle == 'carbon'))) {
       display: none;
     }
 
@@ -100,12 +137,24 @@ for lang in languages {
     }
   }
 
-  if (wordWrap) {
+  .code {
+    if (codeStyle == 'simple' || (codeStyle == 'carbon')) {
+      padding: .5rem .75rem;
+    } else if (codeStyle == 'default') {
+      if (wordWrap) {
+        padding: 0;
+      } else {
+        padding: .5rem .6rem;
+      }
+    }
+  }
+
+  if (wordWrap && (codeStyle == 'default')) {
     .line {
       &::before {
         content: counter(line);
         display: inline-block;
-        margin: 0 .4rem 0 0;
+        margin-right: .5rem;
         box-sizing: content-box;
         padding: 0 .8rem 0 .4rem;
         min-width: 1rem;
@@ -220,7 +269,7 @@ for lang in languages {
 
 if (hexo-config('night_mode.enable')) {
   .nightmode {
-    if (hexo-config('highlight_theme') == 'light') {
+    if (hexo-config('codeblock.highlight') == 'light') {
       .diff {
         .addition {
           background-color: transparent;

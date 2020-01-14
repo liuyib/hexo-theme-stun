@@ -294,6 +294,36 @@ reading_progress:
   height: 1px
 
 # ---------------------------------------------------------------
+# Page config
+# ---------------------------------------------------------------
+
+codeblock:
+  # The style of code block.
+  # values:
+  #   - default
+  #   - simple
+  #   - carbon
+  style: default
+  # The theme of code highlight.
+  # values:
+  #   - light
+  #   - dark
+  #   - ocean
+  highlight: light
+  # Whether the code to newline.
+  word_wrap: false
+
+# Add a line below h1, h2.
+heading_line: true
+
+# Reward
+reward:
+  enable: true
+  # Fill in your QR Code for collecting money.
+  alipay:
+  wechat:
+
+# ---------------------------------------------------------------
 # Post config
 # ---------------------------------------------------------------
 
@@ -372,26 +402,6 @@ stick_top:
   rotate: 45deg
   # Please use the quote to wrap value (All CSS size units are supported).
   color: "#999"
-
-# Code highlight.
-# values:
-#   - light
-#   - dark
-#   - ocean
-highlight_theme: light
-
-# Code wrap.
-code_word_wrap: false
-
-# Add a line below h1, h2.
-heading_line: true
-
-# Reward
-reward:
-  enable: false
-  # Fill in your QR Code for collecting money.
-  alipay:
-  wechat:
 
 # ---------------------------------------------------------------
 # Comment config

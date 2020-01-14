@@ -519,24 +519,39 @@ Stun.utils = Stun.$u = {
       });
     }
   },
-  addCopyButton: function () {
+  /**
+   * Add the header to code block.
+   * @param {string} type The type of header. value: 'carbon' | null.
+   */
+  addCodeHeader: function (type) {
     $('figure.highlight').each(function () {
       if (!$(this).find('figcaption')[0]) {
-        var CODEBLOCK_CLASS_NAME = 'highlight';
-        var lang = $(this)
-          .attr('class')
-          .split(/\s/)
-          .filter(function (e) { return e !== CODEBLOCK_CLASS_NAME; });
-        var $codeHeader = $(
-          '<figcaption class="custom">' +
-            `<div class="custom-lang">${lang}</div>` +
-          '</figcaption>'
-        );
+        var content = '';
+        if (!type) {
+          var CODEBLOCK_CLASS_NAME = 'highlight';
+          var lang = $(this)
+            .attr('class')
+            .split(/\s/)
+            .filter(function (e) { return e !== CODEBLOCK_CLASS_NAME; });
 
-        $codeHeader.insertBefore($(this).children().first());
+          content += `<div class="custom-lang">${lang}</div>`;
+        } else if (type === 'carbon') {
+          content += `
+            <div class="custom-carbon">
+              <div class="custom-carbon-dot custom-carbon-dot--red"></div>
+              <div class="custom-carbon-dot custom-carbon-dot--yellow"></div>
+              <div class="custom-carbon-dot custom-carbon-dot--green"></div>
+            </div>
+          `;
+        }
+
+        $(`<figcaption class="custom">${content}</figcaption>`).insertBefore(
+          $(this).children().first()
+        );
       }
     });
-
+  },
+  addCopyButton: function () {
     var faPrefix = (CONFIG.fontawesome && CONFIG.fontawesome.prefix) || 'fa';
     var $copyIcon = $(
       `<div class="copy-button" data-popover="${CONFIG.prompt.copy_button}" data-popover-pos="up">` +

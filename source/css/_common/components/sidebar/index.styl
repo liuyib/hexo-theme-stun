@@ -11,11 +11,10 @@ if (hexo-config('sidebar.enable')) {
     }
 
     &-inner {
-      border-radius: 5px;
+      layout-card();
       padding: 1rem;
       width: convert(hexo-config('sidebar.width') || '$sidebar-width');
       font-size: $font-size-sidebar;
-      background-color: var(--color-gray-150);
 
       &.sticky {
         position: fixed;

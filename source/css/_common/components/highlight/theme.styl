@@ -1,8 +1,9 @@
-highlight_theme = hexo-config('highlight_theme');
+codeStyle = hexo-config('codeblock.style') || 'default';
+highlight_theme = hexo-config('codeblock.highlight') || 'light';
 
 if (highlight_theme == 'light') {
   $highlight-color             = #757575;
-  $highlight-background        = #f6f8fa;
+  $highlight-background        = #f8f8f8;
   $highlight-side-color        = lighten($highlight-color, 60%);
   $highlight-side-bg-color     = darken($highlight-background, 2%);
   $highlight-header-color      = $highlight-color;
@@ -70,4 +71,8 @@ if (highlight_theme == 'ocean') {
   $highlight-aqua            = #99c794;
   $highlight-blue            = #6699cc;
   $highlight-purple          = #c594c5;
+}
+
+if (codeStyle == 'carbon') {
+  $highlight-header-bg-color = $highlight-background;
 }

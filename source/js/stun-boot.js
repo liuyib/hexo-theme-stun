@@ -11,19 +11,30 @@ $(document).ready(function () {
   }
 
   Stun.utils.pjaxReloadBoot = function () {
-    this.addCopyButton();
-    this.registerCopyEvent();
+    if (CONFIG.codeblock) {
+      var codeStyle = CONFIG.codeblock.style;
 
-    CONFIG.reward && this.registerShowReward();
-    CONFIG.lazyload && this.lazyLoadImage();
-    CONFIG.gallery_waterfall && this.showImageToWaterfall();
-
+      if (codeStyle === 'default') {
+        this.addCodeHeader();
+        this.addCopyButton();
+        this.registerCopyEvent();
+      } else if (codeStyle === 'carbon') {
+        this.addCodeHeader('carbon');
+      }
+    }
+    if (CONFIG.reward) {
+      this.registerShowReward();
+    }
+    if (CONFIG.lazyload) {
+      this.lazyLoadImage();
+    }
+    if (CONFIG.gallery_waterfall) {
+      this.showImageToWaterfall();
+    }
     if (CONFIG.external_link) {
       var CONTAINER = '.archive, .post-header-title';
-
       this.addIconToExternalLink(CONTAINER);
     }
-
     if (CONFIG.fancybox) {
       this.wrapImageWithFancyBox();
     } else if (CONFIG.zoom_image) {

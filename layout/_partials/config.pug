@@ -37,6 +37,15 @@
     });
   }
 
+  var codeStyle = (theme.codeblock && theme.codeblock.style) || 'default';
+  var highlight = (theme.codeblock && theme.codeblock.highlight) || 'light';
+  var wordWrap = (theme.codeblock && theme.codeblock.word_wrap) || false;
+  var codeblock = JSON.stringify({
+    style: codeStyle,
+    highlight: highlight,
+    word_wrap: wordWrap
+  });
+
   var header = "undefined";
   if (theme.header) {
     var isScrollDownIcon =
@@ -139,6 +148,7 @@ script.
     post_widget: !{ post_widget },
     night_mode: !{ night_mode },
     back2top: !{ back2top },
+    codeblock: !{ codeblock },
     reward: !{ theme.reward.enable },
     fancybox: !{ theme.fancybox },
     zoom_image: !{ zoom_image },
