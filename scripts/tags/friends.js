@@ -15,28 +15,33 @@ function friends(args) {
     }
   });
 
-  return fs.readFile(path).then(function(datas) {
-    if (!datas) {
+  return fs.readFile(path).then(function(data) {
+    if (!data) {
       hexo.log.warn('Include file empty.');
       return;
     }
 
-    var datas = JSON.parse(datas);
-    var result = '<div class="friends-plugin">';
+    var imgClassName = 'friends-plugin__item-avatar ';
+    var theme = hexo.theme.config;
+    if (theme.lazyload && theme.lazyload.enable) {
+      imgClassName += `lazyload lazyload-${theme.lazyload.placeholder}`;
+    }
 
-    datas.forEach(data => {
-      result += `<a class="friends-plugin__item" href="${data.url}">`;
-      result += `<img class="friends-plugin__item-avatar" src="${data.avatar}" data-zoom="none">`;
-      result += '<div class="friends-plugin__item-info">';
-      result += `<p class="friends-plugin__item-info__name">${data.name}</p>`;
-      result += `<p class="friends-plugin__item-info__intro">${data.introduction}</p>`;
-      result += '</div>';
-      result += '</a>';
+    var friends = JSON.parse(data);
+    var renderHtml = '<div class="friends-plugin">';
+    friends.forEach(f => {
+      renderHtml +=
+        `<a class="friends-plugin__item" href="${f.url}">` +
+          `<img class="${imgClassName}" src="${f.avatar}" data-zoom="none">` +
+          '<div class="friends-plugin__item-info">' +
+            `<p class="friends-plugin__item-info__name">${f.name}</p>` +
+            `<p class="friends-plugin__item-info__intro">${f.introduction}</p>` +
+          '</div>' +
+        '</a>';
     });
+    renderHtml += '</div>';
 
-    result += '</div>';
-
-    return result;
+    return renderHtml;
   });
 }
 

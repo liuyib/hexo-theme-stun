@@ -3,12 +3,13 @@
   max-width: 100%;
 
   &__item {
-    display: block;
+    display: flex;
     float: left;
     padding: .5rem 1rem;
     width: 50%;
     height: 100px;
     transition: background-color .3s;
+    align-items: center;
 
     &:hover {
       background-color: alpha($blue-light, .1);
@@ -21,22 +22,15 @@
     avatar-width = 60px;
 
     &-avatar {
-      display: inline-block;
+      margin: 0 1rem 0 0;
       border-radius: 50% !important;
       width: avatar-width;
       height: avatar-width;
-      vertical-align: middle;
     }
 
-    info-margin = 20px;
-
     &-info {
-      display: inline-block;
-      margin-left: info-margin;
-      padding-top: .6rem;
-      width: 'calc(100% - %s)' % (avatar-width + info-margin);
-      height: 100%;
-      vertical-align: middle;
+      overflow: hidden;
+      width: 100%;
       color: var(--color-gray-800);
 
       &__name,
@@ -44,6 +38,10 @@
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
+      }
+
+      &__name {
+        font-weight: $font-weight-bolder;
       }
 
       &__intro {
