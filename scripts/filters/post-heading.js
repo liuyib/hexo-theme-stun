@@ -7,6 +7,7 @@ hexo.extend.filter.register('after_post_render', function (data) {
   var attrId = `id="([^"]*)"`;
   var tagNotEnd = `([^>]*)`;
   var regAttrId = tagNotEnd + attrId + tagNotEnd;
+  // Match the innermost 'h1~6' tags width the id attribute.
   var regHTagInnermost = new RegExp(
     `<${tagName}${regAttrId}>((?:(?!<\\/?${tagName}${regAttrId}>)(?:\\s|\\S))*?)<\/${tagName}>`,
     'gim'

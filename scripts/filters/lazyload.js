@@ -9,6 +9,7 @@ hexo.extend.filter.register('after_post_render', function (data) {
   }
 
   data.content = data.content.replace(
+    // Match 'img' tags width the src attribute.
     /<img([^>]*)src="([^"]*)"([^>]*)>/gim,
     function (match, attrBegin, src, attrEnd) {
       // Exit if the src doesn't exists.

@@ -15,7 +15,7 @@ hexo.extend.filter.register('after_post_render', function (data) {
   var url = require('url');
   var config = this.config;
   var siteHost = url.parse(config.url).hostname || config.url;
-  // Match only a tags that don't contain html children.
+  // Match 'a' tags that don't contain html children.
   var regPureATag = /<a([^>]*)href="([^"]*)"([^>]*)>([^<]*)<\/a>/gim;
 
   data.content = data.content.replace(
