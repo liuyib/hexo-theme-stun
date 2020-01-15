@@ -4,7 +4,6 @@
 
 hexo.extend.filter.register('after_generate', function () {
   var theme = hexo.theme.config;
-
   if (!theme.shake_file) {
     return;
   }

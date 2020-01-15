@@ -30,7 +30,10 @@ hexo.extend.filter.register('after_post_render', function (data) {
       var w = size.split(MULTIPLY_SIGN)[0];
       var h = size.split(MULTIPLY_SIGN)[1];
       var style = '';
-      
+
+      if (!w || !h) {
+        return;
+      }
       if (w) {
         style += `width: ${w}px;`;
       }
@@ -38,9 +41,7 @@ hexo.extend.filter.register('after_post_render', function (data) {
         style += `height: ${h}px;`;
       }
 
-      var attr1 = attrBegin.trim();
-      var attr2 = attrEnd.trim();
-      return `<img ${attr1} src="${src}" style="${style}" ${attr2}>`;
+      return `<img ${attrBegin} src="${src}" style="${style}" ${attrEnd}>`;
     }
   );
 }, 0);

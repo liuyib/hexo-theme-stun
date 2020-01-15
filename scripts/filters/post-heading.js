@@ -19,10 +19,10 @@ hexo.extend.filter.register('after_post_render', function (data) {
         return match;
       }
 
-      var newHtml = (html.replace(/<[^>]+>/gim, '') || '').trim();
+      var filterHtml = (html.replace(/<[^>]+>/gim, '') || '').trim();
       return `
         <h2 ${attrBegin} id="${id}" ${attrEnd}>
-          <span class="heading-link">${newHtml}</span>
+          <span class="heading-link">${filterHtml}</span>
         </h2>
       `;
     }

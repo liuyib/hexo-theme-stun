@@ -28,9 +28,11 @@ hexo.extend.filter.register('after_post_render', function (data) {
         placeholder = loadingBlock;
       }
 
+      var className = `lazyload lazyload-${phClassName}`;
       return `
-        <img ${attrBegin} class="lazyload lazyload-${phClassName}"
-          src="${placeholder}" data-src="${src}" ${attrEnd}>`;
+        <img ${attrBegin} class="${className}"
+          src="${placeholder}" data-src="${src}" ${attrEnd}>
+      `;
     }
   );
 }, 1);

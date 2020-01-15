@@ -15,10 +15,12 @@ hexo.extend.filter.register('after_post_render', function (data) {
   var url = require('url');
   var config = this.config;
   var siteHost = url.parse(config.url).hostname || config.url;
+  // Match only a tags that don't contain html children.
+  var regPureATag = /<a([^>]*)href="([^"]*)"([^>]*)>([^<]*)<\/a>/gim;
 
   data.content = data.content.replace(
-    /(<a([^>]*)href="([^"]*)"([^>]*)>([^<]*)<\/a>)/gim,
-    function (match, all, attrBegin, href, attrEnd, html) {
+    regPureATag,
+    function (match, attrBegin, href, attrEnd, html) {
       // Exit if the href attribute doesn't exists.
       if (!href) {
         return match;
@@ -29,25 +31,6 @@ hexo.extend.filter.register('after_post_render', function (data) {
       if (!link.protocol || link.hostname === siteHost) {
         return match;
       };
-
-      var attrOther = attrBegin + attrEnd;
-      var className = '';
-
-      attrOther.split(/\s/gim).forEach(attr => {
-        var nAttr = attr.replace(/["']*/gim, '');
-        var aKey = (nAttr.split('=')[0] || '').trim();
-        var aValue = (nAttr.split('=')[1] || '').trim();
-
-        if (aKey === 'class') {
-          className = aValue;
-        }
-      });
-
-      // Exit if the class name is in whitelist.
-      var whiteList = ['friends-plugin__item'];
-      if (className && whiteList.includes(className)) {
-        return match;
-      }
 
       var fa_prefix = theme.fa_prefix || 'fa';
       return (
