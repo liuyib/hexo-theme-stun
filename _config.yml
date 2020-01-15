@@ -87,18 +87,26 @@ pwa:
 # Whether to show the button of dark mode.
 night_mode:
   enable: true
+  # The button of switching to the night mode.
   button:
+    # Color of button.
     color: "#fafafa"
+    # Background color of button.
     bg_color: "#8c8a8a"
+  # The icon that stand for day and night.
   icon:
     dark: 🌜
     light: 🌞
 
 # The layout for sidebar and content of site.
 layout:
+  # The width of the content area in website.
   content: 768px
+  # The width of the sidebar in website.
   sidebar: 300px
+  # The width between the content and the sidebar.
   content_sidebar_gap: 30px
+  # The width between the main of website and the sides of page.
   main_side_gap: 20px
 
 header:

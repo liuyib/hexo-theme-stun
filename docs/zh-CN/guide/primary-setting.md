@@ -2,7 +2,7 @@
 
 ::: tip 前言
 - 修改配置文件、安装新的依赖等，都需要重启 Hexo 服务器。
-- 没有特别说明，配置项默认从 `v1.0.0` 版本开始支持。
+- 没有特别说明，配置项从 `v1.0.0` 版本开始支持。
 - 稳定的配置使用 <Badge text="Stable"/> 标明，表示基本不会变动。不稳定的配置使用 <Badge text="Beta" type="warn"/> 标明，表示未来可能会变动甚至删除。目前还不支持的配置使用 <Badge text="Not Support" type="error"/> 标明。被废弃的配置使用 <Badge text="Deprecated" type="error"/> 标明。最早开始支持的版本号使用 <Badge text="v x.x.x"/> 标明。与主题无关的配置项使用 <Badge text="Disrelated" type="warning"/> 标明。
 :::
 
@@ -120,8 +120,6 @@ favicon:
 
 ## 网站顶部设置
 
-### 顶部栏 <Badge text="Stable"/>
-
 如果想要设置网站顶部栏的高度，导航栏的高度，背景图片，需要修改主题配置文件：
 
 ``` yaml
@@ -138,18 +136,20 @@ header:
     url: https://xxxxx.png
   # 顶部背景图的遮罩效果
   mask:
+    # 是否启用
     enable: false
     # 透明度（取值：0 ~ 1）
     opacity: 0.5
   # 提示向下滚动的图标
   scroll_down_icon:
+    # 是否启用
     enable: false
     # 是否启用动画
     animation: true
 ```
 
 ::: warning 注意
-- `mask` 选项，即遮罩效果，从 `v1.1.1` 版本开始支持。`blur_effect` 选项，即模糊滤镜效果，从 `v1.1.1` 版本开始弃用。
+- `mask` 选项，即遮罩效果，从 `v1.1.1` 版本开始支持。`blur_effect` 选项，即模糊滤镜效果，从 `v1.1.1` 版本开始废弃。
 - `scroll_down_icon` 选项从 `v1.5.4` 版本开始支持。
 :::
 
@@ -167,6 +167,24 @@ top_image: https://xxxxx.jpg
 
 ## 侧边栏设置
 
+修改主题配置文件：
+
+``` yaml
+sidebar:
+  # 是否启用
+  enable: true
+  # 侧边栏位置，可选值有：left 或 right
+  position: right
+  # 侧边栏吸顶时，距离页面顶部的距离（只支持 px 单位）
+  offsetTop: 30px
+  # 是否显示水平分割线
+  horizon_line: false
+```
+
+::: danger <Badge text="Deprecated" type="error"/>
+其中的 `width` 属性在 `v1.6.0` 开始废弃。替代的设置是 `layout` 的 `sidebar` 属性。
+:::
+
 ### 作者信息 <Badge text="Stable"/>
 
 侧边栏默认头像是 Stun 的 Logo，你需要换成自己的，修改主题配置文件：
@@ -183,7 +201,7 @@ author:
     rounded: true
     # 头像透明度（取值：0 ~ 1）
     opacity: 1
-    # 鼠标 hover 动画，可选值：trun 或 shake
+    # 鼠标 hover 动画，可选值：trun或 shake
     animation: trun
   # 格言（可以是任意一句想写的话）
   motto: hello world
@@ -224,7 +242,7 @@ social_setting:
 > 图标的名称在这里查找：[https://fontawesome.com/v4.7.0/icons/](https://fontawesome.com/v4.7.0/icons/)
 
 ::: danger <Badge text="Deprecated" type="error"/>
-其中，配置项 `social_setting` 的 `text_align` 属性在 `v1.2.0` 版本中移除。
+其中，配置项 `social_setting` 的 `text_align` 属性在 `v1.2.0` 开始废弃。
 :::
 
 当你添加一个默认没有的社交链接时，需要进行国际化设置。这里以添加链接 `掘金` 为例，步骤如下：
@@ -255,6 +273,98 @@ social:
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190717165333.png)
 
+## 网站底部设置 <Badge text="Stable"/>
+
+修改主题配置文件：
+
+``` yaml
+footer:
+  # 背景图片
+  bg_image:
+    # 是否启用
+    enable: false
+    # 填写图片路径或链接
+    url: https://xxxxx.png
+  # 遮罩效果（目前只有黑色遮罩）
+  mask:
+    # 是否启用
+    enable: false
+    # 遮罩透明度 (取值: 0 ~ 1).
+    opacity: 0.5
+  # 版权信息
+  copyright:
+    # 是否启用
+    enable: true
+    # 显示的文字信息，例如：xxx All Rights Reserved.
+    # 如果不设置，将显示 hexo 配置文件中的 author 属性的内容
+    text:
+    # 开始时间（如果不设置，将显示最新的年份）
+    since:
+    # 结束时间（如果不设置，将显示最新的年份）
+    end:
+  # 时间和文字信息之间的图标
+  icon:
+    # 是否启用
+    enable: true
+    # 建议使用名为 `heart` 的图标
+    # 图标名称在这里查找：https://fontawesome.com/v4.7.0/icons/
+    name: heart
+    # 心跳动画
+    animation: true
+    # 请使用引号包裹颜色值（支持所有 CSS 颜色单位）
+    color: "#ff0000"
+  # Hexo 链接（Powered by Hexo）
+  powered:
+    # 是否启用
+    enable: true
+    # 显示版本号（例如：vX.X.X）
+    version: true
+  # 主题链接（Theme - stun）
+  theme:
+    # 是否启用
+    enable: true
+    # 显示版本号（例如：vX.X.X）
+    version: true
+  # 备案信息（只有中国开发者会用到）详情: http://www.miitbeian.gov.cn/
+  beian:
+    # 是否启用
+    enable: false
+    # 备案 XXXXXXXX 号
+    icp:
+  # 任何自定义文本，支持 HTML（例如：托管于 <a href="https://pages.github.com/" rel="noopener" target="_blank">Github Pages</a>）
+  custom:
+    # 是否启用
+    enable: false
+    # 自定义文本内容
+    text:
+```
+
+效果如下：
+
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190623192514.png)
+
+## 返回顶部 <Badge text="Beta" type="warning"/>
+
+修改主题配置文件：
+
+``` yaml
+back2top:
+  # 是否启用
+  enable: true
+  # 显示的图标
+  icon:
+    # 建议使用名为 `rocket` 的图标
+    # 图标名称在这里查找：https://fontawesome.com/v4.7.0/icons/
+    name: rocket
+    # 火箭发射动画
+    animation: true
+    # 图标的旋转角度（角度的单位是：deg）
+    rotate: -45deg
+    # 请使用引号包裹颜色值（支持所有 CSS 颜色单位）
+    color: "#49b1f5"
+    hover_color: "#fc6423"
+```
+
 ## 文章摘要 <Badge text="Stable"/>
 
 如果想要保留文章摘要，需要**手动**在文章的 Markdown 源文件中添加 `<!-- more -->` 标记。标记之前的部分都会被保留为文章摘要，显示在文章列表中。
@@ -271,31 +381,6 @@ auto_excerpt:
 
 > 由于自动保留摘要的效果并不理想，所以这里不建议开启。
 
-## 启用赞赏码 <Badge text="Stable"/>
-
-如果想要在文章底部启用打赏的二维码，需要修改主题配置文件：
-
-``` yaml
-# Reward
-reward:
-  # 是否启用
-  enable: true
-  # 支付宝
-  alipay: https://xxxxx.png
-  # 微信
-  wechat: https://xxxxx.png
-```
-
-效果如下：
-
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608175556.png)
-
-你可以在文章 Markdown 源文件中的 `Front-Matter` 里，设置 `reward: false` 来指定某篇文章不启用赞赏码。
-
-::: warning 注意
-如果主题配置文件中没有启用 `reward`，那么单独设置文章 `reward: true` 是没有效果的。
-:::
-
 ---
 
-到这里就完成了最基本的配置，如果你还想更详细的配置主题，请查看【高级设置】部分。
+到这里就完成了最基本的配置，如果你还想更详细的配置主题，请向后继续阅读文档。

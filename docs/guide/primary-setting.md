@@ -1,9 +1,9 @@
 # Primary Setting
 
 ::: tip Preface
-- Restart the Hexo server by modifying the configuration file, installing new dependencies, and so on.
-- Unless otherwise stated, configuration items are supported by default from the `v1.0.0` version.
-- A stable configuration is marked with <Badge text="Stable"/>, indicating that it will not change substantially. Unstable configurations are marked with <Badge text="Beta" type="warn"/> to indicate that they may change or even be deleted in the future. Configurations that are not currently supported are marked with <Badge text="Not Support" type="error"/>. The obsolete configuration is marked with <Badge text="Deprecated" type="error"/>. The version number that was first supported is indicated by <Badge text="v x.x.x"/>. Configuration items that are not related to the topic are marked with <Badge text="Disrelated" type="warning"/>.
+- Modifying configuration files, installing new dependencies, etc. all require restarting the Hexo server.
+- Not specifically, configuration items are supported from `v1.0.0`.
+- Stable configuration is indicated by <Badge text="Stable"/>, which means it will not change basically. Unstable configurations are indicated by <Badge text="Beta" type="warn"/>, which means it may be changed or even deleted in the future. Configuration items that are not supported currently are indicated by <Badge text="Not Support" type="error"/>. Deprecated configurations are indicated by <Badge text="Deprecated" type="error"/>. The earliest supported version number are indicated by <Badge text="v x.x.x"/>. Configuration items that are not related to the subject are indicated by <Badge text="Disrelated" type="warning"/>.
 :::
 
 ## Configuration file
@@ -291,4 +291,4 @@ If `reward` is not enabled in the theme configuration file, setting the article 
 
 ---
 
-The most basic configuration is done here. If you want to configure the theme in more detail, please check the [Advanced Settings] section.
+The most basic configuration is done here. If you want to configure the theme in more detail, please continue reading the documentation.

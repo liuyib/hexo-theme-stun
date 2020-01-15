@@ -37,5 +37,9 @@ $ hexo clean && hexo s
 ``` bash
 $ cd themes/stun
 
-$ git pull
+# Update to stable version (recommend).
+$ git pull origin master
+
+# Update to the latest features (May be unstable and not recommended).
+$ git pull origin dev
 ```
