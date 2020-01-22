@@ -1,7 +1,13 @@
-.external-link i {
-  margin: 0 .1em 0 .3em;
-  font-size: .8em;
-  color: convert(hexo-config('external_link.icon.color') || '#aaa');
+.external-link {
+  i {
+    margin: 0 .1em 0 .3em;
+    font-size: .8em;
+    color: convert(hexo-config('external_link.icon.color') || '#aaa');
+  }
+
+  a {
+    break-all();
+  }
 }
 
 .footer-inner {

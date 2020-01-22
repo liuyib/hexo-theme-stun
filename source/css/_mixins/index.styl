@@ -10,9 +10,16 @@ clearfix() {
   }
 }
 
-word-wrap() {
+break-word() {
+  white-space: normal;
   word-wrap: break-word;
-  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+break-all() {
+  white-space: normal;
+  word-wrap: normal;
+  word-break: break-all;
 }
 
 layout-card() {
