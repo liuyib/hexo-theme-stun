@@ -34,7 +34,8 @@ script&attributes(dataPjax).
       pageSize: '!{ theme.valine.pageSize }' || 10,
       visitor: !{ theme.valine.visitor },
       recordIP: !{ theme.valine.recordIP },
-      lang: '!{ theme.valine.language }' || 'zh-cn'
+      lang: '!{ theme.valine.language }' || 'zh-cn',
+      path: window.location.pathname
     });
   }
 
