@@ -326,7 +326,7 @@ heading_line: true
 
 # Reward
 reward:
-  enable: true
+  enable: false
   # Fill in your QR Code for collecting money.
   alipay:
   wechat:
