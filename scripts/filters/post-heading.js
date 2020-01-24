@@ -9,22 +9,22 @@ hexo.extend.filter.register('after_post_render', function (data) {
   var regAttrId = tagNotEnd + attrId + tagNotEnd;
   // Match the innermost 'h1~6' tags width the id attribute.
   var regHTagInnermost = new RegExp(
-    `<${tagName}${regAttrId}>((?:(?!<\\/?${tagName}${regAttrId}>)(?:\\s|\\S))*?)<\/${tagName}>`,
+    `<(${tagName})${regAttrId}>((?:(?!<\\/?${tagName}${regAttrId}>)(?:\\s|\\S))*?)<\/${tagName}>`,
     'gim'
   );
 
   data.content = data.content.replace(
     regHTagInnermost,
-    function (match, attrBegin, id, attrEnd, html) {
+    function (match, tName, attrBegin, id, attrEnd, html) {
       if (!id) {
         return match;
       }
 
       var filterHtml = (html.replace(/<[^>]+>/gim, '') || '').trim();
       return `
-        <h2 ${attrBegin} id="${id}" ${attrEnd}>
+        <${tName} ${attrBegin} id="${id}" ${attrEnd}>
           <span class="heading-link">${filterHtml}</span>
-        </h2>
+        </${tName}>
       `;
     }
   );
