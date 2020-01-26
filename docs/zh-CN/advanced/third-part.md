@@ -326,7 +326,7 @@ disqus:
   count: true
 ```
 
-### Utterances <Badge text="Stable"/> <Badge text="v1.5.5"/>
+### Utterances <Badge text="Stable"/> <Badge text="v1.6.0"/>
 
 Utterances 是一个基于 Github issues 的评论系统。使用之前需要确保你指定的 Github 仓库是公开的，并开启了 issues 功能。
 
