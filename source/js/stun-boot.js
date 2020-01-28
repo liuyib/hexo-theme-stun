@@ -17,10 +17,14 @@ $(document).ready(function () {
       if (codeStyle === 'default') {
         this.addCodeHeader();
         this.addCopyButton();
-        this.registerCopyEvent();
       } else if (codeStyle === 'carbon') {
         this.addCodeHeader('carbon');
+        this.addCopyButton('carbon');
+      } else if (codeStyle === 'simple') {
+        this.addCopyButton('simple');
       }
+
+      this.registerCopyEvent();
     }
     if (CONFIG.reward) {
       this.registerShowReward();

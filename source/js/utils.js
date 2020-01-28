@@ -551,16 +551,22 @@ Stun.utils = Stun.$u = {
       }
     });
   },
-  addCopyButton: function () {
+  addCopyButton: function (type) {
+    var btnContainer = '.post-copyright,';
     var faPrefix = (CONFIG.fontawesome && CONFIG.fontawesome.prefix) || 'fa';
     var $copyIcon = $(
       `<div class="copy-button" data-popover="${CONFIG.prompt.copy_button}" data-popover-pos="up">` +
         `<i class="${faPrefix} fa-clipboard"></i>` +
       '</div>'
     );
-    var COPY_BUTTON_CONTAINER = 'figure.highlight figcaption, .post-copyright';
+
+    if (type === 'simple' || type === 'carbon') {
+      btnContainer += '.highlight figcaption:not(".custom")';
+    } else {
+      btnContainer += '.highlight figcaption';
+    }
     // Add a copy button to the selected elements.
-    $(COPY_BUTTON_CONTAINER).append($copyIcon);
+    $(btnContainer).append($copyIcon);
   },
   registerCopyEvent: function () {
     $('.copy-button').on('click', function () {
