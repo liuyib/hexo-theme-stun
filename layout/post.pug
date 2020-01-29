@@ -15,9 +15,6 @@ block content
         +gallery(page)
       != page.content
 
-    if theme.article_share && theme.article_share.enable
-      include ./_partials/widgets/share.pug
-
     footer.post-footer
       if theme.post_widget.end_text.enable
         div.post-end
@@ -36,6 +33,9 @@ block content
               span.post-tags-item
                 i.post-tags-item__i(class=`${fa_prefix} fa-tags`)
                 a.post-tags-item__a(href=tag.permalink)= tag.name
+
+      if _.get(theme, 'post_widget.share.enable')
+        include ./_partials/widgets/share.pug
 
       if (page.reward !== false) && (theme.reward && theme.reward.enable)
         include ./_partials/widgets/reward.pug
