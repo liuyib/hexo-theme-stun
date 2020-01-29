@@ -35,3 +35,8 @@ if theme.lazyload && theme.lazyload.enable
   - var lazyload_js = "https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.min.js"
   - if (theme.cdn.lazyload) lazyload_js = theme.cdn.lazyload
   script(src=lazyload_js)
+
+if _.get(theme, 'post_widget.share.enable')
+  - var share_js = "https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"
+  - if (_.get(theme, 'cdn.share_js')) share_js = _.get(theme, 'cdn.share_js')
+  script(src=share_js)

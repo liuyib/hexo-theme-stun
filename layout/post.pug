@@ -34,6 +34,9 @@ block content
                 i.post-tags-item__i(class=`${fa_prefix} fa-tags`)
                 a.post-tags-item__a(href=tag.permalink)= tag.name
 
+      if _.get(theme, 'post_widget.share.enable')
+        include ./_partials/widgets/share.pug
+
       if (page.reward !== false) && (theme.reward && theme.reward.enable)
         include ./_partials/widgets/reward.pug
 

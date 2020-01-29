@@ -391,6 +391,13 @@ post_widget:
     enable: true
     # Show the horizon line before the text of the end.
     horizon_line: true
+  # Article sharing
+  share:
+    enable: true
+    # The text displayed before the share button.
+    label: "Share to: "
+    # Optional value: qzone, qq, weibo, wechat, douban, linkedin, facebook, twitter, google
+    target: qzone, qq, weibo, wechat, douban, linkedin, facebook, twitter, google
 
 # Automatically retain article excerpt.
 auto_excerpt:
@@ -860,3 +867,11 @@ cdn:
   # Example:
   # pjax: //cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js
   pjax:
+
+  # Using version: 1.0.16
+  # See: https://github.com/overtrue/share.js
+  # Example:
+  # share_js: //cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js
+  # share_css: //cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css
+  share_js:
+  share_css:
