@@ -7,12 +7,11 @@ mixin postHeader(post)
 
     h1.post-header-title
       if post.link
-        a(href=url_for(post.link) target="_blank" rel="noopener" ).post-header-title__a= post.title || post.link
+        a(href=url_for(post.link) target="_blank" rel="noopener" )= post.title || post.link
+      else if is_post()
+        = post.title || __("post.untitled")
       else
-        if is_post()
-          = post.title || __("post.untitled")
-        else
-          a(href=url_for(post.path)).post-header-title__a= post.title || __("post.untitled")
+        a(href=url_for(post.path))= post.title || __("post.untitled")
 
     if !post.link
       div.post-header-meta

@@ -7,7 +7,7 @@ $(document).ready(function () {
 
   function resetMenuHeight () {
     $menuItem.velocity({
-      height: $menuItem.height()
+      height: $menuItem.outerHeight()
     }, {
       complete: function () {
         $submenu.css({ display: 'none', opacity: 0 });
@@ -130,11 +130,11 @@ $(document).ready(function () {
       isBubbleInMenu = false;
     }
 
-    var menuItemHeight = $menuItem.height();
-    var submenuHeight = menuItemHeight + $submenu.height() * $submenu.length;
+    var menuItemHeight = $menuItem.outerHeight();
+    var submenuHeight = menuItemHeight + Math.floor($submenu.outerHeight()) * $submenu.length;
     var menuShowHeight = 0;
 
-    if ($(this).height() > menuItemHeight) {
+    if ($(this).outerHeight() > menuItemHeight) {
       isSubmenuShow = false;
       menuShowHeight = menuItemHeight;
     } else {
@@ -182,7 +182,7 @@ $(document).ready(function () {
     if (CONFIG.header && CONFIG.header.scrollDownIcon) {
       $('.header-info-scrolldown').on('click', function () {
         $('#container').velocity('scroll', {
-          offset: $('#header').height()
+          offset: $('#header').outerHeight()
         });
       });
     }

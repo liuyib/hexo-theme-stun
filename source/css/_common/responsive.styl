@@ -25,6 +25,10 @@
     display: inline-block !important;
     opacity: 1 !important;
   }
+
+  .header-nav-submenu {
+    border-radius: 3px;
+  }
 }
 
 @media (max-width: $md-width) {
@@ -56,15 +60,6 @@
     float: left;
   }
 
-  menuItemHover(txtColor, bgColor) {
-    transition: color .2s ease, background-color .2s ease;
-
-    &:hover {
-      color: txtColor;
-      background-color: bgColor;
-    }
-  }
-
   .header-nav-menu {
     overflow: hidden;
     position: absolute;
@@ -79,14 +74,12 @@
       float: none;
       overflow: hidden;
       margin: 0;
-      menuItemHover(#f4f5f5, $blue-light);
 
       &__a {
-        padding: 0 1.5rem;
+        padding-right: 1.5rem;
+        padding-left: 1.5rem;
         text-align: left;
         color: #f4f5f5;
-        user-select: none;
-        menuItemHover(#f4f5f5, $blue-light);
       }
     }
   }
@@ -97,11 +90,10 @@
     width: 100%;
 
     &-item {
-      text-align: left;
-
       &__a {
-        padding: 0 1rem 0 3rem;
-        menuItemHover(#f4f5f5, #7ccbff);
+        padding-right: 1rem;
+        padding-left: 3rem;
+        text-align: left;
       }
     }
   }

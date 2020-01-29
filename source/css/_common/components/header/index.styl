@@ -55,14 +55,29 @@ if (hexo-config('header.nav_height') && match('%', hexo-config('header.nav_heigh
       cursor: pointer;
     }
 
-    &-menu-item,
-    &-submenu-item {
-      &__a {
-        display: block;
-        padding: 0 .5rem;
-        color: $header-text-color;
-        transition: color .2s ease;
+    menuItemHover(txtColor, bgColor) {
+      transition: color .2s ease, background-color .2s ease;
+
+      &:hover {
+        color: txtColor;
+        background-color: bgColor;
       }
+    }
+
+    &-menu-item__a,
+    &-submenu-item__a {
+      display: block;
+      color: $header-text-color;
+    }
+
+    &-menu-item__a {
+      padding: 0 .5rem;
+      menuItemHover(#f4f5f5, #999);
+    }
+
+    &-submenu-item__a {
+      padding: .75rem .5rem;
+      menuItemHover(#f4f5f5, #999);
     }
 
     &-menu {
@@ -89,18 +104,16 @@ if (hexo-config('header.nav_height') && match('%', hexo-config('header.nav_heigh
       position: absolute;
       right: -.5rem;
       left: -.5rem;
-      border-radius: 3px;
       width: auto;
       background-color: $header-nav-bg-color;
 
       &-item {
         margin: 0;
+        padding: 0;
         width: 100%;
         font-size: $font-size-header;
         line-height: 1;
-        line-height: header-nav-height;
         text-align: center;
-        white-space: nowrap;
       }
     }
 

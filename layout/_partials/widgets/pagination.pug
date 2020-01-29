@@ -9,12 +9,12 @@ nav.paginator
     div.paginator-post
       if page.prev
         div.paginator-post-prev
-          a.paginator-post-prev__a(href=url_for(page.prev.path))
+          a(href=url_for(page.prev.path))
             i(class=`${fa_prefix} fa-chevron-left`)
             span= page.prev.title || __("post.untitled")
 
       if page.next
         div.paginator-post-next
-          a.paginator-post-next__a(href=url_for(page.next.path))
+          a(href=url_for(page.next.path))
             span= page.next.title || __("post.untitled")
             i(class=`${fa_prefix} fa-chevron-right`)

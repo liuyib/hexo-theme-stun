@@ -2,6 +2,7 @@ if (hexo-config('night_mode.enable')) {
   if (hexo-config('gitalk.enable')) {
     :root {
       --color-gt-textarea-bg: #f6f6f6;
+      --color-gt-btn-bg: #ffffff;
       --color-gt-user-bg: #f9f9f9;
       --color-gt-admin-bg: #f6f9fe;
       --color-gt-code-bg: #f9f9f9;
@@ -9,6 +10,7 @@ if (hexo-config('night_mode.enable')) {
 
     html.nightmode {
       --color-gt-textarea-bg: #323c4c;
+      --color-gt-btn-bg: #323c4c;
       --color-gt-user-bg: #333943;
       --color-gt-admin-bg: #2f3945;
       --color-gt-code-bg: #1b2b34;
@@ -48,9 +50,12 @@ if (hexo-config('gitalk.enable')) {
     width: 100%;
     color: #6190E8;
 
-    .gt-header-textarea,
-    .gt-btn-preview {
+    .gt-header-textarea {
       background-color: var(--color-gt-textarea-bg);
+    }
+
+    .gt-btn-preview {
+      background-color: var(--color-gt-btn-bg);
     }
 
     .gt-meta {
@@ -198,6 +203,10 @@ if (hexo-config('valine.enable')) {
     .vpreview *,
     a {
       color: var(--color-gray-700);
+    }
+
+    .vinput {
+      border-bottom: 1px dashed var(--color-gray-300);
     }
 
     .vcontent {

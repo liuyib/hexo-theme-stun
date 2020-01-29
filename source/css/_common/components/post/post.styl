@@ -10,7 +10,7 @@
       color: var(--color-gray-950);
       cursor: auto;
 
-      &__a {
+      a {
         position: relative;
         color: var(--color-gray-800);
         break-word();
@@ -109,12 +109,19 @@
       &-item {
         margin: 0 .5rem;
 
-        &__i {
-          margin-right: .3rem;
-          color: $post-tags-icon-color;
+        &:hover {
+          cursor: pointer;
         }
 
+        &:hover i,
+        &:hover a {
+          color: $orange-dark;
+        }
+
+        &__i,
         &__a {
+          margin: .1rem;
+          color: $post-tags-icon-color;
           transition: color .2s ease;
         }
       }
