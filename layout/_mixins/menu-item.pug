@@ -4,18 +4,20 @@ mixin menuItem(menu, className)
       - var item = value.split('||')
       - var menuPath = _.trim(_.get(item, '[0]'))
       - var menuIcon = _.trim(_.get(item, '[1]'))
-      - var isSubMenu = false
+      - var hasSubMenu = menuPath.toLowerCase() === 'javascript:;'
       - var fa_prefix = theme.fa_prefix || 'fa'
-
-      if menuPath.toLowerCase() === 'javascript:;'
-        - isSubMenu = true
+      - var aTagAttr = {};
+      - if (hasSubMenu) aTagAttr.onclick = "return false;";
 
       div(class=`header-nav-${className || ""}menu-item`)
-        a(href=menuPath ? menuPath : "#").header-nav-menu-item__a
+        a(
+          href=hasSubMenu ? "javascript:;" : menuPath
+          class=`header-nav-${className || ""}menu-item__a`
+        )&attributes(aTagAttr)
           if !theme.menu_settings.text_only && !!menuIcon
             i(class=`${fa_prefix} fa-${menuIcon}`)
           if !theme.menu_settings.icon_only
             != __(`menu.${name}`)
-        if isSubMenu
+        if hasSubMenu
           div.header-nav-submenu
             +menuItem(theme.submenu[name], 'sub')
