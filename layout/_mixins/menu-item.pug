@@ -11,10 +11,7 @@ mixin menuItem(menu, className)
         - isSubMenu = true
 
       div(class=`header-nav-${className || ""}menu-item`)
-        a(
-          href=isSubMenu ? "javascript:;" : menuPath
-          class=`header-nav-${className || ""}menu-item__a ${isSubMenu ? "nopointer" : ""}`
-        )
+        a(href=menuPath ? menuPath : "#").header-nav-menu-item__a
           if !theme.menu_settings.text_only && !!menuIcon
             i(class=`${fa_prefix} fa-${menuIcon}`)
           if !theme.menu_settings.icon_only
