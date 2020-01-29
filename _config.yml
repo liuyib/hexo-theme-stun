@@ -392,6 +392,13 @@ post_widget:
     # Show the horizon line before the text of the end.
     horizon_line: true
 
+# Article sharing
+article_share:
+  enable: true
+  #Apps to share
+  #Optional value: qzone, qq, weibo, wechat, douban, google, facebook, twitter
+  application: weibo, qq, wechat, qzone, twitter
+
 # Automatically retain article excerpt.
 auto_excerpt:
   enable: false

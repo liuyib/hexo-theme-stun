@@ -1,0 +1,7 @@
+- var article_share = theme.article_share
+
+div.post-share-container
+  div.social-share-text= "分享到："
+  div.social-share(data-sites=`${article_share.application}`)
+link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css")
+script(src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js")

@@ -15,6 +15,9 @@ block content
         +gallery(page)
       != page.content
 
+    if theme.article_share && theme.article_share.enable
+      include ./_partials/widgets/share.pug
+
     footer.post-footer
       if theme.post_widget.end_text.enable
         div.post-end
