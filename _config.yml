@@ -31,6 +31,10 @@ baidu_site_verification:
 # see http://zhanzhang.so.com/
 qihu360_site_verification:
 
+# Sougou Webmaster tools verification setting
+# see http://zhanzhang.sogou.com/
+sougou_site_verification:
+
 # ---------------------------------------------------------------
 # Menu config
 # ---------------------------------------------------------------
