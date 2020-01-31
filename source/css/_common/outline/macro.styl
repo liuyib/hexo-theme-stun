@@ -1,3 +1,43 @@
+if (hexo-config('body.bg_image.enable')) {
+  body {
+    position: relative;
+
+    bodyBgSet() {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      if (hexo-config('body.bg_image.fixed')) {
+        position: fixed;
+        height: 100vh;
+      }
+    }
+
+    if (hexo-config('body.mask.enable')) {
+      &::before {
+        bodyBgSet();
+        z-index: $z-index-1;
+        background-color: alpha(#000, hexo-config('body.mask.opacity'));
+      }
+    }
+
+    &::after {
+      bodyBgSet();
+      z-index: $z-index-2;
+      background: url(hexo-config('body.bg_image.url')) no-repeat center / cover;
+
+      if (hexo-config('body.bg_image.repeat')) {
+        background-repeat: repeat;
+        background-size: auto;
+      }
+    }
+  }
+}
+
 .container {
   break-word();
   display: flex;

@@ -143,34 +143,23 @@ header:
     enable: false
     animation: true
 
-# Creative Commons 4.0 International License.
-creative_commons:
-  enable: true
-  # Available: BY | BY-SA | BY-ND | BY-NC | BY-NC-SA | BY-NC-ND.
-  # For details, please see: https://creativecommons.org/share-your-work/licensing-types-examples/
-  license: BY-NC-SA
-  # Show the CC license in the sidebar.
-  sidebar: true
-  # Show the CC license at the post bottom.
-  post: true
-  # You can set a language value if you prefer a translated version of CC license.
-  # Valid values of language: en, zh, etc.
-  # If not set, "en" will be used by default.
-  language:
-
-# Back to top button.
-back2top:
-  enable: true
-  icon:
-    # Icon name in FontAwesome, see: https://fontawesome.com/v4.7.0/icons/
-    # `rocket` is recommended.
-    name: rocket
-    # Rotation Angle of icon.
-    rotate: -45deg
-    # Please use quote to wrap value (All CSS size units are supported).
-    color: "#49b1f5"
-    # Colour when the mouse hovers it.
-    hover_color: "#fc6423"
+body:
+  # Background image in the body.
+  bg_image:
+    enable: false
+    # In theme directory (source/images): /images/avatar.png
+    # In site directory (source/uploads): /uploads/avatar.png
+    # You can also use a link of image.
+    url:
+    # Whether to fixed the background image.
+    fixed: true
+    # Whether to repeat the image as much as possible to cover the entire area.
+    repeat: false
+  # Mask effect of the background image.
+  mask:
+    enable: false
+    # Opacity of mask (value: 0 ~ 1).
+    opacity: 0.5
 
 # Footer of your site.
 footer:
@@ -225,6 +214,35 @@ footer:
   custom:
     enable: false
     text:
+
+# Creative Commons 4.0 International License.
+creative_commons:
+  enable: true
+  # Available: BY | BY-SA | BY-ND | BY-NC | BY-NC-SA | BY-NC-ND.
+  # For details, please see: https://creativecommons.org/share-your-work/licensing-types-examples/
+  license: BY-NC-SA
+  # Show the CC license in the sidebar.
+  sidebar: true
+  # Show the CC license at the post bottom.
+  post: true
+  # You can set a language value if you prefer a translated version of CC license.
+  # Valid values of language: en, zh, etc.
+  # If not set, "en" will be used by default.
+  language:
+
+# Back to top button.
+back2top:
+  enable: true
+  icon:
+    # Icon name in FontAwesome, see: https://fontawesome.com/v4.7.0/icons/
+    # `rocket` is recommended.
+    name: rocket
+    # Rotation Angle of icon.
+    rotate: -45deg
+    # Please use quote to wrap value (All CSS size units are supported).
+    color: "#49b1f5"
+    # Colour when the mouse hovers it.
+    hover_color: "#fc6423"
 
 # ---------------------------------------------------------------
 # Sidebar config
