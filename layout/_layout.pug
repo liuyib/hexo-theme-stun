@@ -7,6 +7,8 @@
     dataPjax = { 'data-pjax': '' };
   }
 
+  var isNoHeader = !_.get(theme, 'header.enable') || (is_post() && !_.get(theme, 'header.show_on.post'))
+
 doctype html
 html(lang=config.language)
   head
@@ -14,7 +16,7 @@ html(lang=config.language)
   body
     div#container.container
       header#header.header
-        div.header-inner
+        div.header-inner(class=`${isNoHeader ? 'header-inner--height header-inner--bgcolor' : ''}`)
           include ./_partials/header/header.pug
 
       main#main.main

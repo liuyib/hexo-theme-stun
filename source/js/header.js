@@ -180,7 +180,7 @@ $(document).ready(function () {
 
   Stun.utils.pjaxReloadHeader = function () {
     if (CONFIG.header && CONFIG.header.scrollDownIcon) {
-      $('.header-info-scrolldown').on('click', function () {
+      $('.header-info-arrow').on('click', function () {
         $('#container').velocity('scroll', {
           offset: $('#header').outerHeight()
         });

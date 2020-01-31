@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  Stun.utils.showThemeInConsole();
+  // Stun.utils.showThemeInConsole();
 
   if (CONFIG.shortcuts && CONFIG.shortcuts.switch_post) {
     Stun.utils.registerHotkeyToSwitchPost();

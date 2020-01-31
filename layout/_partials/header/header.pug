@@ -1,8 +1,8 @@
 include ../../_mixins/menu-item.pug
 
-- var fa_prefix = theme.fa_prefix || 'fa'
+- var fa_prefix = theme.fa_prefix || 'fa';
 
-nav.header-nav
+nav.header-nav(class=`${isNoHeader ? '' : 'header-nav--fixed'}`)
   div.header-nav-inner
     div.header-nav-btn(class=`${fa_prefix} fa-bars`)
     div.header-nav-menu
@@ -19,14 +19,19 @@ nav.header-nav
       div.header-nav-mode
         include ../widgets/night-mode.pug
 
-div.header-info(style=`${
-  theme.header.bg_image.enable &&
-    page.top_image ? 'background: url(' + page.top_image + ') no-repeat center/cover;' : ''
-}`)
-  div.header-info-inner
-    div.header-info-title= config.title
-    div.header-info-subtitle= config.subtitle
+if !isNoHeader
+  if _.get(theme, 'header.enable')
+    div.header-info(
+      style=`${
+        (theme.header.bg_image.enable && page.top_image)
+          ? 'background: url(' + page.top_image + ') no-repeat center/cover;'
+          : ''
+      }`
+    )
+      div.header-info-inner
+        div.header-info-title= config.title
+        div.header-info-subtitle= config.subtitle
 
-  if theme.header && theme.header.scroll_down_icon && theme.header.scroll_down_icon.enable
-    div.header-info-scrolldown
-      i.fa.fa-angle-down.header-info-scrolldown__icon
+      if theme.header && theme.header.scroll_down_icon && theme.header.scroll_down_icon.enable
+        div.header-info-arrow
+          i.fa.fa-angle-down.header-info-arrow__icon

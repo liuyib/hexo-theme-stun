@@ -114,10 +114,13 @@ layout:
   main_side_gap: 20px
 
 header:
-  # Header height (Support for all types of CSS size units).
+  enable: true
+  # Whether to show on the some pages.
+  show_on:
+    # Whether to show on the article page.
+    post: true
+  # Height of the header. (Support for all types of CSS size units)
   height: 80%
-  # Header navigation bar height (Support for all types of CSS size units).
-  nav_height: 50px
   # Background image in the header.
   bg_image:
     enable: false
@@ -130,6 +133,11 @@ header:
     enable: false
     # Opacity of mask (value: 0 ~ 1).
     opacity: 0.5
+  nav:
+    # Height of the navigation bar. (Support for all types of CSS size units)
+    height: 50px
+    # Background color of the navigation bar.
+    bg_color: "#333"
   # The icon that prompt to scroll down.
   scroll_down_icon:
     enable: false

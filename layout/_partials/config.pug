@@ -47,11 +47,13 @@
   });
 
   var header = "undefined";
-  if (theme.header) {
+  if (theme.header && theme.header.enable) {
     var isScrollDownIcon =
       (theme.header.scroll_down_icon && theme.header.scroll_down_icon.enable) || false;
 
     header = JSON.stringify({
+      enable: theme.header.enable,
+      showOnPost: theme.header.show_on.post,
       scrollDownIcon: isScrollDownIcon,
     });
   }
