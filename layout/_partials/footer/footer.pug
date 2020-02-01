@@ -3,46 +3,43 @@
   var nowYear = new Date().getFullYear();
   var startYear = footer.copyright.since || nowYear;
   var endYear = footer.copyright.end || nowYear;
-  var fa_prefix = theme.fa_prefix || 'fa';
+  var fCopyright = footer.copyright.enable
+  var fBeian = footer.beian.enable
 
-- var footerCopyright = footer.copyright.enable
-- var footerBeian = footer.beian.enable
-
-if footerCopyright || footerBeian
+if fCopyright || fBeian
   div
-    if footerCopyright
+    if fCopyright
       span!= `Copyright &copy; ${startYear}` + ((startYear != endYear) ? `~${endYear}` : "")
       if footer.icon.enable
-        span(class=`${fa_prefix} fa-${footer.icon.name} footer-icon`)
+        span(class=`${faPrefix} fa-${footer.icon.name} footer-icon`)
       else
         span= " "
       span= footer.copyright.text || config.author + "."
-    if footerCopyright && footerBeian
+    if fCopyright && fBeian
       span= " | "
-    if footerBeian
+    if fBeian
       span!= footer.beian.icp
 
-- var footerPowered = footer.powered.enable
-- var footerTheme = footer.theme.enable
+-
+  var fPowered = footer.powered.enable
+  var fTheme = footer.theme.enable
 
-if footerPowered || footerTheme
+if fPowered || fTheme
   div
-    if footerPowered
+    if fPowered
       span
-        - var HEXO_URL = "http://hexo.io/";
         != _p("footer.powered", link_to(HEXO_URL, "hexo", { external: true }))
       if footer.powered.version
         span= " v" + hexo_env("version") + "."
-    if footerPowered && footerTheme
+    if fPowered && fTheme
       span.separator= "|"
-    if footerTheme
+    if fTheme
       span= __("footer.theme") + " - "
-        - var STUN_URL = "https://github.com/liuyib/hexo-theme-stun/";
         != link_to(STUN_URL, "stun", { external: true })
       if footer.theme.version
         span= " v" + stun_env("version") + "."
 
-if theme.busuanzi && theme.busuanzi.enable
+if _.get(theme, 'busuanzi.enable')
   include ../analytics/busuanzi.pug
 
 if footer.custom.enable

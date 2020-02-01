@@ -1,21 +1,19 @@
 include ../../_mixins/menu-item.pug
 
-- var fa_prefix = theme.fa_prefix || 'fa';
-
 nav.header-nav(class=`${isNoHeader ? '' : 'header-nav--fixed'}`)
   div.header-nav-inner
-    div.header-nav-btn(class=`${fa_prefix} fa-bars`)
+    div.header-nav-btn(class=`${faPrefix} fa-bars`)
     div.header-nav-menu
       +menuItem(theme.menu)
 
-    if (theme.algolia_search && theme.algolia_search.enable) || (theme.local_search && theme.local_search.enable)
+    if _.get(theme, 'algolia_search.enable') || _.get(theme, 'local_search.enable')
       div.header-nav-search
         if !theme.menu_settings.text_only
-          i(class=`${fa_prefix} fa-search`)
+          i(class=`${faPrefix} fa-search`)
         if !theme.menu_settings.icon_only
           span!= __("nav.search")
 
-    if theme.night_mode && theme.night_mode.enable
+    if _.get(theme, 'night_mode.enable')
       div.header-nav-mode
         include ../widgets/night-mode.pug
 
@@ -23,7 +21,7 @@ if !isNoHeader
   if _.get(theme, 'header.enable')
     div.header-info(
       style=`${
-        (theme.header.bg_image.enable && page.top_image)
+        (_.get(theme, 'header.bg_image.enable') && page.top_image)
           ? 'background: url(' + page.top_image + ') no-repeat center/cover;'
           : ''
       }`
@@ -32,6 +30,6 @@ if !isNoHeader
         div.header-info-title= config.title
         div.header-info-subtitle= config.subtitle
 
-      if theme.header && theme.header.scroll_down_icon && theme.header.scroll_down_icon.enable
+      if _.get(theme, 'header.scroll_down_icon.enable')
         div.header-info-arrow
           i.fa.fa-angle-down.header-info-arrow__icon

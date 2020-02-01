@@ -4,11 +4,9 @@
     '#main',
     '.pjax-reload'
   ];
-
   if (_.get(theme, 'header.enable')) {
     pjaxSelectors.push('.header-inner');
   }
-
   var pjaxArgs = {
     'selectors': pjaxSelectors,
     'history': theme.pjax.history,
@@ -19,28 +17,23 @@
     'currentUrlFullReload': theme.pjax.currentUrlFullReload,
     'timeout': theme.pjax.timeout
   };
-
   if (theme.pjax.elements) {
     pjaxArgs.elements.push(theme.pjax.elements);
   }
-
   if (theme.pjax.selectors) {
     pjaxArgs.selectors.push(theme.pjax.selectors);
   }
-
   if (theme.pjax.selectors) {
     pjaxArgs.switches = theme.pjax.selectors;
   }
-
   if (theme.pjax.selectors) {
     pjaxArgs.switchesOptions = theme.pjax.selectors;
   }
+  pjaxArgs = JSON.stringify(pjaxArgs);
 
-  pjaxArgs = JSON.stringify(pjaxArgs)
-
-if theme.pjax && theme.pjax.enable
-  - var pjax_js = "https://cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js"
-  - if (theme.cdn.pjax) pjax_js = theme.cdn.pjax
+if _.get(theme, 'pjax.enable')
+  - var pjax_js = "https://cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js";
+  - if (_.get(theme, 'cdn.pjax')) pjax_js = theme.cdn.pjax;
   script(src=pjax_js)
 
 script.
@@ -52,7 +45,6 @@ script.
     // 重置页面 Y 方向上的滚动偏移量
     document.addEventListener('pjax:send', function () {
       $('.header-nav-menu').removeClass('show');
-
       if (CONFIG.pjax && CONFIG.pjax.scrollTo2screen) {
         $('html').velocity('scroll', {
           duration: 500,
@@ -66,15 +58,12 @@ script.
 
       $('.loading-bar').addClass('loading');
       $('.loading-bar .progress').css('width', loadingBarWidth + '%');
-
       clearInterval(loadingTimer);
       loadingTimer = setInterval(function () {
         loadingBarWidth += 3;
-
         if (loadingBarWidth > MAX_LOADING_WIDTH) {
           loadingBarWidth = MAX_LOADING_WIDTH;
         }
-
         $('.loading-bar .progress').css('width', loadingBarWidth + '%');
       }, 500);
     }, false);
@@ -86,18 +75,24 @@ script.
       setTimeout(function () {
         $('.loading-bar .progress').css('width', '0');
       }, 400);
-
       $('link[rel=prefetch], script[data-pjax-rm]').each(function () {
         $(this).remove();
       });
-
       $('script[data-pjax], #pjax-reload script').each(function () {
         $(this).parent().append($(this).remove());
       });
 
-      Stun.utils.pjaxReloadBoot && Stun.utils.pjaxReloadBoot();
-      Stun.utils.pjaxReloadScroll && Stun.utils.pjaxReloadScroll();
-      Stun.utils.pjaxReloadHeader && Stun.utils.pjaxReloadHeader();
-      Stun.utils.pjaxReloadSidebar && Stun.utils.pjaxReloadSidebar();
+      if (Stun.utils.pjaxReloadBoot) {
+        Stun.utils.pjaxReloadBoot();
+      }
+      if (Stun.utils.pjaxReloadScroll) {
+        Stun.utils.pjaxReloadScroll();
+      }
+      if (Stun.utils.pjaxReloadHeader) {
+        Stun.utils.pjaxReloadHeader();
+      }
+      if (Stun.utils.pjaxReloadSidebar) {
+        Stun.utils.pjaxReloadSidebar();
+      }
     }, false);
   }, false);

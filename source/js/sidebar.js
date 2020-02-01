@@ -1,13 +1,17 @@
 $(document).ready(function () {
-  var tocDepth = (CONFIG.sidebar && CONFIG.sidebar.tocMaxDepth) || 4;
+  var _CONFIG = window.CONFIG;
+  var _Stun = window.Stun;
+
+  var tocDepth = (_CONFIG.sidebar && _CONFIG.sidebar.tocMaxDepth) || 4;
   // Optimize selector by theme config.
-  var HEADING_SELECTOR = 'h1,h2,h3,h4,h5,h6,'.slice(0, tocDepth * 3).slice(0, -1);
+  var HEADING_SELECTOR = 'h1,h2,h3,h4,h5,h6,'
+    .slice(0, tocDepth * 3)
+    .slice(0, -1);
 
   function initTocDisplay () {
     if ($('.post-body').find(HEADING_SELECTOR)[0]) {
       return;
     }
-
     $('.sidebar-nav').addClass('hide');
     $('.sidebar-toc').addClass('hide');
     $('.sidebar-ov').removeClass('hide');
@@ -39,19 +43,20 @@ $(document).ready(function () {
     });
 
     // All heading are not to the top.
-    if ($postBody[0] && ($firsetChild[0] &&
-        $firsetChild.offset().top - $(window).scrollTop() > 0)) {
+    if (
+      $postBody[0] &&
+      $firsetChild[0] &&
+      $firsetChild.offset().top - $(window).scrollTop() > 0
+    ) {
       if (!isRemoveTocClass) {
         $allTocItem.removeClass('active current');
         isRemoveTocClass = true;
       }
-
       return;
     }
 
     if (currHeading !== lastHeading) {
       var $targetLink = $('.sidebar-toc a[href="#' + currHeading + '"]');
-
       // If the relevant "<a>" is not found, remain the state of the toc,
       //   either, remove styles for all active states.
       if ($targetLink[0]) {
@@ -65,7 +70,6 @@ $(document).ready(function () {
 
   // Whether toc needs scrolling.
   var isTocScroll = false;
-
   // Scroll the post toc to the middle.
   function scrollTocToMiddle () {
     var $tocWrapHeight = $('.sidebar-toc').height();
@@ -80,34 +84,29 @@ $(document).ready(function () {
 
     if ($currTocItem[0] && $tocWrap[0]) {
       var tocTop = $currTocItem.offset().top - $tocWrap.offset().top;
-
       isTocScroll = tocTop > $tocWrapHeight || tocTop < 0;
     }
 
     if (isTocScroll) {
-      $currTocItem
-        .velocity('stop')
-        .velocity('scroll', {
-          container: $tocWrap,
-          offset: (-$tocWrapHeight / 2),
-          duration: 500,
-          easing: 'easeOutQuart'
-        });
+      $currTocItem.velocity('stop').velocity('scroll', {
+        container: $tocWrap,
+        offset: -$tocWrapHeight / 2,
+        duration: 500,
+        easing: 'easeOutQuart'
+      });
     }
   }
 
   // Distance from sidebar to top.
   var sidebarToTop = 0;
-
-  if (CONFIG.sidebar && CONFIG.sidebar.offsetTop) {
-    sidebarToTop = parseInt(CONFIG.sidebar.offsetTop);
+  if (_CONFIG.sidebar && _CONFIG.sidebar.offsetTop) {
+    sidebarToTop = parseInt(_CONFIG.sidebar.offsetTop);
   }
 
   // Sticky the sidebar when it arrived the top.
   function sidebarSticky () {
     var $sidebar = $('.sidebar-inner');
-    var targetY =
-      document.getElementById('main').getBoundingClientRect().top;
+    var targetY = document.getElementById('main').getBoundingClientRect().top;
 
     if (targetY < sidebarToTop) {
       $sidebar.addClass('sticky');
@@ -131,10 +130,9 @@ $(document).ready(function () {
     var isEnablePostEnd = false;
     var percent = 0;
 
-    if (CONFIG.post_widget && CONFIG.post_widget.end_text) {
+    if (_CONFIG.post_widget && _CONFIG.post_widget.end_text) {
       isEnablePostEnd = true;
     }
-
     if (isEnablePostEnd) {
       postEndTop = $('.post-end').offset().top;
       postEndHeight = $('.post-end').outerHeight();
@@ -153,7 +151,6 @@ $(document).ready(function () {
     }
 
     var percentNum = Number($('.sidebar-reading-info-num').text());
-
     postReadingHeight = parseInt(Math.abs(postReadingHeight));
     percent = parseInt((postScrollTop / postReadingHeight) * 100);
     percent = percent > 100 ? 100 : percent < 0 ? 0 : percent;
@@ -165,7 +162,6 @@ $(document).ready(function () {
     ) {
       return;
     }
-
     $('.sidebar-reading-info-num').text(percent);
     $('.sidebar-reading-line').css(
       'transform',
@@ -183,13 +179,16 @@ $(document).ready(function () {
     sidebarSticky();
   });
 
-  $(window).on('scroll', Stun.utils.throttle(function () {
-    autoSpreadToc();
-    scrollTocToMiddle();
-    readProgress();
-  }, 150));
+  $(window).on(
+    'scroll',
+    _Stun.utils.throttle(function () {
+      autoSpreadToc();
+      scrollTocToMiddle();
+      readProgress();
+    }, 150)
+  );
 
-  Stun.utils.pjaxReloadSidebar = function () {
+  _Stun.utils.pjaxReloadSidebar = function () {
     var $navToc = $('.sidebar-nav-toc');
     var $navOv = $('.sidebar-nav-ov');
     var $tocWrap = $('.sidebar-toc');
@@ -199,35 +198,27 @@ $(document).ready(function () {
       if ($(this).hasClass('current')) {
         return;
       }
-
       $navToc.addClass('current');
       $navOv.removeClass('current');
-
       $tocWrap.css('display', 'block');
       $tocWrap.velocity('stop').velocity('fadeIn');
-
       $overview.css('display', 'none');
       $overview.velocity('stop').velocity('fadeOut');
     });
-
     $navOv.on('click', function () {
       if ($(this).hasClass('current')) {
         return;
       }
-
       $navOv.addClass('current');
       $navToc.removeClass('current');
-
       $tocWrap.css('display', 'none');
       $tocWrap.velocity('stop').velocity('fadeOut');
-
       $overview.css('display', 'block');
       $overview.velocity('stop').velocity('fadeIn');
     });
-
     initTocDisplay();
   };
 
   // Initialization
-  Stun.utils.pjaxReloadSidebar();
+  _Stun.utils.pjaxReloadSidebar();
 });

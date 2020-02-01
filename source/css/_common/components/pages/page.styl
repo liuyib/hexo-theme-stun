@@ -16,7 +16,7 @@
       border-radius: 50%;
       width: .6rem;
       height: .6rem;
-      background-color: var(--color-blue-200);
+      background-color: var(--color-gray-250);
       transition: border-color .2s ease;
       transform: translate(-50%, -50%);
     }
@@ -27,7 +27,7 @@
       top: 1em;
       bottom: -1em;
       left: 0;
-      border-left: .2rem dashed var(--color-blue-200);
+      border-left: .2rem dashed var(--color-gray-250);
       transform: translateX(-50%);
     }
 
@@ -109,15 +109,17 @@
   }
 }
 
-.single-category,
-.single-tag {
-  &-name {
-    font-size: $font-size-base + 10px;
-    text-align: center;
-    cursor: default;
+.single {
+  &-category,
+  &-tag {
+    &-name {
+      font-size: $font-size-base + 10px;
+      text-align: center;
+      cursor: default;
 
-    & > span:last-child {
-      color: $blue-light;
+      & > span:last-child {
+        color: $blue-light;
+      }
     }
   }
 }

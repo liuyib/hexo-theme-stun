@@ -1,20 +1,18 @@
 nav.paginator
-  - var fa_prefix = theme.fa_prefix || 'fa'
-
   if !is_post()
-    - var prev_text = `<i class="${fa_prefix} fa-chevron-left"></i>`
-    - var next_text = `<i class="${fa_prefix} fa-chevron-right"></i>`
-    div.paginator-inner!= paginator({ prev_text, next_text, mid_size: 1, escape: false })
+    - var prevText = `<i class="${faPrefix} fa-chevron-left"></i>`;
+    - var nextText = `<i class="${faPrefix} fa-chevron-right"></i>`;
+    div.paginator-inner
+      != paginator({ prevText, next_text, mid_size: 1, escape: false })
   else
     div.paginator-post
       if page.prev
         div.paginator-post-prev
           a(href=url_for(page.prev.path))
-            i(class=`${fa_prefix} fa-chevron-left`)
+            i(class=`${faPrefix} fa-chevron-left`)
             span= page.prev.title || __("post.untitled")
-
       if page.next
         div.paginator-post-next
           a(href=url_for(page.next.path))
             span= page.next.title || __("post.untitled")
-            i(class=`${fa_prefix} fa-chevron-right`)
+            i(class=`${faPrefix} fa-chevron-right`)

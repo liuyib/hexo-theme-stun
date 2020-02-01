@@ -1,10 +1,4 @@
--
-  var scriptSrc = `https://www.googletagmanager.com/gtag/js?id=${theme.google_analytics}`;
-  var dataPjax = {};
-
-  if (theme.pjax && theme.pjax.enable) {
-    dataPjax = { 'data-pjax': '' };
-  }
+- var scriptSrc = `https://www.googletagmanager.com/gtag/js?id=${theme.google_analytics}`;
 
 script(src=scriptSrc async='')&attributes(dataPjax)
 script&attributes(dataPjax).

@@ -1,4 +1,6 @@
 $(document).ready(function () {
+  var _CONFIG = window.CONFIG;
+
   var $menu = $('.header-nav-menu');
   var $submenu = $('.header-nav-submenu');
   var $menuItem = $('.header-nav-menu-item');
@@ -6,28 +8,33 @@ $(document).ready(function () {
   var isMobile = $menuBtn.is(':visible');
 
   function resetMenuHeight () {
-    $menuItem.velocity({
-      height: $menuItem.outerHeight()
-    }, {
-      complete: function () {
-        $submenu.css({ display: 'none', opacity: 0 });
+    $menuItem.velocity(
+      {
+        height: $menuItem.outerHeight()
+      },
+      {
+        complete: function () {
+          $submenu.css({ display: 'none', opacity: 0 });
+        }
       }
-    });
+    );
   }
 
   var isMenuShow = false;
   var isSubmenuShow = false;
 
-  $(window).on('resize', Stun.utils.throttle(function () {
-    isMobile = $menuBtn.is(':visible');
-
-    if (isMobile && isSubmenuShow) {
-      resetMenuHeight();
-      isSubmenuShow = false;
-    } else {
-      $submenu.css({ display: 'none', opacity: 0 });
-    }
-  }, 200));
+  $(window).on(
+    'resize',
+    Stun.utils.throttle(function () {
+      isMobile = $menuBtn.is(':visible');
+      if (isMobile && isSubmenuShow) {
+        resetMenuHeight();
+        isSubmenuShow = false;
+      } else {
+        $submenu.css({ display: 'none', opacity: 0 });
+      }
+    }, 200)
+  );
 
   $(document).on('click', function () {
     if ($menu.is(':visible')) {
@@ -35,11 +42,9 @@ $(document).ready(function () {
         resetMenuHeight();
         isSubmenuShow = false;
       }
-
       $menu.css({ display: 'none' });
       isMenuShow = false;
     }
-
     if (isNightModeFocus) {
       $nightMode.removeClass('mode--focus');
       isNightModeFocus = false;
@@ -48,17 +53,15 @@ $(document).ready(function () {
 
   function getNightMode () {
     var nightMode = false;
-
     try {
       if (parseInt(Stun.utils.Cookies().get(NIGHT_MODE_COOKIES_KEY))) {
         nightMode = true;
       }
     } catch (err) {}
-
     return nightMode;
   }
 
-  if (CONFIG.night_mode && CONFIG.night_mode.enable) {
+  if (_CONFIG.night_mode && _CONFIG.night_mode.enable) {
     var isNightMode = false;
     var isNightModeFocus = false;
     var NIGHT_MODE_COOKIES_KEY = 'night_mode';
@@ -72,14 +75,11 @@ $(document).ready(function () {
     } else {
       isNightMode = false;
     }
-
     $('.mode').on('click', function (e) {
       e.stopPropagation();
-
       isNightMode = !isNightMode;
       isNightModeFocus = !isNightModeFocus;
       Stun.utils.Cookies().set(NIGHT_MODE_COOKIES_KEY, isNightMode ? 1 : 0);
-
       $nightMode.toggleClass('mode--checked');
       $nightMode.addClass('mode--focus');
       $('html').toggleClass('nightmode');
@@ -88,7 +88,6 @@ $(document).ready(function () {
 
   $menuBtn.on('click', function (e) {
     e.stopPropagation();
-
     if (isMobile && isMenuShow && isSubmenuShow) {
       resetMenuHeight();
       isSubmenuShow = false;
@@ -98,13 +97,15 @@ $(document).ready(function () {
     } else {
       isMenuShow = false;
     }
-
-    $menu.velocity('stop').velocity({
-      opacity: isMenuShow ? 1 : 0
-    }, {
-      duration: isMenuShow ? 200 : 0,
-      display: isMenuShow ? 'block' : 'none'
-    });
+    $menu.velocity('stop').velocity(
+      {
+        opacity: isMenuShow ? 1 : 0
+      },
+      {
+        duration: isMenuShow ? 200 : 0,
+        display: isMenuShow ? 'block' : 'none'
+      }
+    );
   });
 
   // Whether to allow events to bubble in the menu.
@@ -119,7 +120,6 @@ $(document).ready(function () {
     if (!isMobile) {
       return;
     }
-
     var $submenu = $(this).find('.header-nav-submenu');
     if (!$submenu.length) {
       return;
@@ -131,7 +131,8 @@ $(document).ready(function () {
     }
 
     var menuItemHeight = $menuItem.outerHeight();
-    var submenuHeight = menuItemHeight + Math.floor($submenu.outerHeight()) * $submenu.length;
+    var submenuHeight =
+      menuItemHeight + Math.floor($submenu.outerHeight()) * $submenu.length;
     var menuShowHeight = 0;
 
     if ($(this).outerHeight() > menuItemHeight) {
@@ -141,7 +142,6 @@ $(document).ready(function () {
       isSubmenuShow = true;
       menuShowHeight = submenuHeight;
     }
-
     $submenu.css({ display: 'block', opacity: 1 });
     // Accordion effect.
     $(this)
@@ -179,7 +179,7 @@ $(document).ready(function () {
   });
 
   Stun.utils.pjaxReloadHeader = function () {
-    if (CONFIG.header && CONFIG.header.scrollDownIcon) {
+    if (_CONFIG.header && _CONFIG.header.scrollDownIcon) {
       $('.header-info-arrow').on('click', function () {
         $('#container').velocity('scroll', {
           offset: $('#header').outerHeight()

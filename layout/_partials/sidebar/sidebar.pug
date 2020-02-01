@@ -1,6 +1,4 @@
--
-  var fa_prefix = theme.fa_prefix || 'fa';
-  var isShowToc = is_post() && ((page.toc !== false) && (theme.toc && theme.toc.enable));
+- var isShowToc = is_post() && ((page.toc !== false) && _.get(theme, 'toc.enable'));
 
 if isShowToc
   div.sidebar-nav
@@ -9,7 +7,7 @@ if isShowToc
 
 section.sidebar-toc(class=`${isShowToc ? "" : "hide"}`)
   if page.content
-    - var tocMaxDepth = page.toc_max_depth || theme.toc.max_depth || 6
+    - var tocMaxDepth = page.toc_max_depth || theme.toc.max_depth || 6;
     div!= toc(page.content, {list_number: theme.toc.number, max_depth: tocMaxDepth})
 
 <!-- ov = overview -->
@@ -18,7 +16,11 @@ section.sidebar-ov(class=`${isShowToc ? "hide" : ""}`)
     div.sidebar-ov-author
       if theme.author.avatar.url
         div.sidebar-ov-author__avatar
-          img.sidebar-ov-author__avatar_img(src=theme.author.avatar.url alt="avatar")
+          img(
+            class="sidebar-ov-author__avatar_img"
+            src=theme.author.avatar.url
+            alt="avatar"
+          )
       if theme.author.motto
         p.sidebar-ov-author__p= theme.author.motto
 
@@ -26,65 +28,87 @@ section.sidebar-ov(class=`${isShowToc ? "hide" : ""}`)
     div.sidebar-ov-social
       for value, name in (theme.social || {})
         if name && value
-          - var item = value.split("||")
-          - var socialPath = _.trim(_.get(item, "[0]"))
-          - var socialIcon = _.trim(_.get(item, "[1]"))
-          a.sidebar-ov-social__item(href=socialPath target="_blank" rel="noopener" data-popover=__(`social.${name}`)
-            data-popover-pos=`${theme.social_setting.icon_only ? "up" : "none"}`)
-
+          - var item = value.split("||");
+          - var socialPath = _.trim(_.get(item, "[0]"));
+          - var socialIcon = _.trim(_.get(item, "[1]"));
+          a(
+            class="sidebar-ov-social__item"
+            href=socialPath
+            target="_blank"
+            rel="noopener"
+            data-popover=__(`social.${name}`)
+            data-popover-pos=`${theme.social_setting.icon_only ? "up" : "none"}`
+          )
             if socialIcon && socialIcon.match("origin:")
-              span.sidebar-ov-social__item--logo!= socialIcon.split("origin:")[1]
+              span.sidebar-ov-social__item--logo
+                != socialIcon.split("origin:")[1]
             else
-              i.sidebar-ov-social__item--icon(class=`${fa_prefix} fa-${socialIcon ? socialIcon : "question-circle-o"}`)
+              i.sidebar-ov-social__item--icon(
+                class=`${faPrefix} fa-${socialIcon ? socialIcon : "question-circle-o"}`
+              )
 
             if !theme.social_setting.icon_only
               span= name
 
   if theme.feed.enable
     div.sidebar-ov-feed
-      - var feedEmail = theme.feed.email
+      - var feedEmail = theme.feed.email;
       if feedEmail
         span.sidebar-ov-feed-email
-          a.sidebar-ov-feed-email__a(href=feedEmail target="_blank" rel="noopener")
-            i.sidebar-ov-feed-email__a--icon(class=`${fa_prefix} fa-envelope`)
+          a(
+            class="sidebar-ov-feed-email__a"
+            href=feedEmail
+            target="_blank"
+            rel="noopener"
+          )
+            i.sidebar-ov-feed-email__a--icon(class=`${faPrefix} fa-envelope`)
             span= "Email "
             span= __("sidebar.subscribe")
 
-      - var feedRSS = theme.feed.rss
+      - var feedRSS = theme.feed.rss;
       if feedRSS
         span.sidebar-ov-feed-rss
-          a.sidebar-ov-feed-rss__a(href=url_for(feedRSS) target="_blank" rel="noopener")
-            i.sidebar-ov-feed-rss__a--icon(class=`${fa_prefix} fa-rss`)
+          a(
+            class="sidebar-ov-feed-rss__a"
+            href=url_for(feedRSS)
+            target="_blank"
+            rel="noopener"
+          )
+            i.sidebar-ov-feed-rss__a--icon(class=`${faPrefix} fa-rss`)
             span= "RSS "
             span= __("sidebar.subscribe")
 
   if theme.menu
     div.sidebar-ov-state
       if theme.menu.archives
-        - var menuArchives = _.trim(_.get(theme.menu.archives.split("||"), "[0]"))
+        - var menuArchives = _.trim(_.get(theme.menu.archives.split("||"), "[0]"));
         a.sidebar-ov-state__a.posts(href=menuArchives)
           div.sidebar-ov-state__a--count= site.posts.length
           div.sidebar-ov-state__a--name= __("sidebar.archives")
       if theme.menu.categories
-        - var menuCategories = _.trim(_.get(theme.menu.categories.split("||"), "[0]"))
+        - var menuCategories = _.trim(_.get(theme.menu.categories.split("||"), "[0]"));
         a.sidebar-ov-state__a.categories(href=menuCategories)
           div.sidebar-ov-state__a--count= site.categories.length
           div.sidebar-ov-state__a--name= __("sidebar.categories")
       if theme.menu.tags
-        - var menuTags = _.trim(_.get(theme.menu.tags.split("||"), "[0]"))
+        - var menuTags = _.trim(_.get(theme.menu.tags.split("||"), "[0]"));
         a.sidebar-ov-state__a.tags(href=menuTags)
           div.sidebar-ov-state__a--count= site.tags.length
           div.sidebar-ov-state__a--name= __("sidebar.tags")
 
   if theme.creative_commons.enable && theme.creative_commons.sidebar
-    - var themeCC = theme.creative_commons
-    - var ccLicense = themeCC.license && themeCC.license.toLowerCase()
-    - var ccLanguage = (themeCC.language && themeCC.language.toLowerCase()) || "en"
-    - var ccURL = `https://creativecommons.org/licenses/${ccLicense}/4.0/deed.${ccLanguage}`
     div.sidebar-ov-cc
-      a(href=ccURL target="_blank" rel="noopener"
-        data-popover=__("prompt.creative_commons") data-popover-pos="up")
-        img(src=url_for(`/${theme.images}/cc-${ccLicense}.svg`) alt=__("creative_commons"))
+      a(
+        href=ccUrl
+        target="_blank"
+        rel="noopener"
+        data-popover=__("prompt.creative_commons")
+        data-popover-pos="up"
+      )
+        img(
+          src=url_for(`/${theme.images}/cc-${ccLicense}.svg`)
+          alt=__("creative_commons")
+        )
 
 if theme.reading_progress.enable && is_post()
   div.sidebar-reading

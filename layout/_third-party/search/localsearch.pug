@@ -1,5 +1,3 @@
-- var fa_prefix = theme.fa_prefix || 'fa'
-
 script.
   window.addEventListener('DOMContentLoaded', function () {
     $('.header-nav-search').on('click', function (e) {
@@ -23,11 +21,9 @@ script.
 
       initSearch();
     });
-
     $('.search-mask, .search-close').on('click', function () {
       closeSearch();
     });
-
     $(document).on('keydown', function (e) {
       // Escape <=> 27
       if (e.keyCode === Stun.utils.codeToKeyCode('Escape')) {
@@ -45,7 +41,6 @@ script.
     }
 
     var path = '!{ config.root }' + search_path;
-
     function initSearch() {
       $.ajax({
         url: path,
@@ -60,13 +55,10 @@ script.
               url: $('url', this).text()
             };
           }).get() : res;
-
           var $input = $('.search-input input');
           var $result = $('.search-results');
-
           // 搜索对象（标题、内容）的权重，影响显示顺序
           var WEIGHT = { title: 100, content: 1 };
-
           var searchPost = function () {
             var searchText = $input.val().toLowerCase().trim();
             // 根据空白字符分隔关键字
@@ -78,12 +70,10 @@ script.
             if (keywords.length > 1) {
               keywords.push(searchText);
             }
-
             // 防止未输入字符时搜索
             if (searchText.length > 0) {
               datas.forEach(function (data) {
                 var isMatch  = false;
-
                 // 没有标题的文章使用预设的 i18n 变量代替
                 var title = (data.title && data.title.trim()) || '!{_p("post.untitled")}';
                 var titleLower = title && title.toLowerCase();
@@ -92,7 +82,6 @@ script.
                 var contentLower = content && content.toLowerCase();
                 // 删除重复的 /
                 var postURL = data.url && decodeURI(data.url).replace(/\/{2,}/g, '/');
-
                 // 标题中匹配到的关键词
                 var titleHitSlice = [];
                 // 内容中匹配到的关键词
@@ -108,7 +97,9 @@ script.
                     * @return {Array}
                     */
                   function getIndexByword (word, text, caseSensitive, weight) {
-                    if (!word || !text) return [];
+                    if (!word || !text) {
+                      return [];
+                    };
 
                     var startIndex = 0; // 每次匹配的开始索引
                     var index = -1;     // 匹配到的索引值
@@ -121,7 +112,6 @@ script.
 
                     while((index = text.indexOf(word, startIndex)) !== -1) {
                       var hasMatch = false;
-
                       // 索引位置相同的关键词，保留长度较长的
                       titleHitSlice.forEach(function (hit) {
                         if (hit.index === index && hit.word.length < word.length) {
@@ -132,10 +122,8 @@ script.
                       startIndex = index + word.length;
                       !hasMatch && result.push({ index: index, word: word, weight: weight });
                     }
-
                     return result;
                   }
-
                   titleHitSlice = titleHitSlice.concat(getIndexByword(keyword, titleLower, false, WEIGHT.title));
                   contentHitSlice = contentHitSlice.concat(getIndexByword(keyword, contentLower, false, WEIGHT.content));
                 });
@@ -146,7 +134,6 @@ script.
                 if (hitTitle > 0 || hitContent > 0) {
                   isMatch = true;
                 }
-
                 if (isMatch) {
                   ;[titleHitSlice, contentHitSlice].forEach(function (hit) {
                     // 按照匹配文字的索引的递增顺序排序
@@ -154,7 +141,6 @@ script.
                       return left.index - right.index;
                     });
                   });
-
                   /**
                     * 给文本中匹配到的关键词添加标记，从而进行高亮显示
                     * @param {String} text 原文本
@@ -164,23 +150,24 @@ script.
                     * @return {String}
                     */
                   function highlightKeyword (text, hitSlice, start, end) {
-                    if (!text || !hitSlice || !hitSlice.length) return;
+                    if (!text || !hitSlice || !hitSlice.length) {
+                      return;
+                    }
 
                     var result = '';
                     var startIndex = start;
                     var endIndex = end;
-
                     hitSlice.forEach(function (hit) {
-                      if (hit.index < startIndex) return;
+                      if (hit.index < startIndex) {
+                        return;
+                      }
 
                       var hitWordEnd = hit.index + hit.word.length;
-
                       result += text.slice(startIndex, hit.index);
                       result += '<b>' + text.slice(hit.index, hitWordEnd) + '</b>';
                       startIndex = hitWordEnd;
                     });
                     result += text.slice(startIndex, endIndex);
-
                     return result;
                   }
 
@@ -202,12 +189,10 @@ script.
                     var firstIndex = contentHitSlice[0].index;
                     var start = firstIndex > SHOW_WORD_FRONT_LENGTH ? firstIndex - SHOW_WORD_FRONT_LENGTH : 0;
                     var end = firstIndex + SHOW_WORD_END_LENGTH;
-
                     postContent = highlightKeyword(content, contentHitSlice, start, end);
                   } else { // 未匹配到内容，直接截取前 200 个字符来显示
                     postContent = content.slice(0, SHOW_WORD_LENGTH);
                   }
-
                   postData.title = postTitle;
                   postData.content = postContent;
                   postData.url = postURL;
@@ -218,13 +203,11 @@ script.
             }
 
             var resultInnerHtml = '';
-
             if (matchPosts.length) {
               // 按权重递增的顺序排序，使权重大的优先显示
               matchPosts.sort(function (left, right) {
                 return right.weight - left.weight;
               });
-
               resultInnerHtml += '<ul>';
               matchPosts.forEach(function (post) {
                 resultInnerHtml += '<li><a class="search-results-title" href="' + post.url + '">';
@@ -235,12 +218,10 @@ script.
               });
               resultInnerHtml += '</ul>';
             } else {
-              resultInnerHtml += '<div class="search-results-none"><i class="!{fa_prefix} fa-meh-o"></i></div>';
+              resultInnerHtml += '<div class="search-results-none"><i class="!{faPrefix} fa-meh-o"></i></div>';
             }
-
             $result.html(resultInnerHtml);
           };
-
           $input.on('input', searchPost);
           $input.on('keypress', function (e) {
             if (e.keyCode === Stun.utils.codeToKeyCode('Enter')) {

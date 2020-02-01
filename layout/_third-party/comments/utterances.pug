@@ -3,8 +3,9 @@ script&attributes(dataPjax).
     var d = document, s = d.createElement('script');
     var container = d.getElementById('utterances-container');
 
-    if (!container) return;
-
+    if (!container) {
+      return;
+    }
     s.src = '!{ theme.utterances.script_url }';
     s.setAttribute('repo', '!{ theme.utterances.owner }/!{ theme.utterances.repo }');
     s.setAttribute('issue-term', '!{ theme.utterances.mapping }');
@@ -12,9 +13,9 @@ script&attributes(dataPjax).
     s.setAttribute('theme', '!{ theme.utterances.theme }');
     s.setAttribute('crossorigin', 'anonymous');
     s.setAttribute('async', '');
-
-    if (!{ pjax }) { s.setAttribute('data-pjax-rm', ''); }
-
+    if (!{ pjax }) {
+      s.setAttribute('data-pjax-rm', '');
+    }
     container.append(s);
   }
 

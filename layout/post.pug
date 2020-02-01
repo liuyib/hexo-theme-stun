@@ -3,15 +3,13 @@ extends ./_layout.pug
 block content
   div#is-post
   div.post
-    - var fa_prefix = theme.fa_prefix || 'fa'
-
     include ./_mixins/post-header.pug
     include ./_mixins/gallery.pug
 
     +postHeader(page)
 
     div.post-body
-      if page.photos && page.photos.length
+      if _.get(page, 'photos.length')
         +gallery(page)
       != page.content
 
@@ -31,13 +29,13 @@ block content
           div.post-tags
             each tag in page.tags.data
               span.post-tags-item
-                i.post-tags-item__i(class=`${fa_prefix} fa-tags`)
+                i.post-tags-item__i(class=`${faPrefix} fa-tags`)
                 a.post-tags-item__a(href=tag.permalink)= tag.name
 
       if _.get(theme, 'post_widget.share.enable')
         include ./_partials/widgets/share.pug
 
-      if (page.reward !== false) && (theme.reward && theme.reward.enable)
+      if (page.reward !== false) && _.get(theme, 'reward.enable')
         include ./_partials/widgets/reward.pug
 
       include ./_partials/widgets/pagination.pug

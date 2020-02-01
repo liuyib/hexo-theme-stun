@@ -1,19 +1,21 @@
 $(document).ready(function () {
-  // Stun.utils.showThemeInConsole();
+  var _CONFIG = window.CONFIG;
+  var _Stun = window.Stun;
 
-  if (CONFIG.shortcuts && CONFIG.shortcuts.switch_post) {
-    Stun.utils.registerHotkeyToSwitchPost();
+  _Stun.utils.showThemeInConsole();
+
+  if (_CONFIG.shortcuts && _CONFIG.shortcuts.switch_post) {
+    _Stun.utils.registerHotkeyToSwitchPost();
   }
 
   // Not reload this, because it's changeless.
-  if (CONFIG.external_link) {
-    Stun.utils.addIconToExternalLink('#footer');
+  if (_CONFIG.external_link) {
+    _Stun.utils.addIconToExternalLink('#footer');
   }
 
-  Stun.utils.pjaxReloadBoot = function () {
-    if (CONFIG.codeblock) {
-      var codeStyle = CONFIG.codeblock.style;
-
+  _Stun.utils.pjaxReloadBoot = function () {
+    if (_CONFIG.codeblock) {
+      var codeStyle = _CONFIG.codeblock.style;
       if (codeStyle === 'default') {
         this.addCodeHeader();
         this.addCopyButton();
@@ -23,29 +25,28 @@ $(document).ready(function () {
       } else if (codeStyle === 'simple') {
         this.addCopyButton('simple');
       }
-
       this.registerCopyEvent();
     }
-    if (CONFIG.reward) {
+    if (_CONFIG.reward) {
       this.registerShowReward();
     }
-    if (CONFIG.lazyload) {
+    if (_CONFIG.lazyload) {
       this.lazyLoadImage();
     }
-    if (CONFIG.gallery_waterfall) {
+    if (_CONFIG.gallery_waterfall) {
       this.showImageToWaterfall();
     }
-    if (CONFIG.external_link) {
+    if (_CONFIG.external_link) {
       var CONTAINER = '.archive, .post-header-title';
       this.addIconToExternalLink(CONTAINER);
     }
-    if (CONFIG.fancybox) {
+    if (_CONFIG.fancybox) {
       this.wrapImageWithFancyBox();
-    } else if (CONFIG.zoom_image) {
+    } else if (_CONFIG.zoom_image) {
       this.registerClickToZoomImage();
     }
   };
 
   // Initializaiton
-  Stun.utils.pjaxReloadBoot();
+  _Stun.utils.pjaxReloadBoot();
 });

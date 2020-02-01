@@ -70,63 +70,65 @@ if (hexo-config('gitalk.enable')) {
       }
     }
 
-    .gt-comment-body {
-      color: var(--color-gray-850) !important;
+    .gt-comment {
+      &-body {
+        color: var(--color-gray-850) !important;
 
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        color: var(--color-gray-850);
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          color: var(--color-gray-850);
+        }
+
+        h1,
+        h2 {
+          border-bottom: 1px solid var(--color-gray-250);
+        }
+
+        blockquote {
+          color: var(--color-gray-600);
+        }
+
+        code,
+        pre {
+          color: var(--color-gray-700);
+          background-color: var(--color-gt-code-bg);
+        }
+
+        table tr {
+          background-color: inherit;
+        }
+
+        th,
+        td {
+          border: 1px solid var(--color-blue-200);
+        }
       }
 
-      h1,
-      h2 {
-        border-bottom: 1px solid var(--color-gray-250);
-      }
-
-      blockquote {
+      &-text,
+      &-date {
         color: var(--color-gray-600);
       }
 
-      code,
-      pre {
-        color: var(--color-gray-700);
-        background-color: var(--color-gt-code-bg);
+      &-admin {
+        .gt-comment-content {
+          background-color: var(--color-gt-admin-bg);
+
+          &:hover {
+            box-shadow: 0 0 16px 8px var(--color-gray-300);
+          }
+        }
       }
 
-      table tr {
-        background-color: inherit;
-      }
-
-      th,
-      td {
-        border: 1px solid var(--color-blue-200);
-      }
-    }
-
-    .gt-comment-text,
-    .gt-comment-date {
-      color: var(--color-gray-600);
-    }
-
-    .gt-comment-admin {
-      .gt-comment-content {
-        background-color: var(--color-gt-admin-bg);
+      &-content {
+        background-color: var(--color-gt-user-bg);
 
         &:hover {
           box-shadow: 0 0 16px 8px var(--color-gray-300);
         }
-      }
-    }
-
-    .gt-comment-content {
-      background-color: var(--color-gt-user-bg);
-
-      &:hover {
-        box-shadow: 0 0 16px 8px var(--color-gray-300);
       }
     }
 

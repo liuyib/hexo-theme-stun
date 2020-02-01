@@ -1,21 +1,18 @@
--
-  var themeCC = theme.creative_commons;
-  var ccLicense = themeCC.license && themeCC.license.toLowerCase();
-  var ccLanguage = (themeCC.language && themeCC.language.toLowerCase()) || "en";
-  var ccURL = `https://creativecommons.org/licenses/${ccLicense}/4.0/deed.${ccLanguage}`;
-
 div.post-copyright
   div.post-copyright-author
-    span.post-copyright-author-name!= __("post.copyright.author") + ": "
+    span.post-copyright-author-name
+      != __("post.copyright.author") + ": "
     span.post-copyright-author-value
-      if (config.url && config.author)
+      if config.url && config.author
         a(href=config.url)= config.author
   div.post-copyright-link
-    span.post-copyright-link-name!= __("post.copyright.link") + ": "
+    span.post-copyright-link-name
+      != __("post.copyright.link") + ": "
     span.post-copyright-link-value
-      if (config.url)
+      if config.url
         a(href=page.permalink)= page.permalink
   div.post-copyright-notice
-    span.post-copyright-notice-name!= __("post.copyright.license_title") + ": "
+    span.post-copyright-notice-name
+      != __("post.copyright.license_title") + ": "
     span.post-copyright-notice-value
-      != _p("post.copyright.license_content", ccURL, ccLicense.toUpperCase())
+      != _p("post.copyright.license_content", ccUrl, ccLicense.toUpperCase())

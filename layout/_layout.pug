@@ -1,13 +1,24 @@
 -
+  var HEXO_URL = "http://hexo.io/";
+  var STUN_URL = "https://github.com/liuyib/hexo-theme-stun/";
+  var faPrefix = theme.fa_prefix || 'fa';
+  var isNoHeader = !_.get(theme, 'header.enable') || (is_post() && !_.get(theme, 'header.show_on.post'));
+
   var pjax = false;
   var dataPjax = {};
-
-  if (theme.pjax && theme.pjax.enable) {
+  if (_.get(theme, 'pjax.enable')) {
     pjax = true;
     dataPjax = { 'data-pjax': '' };
   }
 
-  var isNoHeader = !_.get(theme, 'header.enable') || (is_post() && !_.get(theme, 'header.show_on.post'))
+  var ccLicense = "";
+  var ccLanguage = "";
+  if (theme.creative_commons) {
+    var cc = theme.creative_commons;
+    ccLicense = cc.license && cc.license.toLowerCase();
+    ccLanguage = cc.language && cc.language.toLowerCase() || "en";
+  }
+  var ccUrl = `https://creativecommons.org/licenses/${ccLicense}/4.0/deed.${ccLanguage}`;
 
 doctype html
 html(lang=config.language)
@@ -28,7 +39,7 @@ html(lang=config.language)
             if page.comments
               include ./_partials/widgets/comments.pug
 
-          if theme.sidebar && theme.sidebar.enable
+          if _.get(theme, 'sidebar.enable')
             aside#sidebar.sidebar
               div.sidebar-inner
                 include ./_partials/sidebar/sidebar.pug
@@ -41,7 +52,7 @@ html(lang=config.language)
 
       include ./_partials/widgets/loading-bar.pug
 
-      if theme.back2top && theme.back2top.enable
+      if _.get(theme, 'back2top.enable')
         include ./_partials/widgets/back2top.pug
     include ./_partials/search/index.pug
 

@@ -1,15 +1,15 @@
-if theme.disqus && theme.disqus.enable
+if _.get(theme, 'disqus.enable')
   div#comments.comments
     div#disqus_thread
-else if theme.valine && theme.valine.enable
+else if _.get(theme, 'valine.enable')
   div#comments.comments
     div#valine-container
-else if theme.gitalk && theme.gitalk.enable
+else if _.get(theme, 'gitalk.enable')
   div#comments.comments
     div#gitalk-container
-else if theme.utterances && theme.utterances.enable
+else if _.get(theme, 'utterances.enable')
   div#comments.comments
     div#utterances-container
-else if theme.livere && theme.livere.enable
+else if _.get(theme, 'livere.enable')
   div#comments.comments
     div#lv-container(data-id="city" data-uid=theme.livere.uid)

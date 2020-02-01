@@ -1,7 +1,7 @@
 -
   var algolia = "undefined";
   var env = process.env;
-  if (theme.algolia_search && theme.algolia_search.enable) {
+  if (_.get(theme, 'algolia_search.enable')) {
     algolia = JSON.stringify({
       appId: env.ALGOLIA_APP_ID || config.algolia.appId || config.algolia.applicationID,
       apiKey: env.ALGOLIA_API_KEY || config.algolia.apiKey,
@@ -13,7 +13,7 @@
         hits_stats: __("algolia_search.hits_stats")
       }
     });
-  } 
+  }
 
   var fontawesome = "undefined";
   if (theme.fa_prefix) {
@@ -23,7 +23,7 @@
   }
 
   var sidebar = "undefined";
-  if (theme.sidebar && theme.sidebar.enable) {
+  if (_.get(theme, 'sidebar.enable')) {
     sidebar = JSON.stringify({
       offsetTop: theme.sidebar.offsetTop,
       tocMaxDepth: theme.toc.max_depth
@@ -31,15 +31,15 @@
   }
 
   var back2top = "undefined";
-  if (theme.back2top && theme.back2top.enable) {
+  if (_.get(theme, 'back2top.enable')) {
     back2top = JSON.stringify({
       enable: theme.back2top.enable
     });
   }
 
-  var codeStyle = (theme.codeblock && theme.codeblock.style) || 'default';
-  var highlight = (theme.codeblock && theme.codeblock.highlight) || 'light';
-  var wordWrap = (theme.codeblock && theme.codeblock.word_wrap) || false;
+  var codeStyle = _.get(theme, 'codeblock.style') || 'default';
+  var highlight = _.get(theme, 'codeblock.highlight') || 'light';
+  var wordWrap = _.get(theme, 'codeblock.word_wrap') || false;
   var codeblock = JSON.stringify({
     style: codeStyle,
     highlight: highlight,
@@ -47,9 +47,8 @@
   });
 
   var header = "undefined";
-  if (theme.header && theme.header.enable) {
-    var isScrollDownIcon =
-      (theme.header.scroll_down_icon && theme.header.scroll_down_icon.enable) || false;
+  if (_.get(theme, 'header.enable')) {
+    var isScrollDownIcon = _.get(theme, 'header.scroll_down_icon.enable') || false;
 
     header = JSON.stringify({
       enable: theme.header.enable,
@@ -60,7 +59,7 @@
 
   var post_widget = "undefined";
   if (theme.post_widget) {
-    var end_text = (theme.post_widget.end_text && theme.post_widget.end_text.enable) || false;
+    var end_text = _.get(theme, 'post_widget.end_text.enable') || false;
 
     if (end_text) {
       post_widget = JSON.stringify({
@@ -77,22 +76,22 @@
   }
 
   var gallery_waterfall = "undefined";
-  if (theme.gallery_waterfall && theme.gallery_waterfall.enable) {
+  if (_.get(theme, 'gallery_waterfall.enable')) {
     gallery_waterfall = JSON.stringify(theme.gallery_waterfall);
   }
 
   var lazyload = "undefined";
-  if (theme.lazyload && theme.lazyload.enable) {
+  if (_.get(theme, 'lazyload.enable')) {
     lazyload = JSON.stringify(theme.lazyload);
   }
 
   var zoom_image = "undefined";
-  if (theme.zoom_image && theme.zoom_image.enable) {
+  if (_.get(theme, 'zoom_image.enable')) {
     zoom_image = JSON.stringify(theme.zoom_image);
   }
 
   var pjax_config = "undefined";
-  if (theme.pjax && theme.pjax.enable) {
+  if (_.get(theme, 'pjax.enable')) {
     pjax_config = JSON.stringify({
       scrollTo2screen: theme.pjax.scrollTo2screen
     });
@@ -101,17 +100,14 @@
   var external_link = "undefined";
   if (theme.external_link) {
     var iconConfig = {};
-    var iconEnable = false;
-    var iconName = '';
+    var iconEnable = _.get(theme, 'external_link.icon.enable') || false;
+    var iconName = _.get(theme, 'external_link.icon.name') || '';
 
     if (theme.external_link.icon) {
-      iconEnable = theme.external_link.icon.enable;
-
-      if (iconEnable) {
-        iconName = theme.external_link.icon.name;
-      }
-
-      iconConfig = { enable: iconEnable, name: iconName }
+      iconConfig = {
+        enable: iconEnable,
+        name: iconName
+      };
     }
 
     external_link = JSON.stringify({
@@ -121,11 +117,7 @@
 
   var shortcuts = "undefined";
   if (theme.shortcuts) {
-    isSwitchPost = false;
-
-    if (theme.shortcuts.switch_post && theme.shortcuts.switch_post.enable) {
-      isSwitchPost = true;
-    }
+    var isSwitchPost = _.get(theme, 'shortcuts.switch_post.enable') || false;
 
     shortcuts = JSON.stringify({
       switch_post: isSwitchPost

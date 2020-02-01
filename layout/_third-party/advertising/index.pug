@@ -1,2 +1,2 @@
-if theme.google_adsense && theme.google_adsense.enable
+if _.get(theme, 'google_adsense.enable')
   include ./google-adsense.pug
