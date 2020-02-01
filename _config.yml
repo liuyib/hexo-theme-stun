@@ -110,8 +110,15 @@ layout:
   sidebar: 300px
   # The width between the content and the sidebar.
   content_sidebar_gap: 30px
-  # The width between the main of website and the sides of page.
-  main_side_gap: 20px
+  # The padding property of the main tag.
+  # You can set it the same way you set the padding property of CSS.
+  main_padding:
+    # Screen width in: [768px, Infinity)
+    default: 20px
+    # Screen width in: [576px, 768px)
+    tablet: 15px
+    # Screen width in: [0px, 576px)
+    mobile: 10px
 
 header:
   enable: true

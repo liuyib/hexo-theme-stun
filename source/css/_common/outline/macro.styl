@@ -56,14 +56,14 @@ if (hexo-config('body.bg_image.enable')) {
 }
 
 .main {
-  margin: 1.5rem auto;
   width: 100%;
   flex: 1 0 auto;
 }
 
 .main-inner {
   margin: 0 auto;
-  width: 'calc(100% - %s)' % ($main-side-gap * 2);
+  padding: convert(hexo-config('layout.main_padding.default') || '20px');
+  width: 100%;
   font-size: $font-size-main;
 }
 
