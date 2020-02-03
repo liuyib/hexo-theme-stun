@@ -21,38 +21,40 @@ Stun 主题内置有：分类页、标签页。默认没有启用。想启用这
 
 1. 在 Hexo 根目录下执行命令
 
-``` bash
-# 启用分类页，执行这条指令
-$ hexo new page categories
+    ``` bash
+    # 启用分类页，执行这条指令
+    $ hexo new page categories
 
-# 启用标签页，执行这条指令
-$ hexo new page tags
-```
+    # 启用标签页，执行这条指令
+    $ hexo new page tags
+    ```
 
 2. 修改 Front-Matter
 
-找到 Hexo 根目录下的 `source/categories` 或 `source/tags` 文件夹中的 Markdown 文件，添加 Front-Matter：
+    找到 Hexo 根目录下的 `source/categories` 或 `source/tags` 文件夹中的 Markdown 文件，添加 Front-Matter：
 
-``` yaml
-# 如果是分类页，添加这个
-type: "categories"
+    ```
+    ---
+    # 如果是分类页，添加这个
+    type: "categories"
 
-# 如果是标签页，添加这个
-type: "tags"
-```
+    # 如果是标签页，添加这个
+    type: "tags"
+    ---
+    ```
 
 3. 然后修改主题配置文件，将 `categories` 或 `tags` 对应项取消注释
 
-``` yaml
-menu:
-  # `||` 分隔符前面表示路径，后面表示 Font Awesome 图标名称
-  # 如果不需要使用图标，直接填写路径即可
-  home: / || home
-  archives: /archives/ || folder-open
-  # categories: /categories/ || th
-  # tags: /tags/ || tags
-  # xxx: /xxx/ || xxx
-```
+    ``` yaml
+    menu:
+      # `||` 分隔符前面表示路径，后面表示 Font Awesome 图标名称
+      # 如果不需要使用图标，直接填写路径即可
+      home: / || home
+      archives: /archives/ || folder-open
+      # categories: /categories/ || th
+      # tags: /tags/ || tags
+      # xxx: /xxx/ || xxx
+    ```
 
 除了使用上述内置页面外，如果你想使用自定义页面，需要执行如下步骤：
 
@@ -60,33 +62,33 @@ menu:
 
 1. 修改主题配置文件，添加相应的菜单项
 
-``` yaml
-menu:
-  # 格式如下
-  # 名称: 路径 || 图标名称
-  reading: /reading/ || book
-```
+    ``` yaml
+    menu:
+      # 格式如下
+      # 名称: 路径 || 图标名称
+      reading: /reading/ || book
+    ```
 
-> 图标的名称在这里获取：[https://fontawesome.com/v4.7.0/icons/](https://fontawesome.com/v4.7.0/icons/)。
+    > 图标的名称在这里获取：[https://fontawesome.com/v4.7.0/icons/](https://fontawesome.com/v4.7.0/icons/)。
 
 2. 创建页面文件
 
-在 Hexo 根目录下执行指令：
+    在 Hexo 根目录下执行指令：
 
-``` bash
-$ hexo new page reading # 这里的 reading 对应你设置的路径
-```
+    ``` bash
+    $ hexo new page reading # 这里的 reading 对应上一步你设置的路径名称
+    ```
 
 3. 国际化设置
 
-找到 `languages` 目录下的语言文件，选择你网站使用的那种语言进行修改，这里以中文作为举例：
+    找到 `languages` 目录下的语言文件，选择你网站使用的语言进行修改，这里以中文作为举例：
 
-`zh-CN.yml`：
+    `zh-CN.yml`：
 
-``` yaml
-menu:
-  reading: 阅读
-```
+    ``` yaml
+    menu:
+      reading: 阅读
+    ```
 
 这样就完成了自定义页面的添加。
 
@@ -110,24 +112,25 @@ menu_settings:
 favicon:
   small: /assets/favicon-16x16.png                  # 16x16 像素大小的图片
   medium: /assets/favicon-32x32.png                 # 32x32 像素大小的图片
-  # ！！如果你不懂，请忽略下面这些！！
+  # 下面这些配置项默认不启用，你需要准备好相应的图片后再开启，也可以直接忽略。
   # apple_touch_icon: /assets/apple-touch-icon.png  # 180x180 像素大小的图片
   # safari_pinned_tab: /assets/logo-stun.svg        # SVG 格式的图片
   # msapplication: /assets/favicon-144x144.png      # 144x144 像素大小的图片
 ```
 
-> 你也可以在**主题目录**下的 `source` 目录中放置图片，但不建议这种做法，因为更新主题时，可能会覆盖你的文件。
-
 ## 网站顶部设置
 
-如果想要设置网站顶部栏的高度，导航栏的高度，背景图片，需要修改主题配置文件：
+修改主题配置文件：
 
 ``` yaml
 header:
+  # 是否启用
+  enable: true
+  show_on:
+    # 在文章页面是否显示网站顶部
+    post: true
   # 网站顶部的高度（设置为百分数，表示所占屏幕高度的百分比。支持所有 CSS 长度单位）
   height: 80%
-  # 顶部导航栏的高度（支持所有 CSS 长度单位）
-  nav_height: 50px
   # 顶部背景图片
   bg_image:
     # 是否启用
@@ -140,6 +143,11 @@ header:
     enable: false
     # 透明度（取值：0 ~ 1）
     opacity: 0.5
+  nav:
+    # 顶部导航栏的高度（支持所有 CSS 长度单位）
+    height: 50px
+    # 导航栏的背景颜色（吸顶时）
+    bg_color: "#333"
   # 提示向下滚动的图标
   scroll_down_icon:
     # 是否启用
@@ -148,21 +156,62 @@ header:
     animation: true
 ```
 
-::: warning 注意
-- `mask` 选项，即遮罩效果，从 `v1.1.1` 版本开始支持。`blur_effect` 选项，即模糊滤镜效果，从 `v1.1.1` 版本开始废弃。
+其中 `header.enable` 和 `header.show_on.post` 选项，默认都为 `true`。
+
+- 如果设置 `header.enable: false`，则所有页面中都不显示 header（只显示顶部导航栏），效果如下：
+
+  ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20200203194337.jpg)
+
+- 如果设置 `header.enable: true` 和 `header.show_on.post: false`，则文章页不显示 header，其他页面仍会显示 header，效果如下：
+
+    文章页：
+
+    ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20200203194337.jpg)
+
+    首页（其他页面）：
+
+    ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20200203194338.jpg)
+
+::: warning
+- `mask` 选项，从 `v1.1.1` 版本开始支持。`blur_effect` 选项，从 `v1.1.1` 版本废弃。
 - `scroll_down_icon` 选项从 `v1.5.4` 版本开始支持。
+- `header.enable` 和 `show_on` 选项从 `v1.6.1` 版本开始支持。
+- `nav_height` 选项从 `v1.0.0` 版本开始支持，在 `v1.6.1` 版本修改为 `nav`。
 :::
 
 ### 指定顶部图 <Badge text="Stable"/>
 
 如果想要为某个页面或某篇文章单独指定顶部图，你需要在页面或文章 Markdown 源文件的 [Front-Matter](https://hexo.io/zh-cn/docs/Front-Matter) 中，添加 `top_image` 项，然后填入的图片 url 或路径即可。例如：
 
-``` yaml
+```
 ---
 title: Hello Stun
-date: 2019-05-15 22:54:49
 top_image: https://xxxxx.jpg
 ---
+```
+
+## 网站主体设置 <Badge text="Beta" type="warning"/> <Badge text="v1.6.1"/>
+
+修改主题配置文件：
+
+``` yaml
+body:
+  # 主体背景图片
+  bg_image:
+    # 是否启用
+    enable: false
+    # 填写图片路径或链接
+    url: https://xxxxx.png
+    # 是否固定背景图片（相当于设置 position: fixed）
+    fixed: true
+    # 图片无法占满空间时，是否重复显示（相当于设置 background-repeat: repeat/no-repeat）
+    repeat: false
+  # 主体背景图片的遮罩效果
+  mask:
+    # 是否启用
+    enable: false
+    # 透明度（取值：0 ~ 1）
+    opacity: 0.5
 ```
 
 ## 侧边栏设置
@@ -182,7 +231,7 @@ sidebar:
 ```
 
 ::: danger <Badge text="Deprecated" type="error"/>
-其中的 `width` 属性在 `v1.6.0` 开始废弃。替代的设置是 `layout` 的 `sidebar` 属性。
+其中的 `width` 属性在 `v1.6.0` 版本废弃。替代的设置是 `layout.sidebar` 属性。
 :::
 
 ### 作者信息 <Badge text="Stable"/>
@@ -242,36 +291,36 @@ social_setting:
 > 图标的名称在这里查找：[https://fontawesome.com/v4.7.0/icons/](https://fontawesome.com/v4.7.0/icons/)
 
 ::: danger <Badge text="Deprecated" type="error"/>
-其中，配置项 `social_setting` 的 `text_align` 属性在 `v1.2.0` 开始废弃。
+其中，配置项 `social_setting` 的 `text_align` 属性在 `v1.2.0` 版本废弃。
 :::
 
 当你添加一个默认没有的社交链接时，需要进行国际化设置。这里以添加链接 `掘金` 为例，步骤如下：
 
 1. 修改主题配置文件
 
-``` yaml
-social:
-  juejin: https://juejin.im/timeline || origin:掘
-```
+    ``` yaml
+    social:
+      juejin: https://juejin.im/timeline || origin:掘
+    ```
 
-> 由于 Font Awesome 中找不到掘金的 logo，所以这里使用 `掘` 字来代替显示。
+    > 由于 Font Awesome 4.0 中找不到掘金的 logo，所以这里使用 `掘` 字来代替显示。
 
 2. 国际化设置
 
-找到 `languages` 目录下的语言文件，选择你网站使用的那种语言进行修改，这里以中文作为举例：
+    找到 `languages` 目录下的语言文件，选择你网站使用的语言进行修改，这里以中文作为举例：
 
-`zh-CN.yml`：
+    `zh-CN.yml`：
 
-``` yaml
-social:
-  juejin: 掘金
-```
+    ``` yaml
+    social:
+      juejin: 掘金
+    ```
 
-> 这里的国际化设置，是针对鼠标经过图标时，显示的提示文字。
+    > 这里的国际化设置，对应鼠标经过图标时，显示的文字。
 
-效果如下：
+    效果如下：
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190717165333.png)
+    ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190717165333.png)
 
 ## 网站底部设置 <Badge text="Stable"/>
 

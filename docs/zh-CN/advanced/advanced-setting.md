@@ -28,7 +28,13 @@ language: zh-CN # 可选值 zh-CN 或 en-US
 
 ## 网站布局设置 <Badge text="Beta" type="warning"/> <Badge text="v1.6.0"/>
 
-Stun 提供了对网站布局的配置，修改主题配置文件：
+::: warning
+该功能从 `v1.6.0` 版本开始支持，在 `v1.6.1` 版本中对配置项进行了更改。
+:::
+
+主题提供了对布局的一些常用设置。修改主题配置文件：
+
+`v1.6.0`：
 
 ``` yaml
 layout:
@@ -42,10 +48,36 @@ layout:
   main_side_gap: 20px
 ```
 
+`v1.6.1 ~ Latest`：
+
+``` yaml
+layout:
+  # 网站内容区域宽度（显示文章的区域）
+  content: 768px
+  # 侧边栏宽度
+  sidebar: 300px
+  # 内容区域和侧边栏之间的间隙
+  content_sidebar_gap: 30px
+  # 网站中 "main" 标签的 padding 属性
+  # 你可以像使用 CSS 中的 padding 属性一样进行设置。例如：
+  # 设置                     实际效果
+  # 20px                     padding: 20px
+  # 10px 20px                padding: 10px 20px
+  # 30px 20px 10px           padding: 30px 20px 10px
+  # 30px 20px 10px 20px      padding: 30px 20px 10px 20px
+  main_padding:
+    # 屏幕宽度在 [768px, 无穷) 之间时生效
+    default: 20px
+    # 屏幕宽度在 [576px, 768px) 之间时生效
+    tablet: 15px
+    # 屏幕宽度在 [0px, 576px) 之间时生效
+    mobile: 10px
+```
+
 上面的属性所对应的地方，示意图如下：
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20200115162037.jpg)
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20200115162221.png)
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20200203174507.jpg)
 
 ## 夜晚模式 <Badge text="Beta" type="warning"/> <Badge text="v1.6.0"/>
 
@@ -69,9 +101,9 @@ night_mode:
 
 ## Front-Matter
 
-`Front-Matter` 在 Hexo 主题中，占据了极其重要的地位。如果你还不了解 `Front-Matter`，可以查看这里：[https://hexo.io/zh-cn/docs/Front-Matter](https://hexo.io/zh-cn/docs/Front-Matter)。
+Front-Matter 在 Hexo 主题中，占据了极其重要的地位。如果你还不了解 Front-Matter，可以查看这里：[https://hexo.io/zh-cn/docs/Front-Matter](https://hexo.io/zh-cn/docs/Front-Matter)。
 
-下面是 Hexo 中默认提供的几种 `Front-Matter` 属性。
+下面是 Hexo 中默认提供的几种 Front-Matter 属性。
 
 - `title` <Badge text="Stable"/> - 标题
 - `date` <Badge text="Stable"/> - 文件建立日期
@@ -79,10 +111,12 @@ night_mode:
 
 例如：
 
-``` yaml
+```
+---
 title: Hello Stun
 date: 2019-5-15 22:54:49
 updated: 2019-5-16 10:23:46
+---
 ```
 
 效果如下：
@@ -90,67 +124,116 @@ updated: 2019-5-16 10:23:46
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190722105740.png)
 
 ::: tip
-Hexo 会帮你记录文件的更新日期，所以一般不需要手动指定 `updated` 属性。并且当你使用 `hexo new xxx` 指令生成文件时，Hexo 会帮你添加好 `title` 和 `date` 属性。因此这三个属性一般不需要手动设置。
+Hexo 会使用 git commit 中，文件的最新提交时间作为更新日期，所以一般不需要手动指定 `updated` 属性。并且当你使用 `hexo new xxx` 指令生成文件时，Hexo 会帮你添加好 `title` 和 `date` 属性。因此这三个属性一般不需要手动设置。
 :::
 
 - `comments` <Badge text="Stable"/> - 是否开启评论功能
 
-  在 Stun 主题中，如果你启用了某个评论系统，默认是对所有通过 Markdown 文件生成的页面（除首页，归档页，单个分类页，单个标签页以外的所有页面）生效。因此，你可以使用该属性单独设置某个页面 / 文章是否启用评论。
+  在 Stun 主题中，如果你启用了某个评论系统，默认是对所有通过 Markdown 文件生成的页面（除首页，归档页，单个分类页，单个标签页以外的所有页面）生效。因此，你可以使用该属性单独设置某个页面 / 文章是否启用评论。例如：
+
+  ```
+  ---
+  title: Hello Stun
+  comments: false # 不启用评论
+  ---
+  ```
 
 - `excerpt` <Badge text="Hexo 4.0"/> - 指定文章摘要
 
-  Hexo 3.9 及以前的版本中，只能通过添加 `<!-- more -->` 标记来保留文章摘要（当然 Stun 主题也提供了[自动保留摘要](http://liuyib.github.io/hexo-theme-stun/zh-CN/guide/primary-setting.html#文章摘要)的功能）。在 Hexo 4.0 及以后的版本中，可以通过在 Front-Matter 中使用 `excerpt` 来设置文章摘要。
+  Hexo 3.9 及以前的版本中，只能通过添加 `<!-- more -->` 标记来保留文章摘要（当然 Stun 主题也提供了[自动保留摘要](http://liuyib.github.io/hexo-theme-stun/zh-CN/guide/primary-setting.html#文章摘要)的功能）。在 Hexo 4.0 及以后的版本中，可以通过在 Front-Matter 中使用 `excerpt` 来设置文章摘要。例如：
 
-- `permalink` <Badge text="Stable"/> - 覆盖文章网址
+  ```
+  ---
+  title: Hello Stun
+  excerpt: 这是一段文章摘要，是通过 Front-Matter 的 excerpt 属性设置的。
+  ---
+  ```
 
-  为某篇文章单独指定一个网址。
+- `permalink` <Badge text="Stable"/> - 覆盖 Markdown 文件名
+
+  例如，你有两篇文章：`https://xxx/2020/02/03/foo` 和 `https://xxx/2020/02/03/bar`，它们分别由 `foo.md` 和 `bar.md` 文件生成。如果你在 `bar.md` 的 Front-Matter 中设置了 `permalink`：
+
+  ```
+  ---
+  title: I'm bar, but link to foo
+  date: 2020-02-03 15:39:40
+  permalink: /foo
+  ---
+  ```
+
+  这样，`foo.md` 和 `bar.md` 文件都会被解析为：`https://xxx/2020/02/03/foo`。
 
 - `categories` <Badge text="Stable"/> - 设置文章分类
 
-  你可以同时设置几个同级分类，例如：
+  文章分类有顺序性和层次性。下面是一些例子：
 
-  ``` yaml
-  categories:
-    - foo
-    - bar
-    - baz
-  ```
+  - 嵌套分类
 
-  也可以设置层级分类，例如：
+    ```
+    ---
+    categories:
+      - Diary
+      - Life
+    ---
+    ```
 
-  ``` yaml
-  categories:
-    - [foo, bar, baz]
-  ```
+    这样会使分类 `Life` 成为 `Diary` 的子分类。
+
+  - 并列分类
+
+    ```
+    ---
+    categories:
+      - [Diary]
+      - [Life]
+    ---
+    ```
+
+    这样会使 `Life` 和 `Diary` 成为并列分类。
+
+  - 并列嵌套分类
+
+    ```
+    ---
+    categories:
+      - [Diary, PlayStation]
+      - [Diary, Games]
+      - [Life]
+    ---
+    ```
+
+    这样会使 `PlayStation` 和 `Games` 同为 `Diary` 的子分类，而 `Life` 和 `Diary` 是并列分类。
 
 - `tags` <Badge text="Stable"/> - 设置文章标签
 
-  标签**只能设置为同级的**。也就是说，如果你将标签设置为：
+  标签没有顺序性和层次性，**只能设置为同级的**。也就是说，标签只有一种用法：
 
-  ``` yaml
+  ```
+  ---
   tags:
-    - [foo, bar, baz]
+    - PlayStation
+    - Games
+    - [Diary, Life]
+  ---
   ```
 
-  那么它会被解析为 `foo,bar,baz`，也就是一个标签。
+  这样会被解析为 `PlayStation`、`Games`、`Diary,Life` 三个并列标签。
 
-- `layout` <Badge text="Stable"/> - 是否处理 Markdown 源文件
+- `layout` <Badge text="Stable"/> - 是否对文章或页面应用布局样式
+  
+  - 在 Front-Matter 中设置了 `layout: false`
 
-  如果你不想你的文章或页面被处理，可以将 `Front-Matter` 中的 `layout` 设为 `false`。例如：
+    ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190820175118.png)
 
-  设置了 `layout: false`：
+    可以看到，设置了 `layout: false` 后，只将 Markdown 解析成 HTML，不做其他处理。
 
-  ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190820175118.png)
+  - 在 Front-Matter 中设置了 `layout: true` 或 默认情况
 
-  > 可以看到，设置了 `layout: false` 后，不对 Markdown 文件做任何处理，直接将文件的原始内容显示出来。
-
-  没有设置 `layout: false` 的默认情况下或设置了 `layout: true`：
-
-  ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190820175119.png)
+    ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190820175119.png)
 
 ---
 
-下面几种 `Front-Matter` 属性在 Hexo 文档中并没有出现（也许是 Hexo 的文档没有更新吧），但在 Hexo 官方提供的主题开发测试文件中出现。按照测试文件的要求，一个合格的 Hexo 主题都应该支持它们。这些属性如下：
+下面几种 Front-Matter 属性在 Hexo 文档中并没有出现（也许是 Hexo 的文档没有更新吧），但在 Hexo 提供的主题单元测试库中出现。按照测试文件的要求，一个合格的 Hexo 主题都应该支持它们。这些属性如下：
 
 - `link` <Badge text="Stable"/> <Badge text="v1.1.3"/> - 链接
 
@@ -158,7 +241,7 @@ Hexo 会帮你记录文件的更新日期，所以一般不需要手动指定 `u
 
 - `photos` <Badge text="Stable"/> <Badge text="v1.1.4"/> - 图片
 
-  用于指定一些图片，这些图片会显示在文章中，Stun 主题将其显示在文章最顶部。使用如下：
+  用于指定一些图片，这些图片会显示在文章中（Stun 主题将其显示在文章最顶部）。使用如下：
 
   ``` yaml
   photos:
@@ -192,12 +275,12 @@ Hexo 会帮你记录文件的更新日期，所以一般不需要手动指定 `u
   ::: tip
 
   - 启用瀑布流效果后，还可以再启用 [fancybox 效果](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/assist.html#fancybox)。
-  - 通常利用 `photos` 这个属性，来建立一个**相册页面**或**专门展示图片的文章**。例如：[https://liuyib.github.io/gallery/](https://liuyib.github.io/gallery/)
+  - 可以利用这个属性，来建立一个**相册页面**或**展示图片的文章**。例如：[https://liuyib.github.io/gallery/](https://liuyib.github.io/gallery/)
   :::
 
 ---
 
-下面是 Stun 主题中，特有的几种 `Front-Matter` 属性。
+下面是 Stun 主题中，特有的几种 Front-Matter 属性。
 
 > 这些属性在后面的文档中会有详细说明，这里可以跳过。
 
@@ -207,7 +290,7 @@ Hexo 会帮你记录文件的更新日期，所以一般不需要手动指定 `u
 
 - `toc_max_depth: 6` <Badge text="Stable"/>
 
-  用于设置文章中，解析标题生成目录的最大深度。取值 `1 ~ 6`。例如：`toc_max_depth: 3`，只会解析文中的 `h1`, `h2`, `h3` 来生成目录。详情：[文章目录](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/advanced-setting.html#文章目录)
+  用于设置在文章中，解析标题生成目录的最大深度。取值 `1 ~ 6`。例如：`toc_max_depth: 3`，只会解析文中的 `h1`, `h2`, `h3` 来生成目录。详情：[文章目录](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/advanced-setting.html#文章目录)
 
 - `quicklink: true` <Badge text="Stable"/> <Badge text="v1.2.3"/>
 
@@ -231,7 +314,7 @@ Hexo 会帮你记录文件的更新日期，所以一般不需要手动指定 `u
 
 ---
 
-下面是安装某些插件后，可以设置的几种 `Front-Matter` 属性。
+下面是安装某些插件后，可以设置的几种 Front-Matter 属性。
 
 > 这些属性在后面的文档中会有详细说明，这里可以跳过。
 
@@ -249,74 +332,74 @@ Hexo 会帮你记录文件的更新日期，所以一般不需要手动指定 `u
 
 1. 修改 `menu` 字段
 
-``` yaml
-menu:
-  # 格式如下
-  # 名称: javascript:; || 图标
-  xxx: javascript:; || xxx
-```
+    ``` yaml
+    menu:
+      # 格式如下
+      # 名称: javascript:; || 图标
+      xxx: javascript:; || xxx
+    ```
 
-注意！在 `||` 符号之前，你必须使用 `javascript:;` 作为占位符。
+    > 在 `||` 符号之前，你必须使用 `javascript:;`（字母全小写）作为占位符。
 
 2. 修改 `submenu` 字段
 
-``` yaml
-submenu:
-  xxx: # 这里的 xxx 与上述名称对应
-    xx1: /xx1/ || xx1 # 这里是子项，填写的值是：路径 || 图标
-    xx2: /xx2/ || xx2 # 这里是子项，填写的值是：路径 || 图标
-```
+    ``` yaml
+    submenu:
+      xxx: # 这里的 xxx 与上述名称对应
+        xx1: /xx1/ || xx1 # 这里是子项，填写的值是：路径 || 图标
+        xx2: /xx2/ || xx2 # 这里是子项，填写的值是：路径 || 图标
+    ```
 
 3. 国际化设置
 
-找到 `languages` 目录下的语言文件，选择你网站使用的那种语言进行修改，这里以中文作为举例：
+    找到 `languages` 目录下的语言文件，选择你网站使用的语言进行修改，这里以中文作为举例：
 
-`zh-CN.yml`：
+    `zh-CN.yml`：
 
-``` yaml
-xxx: 这是xxx对应的中文
-xx1: 这是xx1对应的中文
-xx2: 这是xx2对应的中文
-```
+    ``` yaml
+    xxx: 这是xxx对应的中文
+    xx1: 这是xx1对应的中文
+    xx2: 这是xx2对应的中文
+    ```
 
-举例：
+举例，添加一个朋友链接的二级菜单：
 
 1. 修改主题配置文件
 
-``` yaml
-menu:
-  friends: javascript:; || users
+    ``` yaml
+    menu:
+      friends: javascript:; || users
 
-submenu:
-  friends:
-    aaa: /aaa/ || male
-    bbb: /bbb/ || female
-```
+    submenu:
+      friends:
+        aaa: /aaa/ || male
+        bbb: /bbb/ || female
+    ```
 
 2. 国际化设置
 
-`zh-CN.yml`：
+    `zh-CN.yml`：
 
-``` yaml
-menu:
-  friends: 朋友
-  aaa: 小 A
-  bbb: 小 B
-```
+    ``` yaml
+    menu:
+      friends: 朋友
+      aaa: 小 A
+      bbb: 小 B
+    ```
 
-效果如下：
+    效果如下：
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190826161817.png)
+    ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190826161817.png)
 
 ## 启用赞赏码 <Badge text="Stable"/>
 
-如果想要在文章底部启用打赏的二维码，需要修改主题配置文件：
+如果你想要在文章页面启用赞赏码，修改主题配置文件：
 
 ``` yaml
 # Reward
 reward:
   # 是否启用
-  enable: true
+  enable: false
   # 支付宝
   alipay: https://xxxxx.png
   # 微信
@@ -327,10 +410,9 @@ reward:
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608175556.png)
 
-你可以在文章 Markdown 源文件中的 `Front-Matter` 里，设置 `reward: false` 来指定某篇文章不启用赞赏码。
-
-::: warning 注意
-如果主题配置文件中没有启用 `reward`，那么单独设置文章 `reward: true` 是没有效果的。
+::: tip
+1. 你可以在 Front-Matter 中，设置 `reward: true/false` 来指定某文章或页面是否启用赞赏码。
+2. 如果你在配置文件中启用了赞赏码，则默认所有文章页面启用这一功能，其他页面不启用。因此你可以在文章页面中设置 `reward: false` 禁用赞赏码，在其他页面中设置 `reward: true` 启用赞赏码。
 :::
 
 ## 知识共享许可协议（cc）<Badge text="Stable"/>
@@ -356,10 +438,8 @@ creative_commons:
 
 ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190619210339.png)
 
-你可以在文章 Markdown 源文件中的 `Front-Matter` 里，设置 `copyright: false` 来指定某篇文章不启用知识共享许可协议。
-
-::: warning 注意
-如果主题配置文件中没有启用 `creative_commons`，那么单独设置文章的 `copyright: true` 不会生效。
+::: tip
+知识共享许可协议启用后，默认对所有文章页面生效。你可以在 Front-Matter 中，设置 `copyright: false` 来指定某文章不启用该功能。
 :::
 
 ## 文章目录 <Badge text="Stable"/>
@@ -370,22 +450,22 @@ creative_commons:
 toc:
   # 是否启用
   enable: true
-  # 显示列表序号
+  # 显示序号
   number: true
   # 文本溢出是否换行
   wrap: true
-  # 是否始终展开所有文章目录。true：始终展开，false：当文章中对应的标题到达顶部时自动展开
+  # 是否始终展开所有文章目录
+  # true ：始终展开
+  # false：文章中对应的标题到达顶部时自动展开
   expand_all: false
   # 生成目录时，解析 h 标签的最大深度
   # 你可以在文章 Markdown 源文件的 Front-Matter 中，通过添加 `toc_max_depth` 属性，
   #   来指定某篇文章生成目录时，解析 h 标签的最大深度
   max_depth: 4
 ```
-你可以在文章 Markdown 源文件中的 `Front-Matter` 里，设置 `toc: false` 来指定某篇文章不启用目录。
 
-::: warning 注意
-- 其中 `expand_all` 属性从 `v1.0.2` 开始支持。
-- 如果主题配置文件中没有启用 `toc`，那么单独设置文章 `toc: true` 是没有效果的。
+::: tip
+文章目录启用后，默认对所有文章页面生效。你可以在 Front-Matter 中，设置 `toc: false` 来指定某文章不启用该功能。
 :::
 
 ## 订阅设置 <Badge text="Stable"/>
@@ -404,7 +484,7 @@ feed:
 
 想要使用邮件订阅，你需要自己构建 或 使用第三方提供的邮件订阅服务。例如我的邮件订阅地址：[http://eepurl.com/guAE6j](http://eepurl.com/guAE6j)
 
-开启 RSS 订阅之前，你需要安装 hexo 插件：[hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed)。然后在 Hexo 根目录下的 `_config.yml` 文件中添加配置项（关于各个配置项的具体含义，请自行查看插件的文档）：
+开启 RSS 订阅之前，你需要安装 hexo 插件：[hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed)。然后在 Hexo 根目录下的 `_config.yml` 文件中添加配置项（关于各个配置项的具体含义，请查看插件的[文档](https://github.com/hexojs/hexo-generator-feed)）：
 
 ``` yaml
 feed:
@@ -492,7 +572,7 @@ post_meta:
 该功能从 `v1.0.1` 版本开始支持，在 `v1.0.3` 版本中对配置项进行了更改。
 :::
 
-如果你想设置 `首页` 或 `归档页` 的文章列表是否分页，可以修改主题配置文件：
+如果你想设置**首页**或**归档页**的文章列表是否分页，可以修改主题配置文件：
 
 `v1.0.1 ~ v1.0.2`：
 
@@ -505,7 +585,7 @@ post_list_paged:
   archives: false
 ```
 
-`v1.0.3` 以及之后：
+`v1.0.3 ~ Latest`：
 
 ``` yaml
 post_list:
@@ -517,7 +597,7 @@ post_list:
     archives: false
 ```
 
-默认是：网站首页的文章列表开启分页，归档页面的文章列表不开启分页。
+> 默认情况下，网站首页的文章列表启用分页，归档页面的文章列表不启用分页。
 
 分页效果如下：
 
@@ -540,7 +620,7 @@ post_list:
     home: false
 ```
 
-`v1.1.2` 以及之后：
+`v1.1.2 ~ Latest`：
 
 ``` yaml
 post_list:
@@ -568,7 +648,7 @@ post_list:
 post_tags: true
 ```
 
-`v1.0.3` 以及之后：
+`v1.0.3 ~ Latest`：
 
 ``` yaml
 post_widget:
@@ -599,7 +679,7 @@ post_end:
   horizon_line: true
 ```
 
-`v1.0.3` 以及之后：
+`v1.0.3 ~ Latest`：
 
 ``` yaml
 post_widget:
@@ -622,7 +702,7 @@ $ npm uninstall hexo-generator-index --save
 $ npm install hexo-generator-index-pin-top --save
 ```
 
-最后，在文章的 `Front-Matter` 中，使用 `top: true` 来实现置顶。
+最后，在文章的 Front-Matter 中，使用 `top: true` 来实现置顶。
 
 设置文章置顶后，在文章列表中可以看到表示置顶的图标。你可以对图标进行设置，修改主题配置文件：
 
@@ -658,7 +738,7 @@ stick_top:
 highlight_theme: light
 ```
 
-`v1.6.0` 以及之后：
+`v1.6.0 ~ Latest`：
 
 ``` yaml
 codeblock:
@@ -694,23 +774,23 @@ codeblock:
 
 - `default`
 
-> 默认样式。具有`显示语言`、`显示行号`和`复制按钮`的功能。
-> 
-> 下面代码高亮样式分别为：`light`、`light`（开启夜间模式）、`dark`、`ocean`。
+  默认样式。具有**显示语言**、**显示行号**和**启用复制按钮**的功能。
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20200115133041.png)
+  > 下图中的代码高亮样式（从左至右，从上至下）分别为：`light`、`light`（开启夜间模式）、`dark`、`ocean`。
+
+  ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20200115133041.png)
 
 - `simple`
 
-> 极简样式，只显示代码块。
+  极简样式，只显示代码。
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20200115133056.png)
+  ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20200115133056.png)
 
 - `carbon`
 
-> 仿 carbon 样式，也只显示代码块。
+  仿 carbon 样式，只显示代码。
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20200115134022.png)
+  ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20200115134022.png)
 
 ## 代码溢出换行 <Badge text="Stable"/>
 
@@ -727,7 +807,7 @@ codeblock:
 code_word_wrap: false
 ```
 
-`v1.6.0` 以及之后：
+`v1.6.0 ~ Latest`：
 
 ``` yaml
 codeblock:
@@ -748,13 +828,13 @@ codeblock:
 ## 图片水平对齐方式 <Badge text="Deprecated" type="error"/>
 
 ::: danger
-该配置项，即 `img_horizonal_align` 在 `v1.4.0` 版本开始废弃。
+该配置项，即 `img_horizonal_align` 在 `v1.4.0` 版本废弃。
 :::
 
 ## 文字与图片的垂直对齐方式 <Badge text="Deprecated" type="error"/>
 
 ::: danger
-该配置项，即 `text_vertical_align_with_img` 在 `v1.2.0` 版本开始废弃。
+该配置项，即 `text_vertical_align_with_img` 在 `v1.2.0` 版本废弃。
 :::
 
 ## 标签云 <Badge text="Stable"/>
@@ -783,7 +863,7 @@ tag_cloud:
 2. 使用 hexo 提供的语法 `{% https://xxxxx.png width height %}`，填入宽、高即可设置大小。
 3. Stun 主题提供了一个便捷的方法来指定图片大小，你只需要在图片路径后面添加 `?size=宽度x高度` <Badge text="Stable"/> 后缀即可。例如：
 
-``` markdown
+``` md
 ![](https://xxxxx.png?size=200x100)
 ```
 
