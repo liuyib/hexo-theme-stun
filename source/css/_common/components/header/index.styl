@@ -134,6 +134,12 @@ if (hexo-config('header.nav.height') && match('%', hexo-config('header.nav.heigh
       width: auto;
       background-color: $header-nav-bg-color;
 
+      &.hide {
+        &--force {
+          display: none !important;
+        }
+      }
+
       &-item {
         margin: 0;
         padding: 0;
