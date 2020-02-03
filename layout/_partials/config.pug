@@ -30,22 +30,6 @@
     });
   }
 
-  var back2top = "undefined";
-  if (_.get(theme, 'back2top.enable')) {
-    back2top = JSON.stringify({
-      enable: theme.back2top.enable
-    });
-  }
-
-  var codeStyle = _.get(theme, 'codeblock.style') || 'default';
-  var highlight = _.get(theme, 'codeblock.highlight') || 'light';
-  var wordWrap = _.get(theme, 'codeblock.word_wrap') || false;
-  var codeblock = JSON.stringify({
-    style: codeStyle,
-    highlight: highlight,
-    word_wrap: wordWrap
-  });
-
   var header = "undefined";
   if (_.get(theme, 'header.enable')) {
     var isScrollDownIcon = _.get(theme, 'header.scroll_down_icon.enable') || false;
@@ -69,10 +53,31 @@
   }
 
   var night_mode = "undefined";
-  if (theme.night_mode) {
+  if (_.get(theme, 'night_mode.enable')) {
     night_mode = JSON.stringify({
       enable: theme.night_mode.enable,
     });
+  }
+
+  var back2top = "undefined";
+  if (_.get(theme, 'back2top.enable')) {
+    back2top = JSON.stringify({
+      enable: theme.back2top.enable
+    });
+  }
+
+  var codeStyle = _.get(theme, 'codeblock.style') || 'default';
+  var highlight = _.get(theme, 'codeblock.highlight') || 'light';
+  var wordWrap = _.get(theme, 'codeblock.word_wrap') || false;
+  var codeblock = JSON.stringify({
+    style: codeStyle,
+    highlight: highlight,
+    word_wrap: wordWrap
+  });
+
+  var zoom_image = "undefined";
+  if (_.get(theme, 'zoom_image.enable')) {
+    zoom_image = JSON.stringify(theme.zoom_image);
   }
 
   var gallery_waterfall = "undefined";
@@ -85,11 +90,6 @@
     lazyload = JSON.stringify(theme.lazyload);
   }
 
-  var zoom_image = "undefined";
-  if (_.get(theme, 'zoom_image.enable')) {
-    zoom_image = JSON.stringify(theme.zoom_image);
-  }
-
   var pjax_config = "undefined";
   if (_.get(theme, 'pjax.enable')) {
     pjax_config = JSON.stringify({
@@ -99,29 +99,28 @@
 
   var external_link = "undefined";
   if (theme.external_link) {
-    var iconConfig = {};
     var iconEnable = _.get(theme, 'external_link.icon.enable') || false;
     var iconName = _.get(theme, 'external_link.icon.name') || '';
 
-    if (theme.external_link.icon) {
-      iconConfig = {
-        enable: iconEnable,
-        name: iconName
-      };
+    if (iconEnable) {
+      external_link = JSON.stringify({
+        icon: {
+          enable: iconEnable,
+          name: iconName
+        }
+      });
     }
-
-    external_link = JSON.stringify({
-      icon: iconConfig
-    });
   }
 
   var shortcuts = "undefined";
   if (theme.shortcuts) {
     var isSwitchPost = _.get(theme, 'shortcuts.switch_post.enable') || false;
 
-    shortcuts = JSON.stringify({
-      switch_post: isSwitchPost
-    });
+    if (isSwitchPost) {
+      shortcuts = JSON.stringify({
+        switch_post: isSwitchPost
+      });
+    }
   }
 
   var prompt = JSON.stringify({

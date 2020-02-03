@@ -15,7 +15,7 @@
   } else if (is_tag()) {
     title = __('title.tag') + ': ' + page.tag + title_suffix;
   } else if (is_post()) {
-    title = page.title || __('post.untitled') + title_suffix;
+    title = page.title || (__('post.untitled') + title_suffix);
   } else {
     if (page.type === 'tags') {
       title = __('title.tag') + title_suffix;

@@ -1,4 +1,4 @@
-window.Stun.utils = window.Stun.$u = {
+Stun.utils = Stun.$u = {
   /**
    * Debounce
    * @param {Object} func Callback function
@@ -252,8 +252,7 @@ window.Stun.utils = window.Stun.$u = {
       $('.stun-message').remove();
     }
 
-    var faPrefix =
-      (window.CONFIG.fontawesome && window.CONFIG.fontawesome.prefix) || 'fa';
+    var faPrefix = (CONFIG.fontawesome && CONFIG.fontawesome.prefix) || 'fa';
     var $alert = $(
       '<div class="stun-message">' +
         `<div class="stun-alert stun-alert-${status}">` +
@@ -363,7 +362,7 @@ window.Stun.utils = window.Stun.$u = {
   },
   // Display the image in the gallery as a waterfall.
   showImageToWaterfall: function () {
-    var gConfig = window.CONFIG.gallery_waterfall;
+    var gConfig = CONFIG.gallery_waterfall;
     var colWidth = parseInt(gConfig.col_width);
     var colGapX = parseInt(gConfig.gap_x);
     var GALLERY_IMG_SELECTOR = '.gallery__img';
@@ -388,9 +387,8 @@ window.Stun.utils = window.Stun.$u = {
       return;
     }
 
-    var faPrefix =
-      (window.CONFIG.fontawesome && window.CONFIG.fontawesome.prefix) || 'fa';
-    var extIconName = window.CONFIG.external_link.icon.name;
+    var faPrefix = (CONFIG.fontawesome && CONFIG.fontawesome.prefix) || 'fa';
+    var extIconName = CONFIG.external_link.icon.name;
     var $wrapper = $('<span class="external-link"></span>');
     var $icon = $(`<i class="${faPrefix} fa-${extIconName}"></i>`);
 
@@ -548,10 +546,9 @@ window.Stun.utils = window.Stun.$u = {
   },
   addCopyButton: function (type) {
     var btnContainer = '.post-copyright,';
-    var faPrefix =
-      (window.CONFIG.fontawesome && window.CONFIG.fontawesome.prefix) || 'fa';
+    var faPrefix = (CONFIG.fontawesome && CONFIG.fontawesome.prefix) || 'fa';
     var $copyIcon = $(
-      `<div class="copy-button" data-popover="${window.CONFIG.prompt.copy_button}" data-popover-pos="up">` +
+      `<div class="copy-button" data-popover="${CONFIG.prompt.copy_button}" data-popover-pos="up">` +
         `<i class="${faPrefix} fa-clipboard"></i>` +
         '</div>'
     );
@@ -578,13 +575,10 @@ window.Stun.utils = window.Stun.$u = {
         // Select the container of text.
         container = $(this).parent()[0];
       }
-      if (window.Stun.utils.copyText(container)) {
-        window.Stun.utils.popAlert(
-          'success',
-          window.CONFIG.prompt.copy_success
-        );
+      if (Stun.utils.copyText(container)) {
+        Stun.utils.popAlert('success', CONFIG.prompt.copy_success);
       } else {
-        window.Stun.utils.popAlert('error', window.CONFIG.prompt.copy_error);
+        Stun.utils.popAlert('error', CONFIG.prompt.copy_error);
       }
     });
   },
