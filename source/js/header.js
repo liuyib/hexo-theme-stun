@@ -25,9 +25,13 @@ $(document).ready(function () {
     'resize',
     Stun.utils.throttle(function () {
       isMobile = $menuBtn.is(':visible');
-      if (isMobile && isSubmenuShow) {
-        resetMenuHeight();
-        isSubmenuShow = false;
+      if (isMobile) {
+        $submenu.removeClass('hide--force');
+
+        if (isSubmenuShow) {
+          resetMenuHeight();
+          isSubmenuShow = false;
+        }
       } else {
         $submenu.css({ display: 'none', opacity: 0 });
       }
@@ -158,6 +162,7 @@ $(document).ready(function () {
       if (isMobile) {
         $submenu.css({ display: 'block', opacity: 1 });
       } else {
+        $submenu.removeClass('hide--force');
         $submenu
           .velocity('stop')
           .velocity('transition.slideUpIn', { duration: 200 });
@@ -170,8 +175,8 @@ $(document).ready(function () {
     if (!$submenu.length) {
       return;
     }
-    if ($submenu.is(':visible') && !isMobile) {
-      $submenu.css({ display: 'none', opacity: 0 });
+    if (!isMobile) {
+      $submenu.addClass('hide--force');
       isSubmenuShow = false;
     }
   });
