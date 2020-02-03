@@ -309,15 +309,17 @@ social_setting:
 toc:
   enable: true
   # Automatically add list number to toc.
-  number: true
+  list_number: true
   # If true, all words will be placed on the next lines when they overflow.
   wrap: true
   # If true, the toc of post will always be displayed, rather than the activated part of it.
   expand_all: false
-  # Maximum heading depth of generated toc. You can set it in the
-  #   post through `toc_max_depth` in Front-matter.
-  # e.g. value: 3, will use h1~3 to generated toc.
-  max_depth: 4
+  # Minimum heading depth of generated toc.
+  # You can also set it in Front-matter by `toc_max_depth`.
+  min_depth: 1
+  # You can also set it in Front-matter by `toc_min_depth`.
+  # Maximum heading depth of generated toc.
+  max_depth: 6
 
 # Subscribe of email and rss.
 feed:
