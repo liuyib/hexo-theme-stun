@@ -100,7 +100,7 @@ prompt:
     success: Copy Success
     error: Copy Error
   creative_commons: Creative Commons
-  copy_button: Copy Code
+  copy_button: Copy
 
 # Others
 creative_commons: Creative Commons
