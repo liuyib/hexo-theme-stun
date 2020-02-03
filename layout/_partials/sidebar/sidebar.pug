@@ -8,7 +8,8 @@ if isShowToc
 section.sidebar-toc(class=`${isShowToc ? "" : "hide"}`)
   if page.content
     - var tocMaxDepth = page.toc_max_depth || theme.toc.max_depth || 6;
-    div!= toc(page.content, {list_number: theme.toc.number, max_depth: tocMaxDepth})
+    - var tocMinDepth = page.toc_min_depth || theme.toc.min_depth || 1;
+    div!= toc(page.content, {list_number: theme.toc.list_number, min_depth: tocMinDepth, max_depth: tocMaxDepth})
 
 <!-- ov = overview -->
 section.sidebar-ov(class=`${isShowToc ? "hide" : ""}`)
