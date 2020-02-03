@@ -1,4 +1,4 @@
-if _.get(theme, 'busuanzi.site_uv.enable') || _.get(theme, 'busuanzi.site_pv.enable') || _.get(theme, 'busuanzi.post_pv.enable')
+if _.get(theme, 'busuanzi.enable') && (_.get(theme, 'busuanzi.site_uv.enable') || _.get(theme, 'busuanzi.site_pv.enable') || _.get(theme, 'busuanzi.post_pv.enable'))
   - var busuanzi_js = "https://cdn.jsdelivr.net/gh/sukkaw/busuanzi@latest/bsz.pure.mini.js";
   - if (_.get(theme, 'cdn.busuanzi')) busuanzi_js = theme.cdn.busuanzi;
   script(src=busuanzi_js async)

@@ -1,8 +1,5 @@
 $(document).ready(function () {
-  var _CONFIG = window.CONFIG;
-  var _Stun = window.Stun;
-
-  var tocDepth = (_CONFIG.sidebar && _CONFIG.sidebar.tocMaxDepth) || 4;
+  var tocDepth = (CONFIG.sidebar && CONFIG.sidebar.tocMaxDepth) || 4;
   // Optimize selector by theme config.
   var HEADING_SELECTOR = 'h1,h2,h3,h4,h5,h6,'
     .slice(0, tocDepth * 3)
@@ -99,8 +96,8 @@ $(document).ready(function () {
 
   // Distance from sidebar to top.
   var sidebarToTop = 0;
-  if (_CONFIG.sidebar && _CONFIG.sidebar.offsetTop) {
-    sidebarToTop = parseInt(_CONFIG.sidebar.offsetTop);
+  if (CONFIG.sidebar && CONFIG.sidebar.offsetTop) {
+    sidebarToTop = parseInt(CONFIG.sidebar.offsetTop);
   }
 
   // Sticky the sidebar when it arrived the top.
@@ -130,7 +127,7 @@ $(document).ready(function () {
     var isEnablePostEnd = false;
     var percent = 0;
 
-    if (_CONFIG.post_widget && _CONFIG.post_widget.end_text) {
+    if (CONFIG.post_widget && CONFIG.post_widget.end_text) {
       isEnablePostEnd = true;
     }
     if (isEnablePostEnd) {
@@ -181,14 +178,14 @@ $(document).ready(function () {
 
   $(window).on(
     'scroll',
-    _Stun.utils.throttle(function () {
+    Stun.utils.throttle(function () {
       autoSpreadToc();
       scrollTocToMiddle();
       readProgress();
     }, 150)
   );
 
-  _Stun.utils.pjaxReloadSidebar = function () {
+  Stun.utils.pjaxReloadSidebar = function () {
     var $navToc = $('.sidebar-nav-toc');
     var $navOv = $('.sidebar-nav-ov');
     var $tocWrap = $('.sidebar-toc');
@@ -220,5 +217,5 @@ $(document).ready(function () {
   };
 
   // Initialization
-  _Stun.utils.pjaxReloadSidebar();
+  Stun.utils.pjaxReloadSidebar();
 });

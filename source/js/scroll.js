@@ -1,9 +1,6 @@
 $(document).ready(function () {
-  var _CONFIG = window.CONFIG;
-  var _Stun = window.Stun;
-
-  var isHeaderEnable = _CONFIG.header && _CONFIG.header.enable;
-  var isShowHeaderOnPost = isHeaderEnable && _CONFIG.header.showOnPost;
+  var isHeaderEnable = CONFIG.header && CONFIG.header.enable;
+  var isShowHeaderOnPost = isHeaderEnable && CONFIG.header.showOnPost;
   // The previous distance from the page to the top.
   var prevScrollTop = 0;
   var isNavFix = false;
@@ -72,7 +69,7 @@ $(document).ready(function () {
       });
   }
 
-  var isBack2topEnable = _CONFIG.back2top && _CONFIG.back2top.enable;
+  var isBack2topEnable = CONFIG.back2top && CONFIG.back2top.enable;
   var isBack2topShow = false;
 
   // Back the page to top.
@@ -109,7 +106,7 @@ $(document).ready(function () {
 
   $(window).on(
     'scroll',
-    _Stun.utils.throttle(function () {
+    Stun.utils.throttle(function () {
       headerNavScroll();
 
       if (isBack2topEnable) {
@@ -118,7 +115,7 @@ $(document).ready(function () {
     }, 100)
   );
 
-  _Stun.utils.pjaxReloadScroll = function () {
+  Stun.utils.pjaxReloadScroll = function () {
     // Click the heading.
     $('#content-wrap')
       .find('h1,h2,h3,h4,h5,h6')
@@ -134,5 +131,5 @@ $(document).ready(function () {
   };
 
   // Initializaiton
-  _Stun.utils.pjaxReloadScroll();
+  Stun.utils.pjaxReloadScroll();
 });

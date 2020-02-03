@@ -1,6 +1,4 @@
 $(document).ready(function () {
-  var _CONFIG = window.CONFIG;
-
   var $menu = $('.header-nav-menu');
   var $submenu = $('.header-nav-submenu');
   var $menuItem = $('.header-nav-menu-item');
@@ -61,7 +59,7 @@ $(document).ready(function () {
     return nightMode;
   }
 
-  if (_CONFIG.night_mode && _CONFIG.night_mode.enable) {
+  if (CONFIG.night_mode && CONFIG.night_mode.enable) {
     var isNightMode = false;
     var isNightModeFocus = false;
     var NIGHT_MODE_COOKIES_KEY = 'night_mode';
@@ -179,7 +177,7 @@ $(document).ready(function () {
   });
 
   Stun.utils.pjaxReloadHeader = function () {
-    if (_CONFIG.header && _CONFIG.header.scrollDownIcon) {
+    if (CONFIG.header && CONFIG.header.scrollDownIcon) {
       $('.header-info-arrow').on('click', function () {
         $('#container').velocity('scroll', {
           offset: $('#header').outerHeight()

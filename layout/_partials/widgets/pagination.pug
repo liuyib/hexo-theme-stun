@@ -3,7 +3,7 @@ nav.paginator
     - var prevText = `<i class="${faPrefix} fa-chevron-left"></i>`;
     - var nextText = `<i class="${faPrefix} fa-chevron-right"></i>`;
     div.paginator-inner
-      != paginator({ prevText, next_text, mid_size: 1, escape: false })
+      != paginator({ prev_text: prevText, next_text: nextText, mid_size: 1, escape: false })
   else
     div.paginator-post
       if page.prev
