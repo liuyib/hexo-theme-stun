@@ -33,15 +33,17 @@ if (hexo-config('header.nav.height') && match('%', hexo-config('header.nav.heigh
     z-index: $z-index1;
     width: 100%;
     height: header-nav-height;
-    transition: transform .2s ease, background-color .2s ease;
+    transition: transform .3s ease-out, background-color .2s ease;
 
     &--fixed {
       position: fixed;
+      transform: translateY(0);
     }
 
     &--sticky {
       position: fixed;
       background-color: convert(hexo-config('header.nav.bg_color') || '$header-nav-bg-color');
+      transform: translateY(-100%);
     }
 
     &.slider {

@@ -1,6 +1,6 @@
 include ../../_mixins/menu-item.pug
 
-nav.header-nav(class=`${isNoHeader ? '' : 'header-nav--fixed'}`)
+nav.header-nav(class=`${isNoHeader ? 'header-nav--sticky' : 'header-nav--fixed'}`)
   div.header-nav-inner
     div.header-nav-btn(class=`${faPrefix} fa-bars`)
     div.header-nav-menu
