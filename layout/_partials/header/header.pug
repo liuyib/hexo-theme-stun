@@ -18,17 +18,16 @@ nav.header-nav(class=`${isNoHeader ? 'header-nav--sticky' : 'header-nav--fixed'}
         include ../widgets/night-mode.pug
 
 if !isNoHeader
-  if _.get(theme, 'header.enable')
-    div.header-info(
-      style=`${
-        (_.get(theme, 'header.bg_image.enable') && page.top_image)
-          ? 'background: url(' + page.top_image + ') no-repeat center/cover;'
-          : ''
-      }`
-    )
-      div.header-info-inner
-        div.header-info-title= config.title
-        div.header-info-subtitle= config.subtitle
+  div.header-info(
+    style=`${
+      (_.get(theme, 'header.bg_image.enable') && page.top_image)
+        ? 'background: url(' + page.top_image + ') no-repeat center/cover;'
+        : ''
+    }`
+  )
+    div.header-info-inner
+      div.header-info-title= config.title
+      div.header-info-subtitle= config.subtitle
 
       if _.get(theme, 'header.scroll_down_icon.enable')
         div.header-info-arrow

@@ -4,7 +4,7 @@
     '#main',
     '.pjax-reload'
   ];
-  if (_.get(theme, 'header.enable')) {
+  if (isEnableNoHeader) {
     pjaxSelectors.push('.header-inner');
   }
   var pjaxArgs = {
@@ -91,8 +91,16 @@ script.
       if (Stun.utils.pjaxReloadHeader) {
         Stun.utils.pjaxReloadHeader();
       }
-      if (Stun.utils.pjaxReloadSidebar) {
-        Stun.utils.pjaxReloadSidebar();
+      if (Stun.utils.pjaxReloadHeaderIcon) {
+        Stun.utils.pjaxReloadHeaderIcon();
+      }
+      if (!{ isEnableNoHeader }) {
+        if (Stun.utils.pjaxReloadSidebar) {
+          Stun.utils.pjaxReloadSidebar();
+        }
+        if (Stun.utils.pjaxReloadLocalSearch) {
+          Stun.utils.pjaxReloadLocalSearch();
+        }
       }
     }, false);
   }, false);
