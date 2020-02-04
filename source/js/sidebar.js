@@ -191,7 +191,8 @@ $(document).ready(function () {
     var $tocWrap = $('.sidebar-toc');
     var $overview = $('.sidebar-ov');
 
-    $navToc.on('click', function () {
+    $navToc.on('click', function (e) {
+      e.stopPropagation();
       if ($(this).hasClass('current')) {
         return;
       }
@@ -202,7 +203,8 @@ $(document).ready(function () {
       $overview.css('display', 'none');
       $overview.velocity('stop').velocity('fadeOut');
     });
-    $navOv.on('click', function () {
+    $navOv.on('click', function (e) {
+      e.stopPropagation();
       if ($(this).hasClass('current')) {
         return;
       }

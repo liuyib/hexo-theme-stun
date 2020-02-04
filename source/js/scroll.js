@@ -4,8 +4,7 @@ $(document).ready(function () {
   // The previous distance from the page to the top.
   var prevScrollTop = 0;
   var isNavFix = false;
-  var isNavShow = true;
-  var isAnimation = false;
+  var isAnimation = true;
 
   function headerNavScroll () {
     var isPostPage = !!$('#is-post').length;
@@ -16,22 +15,19 @@ $(document).ready(function () {
 
     if (scrollTop === 0) {
       if (isNoHeader) {
-        $headerNav.addClass('slider--clear');
-        isAnimation = false;
+        setTimeout(function () {
+          $headerNav.addClass('slider--clear');
+          isAnimation = false;
+        }, 200);
       }
       $headerNav.removeClass('header-nav--sticky');
       $headerNav.removeClass('slider--up');
       $headerNav.addClass('slider--down');
-      isNavFix = false;
-      isNavShow = true;
     } else {
       if (isNoHeader && scrollTop < $headerNav.height()) {
         return false;
       }
-      if (!isNavFix) {
-        $headerNav.addClass('header-nav--sticky');
-        isNavFix = true;
-      }
+
       var MIN_SCROLL_TO_CHANGE_NAV = 5;
       // Make the state of nav bar not change due to tiny scrolling.
       if (Math.abs(delta) > MIN_SCROLL_TO_CHANGE_NAV) {
@@ -42,19 +38,20 @@ $(document).ready(function () {
             $headerNav.removeClass('slider--clear');
           }
         }
-        if (delta > 0) {
-          if (isNavShow) {
-            $headerNav.removeClass('slider--down');
-            $headerNav.addClass('slider--up');
-            isNavShow = false;
-          }
+        if (!isNavFix) {
+          isNavFix = true;
         } else {
-          if (!isNavShow) {
-            $headerNav.removeClass('slider--up');
-            $headerNav.addClass('slider--down');
-            isNavShow = true;
-          }
+          $headerNav.addClass('header-nav--sticky');
         }
+        if (delta > 0) {
+          $headerNav.removeClass('slider--down');
+          $headerNav.addClass('slider--up');
+        } else {
+          $headerNav.removeClass('slider--up');
+          $headerNav.addClass('slider--down');
+        }
+      } else {
+        $headerNav.addClass('header-nav--sticky');
       }
     }
     prevScrollTop = scrollTop;

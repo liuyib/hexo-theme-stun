@@ -3,6 +3,7 @@
   var STUN_URL = "https://github.com/liuyib/hexo-theme-stun/";
   var faPrefix = theme.fa_prefix || 'fa';
   var isNoHeader = !_.get(theme, 'header.enable') || (is_post() && !_.get(theme, 'header.show_on.post'));
+  var isEnableNoHeader = !_.get(theme, 'header.enable') || !_.get(theme, 'header.show_on.post');
 
   var pjax = false;
   var dataPjax = {};
