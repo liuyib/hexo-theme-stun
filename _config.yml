@@ -260,7 +260,7 @@ sidebar:
   # Sidebar position, available values: left | right.
   position: right
   # The distance from the top of the page when the sidebar is fixed (Only px units are supported).
-  offsetTop: 30px
+  offsetTop: 20px
   # Horizon line.
   horizon_line: false
 
