@@ -164,9 +164,13 @@ body:
     repeat: false
   # Mask effect of the background image.
   mask:
-    enable: false
+    enable: true
     # Opacity of mask (value: 0 ~ 1).
-    opacity: 0.5
+    opacity:
+      # Opacity of the mask for the body background image by default.
+      default: 0.1
+      # Opacity of the mask for the body background image in night mode.
+      night_mode: 0.6
 
 # Footer of your site.
 footer:
