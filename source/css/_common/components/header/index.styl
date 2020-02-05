@@ -237,9 +237,12 @@ if (hexo-config('header.nav.height') && match('%', hexo-config('header.nav.heigh
       &-arrow {
         position: absolute;
         bottom: 0;
-        left: 50%;
+        left: calc(50% - 1rem);
         z-index: $z-index0;
-        transform: translate3d(-50%, -.5rem, 0);
+        width: 2rem;
+        height: 2rem;
+        text-align: center;
+        transform: translateY(-.5rem);
         cursor: pointer;
 
         if (hexo-config('header.scroll_down_icon.animation')) {
@@ -249,12 +252,12 @@ if (hexo-config('header.nav.height') && match('%', hexo-config('header.nav.heigh
             0%,
             100% {
               opacity: .8;
-              transform: translate3d(-50%, -.5rem, 0);
+              transform: translateY(-.5rem);
             }
 
             50% {
               opacity: .4;
-              transform: translate3d(-50%, -1.5rem, 0);
+              transform: translateY(-1.5rem);
             }
           }
         }
