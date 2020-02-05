@@ -196,7 +196,7 @@ top_image: https://xxxxx.jpg
 
 ``` yaml
 body:
-  # 主体背景图片
+  # 网站主体背景图片
   bg_image:
     # 是否启用
     enable: false
@@ -206,12 +206,16 @@ body:
     fixed: true
     # 图片无法占满空间时，是否重复显示（相当于设置 background-repeat: repeat/no-repeat）
     repeat: false
-  # 主体背景图片的遮罩效果
+  # 网站主体背景图片的遮罩效果
   mask:
     # 是否启用
     enable: false
     # 透明度（取值：0 ~ 1）
-    opacity: 0.5
+    opacity:
+      # 默认情况下，网站主体背景图片的透明度
+      default: 0.1
+      # 夜晚模式下，网站主体背景图片的透明度
+      night_mode: 0.6
 ```
 
 ## 侧边栏设置
@@ -225,7 +229,7 @@ sidebar:
   # 侧边栏位置，可选值有：left 或 right
   position: right
   # 侧边栏吸顶时，距离页面顶部的距离（只支持 px 单位）
-  offsetTop: 30px
+  offsetTop: 20px
   # 是否显示水平分割线
   horizon_line: false
 ```
