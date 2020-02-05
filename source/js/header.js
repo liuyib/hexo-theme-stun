@@ -66,7 +66,7 @@ $(document).ready(function () {
 
     if (CONFIG.night_mode && CONFIG.night_mode.enable) {
       var isNightMode = false;
-      var isNightModeFocus = false;
+      var isNightModeFocus = true;
       var NIGHT_MODE_COOKIES_KEY = 'night_mode';
       var $nightMode = $('.mode');
 
@@ -81,7 +81,7 @@ $(document).ready(function () {
       $('.mode').on('click', function (e) {
         e.stopPropagation();
         isNightMode = !isNightMode;
-        isNightModeFocus = !isNightModeFocus;
+        isNightModeFocus = true;
         Stun.utils.Cookies().set(NIGHT_MODE_COOKIES_KEY, isNightMode ? 1 : 0);
         $nightMode.toggleClass('mode--checked');
         $nightMode.addClass('mode--focus');
