@@ -236,10 +236,12 @@ if (hexo-config('header.nav.height') && match('%', hexo-config('header.nav.heigh
     if (hexo-config('header.scroll_down_icon.enable')) {
       &-arrow {
         position: absolute;
-        bottom: 0;
-        left: 50%;
+        bottom: 1rem;
+        left: calc(50% - 1rem);
         z-index: $z-index0;
-        transform: translate3d(-50%, -.5rem, 0);
+        width: 2rem;
+        height: 2rem;
+        text-align: center;
         cursor: pointer;
 
         if (hexo-config('header.scroll_down_icon.animation')) {
@@ -249,12 +251,12 @@ if (hexo-config('header.nav.height') && match('%', hexo-config('header.nav.heigh
             0%,
             100% {
               opacity: .8;
-              transform: translate3d(-50%, -.5rem, 0);
+              transform: translateY(0);
             }
 
             50% {
               opacity: .4;
-              transform: translate3d(-50%, -1.5rem, 0);
+              transform: translateY(-20px);
             }
           }
         }
