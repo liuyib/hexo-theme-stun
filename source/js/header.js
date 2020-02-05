@@ -1,58 +1,70 @@
 $(document).ready(function () {
-  Stun.utils.pjaxReloadHeader = function () {
-    var $menu = $('.header-nav-menu');
-    var $submenu = $('.header-nav-submenu');
-    var $menuItem = $('.header-nav-menu-item');
-    var $menuBtn = $('.header-nav-btn');
-    var isMobile = $menuBtn.is(':visible');
+  var $menuBtn = $('.header-nav-btn');
+  var $menu = $('.header-nav-menu');
+  var $menuItem = $('.header-nav-menu-item');
+  var $submenu = $('.header-nav-submenu');
+  var isMobile = $menuBtn.is(':visible');
 
-    function resetMenuHeight () {
-      $menuItem.velocity(
-        {
-          height: $menuItem.outerHeight()
-        },
-        {
-          complete: function () {
-            $submenu.css({ display: 'none', opacity: 0 });
-          }
-        }
-      );
-    }
+  var isMenuShow = false;
+  var isSubmenuShow = false;
 
-    var isMenuShow = false;
-    var isSubmenuShow = false;
-
-    $(window).on(
-      'resize',
-      Stun.utils.throttle(function () {
-        isMobile = $menuBtn.is(':visible');
-        if (isMobile) {
-          $submenu.removeClass('hide--force');
-
-          if (isSubmenuShow) {
-            resetMenuHeight();
-            isSubmenuShow = false;
-          }
-        } else {
+  function resetMenuHeight () {
+    $menuItem.velocity(
+      {
+        height: $menuItem.outerHeight()
+      },
+      {
+        complete: function () {
           $submenu.css({ display: 'none', opacity: 0 });
         }
-      }, 200)
+      }
     );
+  }
 
-    $(document).on('click', function () {
-      if ($menu.is(':visible')) {
-        if (isMobile && isSubmenuShow) {
+  $(window).on(
+    'resize',
+    Stun.utils.throttle(function () {
+      isMobile = $menuBtn.is(':visible');
+      if (isMobile) {
+        $submenu.removeClass('hide--force');
+
+        if (isSubmenuShow) {
           resetMenuHeight();
           isSubmenuShow = false;
         }
-        $menu.css({ display: 'none' });
-        isMenuShow = false;
+      } else {
+        $submenu.css({ display: 'none', opacity: 0 });
       }
-      if (isNightModeFocus) {
-        $nightMode.removeClass('mode--focus');
-        isNightModeFocus = false;
+    }, 200)
+  );
+
+  var isNightModeFocus = true;
+  var $nightMode = $('.mode');
+
+  $(document).on('click', function () {
+    if ($menu.is(':visible')) {
+      if (isMobile && isSubmenuShow) {
+        resetMenuHeight();
+        isSubmenuShow = false;
       }
-    });
+      $menu.css({ display: 'none' });
+      isMenuShow = false;
+    }
+    if (isNightModeFocus) {
+      $nightMode.removeClass('mode--focus');
+      isNightModeFocus = false;
+    }
+  });
+
+  Stun.utils.pjaxReloadHeader = function () {
+    $menuBtn = $('.header-nav-btn');
+    $menu = $('.header-nav-menu');
+    $menuItem = $('.header-nav-menu-item');
+    $submenu = $('.header-nav-submenu');
+    isMobile = $menuBtn.is(':visible');
+
+    isMenuShow = false;
+    isSubmenuShow = false;
 
     function getNightMode () {
       var nightMode = false;
@@ -66,9 +78,9 @@ $(document).ready(function () {
 
     if (CONFIG.night_mode && CONFIG.night_mode.enable) {
       var isNightMode = false;
-      var isNightModeFocus = true;
       var NIGHT_MODE_COOKIES_KEY = 'night_mode';
-      var $nightMode = $('.mode');
+      $nightMode = $('.mode');
+      isNightModeFocus = true;
 
       if (getNightMode()) {
         $nightMode.addClass('mode--checked');
@@ -113,9 +125,7 @@ $(document).ready(function () {
 
     // Whether to allow events to bubble in the menu.
     var isBubbleInMenu = false;
-    var $submenuItem = $('.header-nav-submenu-item');
-
-    $submenuItem.on('click', function () {
+    $('.header-nav-submenu-item').on('click', function () {
       isBubbleInMenu = true;
     });
 
@@ -183,9 +193,10 @@ $(document).ready(function () {
     });
   };
 
-  Stun.utils.pjaxReloadHeaderIcon = function () {
+  Stun.utils.pjaxReloadScrollIcon = function () {
     if (CONFIG.header && CONFIG.header.scrollDownIcon) {
-      $('.header-info-arrow').on('click', function () {
+      $('.header-info-arrow').on('click', function (e) {
+        e.stopPropagation();
         $('#container').velocity('scroll', {
           offset: $('#header').outerHeight()
         });
@@ -195,5 +206,5 @@ $(document).ready(function () {
 
   // Initializaiton
   Stun.utils.pjaxReloadHeader();
-  Stun.utils.pjaxReloadHeaderIcon();
+  Stun.utils.pjaxReloadScrollIcon();
 });
