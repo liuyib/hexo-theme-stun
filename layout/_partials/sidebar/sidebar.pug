@@ -79,7 +79,7 @@ section.sidebar-ov(class=`${isShowToc ? "hide" : ""}`)
             span= "RSS "
             span= __("sidebar.subscribe")
 
-  if theme.menu
+  if theme.menu && (theme.menu.archives || theme.menu.categories || theme.menu.tags)
     div.sidebar-ov-state
       if theme.menu.archives
         - var menuArchives = _.trim(_.get(theme.menu.archives.split("||"), "[0]"));
