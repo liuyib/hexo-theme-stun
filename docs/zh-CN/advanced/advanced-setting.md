@@ -138,9 +138,9 @@ Hexo 会使用 git commit 中，文件的最新提交时间作为更新日期，
   ---
   ```
 
-- `excerpt` <Badge text="Hexo 4.0"/> - 指定文章摘要
+- `excerpt` <Badge text="Hexo v4.0.0"/> - 指定文章摘要
 
-  Hexo 3.9 及以前的版本中，只能通过添加 `<!-- more -->` 标记来保留文章摘要（当然 Stun 主题也提供了[自动保留摘要](http://liuyib.github.io/hexo-theme-stun/zh-CN/guide/primary-setting.html#文章摘要)的功能）。在 Hexo 4.0 及以后的版本中，可以通过在 Front-Matter 中使用 `excerpt` 来设置文章摘要。例如：
+  Hexo 3.9 及以前的版本中，只能通过添加 `<!-- more -->` 标记来保留文章摘要（当然 Stun 主题也提供了[自动保留摘要](http://liuyib.github.io/hexo-theme-stun/zh-CN/guide/primary-setting.html#文章摘要)的功能）。在 Hexo 4.0.0 及以后的版本中，可以通过在 Front-Matter 中使用 `excerpt` 来设置文章摘要。例如：
 
   ```
   ---
@@ -282,15 +282,25 @@ Hexo 会使用 git commit 中，文件的最新提交时间作为更新日期，
 
 下面是 Stun 主题中，特有的几种 Front-Matter 属性。
 
-> 这些属性在后面的文档中会有详细说明，这里可以跳过。
-
 - `top_image: https://xxxx.jpg` <Badge text="Stable"/>
 
-  用于设置文章顶部的大图。详情：[指定顶部图](https://liuyib.github.io/hexo-theme-stun/zh-CN/guide/primary-setting.html#指定顶部图)
+  用于设置某篇文章顶部的大图。详情：[指定顶部图](https://liuyib.github.io/hexo-theme-stun/zh-CN/guide/primary-setting.html#指定顶部图)
 
-- `toc_max_depth: 6` <Badge text="Stable"/>
+- `toc: true` <Badge text="Stable"/> <Badge text="v1.2.0"/>
 
-  用于设置在文章中，解析标题生成目录的最大深度。取值 `1 ~ 6`。例如：`toc_max_depth: 3`，只会解析文中的 `h1`, `h2`, `h3` 来生成目录。详情：[文章目录](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/advanced-setting.html#文章目录)
+  文章是否启用目录。会覆盖主题配置文件中的全局设置。详情：[文章目录](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/advanced-setting.html#文章目录)
+
+- `toc_min_depth: 1` <Badge text="Stable"/> <Badge text="v1.6.1"/> <Badge text="Hexo v4.2.0"/> 
+
+  用于设置某篇文章中，解析标题生成目录的最小深度。取值 1 ~ 6，默认为 1。
+
+  例如：`toc_min_depth: 3`，只会解析文中的 `h3, h4, h5, h6` 标签来生成目录。详情：[文章目录](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/advanced-setting.html#文章目录)
+
+- `toc_max_depth: 6` <Badge text="Stable"/> <Badge text="v1.2.0"/>
+
+  用于设置某篇文章中，解析标题生成目录的最大深度。取值 1 ~ 6，默认为 6。
+
+  例如：`toc_max_depth: 4`，只会解析文中的 `h1, h2, h3, h4` 标签来生成目录。详情：[文章目录](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/advanced-setting.html#文章目录)
 
 - `quicklink: true` <Badge text="Stable"/> <Badge text="v1.2.3"/>
 
@@ -299,10 +309,6 @@ Hexo 会使用 git commit 中，文件的最新提交时间作为更新日期，
 - `math: true` <Badge text="Stable"/> <Badge text="v1.1.2"/>
 
   是否需要解析数学公式。详情：[数学公式](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/third-part.html#数学公式)
-
-- `toc: true` <Badge text="Stable"/> <Badge text="v1.2.0"/>
-
-  文章是否启用目录。会覆盖主题配置文件中的全局设置。详情：[文章目录](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/advanced-setting.html#文章目录)
 
 - `reward: true` <Badge text="Stable"/> <Badge text="v1.2.0"/>
 
@@ -315,8 +321,6 @@ Hexo 会使用 git commit 中，文件的最新提交时间作为更新日期，
 ---
 
 下面是安装某些插件后，可以设置的几种 Front-Matter 属性。
-
-> 这些属性在后面的文档中会有详细说明，这里可以跳过。
 
 - `top: true` <Badge text="Stable"/>
 
@@ -450,22 +454,24 @@ creative_commons:
 toc:
   # 是否启用
   enable: true
-  # 显示序号
-  number: true
-  # 文本溢出是否换行
+  # 是否自动添加列表序号
+  list_number: true
+  # 是否文本溢出时换行
   wrap: true
   # 是否始终展开所有文章目录
   # true ：始终展开
-  # false：文章中对应的标题到达顶部时自动展开
+  # false：默认折叠，滚动到对应位置时自动展开
   expand_all: false
-  # 生成目录时，解析 h 标签的最大深度
-  # 你可以在文章 Markdown 源文件的 Front-Matter 中，通过添加 `toc_max_depth` 属性，
-  #   来指定某篇文章生成目录时，解析 h 标签的最大深度
-  max_depth: 4
+  # 生成目录时，解析 `<h1~6>` 的最小深度
+  # 你可以在 Front-Matter 中，通过添加 `toc_min_depth` 属性，来为某篇文章指定该配置
+  min_depth: 1
+  # 生成目录时，解析 `<h1~6>` 的最大深度
+  # 你可以在 Front-Matter 中，通过添加 `toc_max_depth` 属性，来为某篇文章指定该配置
+  max_depth: 6
 ```
 
 ::: tip
-文章目录启用后，默认对所有文章页面生效。你可以在 Front-Matter 中，设置 `toc: false` 来指定某文章不启用该功能。
+启用文章目录后，默认对所有文章页面生效。你可以在 Front-Matter 中，设置 `toc: false` 来指定某篇文章不启用该功能。
 :::
 
 ## 订阅设置 <Badge text="Stable"/>
