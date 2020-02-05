@@ -15,8 +15,10 @@ $(document).ready(function () {
 
     if (scrollTop === 0) {
       if (isNoHeader) {
-        $headerNav.addClass('slider--clear');
-        isAnimation = false;
+        setTimeout(function () {
+          $headerNav.addClass('slider--clear');
+          isAnimation = false;
+        }, 200);
       }
       $headerNav.removeClass('header-nav--sticky');
       $headerNav.removeClass('slider--up');
