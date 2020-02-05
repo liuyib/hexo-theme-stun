@@ -103,7 +103,9 @@ $(document).ready(function () {
   // Sticky the sidebar when it arrived the top.
   function sidebarSticky () {
     var $sidebar = $('.sidebar-inner');
-    var targetY = document.getElementById('main').getBoundingClientRect().top;
+    var targetY = document
+      .getElementById('content-wrap')
+      .getBoundingClientRect().top;
 
     if (targetY < sidebarToTop) {
       $sidebar.addClass('sticky');
