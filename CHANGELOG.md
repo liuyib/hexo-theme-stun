@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.7.0 (2020-02-06)
+
+### Bug Fixes
+
+* Nightmode not blur when click document ([2c8466e](https://github.com/liuyib/hexo-theme-stun/commit/2c8466e))
+* Animation of scroll icon doesn't work in iOS ([21f87ac](https://github.com/liuyib/hexo-theme-stun/commit/21f87ac))
+* Article header overlay submenu ([0162383](https://github.com/liuyib/hexo-theme-stun/commit/0162383))
+* Compatible with pjax when header are not enabled ([8302d30](https://github.com/liuyib/hexo-theme-stun/commit/8302d30))
+* Submenu is not hidden after the mouse passes over it ([576f177](https://github.com/liuyib/hexo-theme-stun/commit/576f177))
+* Solved that click the parent element of secondary menu to jump ([a21e296](https://github.com/liuyib/hexo-theme-stun/commit/a21e296))
+* * **#28:** Solve heading parsing error ([8a9ca01](https://github.com/liuyib/hexo-theme-stun/commit/8a9ca01)), closes [#28](https://github.com/liuyib/hexo-theme-stun/issues/28)
+* Long link overflow and set the min-width for table items ([0ef6fe0](https://github.com/liuyib/hexo-theme-stun/commit/0ef6fe0))
+* Valine is not reload when switching pages by pjax ([a750791](https://github.com/liuyib/hexo-theme-stun/commit/a7507914486cd2e59d073edc36381064f712c439))
+
+### Features
+
+* Add min_depth option to toc ([89bb869](https://github.com/liuyib/hexo-theme-stun/commit/89bb869))
+* Set more configuration items for the layout ([3a9ad3f](https://github.com/liuyib/hexo-theme-stun/commit/3a9ad3f))
+* Make the background image of body configurable ([18b74c5](https://github.com/liuyib/hexo-theme-stun/commit/18b74c5))
+* Make the display of website header configurable ([a167675](https://github.com/liuyib/hexo-theme-stun/commit/a167675))
+* Add sougou webmaster tools ([0ce3569](https://github.com/liuyib/hexo-theme-stun/commit/0ce3569))
+* 添加文章分享模块 ([c5e640e](https://github.com/liuyib/hexo-theme-stun/commit/c5e640ef327bc56530b04b1b95f479a588a6596b))
+
 ## 1.6.0 (2020-01-15)
 
 ### Bug Fixes
