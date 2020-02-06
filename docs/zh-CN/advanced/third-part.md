@@ -470,9 +470,17 @@ busuanzi:
 
 7. 提交 sitemap 文件
 
-    > sitemap 文件，即站点地图，使搜索引擎抓取你的网站更方便，这样会大大提高被收录的概率。
+    > sitemap 文件，即站点地图文件，使搜索引擎抓取你的网站更方便，这样会大大提高被收录的概率。
 
-    > Hexo 默认安装了 sitemap 文件生成插件，会在你网站更新发布的过程中，在根目录自动生成 `sitemap.xml` 文件。你可以自行访问查看一下：`https://你的网站域名/sitemap.xml`。
+    > 想要生成 sitemap 文件，你需要安装插件 `hexo-generator-sitemap`，在 Hexo 根目录执行指令：
+    >
+    > ``` bash
+    > $ npm install hexo-generator-sitemap --save
+    > ```
+    >
+    > 默认情况下，该插件会在你网站更新发布的过程中，在根目录生成 `sitemap.xml` 文件。你可以验证一下该文件是否能访问到：`https://你的网站域名/sitemap.xml`。
+    >
+    > 你也可以对该插件进行配置，请查看插件的[文档](https://github.com/hexojs/hexo-generator-sitemap)。
 
     在【站点地图】中，提交你的 sitemap 文件网址即可。
 
@@ -493,6 +501,8 @@ busuanzi:
 5. 更新发布你的网站
 6. 验证是否添加成功
 
+    > 打开浏览器控制台，查看元素，确保你网站的 `head` 标签中已经包含了：`<meta name="msvalidate.01" content="******">`（`content` 的值就是你在配置文件中填写的那个）。
+
     回到验证页面，点击【验证】。如果验证失败，你需要根据失败信息自行解决。
 
 7. 提交 sitemap 文件
@@ -500,6 +510,8 @@ busuanzi:
     > 如果在第二步你已经提交了 sitemap，请忽略这一步。
 
     在【配置“我的网站”】->【Sitemaps】中，提交你的 sitemap 文件网址即可。
+
+    > 如果不知道你的 sitemap 文件网址，请查看上述文档中**谷歌站长的第 7 步**。
 
 ### 百度站长 <Badge text="Stable"/> <Badge text="v1.2.4"/>
 
@@ -518,11 +530,15 @@ busuanzi:
 5. 更新发布你的网站
 6. 验证是否添加成功
 
+    > 打开浏览器控制台，查看元素，确保你网站的 `head` 标签中已经包含了：`<meta name="baidu-site-verification" content="******">`（`content` 的值就是你在配置文件中填写的那个）。
+
     回到验证页面，点击【完成验证】。如果验证失败，你需要根据失败信息自行解决。
 
 7. 提交 sitemap 文件
 
     在【链接提交】->【sitemap】中，提交你的 sitemap 文件网址即可。
+
+    > 如果不知道你的 sitemap 文件网址，请查看上述文档中**谷歌站长的第 7 步**。
 
 ### 360 站长 <Badge text="Beta" type="warning"/> <Badge text="v1.2.4"/>
 
@@ -541,13 +557,17 @@ busuanzi:
 5. 更新发布你的网站
 6. 验证是否添加成功
 
+    > 打开浏览器控制台，查看元素，确保你网站的 `head` 标签中已经包含了：`<meta name="360-site-verification" content="******">`（`content` 的值就是你在配置文件中填写的那个）。
+
     回到验证页面，点击【点击验证】。如果验证失败，你需要根据失败信息自行解决。
 
 7. 提交 sitemap 文件
 
     在【数据提交】->【Sitemap提交】中，提交你的 sitemap 文件网址即可。
 
-### 搜狗站长 <Badge text="Beta" type="warning"/> <Badge text="v1.6.1"/>
+    > 如果不知道你的 sitemap 文件网址，请查看上述文档中**谷歌站长的第 7 步**。
+
+### 搜狗站长 <Badge text="Beta" type="warning"/> <Badge text="v1.7.0"/>
 
 1. 访问搜狗网站站长[官网](http://zhanzhang.sogou.com/)
 2. 点击【用户中心】->【添加网站】，根据提示将你的网站添加进去
@@ -563,6 +583,8 @@ busuanzi:
 
 5. 更新发布你的网站
 6. 验证是否添加成功
+
+    > 打开浏览器控制台，查看元素，确保你网站的 `head` 标签中已经包含了：`<meta name="sogou_site_verification" content="******">`（`content` 的值就是你在配置文件中填写的那个）。
 
     回到验证页面，点击【完成验证】。如果验证失败，你需要根据失败信息自行解决。
 

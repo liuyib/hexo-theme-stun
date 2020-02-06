@@ -3,7 +3,7 @@
 ::: tip Preface
 - Modifying configuration files, installing new dependencies, etc. all require restarting the Hexo server.
 - Not specifically, configuration items are supported from `v1.0.0`.
-- Stable configuration is indicated by <Badge text="Stable"/>, which means it will not change basically. Unstable configurations are indicated by <Badge text="Beta" type="warn"/>, which means it may be changed or even deleted in the future. Configuration items that are not supported currently are indicated by <Badge text="Not Support" type="error"/>. Deprecated configurations are indicated by <Badge text="Deprecated" type="error"/>. The earliest supported version number are indicated by <Badge text="v x.x.x"/>. Configuration items that are not related to the subject are indicated by <Badge text="Disrelated" type="warning"/>.
+- Stable configuration is indicated by <Badge text="Stable"/>, which means it will not change basically. Unstable configurations are indicated by <Badge text="Beta" type="warn"/>, which means it may be changed or even deleted in the future. Configuration items that are not supported currently are indicated by <Badge text="Not Support" type="error"/>. Abandon configurations are indicated by <Badge text="Abandon" type="error"/>. The earliest supported version number are indicated by <Badge text="v x.x.x"/>. Configuration items that are not related to the subject are indicated by <Badge text="Disrelated" type="warning"/>.
 :::
 
 ## Configuration file
@@ -152,7 +152,7 @@ header:
 ```
 
 ::: warning Note
-- The `mask` option, the mask effect, is supported starting with the `v1.1.1` version. The `blur_effect` option, the blur filter effect, is deprecated starting with the `v1.1.1` version.
+- The `mask` option, the mask effect, is supported starting with the `v1.1.1` version. The `blur_effect` option, the blur filter effect, is abandoned starting with the `v1.1.1` version.
 - The `scroll_down_icon` option is supported starting with the `v1.5.4` version.
 :::
 
@@ -226,7 +226,7 @@ social_setting:
 >
 > The name of the icon is found here: [https://fontawesome.com/v4.7.0/icons/](https://fontawesome.com/v4.7.0/icons/)
 
-::: danger <Badge text="Deprecated" type="error"/>
+::: danger <Badge text="Abandon" type="error"/>
 The `text_align` attribute of the configuration item `social_setting` is removed in the `v1.2.0` version.
 :::
 

@@ -29,7 +29,7 @@ language: zh-CN # 可选值 zh-CN 或 en-US
 ## 网站布局设置 <Badge text="Beta" type="warning"/> <Badge text="v1.6.0"/>
 
 ::: warning
-该功能从 `v1.6.0` 版本开始支持，在 `v1.6.1` 版本中对配置项进行了更改。
+该功能从 `v1.6.0` 版本开始支持，在 `v1.7.0` 版本中对配置项进行了更改。
 :::
 
 主题提供了对布局的一些常用设置。修改主题配置文件：
@@ -48,7 +48,7 @@ layout:
   main_side_gap: 20px
 ```
 
-`v1.6.1 ~ Latest`：
+`v1.7.0 ~ Latest`：
 
 ``` yaml
 layout:
@@ -290,7 +290,7 @@ Hexo 会使用 git commit 中，文件的最新提交时间作为更新日期，
 
   文章是否启用目录。会覆盖主题配置文件中的全局设置。详情：[文章目录](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/advanced-setting.html#文章目录)
 
-- `toc_min_depth: 1` <Badge text="Stable"/> <Badge text="v1.6.1"/> <Badge text="Hexo v4.2.0"/> 
+- `toc_min_depth: 1` <Badge text="Stable"/> <Badge text="v1.7.0"/> <Badge text="Hexo v4.2.0"/> 
 
   用于设置某篇文章中，解析标题生成目录的最小深度。取值 1 ~ 6，默认为 1。
 
@@ -831,13 +831,13 @@ codeblock:
 
   ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608214539.png)
 
-## 图片水平对齐方式 <Badge text="Deprecated" type="error"/>
+## 图片水平对齐方式 <Badge text="Abandon" type="error"/>
 
 ::: danger
 该配置项，即 `img_horizonal_align` 在 `v1.4.0` 版本废弃。
 :::
 
-## 文字与图片的垂直对齐方式 <Badge text="Deprecated" type="error"/>
+## 文字与图片的垂直对齐方式 <Badge text="Abandon" type="error"/>
 
 ::: danger
 该配置项，即 `text_vertical_align_with_img` 在 `v1.2.0` 版本废弃。
