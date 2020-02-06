@@ -29,6 +29,7 @@
 ## :sparkles: 演示
 
 - [Liuyib's Blog](https://liuyib.github.io/)
+- [弥枳'Blog](https://blog.coor.top/)
 
 如果你正在使用 stun 主题，并希望像上面一样，在这里展示出来，你可以通过 [PR](https://github.com/liuyib/hexo-theme-stun/pulls) 将你的网站链接填写在这里。
 
