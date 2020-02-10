@@ -11,11 +11,11 @@ section.post-list
         if theme.post_list.cover_image.home && post.top_image
           img(src=post.top_image)
 
-        if _.get(post, 'photos.length')
+        if post.photos && post.photos.length
           +gallery(post)
 
         - var isExcerpt = true;
-        if _.get(theme, 'auto_excerpt.enable')
+        if theme.auto_excerpt.enable
           - var content = strip_html(post.content);
           - var excerpt = content.substring(0, theme.auto_excerpt.length);
           - content.length > theme.auto_excerpt.length ? excerpt += "......" : "";

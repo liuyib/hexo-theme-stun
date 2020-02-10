@@ -1,4 +1,4 @@
-- var isShowToc = is_post() && ((page.toc !== false) && _.get(theme, 'toc.enable'));
+- var isShowToc = is_post() && ((page.toc !== false) && theme.toc.enable);
 
 if isShowToc
   div.sidebar-nav
@@ -29,9 +29,9 @@ section.sidebar-ov(class=`${isShowToc ? "hide" : ""}`)
     div.sidebar-ov-social
       for value, name in (theme.social || {})
         if name && value
-          - var item = value.split("||");
-          - var socialPath = _.trim(_.get(item, "[0]"));
-          - var socialIcon = _.trim(_.get(item, "[1]"));
+          - var item = value.split('||');
+          - var socialPath = (item[0] + '').trim();
+          - var socialIcon = (item[1] + '').trim();
           a(
             class="sidebar-ov-social__item"
             href=socialPath
@@ -82,17 +82,17 @@ section.sidebar-ov(class=`${isShowToc ? "hide" : ""}`)
   if theme.menu && (theme.menu.archives || theme.menu.categories || theme.menu.tags)
     div.sidebar-ov-state
       if theme.menu.archives
-        - var menuArchives = _.trim(_.get(theme.menu.archives.split("||"), "[0]"));
+        - var menuArchives = (theme.menu.archives.split('||')[0] + '').trim();
         a.sidebar-ov-state__a.posts(href=menuArchives)
           div.sidebar-ov-state__a--count= site.posts.length
           div.sidebar-ov-state__a--name= __("sidebar.archives")
       if theme.menu.categories
-        - var menuCategories = _.trim(_.get(theme.menu.categories.split("||"), "[0]"));
+        - var menuCategories = (theme.menu.categories.split('||')[0] + '').trim();
         a.sidebar-ov-state__a.categories(href=menuCategories)
           div.sidebar-ov-state__a--count= site.categories.length
           div.sidebar-ov-state__a--name= __("sidebar.categories")
       if theme.menu.tags
-        - var menuTags = _.trim(_.get(theme.menu.tags.split("||"), "[0]"));
+        - var menuTags = (theme.menu.tags.split('||')[0] + '').trim();
         a.sidebar-ov-state__a.tags(href=menuTags)
           div.sidebar-ov-state__a--count= site.tags.length
           div.sidebar-ov-state__a--name= __("sidebar.tags")

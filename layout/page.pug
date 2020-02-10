@@ -20,9 +20,9 @@ block content
       != list_categories()
   else
     div.custom-page
-      if _.get(page, 'photos.length')
+      if page.photos && page.photos.length
         +gallery(page)
       != page.content
 
-  if (page.reward === true) && _.get(theme, 'reward.enable')
+  if (page.reward === true) && theme.reward.enable
     include ./_partials/widgets/reward.pug

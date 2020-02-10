@@ -1,13 +1,13 @@
-if page.comments || _.get(theme, 'pjax.enable')
-  if _.get(theme, 'disqus.enable')
+if page.comments || theme.pjax.enable
+  if theme.disqus.enable
     include ./disqus.pug
-  else if _.get(theme, 'valine.enable')
+  else if theme.valine.enable
     include ./valine.pug
-  else if _.get(theme, 'gitalk.enable')
+  else if theme.gitalk.enable
     include ./gitalk.pug
-  else if _.get(theme, 'utterances.enable')
+  else if theme.utterances.enable
     include ./utterances.pug
-  else if _.get(theme, 'livere.enable')
+  else if theme.livere.enable
     include ./livere.pug
-else if _.get(theme, 'valine.enable') && _.get(theme, 'valine.visitor')
+else if theme.valine.enable && theme.valine.visitor
   include ./valine.pug

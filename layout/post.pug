@@ -9,7 +9,7 @@ block content
     +postHeader(page)
 
     div.post-body
-      if _.get(page, 'photos.length')
+      if page.photos && page.photos.length
         +gallery(page)
       != page.content
 
@@ -32,10 +32,10 @@ block content
                 i.post-tags-item__i(class=`${faPrefix} fa-tags`)
                 a.post-tags-item__a(href=tag.permalink)= tag.name
 
-      if _.get(theme, 'post_widget.share.enable')
+      if theme.post_widget.share.enable
         include ./_partials/widgets/share.pug
 
-      if (page.reward !== false) && _.get(theme, 'reward.enable')
+      if (page.reward !== false) && theme.reward.enable
         include ./_partials/widgets/reward.pug
 
       include ./_partials/widgets/pagination.pug

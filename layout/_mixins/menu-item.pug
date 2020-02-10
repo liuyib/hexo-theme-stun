@@ -3,8 +3,8 @@ mixin menuItem(menu, className)
     if name && value
       -
         var item = value.split('||');
-        var menuPath = _.trim(_.get(item, '[0]'));
-        var menuIcon = _.trim(_.get(item, '[1]'));
+        var menuPath = (item[0] + '').trim();
+        var menuIcon = (item[1] + '').trim();
         var hasSubMenu = menuPath.toLowerCase() === 'javascript:;';
         var aTagAttr = {};
         if (hasSubMenu) {

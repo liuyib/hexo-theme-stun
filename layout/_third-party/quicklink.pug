@@ -2,7 +2,7 @@ if theme.quicklink.enable
   -
     var loadQuicklink = false;
     var quicklink_js = "https://cdn.jsdelivr.net/npm/quicklink@1.0.1/dist/quicklink.umd.js";
-    if (_.get(theme, 'cdn.quicklink')) quicklink_js = theme.cdn.quicklink;
+    if (theme.cdn.quicklink) quicklink_js = theme.cdn.quicklink;
 
   if is_home() && theme.quicklink.home
     - loadQuicklink = true;
@@ -10,7 +10,7 @@ if theme.quicklink.enable
     - loadQuicklink = true;
   if theme.pjax.enable
     - loadQuicklink = true;
-  if loadQuicklink || (_.get(page, 'quicklink') || _.get(post, 'quicklink'))
+  if loadQuicklink || (page.quicklink || post.quicklink)
     script(src=quicklink_js)
     script.
       function initQuicklink() {

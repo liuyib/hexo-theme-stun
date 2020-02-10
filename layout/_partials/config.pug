@@ -1,7 +1,7 @@
 -
   var algolia = "undefined";
   var env = process.env;
-  if (_.get(theme, 'algolia_search.enable')) {
+  if (theme.algolia_search.enable) {
     algolia = JSON.stringify({
       appId: env.ALGOLIA_APP_ID || config.algolia.appId || config.algolia.applicationID,
       apiKey: env.ALGOLIA_API_KEY || config.algolia.apiKey,
@@ -23,7 +23,7 @@
   }
 
   var sidebar = "undefined";
-  if (_.get(theme, 'sidebar.enable')) {
+  if (theme.sidebar.enable) {
     sidebar = JSON.stringify({
       offsetTop: theme.sidebar.offsetTop,
       tocMaxDepth: theme.toc.max_depth
@@ -31,8 +31,8 @@
   }
 
   var header = "undefined";
-  if (_.get(theme, 'header.enable')) {
-    var isScrollDownIcon = _.get(theme, 'header.scroll_down_icon.enable') || false;
+  if (theme.header.enable) {
+    var isScrollDownIcon = theme.header.scroll_down_icon.enable || false;
 
     header = JSON.stringify({
       enable: theme.header.enable,
@@ -43,7 +43,7 @@
 
   var post_widget = "undefined";
   if (theme.post_widget) {
-    var end_text = _.get(theme, 'post_widget.end_text.enable') || false;
+    var end_text = theme.post_widget.end_text.enable || false;
 
     if (end_text) {
       post_widget = JSON.stringify({
@@ -53,22 +53,22 @@
   }
 
   var night_mode = "undefined";
-  if (_.get(theme, 'night_mode.enable')) {
+  if (theme.night_mode.enable) {
     night_mode = JSON.stringify({
       enable: theme.night_mode.enable,
     });
   }
 
   var back2top = "undefined";
-  if (_.get(theme, 'back2top.enable')) {
+  if (theme.back2top.enable) {
     back2top = JSON.stringify({
       enable: theme.back2top.enable
     });
   }
 
-  var codeStyle = _.get(theme, 'codeblock.style') || 'default';
-  var highlight = _.get(theme, 'codeblock.highlight') || 'light';
-  var wordWrap = _.get(theme, 'codeblock.word_wrap') || false;
+  var codeStyle = theme.codeblock.style || 'default';
+  var highlight = theme.codeblock.highlight || 'light';
+  var wordWrap = theme.codeblock.word_wrap || false;
   var codeblock = JSON.stringify({
     style: codeStyle,
     highlight: highlight,
@@ -76,22 +76,22 @@
   });
 
   var zoom_image = "undefined";
-  if (_.get(theme, 'zoom_image.enable')) {
+  if (theme.zoom_image.enable) {
     zoom_image = JSON.stringify(theme.zoom_image);
   }
 
   var gallery_waterfall = "undefined";
-  if (_.get(theme, 'gallery_waterfall.enable')) {
+  if (theme.gallery_waterfall.enable) {
     gallery_waterfall = JSON.stringify(theme.gallery_waterfall);
   }
 
   var lazyload = "undefined";
-  if (_.get(theme, 'lazyload.enable')) {
+  if (theme.lazyload.enable) {
     lazyload = JSON.stringify(theme.lazyload);
   }
 
   var pjax_config = "undefined";
-  if (_.get(theme, 'pjax.enable')) {
+  if (theme.pjax.enable) {
     pjax_config = JSON.stringify({
       scrollTo2screen: theme.pjax.scrollTo2screen
     });
@@ -99,8 +99,8 @@
 
   var external_link = "undefined";
   if (theme.external_link) {
-    var iconEnable = _.get(theme, 'external_link.icon.enable') || false;
-    var iconName = _.get(theme, 'external_link.icon.name') || '';
+    var iconEnable = theme.external_link.icon.enable || false;
+    var iconName = theme.external_link.icon.name || '';
 
     if (iconEnable) {
       external_link = JSON.stringify({
@@ -114,7 +114,7 @@
 
   var shortcuts = "undefined";
   if (theme.shortcuts) {
-    var isSwitchPost = _.get(theme, 'shortcuts.switch_post.enable') || false;
+    var isSwitchPost = theme.shortcuts.switch_post.enable || false;
 
     if (isSwitchPost) {
       shortcuts = JSON.stringify({

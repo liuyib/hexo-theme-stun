@@ -45,7 +45,7 @@ mixin postHeader(post)
             - var READING_TIME_UNIT = "m";
             span= min2read(post.content, {cn: postReadingTime.speed.zh, en: postReadingTime.speed.en}) + READING_TIME_UNIT
 
-        if _.get(theme, 'valine.enable') && _.get(theme, 'valine.visitor')
+        if theme.valine.enable && theme.valine.visitor
           span(id=url_for(post.path) data-flag-title=post.title).leancloud_visitors
             i(class=`${faPrefix} fa-eye`)
             if !theme.post_meta.icon_only

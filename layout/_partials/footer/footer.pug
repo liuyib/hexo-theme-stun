@@ -39,7 +39,7 @@ if fPowered || fTheme
       if footer.theme.version
         span= " v" + stun_env("version") + "."
 
-if _.get(theme, 'busuanzi.enable')
+if theme.busuanzi.enable
   include ../analytics/busuanzi.pug
 
 if footer.custom.enable

@@ -2,12 +2,12 @@
   var HEXO_URL = "http://hexo.io/";
   var STUN_URL = "https://github.com/liuyib/hexo-theme-stun/";
   var faPrefix = theme.fa_prefix || 'fa';
-  var isNoHeader = !_.get(theme, 'header.enable') || (is_post() && !_.get(theme, 'header.show_on.post'));
-  var isEnableNoHeader = !_.get(theme, 'header.enable') || !_.get(theme, 'header.show_on.post');
+  var isNoHeader = !theme.header.enable || (is_post() && !theme.header.show_on.post);
+  var isEnableNoHeader = !theme.header.enable || !theme.header.show_on.post;
 
   var pjax = false;
   var dataPjax = {};
-  if (_.get(theme, 'pjax.enable')) {
+  if (theme.pjax.enable) {
     pjax = true;
     dataPjax = { 'data-pjax': '' };
   }
@@ -40,7 +40,7 @@ html(lang=config.language)
             if page.comments
               include ./_partials/widgets/comments.pug
 
-          if _.get(theme, 'sidebar.enable')
+          if theme.sidebar.enable
             aside#sidebar.sidebar
               div.sidebar-inner
                 include ./_partials/sidebar/sidebar.pug
@@ -53,7 +53,7 @@ html(lang=config.language)
 
       include ./_partials/widgets/loading-bar.pug
 
-      if _.get(theme, 'back2top.enable')
+      if theme.back2top.enable
         include ./_partials/widgets/back2top.pug
     include ./_partials/search/index.pug
 

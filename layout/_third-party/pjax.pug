@@ -31,9 +31,9 @@
   }
   pjaxArgs = JSON.stringify(pjaxArgs);
 
-if _.get(theme, 'pjax.enable')
+if theme.pjax.enable
   - var pjax_js = "https://cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js";
-  - if (_.get(theme, 'cdn.pjax')) pjax_js = theme.cdn.pjax;
+  - if (theme.cdn.pjax) pjax_js = theme.cdn.pjax;
   script(src=pjax_js)
 
 script.

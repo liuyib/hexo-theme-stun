@@ -1,4 +1,4 @@
-if _.get(theme, 'algolia_search.enable')
+if theme.algolia_search.enable
   include ./algolia.pug
-else if _.get(theme, 'local_search.enable')
+else if theme.local_search.enable
   include ./localsearch.pug
