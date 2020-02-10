@@ -766,6 +766,10 @@ codeblock:
 
   ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608175154.png)
 
+::: warning
+如果代码没有高亮样式，请确保 Hexo 根目录下的 `_config.yml` 文件中 `highlight.hljs` 设为 `false`。
+:::
+
 ## 代码块样式 <Badge text="Beta" type="warning"/> <Badge text="v1.6.0"/>
 
 设置代码块样式，修改主题配置文件：
@@ -863,15 +867,33 @@ tag_cloud:
 
 ## 其他设置
 
-### 设置图片大小
+### 设置图片
 
-1. 使用 HTML 中的 `img` 标签，通过 `style` 属性控制图片大小。
-2. 使用 hexo 提供的语法 `{% https://xxxxx.png width height %}`，填入宽、高即可设置大小。
-3. Stun 主题提供了一个便捷的方法来指定图片大小，你只需要在图片路径后面添加 `?size=宽度x高度` <Badge text="Stable"/> 后缀即可。例如：
+- 设置图片大小
 
-``` md
-![](https://xxxxx.png?size=200x100)
-```
+  1. 使用 HTML 中的 `img` 标签，通过 `style` 属性控制图片大小。
+  2. 使用 hexo 提供的语法 `{% https://xxxxx.png width height %}`，填入宽、高即可设置大小。
+  3. Stun 主题提供了一个便捷的方法，你可以在图片路径后面使用查询参数：`?size=宽度x高度` <Badge text="Stable"/> <Badge text="v1.0.0"/> 来控制图片显示大小。例如：
+
+      ``` md
+      ![](https://xxxxx.png?size=200x100)
+      ```
+
+- 使用行内图片
+
+  默认情况下，文章中的图片水平居中显示。如果你想使用**行内图片**，你可以在图片路径后面使用查询参数：`?show=inline` <Badge text="Beta" type="warning"/> <Badge text="v1.8.0"/>，使得图片显示为行内图片。例如：
+
+  ``` md
+  ![](https://xxxxx.png?show=inline)
+  ```
+
+  当然，你可以同时控制**图片的大小**和**是否显示为行内图片**：
+
+  ``` md
+  ![](https://xxxxx.png?size=200x100&show=inline)
+  ```
+
+  它们的用法和 URL 中的查询参数完全相同！
 
 ### 自定义样式 <Badge text="Stable"/> <Badge text="v1.0.3"/>
 
