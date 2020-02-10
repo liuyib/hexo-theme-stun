@@ -1,5 +1,5 @@
 -
-  var algolia = "undefined";
+  var algolia = 'undefined';
   var env = process.env;
   if (theme.algolia_search.enable) {
     algolia = JSON.stringify({
@@ -8,21 +8,21 @@
       indexName: env.ALGOLIA_INDEX_NAME || config.algolia.indexName,
       hits: theme.algolia_search.hits,
       languages: {
-        input_placeholder: __("algolia_search.input_placeholder"),
-        hits_empty: __("algolia_search.hits_empty"),
-        hits_stats: __("algolia_search.hits_stats")
+        input_placeholder: __('algolia_search.input_placeholder'),
+        hits_empty: __('algolia_search.hits_empty'),
+        hits_stats: __('algolia_search.hits_stats')
       }
     });
   }
 
-  var fontawesome = "undefined";
+  var fontawesome = 'undefined';
   if (theme.fa_prefix) {
     fontawesome = JSON.stringify({
       prefix: theme.fa_prefix
     });
   }
 
-  var sidebar = "undefined";
+  var sidebar = 'undefined';
   if (theme.sidebar.enable) {
     sidebar = JSON.stringify({
       offsetTop: theme.sidebar.offsetTop,
@@ -30,7 +30,7 @@
     });
   }
 
-  var header = "undefined";
+  var header = 'undefined';
   if (theme.header.enable) {
     var isScrollDownIcon = theme.header.scroll_down_icon.enable || false;
 
@@ -41,7 +41,7 @@
     });
   }
 
-  var post_widget = "undefined";
+  var post_widget = 'undefined';
   if (theme.post_widget) {
     var end_text = theme.post_widget.end_text.enable || false;
 
@@ -52,14 +52,14 @@
     }
   }
 
-  var night_mode = "undefined";
+  var night_mode = 'undefined';
   if (theme.night_mode.enable) {
     night_mode = JSON.stringify({
       enable: theme.night_mode.enable,
     });
   }
 
-  var back2top = "undefined";
+  var back2top = 'undefined';
   if (theme.back2top.enable) {
     back2top = JSON.stringify({
       enable: theme.back2top.enable
@@ -75,29 +75,29 @@
     word_wrap: wordWrap
   });
 
-  var zoom_image = "undefined";
+  var zoom_image = 'undefined';
   if (theme.zoom_image.enable) {
     zoom_image = JSON.stringify(theme.zoom_image);
   }
 
-  var gallery_waterfall = "undefined";
+  var gallery_waterfall = 'undefined';
   if (theme.gallery_waterfall.enable) {
     gallery_waterfall = JSON.stringify(theme.gallery_waterfall);
   }
 
-  var lazyload = "undefined";
+  var lazyload = 'undefined';
   if (theme.lazyload.enable) {
     lazyload = JSON.stringify(theme.lazyload);
   }
 
-  var pjax_config = "undefined";
+  var pjax_config = 'undefined';
   if (theme.pjax.enable) {
     pjax_config = JSON.stringify({
       scrollTo2screen: theme.pjax.scrollTo2screen
     });
   }
 
-  var external_link = "undefined";
+  var external_link = 'undefined';
   if (theme.external_link) {
     var iconEnable = theme.external_link.icon.enable || false;
     var iconName = theme.external_link.icon.name || '';
@@ -112,7 +112,7 @@
     }
   }
 
-  var shortcuts = "undefined";
+  var shortcuts = 'undefined';
   if (theme.shortcuts) {
     var isSwitchPost = theme.shortcuts.switch_post.enable || false;
 
@@ -124,10 +124,10 @@
   }
 
   var prompt = JSON.stringify({
-    copy_success: __("prompt.copy.success"),
-    copy_error: __("prompt.copy.error"),
-    creative_commons: __("prompt.creative_commons"),
-    copy_button: __("prompt.copy_button")
+    copy_success: __('prompt.copy.success'),
+    copy_error: __('prompt.copy.error'),
+    creative_commons: __('prompt.creative_commons'),
+    copy_button: __('prompt.copy_button')
   });
 
 script.

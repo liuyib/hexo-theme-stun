@@ -2,17 +2,17 @@
 
 if isShowToc
   div.sidebar-nav
-    span.sidebar-nav-toc.current= __("sidebar.catalog")
-    span.sidebar-nav-ov= __("sidebar.overview")
+    span.sidebar-nav-toc.current= __('sidebar.catalog')
+    span.sidebar-nav-ov= __('sidebar.overview')
 
-section.sidebar-toc(class=`${isShowToc ? "" : "hide"}`)
+section.sidebar-toc(class=`${isShowToc ? '' : 'hide'}`)
   if page.content
     - var tocMaxDepth = page.toc_max_depth || theme.toc.max_depth || 6;
     - var tocMinDepth = page.toc_min_depth || theme.toc.min_depth || 1;
     div!= toc(page.content, {list_number: theme.toc.list_number, min_depth: tocMinDepth, max_depth: tocMaxDepth})
 
 <!-- ov = overview -->
-section.sidebar-ov(class=`${isShowToc ? "hide" : ""}`)
+section.sidebar-ov(class=`${isShowToc ? 'hide' : ''}`)
   if theme.author.enable
     div.sidebar-ov-author
       if theme.author.avatar.url
@@ -38,14 +38,14 @@ section.sidebar-ov(class=`${isShowToc ? "hide" : ""}`)
             target="_blank"
             rel="noopener"
             data-popover=__(`social.${name}`)
-            data-popover-pos=`${theme.social_setting.icon_only ? "up" : "none"}`
+            data-popover-pos=`${theme.social_setting.icon_only ? 'up' : 'none'}`
           )
-            if socialIcon && socialIcon.match("origin:")
+            if socialIcon && socialIcon.match('origin:')
               span.sidebar-ov-social__item--logo
-                != socialIcon.split("origin:")[1]
+                != socialIcon.split('origin:')[1]
             else
               i.sidebar-ov-social__item--icon(
-                class=`${faPrefix} fa-${socialIcon ? socialIcon : "question-circle-o"}`
+                class=`${faPrefix} fa-${socialIcon ? socialIcon : 'question-circle-o'}`
               )
 
             if !theme.social_setting.icon_only
@@ -64,7 +64,7 @@ section.sidebar-ov(class=`${isShowToc ? "hide" : ""}`)
           )
             i.sidebar-ov-feed-email__a--icon(class=`${faPrefix} fa-envelope`)
             span= "Email "
-            span= __("sidebar.subscribe")
+            span= __('sidebar.subscribe')
 
       - var feedRSS = theme.feed.rss;
       if feedRSS
@@ -77,7 +77,7 @@ section.sidebar-ov(class=`${isShowToc ? "hide" : ""}`)
           )
             i.sidebar-ov-feed-rss__a--icon(class=`${faPrefix} fa-rss`)
             span= "RSS "
-            span= __("sidebar.subscribe")
+            span= __('sidebar.subscribe')
 
   if theme.menu && (theme.menu.archives || theme.menu.categories || theme.menu.tags)
     div.sidebar-ov-state
@@ -85,17 +85,17 @@ section.sidebar-ov(class=`${isShowToc ? "hide" : ""}`)
         - var menuArchives = (theme.menu.archives.split('||')[0] + '').trim();
         a.sidebar-ov-state__a.posts(href=menuArchives)
           div.sidebar-ov-state__a--count= site.posts.length
-          div.sidebar-ov-state__a--name= __("sidebar.archives")
+          div.sidebar-ov-state__a--name= __('sidebar.archives')
       if theme.menu.categories
         - var menuCategories = (theme.menu.categories.split('||')[0] + '').trim();
         a.sidebar-ov-state__a.categories(href=menuCategories)
           div.sidebar-ov-state__a--count= site.categories.length
-          div.sidebar-ov-state__a--name= __("sidebar.categories")
+          div.sidebar-ov-state__a--name= __('sidebar.categories')
       if theme.menu.tags
         - var menuTags = (theme.menu.tags.split('||')[0] + '').trim();
         a.sidebar-ov-state__a.tags(href=menuTags)
           div.sidebar-ov-state__a--count= site.tags.length
-          div.sidebar-ov-state__a--name= __("sidebar.tags")
+          div.sidebar-ov-state__a--name= __('sidebar.tags')
 
   if theme.creative_commons.enable && theme.creative_commons.sidebar
     div.sidebar-ov-cc
@@ -103,17 +103,17 @@ section.sidebar-ov(class=`${isShowToc ? "hide" : ""}`)
         href=ccUrl
         target="_blank"
         rel="noopener"
-        data-popover=__("prompt.creative_commons")
+        data-popover=__('prompt.creative_commons')
         data-popover-pos="up"
       )
         img(
           src=url_for(`/${theme.images}/cc-${ccLicense}.svg`)
-          alt=__("creative_commons")
+          alt=__('creative_commons')
         )
 
 if theme.reading_progress.enable && is_post()
   div.sidebar-reading
     div.sidebar-reading-info
-      span= __("sidebar.read_info") + " "
-      span.sidebar-reading-info-num= "0"
+      span= __('sidebar.read_info') + ' '
+      span.sidebar-reading-info-num= '0'
     div.sidebar-reading-line

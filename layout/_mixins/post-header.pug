@@ -8,10 +8,10 @@ mixin postHeader(post)
         a(href=url_for(post.link) target="_blank" rel="noopener" )
           = post.title || post.link
       else if is_post()
-        = post.title || __("post.untitled")
+        = post.title || __('post.untitled')
       else
         a(href=url_for(post.path))
-          = post.title || __("post.untitled")
+          = post.title || __('post.untitled')
 
     if !post.link
       div.post-header-meta
@@ -19,21 +19,21 @@ mixin postHeader(post)
           span.post-header-meta-create
             i(class=`${faPrefix} fa-${theme.post_meta.created.icon}`)
             if !theme.post_meta.icon_only
-              span= __("post.posted") + " "
-            span= full_date(post.date, "YYYY-MM-DD")
+              span= __('post.posted') + ' '
+            span= full_date(post.date, 'YYYY-MM-DD')
 
         if theme.post_meta.updated.enable
           span.post-header-meta-update
             i(class=`${faPrefix} fa-${theme.post_meta.updated.icon}`)
             if !theme.post_meta.icon_only
-              span= __("post.updated") + " "
-            span= full_date(post.updated, "YYYY-MM-DD")
+              span= __('post.updated') + ' '
+            span= full_date(post.updated, 'YYYY-MM-DD')
 
         if theme.post_meta.word_count.enable
           span.post-header-meta-word-count
             i(class=`${faPrefix} fa-${theme.post_meta.word_count.icon}`)
             if !theme.post_meta.icon_only
-              span= __("post.word_count") + " "
+              span= __('post.word_count') + ' '
             span= wordcount(post.content)
 
         if theme.post_meta.reading_time.enable
@@ -41,15 +41,15 @@ mixin postHeader(post)
           span.post-header-meta-reading-time
             i(class=`${faPrefix} fa-${postReadingTime.icon}`)
             if !theme.post_meta.icon_only
-              span= __("post.reading_time") + " "
-            - var READING_TIME_UNIT = "m";
+              span= __('post.reading_time') + ' '
+            - var READING_TIME_UNIT = 'm';
             span= min2read(post.content, {cn: postReadingTime.speed.zh, en: postReadingTime.speed.en}) + READING_TIME_UNIT
 
         if theme.valine.enable && theme.valine.visitor
           span(id=url_for(post.path) data-flag-title=post.title).leancloud_visitors
             i(class=`${faPrefix} fa-eye`)
             if !theme.post_meta.icon_only
-              span= __("post.reading_count") + " "
+              span= __('post.reading_count') + ' '
             span.leancloud-visitors-count
 
         //- Can`t show the result of busuanzi counting in homepage,
@@ -59,5 +59,5 @@ mixin postHeader(post)
             span.post-header-meta-reading-count
               i(class=`${faPrefix} fa-${theme.busuanzi.post_pv.icon}`)
               if !theme.post_meta.icon_only && !theme.busuanzi.icon_only
-                span= __("post.reading_count") + " "
+                span= __('post.reading_count') + ' '
               span#busuanzi_value_page_pv

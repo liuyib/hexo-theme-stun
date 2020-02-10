@@ -26,14 +26,14 @@ mixin postTimeline(posts)
 
     each post in sortPosts
       if post.date
-        - tmpYear = full_date(post.date, "YYYY")
+        - tmpYear = full_date(post.date, 'YYYY')
       if tmpYear !== year
         - year = tmpYear
         time.post-timeline-item.year= year
 
       article.post-timeline-item
         if post.date
-          time.post-timeline-item__time= full_date(post.date, "MM-DD")
+          time.post-timeline-item__time= full_date(post.date, 'MM-DD')
           h2.post-timeline-item-title
             if post.link
               a(
@@ -46,6 +46,6 @@ mixin postTimeline(posts)
               a(
                 class="post-timeline-item-title__a"
                 href=url_for(post.path)
-              )= post.title || __("post.untitled")
+              )= post.title || __('post.untitled')
         if post.top
           include ../_partials/widgets/sticky-top.pug

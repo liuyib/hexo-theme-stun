@@ -3,17 +3,17 @@ div.busuanzi
     span.busuanzi-site-uv
       i(class=`${faPrefix} fa-user`).busuanzi-site-uv__icon
       if !theme.busuanzi.icon_only
-        span= __("footer.uv") + " "
+        span= __('footer.uv') + ' '
       span#busuanzi_value_site_uv
 
   if theme.busuanzi.site_uv.enable && theme.busuanzi.site_pv.enable
-    span.separator= "|"
+    span.separator= '|'
 
   if theme.busuanzi.site_pv.enable
     span.busuanzi-site-pv
       i(class=`${faPrefix} fa-eye`).busuanzi-site-pv__icon
       if !theme.busuanzi.icon_only
-        span= __("footer.pv") + " "
+        span= __('footer.pv') + ' '
       span#busuanzi_value_site_pv
 
   include ../../_third-party/analytics/busuanzi.pug

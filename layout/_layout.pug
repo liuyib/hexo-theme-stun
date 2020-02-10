@@ -1,6 +1,6 @@
 -
-  var HEXO_URL = "http://hexo.io/";
-  var STUN_URL = "https://github.com/liuyib/hexo-theme-stun/";
+  var HEXO_URL = 'http://hexo.io/';
+  var STUN_URL = 'https://github.com/liuyib/hexo-theme-stun/';
   var faPrefix = theme.fa_prefix || 'fa';
   var isNoHeader = !theme.header.enable || (is_post() && !theme.header.show_on.post);
   var isEnableNoHeader = !theme.header.enable || !theme.header.show_on.post;
@@ -12,12 +12,12 @@
     dataPjax = { 'data-pjax': '' };
   }
 
-  var ccLicense = "";
-  var ccLanguage = "";
+  var ccLicense = '';
+  var ccLanguage = '';
   if (theme.creative_commons) {
     var cc = theme.creative_commons;
     ccLicense = cc.license && cc.license.toLowerCase();
-    ccLanguage = cc.language && cc.language.toLowerCase() || "en";
+    ccLanguage = cc.language && cc.language.toLowerCase() || 'en';
   }
   var ccUrl = `https://creativecommons.org/licenses/${ccLicense}/4.0/deed.${ccLanguage}`;
 

@@ -8,13 +8,13 @@ mixin menuItem(menu, className)
         var hasSubMenu = menuPath.toLowerCase() === 'javascript:;';
         var aTagAttr = {};
         if (hasSubMenu) {
-          aTagAttr.onclick = "return false;";
+          aTagAttr.onclick = 'return false;';
         }
 
-      div(class=`header-nav-${className || ""}menu-item`)
+      div(class=`header-nav-${className || ''}menu-item`)
         a(
-          href=hasSubMenu ? "javascript:;" : menuPath
-          class=`header-nav-${className || ""}menu-item__a`
+          href=hasSubMenu ? 'javascript:;' : menuPath
+          class=`header-nav-${className || ''}menu-item__a`
         )&attributes(aTagAttr)
           if !theme.menu_settings.text_only && !!menuIcon
             i(class=`${faPrefix} fa-${menuIcon}`)

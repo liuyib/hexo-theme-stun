@@ -4,7 +4,7 @@ include ./_mixins/post-timeline.pug
 block content
   div.single-tag
     div.single-tag-name
-      span= __("page.tags") + " -- "
+      span= __('page.tags') + ' -- '
       span= page.tag
 
     +postTimeline(page.posts.data)

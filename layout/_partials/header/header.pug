@@ -11,7 +11,7 @@ nav.header-nav(class=`${isNoHeader ? 'header-nav--sticky' : 'header-nav--fixed'}
         if !theme.menu_settings.text_only
           i(class=`${faPrefix} fa-search`)
         if !theme.menu_settings.icon_only
-          span!= __("nav.search")
+          span!= __('nav.search')
 
     if theme.night_mode.enable
       div.header-nav-mode

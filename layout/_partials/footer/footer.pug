@@ -9,14 +9,14 @@
 if fCopyright || fBeian
   div
     if fCopyright
-      span!= `Copyright &copy; ${startYear}` + ((startYear != endYear) ? `~${endYear}` : "")
+      span!= `Copyright &copy; ${startYear}` + ((startYear != endYear) ? `~${endYear}` : '')
       if footer.icon.enable
         span(class=`${faPrefix} fa-${footer.icon.name} footer-icon`)
       else
-        span= " "
-      span= footer.copyright.text || config.author + "."
+        span= ' '
+      span= footer.copyright.text || config.author + '.'
     if fCopyright && fBeian
-      span= " | "
+      span= ' | '
     if fBeian
       span!= footer.beian.icp
 
@@ -28,16 +28,16 @@ if fPowered || fTheme
   div
     if fPowered
       span
-        != _p("footer.powered", link_to(HEXO_URL, "hexo", { external: true }))
+        != _p('footer.powered', link_to(HEXO_URL, 'hexo', { external: true }))
       if footer.powered.version
-        span= " v" + hexo_env("version") + "."
+        span= ' v' + hexo_env('version') + '.'
     if fPowered && fTheme
-      span.separator= "|"
+      span.separator= '|'
     if fTheme
-      span= __("footer.theme") + " - "
-        != link_to(STUN_URL, "stun", { external: true })
+      span= __('footer.theme') + ' - '
+        != link_to(STUN_URL, 'stun', { external: true })
       if footer.theme.version
-        span= " v" + stun_env("version") + "."
+        span= ' v' + stun_env('version') + '.'
 
 if theme.busuanzi.enable
   include ../analytics/busuanzi.pug

@@ -4,7 +4,7 @@ section.post-list
 
   - var postLists = theme.post_list.paginate.home ? page.posts : site.posts;
   - postLists.each(function (post) {
-    article.post(class=`${post.link ? "post-link-title" : ""}`)
+    article.post(class=`${post.link ? 'post-link-title' : ''}`)
       +postHeader(post)
 
       div.post-body
@@ -18,7 +18,7 @@ section.post-list
         if theme.auto_excerpt.enable
           - var content = strip_html(post.content);
           - var excerpt = content.substring(0, theme.auto_excerpt.length);
-          - content.length > theme.auto_excerpt.length ? excerpt += "......" : "";
+          - content.length > theme.auto_excerpt.length ? excerpt += '......' : '';
           div!= excerpt
         else if post.excerpt
           div.post-body-excerpt!= post.excerpt
@@ -28,5 +28,5 @@ section.post-list
 
         if !post.link && isExcerpt
           div.post-body-more
-            a.post-body-more__a(href=url_for(post.path))= __("post.read_more") + " »"
+            a.post-body-more__a(href=url_for(post.path))= __('post.read_more') + ' »'
   - })

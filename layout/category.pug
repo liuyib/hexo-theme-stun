@@ -4,7 +4,7 @@ include ./_mixins/post-timeline.pug
 block content
   div.single-category
     div.single-category-name
-      span= __("page.categories") + " -- "
+      span= __('page.categories') + ' -- '
       span= page.category
 
     +postTimeline(page.posts.data)
