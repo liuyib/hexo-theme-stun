@@ -83,7 +83,7 @@ favicon:
   # ! If you don't understand, please ignore the following.
   # ! -----------------------------------------------------
   # apple_touch_icon: /images/icons/apple-touch-icon.png
-  # safari_pinned_tab: /images/icons/logo-stun.svg
+  # safari_pinned_tab: /images/icons/stun-logo.svg
   # msapplication: /images/icons/favicon-144x144.png
 
 # PWA
@@ -280,7 +280,7 @@ author:
     # In theme directory (source/images): /images/avatar.png
     # In site directory (source/uploads): /uploads/avatar.png
     # You can also use a link of image.
-    url: /images/avatar.png
+    url: /images/icons/stun-logo.svg
     # If true, the avatar would be displayed in a circle.
     rounded: false
     # The value should be chosen from 0 to 1.

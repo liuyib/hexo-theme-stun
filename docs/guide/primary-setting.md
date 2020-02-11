@@ -115,7 +115,7 @@ favicon:
   # ! If you don't understand, please ignore the following.
   # ! -----------------------------------------------------
   # apple_touch_icon: /images/icons/apple-touch-icon.png
-  # safari_pinned_tab: /images/icons/logo-stun.svg
+  # safari_pinned_tab: /images/icons/stun-logo.svg
   # msapplication: /images/icons/favicon-144x144.png
 ```
 

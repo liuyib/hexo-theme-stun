@@ -114,7 +114,7 @@ favicon:
   medium: /assets/favicon-32x32.png                 # 32x32 像素大小的图片
   # 下面这些配置项默认不启用，你需要准备好相应的图片后再开启，也可以直接忽略。
   # apple_touch_icon: /assets/apple-touch-icon.png  # 180x180 像素大小的图片
-  # safari_pinned_tab: /assets/logo-stun.svg        # SVG 格式的图片
+  # safari_pinned_tab: /assets/stun-logo.svg        # SVG 格式的图片
   # msapplication: /assets/favicon-144x144.png      # 144x144 像素大小的图片
 ```
 
