@@ -32,20 +32,6 @@ meta(name="viewport" content="width=device-width, initial-scale=1")
 meta(name="format-detection" content="telephone=no")
 meta(name="apple-mobile-web-app-capable" content="yes")
 meta(name="apple-mobile-web-app-status-bar-style" content="black")
-meta(name="keywords" content=keywords)
-meta(name="description" content=description)
-title= title
-
-if theme.google_site_verification
-  meta(name="google-site-verification" content=theme.google_site_verification)
-if theme.bing_site_verification
-  meta(name="msvalidate.01" content=theme.bing_site_verification)
-if theme.baidu_site_verification
-  meta(name="baidu-site-verification" content=theme.baidu_site_verification)
-if theme.qihu360_site_verification
-  meta(name="360-site-verification" content=theme.qihu360_site_verification)
-if theme.sougou_site_verification
-  meta(name="sogou_site_verification" content=theme.sougou_site_verification)
 
 if theme.pwa.enable
   if theme.pwa.theme_color
@@ -65,7 +51,22 @@ if theme.favicon.msapplication
   meta(name="msapplication-TileImage" content=`${url_for(theme.favicon.msapplication)}`)
   meta(name="msapplication-TileColor" content="#000000")
 
+if theme.google_site_verification
+  meta(name="google-site-verification" content=theme.google_site_verification)
+if theme.bing_site_verification
+  meta(name="msvalidate.01" content=theme.bing_site_verification)
+if theme.baidu_site_verification
+  meta(name="baidu-site-verification" content=theme.baidu_site_verification)
+if theme.qihu360_site_verification
+  meta(name="360-site-verification" content=theme.qihu360_site_verification)
+if theme.sougou_site_verification
+  meta(name="sogou_site_verification" content=theme.sougou_site_verification)
+
 != open_graph()
+
+meta(name="keywords" content=keywords)
+meta(name="description" content=description)
+title= title
 
 if theme.canonical
   link(ref="canonical" href=full_url_for(page.path))
