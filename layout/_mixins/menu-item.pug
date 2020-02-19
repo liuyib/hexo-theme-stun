@@ -17,7 +17,7 @@ mixin menuItem(menu, className)
           class=`header-nav-${className || ''}menu-item__a`
         )&attributes(aTagAttr)
           if !theme.menu_settings.text_only && !!menuIcon
-            i(class=`${faPrefix} fa-${menuIcon}`)
+            i(class=menuIcon)
           if !theme.menu_settings.icon_only
             != __(`menu.${name}`)
         if hasSubMenu

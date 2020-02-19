@@ -32,11 +32,10 @@ hexo.extend.filter.register('after_post_render', function (data) {
         return match;
       };
 
-      var faPrefix = theme.fa_prefix || 'fa';
       return (
         '<span class="external-link">' +
           `<a ${attrBegin} href="${href}" ${attrEnd}>${html}</a>` +
-          `<i class="${faPrefix} fa-external-link"></i>` +
+          `<i class="${theme.external_link.icon.name}"></i>` +
         '</span>'
       );
     }

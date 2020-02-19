@@ -28,5 +28,7 @@ section.post-list
 
         if !post.link && isExcerpt
           div.post-body-more
-            a.post-body-more__a(href=url_for(post.path))= __('post.read_more') + ' »'
+            a.post-body-more__a(href=url_for(post.path))
+              span= __('post.read_more')
+              span(class=`post-body-more__icon ${theme.icon.read_more_btn}`)
   - })

@@ -44,9 +44,7 @@ section.sidebar-ov(class=`${isShowToc ? 'hide' : ''}`)
               span.sidebar-ov-social__item--logo
                 != socialIcon.split('origin:')[1]
             else
-              i.sidebar-ov-social__item--icon(
-                class=`${faPrefix} fa-${socialIcon ? socialIcon : 'question-circle-o'}`
-              )
+              i.sidebar-ov-social__item--icon(class=socialIcon)
 
             if !theme.social_setting.icon_only
               span= name
@@ -62,7 +60,7 @@ section.sidebar-ov(class=`${isShowToc ? 'hide' : ''}`)
             target="_blank"
             rel="noopener"
           )
-            i.sidebar-ov-feed-email__a--icon(class=`${faPrefix} fa-envelope`)
+            i.sidebar-ov-feed-email__a--icon(class=theme.icon.feed_email)
             span= "Email "
             span= __('sidebar.subscribe')
 
@@ -75,7 +73,7 @@ section.sidebar-ov(class=`${isShowToc ? 'hide' : ''}`)
             target="_blank"
             rel="noopener"
           )
-            i.sidebar-ov-feed-rss__a--icon(class=`${faPrefix} fa-rss`)
+            i.sidebar-ov-feed-rss__a--icon(class=theme.icon.feed_rss)
             span= "RSS "
             span= __('sidebar.subscribe')
 
@@ -103,13 +101,10 @@ section.sidebar-ov(class=`${isShowToc ? 'hide' : ''}`)
         href=ccUrl
         target="_blank"
         rel="noopener"
-        data-popover=__('prompt.creative_commons')
+        data-popover=__('popover.creative_commons')
         data-popover-pos="up"
       )
-        img(
-          src=url_for(`/${theme.images}/cc-${ccLicense}.svg`)
-          alt=__('creative_commons')
-        )
+        img(src=url_for(`/${theme.images}/cc-${ccLicense}.svg`))
 
 if theme.reading_progress.enable && is_post()
   div.sidebar-reading

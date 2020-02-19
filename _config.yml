@@ -44,27 +44,24 @@ sougou_site_verification:
 # Menu config
 # ---------------------------------------------------------------
 
-# Header navigation menu.
-# Value before `||` delimiter is the target link.
-# Value after `||` delimiter is the name of FontAwesome icon.
-# See: https://fontawesome.com/v4.7.0/icons/
-# If not set, "question-circle-o" icon will be shown.
+# The menu in the website header.
+# Value before `||` is the target link, value after `||` is the name of FontAwesome icon.
+# Usage: `Key: /link/ || fa(s|r|l|d|b) fa-iconname`
+# Select your icon name, visit: https://fontawesome.com/icons
 menu:
-  home: / || home
-  archives: /archives/ || folder-open
-  # categories: /categories/ || th
-  # tags: /tags/ || tags
-  # about: /about/ || user
-  # xxx: /xxx/ || xxx
+  home: / || fas fa-home
+  archives: /archives/ || fas fa-folder-open
+  # categories: /categories/ || fas fa-layer-group
+  # tags: /tags/ || fas fa-tags
   # You can add a secondary menu like follow.
-  # xxx: javascript:; || xxx
+  # xxx1: javascript:; || fa(s|r|l|d|b) fa-xxx
 
 # Secondary menu.
 submenu:
   # Add item of secondary menu in here.
-  # xxx:
-  #   xx1: /xxx/ || xxx
-  #   xx2: /xxx/ || xxx
+  # xxx1:
+  #   xxx1-1: /xxx1-1/ || fa(s|r|l|d|b) fa-xxx
+  #   xxx1-2: /xxx1-2/ || fa(s|r|l|d|b) fa-xxx
 
 menu_settings:
   # Only show by icon.
@@ -153,6 +150,8 @@ header:
   # The icon that prompt to scroll down.
   scroll_down_icon:
     enable: false
+    # Icon name in FontAwesome, see: https://fontawesome.com/icons
+    name: fas fa-angle-down
     animation: true
 
 body:
@@ -194,8 +193,7 @@ footer:
   # Copyright information.
   copyright:
     enable: true
-    # If not set, will be used `author` from Hexo main config.
-    #   (e.g. liuyib. All Rights Reserved.)
+    # If not set, will be used `author` from Hexo main config (e.g. liuyib. All Rights Reserved.)
     text:
     # Start time. If not set, the current year will be used.
     since:
@@ -204,9 +202,8 @@ footer:
   # The icon between the copyright year and the owner.
   icon:
     enable: true
-    # Icon name in FontAwesome, see: https://fontawesome.com/v4.7.0/icons/
-    # `heart` is recommended with animation in red (#ff0000).
-    name: heart
+    # Icon name in FontAwesome, see: https://fontawesome.com/icons
+    name: fas fa-heart
     # Heart beat animation.
     animation: false
     # Please use quote to wrap value (All CSS size units are supported).
@@ -250,9 +247,8 @@ creative_commons:
 back2top:
   enable: true
   icon:
-    # Icon name in FontAwesome, see: https://fontawesome.com/v4.7.0/icons/
-    # `rocket` is recommended.
-    name: rocket
+    # Icon name in FontAwesome, see: https://fontawesome.com/icons
+    name: fas fa-rocket
     # Rotation Angle of icon.
     rotate: -45deg
     # Please use quote to wrap value (All CSS size units are supported).
@@ -291,23 +287,22 @@ author:
   motto: hello world
 
 # Social links.
-# Value before `||` delimiter is the target link.
-# Value after `||` delimiter is the name of FontAwesome icon.
-# See: https://fontawesome.com/v4.7.0/icons/
-# If you can`t find a suitable icon, you can choose to display the original
-#   text by adding the "origin" prefix (e.g. origin:sf, then "sf" will be show).
+# Value before `||` is the target link, value after `||` is the name of FontAwesome icon.
+# Usage: `Key: /link/ || fa(s|r|l|d|b) fa-iconname`
+# Select your icon name, visit: https://fontawesome.com/icons
+# If you can`t find a suitable icon, you can choose to display text by adding the `origin:` prefix.
+# e.g. `origin:sf`, so `sf` will be displayed.
 social:
-  github: https://github.com/ || github
-  google: https://plus.google.com/ || google
-  # twitter: https://twitter.com/ || twitter
-  # youtube: https://youtube.com/ || youtube
+  github: https://github.com/ || fab fa-github
+  google: https://plus.google.com/ || fab fa-google
+  twitter: https://twitter.com/ || fab fa-twitter
+  youtube: https://youtube.com/ || fab fa-youtube
   # segmentfault: https://segmentfault.com/ || origin:sf
-  # weibo: https://weibo.com/ || weibo
+  # weibo: https://weibo.com/ || fab fa-weibo
   # zhihu: https://www.zhihu.com/ || origin:知
-  # wechat: yournumber || weixin
-  # telegram: yournumber || telegram
-  # qq: yournumber || qq
-  # xxx: xxx || (origin:)xxx
+  # wechat: yournumber || fab fa-weixin
+  # telegram: yournumber || fab fa-telegram
+  # qq: yournumber || fab fa-qq
 
 social_setting:
   enable: false
@@ -336,9 +331,8 @@ feed:
   # Enter your email subscription link (e.g. http://eepurl.com/guAE6j).
   email:
   # Enter the rss address of you set (e.g. /atom.xml).
-  # Dependencies: https://github.com/hexojs/hexo-generator-feed/
-  # Don't enable this before install dependencies
-  #   by `npm install hexo-generator-feed --save` in hexo directory.
+  # Dependency: https://github.com/hexojs/hexo-generator-feed/
+  # !!! Don't enable this before install dependency by `npm install hexo-generator-feed --save` in hexo root directory.
   rss:
 
 # The reading progress of post.
@@ -383,42 +377,40 @@ reward:
 # Post config
 # ---------------------------------------------------------------
 
-# The meta-information at the front of the post.
+# The information of post.
 post_meta:
   # Only show by icon.
   icon_only: false
-  # Show create information.
+  # The create time of post.
   created:
     enable: true
-    # Icon name in FontAwesome, see: https://fontawesome.com/v4.7.0/icons/
-    icon: calendar-o
-  # Show update information.
+    # Icon name in FontAwesome, see: https://fontawesome.com/icons
+    icon: far fa-calendar-plus
+  # The update time of post.
   updated:
     enable: true
-    # Icon name in FontAwesome, see: https://fontawesome.com/v4.7.0/icons/
-    icon: calendar-check-o
-  # Count the reading time of the post.
-  # Dependencies: https://github.com/willin/hexo-wordcount/
-  # Don't enable this before install dependencies
-  #   by `npm install hexo-wordcount --save` in hexo directory.
+    # Icon name in FontAwesome, see: https://fontawesome.com/icons
+    icon: far fa-calendar-check
+  # The approximate reading time of post.
+  # Dependency: https://github.com/willin/hexo-wordcount/
+  # !!! Don't enable this before install dependency by `npm install hexo-wordcount --save` in hexo root directory.
   reading_time:
     enable: false
-    # Icon name in FontAwesome, see: https://fontawesome.com/v4.7.0/icons/
-    icon: clock-o
-    # Set reading speed to estimate reading time.
+    # Icon name in FontAwesome, see: https://fontawesome.com/icons
+    icon: far fa-clock
+    # Set reading speed to count reading time.
     speed:
       # Reading speed of zh-CN.
       zh: 200
       # Reading speed of en-US.
       en: 80
-  # Count the words of the post.
-  # Dependencies: https://github.com/willin/hexo-wordcount/
-  # Don't enable this before install dependencies
-  #   by `npm install hexo-wordcount --save` in hexo directory.
+  # Counting the words of post.
+  # Dependency: https://github.com/willin/hexo-wordcount/
+  # !!! Don't enable this before install dependency by `npm install hexo-wordcount --save` in hexo root directory.
   word_count:
     enable: false
-    # Icon name in FontAwesome, see: https://fontawesome.com/v4.7.0/icons/
-    icon: file-word-o
+    # Icon name in FontAwesome, see: https://fontawesome.com/icons
+    icon: far fa-file-word
 
 # The article list on the homepage or archives page.
 post_list:
@@ -434,7 +426,7 @@ post_list:
 post_widget:
   # Show tags at the bottom of the post.
   tags: true
-  # Show "post end" at the bottom of the post.
+  # Show "------ END ------" at the bottom of the post.
   end_text:
     enable: true
     # Show the horizon line before the text of the end.
@@ -453,14 +445,13 @@ auto_excerpt:
   length: 150
 
 # Stick post to the top.
-# Dependencies: https://github.com/netcan/hexo-generator-index-pin-top/
-# Don't enable this before install dependencies
-#   by `npm install hexo-generator-index-pin-top --save` in hexo directory.
+# Dependency: https://github.com/netcan/hexo-generator-index-pin-top/
+# !!! Don't enable this before install dependency by `npm install hexo-generator-index-pin-top --save` in hexo directory.
 stick_top:
   # Position of icon, available values: left | right.
   position: right
-  # Icon name in FontAwesome, see: https://fontawesome.com/v4.7.0/icons/
-  icon: thumb-tack
+    # Icon name in FontAwesome, see: https://fontawesome.com/icons
+  icon: fas fa-thumbtack
   # Rotation Angle of icon.
   rotate: 45deg
   # Please use the quote to wrap value (All CSS size units are supported).
@@ -487,8 +478,7 @@ gitalk:
   # Facebook-like distraction free mode.
   distraction_free_mode: false
   # Gitalk's display language depends on user's browser or system environment.
-  # If you want everyone visiting your site to see a uniform language,
-  #   you can set a force language value.
+  # If you want everyone visiting your site to see a uniform language, you can set a force language value.
   # Available values: en, zh-CN, es-ES, fr, ru, zh-TW.
   language:
 
@@ -567,16 +557,16 @@ busuanzi:
   # Number of unique visitor to the entire site.
   site_uv:
     enable: true
-    # Icon name in FontAwesome, see: https://fontawesome.com/v4.7.0/icons/
-    icon: user
+    # Icon name in FontAwesome, see: https://fontawesome.com/icons
+    icon: fas fa-user
   # Number of page view to the entire site.
   site_pv:
     enable: true
-    icon: eye
+    icon: fas fa-eye
   # Number of page view to a post.
   post_pv:
     enable: true
-    icon: eye
+    icon: fas fa-eye
 
 # Google analytics ID
 # See: https://analytics.google.com/
@@ -595,7 +585,7 @@ tencent_analytics:
 # ---------------------------------------------------------------
 
 # Algolia Search
-# Dependencies: https://github.com/algolia/instantsearch.js/
+# Dependency: https://github.com/algolia/instantsearch.js/
 algolia_search:
   enable: false
   hits:
@@ -615,7 +605,7 @@ local_search:
 # ---------------------------------------------------------------
 
 # Canvas-ribbon
-# Dependencies: https://github.com/hustcc/ribbon.js
+# Dependency: https://github.com/hustcc/ribbon.js
 canvas_ribbon:
   enable: false
   # The width of the ribbon.
@@ -626,7 +616,7 @@ canvas_ribbon:
   zIndex: -1
 
 # Canvas-nest
-# Dependencies: https://github.com/hustcc/canvas-nest.js
+# Dependency: https://github.com/hustcc/canvas-nest.js
 canvas_nest:
   enable: false
   # Display on mobile or not
@@ -767,9 +757,8 @@ external_link:
   # Adding an icon make it easier for users to know that this is an external link.
   icon:
     enable: true
-    # Icon name in FontAwesome, see: https://fontawesome.com/v4.7.0/icons/
-    # `external-link` is recommended.
-    name: external-link
+    # Icon name in FontAwesome, see: https://fontawesome.com/icons
+    name: fas fa-external-link-alt
     # Please use the quote to wrap value (All CSS size units are supported).
     color: "#aaa"
 
@@ -801,24 +790,40 @@ js: js
 # In theme directory (source/images).
 images: images
 
-# The common prefix of the FontAwesome icon.
-# Using "fa" prefix in version 4.
-# Using "fas | far | fal | fad | fab" prefix in version 5.
-fa_prefix: fa
+# Set icon for some components.
+# Icon name in FontAwesome, see: https://fontawesome.com/icons
+# ! -------------------------------------------------------------------
+# ! Do not edit the follow configs, unless you know what you are doing.
+# ! -------------------------------------------------------------------
+icon:
+  search: fas fa-search
+  localsearch_empty: far fa-meh
+  menu_btn: fas fa-bars
+  feed_email: fas fa-envelope
+  feed_rss: fas fa-rss
+  paginator_prev: fas fa-angle-left
+  paginator_next: fas fa-angle-right
+  read_more_btn: fas fa-long-arrow-alt-right
+  post_tags: fas fa-tag
+  copy_btn: fas fa-copy
+  prompt_success: fas fa-check-circle
+  prompt_info: fas fa-arrow-circle-right
+  prompt_warning: fas fa-exclamation-circle
+  prompt_error: fas fa-times-circle
+  valine_visitor: fas fa-eye
 
 # Set a CDN address for the vendor you want to customize.
 # ! -----------------------------------------------------
-# ! Do not edit the follow configs.
-# ! Unless you know what you are doing.
+# ! Do not edit the follow configs, unless you know what you are doing.
 # ! -----------------------------------------------------
 cdn:
-  # Using version: 4.7.0
+  # Using version: 5.12.1
   # See: https://fontawesome.com/
   # Example:
-  # fontawesome: //cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css
-  # fontawesome: //cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.2/css/all.min.css
+  # fontawesome: //cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css
+  # fontawesome: //cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css
   # fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
-  # fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css
+  # fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css
   fontawesome:
 
   # Using version: 3.4.1

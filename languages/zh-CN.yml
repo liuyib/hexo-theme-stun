@@ -49,23 +49,21 @@ social:
 
 # 文章
 post:
-  created: 创建于
+  created: 发表于
   updated: 更新于
-  posted: 发表于
   word_count: 字数统计
   reading_count: 阅读次数
   reading_time: 阅读时长
+  reading_unit: 分
   read_more: 阅读全文
-  fire: 热度
   sticky: 置顶文章
   untitled: "[ 文章无标题 ]"
-  end: 本文结束，感谢您的阅读
+  end: ------ 本文结束，感觉您的阅读 ------
   copyright:
     author: 本文作者
     link: 本文链接
     license_title: 版权声明
-    license_content: 本博客所有文章除特别声明外，均采用
-      <a href="%s" rel="external nofollow" target="_blank">%s</a> 许可协议。转载请注明出处！
+    license_content: 本博客所有文章除特别声明外，均采用 <a href="%s" rel="external nofollow" target="_blank">%s</a> 许可协议。转载请注明出处！
 
 # Algolia 搜索
 algolia_search:
@@ -91,16 +89,22 @@ back2top: 回到顶部
 footer:
   powered: 由 %s 强力驱动
   theme: 主题
-  uv: 访问人数
-  pv: 浏览总量
+  site_uv: 访问人数
+  site_pv: 浏览总量
 
 # 提示信息
 prompt:
-  copy:
-    success: 复制成功
-    error: 复制失败
-  creative_commons: 知识共享
-  copy_button: 复制
+  copy_success: 复制成功
+  copy_error: 复制失败
 
-# 其他
-creative_commons: 知识共享
+popover:
+  copy_button: 复制
+  creative_commons: 知识共享
+  post:
+    create_time: 发表时间
+    update_time: 修改时间
+    word_count: 字数统计
+    reading_time: 阅读时间
+    visit_num: 阅读次数
+  site_uv: 访问人数
+  site_pv: 浏览总量

@@ -242,21 +242,14 @@ Stun.utils = Stun.$u = {
    * @param {Number} delay Message stay time (unit is 's', default 5s).
    */
   popAlert: function (status, text, delay) {
-    var icon = {
-      success: 'check-circle',
-      info: 'exclamation-circle',
-      warning: 'exclamation-circle',
-      error: 'times-circle'
-    };
     if ($('.stun-message').length !== 0) {
       $('.stun-message').remove();
     }
 
-    var faPrefix = (CONFIG.fontawesome && CONFIG.fontawesome.prefix) || 'fa';
     var $alert = $(
       '<div class="stun-message">' +
         `<div class="stun-alert stun-alert-${status}">` +
-        `<i class="stun-alert-icon ${faPrefix} fa-${icon[status]}"></i>` +
+        `<i class="stun-alert-icon ${CONFIG.fontIcon.prompt[status]}"></i>` +
         `<span class="stun-alert-description">${text}</span>` +
         '</div>' +
         '</div>'
@@ -387,10 +380,8 @@ Stun.utils = Stun.$u = {
       return;
     }
 
-    var faPrefix = (CONFIG.fontawesome && CONFIG.fontawesome.prefix) || 'fa';
-    var extIconName = CONFIG.external_link.icon.name;
     var $wrapper = $('<span class="external-link"></span>');
-    var $icon = $(`<i class="${faPrefix} fa-${extIconName}"></i>`);
+    var $icon = $(`<i class="${CONFIG.external_link.icon.name}"></i>`);
 
     $(container)
       .find('a[target="_blank"]')
@@ -546,10 +537,9 @@ Stun.utils = Stun.$u = {
   },
   addCopyButton: function (type) {
     var btnContainer = '.post-copyright,';
-    var faPrefix = (CONFIG.fontawesome && CONFIG.fontawesome.prefix) || 'fa';
     var $copyIcon = $(
       `<div class="copy-button" data-popover="${CONFIG.prompt.copy_button}" data-popover-pos="up">` +
-        `<i class="${faPrefix} fa-clipboard"></i>` +
+        `<i class="${CONFIG.fontIcon.copyBtn}"></i>` +
         '</div>'
     );
 

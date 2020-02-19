@@ -52,20 +52,18 @@ post:
   created: Created
   updated: updated
   posted: Posted
-  word_count: Words
+  word_count: Words ≈
   reading_count: Visited
-  reading_time: Reading time
+  reading_time: Reading ≈ %s min
   read_more: Read more
-  fire: Heat
   sticky: Sticky top
   untitled: "[ Untitled ]"
-  end: End of the article, thanks for your reading
+  end: ------ END ------
   copyright:
     author: Author
     link: Link
     license_title: Copyright
-    license_content: All articles in this blog are licensed under
-      <a href="%s" rel="external nofollow" target="_blank">%s</a> unless stating additionally
+    license_content: All articles in this blog are licensed under <a href="%s" rel="external nofollow" target="_blank">%s</a> unless stating additionally
 
 # Algolia search
 algolia_search:

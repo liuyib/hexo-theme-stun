@@ -38,52 +38,48 @@
         }
       }
     }
+  }
 
-    &-meta {
-      i {
-        margin-right: .25rem;
+  &-meta {
+    &-item {
+      &:not(:first-child)::before {
+        content: '•';
+        margin: 0 .5rem;
+        color: var(--color-gray-700);
       }
 
-      & > span {
-        &:not(:first-child)::before {
-          content: '•';
-          margin: 0 .5rem;
-          color: var(--color-gray-700);
-        }
+      &__icon,
+      &__info,
+      &__value {
+        margin: 0 2px;
       }
 
       if (hexo-config('post_meta.created.enable')) {
-        &-create {
+        &--createtime {
           color: var(--color-gray-700);
         }
       }
 
       if (hexo-config('post_meta.updated.enable')) {
-        &-update {
+        &--updatetime {
           color: $post-update-color;
         }
       }
 
-      if (hexo-config('post_meta.reading_time.enable')) {
-        &-reading-time {
-          color: $post-reading-time-color;
-        }
-      }
-
       if (hexo-config('post_meta.word_count.enable')) {
-        &-word-count {
+        &--wordcount {
           color: var(--color-gray-700);
         }
       }
 
-      if (hexo-config('busuanzi.post_pv.enable')) {
-        &-reading-count {
-          color: $post-reading-count-color;
+      if (hexo-config('post_meta.reading_time.enable')) {
+        &--readtime {
+          color: $post-reading-time-color;
         }
       }
 
-      if (hexo-config('valine.visitor')) {
-        .leancloud_visitors {
+      if (hexo-config('busuanzi.post_pv.enable')) {
+        &--visitors {
           color: $post-reading-count-color;
         }
       }

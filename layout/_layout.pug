@@ -1,7 +1,6 @@
 -
   var HEXO_URL = 'http://hexo.io/';
   var STUN_URL = 'https://github.com/liuyib/hexo-theme-stun/';
-  var faPrefix = theme.fa_prefix || 'fa';
   var isNoHeader = !theme.header.enable || (is_post() && !theme.header.show_on.post);
   var isEnableNoHeader = !theme.header.enable || !theme.header.show_on.post;
 
@@ -34,7 +33,7 @@ html(lang=config.language)
       main#main.main
         div.main-inner
           div#content-wrap.content-wrap
-            div.content(class=`${is_home() ? 'content-home' : ''}`)
+            div#content.content(class=`${is_home() ? 'content-home' : ''}`)
               block content
 
             if page.comments

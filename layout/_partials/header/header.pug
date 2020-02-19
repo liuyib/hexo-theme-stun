@@ -2,14 +2,14 @@ include ../../_mixins/menu-item.pug
 
 nav.header-nav(class=`${isNoHeader ? 'header-nav--sticky' : 'header-nav--fixed'}`)
   div.header-nav-inner
-    div.header-nav-btn(class=`${faPrefix} fa-bars`)
+    div.header-nav-btn(class=theme.icon.menu_btn)
     div.header-nav-menu
       +menuItem(theme.menu)
 
     if theme.algolia_search.enable || theme.local_search.enable
       div.header-nav-search
         if !theme.menu_settings.text_only
-          i(class=`${faPrefix} fa-search`)
+          i(class=theme.icon.search)
         if !theme.menu_settings.icon_only
           span!= __('nav.search')
 
@@ -31,4 +31,4 @@ if !isNoHeader
 
     if theme.header.scroll_down_icon.enable
       div.header-info-arrow
-        i.fa.fa-angle-down.header-info-arrow__icon
+        i.header-info-arrow__icon(class=theme.header.scroll_down_icon.name)

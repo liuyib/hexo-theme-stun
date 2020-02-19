@@ -15,10 +15,16 @@
     });
   }
 
-  var fontawesome = 'undefined';
-  if (theme.fa_prefix) {
-    fontawesome = JSON.stringify({
-      prefix: theme.fa_prefix
+  var fontIcon = 'undefined';
+  if (theme.icon) {
+    fontIcon = JSON.stringify({
+      prompt: {
+        success: theme.icon.prompt_success,
+        info: theme.icon.prompt_info,
+        warning: theme.icon.prompt_warning,
+        error: theme.icon.prompt_error
+      },
+      copyBtn: theme.icon.copy_btn
     });
   }
 
@@ -124,10 +130,9 @@
   }
 
   var prompt = JSON.stringify({
-    copy_success: __('prompt.copy.success'),
-    copy_error: __('prompt.copy.error'),
-    creative_commons: __('prompt.creative_commons'),
-    copy_button: __('prompt.copy_button')
+    copy_button: __('popover.copy_button'),
+    copy_success: __('prompt.copy_success'),
+    copy_error: __('prompt.copy_error')
   });
 
 script.
@@ -135,7 +140,7 @@ script.
   var CONFIG = {
     root: '!{ config.root }',
     algolia: !{ algolia },
-    fontawesome: !{ fontawesome },
+    fontIcon: !{ fontIcon },
     sidebar: !{ sidebar },
     header: !{ header },
     post_widget: !{ post_widget },
