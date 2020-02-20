@@ -13,9 +13,6 @@ div.busuanzi
         span.busuanzi-siteuv__info= __('footer.site_uv')
       span.busuanzi-siteuv__value#busuanzi_value_site_uv
 
-  if theme.busuanzi.site_uv.enable && theme.busuanzi.site_pv.enable
-    span.separator= '|'
-
   if theme.busuanzi.site_pv.enable
     span.busuanzi-sitepv
       - if (isBszIconOnly) iconElemAttr['data-popover'] = __('popover.site_pv');

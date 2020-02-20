@@ -3,45 +3,45 @@
   var nowYear = new Date().getFullYear();
   var startYear = footer.copyright.since || nowYear;
   var endYear = footer.copyright.end || nowYear;
-  var fCopyright = footer.copyright.enable
-  var fBeian = footer.beian.enable
+  var footerCopyright = footer.copyright.enable
+  var footerBeian = footer.beian.enable
 
-if fCopyright || fBeian
+if footerCopyright || footerBeian
   div
-    if fCopyright
-      span!= `Copyright &copy; ${startYear}` + ((startYear != endYear) ? `~${endYear}` : '')
+    if footerCopyright
+      span= `Copyright © ${startYear}` + ((startYear !== endYear) ? `~${endYear}` : '')
       if footer.icon.enable
-        span(class=`${footer.icon.name} footer-icon`)
+        span(class="footer__icon")
+          i(class=footer.icon.name)
       else
-        span= ' '
-      span= footer.copyright.text || config.author + '.'
-    if fCopyright && fBeian
-      span= ' | '
-    if fBeian
-      span!= footer.beian.icp
+        span.footer__devider
+      span= footer.copyright.text || config.author
+    if footerCopyright && footerBeian
+      span.footer__devider= '|'
+    if footerBeian
+      span= footer.beian.icp
 
 -
-  var fPowered = footer.powered.enable
-  var fTheme = footer.theme.enable
+  var footerPowered = footer.powered.enable
+  var footerTheme = footer.theme.enable
 
-if fPowered || fTheme
+if footerPowered || footerTheme
   div
-    if fPowered
+    if footerPowered
       span
         != _p('footer.powered', link_to(HEXO_URL, 'Hexo', { external: true }))
       if footer.powered.version
-        span= ' v' + hexo_env('version') + '.'
-    if fPowered && fTheme
-      span.separator= '|'
-    if fTheme
+        span= ' v' + hexo_env('version')
+    if footerPowered && footerTheme
+      span.footer__devider= '|'
+    if footerTheme
       span= __('footer.theme') + ' - '
         != link_to(STUN_URL, 'Stun', { external: true })
       if footer.theme.version
-        span= ' v' + stun_env('version') + '.'
+        span= ' v' + stun_env('version')
 
 if theme.busuanzi.enable
   include ../analytics/busuanzi.pug
 
 if footer.custom.enable
-  div
-    span!= footer.custom.text
+  div!= footer.custom.text

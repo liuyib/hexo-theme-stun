@@ -68,13 +68,9 @@ if (hexo-config('header.nav.height') && match('%', hexo-config('header.nav.heigh
       padding-bottom: 0 !important;
       width: 100%;
       height: 100%;
-
-      i {
-        margin-right: .3rem;
-      }
     }
 
-    &-btn {
+    &-menubtn {
       display: none;
       padding: 0 .5rem;
       line-height: header-nav-height;
@@ -93,18 +89,23 @@ if (hexo-config('header.nav.height') && match('%', hexo-config('header.nav.heigh
 
     &-menu-item,
     &-submenu-item {
-      &__a {
+      &__link {
         display: block;
         color: $header-text-color;
       }
+
+      &__icon,
+      &__text {
+        margin: 0 3px;
+      }
     }
 
-    &-menu-item__a {
+    &-menu-item__link {
       padding: 0 .5rem;
       menuItemHover(#f4f5f5, #999);
     }
 
-    &-submenu-item__a {
+    &-submenu-item__link {
       padding: .75rem .5rem;
       menuItemHover(#f4f5f5, #999);
     }
@@ -175,17 +176,17 @@ if (hexo-config('header.nav.height') && match('%', hexo-config('header.nav.heigh
 
         &:hover {
           color: $header-menu-hover-color;
+        }
 
-          i,
-          span {
-            color: $header-menu-hover-color;
-          }
+        &__icon,
+        &__text {
+          margin: 0 3px;
         }
       }
     }
   }
 
-  &-info {
+  &-banner {
     position: relative;
     width: 100%;
     height: 100%;
@@ -208,7 +209,7 @@ if (hexo-config('header.nav.height') && match('%', hexo-config('header.nav.heigh
       }
     }
 
-    &-inner {
+    &-info {
       position: absolute;
       top: 50%;
       left: 0;
@@ -217,20 +218,20 @@ if (hexo-config('header.nav.height') && match('%', hexo-config('header.nav.heigh
       width: 100%;
       text-align: center;
       transform: translateY(-50%);
-    }
 
-    &-title {
-      margin-bottom: 2rem;
-      font-size: 4rem;
-      font-weight: $font-weight-bolder;
-      line-height: 1;
-      color: $header-text-color;
-    }
+      &__title {
+        margin-bottom: 2rem;
+        font-size: 4rem;
+        font-weight: $font-weight-bolder;
+        line-height: 1;
+        color: $header-text-color;
+      }
 
-    &-subtitle {
-      font-size: 1.2rem;
-      font-weight: $font-weight-normal;
-      color: $header-text-color;
+      &__subtitle {
+        font-size: 1.2rem;
+        font-weight: $font-weight-normal;
+        color: $header-text-color;
+      }
     }
 
     if (hexo-config('header.scroll_down_icon.enable')) {
@@ -262,8 +263,11 @@ if (hexo-config('header.nav.height') && match('%', hexo-config('header.nav.heigh
         }
 
         &__icon {
+          width: 100%;
+          height: 100%;
           font-size: 2rem;
           font-weight: $font-weight-bolder;
+          line-height: 1;
           text-align: center;
           color: #fff;
         }

@@ -19,7 +19,7 @@
 使用 Stun 主题运行后，浏览器里显示**类似**如下信息：
 
 `
-n/layout.pug block content include ./_mixins/post-timeline.pug include ./_mixins/post-header.pug div.content.code-highlight if theme.post_list_paged.home include ./_components/recent-posts.pug include ./_components/pagination.pug else include ./_components/recent-posts.pug
+n/layout.pug block content include ./_mixins/timeline.pug include ./_mixins/post-header.pug div.content.code-highlight if theme.post_list_paged.home include ./_components/recent-posts.pug include ./_components/paginator.pug else include ./_components/recent-posts.pug
 `
 
 原因是没有安装依赖 `pug`。

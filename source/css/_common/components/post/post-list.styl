@@ -1,47 +1,35 @@
 // Only in homepage.
-// -----------------------------------------
-.post-list {
-  .post {
+
+.postlist {
+  &-item {
     margin: 0 0 1.5rem;
     width: 100%;
     layout-card();
-
-    &-body {
-      &-more {
-        margin-top: 1.5rem;
-        text-align: center;
-
-        &__a {
-          display: inline-block;
-          border-radius: 5px;
-          padding: 0 .6em;
-          color: #f5f6f7;
-          background-color: $home-readmore-bg-color;
-          transition: background-color .2s ease;
-          cursor: pointer;
-
-          &:hover {
-            color: #f5f6f7;
-            background-color: $home-readmore-bg-hover-color;
-          }
-        }
-
-        &__icon {
-          margin-left: .3rem;
-        }
-      }
-    }
   }
 }
 
-.post-link-title {
-  .post-header {
-    margin: 0 0 .5rem;
-  }
+.post {
+  &-readmore {
+    margin-top: 1.5rem;
+    text-align: center;
 
-  .post-body {
-    &-excerpt {
-      margin: 0;
+    &__link {
+      display: inline-block;
+      border-radius: 5px;
+      padding: 0 .6em;
+      color: var(--color-gray-200);
+      background-color: $home-readmore-bg-color;
+      transition: background-color .2s ease;
+      cursor: pointer;
+
+      &:hover {
+        color: var(--color-gray-200);
+        background-color: $home-readmore-bg-hover-color;
+      }
+    }
+
+    &__icon {
+      margin-left: .3rem;
     }
   }
 }

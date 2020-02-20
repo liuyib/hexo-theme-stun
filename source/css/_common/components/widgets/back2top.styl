@@ -6,16 +6,18 @@
   transform: translateX(100%);
   cursor: pointer;
 
-  &.show {
+  &--show {
     transform: translateX(-100%);
   }
 
-  &.hide {
+  &--hide {
     transform: translateX(100%);
   }
 
-  &-icon {
+  &__icon {
+    display: block;
     font-size: 1.2rem;
+    line-height: 1;
     color: convert(hexo-config('back2top.icon.color') || '#666');
     transition: color .2s ease;
     transform: rotate(convert(hexo-config('back2top.icon.rotate') || '0'));

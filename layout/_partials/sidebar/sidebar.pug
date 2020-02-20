@@ -9,9 +9,9 @@ section.sidebar-toc(class=`${isShowToc ? '' : 'hide'}`)
   if page.content
     - var tocMaxDepth = page.toc_max_depth || theme.toc.max_depth || 6;
     - var tocMinDepth = page.toc_min_depth || theme.toc.min_depth || 1;
-    div!= toc(page.content, {list_number: theme.toc.list_number, min_depth: tocMinDepth, max_depth: tocMaxDepth})
+    != toc(page.content, {list_number: theme.toc.list_number, min_depth: tocMinDepth, max_depth: tocMaxDepth})
 
-<!-- ov = overview -->
+// ov = overview
 section.sidebar-ov(class=`${isShowToc ? 'hide' : ''}`)
   if theme.author.enable
     div.sidebar-ov-author
@@ -23,77 +23,81 @@ section.sidebar-ov(class=`${isShowToc ? 'hide' : ''}`)
             alt="avatar"
           )
       if theme.author.motto
-        p.sidebar-ov-author__p= theme.author.motto
+        p.sidebar-ov-author__text= theme.author.motto
 
   if theme.social_setting.enable
     div.sidebar-ov-social
       for value, name in (theme.social || {})
         if name && value
-          - var item = value.split('||');
-          - var socialPath = (item[0] + '').trim();
-          - var socialIcon = (item[1] + '').trim();
+          -
+            var item = value.split('||');
+            var socialPath = (item[0] + '').trim();
+            var socialIcon = (item[1] + '').trim();
+            var isSocialIconOnly = theme.social_setting.icon_only;
+            var elemAttr = {};
+
+            if (isSocialIconOnly) {
+              elemAttr['data-popover'] = __(`social.${name}`);
+              elemAttr['data-popover-pos'] = 'up';
+            }
           a(
-            class="sidebar-ov-social__item"
+            class="sidebar-ov-social-item"
             href=socialPath
             target="_blank"
             rel="noopener"
-            data-popover=__(`social.${name}`)
-            data-popover-pos=`${theme.social_setting.icon_only ? 'up' : 'none'}`
-          )
+          )&attributes(elemAttr)
             if socialIcon && socialIcon.match('origin:')
-              span.sidebar-ov-social__item--logo
-                != socialIcon.split('origin:')[1]
+              span.sidebar-ov-social-item__icon
+                = socialIcon.split('origin:')[1]
             else
-              i.sidebar-ov-social__item--icon(class=socialIcon)
-
+              span.sidebar-ov-social-item__icon
+                i(class=socialIcon)
             if !theme.social_setting.icon_only
-              span= name
+              span.sidebar-ov-social-item__text= name
 
   if theme.feed.enable
     div.sidebar-ov-feed
-      - var feedEmail = theme.feed.email;
-      if feedEmail
+      if theme.feed.email
         span.sidebar-ov-feed-email
           a(
-            class="sidebar-ov-feed-email__a"
-            href=feedEmail
+            class="sidebar-ov-feed-email__link"
+            href=theme.feed.email
             target="_blank"
             rel="noopener"
           )
-            i.sidebar-ov-feed-email__a--icon(class=theme.icon.feed_email)
-            span= "Email "
-            span= __('sidebar.subscribe')
+            span.sidebar-ov-feed-email__icon
+              i(class=theme.icon.feed_email)
+            span= `Email ${__('sidebar.subscribe')}`
 
-      - var feedRSS = theme.feed.rss;
-      if feedRSS
+      if theme.feed.rss
         span.sidebar-ov-feed-rss
           a(
-            class="sidebar-ov-feed-rss__a"
-            href=url_for(feedRSS)
+            class="sidebar-ov-feed-rss__link"
+            href=url_for(theme.feed.rss)
             target="_blank"
             rel="noopener"
           )
-            i.sidebar-ov-feed-rss__a--icon(class=theme.icon.feed_rss)
-            span= "RSS "
-            span= __('sidebar.subscribe')
+            span.sidebar-ov-feed-rss__icon
+              i(class=theme.icon.feed_rss)
+            span= `RSS ${__('sidebar.subscribe')}`
 
   if theme.menu && (theme.menu.archives || theme.menu.categories || theme.menu.tags)
     div.sidebar-ov-state
       if theme.menu.archives
         - var menuArchives = (theme.menu.archives.split('||')[0] + '').trim();
-        a.sidebar-ov-state__a.posts(href=menuArchives)
-          div.sidebar-ov-state__a--count= site.posts.length
-          div.sidebar-ov-state__a--name= __('sidebar.archives')
+        a.sidebar-ov-state-item.sidebar-ov-state-item--posts(href=menuArchives)
+          div.sidebar-ov-state-item__count= site.posts.length
+          div.sidebar-ov-state-item__name= __('sidebar.archives')
       if theme.menu.categories
         - var menuCategories = (theme.menu.categories.split('||')[0] + '').trim();
-        a.sidebar-ov-state__a.categories(href=menuCategories)
-          div.sidebar-ov-state__a--count= site.categories.length
-          div.sidebar-ov-state__a--name= __('sidebar.categories')
+        a.sidebar-ov-state-item.sidebar-ov-state-item--categories(href=menuCategories)
+          div.sidebar-ov-state-item__count= site.categories.length
+          div.sidebar-ov-state-item__name= __('sidebar.categories')
       if theme.menu.tags
         - var menuTags = (theme.menu.tags.split('||')[0] + '').trim();
-        a.sidebar-ov-state__a.tags(href=menuTags)
-          div.sidebar-ov-state__a--count= site.tags.length
-          div.sidebar-ov-state__a--name= __('sidebar.tags')
+        a.sidebar-ov-state-item.sidebar-ov-state-item--tags(href=menuTags)
+          div.sidebar-ov-state-item__count= site.tags.length
+          div.sidebar-ov-state-item__name= __('sidebar.tags')
 
   if theme.creative_commons.enable && theme.creative_commons.sidebar
     div.sidebar-ov-cc
@@ -109,6 +113,6 @@ section.sidebar-ov(class=`${isShowToc ? 'hide' : ''}`)
 if theme.reading_progress.enable && is_post()
   div.sidebar-reading
     div.sidebar-reading-info
-      span= __('sidebar.read_info') + ' '
-      span.sidebar-reading-info-num= '0'
+      span.sidebar-reading-info__text= __('sidebar.read_info') + ' '
+      span.sidebar-reading-info__num= '0'
     div.sidebar-reading-line

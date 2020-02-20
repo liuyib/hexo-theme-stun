@@ -76,13 +76,13 @@ $(document).ready(function () {
 
     if (scrollTop !== 0) {
       if (!isBack2topShow) {
-        $back2top.addClass('show');
-        $back2top.removeClass('hide');
+        $back2top.addClass('back2top--show');
+        $back2top.removeClass('back2top--hide');
         isBack2topShow = true;
       }
     } else {
-      $back2top.addClass('hide');
-      $back2top.removeClass('show');
+      $back2top.addClass('back2top--hide');
+      $back2top.removeClass('back2top--show');
       isBack2topShow = false;
     }
   }

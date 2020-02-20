@@ -1,5 +1,5 @@
-mixin postTimeline(posts)
-  section.post-timeline
+mixin timeline(posts)
+  section.timeline
     - var year, tmpYear;
     - var sortPosts = [];
     //- Sort posts by date in descending order.
@@ -29,23 +29,24 @@ mixin postTimeline(posts)
         - tmpYear = full_date(post.date, 'YYYY')
       if tmpYear !== year
         - year = tmpYear
-        time.post-timeline-item.year= year
+        time.timeline-item.timeline-item--year= year
 
-      article.post-timeline-item
+      article.timeline-item
         if post.date
-          time.post-timeline-item__time= full_date(post.date, 'MM-DD')
-          h2.post-timeline-item-title
+          time.timeline-item__time= full_date(post.date, 'MM-DD')
+          h2.timeline-item__title
             if post.link
               a(
-                class="post-timeline-item-title__a"
+                class="timeline-item__link"
                 href=url_for(post.link)
                 target="_blank"
                 rel="noopener"
               )= post.title || post.link
             else
               a(
-                class="post-timeline-item-title__a"
+                class="timeline-item__link"
                 href=url_for(post.path)
               )= post.title || __('post.untitled')
+
         if post.top
           include ../_partials/widgets/sticky-top.pug

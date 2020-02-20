@@ -1,7 +1,8 @@
 .footer {
   if (hexo-config('footer.icon.enable')) {
-    &-icon {
-      margin: 0 .3rem;
+    &__icon {
+      display: inline-block;
+      margin: 0 .4rem;
       font-size: 1em;
       color: convert(hexo-config('footer.icon.color') || '#f00');
 
@@ -55,18 +56,18 @@
         background-color: alpha(#000, hexo-config('footer.mask.opacity'));
       }
     }
+  }
 
-    a {
-      color: $footer-link-color;
-      transition: color .2s ease;
+  a {
+    color: $footer-link-color;
+    transition: color .2s ease;
 
-      &:hover {
-        color: $footer-link-hover-color;
-      }
+    &:hover {
+      color: $footer-link-hover-color;
     }
+  }
 
-    .separator {
-      margin: 0 .5rem;
-    }
+  &__devider {
+    margin: 0 10px;
   }
 }

@@ -1,18 +1,18 @@
 if (hexo-config('external_link.icon.enable')) {
-  .external-link {
-    i {
+  .exturl {
+    &__icon {
       margin: 0 .1em 0 .3em;
       font-size: .8em;
       color: convert(hexo-config('external_link.icon.color') || '#aaa');
     }
 
-    a {
+    &__link {
       break-word();
     }
   }
 
-  .footer-inner {
-    .external-link i {
+  .footer {
+    .exturl__icon {
       color: #fff;
     }
   }

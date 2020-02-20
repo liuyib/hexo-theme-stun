@@ -19,7 +19,7 @@ block content
         span= site.categories.length
       != list_categories()
   else
-    div.custom-page
+    div.custompage
       if page.photos && page.photos.length
         +gallery(page)
       != page.content

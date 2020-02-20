@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  var $menuBtn = $('.header-nav-btn');
+  var $menuBtn = $('.header-nav-menubtn');
   var $menu = $('.header-nav-menu');
   var $menuItem = $('.header-nav-menu-item');
   var $submenu = $('.header-nav-submenu');
@@ -57,7 +57,7 @@ $(document).ready(function () {
   });
 
   Stun.utils.pjaxReloadHeader = function () {
-    $menuBtn = $('.header-nav-btn');
+    $menuBtn = $('.header-nav-menubtn');
     $menu = $('.header-nav-menu');
     $menuItem = $('.header-nav-menu-item');
     $submenu = $('.header-nav-submenu');
@@ -195,7 +195,7 @@ $(document).ready(function () {
 
   Stun.utils.pjaxReloadScrollIcon = function () {
     if (CONFIG.header && CONFIG.header.scrollDownIcon) {
-      $('.header-info-arrow').on('click', function (e) {
+      $('.header-banner-arrow').on('click', function (e) {
         e.stopPropagation();
         $('#container').velocity('scroll', {
           offset: $('#header').outerHeight()

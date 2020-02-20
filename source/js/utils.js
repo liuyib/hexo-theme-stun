@@ -323,9 +323,7 @@ Stun.utils = Stun.$u = {
             }
           }
           $imgWrap = $img
-            .wrap(
-              `<a class="fancybox" href="${imgSrc}" itemscope itemtype="http://schema.org/ImageObject" itemprop="url"></a>`
-            )
+            .wrap(`<a class="fancybox" href="${imgSrc}"></a>`)
             .parent('a');
           if ($img.is('.gallery img')) {
             $imgWrap.attr('data-fancybox', 'gallery');
@@ -380,13 +378,18 @@ Stun.utils = Stun.$u = {
       return;
     }
 
-    var $wrapper = $('<span class="external-link"></span>');
-    var $icon = $(`<i class="${CONFIG.external_link.icon.name}"></i>`);
+    var $wrapper = $('<span class="exturl"></span>');
+    var $icon = $(
+      '<span class="exturl__icon">' +
+        `<i class="${CONFIG.external_link.icon.name}"></i>` +
+        '</span>'
+    );
 
     $(container)
       .find('a[target="_blank"]')
+      .addClass('exturl__link')
       .wrap($wrapper)
-      .parent('.external-link')
+      .parent('.exturl')
       .append($icon);
   },
   // Switch to the prev / next post by shortcuts.
@@ -408,7 +411,7 @@ Stun.utils = Stun.$u = {
   // Show / Hide the reward QR.
   registerShowReward: function () {
     $('.reward-button').on('click', function () {
-      var $container = $('.reward-qr');
+      var $container = $('.reward-qrcode');
       if ($container.is(':visible')) {
         $container.css('display', 'none');
       } else {

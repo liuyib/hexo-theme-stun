@@ -102,15 +102,15 @@ $(document).ready(function () {
 
   // Sticky the sidebar when it arrived the top.
   function sidebarSticky () {
-    var $sidebar = $('.sidebar-inner');
+    var $sidebar = $('#sidebar');
     var targetY = document
       .getElementById('content-wrap')
       .getBoundingClientRect().top;
 
     if (targetY < sidebarToTop) {
-      $sidebar.addClass('sticky');
+      $sidebar.addClass('sidebar--sticky');
     } else {
-      $sidebar.removeClass('sticky');
+      $sidebar.removeClass('sidebar--sticky');
     }
   }
 
@@ -133,8 +133,8 @@ $(document).ready(function () {
       isEnablePostEnd = true;
     }
     if (isEnablePostEnd) {
-      postEndTop = $('.post-end').offset().top;
-      postEndHeight = $('.post-end').outerHeight();
+      postEndTop = $('.post-ending').offset().top;
+      postEndHeight = $('.post-ending').outerHeight();
       postReadingHeight = postEndTop - postTop + postEndHeight;
     } else {
       postEndTop = $('.post-footer').offset().top;
@@ -149,7 +149,7 @@ $(document).ready(function () {
         parseInt($post[0].getBoundingClientRect().top * -1) + windowHeight;
     }
 
-    var percentNum = Number($('.sidebar-reading-info-num').text());
+    var percentNum = Number($('.sidebar-reading-info__num').text());
     postReadingHeight = parseInt(Math.abs(postReadingHeight));
     percent = parseInt((postScrollTop / postReadingHeight) * 100);
     percent = percent > 100 ? 100 : percent < 0 ? 0 : percent;
@@ -161,7 +161,7 @@ $(document).ready(function () {
     ) {
       return;
     }
-    $('.sidebar-reading-info-num').text(percent);
+    $('.sidebar-reading-info__num').text(percent);
     $('.sidebar-reading-line').css(
       'transform',
       'translateX(' + (percent - 100) + '%)'

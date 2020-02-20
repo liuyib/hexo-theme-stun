@@ -1,6 +1,7 @@
 extends ./_layout.pug
 
 block content
+  // Just used to judge whether it is an article page
   div#is-post
   div.post
     include ./_mixins/post-header.pug
@@ -15,8 +16,8 @@ block content
 
     footer.post-footer
       if theme.post_widget.end_text.enable
-        div.post-end
-          p= __('post.end')
+        div.post-ending.ending
+          div.ending__text= __('post.end')
 
       if (page.copyright !== false) && (theme.creative_commons.enable && theme.creative_commons.post)
         include ./_partials/widgets/copyright.pug
@@ -26,8 +27,9 @@ block content
           div.post-tags
             each tag in page.tags.data
               span.post-tags-item
-                i.post-tags-item__i(class=theme.icon.post_tags)
-                a.post-tags-item__a(href=tag.permalink)= tag.name
+                span.post-tags-item__icon
+                  i(class=theme.icon.post_tags)
+                a.post-tags-item__link(href=tag.permalink)= tag.name
 
       if theme.post_widget.share.enable
         include ./_partials/widgets/share.pug
@@ -35,4 +37,4 @@ block content
       if (page.reward !== false) && theme.reward.enable
         include ./_partials/widgets/reward.pug
 
-      include ./_partials/widgets/pagination.pug
+      include ./_partials/widgets/paginator.pug

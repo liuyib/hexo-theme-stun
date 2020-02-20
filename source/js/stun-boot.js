@@ -34,7 +34,7 @@ $(document).ready(function () {
       this.showImageToWaterfall();
     }
     if (CONFIG.external_link) {
-      var CONTAINER = '.archive, .post-header-title';
+      var CONTAINER = '.archive, .post-title';
       this.addIconToExternalLink(CONTAINER);
     }
     if (CONFIG.fancybox) {

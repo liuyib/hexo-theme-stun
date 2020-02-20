@@ -36,12 +36,15 @@ html(lang=config.language)
             div#content.content(class=`${is_home() ? 'content-home' : ''}`)
               block content
 
+            if (is_archive() && theme.post_list.paginate.archives) || is_category() || is_tag()
+              include ./_partials/widgets/paginator.pug
+
             if page.comments
               include ./_partials/widgets/comments.pug
 
           if theme.sidebar.enable
-            aside#sidebar.sidebar
-              div.sidebar-inner
+            div#sidebar-wrap.sidebar-wrap
+              aside#sidebar.sidebar
                 include ./_partials/sidebar/sidebar.pug
 
           div.clearfix

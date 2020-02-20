@@ -39,10 +39,6 @@
   }
 }
 
-.custom-page {
-  width: 100%;
-}
-
 .tagcloud,
 .category {
   width: 100%;
@@ -83,7 +79,7 @@
       }
     }
 
-    a {
+    &-link {
       font-size: 1em;
       color: $category-link-color;
       transition: color .2s ease;
@@ -109,17 +105,18 @@
   }
 }
 
-.single {
-  &-category,
-  &-tag {
-    &-name {
-      font-size: $font-size-base + 10px;
-      text-align: center;
-      cursor: default;
+.categorypage,
+.tagpage {
+  &-title {
+    font-size: $font-size-base + 10px;
+    text-align: center;
 
-      & > span:last-child {
-        color: $blue-light;
-      }
+    &__name {
+      color: $blue-light;
     }
   }
+}
+
+.custompage {
+  width: 100%;
 }

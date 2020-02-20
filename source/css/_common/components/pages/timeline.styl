@@ -1,4 +1,4 @@
-.post-timeline {
+.timeline {
   position: relative;
 
   &::before {
@@ -41,7 +41,7 @@
       margin-bottom: 0;
     }
 
-    &.year {
+    &--year {
       font-weight: 700;
     }
 
@@ -58,12 +58,7 @@
       transform: translateY(3%);
     }
 
-    .sticky-top {
-      width: 2em;
-      height: 2em;
-    }
-
-    &-title {
+    &__title {
       display: inline-block;
       margin: 0;
       width: 'calc(100% - %s)' % (time-width + time-margin + sticky-top-width);
@@ -72,13 +67,8 @@
       vertical-align: middle;
     }
 
-    &-title__a {
+    &__link {
       color: var(--color-gray-900);
-      transition: color .2s ease;
-    }
-
-    &-title__a:hover {
-      color: #49b1f5;
     }
   }
 }

@@ -1,12 +1,10 @@
 extends ./_layout.pug
-include ./_mixins/post-timeline.pug
+include ./_mixins/timeline.pug
 
 block content
-  div.single-tag
-    div.single-tag-name
-      span= __('page.tags') + ' -- '
-      span= page.tag
+  div.tagpage
+    div.tagpage-title
+      span.tagpage-title__text= `${__('page.tags')} -- `
+      span.tagpage-title__name= page.tag
 
-    +postTimeline(page.posts.data)
-
-  include ./_partials/widgets/pagination.pug
+    +timeline(page.posts.data)

@@ -1,18 +1,18 @@
-div.post-copyright
-  div.post-copyright-author
-    span.post-copyright-author-name
-      != __('post.copyright.author') + ': '
-    span.post-copyright-author-value
+div(class=`${is_post() ? 'post-copyright' : ''}`).copyright
+  div.copyright-author
+    span.copyright-author__name
+      = __('post.copyright.author') + ': '
+    span.copyright-author__value
       if config.url && config.author
         a(href=config.url)= config.author
-  div.post-copyright-link
-    span.post-copyright-link-name
-      != __('post.copyright.link') + ': '
-    span.post-copyright-link-value
+  div.copyright-link
+    span.copyright-link__name
+      = __('post.copyright.link') + ': '
+    span.copyright-link__value
       if config.url
         a(href=page.permalink)= page.permalink
-  div.post-copyright-notice
-    span.post-copyright-notice-name
-      != __('post.copyright.license_title') + ': '
-    span.post-copyright-notice-value
+  div.copyright-notice
+    span.copyright-notice__name
+      = __('post.copyright.license_title') + ': '
+    span.copyright-notice__value
       != _p('post.copyright.license_content', ccUrl, ccLicense.toUpperCase())

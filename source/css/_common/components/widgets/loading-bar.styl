@@ -6,7 +6,7 @@
   opacity: 0;
   transition: opacity .4s linear;
 
-  .progress {
+  &__progress {
     position: fixed;
     top: 0;
     left: 0;
@@ -19,9 +19,9 @@
   &.loading {
     opacity: 1;
     transition: none;
+  }
 
-    .progress {
-      transition: width .4s ease;
-    }
+  &.loading &__progress {
+    transition: width .4s ease;
   }
 }

@@ -33,9 +33,9 @@ hexo.extend.filter.register('after_post_render', function (data) {
       };
 
       return (
-        '<span class="external-link">' +
-          `<a ${attrBegin} href="${href}" ${attrEnd}>${html}</a>` +
-          `<i class="${theme.external_link.icon.name}"></i>` +
+        '<span class="exturl">' +
+          `<a class="exturl__link" ${attrBegin} href="${href}" ${attrEnd}>${html}</a>` +
+          `<span class="exturl__icon"><i class="${theme.external_link.icon.name}"></i></span>` +
         '</span>'
       );
     }

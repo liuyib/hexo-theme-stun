@@ -1,12 +1,10 @@
 extends ./_layout.pug
-include ./_mixins/post-timeline.pug
+include ./_mixins/timeline.pug
 
 block content
-  div.single-category
-    div.single-category-name
-      span= __('page.categories') + ' -- '
-      span= page.category
+  div.categorypage
+    div.categorypage-title
+      span.categorypage-title__text= `${__('page.categories')} -- `
+      span.categorypage-title__name= page.category
 
-    +postTimeline(page.posts.data)
-
-    include ./_partials/widgets/pagination.pug
+    +timeline(page.posts.data)

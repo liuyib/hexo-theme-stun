@@ -1,9 +1,9 @@
 .paginator {
-  margin-top: 1.5em;
-  border-radius: 5px;
+  margin-top: 1rem;
   text-align: center;
 
   &-inner {
+    border-radius: 5px;
     padding: .8em 0;
     background-color: var(--color-gray-150);
   }
@@ -57,41 +57,34 @@
     margin-left: .2em;
   }
 
-  // Pagination of post.
-  // ----------------------------------------
-  &-post {
-    border-top: 1px solid var(--color-gray-250);
-    padding-top: 1.5rem;
+  &-prev,
+  &-next {
+    width: 100%;
 
-    &-prev,
-    &-next {
-      width: 100%;
+    &__link {
+      break-word();
+      color: $pagination-arrow-color;
+      transition: color .2s ease;
 
-      a {
-        color: $pagination-arrow-color;
-        break-word();
-        transition: color .2s ease;
-
-        &:hover {
-          color: $pagination-arrow-hover-color;
-        }
+      &:hover {
+        color: $pagination-arrow-hover-color;
       }
     }
+  }
 
-    &-prev {
-      text-align: left;
+  &-prev {
+    text-align: left;
 
-      i {
-        margin-right: .3rem;
-      }
+    &__icon {
+      margin-right: .3rem;
     }
+  }
 
-    &-next {
-      text-align: right;
+  &-next {
+    text-align: right;
 
-      i {
-        margin-left: .3rem;
-      }
+    &__icon {
+      margin-left: .3rem;
     }
   }
 }

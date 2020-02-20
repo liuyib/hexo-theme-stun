@@ -5,14 +5,14 @@ mixin postHeader(post)
     if post.top
       include ../_partials/widgets/sticky-top.pug
 
-    h1.post-header-title
+    h1.post-title
       if post.link
-        a(href=url_for(post.link) target="_blank" rel="noopener" )
+        a.post-title__link(href=url_for(post.link) target="_blank" rel="noopener" )
           = post.title || post.link
       else if is_post()
         = post.title || __('post.untitled')
       else
-        a(href=url_for(post.path))
+        a.post-title__link(href=url_for(post.path))
           = post.title || __('post.untitled')
 
     if !post.link
