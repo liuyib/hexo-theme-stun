@@ -135,6 +135,12 @@
     copy_error: __('prompt.copy_error')
   });
 
+  var sourcePath = JSON.stringify({
+    js: theme.js,
+    css: theme.css,
+    images: theme.images
+  });
+
 script.
   var Stun = window.Stun || {};
   var CONFIG = {
@@ -155,7 +161,8 @@ script.
     pjax: !{ pjax_config },
     external_link: !{ external_link },
     shortcuts: !{ shortcuts },
-    prompt: !{ prompt }
+    prompt: !{ prompt },
+    sourcePath: !{ sourcePath },
   };
 
   window.CONFIG = CONFIG;

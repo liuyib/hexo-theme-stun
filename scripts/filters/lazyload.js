@@ -19,7 +19,7 @@ hexo.extend.filter.register('after_post_render', function (data) {
 
       // Smallest 1 * 1 pixel transparent gif
       var loadingBlock = 'data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=';
-      var loadingGIF = `/${(theme.images && theme.images.replace(/^\/+|\/+$/gm,'')) || 'images'}/loading.svg`;
+      var loadingGIF = `/${theme.images}/loading.svg`;
       var phClassName = theme.lazyload.placeholder;
       var placeholder = '';
 
