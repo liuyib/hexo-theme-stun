@@ -2,7 +2,7 @@
 # Theme Core Configuration Settings
 # ---------------------------------------------------------------
 
-# Remove unnecessary files after hexo generate. Introduced in Stun v1.4.0
+# Remove unnecessary files after hexo generate.
 shake_file: true
 
 # ---------------------------------------------------------------
@@ -47,7 +47,7 @@ sougou_site_verification:
 # The menu in the website header.
 # Value before `||` is the target link, value after `||` is the name of FontAwesome icon.
 # Usage: `Key: /link/ || fa(s|r|l|d|b) fa-iconname`
-# Select your icon name, visit: https://fontawesome.com/icons
+# Select your icon name, see: https://fontawesome.com/icons
 menu:
   home: / || fas fa-home
   archives: /archives/ || fas fa-folder-open
@@ -56,7 +56,7 @@ menu:
   # You can add a secondary menu like follow.
   # xxx1: javascript:; || fa(s|r|l|d|b) fa-xxx
 
-# Secondary menu.
+# Secondary menu
 submenu:
   # Add item of secondary menu in here.
   # xxx1:
@@ -76,28 +76,29 @@ menu_settings:
 favicon:
   small: /images/icons/favicon-16x16.png
   medium: /images/icons/favicon-32x32.png
-  # ! -----------------------------------------------------
-  # ! If you don't understand, please ignore the following.
-  # ! -----------------------------------------------------
+  # ! --------------------------------------------------
+  # ! If you don't know the following, please ignore it.
+  # ! --------------------------------------------------
   # apple_touch_icon: /images/icons/apple-touch-icon.png
   # safari_pinned_tab: /images/icons/stun-logo.svg
   # msapplication: /images/icons/favicon-144x144.png
 
-# PWA
+# Progressive Web Apps
 # See: https://github.com/lavas-project/hexo-pwa/
 pwa:
   enable: false
   manifest: /manifest.json
+  # (Please use "" to wrap the value)
   theme_color: "#54bcff"
 
-# Whether to show the button of dark mode.
+# Night mode
 night_mode:
   enable: true
   # The button of switching to the night mode.
   button:
-    # Color of button.
+    # Color of button (Please use "" to wrap the value).
     color: "#fafafa"
-    # Background color of button.
+    # Background color of button (Please use "" to wrap the value).
     bg_color: "#8c8a8a"
   # The icon that stand for day and night.
   icon:
@@ -113,24 +114,28 @@ layout:
   # The width between the content and the sidebar.
   content_sidebar_gap: 30px
   # The padding property of the main tag.
-  # You can set it the same way you set the padding property of CSS.
+  # e.g. Usage:
+  # 20px
+  # 20px 30px
+  # 20px 20px 30px
+  # 20px 30px 40px 25px
   main_padding:
-    # Screen width in: [768px, Infinity)
+    # Take effect when screen width in: [768px, Infinity)
     default: 20px
-    # Screen width in: [576px, 768px)
+    # Take effect when screen width in: [576px, 768px)
     tablet: 15px
-    # Screen width in: [0px, 576px)
+    # Take effect when screen width in: [0px, 576px)
     mobile: 10px
 
+# The header of site.
 header:
   enable: true
-  # Whether to show on the some pages.
   show_on:
     # Whether to show on the article page.
     post: true
-  # Height of the header. (Support for all types of CSS size units)
+  # If you set a percentage, it will be calculated based on the height of screen (Supports all CSS units)
   height: 80%
-  # Background image in the header.
+  # Background image of site header.
   bg_image:
     enable: false
     # In theme directory (source/images): /images/avatar.png
@@ -140,22 +145,23 @@ header:
   # Mask effect of the background image.
   mask:
     enable: false
-    # Opacity of mask (value: 0 ~ 1).
+    # Opacity of the mask (value: 0 ~ 1)
     opacity: 0.5
   nav:
-    # Height of the navigation bar. (Support for all types of CSS size units)
+    # Height of the navigation bar (Supports all CSS units)
     height: 50px
-    # Background color of the navigation bar.
+    # Background color of the navigation bar (Please use "" to wrap the value).
     bg_color: "#333"
-  # The icon that prompt to scroll down.
+  # The icon that prompts the user to pull down.
   scroll_down_icon:
     enable: false
     # Icon name in FontAwesome, see: https://fontawesome.com/icons
     name: fas fa-angle-down
     animation: true
 
+# The body of site.
 body:
-  # Background image in the body.
+  # Background image of site body.
   bg_image:
     enable: false
     # In theme directory (source/images): /images/avatar.png
@@ -169,16 +175,16 @@ body:
   # Mask effect of the background image.
   mask:
     enable: true
-    # Opacity of mask (value: 0 ~ 1).
+    # Opacity of mask (value: 0 ~ 1)
     opacity:
-      # Opacity of the mask for the body background image by default.
+      # Opacity of the mask by default.
       default: 0.1
-      # Opacity of the mask for the body background image in night mode.
+      # Opacity of the mask in night mode.
       night_mode: 0.6
 
-# Footer of your site.
+# The footer of site.
 footer:
-  # Background image in the footer.
+  # Background image of site footer.
   bg_image:
     enable: false
     # In theme directory (source/images): /images/avatar.png
@@ -188,7 +194,7 @@ footer:
   # Mask effect of the background image.
   mask:
     enable: false
-    # Opacity of mask (value: 0 ~ 1).
+    # Opacity of mask (value: 0 ~ 1)
     opacity: 0.5
   # Copyright information.
   copyright:
@@ -199,51 +205,53 @@ footer:
     since:
     # End time. If not set, the current year will be used.
     end:
-  # The icon between the copyright year and the owner.
+  # The icon between the copyright and the owner.
   icon:
     enable: true
     # Icon name in FontAwesome, see: https://fontawesome.com/icons
     name: fas fa-heart
-    # Heart beat animation.
+    # Heartbeat animation.
     animation: false
-    # Please use quote to wrap value (All CSS size units are supported).
+    # (Please use "" to wrap the value)
     color: "#ff0000"
-  # Hexo link (Powered by Hexo).
+  # Hexo link
   powered:
     enable: true
-    # Version info of Hexo after Hexo link (e.g. vX.X.X).
+    # Whether to show version after Hexo link (e.g. vX.X.X)
     version: true
-  # Theme info link (Theme - stun).
+  # Theme link
   theme:
     enable: true
-    # Version info of theme after theme info (e.g. vX.X.X).
+    # Whether to show version after theme link (e.g. vX.X.X)
     version: true
-  # Beian icp information for Chinese users. see: http://www.miitbeian.gov.cn/
+  # Beian information for Chinese users, see: http://www.miitbeian.gov.cn/
   beian:
     enable: false
     # 备案 XXXXXXXX 号
     icp:
-  # Any custom text (e.g. Hosted by <a href="https://pages.github.com/" rel="noopener" target="_blank">Github Pages</a>).
+  # Any custom text (e.g. Hosted by <a href="https://pages.github.com/" rel="noopener" target="_blank">Github Pages</a>)
   custom:
     enable: false
     text:
 
-# Creative Commons 4.0 International License.
+# Creative Commons 4.0 International License
 creative_commons:
   enable: true
-  # Available: BY | BY-SA | BY-ND | BY-NC | BY-NC-SA | BY-NC-ND.
+  # Optional values: BY | BY-SA | BY-ND | BY-NC | BY-NC-SA | BY-NC-ND
   # For details, please see: https://creativecommons.org/share-your-work/licensing-types-examples/
   license: BY-NC-SA
   # Show the CC license in the sidebar.
   sidebar: true
   # Show the CC license at the post bottom.
   post: true
-  # You can set a language value if you prefer a translated version of CC license.
-  # Valid values of language: en, zh, etc.
-  # If not set, "en" will be used by default.
+  # Optional values:
+  #   id | ms | ca | da | de | en | es | es_ES | eo | eu | fr | gl | hr
+  #   it | lv | lt | hu | nl | no | pt | pt_BR | pl | ro | sl | fi | sv
+  #   tr | is | cs | el | be | ru | zh | zh_TW | uk | ar | fa | bn | ja | ko
+  # If not set, `en` will be used by default.
   language:
 
-# Back to top button.
+# Back to top
 back2top:
   enable: true
   icon:
@@ -251,27 +259,28 @@ back2top:
     name: fas fa-rocket
     # Rotation Angle of icon.
     rotate: -45deg
-    # Please use quote to wrap value (All CSS size units are supported).
+    # (Please use "" to wrap the value)
     color: "#49b1f5"
-    # Colour when the mouse hovers it.
+    # Color when the mouse hovers it (Please use "" to wrap the value)
     hover_color: "#fc6423"
 
 # ---------------------------------------------------------------
 # Sidebar config
 # ---------------------------------------------------------------
 
+# The sidebar of site.
 sidebar:
   enable: true
-  # Sidebar position, available values: left | right.
+  # Optional value: left | right
   position: right
-  # The distance from the top of the page when the sidebar is fixed (Only px units are supported).
+  # The distance from the top of the page when the sidebar is fixed (Only `px` unit is supported)
   offsetTop: 20px
-  # Horizon line.
+  # Whether to show horizon line.
   horizon_line: false
 
 author:
   enable: true
-  # Avatar in the sidebar.
+  # Avatar in the site sidebar.
   avatar:
     # In theme directory (source/images): /images/avatar.png
     # In site directory (source/uploads): /uploads/avatar.png
@@ -279,17 +288,18 @@ author:
     url: /images/icons/stun-logo.svg
     # If true, the avatar would be displayed in a circle.
     rounded: false
-    # The value should be chosen from 0 to 1.
+    # Opacity of avatar (value: 0 ~ 1)
     opacity: 1
-    # Mouse hover animation, available value: turn | shake.
+    # Mouse hover animation
+    # Optional value: turn | shake
     animation: turn
   # Your favorite motto.
   motto: hello world
 
-# Social links.
+# Social links
 # Value before `||` is the target link, value after `||` is the name of FontAwesome icon.
 # Usage: `Key: /link/ || fa(s|r|l|d|b) fa-iconname`
-# Select your icon name, visit: https://fontawesome.com/icons
+# Select your icon name, see: https://fontawesome.com/icons
 # If you can`t find a suitable icon, you can choose to display text by adding the `origin:` prefix.
 # e.g. `origin:sf`, so `sf` will be displayed.
 social:
@@ -328,9 +338,9 @@ toc:
 # Subscribe of email and rss.
 feed:
   enable: false
-  # Enter your email subscription link (e.g. http://eepurl.com/guAE6j).
+  # Enter your email subscription link (e.g. http://eepurl.com/guAE6j)
   email:
-  # Enter the rss address of you set (e.g. /atom.xml).
+  # Enter the rss address of you set (e.g. /atom.xml)
   # Dependency: https://github.com/hexojs/hexo-generator-feed/
   # !!! Don't enable this before install dependency by `npm install hexo-generator-feed --save` in hexo root directory.
   rss:
@@ -338,9 +348,8 @@ feed:
 # The reading progress of post.
 reading_progress:
   enable: true
-  # Please use the quote to wrap value (All CSS size units are supported).
+  # (Please use "" to wrap the value)
   color: "#fc6423"
-  # Support for all types of CSS size units.
   height: 1px
 
 # ---------------------------------------------------------------
@@ -349,27 +358,21 @@ reading_progress:
 
 codeblock:
   # The style of code block.
-  # values:
-  #   - default
-  #   - simple
-  #   - carbon
+  # Optional values: default | simple | carbon
   style: default
   # The theme of code highlight.
-  # values:
-  #   - light
-  #   - dark
-  #   - ocean
+  # Optional values: light | dark | ocean
   highlight: light
-  # Whether the code to newline.
+  # Whether to wrap when code overflow.
   word_wrap: false
 
-# Add a line below h1, h2.
+# Add a line below h1, h2 tags.
 heading_line: true
 
-# Reward
+# Reward QR Code
 reward:
   enable: false
-  # Fill in your QR Code for collecting money.
+  # Your QR code for collecting money.
   alipay:
   wechat:
 
@@ -424,37 +427,38 @@ post_list:
 
 # The widget of post.
 post_widget:
-  # Show tags at the bottom of the post.
+  # Whether to show tags at the bottom of post.
   tags: true
-  # Show "------ END ------" at the bottom of the post.
+  # Whether to show "------ END ------" at the bottom of post.
   end_text:
     enable: true
-    # Show the horizon line before the text of the end.
+    # Whether to show a horizon line before "------ END ------".
     horizon_line: true
   # Article sharing
   share:
     enable: false
     # The text displayed before the share button.
     label: "Share to: "
-    # Optional value: qzone, qq, weibo, wechat, douban, linkedin, facebook, twitter, google
+    # Optional values: qzone | qq | weibo | wechat | douban | linkedin | facebook | twitter | google
     target: qzone, qq, weibo, wechat, douban, linkedin, facebook, twitter, google
 
-# Automatically retain article excerpt.
+# Retain excerpt automatically.
 auto_excerpt:
   enable: false
   length: 150
 
-# Stick post to the top.
+# Stick post to the top
 # Dependency: https://github.com/netcan/hexo-generator-index-pin-top/
 # !!! Don't enable this before install dependency by `npm install hexo-generator-index-pin-top --save` in hexo directory.
 stick_top:
-  # Position of icon, available values: left | right.
+  # Position of icon
+  # Optional values: left | right
   position: right
     # Icon name in FontAwesome, see: https://fontawesome.com/icons
   icon: fas fa-thumbtack
   # Rotation Angle of icon.
   rotate: 45deg
-  # Please use the quote to wrap value (All CSS size units are supported).
+  # (Please use "" to wrap the value)
   color: "#999"
 
 # ---------------------------------------------------------------
@@ -479,7 +483,7 @@ gitalk:
   distraction_free_mode: false
   # Gitalk's display language depends on user's browser or system environment.
   # If you want everyone visiting your site to see a uniform language, you can set a force language value.
-  # Available values: en, zh-CN, es-ES, fr, ru, zh-TW.
+  # Optional values: en | zh-CN | es-ES | fr | ru | zh-TW
   language:
 
 # Valine
@@ -506,7 +510,7 @@ valine:
   visitor: false
   # Whether to record the commenter IP.
   recordIP: false
-  # language, available values: en, zh-cn.
+  # Optional values: en | zh-cn
   language:
 
 # Livere
@@ -531,13 +535,13 @@ utterances:
   # Github repository.
   repo:
   # Choose the mapping between blog posts and GitHub issues.
-  # Available values: pathname | url | title | og:title
+  # Optional values: pathname | url | title | og:title
   mapping: title
   # Choose the label that will be assigned to issues created by Utterances.
   # Emoji are supported in label names.
   label: utterances
   # Choose an Utterances theme that matches your blog.
-  # Available values: github-light | github-dark | github-dark-orange | icy-dark | dark-blue | photon-dark
+  # Optional values: github-light | github-dark | github-dark-orange | icy-dark | dark-blue | photon-dark
   theme: github-light
   # ! -------------------------------------------------------------------------------
   # ! Don't set this unless the URL of the script in the official website is changed.
@@ -619,16 +623,16 @@ canvas_ribbon:
 # Dependency: https://github.com/hustcc/canvas-nest.js
 canvas_nest:
   enable: false
-  # Display on mobile or not
+  # Whether to show on mobile.
   onmobile: true
-  # RGB values, use "," to separate
-  # Color for lines
+  # Color of lines.
+  # RGB values, use `,` to separate.
   color: "0,0,0"
-  # The opacity of line: 0 ~ 1
+  # The opacity of lines (value: 0 ~ 1)
   opacity: 0.6
-  # The number of lines
+  # The number of lines.
   count: 99
-  # z-index property of the background
+  # `z-index` property of the background.
   zIndex: -1
 
 # ---------------------------------------------------------------
@@ -676,7 +680,7 @@ fancybox: false
 zoom_image:
   enable: true
   # The color of mask.
-  # Please use the quote to wrap value (All CSS size units are supported).
+  # (Please use "" to wrap the value)
   mask_color: "rgba(0,0,0,0.6)"
 
 # If you are use "photos" attribute in the Front-matter,
@@ -692,7 +696,7 @@ gallery_waterfall:
 # See: https://github.com/tuupola/lazyload
 lazyload:
   enable: false
-  # Available values: gif | block
+  # Optional values: gif | block
   placeholder: gif
 
 # Quicklink support
@@ -712,9 +716,9 @@ quicklink:
   priority: true
   # For more flexibility you can add some patterns (RegExp, Function, or Array) to ignores.
   # See: https://github.com/GoogleChromeLabs/quicklink#custom-ignore-patterns
-  # ! ---------------------------------------------------------------
-  # ! If you don't understand, please ignore the following.
-  # ! ---------------------------------------------------------------
+  # ! --------------------------------------------------
+  # ! If you don't know the following, please ignore it.
+  # ! --------------------------------------------------
   ignores:
     - /\/api\/?/
     - uri => uri.includes('.xml')
@@ -728,9 +732,9 @@ pjax:
   enable: false
   # Scrolling to the second screen when the page loaded.
   scrollTo2screen: false
-  # ! -----------------------------------------------------
-  # ! If you don't understand, please ignore the following.
-  # ! -----------------------------------------------------
+  # ! --------------------------------------------------
+  # ! If you don't know the following, please ignore it.
+  # ! --------------------------------------------------
   # Please see: https://github.com/MoOx/pjax/#options
   elements:
   selectors:
@@ -759,21 +763,21 @@ external_link:
     enable: true
     # Icon name in FontAwesome, see: https://fontawesome.com/icons
     name: fas fa-external-link-alt
-    # Please use the quote to wrap value (All CSS size units are supported).
+    # (Please use "" to wrap the value)
     color: "#aaa"
 
 # The shortcuts of the site.
 shortcuts:
   # Switch to the prev / next post by key.
-  # "Ctrl + ←" is the shortcuts to prev post.
-  # "Ctrl + →" is the shortcuts to next post.
+  # `Ctrl + ←` is the shortcuts to prev post.
+  # `Ctrl + →` is the shortcuts to next post.
   switch_post:
     enable: false
 
 # Tag cloud
 # If not used, comment it or ignore it.
 tag_cloud:
-  # Color for tag (please use the quote to wrap value, only support HEX).
+  # (Please use "" to wrap the value)
   start_color: "#a4d8fa"
   end_color: "#49b1f5"
   # Size for tag.
@@ -783,11 +787,11 @@ tag_cloud:
   max_amount: 200
 
 # Assets
-# In theme directory (source/css).
+# In theme directory (source/css)
 css: css
-# In theme directory (source/js).
+# In theme directory (source/js)
 js: js
-# In theme directory (source/images).
+# In theme directory (source/images)
 images: images
 
 # Set icon for some components.
@@ -813,9 +817,9 @@ icon:
   valine_visitor: fas fa-eye
 
 # Set a CDN address for the vendor you want to customize.
-# ! -----------------------------------------------------
+# ! -------------------------------------------------------------------
 # ! Do not edit the follow configs, unless you know what you are doing.
-# ! -----------------------------------------------------
+# ! -------------------------------------------------------------------
 cdn:
   # Using version: 5.12.1
   # See: https://fontawesome.com/
