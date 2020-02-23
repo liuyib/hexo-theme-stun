@@ -3,8 +3,8 @@ mixin menuItem(menu, className)
     if name && value
       -
         var item = value.split('||');
-        var menuPath = (item[0] + '').trim();
-        var menuIcon = (item[1] + '').trim();
+        var menuPath = item[0] ? item[0].trim() : '/';
+        var menuIcon = item[1] ? item[1].trim() : false;
         var hasSubMenu = menuPath.toLowerCase() === 'javascript:;';
         var aTagAttr = {};
         if (hasSubMenu) aTagAttr.onclick = 'return false;';
@@ -14,7 +14,7 @@ mixin menuItem(menu, className)
           href=hasSubMenu ? 'javascript:;' : menuPath
           class=`header-nav-${className || ''}menu-item__link`
         )&attributes(aTagAttr)
-          if !theme.menu_settings.text_only && !!menuIcon
+          if !theme.menu_settings.text_only && menuIcon
             span(class=`header-nav-${className || ''}menu-item__icon`)
               i(class=menuIcon)
           if !theme.menu_settings.icon_only

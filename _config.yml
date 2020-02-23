@@ -46,7 +46,8 @@ sougou_site_verification:
 
 # The menu in the website header.
 # Value before `||` is the target link, value after `||` is the name of FontAwesome icon.
-# Usage: `Key: /link/ || fa(s|r|l|d|b) fa-iconname`
+# Usage(With Icon): `Key: /link/ || fa(s|r|l|d|b) fa-iconname`
+# Usage(No Icon)  : `Key: /link/`
 # Select your icon name, see: https://fontawesome.com/icons
 menu:
   home: / || fas fa-home
