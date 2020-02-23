@@ -40,7 +40,7 @@ $(document).ready(function () {
     if (CONFIG.fancybox) {
       this.wrapImageWithFancyBox();
     } else if (CONFIG.zoom_image) {
-      this.registerClickToZoomImage();
+      this.registerZoomImage();
     }
   };
 

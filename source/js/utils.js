@@ -422,40 +422,36 @@ Stun.utils = Stun.$u = {
     });
   },
   // Click to zoom in image, without fancybox.
-  registerClickToZoomImage: function () {
+  registerZoomImage: function () {
     $('#content-wrap img')
       .not(':hidden')
       .each(function () {
-        if ($(this).attr('data-zoom') === 'none') {
-          return;
-        }
-        $(this).addClass('zoom-image');
+        if ($(this).attr('data-zoom') === 'none') return;
+        $(this).addClass('zoomimg');
       });
 
-    var $newImgMask = $('<div class="zoom-image-mask"></div>');
-    var $newImg = $('<img>');
+    var $imgMask = $('<div class="zoomimg-mask"></div>');
+    var $imgBox = $('<div class="zoomimg-box"></div>');
     var isZoom = false;
 
-    $(window).on('scroll', function () {
-      if (isZoom) {
-        isZoom = false;
-        setTimeout(closeZoom, 200);
-      }
-    });
+    $(window).on('scroll', closeZoom);
+    $(document).on('click', closeZoom);
 
-    $(document).on('click', function () {
-      closeZoom();
-    });
-
-    $('.zoom-image').on('click', function (e) {
+    $('.zoomimg').on('click', function (e) {
       e.stopPropagation();
+      if (isZoom) {
+        closeZoom();
+        return;
+      }
       isZoom = true;
 
       var imgRect = this.getBoundingClientRect();
-      var imgW = $(this).width();
-      var imgH = $(this).height();
       var imgOuterW = $(this).outerWidth();
       var imgOuterH = $(this).outerHeight();
+      var imgW = $(this).width();
+      var imgH = $(this).height();
+      var imgL = $(this).offset().left + (imgOuterW - imgW) / 2;
+      var imgT = $(this).offset().top + (imgOuterH - imgH) / 2;
       var winW = $(window).width();
       var winH = $(window).height();
       var scaleX = winW / imgW;
@@ -464,42 +460,30 @@ Stun.utils = Stun.$u = {
       var translateX = winW / 2 - (imgRect.x + imgOuterW / 2);
       var translateY = winH / 2 - (imgRect.y + imgOuterH / 2);
 
-      $newImg.attr('class', this.className);
-      $newImg.attr('src', this.src);
-      $newImg.addClass('show');
-      $newImg.css({
-        left: $(this).offset().left + (imgOuterW - imgW) / 2,
-        top: $(this).offset().top + (imgOuterH - imgH) / 2,
-        width: imgW,
-        height: imgH
-      });
-      $(this).addClass('hide');
-      $('body')
-        .append($newImgMask)
-        .append($newImg);
-      $newImgMask.velocity({ opacity: 1 });
-      $newImg.velocity(
-        {
-          translateX: translateX,
-          translateY: translateY,
-          scale: scale
-        },
-        {
-          duration: 300,
-          easing: [0.2, 0, 0.2, 1]
-        }
-      );
+      $imgBox.css({ width: imgOuterW, height: imgOuterH });
+      $imgBox.addClass($(this).attr('class'));
+      $imgBox.insertBefore(this);
+      $(this).css({ left: imgL, top: imgT, width: imgW, height: imgH });
+      $(this).addClass('zoomimg--show');
+      $('body').append($imgMask);
+      $imgMask.velocity({ opacity: 1 });
+      $('.zoomimg--show').velocity({ translateX, translateY, scale });
     });
 
     function closeZoom () {
-      $newImg.velocity('reverse');
-      $newImgMask.velocity('reverse', {
+      if (!isZoom) {
+        return;
+      }
+
+      $('.zoomimg-mask').remove();
+      $('.zoomimg--show').velocity('reverse', {
         complete: function () {
-          $('.zoom-image.show').remove();
-          $('.zoom-image-mask').remove();
-          $('.zoom-image').removeClass('hide');
+          $('.zoomimg--show').removeAttr('style');
+          $('.zoomimg').removeClass('zoomimg--show');
+          $('.zoomimg-box').remove();
         }
       });
+      isZoom = false;
     }
   },
   /**
