@@ -19,12 +19,12 @@ section.postlist
           - var content = strip_html(post.content);
           - var excerpt = content.substring(0, theme.auto_excerpt.length);
           - content.length > theme.auto_excerpt.length ? excerpt += '......' : '';
-          div.post-excerpt= excerpt
+          div.post-excerpt!= excerpt
         else if post.excerpt
-          div.post-excerpt= post.excerpt
+          div.post-excerpt!= post.excerpt
         else
           - isExcerpt = false;
-          div.post-excerpt= post.content
+          div.post-excerpt!= post.content
 
         if !post.link && isExcerpt
           div.post-readmore
