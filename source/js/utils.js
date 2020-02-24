@@ -448,6 +448,7 @@ Stun.utils = Stun.$u = {
         .clone()
         .addClass('zoomimg-clone');
 
+      var SIDE_GAP = parseInt(CONFIG.zoom_image.gap_aside || 20);
       var imgRect = this.getBoundingClientRect();
       var imgOuterW = $(this).outerWidth();
       var imgOuterH = $(this).outerHeight();
@@ -455,13 +456,13 @@ Stun.utils = Stun.$u = {
       var imgH = $(this).height();
       var imgL = $(this).offset().left + (imgOuterW - imgW) / 2;
       var imgT = $(this).offset().top + (imgOuterH - imgH) / 2;
-      var winW = $(window).width();
-      var winH = $(window).height();
+      var winW = $(window).width() - SIDE_GAP * 2;
+      var winH = $(window).height() - SIDE_GAP * 2;
       var scaleX = winW / imgW;
       var scaleY = winH / imgH;
       var scale = (scaleX < scaleY ? scaleX : scaleY) || 1;
-      var translateX = winW / 2 - (imgRect.x + imgOuterW / 2);
-      var translateY = winH / 2 - (imgRect.y + imgOuterH / 2);
+      var translateX = winW / 2 - (imgRect.x + imgOuterW / 2) + SIDE_GAP;
+      var translateY = winH / 2 - (imgRect.y + imgOuterH / 2) + SIDE_GAP;
 
       $(this).addClass('zoomimg--hide');
       $('body')

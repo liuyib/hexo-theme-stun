@@ -683,6 +683,9 @@ zoom_image:
   # The color of mask.
   # (Please use "" to wrap the value)
   mask_color: "rgba(0,0,0,0.6)"
+  # The gap between image and a edge of screen when image is enlarged.
+  # (Only `px` unit is supported)
+  gap_aside: 20px
 
 # If you are use "photos" attribute in the Front-matter,
 #   you can enable this to show images in waterfalls flow.

@@ -943,6 +943,8 @@ zoom_image:
   enable: true
   # 遮罩的颜色
   mask_color: "rgba(0,0,0,0.6)"
+  # 图片放大时，距离屏幕边缘的间隙
+  gap_aside: 20px
 ```
 
 ::: tip
