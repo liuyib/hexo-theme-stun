@@ -13,13 +13,13 @@
 .zoomimg {
   cursor: zoom-in;
 
-  &--show {
+  &--hide {
+    visibility: hidden;
+  }
+
+  &-clone {
     position: absolute;
     z-index: $z-index2;
-    margin: 0 !important;
-    box-sizing: content-box;
-    border: none !important;
-    padding: 0 !important;
     cursor: zoom-out;
     will-change: transform;
   }
