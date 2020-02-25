@@ -36,7 +36,7 @@ Hexo 主题一般都会扩展一些自己特有的标签插件，在这方面做
 
 此外，Stun 主题也有自己扩展的一些标签插件，这些标签插件如下：
 
-### 插入表格数据 <Badge text="Stable"/> <Badge text="v1.2.0"/>
+### 插入表格 <Badge text="Stable"/> <Badge text="v1.2.0"/>
 
 如果想要在文章中显示一个表格，你可以使用 Markdown 原生支持的语法，但是如果你想要让表格里的数据存储在外部文件中，那么你可以使用下面这种语法：
 
@@ -60,42 +60,45 @@ Hexo 主题一般都会扩展一些自己特有的标签插件，在这方面做
 
 1. 在 `/source/_data/` 目录下新建文件 `reward.json`，填入数据。
 
-``` json
-[
-  {
-    "time": "2019-6-1",
-    "sponsor": "张三",
-    "money": "9.9",
-    "remark": "支持一下~"
-  },
-  {
-    "time": "2019-6-16",
-    "sponsor": "李四",
-    "money": "11",
-    "remark": "前来支持，继续加油！"
-  }
-]
-```
+    ``` json
+    [
+      {
+        "time": "2019-6-1",
+        "sponsor": "张三",
+        "money": "9.9",
+        "remark": "支持一下~"
+      },
+      {
+        "time": "2019-6-16",
+        "sponsor": "李四",
+        "money": "11",
+        "remark": "前来支持，继续加油！"
+      }
+    ]
+    ```
 
 2. 在文章或页面的 Markdown 源文件中，插入如下标签。
 
-```
-{% table _data/reward.json 时间,赞助人,金额,留言 %}
-```
+    ```
+    {% table _data/reward.json 时间,赞助人,金额,留言 %}
+    ```
 
 3. 重启 Hexo 服务器，效果如下。
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190803141118.png)
+    ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190803141118.png)
 
-### Bootstrap 标注 <Badge text="Stable"/> <Badge text="v1.2.0"/>
+### 插入注释 <Badge text="Stable"/> <Badge text="v1.2.0"/>
+
+::: warning
+**info** 类型的标注从 `v2.0.0` 开始支持，其他类型的标注均从 `v1.2.0` 开始支持。
+:::
 
 语法如下：
 
 ```
 {% note [type] [no-icon] %}
 **header text**
-
-any text
+Any text
 {% endnote %}
 ```
 
@@ -110,26 +113,24 @@ any text
 举例：
 
 ``` markdown
-<!-- header icon -->
+<!-- With header, With icon -->
 {% note success %}
 **Success**
-
 This is success note.
 {% endnote %}
 
-<!-- header no-icon -->
+<!-- With header, No icon -->
 {% note success no-icon %}
 **Success**
-
 This is success note.
 {% endnote %}
 
-<!-- no-header icon -->
+<!-- No header, With icon -->
 {% note success %}
 This is success note.
 {% endnote %}
 
-<!-- no-header no-icon -->
+<!-- No header, No icon -->
 {% note success no-icon %}
 This is success note.
 {% endnote %}
@@ -137,11 +138,9 @@ This is success note.
 
 全部效果如下：
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190803082614.png)
+![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20200225192132.jpg)
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190803081736.png)
-
-### 友链 <Badge text="Stable"/> <Badge text="v1.2.0"/>
+### 插入友链 <Badge text="Stable"/> <Badge text="v1.2.0"/>
 
 语法如下：
 

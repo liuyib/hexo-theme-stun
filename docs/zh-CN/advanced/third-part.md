@@ -239,7 +239,7 @@ Gitalk 是一个基于 Github issues 的评论系统。使用之前需要确保�
 
 首先，你需要注册一个新的 **GitHub Application** 来授权，点击[这里](https://github.com/settings/applications/new)注册。这样可以获取所需的 `client ID` 和 `client secret`。
 
-::: warning 注意
+::: warning
 注册 GitHub Application 时，必须在 `Authorization callback URL` 字段中指定网站的 URL。
 :::
 

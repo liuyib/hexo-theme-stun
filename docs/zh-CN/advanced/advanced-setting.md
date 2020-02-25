@@ -973,7 +973,7 @@ lazyload:
 
   ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190801204629.png)
 
-::: warning 注意
+::: warning 注意 ！！！
 下面是启用 lazyload 之后，已知的一些问题。
 
 - 不兼容使用 Front-Matter 的 `photos` 属性进行展示的图片（即这些图片不会懒加载）。
