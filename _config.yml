@@ -819,6 +819,7 @@ icon:
   prompt_warning: fas fa-exclamation-circle
   prompt_error: fas fa-times-circle
   valine_visitor: fas fa-eye
+  post_heading: fas fa-link
 
 # Set a CDN address for the vendor you want to customize.
 # ! -------------------------------------------------------------------

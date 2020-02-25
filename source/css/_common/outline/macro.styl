@@ -100,6 +100,32 @@ if (hexo-config('body.bg_image.enable')) {
     border-radius: 3px;
     padding: .2rem;
   }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    &:hover {
+      .heading-link {
+        visibility: visible;
+      }
+    }
+  }
+}
+
+.heading-link {
+  display: inline-block;
+  visibility: hidden;
+  margin: -10px 0 0 -20px;
+  padding-right: 5px;
+  width: 20px;
+  height: 16px;
+  font-size: 16px;
+  line-height: 20px;
+  vertical-align: middle;
+  color: var(--color-font);
 }
 
 .content-home {
@@ -130,24 +156,4 @@ if (hexo-config('body.bg_image.enable')) {
 .table-container {
   overflow: auto;
   margin-bottom: 1rem;
-}
-
-.heading-link {
-  color: var(--color-gray-950);
-  cursor: pointer;
-
-  &::after {
-    content: $icon-heading-link;
-    margin-left: .3em;
-    color: $heading-logo-color;
-    opacity: 0;
-    transition: opacity .2s ease;
-    fontawesome-base();
-  }
-
-  &:hover {
-    &::after {
-      opacity: 1;
-    }
-  }
 }
