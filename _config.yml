@@ -820,6 +820,11 @@ icon:
   prompt_error: fas fa-times-circle
   valine_visitor: fas fa-eye
   post_heading: fas fa-link
+  notetag_default: fas fa-arrow-circle-right
+  notetag_success: fas fa-check-circle
+  notetag_info: fas fa-info-circle
+  notetag_warning: fas fa-exclamation-circle
+  notetag_danger: fas fa-minus-circle
 
 # Set a CDN address for the vendor you want to customize.
 # ! -------------------------------------------------------------------
