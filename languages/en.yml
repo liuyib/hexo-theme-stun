@@ -17,14 +17,14 @@ menu:
   tags: Tags
   about: About
 
-# archives page, categories page, tags page
+# Archives page, Categories page, Tags page
 page:
   tags: Tags
   categories: Categories
   posts-empty: No articles
   posts-total: Total %s Articles, Go on!
 
-# Sidebarupdated
+# Sidebar
 sidebar:
   overview: Overview
   catalog: Catalog
@@ -34,7 +34,7 @@ sidebar:
   tags: Tags
   read_info: You have read
 
-# 社交链接
+# Social link
 social:
   github: Github
   google: Google
@@ -47,16 +47,16 @@ social:
   telegram: Telegram
   qq: QQ
 
-# Post
+# Article
 post:
   created: Created
-  updated: updated
-  posted: Posted
-  word_count: Words ≈
+  updated: Updated
+  word_count: Words
   reading_count: Visited
-  reading_time: Reading ≈ %s min
-  read_more: Read more
-  sticky: Sticky top
+  reading_time: Reading
+  reading_unit: m
+  read_more: Read More
+  sticky: Sticky
   untitled: "[ Untitled ]"
   end: ------ END ------
   copyright:
@@ -82,23 +82,26 @@ reward:
   alipay: Alipay
   wechat: Wechat
 
-# Back to top
-back2top: Back to top
-
 # Site footer
 footer:
   powered: Powered by %s
   theme: Theme
-  uv: Visitors
-  pv: Views
+  site_uv: Visitors
+  site_pv: Views
 
 # Prompt message
 prompt:
-  copy:
-    success: Copy Success
-    error: Copy Error
-  creative_commons: Creative Commons
-  copy_button: Copy
+  copy_success: Copy Success
+  copy_error: Copy Error
 
-# Others
-creative_commons: Creative Commons
+popover:
+  copy_button: Copy
+  creative_commons: Creative Commons
+  post:
+    create_time: Created Time
+    update_time: Updated Time
+    word_count: Words Count
+    reading_time: Reading Time
+    visit_num: Visitors
+  site_uv: Unique Visitor
+  site_pv: Page View
