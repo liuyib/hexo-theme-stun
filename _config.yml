@@ -443,11 +443,6 @@ post_widget:
     # Optional values: qzone | qq | weibo | wechat | douban | linkedin | facebook | twitter | google
     target: qzone, qq, weibo, wechat, douban, linkedin, facebook, twitter, google
 
-# Retain excerpt automatically.
-auto_excerpt:
-  enable: false
-  length: 150
-
 # Stick post to the top
 # Dependency: https://github.com/netcan/hexo-generator-index-pin-top/
 # !!! Don't enable this before install dependency by `npm install hexo-generator-index-pin-top --save` in hexo directory.

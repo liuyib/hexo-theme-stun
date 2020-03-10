@@ -15,12 +15,7 @@ section.postlist
           +gallery(post)
 
         - var isExcerpt = true;
-        if theme.auto_excerpt.enable
-          - var content = strip_html(post.content);
-          - var excerpt = content.substring(0, theme.auto_excerpt.length);
-          - content.length > theme.auto_excerpt.length ? excerpt += '......' : '';
-          div.post-excerpt!= excerpt
-        else if post.excerpt
+        if post.excerpt
           div.post-excerpt!= post.excerpt
         else
           - isExcerpt = false;
