@@ -390,18 +390,18 @@ busuanzi:
   # 统计站点 UV 数量
   site_uv:
     enable: true
-    # FontAwesome 图标名称: https://fontawesome.com/v4.7.0/icons/
-    icon: user
+    # 查找图标名称，请访问：https://fontawesome.com/icons
+    icon: fas fa-user
   # 统计站点 PV 数量
   site_pv:
     enable: true
-    # FontAwesome 图标名称: https://fontawesome.com/v4.7.0/icons/
-    icon: eye
+    # 查找图标名称，请访问：https://fontawesome.com/icons
+    icon: fas fa-eye
   # 统计每篇文章的 PV 数量
   post_pv:
     enable: true
-    # FontAwesome 图标名称: https://fontawesome.com/v4.7.0/icons/
-    icon: eye
+    # 查找图标名称，请访问：https://fontawesome.com/icons
+    icon: fas fa-eye
 ```
 
 ### 谷歌分析 <Badge text="Stable"/> <Badge text="v1.2.4"/>
@@ -779,7 +779,6 @@ MathJax 与 KaTex 相比之下，[KaTex 引擎速度更快](https://www.intmath.
 
       ``` yaml
       math:
-        ...
         # 字母全小写
         engine: mathjax
       ```
@@ -820,7 +819,6 @@ $ npm un hexo-math --save
 
       ``` yaml
       math:
-        ...
         # 字母全小写
         engine: katex
       ```
@@ -904,7 +902,7 @@ canvas_nest:
   enable: false
   # 是否在移动端显示
   onmobile: true
-  # 线条的颜色（RGB 值，请使用 "," 分隔）
+  # 线条的颜色（RGB 值，请使用 "," 分隔，并用引号包裹值）
   color: "0,0,0"
   # 线条的透明度
   opacity: 0.6

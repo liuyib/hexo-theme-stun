@@ -53,7 +53,7 @@ layout:
 ``` yaml
 layout:
   # 网站内容区域宽度（显示文章的区域）
-  content: 768px
+  content: 760px
   # 侧边栏宽度
   sidebar: 300px
   # 内容区域和侧边栏之间的间隙
@@ -85,13 +85,12 @@ layout:
 
 ``` yaml
 night_mode:
-  # 是否启用
   enable: true
   # 切换夜晚模式的按钮
   button:
-    # 按钮块的颜色
+    # 按钮块的颜色（请使用引号包裹值）
     color: "#fafafa"
-    # 按钮的背景颜色
+    # 按钮的背景颜色（请使用引号包裹值）
     bg_color: "#8c8a8a"
   # 代表白天和夜晚的图标（目前仅支持文本和 emoji）
   icon:
@@ -134,13 +133,13 @@ Hexo 会使用 git commit 中，文件的最新提交时间作为更新日期，
   ```
   ---
   title: Hello Stun
-  comments: false # 不启用评论
+  comments: false
   ---
   ```
 
 - `excerpt` <Badge text="Hexo v4.0.0"/> - 指定文章摘要
 
-  Hexo 3.9 及以前的版本中，只能通过添加 `<!-- more -->` 标记来保留文章摘要（当然 Stun 主题也提供了[自动保留摘要](http://liuyib.github.io/hexo-theme-stun/zh-CN/guide/primary-setting.html#文章摘要)的功能）。在 Hexo 4.0.0 及以后的版本中，可以通过在 Front-Matter 中使用 `excerpt` 来设置文章摘要。例如：
+  Hexo 3.9.0 及以前的版本中，只能通过添加 `<!-- more -->` 标记来保留文章摘要。在 Hexo 4.0.0 及以后的版本中，可以通过在 Front-Matter 中使用 `excerpt` 来设置文章摘要。例如：
 
   ```
   ---
@@ -227,9 +226,7 @@ Hexo 会使用 git commit 中，文件的最新提交时间作为更新日期，
 
     可以看到，设置了 `layout: false` 后，只将 Markdown 解析成 HTML，不做其他处理。
 
-  - 在 Front-Matter 中设置了 `layout: true` 或 默认情况
-
-    ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190820175119.png)
+  - 在 Front-Matter 中设置了 `layout: true` 等价于 默认
 
 ---
 
@@ -258,7 +255,6 @@ Hexo 会使用 git commit 中，文件的最新提交时间作为更新日期，
 
   ``` yaml
   gallery_waterfall:
-    # 是否启用
     enable: false
     # 瀑布流中每一列的宽度
     col_width: 220px
@@ -273,7 +269,6 @@ Hexo 会使用 git commit 中，文件的最新提交时间作为更新日期，
   ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190724170138.png)
 
   ::: tip
-
   - 启用瀑布流效果后，还可以再启用 [fancybox 效果](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/assist.html#fancybox)。
   - 可以利用这个属性，来建立一个**相册页面**或**展示图片的文章**。例如：[https://liuyib.github.io/gallery/](https://liuyib.github.io/gallery/)
   :::
@@ -332,52 +327,53 @@ Hexo 会使用 git commit 中，文件的最新提交时间作为更新日期，
 
 ## 二级导航栏菜单 <Badge text="Stable"/> <Badge text="v1.2.4"/>
 
-如果想要使用二级导航栏菜单，你需要修改主题配置文件：
+启用二级导航栏菜单，需要修改主题配置文件：
 
-1. 修改 `menu` 字段
+1. 修改 `menu` 配置项
 
     ``` yaml
     menu:
-      # 格式如下
-      # 名称: javascript:; || 图标
-      xxx: javascript:; || xxx
+      # `||` 分隔符之前是占位符，`||` 分隔符之后是图标
+      # 用法（有图标）: `Key: javascript:; || fa(s|r|l|d|b) fa-图标名称`
+      # 用法（无图标）: `Key: javascript:;`
+      # fas far fal fad fab 是 FontAwesome 5.x 中图标的前缀，你需要根据具体图标自行设置
+      xxx1: javascript:; || fa(s|r|l|d|b) fa-xxx
     ```
 
-    > 在 `||` 符号之前，你必须使用 `javascript:;`（字母全小写）作为占位符。
-
-2. 修改 `submenu` 字段
+2. 修改 `submenu` 配置项
 
     ``` yaml
     submenu:
-      xxx: # 这里的 xxx 与上述名称对应
-        xx1: /xx1/ || xx1 # 这里是子项，填写的值是：路径 || 图标
-        xx2: /xx2/ || xx2 # 这里是子项，填写的值是：路径 || 图标
+      # 这里的 xxx1 与上述名称对应
+      xxx1:
+        xxx1-1: /xxx1-1/ || fa(s|r|l|d|b) fa-xxx
+        xxx1-2: /xxx1-2/ || fa(s|r|l|d|b) fa-xxx
     ```
 
 3. 国际化设置
 
-    找到 `languages` 目录下的语言文件，选择你网站使用的语言进行修改，这里以中文作为举例：
+    找到 `languages` 目录下的语言文件，根据你网站使用的语言选择对应的语言文件，例如：
 
     `zh-CN.yml`：
 
     ``` yaml
-    xxx: 这是xxx对应的中文
-    xx1: 这是xx1对应的中文
-    xx2: 这是xx2对应的中文
+    xxx1: 这是 xxx1 对应的中文
+    xxx1-1: 这是 xxx1-1 对应的中文
+    xxx1-2: 这是 xxx1-2 对应的中文
     ```
 
-举例，添加一个朋友链接的二级菜单：
+例如，添加一个友情链接的二级菜单：
 
 1. 修改主题配置文件
 
     ``` yaml
     menu:
-      friends: javascript:; || users
+      friends: javascript:; || fas fa-users
 
     submenu:
       friends:
-        aaa: /aaa/ || male
-        bbb: /bbb/ || female
+        aaa: /aaa/ || fas fa-male
+        bbb: /bbb/ || fas fa-female
     ```
 
 2. 国际化设置
@@ -402,7 +398,6 @@ Hexo 会使用 git commit 中，文件的最新提交时间作为更新日期，
 ``` yaml
 # Reward
 reward:
-  # 是否启用
   enable: false
   # 支付宝
   alipay: https://xxxxx.png
@@ -425,7 +420,6 @@ reward:
 
 ``` yaml
 creative_commons:
-  # 是否启用
   enable: true
   # 可选值: BY | BY-SA | BY-ND | BY-NC | BY-NC-SA | BY-NC-ND
   # 详情请访问: https://creativecommons.org/share-your-work/licensing-types-examples/
@@ -434,7 +428,11 @@ creative_commons:
   sidebar: true
   # 是否在文章底部显示
   post: true
-  # 设置许可协议的显示语言，不设置默认为：en（当用户查看许可协议时，会以你设置的语言进行显示）
+  # 可选值：
+  #   id | ms | ca | da | de | en | es | es_ES | eo | eu | fr | gl | hr
+  #   it | lv | lt | hu | nl | no | pt | pt_BR | pl | ro | sl | fi | sv
+  #   tr | is | cs | el | be | ru | zh | zh_TW | uk | ar | fa | bn | ja | ko
+  # 不设置默认为：en（当用户查看许可协议时，会以你设置的语言进行显示）
   language:
 ```
 
@@ -452,7 +450,6 @@ creative_commons:
 
 ``` yaml
 toc:
-  # 是否启用
   enable: true
   # 是否自动添加列表序号
   list_number: true
@@ -480,7 +477,6 @@ toc:
 
 ``` yaml
 feed:
-  # 是否启用
   enable: false
   # 邮件订阅地址 (例如：http://eepurl.com/guAE6j)
   email:
@@ -514,9 +510,8 @@ feed:
 
 ``` yaml
 reading_progress:
-  # 是否启用
   enable: true
-  # 请使用引号包裹颜色值（支持所有 CSS 颜色单位）
+  # 请使用引号包裹值（支持所有 CSS 颜色单位）
   color: "#fc6423"
   # 进度条高度（支持所有 CSS 长度单位）
   height: 1px
@@ -536,24 +531,21 @@ post_meta:
   icon_only: false
   # 文章创建时间
   created:
-    # 是否启用
     enable: true
-    # 图标名称在这里查找：https://fontawesome.com/v4.7.0/icons/
-    icon: calendar-o
+    # 查找图标名称，请访问：https://fontawesome.com/icons
+    icon: far fa-calendar-plus
   # 文章更新时间
   updated:
-    # 是否启用
     enable: true
-    # 图标名称在这里查找
-    icon: calendar-check-o
+    # 查找图标名称，请访问：https://fontawesome.com/icons
+    icon: far fa-calendar-check
   # 文章预计的阅读时间
   # 启用这个功能之前，你首先需要在 Hexo 根目录安装依赖：
   # `npm install hexo-wordcount --save`，然后重启 hexo 服务器
   reading_time:
-    # 是否启用
     enable: false
-    # 图标名称在这里查找
-    icon: clock-o
+    # 查找图标名称，请访问：https://fontawesome.com/icons
+    icon: far fa-clock
     # 设置文章的阅读速度（阅读时间会根据这个设置来计算）
     speed:
       # 中文的阅读速度
@@ -564,10 +556,9 @@ post_meta:
   # 启用这个功能之前，你首先需要在 Hexo 根目录安装依赖：
   # `npm install hexo-wordcount --save`，然后重启 hexo 服务器
   word_count:
-    # 是否启用
     enable: false
-    # 图标名称在这里查找
-    icon: file-word-o
+    # 查找图标名称，请访问：https://fontawesome.com/icons
+    icon: far fa-file-word
 ```
 
 效果如下：![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190619210334.png)
@@ -585,9 +576,9 @@ post_meta:
 ``` yaml
 # 分页设置
 post_list_paged:
-# 首页的文章列表是否分页
+  # 首页的文章列表是否分页
   home: true
-# 归档页面的文章列表是否分页
+  # 归档页面的文章列表是否分页
   archives: false
 ```
 
@@ -679,7 +670,6 @@ post_widget:
 ``` yaml
 # 在文章底部显示 “本文结束” 的提示信息
 post_end:
-  # 是否启用
   enable: true
   # 是否在提示信息之前显示水平分割线
   horizon_line: true
@@ -691,7 +681,6 @@ post_end:
 post_widget:
   # 在文章底部显示 “本文结束” 的提示信息
   end_text:
-    # 是否启用
     enable: true
     # 是否在提示信息之前显示水平分割线
     horizon_line: true
@@ -716,12 +705,11 @@ $ npm install hexo-generator-index-pin-top --save
 stick_top:
   # 图标的位置（可选值为：left 和 right）
   position: right
-  # 建议使用名为 `thumb-tack` 的图标
-  # 图标名称在这里查找：https://fontawesome.com/v4.7.0/icons/
-  icon: thumb-tack
+    # 查找图标名称，请访问：https://fontawesome.com/icons
+  icon: fas fa-thumbtack
   # 图标的旋转角度（角度的单位是：deg）
   rotate: 45deg
-  # 请使用引号包裹颜色值（支持所有 CSS 颜色单位）
+  # 请使用引号包裹值（支持所有 CSS 颜色单位）
   color: "#999"
 ```
 
@@ -856,9 +844,9 @@ tag_cloud:
   # 请使用引号包裹颜色值（只支持十六进制的颜色值）
   start_color: "#a4d8fa"
   end_color: "#49b1f5"
-  # 标签最大、最小的尺寸
-  min_size: 24
-  max_size: 34
+  # 标签最大、最小的尺寸（例如：设置为 20 表示 字体大小 20px）
+  min_size: 16
+  max_size: 26
   # 最大显示标签数量
   max_amount: 200
 ```
@@ -910,12 +898,10 @@ tag_cloud:
 ``` yaml
 external_link:
   icon:
-    # 是否启用
     enable: true
-    # 建议使用名为 `external-link` 的图标
-    # 图标名称在这里查找：https://fontawesome.com/v4.7.0/icons/
-    name: external-link
-    # 请使用引号包括值（支持所有 CSS 单位）
+    # 查找图标名称，请访问：https://fontawesome.com/icons
+    name: fas fa-external-link-alt
+    # 请使用引号包裹值（支持所有 CSS 颜色单位）
     color: "#aaa"
 ```
 
@@ -935,15 +921,14 @@ fancybox: true
 
 ### 图片放大效果 <Badge text="Stable"/> <Badge text="v1.2.0"/>
 
-Stun 主题从 `v1.2.0` 版本开始支持图片点击放大的效果（无第三方依赖）。你可以配置该功能，修改主题配置文件：
+Stun 主题从 `v1.2.0` 版本开始支持图片点击放大的效果。你可以配置该功能，修改主题配置文件：
 
 ``` yaml
 zoom_image:
-  # 是否启用
   enable: true
-  # 遮罩的颜色
+  # 遮罩的颜色（请使用引号包裹值）
   mask_color: "rgba(0,0,0,0.6)"
-  # 图片放大时，距离屏幕边缘的间隙
+  # 图片放大时，距离屏幕边缘的间隙（只支持 px 单位）
   gap_aside: 20px
 ```
 
@@ -957,7 +942,6 @@ Stun 主题从 `v1.2.0` 版本开始支持图片懒加载，但是**该功能只
 
 ``` yaml
 lazyload:
-  # 是否启用
   enable: true
   # 图片未加载前的占位符。可选值有：gif 或 block
   placeholder: gif
