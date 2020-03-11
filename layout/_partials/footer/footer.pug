@@ -15,11 +15,11 @@ if footerCopyright || footerBeian
           i(class=footer.icon.name)
       else
         span.footer__devider
-      span= footer.copyright.text || config.author
+      span!= footer.copyright.text || config.author
     if footerCopyright && footerBeian
       span.footer__devider= '|'
     if footerBeian
-      span= footer.beian.icp
+      span!= footer.beian.icp
 
 -
   var footerPowered = footer.powered.enable

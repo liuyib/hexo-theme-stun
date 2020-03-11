@@ -200,7 +200,7 @@ footer:
   # Copyright information.
   copyright:
     enable: true
-    # If not set, will be used `author` from Hexo main config (e.g. liuyib. All Rights Reserved.)
+    # If not set, will be used `author` from Hexo main config (e.g. liuyib All Rights Reserved)
     text:
     # Start time. If not set, the current year will be used.
     since:
