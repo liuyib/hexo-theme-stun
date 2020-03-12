@@ -393,18 +393,20 @@ Stun.utils = Stun.$u = {
       .append($icon);
   },
   // Switch to the prev / next post by shortcuts.
-  registerHotkeyToSwitchPost: function () {
-    var _this = this;
-    $(document).on('keydown', function (e) {
-      var isPrev = e.keyCode === _this.codeToKeyCode('ArrowLeft');
-      var isNext = e.keyCode === _this.codeToKeyCode('ArrowRight');
+  registerSwitchPost: function () {
+    var keyLeft = this.codeToKeyCode('ArrowLeft');
+    var keyRight = this.codeToKeyCode('ArrowRight');
 
-      if (e.ctrlKey && isPrev) {
-        var prev = $('.paginator-post-prev').find('a')[0];
-        prev && prev.click();
-      } else if (e.ctrlKey && isNext) {
-        var next = $('.paginator-post-next').find('a')[0];
-        next && next.click();
+    $(document).on('keydown', function (e) {
+      var isPrev = e.keyCode === keyLeft;
+      var isNext = e.keyCode === keyRight;
+
+      if (e.ctrlKey) {
+        if (isPrev) {
+          $('.paginator-prev a')[0].click();
+        } else if (isNext) {
+          $('.paginator-next a')[0].click();
+        }
       }
     });
   },

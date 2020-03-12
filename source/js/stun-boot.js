@@ -2,7 +2,7 @@ $(document).ready(function () {
   Stun.utils.showThemeInConsole();
 
   if (CONFIG.shortcuts && CONFIG.shortcuts.switch_post) {
-    Stun.utils.registerHotkeyToSwitchPost();
+    Stun.utils.registerSwitchPost();
   }
 
   // Not reload this, because it's changeless.
