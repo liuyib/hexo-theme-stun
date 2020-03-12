@@ -1,29 +1,21 @@
+bodyBgSet() {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  if (hexo-config('body.bg_image.fixed')) {
+    position: fixed;
+    height: 100vh;
+  }
+}
+
 if (hexo-config('body.bg_image.enable')) {
   body {
     position: relative;
-
-    bodyBgSet() {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-
-      if (hexo-config('body.bg_image.fixed')) {
-        position: fixed;
-        height: 100vh;
-      }
-    }
-
-    if (hexo-config('body.mask.enable')) {
-      &::before {
-        bodyBgSet();
-        z-index: $z-index-1;
-        background-color: alpha(#000, hexo-config('body.mask.opacity.default'));
-      }
-    }
 
     &::after {
       bodyBgSet();
@@ -36,13 +28,23 @@ if (hexo-config('body.bg_image.enable')) {
       }
     }
   }
+}
 
+body {
   if (hexo-config('body.mask.enable')) {
-    .nightmode {
-      body {
-        &::before {
-          background-color: alpha(#000, hexo-config('body.mask.opacity.night_mode'));
-        }
+    &::before {
+      bodyBgSet();
+      z-index: $z-index-1;
+      background-color: alpha(#000, hexo-config('body.mask.opacity.default'));
+    }
+  }
+}
+
+if (hexo-config('body.mask.enable')) {
+  .nightmode {
+    body {
+      &::before {
+        background-color: alpha(#000, hexo-config('body.mask.opacity.night_mode'));
       }
     }
   }
