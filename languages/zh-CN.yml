@@ -96,7 +96,7 @@ prompt:
 
 popover:
   copy_button: 复制
-  creative_commons: 知识共享
+  creative_commons: 知识共享许可协议
   post:
     create_time: 发表时间
     update_time: 修改时间
