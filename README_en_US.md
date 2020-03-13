@@ -29,23 +29,23 @@
 ## :sparkles: Demo
 
 - [Liuyib's Blog](https://liuyib.github.io/)
-- [mizhi's Blog](https://blog.coor.top/)
-- [轻尘's Blog](https://blog.coor.top/)
+- [mizhi's Blog](http://blog2.coor.top/)
+- [轻尘's Blog](http://qcxitong.xyz/)
 
 If you are using the stun theme and would like it to be shown here, you can fill in your website link by [PR](https://github.com/liuyib/hexo-theme-stun/pulls).
 
 ## :crystal_ball: Feature
 
-- Simple, fast, easy to use, highly customizable
+- Simple & Fast & Easy to Use & **Highly Customizable**
 - Responsive design
-- Secondary navigation menu
-- Support article image lazy loading
+- [Secondary navigation menu](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/advanced-setting.html#二级导航菜单)
+- Support [image lazy loading](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/advanced-setting.html#图片懒加载)
 - Support [Pjax](https://github.com/defunkt/jquery-pjax)
 - Support [PWA](https://developers.google.com/web/progressive-web-apps)
 - Support [Fancybox](https://github.com/fancyapps/fancybox)
 - Support [Quicklink](https://github.com/GoogleChromeLabs/quicklink)
 - Support [MathJax](https://www.mathjax.org/)、[KaTex](https://katex.org/)
-- Support [Gitalk](https://github.com/gitalk/gitalk)、[Valine](https://valine.js.org/)、[Livere](https://livere.com/)、[Disqus](https://disqus.com/) and [Utterances](https://github.com/utterance/utterances) comments
+- Support [Gitalk](https://github.com/gitalk/gitalk)、[Valine](https://valine.js.org/)、[Livere](https://livere.com/)、[Disqus](https://disqus.com/)、[Utterances](https://github.com/utterance/utterances) comments
 - [Album page](https://liuyib.github.io/gallery/) of waterfall streaming
 - Built-in [Google ads](https://www.google.cn/adsense/start/)
 - Multiple code [highlighting themes](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/advanced-setting.html#代码高亮)
@@ -54,31 +54,31 @@ If you are using the stun theme and would like it to be shown here, you can fill
 
 ## :package: Install
 
-- Install `stun`
+- Install `Stun`
 
-  Enter your hexo directory, run this.
+  Enter your hexo directory, run this:
 
   ```bash
   $ git clone https://github.com/liuyib/hexo-theme-stun.git themes/stun
   ```
 
-- Install dependency `pug`
+- Install dependency `hexo-renderer-pug`
 
-  Enter your hexo directory, run this.
+  Enter your hexo directory, run this:
 
   ```bash
-  $ npm install --save hexo-render-pug
+  $ npm install --save hexo-renderer-pug
   ```
 
 ## :hammer: Usage
 
-Change the `_config.yml` file in your hexo root directory.
+Change the `_config.yml` file in your hexo root directory:
 
 ```yml
 theme: stun
 ```
 
-Run your hexo server.
+Run your hexo server:
 
 ```bash
 $ hexo clean && hexo s

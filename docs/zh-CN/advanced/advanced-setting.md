@@ -325,9 +325,9 @@ Hexo 会使用 git commit 中，文件的最新提交时间作为更新日期，
 
   是否解析文章中的 emoji 代码。详情：[添加-emoji-支持](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/third-part.html#添加-emoji-支持)
 
-## 二级导航栏菜单 <Badge text="Stable"/> <Badge text="v1.2.4"/>
+## 二级导航菜单 <Badge text="Stable"/> <Badge text="v1.2.4"/>
 
-启用二级导航栏菜单，需要修改主题配置文件：
+启用二级导航菜单，需要修改主题配置文件：
 
 1. 修改 `menu` 配置项
 
