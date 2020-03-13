@@ -28,6 +28,12 @@ script.
         });
     });
 
+    function closeSearch () {
+      $('body').css({ overflow: 'auto' });
+      $('.search-popup').css({ display: 'none' });
+      $('.search-mask').css({ display: 'none' });
+    }
+
     $('.search-mask, .search-close').on('click', function () {
       closeSearch();
     });
@@ -142,18 +148,4 @@ script.
     );
 
     search.start();
-
-    function closeSearch () {
-      $('body').css('overflow', 'auto');
-      $('.search-popup')
-        .velocity('stop')
-        .velocity('transition.expandOut', {
-          duration: 300
-        });
-      $('.search-mask')
-        .velocity('stop')
-        .velocity('transition.fadeOut', {
-          duration: 300
-        });
-    }
   });

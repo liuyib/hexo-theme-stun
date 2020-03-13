@@ -201,18 +201,9 @@ script.
   }
 
   function closeSearch () {
-    $('body').css('overflow', 'auto');
-    $('.search-popup')
-      .removeClass('show')
-      .velocity('stop')
-      .velocity('transition.expandOut', {
-        duration: 300
-      });
-    $('.search-mask')
-      .velocity('stop')
-      .velocity('transition.fadeOut', {
-        duration: 300
-      });
+    $('body').css({ overflow: 'auto' });
+    $('.search-popup').css({ display: 'none' });
+    $('.search-mask').css({ display: 'none' });
   }
 
   window.addEventListener('DOMContentLoaded', function () {
@@ -221,7 +212,6 @@ script.
         e.stopPropagation();
         $('body').css('overflow', 'hidden');
         $('.search-popup')
-          .addClass('show')
           .velocity('stop')
           .velocity('transition.expandIn', {
             duration: 300,
