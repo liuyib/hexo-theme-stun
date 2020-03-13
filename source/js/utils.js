@@ -403,9 +403,11 @@ Stun.utils = Stun.$u = {
 
       if (e.ctrlKey) {
         if (isPrev) {
-          $('.paginator-prev a')[0].click();
+          var prevElem = $('.paginator-prev a')[0];
+          prevElem && prevElem.click();
         } else if (isNext) {
-          $('.paginator-next a')[0].click();
+          var nextElem = $('.paginator-next a')[0];
+          nextElem && nextElem.click();
         }
       }
     });
