@@ -1,7 +1,7 @@
 {
   "name": "hexo-theme-stun",
   "version": "1.7.0",
-  "description": "A beautiful blog theme - stun",
+  "description": "A beautiful & simple theme for Hexo",
   "homepage": "https://liuyib.github.io",
   "scripts": {
     "cz": "git cz",
@@ -17,7 +17,7 @@
     "url": "https://github.com/liuyib/hexo-theme-stun"
   },
   "keywords": [
-    "stun",
+    "Stun",
     "Hexo"
   ],
   "author": "liuyib",
