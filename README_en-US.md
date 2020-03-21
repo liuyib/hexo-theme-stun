@@ -4,35 +4,36 @@
 
 <p align="center">
   <a href="http://standardjs.com" target="_blank" rel="noopener noreferrer">
-    <img alt="js-standard-style" src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square">
+    <img alt="js-standard-style" src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg">
   </a>
   <a href="http://commitizen.github.io/cz-cli/" target="_blank" rel="noopener noreferrer">
-    <img alt="Commitizen friendly" src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square">
+    <img alt="Commitizen friendly" src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg">
   </a>
   <a href="https://github.com/liuyib/hexo-theme-stun/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">
-    <img alt="GitHub" src="https://img.shields.io/github/license/liuyib/hexo-theme-stun.svg?style=flat-square">
+    <img alt="GitHub" src="https://img.shields.io/github/license/liuyib/hexo-theme-stun.svg">
   </a>
   <br>
   <a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener noreferrer">
-    <img alt="hexo" src="https://img.shields.io/badge/hexo-%3E%3D3.0-blue.svg?style=flat-square">
+    <img alt="hexo" src="https://img.shields.io/badge/hexo-%3E%3D3.0-blue.svg">
   </a>
   <a href="https://github.com/liuyib/hexo-theme-stun/releases" target="_blank" rel="noopener noreferrer">
-    <img alt="GitHub release" src="https://img.shields.io/github/release/liuyib/hexo-theme-stun.svg?style=flat-square">
+    <img alt="GitHub release" src="https://img.shields.io/github/release/liuyib/hexo-theme-stun.svg">
   </a>
   <a href="https://gitter.im/liuyib/hexo-theme-stun?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge" target="_blank" rel="noopener noreferrer">
-    <img alt="Gitter" src="https://badges.gitter.im/liuyib/hexo-theme-stun.svg?style=flat-square">
+    <img alt="Gitter" src="https://badges.gitter.im/liuyib/hexo-theme-stun.svg">
   </a>
 </p>
 
-[English](https://github.com/liuyib/hexo-theme-stun/blob/master/README_en_US.md) | [中文简体](https://github.com/liuyib/hexo-theme-stun/blob/master/README.md)
+[English](https://github.com/liuyib/hexo-theme-stun/blob/master/README_en-US.md) | [中文简体](https://github.com/liuyib/hexo-theme-stun/blob/master/README.md)
 
 ## :sparkles: Demo
 
 - [Liuyib's Blog](https://liuyib.github.io/)
 - [mizhi's Blog](http://blog2.coor.top/)
 - [轻尘's Blog](http://qcxitong.xyz/)
+- [impressionyang's Blog](http://impressionyang.github.io)
 
-If you are using the stun theme and would like it to be shown here, you can fill in your website link by [PR](https://github.com/liuyib/hexo-theme-stun/pulls).
+If you are using the `Stun` theme and want to show it here, you just need to modify the [README_en-US](https://github.com/liuyib/hexo-theme-stun/edit/master/README_en-US.md) to fill in your website and submit PR.
 
 ## :crystal_ball: Feature
 
