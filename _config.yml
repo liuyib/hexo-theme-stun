@@ -513,6 +513,17 @@ valine:
   # Optional values: en | zh-cn
   language:
 
+# MiniValine
+# See: https://github.com/MiniValine/MiniValine#Options
+minivaline:
+  enable: false
+  appId: # Your leancloud application appid
+  appKey: # Your leancloud application appkey
+  placeholder: Write a Comment # Comment box placeholder
+  adminEmailMd5: # The MD5 of Admin Email to show Admin Flag.
+  math: true # Support MathJax.
+  lang: en # Available values: en | es-ES | fr | ru | zh-CN | zh-TW
+
 # Livere
 # See: https://www.livere.com/
 livere:
@@ -865,6 +876,12 @@ cdn:
   # leancloud_storage: //cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js
   valine:
   leancloud_storage:
+  
+  # minivaline
+  # See: https://github.com/MiniValine/MiniValine
+  # Example:
+  # minivaline: //cdn.jsdelivr.net/npm/minivaline/dist/MiniValine.min.js
+  minivaline:
 
   # busuanzi
   # Using version: latest
