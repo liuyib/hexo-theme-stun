@@ -191,7 +191,7 @@ script.
           $result.html(resultInnerHtml);
         };
         $input.on('input', searchPost);
-        $input.on('keypress', function (e) {
+        $input.on('keyup', function (e) {
           if (e.keyCode === Stun.utils.codeToKeyCode('Enter')) {
             searchPost();
           }
