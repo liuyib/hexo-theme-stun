@@ -34,8 +34,8 @@ function friends(args) {
         `<a class="friends-plugin__item" href="${f.url}">` +
           `<img class="${imgClassName}" src="${f.avatar}" data-zoom="none">` +
           '<div class="friends-plugin__item-info">' +
-            `<p class="friends-plugin__item-info__name">${f.name}</p>` +
-            `<p class="friends-plugin__item-info__intro">${f.introduction}</p>` +
+            `<p class="friends-plugin__item-info__name" title="${f.name}">${f.name}</p>` +
+            `<p class="friends-plugin__item-info__intro" title="${f.introduction}">${f.introduction}</p>` +
           '</div>' +
         '</a>';
     });
