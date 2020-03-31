@@ -16,6 +16,10 @@ Stun 主题利用该功能实现了平滑升级的特性，使用步骤如下：
 如果你使用了平滑升级这一特性，那么 `/themes/stun/_config.yml` 和 `/source/_data/stun.yml` 这两个文件里的选项没有同步，是更新主题后，启动报错的最主要的原因！
 :::
 
+> 有时候，同步 `/themes/stun/_config.yml` 和 `/source/_data/stun.yml` 两个配置文件里的内容也比较麻烦。因此，推荐使用代码对比工具进行查看，这样再进行同步就方便多了。例如，VS Code 自带的代码对比工具：
+>
+> ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20200331233853.png)
+
 ## 国际化（i18n）<Badge text="Stable"/>
 
 修改 Hexo 根目录下的 `_config.yml` 文件：
