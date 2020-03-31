@@ -353,9 +353,9 @@ Stun.utils = Stun.$u = {
   },
   // Display the image in the gallery as a waterfall.
   showImageToWaterfall: function () {
-    var gConfig = CONFIG.gallery_waterfall;
-    var colWidth = parseInt(gConfig.col_width);
-    var colGapX = parseInt(gConfig.gap_x);
+    var gConfig = CONFIG.galleryWaterfall;
+    var colWidth = parseInt(gConfig.colWidth);
+    var colGapX = parseInt(gConfig.gapX);
     var GALLERY_IMG_SELECTOR = '.gallery img';
 
     this.waitAllImageLoad(GALLERY_IMG_SELECTOR, function () {
@@ -381,7 +381,7 @@ Stun.utils = Stun.$u = {
     var $wrapper = $('<span class="exturl"></span>');
     var $icon = $(
       '<span class="exturl__icon">' +
-        `<i class="${CONFIG.external_link.icon.name}"></i>` +
+        `<i class="${CONFIG.externalLink.icon.name}"></i>` +
         '</span>'
     );
 
@@ -452,7 +452,7 @@ Stun.utils = Stun.$u = {
         .clone()
         .addClass('zoomimg-clone');
 
-      var SIDE_GAP = parseInt(CONFIG.zoom_image.gap_aside || 20);
+      var SIDE_GAP = parseInt(CONFIG.zoomImage.gapAside || 20);
       var imgRect = this.getBoundingClientRect();
       var imgOuterW = $(this).outerWidth();
       var imgOuterH = $(this).outerHeight();
@@ -546,7 +546,7 @@ Stun.utils = Stun.$u = {
   addCopyButton: function (type) {
     var btnContainer = '.post-copyright,';
     var $copyIcon = $(
-      `<div class="copy-button" data-popover="${CONFIG.prompt.copy_button}" data-popover-pos="up">` +
+      `<div class="copy-button" data-popover="${CONFIG.prompt.copyButton}" data-popover-pos="up">` +
         `<i class="${CONFIG.fontIcon.copyBtn}"></i>` +
         '</div>'
     );
@@ -574,9 +574,9 @@ Stun.utils = Stun.$u = {
         container = $(this).parent()[0];
       }
       if (Stun.utils.copyText(container)) {
-        Stun.utils.popAlert('success', CONFIG.prompt.copy_success);
+        Stun.utils.popAlert('success', CONFIG.prompt.copySuccess);
       } else {
-        Stun.utils.popAlert('error', CONFIG.prompt.copy_error);
+        Stun.utils.popAlert('error', CONFIG.prompt.copyError);
       }
     });
   },

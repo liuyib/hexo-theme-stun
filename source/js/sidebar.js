@@ -126,7 +126,7 @@ $(document).ready(function () {
     var isEnablePostEnd = false;
     var percent = 0;
 
-    if (CONFIG.post_widget && CONFIG.post_widget.end_text) {
+    if (CONFIG.postWidget && CONFIG.postWidget.endText) {
       isEnablePostEnd = true;
     }
     if (isEnablePostEnd) {

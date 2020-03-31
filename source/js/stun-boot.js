@@ -1,12 +1,12 @@
 $(document).ready(function () {
   Stun.utils.showThemeInConsole();
 
-  if (CONFIG.shortcuts && CONFIG.shortcuts.switch_post) {
+  if (CONFIG.shortcuts && CONFIG.shortcuts.switchPost) {
     Stun.utils.registerSwitchPost();
   }
 
   // Not reload this, because it's changeless.
-  if (CONFIG.external_link) {
+  if (CONFIG.externalLink) {
     Stun.utils.addIconToExternalLink('#footer');
   }
 
@@ -30,16 +30,16 @@ $(document).ready(function () {
     if (CONFIG.lazyload) {
       this.lazyLoadImage();
     }
-    if (CONFIG.gallery_waterfall) {
+    if (CONFIG.galleryWaterfall) {
       this.showImageToWaterfall();
     }
-    if (CONFIG.external_link) {
+    if (CONFIG.externalLink) {
       var CONTAINER = '.archive, .post-title';
       this.addIconToExternalLink(CONTAINER);
     }
     if (CONFIG.fancybox) {
       this.wrapImageWithFancyBox();
-    } else if (CONFIG.zoom_image) {
+    } else if (CONFIG.zoomImage) {
       this.registerZoomImage();
     }
   };

@@ -71,7 +71,7 @@ script.
         container: '.search-input',
         reset: false,
         magnifier: false,
-        placeholder: algolia.languages.input_placeholder
+        placeholder: algolia.languages.inputPlaceholder
       })
     );
 
@@ -91,7 +91,7 @@ script.
           empty: function (data) {
             return (
               '<div id="algolia-hits-empty">' +
-                algolia.languages.hits_empty.replace(/\$\{query}/, data.query) +
+                algolia.languages.hitsEmpty.replace(/\$\{query}/, data.query) +
               '</div>'
             );
           }
@@ -109,7 +109,7 @@ script.
           container: '#algolia-stats',
           templates: {
             body: function (data) {
-              var stats = algolia.languages.hits_stats
+              var stats = algolia.languages.hitsStats
                 .replace(/\$\{hits}/, data.nbHits)
                 .replace(/\$\{time}/, data.processingTimeMS);
               return (
