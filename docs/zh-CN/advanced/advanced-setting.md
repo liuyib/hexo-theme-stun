@@ -869,7 +869,7 @@ tag_cloud:
 
 - 使用行内图片
 
-  默认情况下，文章中的图片水平居中显示。如果你想使用**行内图片**，你可以在图片路径后面使用查询参数：`?show=inline` <Badge text="Beta" type="warning"/> <Badge text="v1.8.0"/>，使得图片显示为行内图片。例如：
+  默认情况下，文章中的图片水平居中显示。如果你想使用**行内图片**，你可以在图片路径后面使用查询参数：`?show=inline` <Badge text="Beta" type="warning"/> <Badge text="v2.0.0-rc.0"/>，使得图片显示为行内图片。例如：
 
   ``` md
   ![](https://xxxxx.png?show=inline)

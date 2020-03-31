@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 2.0.0-rc.0 (2020-03-31)
+
+### Bug Fixes
+
+* Search box is forbidden in iOS ([094a74d](https://github.com/liuyib/hexo-theme-stun/commit/094a74d))
+* **#43:** Footer bar is not show when enable body `bg_image` ([f0e92ae](https://github.com/liuyib/hexo-theme-stun/commit/f0e92ae)), closes [#43](https://github.com/liuyib/hexo-theme-stun/issues/43)
+* Toc highlighting is incorrect ([a314dc0](https://github.com/liuyib/hexo-theme-stun/commit/a314dc0))
+* Hotkey of switching post is invalid ([e77f00b](https://github.com/liuyib/hexo-theme-stun/commit/e77f00b))
+* Social link icon not show normally when overflow ([3f3dd57](https://github.com/liuyib/hexo-theme-stun/commit/3f3dd57))
+* Set `layout.content` option, some pixels less actually ([1d931f4](https://github.com/liuyib/hexo-theme-stun/commit/1d931f4))
+* Duplicated count for busuanzi ([8198d5a](https://github.com/liuyib/hexo-theme-stun/commit/8198d5a))
+
+### Features
+
+* Add 'title' attribute to friends plugin ([eed8fe9](https://github.com/liuyib/hexo-theme-stun/commit/eed8fe9))
+* Add 'info' note plugin & make icon of note plugin configurable ([2fab025](https://github.com/liuyib/hexo-theme-stun/commit/2fab025))
+* Add gap configuration item to zoom-image ([aa918d3](https://github.com/liuyib/hexo-theme-stun/commit/aa918d3))
+* Use fontawesome5.x and support setting all icons ([d585a71](https://github.com/liuyib/hexo-theme-stun/commit/d585a71))
+* Add open graph ([2a8205f](https://github.com/liuyib/hexo-theme-stun/commit/2a8205f))
+* Support inline image ([8276875](https://github.com/liuyib/hexo-theme-stun/commit/8276875))
+* Add canonical setting ([bf997d6](https://github.com/liuyib/hexo-theme-stun/commit/bf997d6))
+
 ## 1.7.0 (2020-02-06)
 
 ### Bug Fixes
