@@ -182,7 +182,7 @@ header:
 - `header.nav_height` <Badge text="v1.0.0"/>，修改于 <Badge text="v1.7.0"/>
 - `header.enable` <Badge text="v1.7.0"/>，`header.show_on` <Badge text="v1.7.0"/>
 
-> 当 `header.enable` 或 `header.show_on` 被设为 `false` 时，不兼容 `pjax.scrollTo2screen` 选项。
+> 当 `header.enable` 或 `header.show_on` 被设为 `false` 时，不兼容 `pjax.avoid_banner` 选项。
 :::
 
 ### 指定顶部图 <Badge text="Stable"/>

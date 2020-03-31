@@ -729,8 +729,8 @@ quicklink:
 # See: https://github.com/MoOx/pjax/
 pjax:
   enable: false
-  # Scrolling to the second screen when the page loaded.
-  scrollTo2screen: false
+  # When switching pages, scroll to the bottom of the top image.
+  avoid_banner: false
   # ! --------------------------------------------------
   # ! If you don't know the following, please ignore it.
   # ! --------------------------------------------------
@@ -740,7 +740,7 @@ pjax:
   switches:
   switchesOptions:
   history: true
-  # If you enable this, you must set `scrollTo2screen: false` firstly.
+  # If you enable this, you must set `avoid_banner: false` firstly.
   scrollTo: false
   scrollRestoration: false
   cacheBust: false

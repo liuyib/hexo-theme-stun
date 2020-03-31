@@ -165,8 +165,8 @@
 ``` yaml
 pjax:
   enable: true
-  # 是否在页面加载后，滚动到第二屏
-  scrollTo2screen: false
+  # 是否在切换页面时，滚动到顶部大图的底部
+  avoid_banner: false
   # ！！如果你不了解如何使用，请忽略下面的配置项（默认即可）！！
   # 下面配置项的用法，请参见: https://github.com/MoOx/pjax/#options
   elements:
@@ -174,7 +174,7 @@ pjax:
   switches:
   switchesOptions:
   history: true
-  # 如果启用这个配置项，必须设置 `scrollTo2screen: false`
+  # 如果启用这个配置项，必须设置 `avoid_banner: false`
   scrollTo: false
   scrollRestoration: false
   cacheBust: false

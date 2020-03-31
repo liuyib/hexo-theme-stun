@@ -78,13 +78,14 @@ $ npm install hexo-renderer-markdown-it-plus --save
 $ npm uninstall hexo-generator-index --save
 ```
 
-## 如何设置每次切换页面后，滚动到第二屏
+## 如何设置每次切换页面后，滚动到顶部大图下方
 
-这是一个启用 Pjax 后才能设置的功能。如果想设置这个功能，需要修改主题配置文件：
+这个功能需要启用 Pjax 后才能使用。如果想设置这个功能，需要修改主题配置文件：
 
 ``` yaml
 pjax:
-  scrollTo2screen: true
+  enable: true
+  avoid_banner: true
 ```
 
 > 注意：启用上述功能后，Pjax 的配置项 `scrollTo` 将失效。详参见：[启用 Pjax](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/third-part.html#%E5%90%AF%E7%94%A8-pjax)
