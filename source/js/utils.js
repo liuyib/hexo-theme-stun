@@ -353,10 +353,10 @@ Stun.utils = Stun.$u = {
   },
   // Display the image in the gallery as a waterfall.
   showImageToWaterfall: function () {
-    var gConfig = CONFIG.gallery_waterfall;
-    var colWidth = parseInt(gConfig.col_width);
-    var colGapX = parseInt(gConfig.gap_x);
-    var GALLERY_IMG_SELECTOR = '.gallery__img';
+    var gConfig = CONFIG.galleryWaterfall;
+    var colWidth = parseInt(gConfig.colWidth);
+    var colGapX = parseInt(gConfig.gapX);
+    var GALLERY_IMG_SELECTOR = '.gallery img';
 
     this.waitAllImageLoad(GALLERY_IMG_SELECTOR, function () {
       $('.gallery').masonry({
@@ -381,7 +381,7 @@ Stun.utils = Stun.$u = {
     var $wrapper = $('<span class="exturl"></span>');
     var $icon = $(
       '<span class="exturl__icon">' +
-        `<i class="${CONFIG.external_link.icon.name}"></i>` +
+        `<i class="${CONFIG.externalLink.icon.name}"></i>` +
         '</span>'
     );
 
@@ -393,18 +393,22 @@ Stun.utils = Stun.$u = {
       .append($icon);
   },
   // Switch to the prev / next post by shortcuts.
-  registerHotkeyToSwitchPost: function () {
-    var _this = this;
-    $(document).on('keydown', function (e) {
-      var isPrev = e.keyCode === _this.codeToKeyCode('ArrowLeft');
-      var isNext = e.keyCode === _this.codeToKeyCode('ArrowRight');
+  registerSwitchPost: function () {
+    var keyLeft = this.codeToKeyCode('ArrowLeft');
+    var keyRight = this.codeToKeyCode('ArrowRight');
 
-      if (e.ctrlKey && isPrev) {
-        var prev = $('.paginator-post-prev').find('a')[0];
-        prev && prev.click();
-      } else if (e.ctrlKey && isNext) {
-        var next = $('.paginator-post-next').find('a')[0];
-        next && next.click();
+    $(document).on('keydown', function (e) {
+      var isPrev = e.keyCode === keyLeft;
+      var isNext = e.keyCode === keyRight;
+
+      if (e.ctrlKey) {
+        if (isPrev) {
+          var prevElem = $('.paginator-prev a')[0];
+          prevElem && prevElem.click();
+        } else if (isNext) {
+          var nextElem = $('.paginator-next a')[0];
+          nextElem && nextElem.click();
+        }
       }
     });
   },
@@ -431,7 +435,7 @@ Stun.utils = Stun.$u = {
       });
 
     var $imgMask = $('<div class="zoomimg-mask"></div>');
-    var $imgBox = $('<div class="zoomimg-box"></div>');
+    var $imgClone = null;
     var isZoom = false;
 
     $(window).on('scroll', closeZoom);
@@ -444,7 +448,11 @@ Stun.utils = Stun.$u = {
         return;
       }
       isZoom = true;
+      $imgClone = $(this)
+        .clone()
+        .addClass('zoomimg-clone');
 
+      var SIDE_GAP = parseInt(CONFIG.zoomImage.gapAside || 20);
       var imgRect = this.getBoundingClientRect();
       var imgOuterW = $(this).outerWidth();
       var imgOuterH = $(this).outerHeight();
@@ -452,22 +460,35 @@ Stun.utils = Stun.$u = {
       var imgH = $(this).height();
       var imgL = $(this).offset().left + (imgOuterW - imgW) / 2;
       var imgT = $(this).offset().top + (imgOuterH - imgH) / 2;
-      var winW = $(window).width();
-      var winH = $(window).height();
+      var winW = $(window).width() - SIDE_GAP * 2;
+      var winH = $(window).height() - SIDE_GAP * 2;
       var scaleX = winW / imgW;
       var scaleY = winH / imgH;
       var scale = (scaleX < scaleY ? scaleX : scaleY) || 1;
-      var translateX = winW / 2 - (imgRect.x + imgOuterW / 2);
-      var translateY = winH / 2 - (imgRect.y + imgOuterH / 2);
+      var translateX = winW / 2 - (imgRect.x + imgOuterW / 2) + SIDE_GAP;
+      var translateY = winH / 2 - (imgRect.y + imgOuterH / 2) + SIDE_GAP;
 
-      $imgBox.css({ width: imgOuterW, height: imgOuterH });
-      $imgBox.addClass($(this).attr('class'));
-      $imgBox.insertBefore(this);
-      $(this).css({ left: imgL, top: imgT, width: imgW, height: imgH });
-      $(this).addClass('zoomimg--show');
-      $('body').append($imgMask);
-      $imgMask.velocity({ opacity: 1 });
-      $('.zoomimg--show').velocity({ translateX, translateY, scale });
+      $(this).addClass('zoomimg--hide');
+      $('body')
+        .append($imgMask)
+        .append($imgClone);
+      $imgMask.velocity({
+        opacity: 1
+      });
+      $imgClone.css({
+        left: imgL,
+        top: imgT,
+        width: imgW,
+        height: imgH
+      });
+      $imgClone.velocity(
+        {
+          translateX: translateX,
+          translateY: translateY,
+          scale: scale
+        },
+        { duration: 300 }
+      );
     });
 
     function closeZoom () {
@@ -475,15 +496,15 @@ Stun.utils = Stun.$u = {
         return;
       }
 
-      $('.zoomimg-mask').remove();
-      $('.zoomimg--show').velocity('reverse', {
+      isZoom = false;
+      $imgClone.velocity('reverse');
+      $imgMask.velocity('reverse', {
         complete: function () {
-          $('.zoomimg--show').removeAttr('style');
-          $('.zoomimg').removeClass('zoomimg--show');
-          $('.zoomimg-box').remove();
+          $imgMask.remove();
+          $imgClone.remove();
+          $('.zoomimg').removeClass('zoomimg--hide');
         }
       });
-      isZoom = false;
     }
   },
   /**
@@ -525,7 +546,7 @@ Stun.utils = Stun.$u = {
   addCopyButton: function (type) {
     var btnContainer = '.post-copyright,';
     var $copyIcon = $(
-      `<div class="copy-button" data-popover="${CONFIG.prompt.copy_button}" data-popover-pos="up">` +
+      `<div class="copy-button" data-popover="${CONFIG.prompt.copyButton}" data-popover-pos="up">` +
         `<i class="${CONFIG.fontIcon.copyBtn}"></i>` +
         '</div>'
     );
@@ -553,9 +574,9 @@ Stun.utils = Stun.$u = {
         container = $(this).parent()[0];
       }
       if (Stun.utils.copyText(container)) {
-        Stun.utils.popAlert('success', CONFIG.prompt.copy_success);
+        Stun.utils.popAlert('success', CONFIG.prompt.copySuccess);
       } else {
-        Stun.utils.popAlert('error', CONFIG.prompt.copy_error);
+        Stun.utils.popAlert('error', CONFIG.prompt.copyError);
       }
     });
   },

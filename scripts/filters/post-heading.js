@@ -3,6 +3,7 @@
 'use strict';
 
 hexo.extend.filter.register('after_post_render', function (data) {
+  var theme = hexo.theme.config;
   var tagName = `h[1-6]`;
   var attrId = `id="([^"]*)"`;
   var tagNotEnd = `([^>]*)`;
@@ -22,9 +23,12 @@ hexo.extend.filter.register('after_post_render', function (data) {
 
       var filterHtml = (html.replace(/<[^>]+>/gim, '') || '').trim();
       return `
-        <${tName} ${attrBegin} id="${id}" ${attrEnd}>
-          <span class="heading-link">${filterHtml}</span>
-        </${tName}>
+        <${tName} id="${id}" ${attrBegin} ${attrEnd}>
+          <a href="#${id}" class="heading-link"><i class="${
+            theme.icon && theme.icon.post_heading
+          }"></i></a>${
+          filterHtml
+        }</${tName}>
       `;
     }
   );

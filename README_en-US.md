@@ -4,48 +4,49 @@
 
 <p align="center">
   <a href="http://standardjs.com" target="_blank" rel="noopener noreferrer">
-    <img alt="js-standard-style" src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square">
+    <img alt="js-standard-style" src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg">
   </a>
   <a href="http://commitizen.github.io/cz-cli/" target="_blank" rel="noopener noreferrer">
-    <img alt="Commitizen friendly" src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square">
+    <img alt="Commitizen friendly" src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg">
   </a>
   <a href="https://github.com/liuyib/hexo-theme-stun/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">
-    <img alt="GitHub" src="https://img.shields.io/github/license/liuyib/hexo-theme-stun.svg?style=flat-square">
+    <img alt="GitHub" src="https://img.shields.io/github/license/liuyib/hexo-theme-stun.svg">
   </a>
   <br>
   <a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener noreferrer">
-    <img alt="hexo" src="https://img.shields.io/badge/hexo-%3E%3D3.0-blue.svg?style=flat-square">
+    <img alt="hexo" src="https://img.shields.io/badge/hexo-%3E%3D3.0-blue.svg">
   </a>
   <a href="https://github.com/liuyib/hexo-theme-stun/releases" target="_blank" rel="noopener noreferrer">
-    <img alt="GitHub release" src="https://img.shields.io/github/release/liuyib/hexo-theme-stun.svg?style=flat-square">
+    <img alt="GitHub release" src="https://img.shields.io/github/release/liuyib/hexo-theme-stun.svg">
   </a>
   <a href="https://gitter.im/liuyib/hexo-theme-stun?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge" target="_blank" rel="noopener noreferrer">
-    <img alt="Gitter" src="https://badges.gitter.im/liuyib/hexo-theme-stun.svg?style=flat-square">
+    <img alt="Gitter" src="https://badges.gitter.im/liuyib/hexo-theme-stun.svg">
   </a>
 </p>
 
-[English](https://github.com/liuyib/hexo-theme-stun/blob/master/README_en_US.md) | [中文简体](https://github.com/liuyib/hexo-theme-stun/blob/master/README.md)
+[English](https://github.com/liuyib/hexo-theme-stun/blob/master/README_en-US.md) | [中文简体](https://github.com/liuyib/hexo-theme-stun/blob/master/README.md)
 
 ## :sparkles: Demo
 
 - [Liuyib's Blog](https://liuyib.github.io/)
-- [mizhi's Blog](https://blog.coor.top/)
-- [轻尘's Blog](https://blog.coor.top/)
+- [mizhi's Blog](http://blog2.coor.top/)
+- [轻尘's Blog](http://qcxitong.xyz/)
+- [impressionyang's Blog](http://impressionyang.github.io)
 
-If you are using the stun theme and would like it to be shown here, you can fill in your website link by [PR](https://github.com/liuyib/hexo-theme-stun/pulls).
+If you are using the `Stun` theme and want to show it here, you just need to modify the [README_en-US](https://github.com/liuyib/hexo-theme-stun/edit/master/README_en-US.md) to fill in your website and submit PR.
 
 ## :crystal_ball: Feature
 
-- Simple, fast, easy to use, highly customizable
+- Simple & Fast & Easy to Use & **Highly Customizable**
 - Responsive design
-- Secondary navigation menu
-- Support article image lazy loading
+- [Secondary navigation menu](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/advanced-setting.html#二级导航菜单)
+- Support [image lazy loading](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/advanced-setting.html#图片懒加载)
 - Support [Pjax](https://github.com/defunkt/jquery-pjax)
 - Support [PWA](https://developers.google.com/web/progressive-web-apps)
 - Support [Fancybox](https://github.com/fancyapps/fancybox)
 - Support [Quicklink](https://github.com/GoogleChromeLabs/quicklink)
 - Support [MathJax](https://www.mathjax.org/)、[KaTex](https://katex.org/)
-- Support [Gitalk](https://github.com/gitalk/gitalk)、[Valine](https://valine.js.org/)、[Livere](https://livere.com/)、[Disqus](https://disqus.com/) and [Utterances](https://github.com/utterance/utterances) comments
+- Support [Gitalk](https://github.com/gitalk/gitalk)、[Valine](https://valine.js.org/)、[Livere](https://livere.com/)、[Disqus](https://disqus.com/)、[Utterances](https://github.com/utterance/utterances) comments
 - [Album page](https://liuyib.github.io/gallery/) of waterfall streaming
 - Built-in [Google ads](https://www.google.cn/adsense/start/)
 - Multiple code [highlighting themes](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/advanced-setting.html#代码高亮)
@@ -54,31 +55,31 @@ If you are using the stun theme and would like it to be shown here, you can fill
 
 ## :package: Install
 
-- Install `stun`
+- Install `Stun`
 
-  Enter your hexo directory, run this.
+  Enter your hexo directory, run this:
 
   ```bash
   $ git clone https://github.com/liuyib/hexo-theme-stun.git themes/stun
   ```
 
-- Install dependency `pug`
+- Install dependency `hexo-renderer-pug`
 
-  Enter your hexo directory, run this.
+  Enter your hexo directory, run this:
 
   ```bash
-  $ npm install --save hexo-render-pug
+  $ npm install --save hexo-renderer-pug
   ```
 
 ## :hammer: Usage
 
-Change the `_config.yml` file in your hexo root directory.
+Change the `_config.yml` file in your hexo root directory:
 
 ```yml
 theme: stun
 ```
 
-Run your hexo server.
+Run your hexo server:
 
 ```bash
 $ hexo clean && hexo s

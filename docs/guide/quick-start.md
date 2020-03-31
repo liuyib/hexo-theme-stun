@@ -2,7 +2,7 @@
 
 ## Installation
 
-- Install `stun`
+- Install `Stun`
 
   Enter your hexo directory, run this.
 
@@ -10,7 +10,7 @@
   $ git clone https://github.com/liuyib/hexo-theme-stun.git themes/stun
   ```
 
-- Install dependency `pug`
+- Install dependency `hexo-render-pug`
 
   Enter your hexo directory, run this.
 
@@ -37,9 +37,9 @@ $ hexo clean && hexo s
 ``` bash
 $ cd themes/stun
 
-# Update to stable version (recommend).
+# Update to stable version (Recommend).
 $ git pull origin master
 
-# Update to the latest features (May be unstable and not recommended).
+# Update to the latest features (Not recommended).
 $ git pull origin dev
 ```

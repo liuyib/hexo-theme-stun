@@ -46,7 +46,8 @@ sougou_site_verification:
 
 # The menu in the website header.
 # Value before `||` is the target link, value after `||` is the name of FontAwesome icon.
-# Usage: `Key: /link/ || fa(s|r|l|d|b) fa-iconname`
+# Usage(With Icon): `Key: /link/ || fa(s|r|l|d|b) fa-iconname`
+# Usage(No Icon)  : `Key: /link/`
 # Select your icon name, see: https://fontawesome.com/icons
 menu:
   home: / || fas fa-home
@@ -174,7 +175,7 @@ body:
     repeat: false
   # Mask effect of the background image.
   mask:
-    enable: true
+    enable: false
     # Opacity of mask (value: 0 ~ 1)
     opacity:
       # Opacity of the mask by default.
@@ -199,7 +200,7 @@ footer:
   # Copyright information.
   copyright:
     enable: true
-    # If not set, will be used `author` from Hexo main config (e.g. liuyib. All Rights Reserved.)
+    # If not set, will be used `author` from Hexo main config (e.g. liuyib All Rights Reserved)
     text:
     # Start time. If not set, the current year will be used.
     since:
@@ -442,11 +443,6 @@ post_widget:
     # Optional values: qzone | qq | weibo | wechat | douban | linkedin | facebook | twitter | google
     target: qzone, qq, weibo, wechat, douban, linkedin, facebook, twitter, google
 
-# Retain excerpt automatically.
-auto_excerpt:
-  enable: false
-  length: 150
-
 # Stick post to the top
 # Dependency: https://github.com/netcan/hexo-generator-index-pin-top/
 # !!! Don't enable this before install dependency by `npm install hexo-generator-index-pin-top --save` in hexo directory.
@@ -682,6 +678,9 @@ zoom_image:
   # The color of mask.
   # (Please use "" to wrap the value)
   mask_color: "rgba(0,0,0,0.6)"
+  # The gap between image and a edge of screen when image is enlarged.
+  # (Only `px` unit is supported)
+  gap_aside: 20px
 
 # If you are use "photos" attribute in the Front-matter,
 #   you can enable this to show images in waterfalls flow.
@@ -730,8 +729,8 @@ quicklink:
 # See: https://github.com/MoOx/pjax/
 pjax:
   enable: false
-  # Scrolling to the second screen when the page loaded.
-  scrollTo2screen: false
+  # When switching pages, scroll to the bottom of the top image.
+  avoid_banner: false
   # ! --------------------------------------------------
   # ! If you don't know the following, please ignore it.
   # ! --------------------------------------------------
@@ -741,7 +740,7 @@ pjax:
   switches:
   switchesOptions:
   history: true
-  # If you enable this, you must set `scrollTo2screen: false` firstly.
+  # If you enable this, you must set `avoid_banner: false` firstly.
   scrollTo: false
   scrollRestoration: false
   cacheBust: false
@@ -815,6 +814,12 @@ icon:
   prompt_warning: fas fa-exclamation-circle
   prompt_error: fas fa-times-circle
   valine_visitor: fas fa-eye
+  post_heading: fas fa-link
+  notetag_default: fas fa-arrow-circle-right
+  notetag_success: fas fa-check-circle
+  notetag_info: fas fa-info-circle
+  notetag_warning: fas fa-exclamation-circle
+  notetag_danger: fas fa-minus-circle
 
 # Set a CDN address for the vendor you want to customize.
 # ! -------------------------------------------------------------------

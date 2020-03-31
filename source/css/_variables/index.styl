@@ -14,9 +14,9 @@ $yellow-light  = #fff494
 // -------------------------------------------
 $z-index-2 = -2
 $z-index-1 = -1
-$z-index0  = 1000
-$z-index1  = 1001
-$z-index2  = 1002
+$z-index0  = 0
+$z-index1  = 1
+$z-index2  = 2
 
 // -------------------------------------------
 // Layout
@@ -28,14 +28,35 @@ $sm-width = 768px - 0.02px
 $md-width = 992px - 0.02px
 $lg-width = 1200px - 0.02px
 
+get-main-padding() {
+  $main-padding = convert(hexo-config('layout.main_padding.default'));
+  $gap-left = 0;
+  $gap-right = 0;
+
+  if ($main-padding[1]) {
+    $gap-right = $main-padding[1];
+
+    if ($main-padding[3]) {
+      $gap-left = $main-padding[3];
+    } else {
+      $gap-left = $main-padding[1];
+    }
+  } else {
+    $gap-left = $gap-right = $main-padding[0];
+  }
+
+  return $gap-left $gap-right;
+}
+
 // Width
+$main-padding-width     = get-main-padding()[0] + get-main-padding()[1]
 $content-width          = convert(hexo-config('layout.content') || '$sm-width')
 $sidebar-width          = convert(hexo-config('layout.sidebar') || '300px')
 $content-sidebar-gap    = convert(hexo-config('layout.content_sidebar_gap') || '30px')
 if (hexo-config('sidebar.enable')) {
-  $main-width           = $content-width + $sidebar-width + $content-sidebar-gap
+  $main-width           = $content-width + $sidebar-width + $content-sidebar-gap + $main-padding-width
 } else {
-  $main-width           = $content-width
+  $main-width           = $content-width + $main-padding-width
 }
 
 // -------------------------------------------
@@ -162,14 +183,9 @@ $alert-info-color                  = #1890ff
 $alert-warning-color               = #faad14
 $alert-error-color                 = #f5222d
 
-// -------------------------------------------
-// Icon font
-// -------------------------------------------
-$icon-heading-link        = '\f0c1'
-
-$icon-note-default        = '\f0a9'
-$icon-note-success        = '\f058'
-$icon-note-warning        = '\f06a'
-$icon-note-danger         = '\f056'
-
-$icon-hand-right          = '\f178'
+// Note plugin
+$note-default-color                = var(--color-gray-600)
+$note-success-color                = #42b983
+$note-info-color                   = #4898dd
+$note-warning-color                = #e7c000
+$note-danger-color                 = #dc3b3b

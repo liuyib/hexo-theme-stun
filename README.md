@@ -1,51 +1,52 @@
 <p align="center"><a href="https://liuyib.github.io/hexo-theme-stun/" target="_blank" rel="noopener noreferrer"><img width="100" src="https://raw.githubusercontent.com/liuyib/picBed/master/hexo-blog/20190603093757.png" alt="stun logo"></a></p>
 
-<h3 align="center">一个漂亮、简洁的 hexo 主题</h3>
+<h3 align="center">一个漂亮、简洁的 Hexo 主题</h3>
 
 <p align="center">
   <a href="http://standardjs.com" target="_blank" rel="noopener noreferrer">
-    <img alt="js-standard-style" src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square">
+    <img alt="js-standard-style" src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg">
   </a>
   <a href="http://commitizen.github.io/cz-cli/" target="_blank" rel="noopener noreferrer">
-    <img alt="Commitizen friendly" src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square">
+    <img alt="Commitizen friendly" src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg">
   </a>
   <a href="https://github.com/liuyib/hexo-theme-stun/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">
-    <img alt="GitHub" src="https://img.shields.io/github/license/liuyib/hexo-theme-stun.svg?style=flat-square">
+    <img alt="GitHub" src="https://img.shields.io/github/license/liuyib/hexo-theme-stun.svg">
   </a>
   <br>
   <a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener noreferrer">
-    <img alt="hexo" src="https://img.shields.io/badge/hexo-%3E%3D3.0-blue.svg?style=flat-square">
+    <img alt="hexo" src="https://img.shields.io/badge/hexo-%3E%3D3.0-blue.svg">
   </a>
   <a href="https://github.com/liuyib/hexo-theme-stun/releases" target="_blank" rel="noopener noreferrer">
-    <img alt="GitHub release" src="https://img.shields.io/github/release-pre/liuyib/hexo-theme-stun.svg?style=flat-square">
+    <img alt="GitHub release" src="https://img.shields.io/github/release/liuyib/hexo-theme-stun.svg">
   </a>
   <a href="https://gitter.im/liuyib/hexo-theme-stun?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge" target="_blank" rel="noopener noreferrer">
-    <img alt="Gitter" src="https://badges.gitter.im/liuyib/hexo-theme-stun.svg?style=flat-square">
+    <img alt="Gitter" src="https://badges.gitter.im/liuyib/hexo-theme-stun.svg">
   </a>
 </p>
 
-[English](https://github.com/liuyib/hexo-theme-stun/blob/master/README_en_US.md) | [中文简体](https://github.com/liuyib/hexo-theme-stun/blob/master/README.md)
+[English](https://github.com/liuyib/hexo-theme-stun/blob/master/README_en-US.md) | [中文简体](https://github.com/liuyib/hexo-theme-stun/blob/master/README.md)
 
 ## :sparkles: 演示
 
 - [Liuyib's Blog](https://liuyib.github.io/)
-- [弥枳's Blog](https://blog.coor.top/)
+- [弥枳's Blog](http://blog2.coor.top/)
 - [轻尘's Blog](http://qcxitong.xyz/)
+- [impressionyang's Blog](http://impressionyang.github.io)
 
-如果你正在使用 stun 主题，并希望像上面一样，在这里展示出来，你可以通过 [PR](https://github.com/liuyib/hexo-theme-stun/pulls) 将你的网站链接填写在这里。
+如果你正在使用 Stun 主题，并希望展示在这里，你只需修改 [README](https://github.com/liuyib/hexo-theme-stun/edit/master/README.md) 填入你的网站，然后提交 PR 即可。
 
 ## :crystal_ball: 特性
 
-- 简洁，快速，易用，可定制性高
+- 简洁 & 快速 & 易用 & **可定制性高**
 - 响应式设计
-- 二级导航菜单
-- 支持文章图片懒加载
-- 支持 [pjax](https://github.com/defunkt/jquery-pjax)
+- [二级导航菜单](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/advanced-setting.html#二级导航菜单)
+- 支持[图片懒加载](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/advanced-setting.html#图片懒加载)
+- 支持 [Pjax](https://github.com/defunkt/jquery-pjax)
 - 支持 [PWA](https://developers.google.com/web/progressive-web-apps)
-- 支持 [fancybox](https://github.com/fancyapps/fancybox)
-- 支持 [quicklink](https://github.com/GoogleChromeLabs/quicklink)
+- 支持 [Fancybox](https://github.com/fancyapps/fancybox)
+- 支持 [Quicklink](https://github.com/GoogleChromeLabs/quicklink)
 - 支持 [MathJax](https://www.mathjax.org/)、[KaTex](https://katex.org/)
-- 支持 [Gitalk](https://github.com/gitalk/gitalk)、[Valine](https://valine.js.org/)、[Livere](https://livere.com/)、[Disqus](https://disqus.com/) 和 [Utterances](https://github.com/utterance/utterances) 评论
+- 支持 [Gitalk](https://github.com/gitalk/gitalk)、[Valine](https://valine.js.org/)、[Livere](https://livere.com/)、[Disqus](https://disqus.com/)、[Utterances](https://github.com/utterance/utterances) 评论
 - 瀑布流式的[相册页面](https://liuyib.github.io/gallery/)
 - 内置[谷歌广告](https://www.google.cn/adsense/start/)，一键开启
 - 代码高亮，[多种配色](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/advanced-setting.html#代码高亮)可选
@@ -54,31 +55,31 @@
 
 ## :package: 安装
 
-- 安装 stun
+- 安装 Stun
 
-  进入 hexo 根目录，执行指令。
+  进入 Hexo 根目录，执行指令：
 
   ```bash
   $ git clone https://github.com/liuyib/hexo-theme-stun.git themes/stun
   ```
 
-- 安装依赖 pug
+- 安装依赖 `hexo-renderer-pug`
 
-  进入 hexo 根目录，执行指令。
+  进入 Hexo 根目录，执行指令：
 
   ```bash
-  $ npm install --save hexo-render-pug
+  $ npm install --save hexo-renderer-pug
   ```
 
 ## :hammer: 使用
 
-修改 hexo 根目录下的 `_config.yml` 文件。
+修改 Hexo 根目录下的 `_config.yml` 文件：
 
 ```yml
 theme: stun
 ```
 
-然后，启动 hexo 服务器。
+然后，启动 Hexo 服务器：
 
 ```bash
 $ hexo clean && hexo s

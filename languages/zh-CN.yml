@@ -82,9 +82,6 @@ reward:
   alipay: 支付宝打赏
   wechat: 微信打赏
 
-# 回到顶部
-back2top: 回到顶部
-
 # 网站底部
 footer:
   powered: 由 %s 强力驱动
@@ -99,7 +96,7 @@ prompt:
 
 popover:
   copy_button: 复制
-  creative_commons: 知识共享
+  creative_commons: 知识共享许可协议
   post:
     create_time: 发表时间
     update_time: 修改时间

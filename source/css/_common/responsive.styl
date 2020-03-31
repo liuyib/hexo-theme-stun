@@ -219,6 +219,14 @@
   .timeline {
     &-item {
       padding-left: 1rem;
+
+      &__time {
+        width: 2.75rem;
+      }
+
+      &__title {
+        width: calc(100% - 4rem);
+      }
     }
   }
 
@@ -234,8 +242,10 @@
   }
 
   if (hexo-config('gallery_waterfall.enable')) {
-    .gallery__img {
-      width: 100%;
+    .gallery {
+      img {
+        width: 100%;
+      }
     }
   }
 

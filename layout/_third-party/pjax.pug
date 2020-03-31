@@ -45,7 +45,7 @@ script.
     // 重置页面 Y 方向上的滚动偏移量
     document.addEventListener('pjax:send', function () {
       $('.header-nav-menu').removeClass('show');
-      if (CONFIG.pjax && CONFIG.pjax.scrollTo2screen) {
+      if (CONFIG.pjax && CONFIG.pjax.avoidBanner) {
         $('html').velocity('scroll', {
           duration: 500,
           offset: $('#header').height(),

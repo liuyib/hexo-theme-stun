@@ -18,7 +18,7 @@ $(document).ready(function () {
   var currHeading = null;
   // The heading that reached the top last time.
   var lastHeading = null;
-  var isRemoveTocClass = false;
+  var isRemovedTocClass = false;
 
   // Automatically expand items in the article directory
   //   based on the scrolling of heading in the article.
@@ -43,25 +43,22 @@ $(document).ready(function () {
     if (
       $postBody[0] &&
       $firsetChild[0] &&
+      $firsetChild[0].getBoundingClientRect().top > 0 &&
       $firsetChild.offset().top - $(window).scrollTop() > 0
     ) {
-      if (!isRemoveTocClass) {
+      if (!isRemovedTocClass) {
         $allTocItem.removeClass('active current');
-        isRemoveTocClass = true;
+        isRemovedTocClass = true;
       }
       return;
     }
-
     if (currHeading !== lastHeading) {
       var $targetLink = $('.sidebar-toc a[href="#' + currHeading + '"]');
-      // If the relevant "<a>" is not found, remain the state of the toc,
-      //   either, remove styles for all active states.
-      if ($targetLink[0]) {
-        $allTocItem.removeClass('active current');
-      }
+      $allTocItem.removeClass('active current');
       $targetLink.parents('li').addClass('active');
       $targetLink.parent().addClass('current');
       lastHeading = currHeading;
+      isRemovedTocClass = false;
     }
   }
 
@@ -129,7 +126,7 @@ $(document).ready(function () {
     var isEnablePostEnd = false;
     var percent = 0;
 
-    if (CONFIG.post_widget && CONFIG.post_widget.end_text) {
+    if (CONFIG.postWidget && CONFIG.postWidget.endText) {
       isEnablePostEnd = true;
     }
     if (isEnablePostEnd) {
