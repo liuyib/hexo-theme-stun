@@ -32,6 +32,7 @@
 - [mizhi's Blog](http://blog2.coor.top/)
 - [轻尘's Blog](http://qcxitong.xyz/)
 - [impressionyang's Blog](http://impressionyang.github.io)
+- [cjpNiceの博客](http://cjpnice.gitee.io)
 
 If you are using the `Stun` theme and want to show it here, you just need to modify the [README_en-US](https://github.com/liuyib/hexo-theme-stun/edit/master/README_en-US.md) to fill in your website and submit PR.
 
