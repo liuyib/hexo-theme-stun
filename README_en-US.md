@@ -1,4 +1,8 @@
-<p align="center"><a href="https://liuyib.github.io/hexo-theme-stun/" target="_blank" rel="noopener noreferrer"><img width="100" src="https://raw.githubusercontent.com/liuyib/picBed/master/hexo-blog/20190603093757.png" alt="stun logo"></a></p>
+<p align="center">
+  <a href="https://liuyib.github.io/hexo-theme-stun/" target="_blank" rel="noopener noreferrer">
+    <img src="./source/images/icons/stun-logo.svg" alt="stun logo" width="100">
+  </a>
+</p>
 
 <h3 align="center">A beautiful & simple theme for Hexo</h3>
 
