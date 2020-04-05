@@ -4,6 +4,9 @@ if theme.disqus.enable
 else if theme.valine.enable
   div#comments.comments
     div#valine-container
+else if theme.minivaline.enable
+  div#comments.comments
+    div#minivaline-container
 else if theme.gitalk.enable
   div#comments.comments
     div#gitalk-container
