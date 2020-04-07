@@ -165,8 +165,8 @@
 ``` yaml
 pjax:
   enable: true
-  # 是否在页面加载后，滚动到第二屏
-  scrollTo2screen: false
+  # 是否在切换页面时，滚动到顶部大图的底部
+  avoid_banner: false
   # ！！如果你不了解如何使用，请忽略下面的配置项（默认即可）！！
   # 下面配置项的用法，请参见: https://github.com/MoOx/pjax/#options
   elements:
@@ -174,7 +174,7 @@ pjax:
   switches:
   switchesOptions:
   history: true
-  # 如果启用这个配置项，必须设置 `scrollTo2screen: false`
+  # 如果启用这个配置项，必须设置 `avoid_banner: false`
   scrollTo: false
   scrollRestoration: false
   cacheBust: false
@@ -239,7 +239,7 @@ Gitalk 是一个基于 Github issues 的评论系统。使用之前需要确保�
 
 首先，你需要注册一个新的 **GitHub Application** 来授权，点击[这里](https://github.com/settings/applications/new)注册。这样可以获取所需的 `client ID` 和 `client secret`。
 
-::: warning 注意
+::: warning
 注册 GitHub Application 时，必须在 `Authorization callback URL` 字段中指定网站的 URL。
 :::
 
@@ -390,18 +390,18 @@ busuanzi:
   # 统计站点 UV 数量
   site_uv:
     enable: true
-    # FontAwesome 图标名称: https://fontawesome.com/v4.7.0/icons/
-    icon: user
+    # 查找图标名称，请访问：https://fontawesome.com/icons
+    icon: fas fa-user
   # 统计站点 PV 数量
   site_pv:
     enable: true
-    # FontAwesome 图标名称: https://fontawesome.com/v4.7.0/icons/
-    icon: eye
+    # 查找图标名称，请访问：https://fontawesome.com/icons
+    icon: fas fa-eye
   # 统计每篇文章的 PV 数量
   post_pv:
     enable: true
-    # FontAwesome 图标名称: https://fontawesome.com/v4.7.0/icons/
-    icon: eye
+    # 查找图标名称，请访问：https://fontawesome.com/icons
+    icon: fas fa-eye
 ```
 
 ### 谷歌分析 <Badge text="Stable"/> <Badge text="v1.2.4"/>
@@ -779,7 +779,6 @@ MathJax 与 KaTex 相比之下，[KaTex 引擎速度更快](https://www.intmath.
 
       ``` yaml
       math:
-        ...
         # 字母全小写
         engine: mathjax
       ```
@@ -820,7 +819,6 @@ $ npm un hexo-math --save
 
       ``` yaml
       math:
-        ...
         # 字母全小写
         engine: katex
       ```
@@ -904,7 +902,7 @@ canvas_nest:
   enable: false
   # 是否在移动端显示
   onmobile: true
-  # 线条的颜色（RGB 值，请使用 "," 分隔）
+  # 线条的颜色（RGB 值，请使用 "," 分隔，并用引号包裹值）
   color: "0,0,0"
   # 线条的透明度
   opacity: 0.6

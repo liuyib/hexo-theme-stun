@@ -10,8 +10,17 @@
       content: '';
       position: absolute;
       top: 1em;
+      bottom: -1em;
       left: 0;
-      z-index: $z-index0;
+      border-left: .2rem dashed var(--color-gray-250);
+      transform: translateX(-50%);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 1em;
+      left: 0;
       border: .15rem solid $post-timeline-dot-color;
       border-radius: 50%;
       width: .6rem;
@@ -21,18 +30,8 @@
       transform: translate(-50%, -50%);
     }
 
-    &::after {
-      content: '';
-      position: absolute;
-      top: 1em;
-      bottom: -1em;
-      left: 0;
-      border-left: .2rem dashed var(--color-gray-250);
-      transform: translateX(-50%);
-    }
-
     &:hover {
-      &::before {
+      &::after {
         border-color: $post-timeline-dot-hover-color;
       }
     }

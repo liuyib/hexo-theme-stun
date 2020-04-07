@@ -76,7 +76,7 @@ $(document).ready(function () {
       return nightMode;
     }
 
-    if (CONFIG.night_mode && CONFIG.night_mode.enable) {
+    if (CONFIG.nightMode && CONFIG.nightMode.enable) {
       var isNightMode = false;
       var NIGHT_MODE_COOKIES_KEY = 'night_mode';
       $nightMode = $('.mode');

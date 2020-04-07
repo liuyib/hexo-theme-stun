@@ -28,6 +28,12 @@ script.
         });
     });
 
+    function closeSearch () {
+      $('body').css({ overflow: 'auto' });
+      $('.search-popup').css({ display: 'none' });
+      $('.search-mask').css({ display: 'none' });
+    }
+
     $('.search-mask, .search-close').on('click', function () {
       closeSearch();
     });
@@ -65,7 +71,7 @@ script.
         container: '.search-input',
         reset: false,
         magnifier: false,
-        placeholder: algolia.languages.input_placeholder
+        placeholder: algolia.languages.inputPlaceholder
       })
     );
 
@@ -85,7 +91,7 @@ script.
           empty: function (data) {
             return (
               '<div id="algolia-hits-empty">' +
-                algolia.languages.hits_empty.replace(/\$\{query}/, data.query) +
+                algolia.languages.hitsEmpty.replace(/\$\{query}/, data.query) +
               '</div>'
             );
           }
@@ -103,7 +109,7 @@ script.
           container: '#algolia-stats',
           templates: {
             body: function (data) {
-              var stats = algolia.languages.hits_stats
+              var stats = algolia.languages.hitsStats
                 .replace(/\$\{hits}/, data.nbHits)
                 .replace(/\$\{time}/, data.processingTimeMS);
               return (
@@ -142,18 +148,4 @@ script.
     );
 
     search.start();
-
-    function closeSearch () {
-      $('body').css('overflow', 'auto');
-      $('.search-popup')
-        .velocity('stop')
-        .velocity('transition.expandOut', {
-          duration: 300
-        });
-      $('.search-mask')
-        .velocity('stop')
-        .velocity('transition.fadeOut', {
-          duration: 300
-        });
-    }
   });

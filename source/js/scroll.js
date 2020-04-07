@@ -57,15 +57,6 @@ $(document).ready(function () {
     prevScrollTop = scrollTop;
   }
 
-  function scrollHeadingToTop (anchor) {
-    $(anchor)
-      .velocity('stop')
-      .velocity('scroll', {
-        easing: 'ease-in-out',
-        duration: 600
-      });
-  }
-
   var isBack2topEnable = CONFIG.back2top && CONFIG.back2top.enable;
   var isBack2topShow = false;
 
@@ -111,22 +102,4 @@ $(document).ready(function () {
       }
     }, 100)
   );
-
-  Stun.utils.pjaxReloadScroll = function () {
-    // Click the heading.
-    $('#content-wrap')
-      .find('h1,h2,h3,h4,h5,h6')
-      .on('click', function () {
-        scrollHeadingToTop('#' + $(this).attr('id'));
-      });
-
-    // Click the post toc.
-    $('.toc-link').on('click', function (e) {
-      e.preventDefault();
-      scrollHeadingToTop($(this).attr('href'));
-    });
-  };
-
-  // Initializaiton
-  Stun.utils.pjaxReloadScroll();
 });

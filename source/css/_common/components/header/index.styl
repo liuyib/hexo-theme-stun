@@ -188,6 +188,7 @@ if (hexo-config('header.nav.height') && match('%', hexo-config('header.nav.heigh
 
   &-banner {
     position: relative;
+    z-index: $z-index0;
     width: 100%;
     height: 100%;
 
@@ -202,7 +203,7 @@ if (hexo-config('header.nav.height') && match('%', hexo-config('header.nav.heigh
         position: absolute;
         top: 0;
         left: 0;
-        z-index: $z-index0;
+        z-index: $z-index-1;
         width: 100%;
         height: 100%;
         background-color: alpha(#000, hexo-config('header.mask.opacity'));
@@ -213,7 +214,6 @@ if (hexo-config('header.nav.height') && match('%', hexo-config('header.nav.heigh
       position: absolute;
       top: 50%;
       left: 0;
-      z-index: $z-index0;
       padding: 0 .5rem;
       width: 100%;
       text-align: center;
@@ -239,7 +239,6 @@ if (hexo-config('header.nav.height') && match('%', hexo-config('header.nav.heigh
         position: absolute;
         bottom: 1rem;
         left: calc(50% - 1rem);
-        z-index: $z-index0;
         width: 2rem;
         height: 2rem;
         text-align: center;

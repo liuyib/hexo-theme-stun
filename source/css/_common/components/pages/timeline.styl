@@ -24,10 +24,9 @@
       position: absolute;
       top: 50%;
       left: 0;
-      z-index: 1000;
       border-radius: 50%;
-      width: .4rem;
-      height: .4rem;
+      width: .3rem;
+      height: .3rem;
       background-color: $post-timeline-dot-color;
       transition: background-color .2s ease;
       transform: translate(-50%, -50%);
@@ -43,15 +42,27 @@
 
     &--year {
       font-weight: 700;
+
+      &::before {
+        border: .12rem solid $post-timeline-dot-color;
+        width: .4rem;
+        height: .4rem;
+        background-color: var(--color-gray-250);
+      }
+
+      &:hover {
+        &::before {
+          border-color: $post-timeline-dot-hover-color;
+          background-color: var(--color-gray-250);
+        }
+      }
     }
 
-    time-width = 3em;
-    time-margin = 1em;
-    sticky-top-width = 2em;
+    time-width = 3.5rem;
+    sticky-top-width = 1rem;
 
     &__time {
       display: inline-block;
-      margin-right: time-margin;
       width: time-width;
       vertical-align: middle;
       color: #99a9bf;
@@ -61,7 +72,7 @@
     &__title {
       display: inline-block;
       margin: 0;
-      width: 'calc(100% - %s)' % (time-width + time-margin + sticky-top-width);
+      width: 'calc(100% - %s)' % (time-width + sticky-top-width);
       font-size: 1em;
       font-weight: normal;
       vertical-align: middle;
