@@ -39,7 +39,7 @@
 - [cjpNiceの博客](http://cjpnice.gitee.io)
 - [峡州仙士之页](https://cjh0613.gitee.io/blog/)
 - [Cheeks's Blog](http://www.cheeks.top/)
-- [lingan's Blog](https://www.lingan1996.top)
+- [lingan1996's Blog](https://www.lingan1996.top)
 
 如果你正在使用 Stun 主题，并希望展示在这里，你只需修改 [README](https://github.com/liuyib/hexo-theme-stun/edit/master/README.md) 填入你的网站，然后提交 PR 即可。
 
