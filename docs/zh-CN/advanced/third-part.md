@@ -7,6 +7,10 @@
 - [Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) - 用户可以将您的站点添加到桌面上。
 - [Service Worker](https://developers.google.com/web/fundamentals/primers/service-workers/) - 让您的网站中，已访问过的页面离线可用。
 
+::: warning
+您的博客必须全站为HTTPS，这是使用PWA的基础条件
+:::
+
 使用步骤如下：
 
 1. 安装插件
@@ -64,9 +68,9 @@
       theme_color: "#54bcff"
     ```
 
-4. 创建 `manifest.json` 文件
+4. 创建 `manifest.json` 和`sw.js`文件
 
-    你可以通过 [Web App Manifest](https://app-manifest.firebaseapp.com/) 网站来快速生成 `manifest.json` 文件。`manifest.json` 文件的内容如下：
+    你可以通过 [Web App Manifest](https://app-manifest.firebaseapp.com/) 网站来快速生成 `manifest.json` 文件。`manifest.json` 文件放置在站点根目录下，内容如下：
 
     ``` json
     {
@@ -107,6 +111,24 @@
         }
       ],
       "splash_pages": null // 配置自定义启动动画。
+    }
+    ```
+
+    创建`sw.js`文件，同样放置站点根目录下，内容如下：
+    ```javascript
+    importScripts('https://g.alicdn.com/kg/workbox/3.3.0/workbox-sw.js');
+    
+    if(workbox){
+    workbox.setConfig({ modulePathPrefix: 'https://g.alicdn.com/kg/workbox/3.3.0/' });
+    
+    workbox.precaching.precache(['/', '/index.html']);
+    
+    // 请将此处的域名改为您的域名。
+    workbox.routing.registerRoute(new RegExp('^https?://mikyming.online?$'), workbox.strategies.networkFirst());
+    
+    workbox.routing.registerRoute(new RegExp('.*.html'), workbox.strategies.networkFirst());
+    
+    workbox.routing.registerRoute(new RegExp('.*.(?:js|css|jpg|png|gif)'), workbox.strategies.staleWhileRevalidate());
     }
     ```
 
