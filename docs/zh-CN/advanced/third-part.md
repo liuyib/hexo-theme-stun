@@ -2,10 +2,14 @@
 
 ## PWA <Badge text="Stable"/> <Badge text="v1.2.2"/>
 
-如果你想要使网站支持 PWA 特性，需要安装插件 [hexo-pwa](https://github.com/lavas-project/hexo-pwa)，该插件可以使你的网站具有以下功能：
+如果你想要使网站支持 PWA 特性，需要安装插件 [hexo-pwa](https://github.com/lavas-project/hexo-pwa)。该插件可以使你的网站具有以下功能：
 
 - [Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) - 用户可以将您的站点添加到桌面上。
 - [Service Worker](https://developers.google.com/web/fundamentals/primers/service-workers/) - 让您的网站中，已访问过的页面离线可用。
+
+::: warning
+您的博客必须全站支持 HTTPS，这是使用 PWA 的前提条件。
+:::
 
 使用步骤如下：
 
@@ -51,38 +55,34 @@
       priority: 5
     ```
 
-    有关插件的详尽信息，请查看插件的[文档](https://github.com/lavas-project/hexo-pwa)。
+    上面的配置中，引用了 `manifest.json` 和 `sw.js` 文件。其中 `sw.js` 文件是 `hexo-pwa` 插件自动生成的。`manifest.json` 文件需要用户手动创建。
 
-3. 修改主题配置文件
+3. 创建 `manifest.json` 文件
 
-    ``` yaml
-    pwa:
-      enable: true
-      # manifest 文件的路径
-      manifest: /manifest.json
-      # 浏览器导航栏的背景颜色
-      theme_color: "#54bcff"
-    ```
-
-4. 创建 `manifest.json` 文件
-
-    你可以通过 [Web App Manifest](https://app-manifest.firebaseapp.com/) 网站来快速生成 `manifest.json` 文件。`manifest.json` 文件的内容如下：
+    你可以借助 [Web App Manifest](https://app-manifest.firebaseapp.com/) 网站来快速生成 `manifest.json` 文件，生成的文件内容如下所示：
 
     ``` json
     {
-      "name": "xxx", // 应用全称。例如：liuyib's blog
-      "short_name": "xxx", // 应用简称。例如：liuyib
-      "theme_color": "#ffffff", // 匹配浏览器的地址栏颜色
-      "background_color": "#ffffff", // 加载应用时的背景色
-      "display": "standalone", // 首选显示模式。其他选项有：fullscreen, minimal-ui, browser
+      // 应用全称。例如：liuyib's blog
+      "name": "xxx",
+      // 应用简称。例如：liuyib
+      "short_name": "xxx",
+      // 匹配浏览器的地址栏颜色
+      "theme_color": "#ffffff",
+      // 加载应用时的背景色
+      "background_color": "#ffffff",
+      // 首选显示模式。其他选项有：fullscreen, minimal-ui, browser
+      "display": "standalone",
       "scope": "/",
       "start_url": "/",
-      // 该数组指定图标参数，用来适配不同设备（格式为 png，至少包含一个 192px*192px 的图标）
+      // 指定图标参数，用来适配不同设备（格式为 png，至少包含一个 192*192px 的图标）
       "icons": [
         {
-          // 图标文件的路径，需在 source/ 目录下自行创建所需的文件或文件夹
+          // 图片路径（你需要将图片放在网站根目录中的 source 目录下）
           "src": "images/icons/favicon-48x48.png",
+          // 图片尺寸
           "sizes": "48x48",
+          // 图片类型
           "type": "image/png"
         },
         {
@@ -106,15 +106,37 @@
           "type": "image/png"
         }
       ],
-      "splash_pages": null // 配置自定义启动动画。
+      // 配置自定义启动动画
+      "splash_pages": null
     }
     ```
 
+  	你需要将 `manifest.json` 文件放在 Hexo 根目录下的 source 文件夹中。
+
+4. 修改主题配置文件
+
+  	```yaml
+  	pwa:
+  	  enable: true
+  	  # manifest 文件的路径
+  	  manifest: /manifest.json
+  	  # 浏览器导航栏的背景颜色（只在安装的 PWA 离线应用中生效）
+  	  theme_color: '#ffffff'
+  	```
+
 5. 重启 Hexo 服务器
 
-    ``` bash
-    $ hexo clean && hexo s
-    ```
+  	```bash
+  	$ hexo clean && hexo s
+  	```
+
+::: warning
+如果你不想使用 `hexo-pwa` 插件，那么你需要自己编写 `sw.js` 文件的相关代码，并在主题的模板文件（`.pug`）中，所有的页面里引入你的 `sw.js` 文件。`manifest.json` 文件的创建方法和放置位置同上。
+:::
+
+::: danger
+`hexo-pwa` 插件的 `0.1.3` 及以下的版本，不兼容 Hexo `4.2.0` 版本。因此如果你使用了该插件，并且 Hexo 版本升级到了 `v4.2.0`，会遇到启动 Hexo 服务时报错的问题。目前 `hexo-pwa` 插件的作者正在积极解决该问题。
+:::
 
 ## 启用 Quicklink <Badge text="Stable"/> <Badge text="v1.2.3"/>
 
