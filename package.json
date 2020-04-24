@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^8.1.0",
-    "commitizen": "^3.1.2",
+    "commitizen": "^4.0.4",
     "commitlint-config-cz": "^0.11.1",
     "cz-customizable": "^6.2.0",
     "eslint": "^6.0.1",
