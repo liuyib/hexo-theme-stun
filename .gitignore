@@ -1,6 +1,35 @@
-.DS_Store
-node_modules/*
+### Node ###
+# Logs
+logs
 *.log
-package-lock.json
-yarn.lock
-docs/.vuepress/dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# Dependency directories
+node_modules/
+jspm_packages/
+bower_components/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# vuepress build output
+**/.vuepress/dist/
+
+# Temporary folders
+tmp/
+temp/
+
+### VisualStudioCode ###
+.vscode/*
+
+### MacOS ###
+# General
+.DS_Store

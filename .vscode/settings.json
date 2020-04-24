@@ -1,8 +1,0 @@
-{
-  "eslint.enable": true,
-  "eslint.autoFixOnSave": true,
-  "editor.formatOnSave": true,
-  "[markdown]": {
-    "editor.formatOnSave": false
-  },
-}
