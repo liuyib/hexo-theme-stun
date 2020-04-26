@@ -801,6 +801,16 @@ tag_cloud:
   # Maximum number of tags displayed. Change it if you have more than 200 tags.
   max_amount: 200
 
+# Eliminate the old version of IE browser (IE6~11).
+# See: https://support.dmeng.net/upgrade-your-browser.html
+kill_old_ie:
+  enable: true
+  # The URL of warning page (Please use "" to wrap the value).
+  # ! ----------------------------------------------------------------
+  # ! Usually you don't need to set this option, just use the default.
+  # ! ----------------------------------------------------------------
+  warning_url: https://support.dmeng.net/upgrade-your-browser.html
+
 # Assets
 # In theme directory (source/css)
 css: css
@@ -886,7 +896,7 @@ cdn:
   # leancloud_storage: //cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js
   valine:
   leancloud_storage:
-  
+
   # minivaline
   # See: https://github.com/MiniValine/MiniValine
   # Example:
