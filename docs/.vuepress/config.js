@@ -15,13 +15,13 @@ module.exports = {
     },
   },
   head: [
-    ['link', { rel: 'icon', href: `/stun-logo.ico` }],
+    ['link', { rel: 'icon', href: `/icons/favicon-32x32.png` }],
     ['link', { rel: 'manifest', href: '/manifest.json' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
-    ['link', { rel: 'apple-touch-icon', href: `/icons/apple-touch-icon-152x152.png` }],
-    ['meta', { name: 'msapplication-TileImage', content: '/icons/msapplication-icon-144x144.png' }],
-    ['meta', { name: 'msapplication-TileColor', content: '#000000' }]
+    ['link', { rel: 'apple-touch-icon', href: `/icons/favicon-180x180.png` }],
+    ['meta', { name: 'msapplication-TileImage', content: '/icons/favicon-144x144.png' }],
+    ['meta', { name: 'msapplication-TileColor', content: '#000000' }],
   ],
   serviceWorker: true,
   themeConfig: {
@@ -44,7 +44,7 @@ module.exports = {
           }
         },
         sidebar: {
-          '/': getEnSidebar('guide'),
+          '/': getEnSidebar('Guide'),
         },
         nav: [
           {
@@ -81,6 +81,10 @@ module.exports = {
               },
             ],
           },
+          {
+            text: 'Contribute',
+            link: '/contribute/',
+          },
         ],
       },
       '/zh-CN/': {
@@ -95,11 +99,11 @@ module.exports = {
           }
         },
         sidebar: {
-          '/zh-CN/': getZhSidebar('指南'),
+          '/zh-CN/': getZhSidebar('配置指南'),
         },
         nav: [
           {
-            text: '指南',
+            text: '配置指南',
             items: [
               {
                 text: '快速开始',
@@ -132,6 +136,10 @@ module.exports = {
               },
             ],
           },
+          {
+            text: '贡献代码',
+            link: '/zh-CN/contribute/',
+          },
         ],
       },
     },
@@ -150,6 +158,7 @@ function getEnSidebar(title) {
         '/advanced/third-part',
         '/advanced/assist',
         '/advanced/optimize',
+        '/contribute/',
       ],
     },
   ];
@@ -167,6 +176,7 @@ function getZhSidebar(title) {
         '/zh-CN/advanced/third-part',
         '/zh-CN/advanced/assist',
         '/zh-CN/advanced/optimize',
+        '/zh-CN/contribute/',
       ],
     },
   ];

@@ -121,4 +121,4 @@ $ git pull
 
 ## :handshake: 开源协议
 
-[MIT](https://github.com/liuyib/hexo-theme-stun/blob/master/LICENSE) Copyright (c) 2019 liuyib
+[MIT](https://github.com/liuyib/hexo-theme-stun/blob/master/LICENSE) Copyright (c) 2020 liuyib
