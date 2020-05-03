@@ -801,7 +801,7 @@ tag_cloud:
 # Eliminate the old version of IE browser (IE6~11).
 # See: https://support.dmeng.net/upgrade-your-browser.html
 kill_old_ie:
-  enable: true
+  enable: false
   # The URL of warning page (Please use "" to wrap the value).
   # ! ----------------------------------------------------------------
   # ! Usually you don't need to set this option, just use the default.
