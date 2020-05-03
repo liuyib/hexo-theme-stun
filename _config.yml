@@ -765,9 +765,8 @@ pjax:
 # Google AdSense
 google_adsense:
   enable: false
-  js_src: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js
   client:
-  enable_page_level_ads: true
+  js_src: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js
 
 # The links with `target="_blank"` attribute.
 external_link:
