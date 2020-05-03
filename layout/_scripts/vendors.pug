@@ -18,7 +18,7 @@ if theme.canvas_ribbon.enable
   script(src=ribbon_js size=ribbon.size alpha=ribbon.alpha zIndex=ribbon.zIndex)
 
 if theme.canvas_nest.enable
-  - var nest_js = 'https://cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@latest/canvas-nest.min.js';
+  - var nest_js = 'https://cdn.jsdelivr.net/npm/canvas-nest.js@1.0.1/dist/canvas-nest.min.js';
   - var nest = theme.canvas_nest;;
   - if (theme.cdn.canvas_nest) nest_js = theme.cdn.canvas_nest;
   script(src=nest_js color=nest.color opacity=nest.opacity count=nest.count zIndex=nest.zIndex)

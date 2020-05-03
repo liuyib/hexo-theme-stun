@@ -635,8 +635,6 @@ canvas_ribbon:
 # Dependency: https://github.com/hustcc/canvas-nest.js
 canvas_nest:
   enable: false
-  # Whether to show on mobile.
-  onmobile: true
   # Color of lines.
   # RGB values, use `,` to separate.
   color: "0,0,0"
@@ -927,7 +925,7 @@ cdn:
   # Using version: latest
   # See: https://github.com/hustcc/canvas-nest.js
   # Example:
-  # canvas_nest: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@latest/canvas-nest.min.js
+  # canvas_nest: //cdn.jsdelivr.net/npm/canvas-nest.js@1.0.1/dist/canvas-nest.min.js
   canvas_nest:
 
   # Using version: 3.5.7
