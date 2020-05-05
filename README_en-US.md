@@ -44,6 +44,7 @@
 - [Cheeks's Blog](http://www.cheeks.top/)
 - [lingan1996's Blog](https://www.lingan1996.top)
 - [MikyMing's Blog](https://mikyming.online/)
+- [maple Blog](https://www.hongmaple.xyz/)
 
 If you are using the `Stun` theme and want to show it here, you just need to modify the [README_en-US](https://github.com/liuyib/hexo-theme-stun/edit/master/README_en-US.md) to fill in your website and submit PR.
 
