@@ -40,9 +40,7 @@
 
 使用 Stun 主题并运行后，浏览器里显示**类似**如下信息：
 
-`
-extends ./_layout.pug block content include ./_partials/post/post-list.pug if theme.post_list.paginate.home include ./_partials/widgets/paginator.pug
-`
+`extends ./_layout.pug block content include ./_partials/post/post-list.pug if theme.post_list.paginate.home include ./_partials/widgets/paginator.pug`
 
 原因是没有安装依赖 `hexo-renderer-pug`，在 Hexo 根目录执行下面这条指令，然后重启服务器即可：
 
@@ -54,7 +52,7 @@ $ npm install hexo-renderer-pug --save
 
 - 代码高亮，无法识别 C# 代码
 
-  > 参见 issue：[“代码高亮”无法识别C#代码](https://github.com/liuyib/hexo-theme-stun/issues/12)
+  > 参见 issue：[“代码高亮”无法识别 C#代码](https://github.com/liuyib/hexo-theme-stun/issues/12)
 
 - 无法渲染 LaTex 公式
 
@@ -62,7 +60,7 @@ $ npm install hexo-renderer-pug --save
 
 类似这种问题，都是因为 Markdown 渲染器引起的。Hexo 默认安装的 Markdown 渲染器是 `hexo-renderer-marked`，这个渲染器功能很少，已经满足不了大多数用户的需求，所以推荐将其卸载换成 `hexo-renderer-markdown-it-plus`。在 Hexo 根目录执行下面这些指令，然后重启服务器即可：
 
-``` bash
+```bash
 # 卸载原来的渲染器
 $ npm uninstall hexo-renderer-marked --save
 
@@ -74,7 +72,7 @@ $ npm install hexo-renderer-markdown-it-plus --save
 
 文章置顶功能依赖于 `hexo-generator-index-pin-top` 插件，并且需要将原有的 `hexo-generator-index` 插件卸载。如果你设置了文章置顶，但没有生效，很可能是因为没有卸载原有的插件。在 Hexo 根目录执行下面这条指令，然后重启服务器即可：
 
-``` bash
+```bash
 $ npm uninstall hexo-generator-index --save
 ```
 
@@ -82,7 +80,7 @@ $ npm uninstall hexo-generator-index --save
 
 这个功能需要启用 Pjax 后才能使用。如果想设置这个功能，需要修改主题配置文件：
 
-``` yaml
+```yaml
 pjax:
   enable: true
   avoid_banner: true

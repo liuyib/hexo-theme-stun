@@ -885,11 +885,10 @@ Stun 主题默认提供了一些 MathJax 和 Katex 的插件。
 google_adsense:
   # 是否启用
   enable: false
-  # 如果和你的代码中的地址不一样，请更换
-  js_src: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js
   # 填写你的 client-id
-  client:
-  enable_page_level_ads: true
+  client: ca-pub-xxxxxx
+  # 如果和你的 AdSense 代码中的地址不一样，请更换
+  js_src: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js
 ```
 
 ## 特效

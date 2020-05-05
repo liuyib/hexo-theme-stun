@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /logo.png
+heroImage: /icons/favicon-192x192.png
 actionText: Quick Started →
 actionLink: /guide/quick-start
 # features:

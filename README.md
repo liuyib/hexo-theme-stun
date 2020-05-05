@@ -13,6 +13,9 @@
   <a href="http://commitizen.github.io/cz-cli/" target="_blank" rel="noopener noreferrer">
     <img alt="Commitizen friendly" src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg">
   </a>
+  <a href="https://github.com/liuyib/hexo-theme-stun/network/alerts" target="_blank" rel="noopener noreferrer">
+    <img alt="David" src="https://img.shields.io/david/liuyib/hexo-theme-stun">
+  </a>
   <a href="https://github.com/liuyib/hexo-theme-stun/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">
     <img alt="GitHub" src="https://img.shields.io/github/license/liuyib/hexo-theme-stun.svg">
   </a>
@@ -119,4 +122,4 @@ $ git pull
 
 ## :handshake: 开源协议
 
-[MIT](https://github.com/liuyib/hexo-theme-stun/blob/master/LICENSE) Copyright (c) 2019 liuyib
+[MIT](https://github.com/liuyib/hexo-theme-stun/blob/master/LICENSE) Copyright (c) 2020 liuyib
