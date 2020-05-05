@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /logo.png
+heroImage: /icons/favicon-192x192.png
 actionText: 快速开始 →
 actionLink: /zh-CN/guide/quick-start
 # features:

@@ -56,7 +56,7 @@ module.exports = {
               },
               {
                 text: 'Primary setting',
-                link: '/guide/primary-setting',
+                link: '/guide/primary',
               },
             ],
           },
@@ -65,7 +65,7 @@ module.exports = {
             items: [
               {
                 text: 'Advanced setting',
-                link: '/advanced/advanced-setting',
+                link: '/advanced/advanced',
               },
               {
                 text: 'Third part',
@@ -111,7 +111,7 @@ module.exports = {
               },
               {
                 text: '新手上路',
-                link: '/zh-CN/guide/primary-setting',
+                link: '/zh-CN/guide/primary',
               },
             ],
           },
@@ -120,7 +120,7 @@ module.exports = {
             items: [
               {
                 text: '新手进阶',
-                link: '/zh-CN/advanced/advanced-setting',
+                link: '/zh-CN/advanced/advanced',
               },
               {
                 text: '第三方支持',
@@ -137,7 +137,7 @@ module.exports = {
             ],
           },
           {
-            text: '贡献代码',
+            text: '参与贡献',
             link: '/zh-CN/contribute/',
           },
         ],
@@ -153,8 +153,8 @@ function getEnSidebar(title) {
       collapsable: false,
       children: [
         '/guide/quick-start',
-        '/guide/primary-setting',
-        '/advanced/advanced-setting',
+        '/guide/primary',
+        '/advanced/advanced',
         '/advanced/third-part',
         '/advanced/assist',
         '/advanced/optimize',
@@ -171,8 +171,8 @@ function getZhSidebar(title) {
       collapsable: false,
       children: [
         '/zh-CN/guide/quick-start',
-        '/zh-CN/guide/primary-setting',
-        '/zh-CN/advanced/advanced-setting',
+        '/zh-CN/guide/primary',
+        '/zh-CN/advanced/advanced',
         '/zh-CN/advanced/third-part',
         '/zh-CN/advanced/assist',
         '/zh-CN/advanced/optimize',

@@ -36,12 +36,12 @@
 ## :sparkles: Demo
 
 - [Liuyib's Blog](https://liuyib.github.io/)
-- [mizhi's Blog](http://blog2.coor.top/)
-- [轻尘's Blog](http://qcxitong.xyz/)
-- [impressionyang's Blog](http://impressionyang.github.io)
-- [cjpNiceの博客](http://cjpnice.gitee.io)
+- [弥枳's Blog](http://blog2.coor.top/)
+- [轻尘's Blog](https://qcxitong.xyz/)
+- [impressionyang's Blog](https://impressionyang.github.io)
+- [cjpNiceの博客](https://cjpnice.gitee.io)
 - [峡州仙士之页](https://cjh0613.gitee.io/blog/)
-- [Cheeks's Blog](http://www.cheeks.top/)
+- [Cheeks's Blog](https://www.cheeks.top/)
 - [lingan1996's Blog](https://www.lingan1996.top)
 - [MikyMing's Blog](https://mikyming.online/)
 - [maple Blog](https://www.hongmaple.xyz/)

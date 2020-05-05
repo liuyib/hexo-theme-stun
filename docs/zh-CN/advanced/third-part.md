@@ -921,8 +921,6 @@ canvas_ribbon:
 canvas_nest:
   # 是否启用
   enable: false
-  # 是否在移动端显示
-  onmobile: true
   # 线条的颜色（RGB 值，请使用 "," 分隔，并用引号包裹值）
   color: "0,0,0"
   # 线条的透明度
