@@ -1,6 +1,6 @@
 {
   "name": "hexo-theme-stun",
-  "version": "2.0.0-rc.0",
+  "version": "2.0.0",
   "description": "A beautiful & simple theme for Hexo",
   "homepage": "https://liuyib.github.io",
   "scripts": {
