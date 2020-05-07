@@ -1,0 +1,32 @@
+$theme-color = #1890ff;
+$theme-color-light = #e6f7ff;
+$font-color = #1f2d3d;
+
+a {
+  color: $theme-color;
+}
+
+.home .hero a.action-button {
+  border-bottom: 0;
+  text-decoration: none;
+  background-color: #49b1f5;
+}
+
+.sidebar {
+  a.sidebar-link {
+    &.active {
+      border-left-color: transparent;
+      color: $theme-color;
+    }
+  }
+
+  &-sub-headers {
+    a.sidebar-link {
+      &.active {
+        border-right: 3px solid $theme-color;
+        color: $theme-color;
+        background: $theme-color-light;
+      }
+    }
+  }
+}

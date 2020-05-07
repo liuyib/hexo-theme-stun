@@ -1,7 +1,12 @@
 {
-  "name": "hexo-theme-stun",
-  "short_name": "hexo-theme-stun",
+  "name": "hexo-theme-stun docs",
+  "short_name": "Stun docs",
   "icons": [
+    {
+      "src": "/hexo-theme-stun/icons/favicon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
     {
       "src": "/hexo-theme-stun/icons/favicon-192x192.png",
       "sizes": "192x192",
@@ -11,5 +16,5 @@
   "start_url": "/hexo-theme-stun/",
   "display": "standalone",
   "background_color": "#fff",
-  "theme_color": "#3eaf7c"
+  "theme_color": "#74c9ff"
 }
