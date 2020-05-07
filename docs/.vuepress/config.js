@@ -20,7 +20,7 @@ module.exports = {
   },
   themeConfig: {
     repo: 'liuyib/hexo-theme-stun',
-    logo: '/icons/favicon-144x144.png',
+    logo: '/icons/favicon-192x192.png',
     editLinks: true,
     // 如果你的文档不在仓库的根部，请指定 docsRepo 元字符
     docsDir: 'docs',
