@@ -31,7 +31,7 @@
   </a>
 </p>
 
-[English](https://github.com/liuyib/hexo-theme-stun/blob/master/README_en-US.md) | [中文简体](https://github.com/liuyib/hexo-theme-stun/blob/master/README.md)
+语言: [English](https://github.com/liuyib/hexo-theme-stun/blob/master/README_en-US.md) | [中文简体](https://github.com/liuyib/hexo-theme-stun/blob/master/README.md)
 
 ## :sparkles: 演示
 
@@ -46,7 +46,7 @@
 - [MikyMing's Blog](https://mikyming.online/)
 - [maple Blog](https://www.hongmaple.xyz/)
 
-如果你正在使用 Stun 主题，并希望展示在这里，你只需修改 [README](https://github.com/liuyib/hexo-theme-stun/edit/master/README.md) 填入你的网站，然后提交 PR 即可。
+如果你准备长期使用 «Stun» 主题，并希望展示在这里，你只需在 [README](https://github.com/liuyib/hexo-theme-stun/edit/master/README.md) 中填入你的网站，然后提交 PR 即可。
 
 ## :crystal_ball: 特性
 
@@ -68,7 +68,7 @@
 
 ## :package: 安装
 
-- 安装 Stun
+- 安装 «Stun»
 
   进入 Hexo 根目录，执行指令：
 
@@ -114,12 +114,22 @@ $ git pull
 
 如果遇到问题，首先请仔细阅读[文档](https://liuyib.github.io/hexo-theme-stun/zh-CN/)，或者查看[常见问题](https://github.com/liuyib/hexo-theme-stun/blob/master/FAQ.md)。当以上的方法都无法帮助你时，再去提出 `issue`:hugs:。
 
+## :handshake: 贡献
+
+在提出 Pull request 之前，请务必先阅读[贡献指南](https://liuyib.github.io/hexo-theme-stun/zh-CN/contribute/)。
+
+感谢所有为 «Stun» 做出贡献的人！
+
+<a href="https://github.com/liuyib/hexo-theme-stun/graphs/contributors">
+  <img src="https://opencollective.com/hexo-theme-stun/contributors.svg?width=980">
+</a>
+
 ## :computer: 浏览器支持
 
 | <img src="https://raw.githubusercontent.com/liuyib/picBed/master/collection/20190723235410.png" alt="IE" width="32px" height="32px" /></br> IE | <img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/35.1.0/edge/edge_64x64.png" alt="Edge" width="32px" height="32px" /></br> Edge | <img src="https://raw.githubusercontent.com/liuyib/picBed/master/collection/20190723235406.png" alt="Firefox" width="32px" height="32px" /></br> Firefox | <img src="https://raw.githubusercontent.com/liuyib/picBed/master/collection/20190723235407.png" alt="Chrome" width="32px" height="32px" /></br> Chrome | <img src="https://raw.githubusercontent.com/liuyib/picBed/master/collection/20190723235409.png" alt="Safari" width="32px" height="32px" /></br> Safari | <img src="https://raw.githubusercontent.com/liuyib/picBed/master/collection/20190723235411.png" alt="Opera" width="32px" height="32px" /></br> Opera |
 | :---: | :---: | :---: |:---: | :---: | :---: |
 | Not Supported | 12+ | 41+ | 45+ | 10+ | 32+ |
 
-## :handshake: 开源协议
+## :page_with_curl: 开源协议
 
 [MIT](https://github.com/liuyib/hexo-theme-stun/blob/master/LICENSE) Copyright (c) 2020 liuyib

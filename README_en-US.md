@@ -31,7 +31,7 @@
   </a>
 </p>
 
-[English](https://github.com/liuyib/hexo-theme-stun/blob/master/README_en-US.md) | [中文简体](https://github.com/liuyib/hexo-theme-stun/blob/master/README.md)
+Language: [English](https://github.com/liuyib/hexo-theme-stun/blob/master/README_en-US.md) | [中文简体](https://github.com/liuyib/hexo-theme-stun/blob/master/README.md)
 
 ## :sparkles: Demo
 
@@ -46,7 +46,7 @@
 - [MikyMing's Blog](https://mikyming.online/)
 - [maple Blog](https://www.hongmaple.xyz/)
 
-If you are using the `Stun` theme and want to show it here, you just need to modify the [README_en-US](https://github.com/liuyib/hexo-theme-stun/edit/master/README_en-US.md) to fill in your website and submit PR.
+If you plan to use «Stun» theme for a long time and want to show it here, you just need to modify the [README_en-US](https://github.com/liuyib/hexo-theme-stun/edit/master/README_en-US.md) to fill in your website and submit PR.
 
 ## :crystal_ball: Feature
 
@@ -114,12 +114,22 @@ Please see: [https://liuyib.github.io/hexo-theme-stun/](https://liuyib.github.io
 
 If you have problems, please read [documentation](https://liuyib.github.io/hexo-theme-stun/zh-CN/) firstly, or check [FAQ](https://github.com/liuyib/hexo-theme-stun/blob/master/FAQ.md). You can open an `issue` when the above methods can't help you :hugs:.
 
+## :handshake: Contribution
+
+Please make sure to read the [Contributing Guide](https://liuyib.github.io/hexo-theme-stun/contribute/) before making a pull request.
+
+Thank you to all the people who have already contributed to «Stun»!
+
+<a href="https://github.com/liuyib/hexo-theme-stun/graphs/contributors">
+  <img src="https://opencollective.com/hexo-theme-stun/contributors.svg?width=980">
+</a>
+
 ## :computer: Browser Support
 
 | <img src="https://raw.githubusercontent.com/liuyib/picBed/master/collection/20190723235410.png" alt="IE" width="32px" height="32px" /></br> IE | <img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/35.1.0/edge/edge_64x64.png" alt="Edge" width="32px" height="32px" /></br> Edge | <img src="https://raw.githubusercontent.com/liuyib/picBed/master/collection/20190723235406.png" alt="Firefox" width="32px" height="32px" /></br> Firefox | <img src="https://raw.githubusercontent.com/liuyib/picBed/master/collection/20190723235407.png" alt="Chrome" width="32px" height="32px" /></br> Chrome | <img src="https://raw.githubusercontent.com/liuyib/picBed/master/collection/20190723235409.png" alt="Safari" width="32px" height="32px" /></br> Safari | <img src="https://raw.githubusercontent.com/liuyib/picBed/master/collection/20190723235411.png" alt="Opera" width="32px" height="32px" /></br> Opera |
 | :---: | :---: | :---: |:---: | :---: | :---: |
 | Not Supported | 12+ | 41+ | 45+ | 10+ | 32+ |
 
-## :handshake: License
+## :page_with_curl: License
 
 [MIT](https://github.com/liuyib/hexo-theme-stun/blob/master/LICENSE) Copyright (c) 2019 liuyib
