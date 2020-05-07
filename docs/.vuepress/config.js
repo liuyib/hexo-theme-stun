@@ -1,7 +1,11 @@
 module.exports = {
   title: 'hexo-theme-stun',
   description: 'A beautiful & simple theme for Hexo',
+  head: [
+    ['link', { rel: 'icon', href: '/icons/favicon-32x32.png' }],
+  ],
   base: '/hexo-theme-stun/',
+  serviceWorker: false,
   locales: {
     '/': {
       lang: 'en-US',
@@ -14,16 +18,6 @@ module.exports = {
       description: '一个漂亮、简洁的 Hexo 主题',
     },
   },
-  head: [
-    ['link', { rel: 'icon', href: `/icons/favicon-32x32.png` }],
-    ['link', { rel: 'manifest', href: '/manifest.json' }],
-    ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
-    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
-    ['link', { rel: 'apple-touch-icon', href: `/icons/favicon-180x180.png` }],
-    ['meta', { name: 'msapplication-TileImage', content: '/icons/favicon-144x144.png' }],
-    ['meta', { name: 'msapplication-TileColor', content: '#000000' }],
-  ],
-  serviceWorker: true,
   themeConfig: {
     repo: 'liuyib/hexo-theme-stun',
     logo: '/icons/favicon-144x144.png',
