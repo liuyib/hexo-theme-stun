@@ -1,4 +1,6 @@
-## <div align="center" style="color: #73c8ff;font-size: 36px;"><a title="Go to homepage" href="https://github.com/liuyib/hexo-theme-stun"><img align="center" width="60" height="60" src="https://raw.githubusercontent.com/liuyib/hexo-theme-stun/master/source/images/icons/stun-logo.svg?sanitize=true"></a> t u n</div>
+# Contribution <!-- omit in toc -->
+
+<div align="center" style="color: #73c8ff;font-size: 36px;"><a title="Go to homepage" href="https://github.com/liuyib/hexo-theme-stun"><img align="center" width="60" height="60" src="https://raw.githubusercontent.com/liuyib/hexo-theme-stun/master/source/images/icons/stun-logo.svg?sanitize=true"></a> t u n</div>
 
 Hi! I'm really excited that you are interested in contributing to «Stun». Before submitting your contribution, please make sure to take a moment and read through the following guidelines:
 
@@ -6,7 +8,7 @@ Hi! I'm really excited that you are interested in contributing to «Stun». Befo
 - [Development Setup](#development-setup)
 - [Commit Messages Rules](#commit-messages-rules)
 
-### Pull Request Guidelines
+## Pull Request Guidelines
 
 The `master` branch is just a snapshot of the latest stable release. All development should be done in dedicated branches. **Do not submit PRs against the `master` branch**.
 
@@ -16,7 +18,7 @@ The `master` branch is just a snapshot of the latest stable release. All develop
 - Push the commit to the repository of fork.
 - Create a Pull request to the **dev branch** of the Stun theme repository.
 
-### Development Setup
+## Development Setup
 
 You need to install [Node.js](http://nodejs.org/) and [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
 
@@ -26,7 +28,7 @@ After cloning the repo, run:
 $ npm install
 ```
 
-### Commit Messages Rules
+## Commit Messages Rules
 
 We agree on the format of Git commit information, and each commit information is composed of `type` + `subject`, which will improve the readability of the project log.
 
@@ -39,11 +41,12 @@ We agree on the format of Git commit information, and each commit information is
   - `test`: Code test correlation
   - `chore`: Changes to basic build tools or dependent libraries (no source code involved)
   - `revert`: Revert some existing commits
-- `subject`  contains a succinct description of the change, like `Update quick start in readme.md`
+- `subject` contains a succinct description of the change, like `Update quick start in readme.md`
   - No dot (`.`) at the end
   - Use the imperative, present tense ("change" not "changed" nor "changes")
 
-### Contributors
+<!-- omit in toc -->
+## Contributors
 
 Thank you to all the people who have already contributed to «Stun»!
 

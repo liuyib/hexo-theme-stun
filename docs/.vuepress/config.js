@@ -39,7 +39,33 @@ module.exports = {
           }
         },
         sidebar: {
-          '/': getEnSidebar('Guide'),
+          '/': [
+            {
+              title: 'Guide',
+              collapsable: false,
+              children: [
+                '/guide/quick-start',
+                '/guide/primary',
+              ],
+            },
+            {
+              title: 'Advanced',
+              collapsable: false,
+              children: [
+                '/advanced/advanced',
+                '/advanced/third-part',
+                '/advanced/assist',
+                '/advanced/optimize',
+              ],
+            },
+            {
+              title: 'Contribution',
+              collapsable: false,
+              children: [
+                '/contribute/contribute',
+              ],
+            },
+          ],
         },
         nav: [
           {
@@ -94,7 +120,33 @@ module.exports = {
           }
         },
         sidebar: {
-          '/zh-CN/': getZhSidebar('配置指南'),
+          '/zh-CN/': [
+            {
+              title: '配置指南',
+              collapsable: false,
+              children: [
+                '/zh-CN/guide/quick-start',
+                '/zh-CN/guide/primary',
+              ],
+            },
+            {
+              title: '高级设置',
+              collapsable: false,
+              children: [
+                '/zh-CN/advanced/advanced',
+                '/zh-CN/advanced/third-part',
+                '/zh-CN/advanced/assist',
+                '/zh-CN/advanced/optimize',
+              ],
+            },
+            {
+              title: '参与贡献',
+              collapsable: false,
+              children: [
+                '/zh-CN/contribute/contribute',
+              ],
+            },
+          ],
         },
         nav: [
           {
@@ -133,46 +185,10 @@ module.exports = {
           },
           {
             text: '参与贡献',
-            link: '/zh-CN/contribute/',
+            link: '/zh-CN/contribute/contribute',
           },
         ],
       },
     },
   },
 };
-
-function getEnSidebar(title) {
-  return [
-    {
-      title,
-      collapsable: false,
-      children: [
-        '/guide/quick-start',
-        '/guide/primary',
-        '/advanced/advanced',
-        '/advanced/third-part',
-        '/advanced/assist',
-        '/advanced/optimize',
-        '/contribute/',
-      ],
-    },
-  ];
-}
-
-function getZhSidebar(title) {
-  return [
-    {
-      title,
-      collapsable: false,
-      children: [
-        '/zh-CN/guide/quick-start',
-        '/zh-CN/guide/primary',
-        '/zh-CN/advanced/advanced',
-        '/zh-CN/advanced/third-part',
-        '/zh-CN/advanced/assist',
-        '/zh-CN/advanced/optimize',
-        '/zh-CN/contribute/',
-      ],
-    },
-  ];
-}
