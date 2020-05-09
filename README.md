@@ -39,12 +39,10 @@
 - [弥枳's Blog](http://blog2.coor.top/)
 - [轻尘's Blog](https://qcxitong.xyz/)
 - [impressionyang's Blog](https://impressionyang.github.io)
-- [cjpNiceの博客](https://cjpnice.gitee.io)
 - [峡州仙士之页](https://cjh0613.gitee.io/blog/)
 - [Cheeks's Blog](https://www.cheeks.top/)
 - [lingan1996's Blog](https://www.lingan1996.top)
 - [MikyMing's Blog](https://mikyming.online/)
-- [maple Blog](https://www.hongmaple.xyz/)
 
 如果你准备长期使用 «Stun» 主题，并希望展示在这里，你只需在 [README](https://github.com/liuyib/hexo-theme-stun/edit/master/README.md) 中填入你的网站，然后提交 PR 即可。
 
