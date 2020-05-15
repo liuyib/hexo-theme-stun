@@ -115,7 +115,7 @@ If you have problems, please read [documentation](https://liuyib.github.io/hexo-
 
 ## :handshake: Contribution
 
-Please make sure to read the [Contributing Guide](https://liuyib.github.io/hexo-theme-stun/contribute/) before making a pull request.
+Please make sure to read the [Contributing Guide](https://liuyib.github.io/hexo-theme-stun/contribute/contribute.html) before making a pull request.
 
 Thank you to all the people who have already contributed to «Stun»!
 
