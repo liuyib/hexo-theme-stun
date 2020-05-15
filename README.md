@@ -115,7 +115,7 @@ $ git pull
 
 ## :handshake: 贡献
 
-在提出 Pull request 之前，请务必先阅读[贡献指南](https://liuyib.github.io/hexo-theme-stun/zh-CN/contribute/)。
+在提出 Pull request 之前，请务必先阅读[贡献指南](https://liuyib.github.io/hexo-theme-stun/zh-CN/contribute/contribute.html)。
 
 感谢所有为 «Stun» 做出贡献的人！
 

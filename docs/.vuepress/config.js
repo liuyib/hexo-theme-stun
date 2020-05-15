@@ -104,7 +104,7 @@ module.exports = {
           },
           {
             text: 'Contribute',
-            link: '/contribute/',
+            link: '/contribute/contribute',
           },
         ],
       },
