@@ -67,51 +67,32 @@
       "name": "xxx",
       // 应用简称。例如：liuyib
       "short_name": "xxx",
+      // 定义首次启动时要打开哪个页面
+      "start_url": "/",
+      // 应用的显示模式。详见：https://developer.mozilla.org/zh-CN/docs/Web/Manifest#display
+      "display": "standalone",
       // 匹配浏览器的地址栏颜色
       "theme_color": "#ffffff",
-      // 加载应用时的背景色
+      // 加载应用时的开屏背景色
       "background_color": "#ffffff",
-      // 首选显示模式。其他选项有：fullscreen, minimal-ui, browser
-      "display": "standalone",
-      "scope": "/",
-      "start_url": "/",
-      // 指定图标参数，用来适配不同设备（格式为 png，至少包含一个 192*192px 的图标）
+      // 指定图标参数，用来适配不同设备
+      // ！！！至少提供 192x192px 图标和 512x512px 图标 ！！！
       "icons": [
-        {
-          // 图片路径（你需要将图片放在网站根目录中的 source 目录下）
-          "src": "images/icons/favicon-48x48.png",
-          // 图片尺寸
-          "sizes": "48x48",
-          // 图片类型
-          "type": "image/png"
-        },
-        {
-          "src": "images/icons/favicon-72x72.png",
-          "sizes": "72x72",
-          "type": "image/png"
-        },
-        {
-          "src": "images/icons/favicon-96x96.png",
-          "sizes": "96x96",
-          "type": "image/png"
-        },
-        {
-          "src": "images/icons/favicon-144x144.png",
-          "sizes": "144x144",
-          "type": "image/png"
-        },
-        {
-          "src": "images/icons/favicon-192x192.png",
-          "sizes": "192x192",
-          "type": "image/png"
-        }
-      ],
-      // 配置自定义启动动画
-      "splash_pages": null
+         {
+            "src": "images/icons/favicon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+         },
+         {
+            "src": "images/icons/favicon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+         }
+      ]
     }
     ```
 
-  	你需要将 `manifest.json` 文件放在 Hexo 根目录下的 source 文件夹中。
+    你需要将 `manifest.json` 文件放在 Hexo 根目录下的 source 文件夹中。
 
 4. 修改主题配置文件
 
