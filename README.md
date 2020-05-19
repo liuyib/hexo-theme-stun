@@ -45,6 +45,7 @@
 - [lingan1996's Blog](https://www.lingan1996.top)
 - [MikyMing's Blog](https://mikyming.online/)
 - [maple Blog](https://www.hongmaple.xyz/)
+- [I'm 0o酱](https://im0o.top)
 
 如果你准备长期使用 «Stun» 主题，并希望展示在这里，你只需在 [README](https://github.com/liuyib/hexo-theme-stun/edit/master/README.md) 中填入你的网站，然后提交 PR 即可。
 
