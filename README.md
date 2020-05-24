@@ -133,3 +133,33 @@ $ git pull
 ## :page_with_curl: 开源协议
 
 [MIT](https://github.com/liuyib/hexo-theme-stun/blob/master/LICENSE) Copyright (c) 2020 liuyib
+
+## Contributors
+
+### Code Contributors
+
+This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
+<a href="https://github.com/liuyib/hexo-theme-stun/graphs/contributors"><img src="https://opencollective.com/hexo-theme-stun/contributors.svg?width=890&button=false" /></a>
+
+### Financial Contributors
+
+Become a financial contributor and help us sustain our community. [[Contribute](https://opencollective.com/hexo-theme-stun/contribute)]
+
+#### Individuals
+
+<a href="https://opencollective.com/hexo-theme-stun"><img src="https://opencollective.com/hexo-theme-stun/individuals.svg?width=890"></a>
+
+#### Organizations
+
+Support this project with your organization. Your logo will show up here with a link to your website. [[Contribute](https://opencollective.com/hexo-theme-stun/contribute)]
+
+<a href="https://opencollective.com/hexo-theme-stun/organization/0/website"><img src="https://opencollective.com/hexo-theme-stun/organization/0/avatar.svg"></a>
+<a href="https://opencollective.com/hexo-theme-stun/organization/1/website"><img src="https://opencollective.com/hexo-theme-stun/organization/1/avatar.svg"></a>
+<a href="https://opencollective.com/hexo-theme-stun/organization/2/website"><img src="https://opencollective.com/hexo-theme-stun/organization/2/avatar.svg"></a>
+<a href="https://opencollective.com/hexo-theme-stun/organization/3/website"><img src="https://opencollective.com/hexo-theme-stun/organization/3/avatar.svg"></a>
+<a href="https://opencollective.com/hexo-theme-stun/organization/4/website"><img src="https://opencollective.com/hexo-theme-stun/organization/4/avatar.svg"></a>
+<a href="https://opencollective.com/hexo-theme-stun/organization/5/website"><img src="https://opencollective.com/hexo-theme-stun/organization/5/avatar.svg"></a>
+<a href="https://opencollective.com/hexo-theme-stun/organization/6/website"><img src="https://opencollective.com/hexo-theme-stun/organization/6/avatar.svg"></a>
+<a href="https://opencollective.com/hexo-theme-stun/organization/7/website"><img src="https://opencollective.com/hexo-theme-stun/organization/7/avatar.svg"></a>
+<a href="https://opencollective.com/hexo-theme-stun/organization/8/website"><img src="https://opencollective.com/hexo-theme-stun/organization/8/avatar.svg"></a>
+<a href="https://opencollective.com/hexo-theme-stun/organization/9/website"><img src="https://opencollective.com/hexo-theme-stun/organization/9/avatar.svg"></a>
