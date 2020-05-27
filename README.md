@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://liuyib.github.io/hexo-theme-stun/" target="_blank" rel="noopener noreferrer">
-    <img src="./source/images/icons/stun-logo.svg" alt="stun logo" width="100">
+    <img src="./source/images/icons/stun-logo.svg" alt="Stun Logo" width="100">
   </a>
 </p>
 
@@ -13,15 +13,15 @@
   <a href="http://commitizen.github.io/cz-cli/" target="_blank" rel="noopener noreferrer">
     <img alt="Commitizen friendly" src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg">
   </a>
-  <a href="https://github.com/liuyib/hexo-theme-stun/network/alerts" target="_blank" rel="noopener noreferrer">
-    <img alt="David" src="https://img.shields.io/david/liuyib/hexo-theme-stun">
+  <a href="https://libraries.io/github/liuyib/hexo-theme-stun#dependencies" target="_blank" rel="noopener noreferrer">
+    <img alt="Dependency status" src="https://img.shields.io/librariesio/github/liuyib/hexo-theme-stun">
   </a>
   <a href="https://github.com/liuyib/hexo-theme-stun/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">
-    <img alt="GitHub" src="https://img.shields.io/github/license/liuyib/hexo-theme-stun.svg">
+    <img alt="GitHub LICENSE" src="https://img.shields.io/github/license/liuyib/hexo-theme-stun.svg">
   </a>
   <br>
   <a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener noreferrer">
-    <img alt="hexo" src="https://img.shields.io/badge/hexo-%3E%3D4.0-blue.svg">
+    <img alt="Hexo version" src="https://img.shields.io/badge/hexo-%3E%3D4.0-blue.svg">
   </a>
   <a href="https://github.com/liuyib/hexo-theme-stun/releases" target="_blank" rel="noopener noreferrer">
     <img alt="GitHub release" src="https://img.shields.io/github/release/liuyib/hexo-theme-stun.svg">
