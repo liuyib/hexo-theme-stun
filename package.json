@@ -8,9 +8,8 @@
     "release": "standard-version",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "lint": "eslint --ext .js source/js",
-    "lint:fix": "eslint --fix --ext .js source/js",
-    "theme:update": "git stash & git pull"
+    "lint": "standard",
+    "lint:fix": "standard --fix"
   },
   "repository": {
     "type": "git",
@@ -31,17 +30,20 @@
   "devDependencies": {
     "@commitlint/cli": "^8.1.0",
     "commitizen": "^4.0.4",
-    "commitlint-config-cz": "^0.11.1",
+    "commitlint-config-cz": "^0.13.0",
     "cz-customizable": "^6.2.0",
-    "eslint": "^6.0.1",
-    "eslint-config-standard": "^13.0.1",
-    "eslint-plugin-import": "^2.18.0",
-    "eslint-plugin-node": "^9.1.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.0",
-    "husky": "^2.3.0",
-    "standard-version": "^6.0.1",
+    "husky": "^4.2.5",
+    "standard": "^14.3.4",
+    "standard-version": "^8.0.0",
     "vuepress": "^1.0.2"
+  },
+  "standard": {
+    "globals": [
+      "$",
+      "CONFIG",
+      "Stun",
+      "instantsearch"
+    ]
   },
   "husky": {
     "hooks": {
@@ -53,7 +55,7 @@
       "path": "./node_modules/cz-customizable"
     },
     "cz-customizable": {
-      "config": "./config.js"
+      "config": "./.cz-config.js"
     }
   }
 }
