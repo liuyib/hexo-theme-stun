@@ -1,27 +1,25 @@
-/* global hexo */
+'use strict'
 
-'use strict';
-
-function note(args, content) {
-  var theme = hexo.theme.config;
-  var icon = theme.icon && theme.icon.notetag_default;
-  var iconType = 'default';
-  var isIcon = true;
+function note (args, content) {
+  var theme = hexo.theme.config
+  var icon = theme.icon && theme.icon.notetag_default
+  var iconType = 'default'
+  var isIcon = true
 
   if (args.includes('no-icon')) {
-    isIcon = false;
+    isIcon = false
   }
   if (isIcon && theme.icon) {
-    var tagTypes = ['default', 'success', 'info', 'warning', 'danger'];
+    var tagTypes = ['default', 'success', 'info', 'warning', 'danger']
     tagTypes.forEach(type => {
       if (args.includes(type)) {
-        icon = theme.icon[`notetag_${type}`];
-        iconType = type;
+        icon = theme.icon[`notetag_${type}`]
+        iconType = type
       }
-    });
+    })
   }
 
-  var className = args.join(' ');
+  var className = args.join(' ')
   return `
     <div class="note-plugin ${className}">
       ${
@@ -36,7 +34,7 @@ function note(args, content) {
         .split('\n')
         .join('')}
     </div>
-  `;
+  `
 }
 
-hexo.extend.tag.register('note', note, { ends: true });
+hexo.extend.tag.register('note', note, { ends: true })
