@@ -4,7 +4,7 @@
   "description": "A beautiful & simple theme for Hexo",
   "homepage": "https://liuyib.github.io",
   "scripts": {
-    "cz": "git cz",
+    "commit": "git cz",
     "release": "standard-version",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
@@ -49,6 +49,7 @@
   },
   "husky": {
     "hooks": {
+      "pre-commit": "npm run lint:fix",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
