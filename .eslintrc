@@ -1,0 +1,24 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true,
+    "jquery": true
+  },
+  "extends": "eslint:recommended",
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly",
+    "hexo": "readonly",
+    "Stun": "readonly",
+    "CONFIG": "readonly"
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018
+  },
+  "rules": {
+    "no-dupe-else-if": ["off"],
+    "no-import-assign": ["off"],
+    "no-setter-return": ["off"]
+  }
+}
