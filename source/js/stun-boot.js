@@ -1,49 +1,49 @@
 $(document).ready(function () {
-  Stun.utils.showThemeInConsole();
+  Stun.utils.showThemeInConsole()
 
   if (CONFIG.shortcuts && CONFIG.shortcuts.switchPost) {
-    Stun.utils.registerSwitchPost();
+    Stun.utils.registerSwitchPost()
   }
 
   // Not reload this, because it's changeless.
   if (CONFIG.externalLink) {
-    Stun.utils.addIconToExternalLink('#footer');
+    Stun.utils.addIconToExternalLink('#footer')
   }
 
   Stun.utils.pjaxReloadBoot = function () {
     if (CONFIG.codeblock) {
-      var codeStyle = CONFIG.codeblock.style;
+      var codeStyle = CONFIG.codeblock.style
       if (codeStyle === 'default') {
-        this.addCodeHeader();
-        this.addCopyButton();
+        this.addCodeHeader()
+        this.addCopyButton()
       } else if (codeStyle === 'carbon') {
-        this.addCodeHeader('carbon');
-        this.addCopyButton('carbon');
+        this.addCodeHeader('carbon')
+        this.addCopyButton('carbon')
       } else if (codeStyle === 'simple') {
-        this.addCopyButton('simple');
+        this.addCopyButton('simple')
       }
-      this.registerCopyEvent();
+      this.registerCopyEvent()
     }
     if (CONFIG.reward) {
-      this.registerShowReward();
+      this.registerShowReward()
     }
     if (CONFIG.lazyload) {
-      this.lazyLoadImage();
+      this.lazyLoadImage()
     }
     if (CONFIG.galleryWaterfall) {
-      this.showImageToWaterfall();
+      this.showImageToWaterfall()
     }
     if (CONFIG.externalLink) {
-      var CONTAINER = '.archive, .post-title';
-      this.addIconToExternalLink(CONTAINER);
+      var CONTAINER = '.archive, .post-title'
+      this.addIconToExternalLink(CONTAINER)
     }
     if (CONFIG.fancybox) {
-      this.wrapImageWithFancyBox();
+      this.wrapImageWithFancyBox()
     } else if (CONFIG.zoomImage) {
-      this.registerZoomImage();
+      this.registerZoomImage()
     }
-  };
+  }
 
   // Initializaiton
-  Stun.utils.pjaxReloadBoot();
-});
+  Stun.utils.pjaxReloadBoot()
+})
