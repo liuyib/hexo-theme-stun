@@ -10,13 +10,13 @@ if theme.quicklink.enable
     - loadQuicklink = true;
   if theme.pjax.enable
     - loadQuicklink = true;
-  if loadQuicklink || (page.quicklink || post.quicklink)
+  if loadQuicklink || ((page && page.quicklink) || (post && post.quicklink))
     script(src=quicklink_js)
     script.
       function initQuicklink() {
         quicklink({
           timeout: '!{ theme.quicklink.timeout }',
-          priority: '!{ theme.quicklink.priority }',
+          priority: !{ theme.quicklink.priority },
           ignores: [uri => uri.includes('#'), uri => uri === '!{ url.replace("index.html", '') }', !{ theme.quicklink.ignores }]
         });
       }
