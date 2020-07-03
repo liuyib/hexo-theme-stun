@@ -36,6 +36,7 @@
 ## :sparkles: 演示
 
 - [Liuyib's Blog](https://liuyib.github.io/)
+- [Gemini's Blog](https://geminiplanet.cn/)
 - [弥枳's Blog](http://blog2.coor.top/)
 - [轻尘's Blog](https://qcxitong.xyz/)
 - [impressionyang's Blog](https://impressionyang.github.io)
