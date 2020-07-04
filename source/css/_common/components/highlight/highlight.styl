@@ -33,14 +33,11 @@ for lang in languages {
 
 .highlight {
   margin: 0 0 1rem;
+  border-radius: .25rem;
   width: 100%;
   line-height: $line-height-codeblock;
   color: $highlight-color;
   background-color: $highlight-background;
-
-  if (codeStyle == 'simple' || (codeStyle == 'carbon')) {
-    border-radius: .25rem;
-  }
 
   pre,
   code {
@@ -92,6 +89,10 @@ for lang in languages {
 
   figcaption.custom {
     min-height: 1.5rem;
+
+    if (codeStyle == 'default') {
+      border-radius: .25rem;
+    }
 
     if (codeStyle == 'carbon') {
       display: flex;
@@ -174,9 +175,14 @@ for lang in languages {
   }
 
   td.gutter {
+    border-right: 1px solid $gap-line-color;
     padding: .4rem .6rem;
     width: 2rem;
     background-color: $highlight-side-bg-color;
+
+    if (codeStyle == 'default') {
+      border-radius: .25rem;
+    }
 
     if (wordWrap || (codeStyle == 'simple' || (codeStyle == 'carbon'))) {
       display: none;
