@@ -18,7 +18,7 @@ Stun 主题利用该功能实现了平滑升级的特性，使用步骤如下：
 
 > 有时候，同步 `/themes/stun/_config.yml` 和 `/source/_data/stun.yml` 两个配置文件里的内容也比较麻烦。因此，推荐使用代码对比工具进行查看，这样再进行同步就方便多了。例如，VS Code 自带的代码对比工具：
 >
-> ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20200331233853.png)
+> ![Stun | code diff by vscode](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20200331233853.png)
 
 ## 国际化（i18n）<Badge text="Stable"/>
 
@@ -80,8 +80,8 @@ layout:
 
 上面的属性所对应的地方，示意图如下：
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20200115162037.jpg)
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20200203174507.jpg)
+![Stun | site layout demo 1](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20200115162037.jpg)
+![Stun | site layout demo 2](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20200203174507.jpg)
 
 ## 夜晚模式 <Badge text="Beta" type="warning"/> <Badge text="v1.6.0"/>
 
@@ -124,7 +124,7 @@ updated: 2019-5-16 10:23:46
 
 效果如下：
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190722105740.png)
+![Stun | article date](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190722105740.png)
 
 ::: tip
 Hexo 会使用 git commit 中，文件的最新提交时间作为更新日期，所以一般不需要手动指定 `updated` 属性。并且当你使用 `hexo new xxx` 指令生成文件时，Hexo 会帮你添加好 `title` 和 `date` 属性。因此这三个属性一般不需要手动设置。
@@ -226,7 +226,7 @@ Hexo 会使用 git commit 中，文件的最新提交时间作为更新日期，
   
   - 在 Front-Matter 中设置了 `layout: false`
 
-    ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190820175118.png)
+    ![Stun | Front-Matter - layout](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190820175118.png)
 
     可以看到，设置了 `layout: false` 后，只将 Markdown 解析成 HTML，不做其他处理。
 
@@ -253,7 +253,7 @@ Hexo 会使用 git commit 中，文件的最新提交时间作为更新日期，
 
   默认情况下，这些图片会按照文档流的方式显示，效果如下：
 
-  ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190724170139.png)
+  ![Stun | Front-Matter - photos](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190724170139.png)
 
   为了优化这些图片的显示效果，Stun 主题提供了**瀑布流布局** <Badge text="Stable"/> <Badge text="v1.1.4"/>，如果想启用这一布局，你需要修改主题配置文件：
 
@@ -270,7 +270,7 @@ Hexo 会使用 git commit 中，文件的最新提交时间作为更新日期，
 
   效果如下：
 
-  ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190724170138.png)
+  ![Stun | gallery_waterfall demo](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190724170138.png)
 
   ::: tip
   - 启用瀑布流效果后，还可以再启用 [fancybox 效果](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/assist.html#fancybox)。
@@ -393,7 +393,7 @@ Hexo 会使用 git commit 中，文件的最新提交时间作为更新日期，
 
     效果如下：
 
-    ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190826161817.png)
+    ![Stun | submenu demo](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190826161817.png)
 
 ## 启用赞赏码 <Badge text="Stable"/>
 
@@ -411,7 +411,7 @@ reward:
 
 效果如下：
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608175556.png)
+![Stun | reward demo](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608175556.png)
 
 ::: tip
 1. 你可以在 Front-Matter 中，设置 `reward: true/false` 来指定某文章或页面是否启用赞赏码。
@@ -442,7 +442,7 @@ creative_commons:
 
 效果如下：
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190619210339.png)
+![Stun | creative_commons demo](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190619210339.png)
 
 ::: tip
 知识共享许可协议启用后，默认对所有文章页面生效。你可以在 Front-Matter 中，设置 `copyright: false` 来指定某文章不启用该功能。
@@ -523,7 +523,7 @@ reading_progress:
 
 侧边栏所有效果如下：
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190619211446.png)
+![Stun | sidebar demo](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190619211446.png)
 
 ## 文章头部信息 <Badge text="Stable"/>
 
@@ -565,7 +565,7 @@ post_meta:
     icon: far fa-file-word
 ```
 
-效果如下：![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190619210334.png)
+效果如下：![Stun | post_meta demo](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190619210334.png)
 
 ## 文章列表分页 <Badge text="Stable"/> <Badge text="v1.0.3"/>
 
@@ -602,7 +602,7 @@ post_list:
 
 分页效果如下：
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190713173927.png)
+![Stun | pagination demo](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190713173927.png)
 
 ## 文章列表封面图片 <Badge text="Stable"/> <Badge text="v1.1.2"/>
 
@@ -632,7 +632,7 @@ post_list:
 
 封面图片效果如下：
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190713173929.jpg)
+![Stun | cover_image demo](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190713173929.jpg)
 
 ## 文章标签 <Badge text="Stable"/> <Badge text="v1.0.3"/>
 
@@ -659,7 +659,7 @@ post_widget:
 
 效果如下：
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190713173926.png)
+![Stun | tags of article](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190713173926.png)
 
 ## 文章结束提示信息 <Badge text="Stable"/> <Badge text="v1.0.3"/>
 
@@ -690,7 +690,7 @@ post_widget:
     horizon_line: true
 ```
 
-效果如下：![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190619210335.png)
+效果如下：![Stun | end_text demo](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190619210335.png)
 
 ## 文章置顶 <Badge text="Stable"/>
 
@@ -719,7 +719,7 @@ stick_top:
 
 效果如下：
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190713174424.jpg)
+![Stun | stick_top demo](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190713174424.jpg)
 
 ## 代码高亮 <Badge text="Stable"/>
 
@@ -748,15 +748,15 @@ codeblock:
 
 - `light`
 
-  ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608175153.png)
+  ![Stun | code highlight - light](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608175153.png)
 
 - `dark`
 
-  ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608175155.png)
+  ![Stun | code highlight - dark](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608175155.png)
 
 - `ocean`
 
-  ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608175154.png)
+  ![Stun | code highlight - ocean](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608175154.png)
 
 ::: warning
 如果代码没有高亮样式，请确保 Hexo 根目录下的 `_config.yml` 文件中 `highlight.hljs` 设为 `false`。
@@ -780,19 +780,19 @@ codeblock:
 
   > 下图中的代码高亮样式（从左至右，从上至下）分别为：`light`、`light`（开启夜间模式）、`dark`、`ocean`。
 
-  ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20200115133041.png)
+  ![Stun | codeblock style - default](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20200115133041.png)
 
 - `simple`
 
   极简样式，只显示代码。
 
-  ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20200115133056.png)
+  ![Stun | codeblock style - simple](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20200115133056.png)
 
 - `carbon`
 
   仿 carbon 样式，只显示代码。
 
-  ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20200115134022.png)
+  ![Stun | codeblock style - carbon](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20200115134022.png)
 
 ## 代码溢出换行 <Badge text="Stable"/>
 
@@ -821,11 +821,11 @@ codeblock:
 
 - `true`（代码溢出换行）
 
-  ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608214540.png)
+  ![Stun | code wrap - true](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608214540.png)
 
 - `false`（代码溢出不换行）
 
-  ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608214539.png)
+  ![Stun | code wrap - false](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190608214539.png)
 
 ## 图片水平对齐方式 <Badge text="Abandon" type="error"/>
 
@@ -855,7 +855,7 @@ tag_cloud:
   max_amount: 200
 ```
 
-效果如下：![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190619210337.png)
+效果如下：![Stun | tag_cloud demo](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190619210337.png)
 
 ## 其他设置
 
@@ -911,7 +911,7 @@ external_link:
 
 ### FancyBox <Badge text="Stable"/> <Badge text="v1.1.4"/>
 
-如果想要使用 fancybox 功能，只需要修改主题配置文件即可：
+如果想要使用 FancyBox 功能，只需要修改主题配置文件即可：
 
 ``` yaml
 fancybox: true
@@ -919,13 +919,13 @@ fancybox: true
 
 效果如下：
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190724173526.png)
+![Stun | FancyBox demo](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190724173526.png)
 
 可以去官网在线体验：[http://fancyapps.com/fancybox/3/](http://fancyapps.com/fancybox/3/)
 
 ### 图片放大效果 <Badge text="Stable"/> <Badge text="v1.2.0"/>
 
-Stun 主题从 `v1.2.0` 版本开始支持图片点击放大的效果。你可以配置该功能，修改主题配置文件：
+从 `v1.2.0` 版本开始，Stun 主题内置了图片放大的功能（无第三方依赖，默认启用）。想要配置该功能，请修改主题配置文件：
 
 ``` yaml
 zoom_image:
@@ -936,13 +936,13 @@ zoom_image:
   gap_aside: 20px
 ```
 
-::: tip
-如果你启用了 fancybox，那么主题会优先使用 fancybox 效果。
+::: warning
+FancyBox 功能也具有图片放大的效果，如果你启用了 FancyBox，那么 FancyBox 会优先生效（`zoom_image` 功能不会生效）。
 :::
 
 ### 图片懒加载 <Badge text="Stable"/> <Badge text="v1.2.0"/>
 
-Stun 主题从 `v1.2.0` 版本开始支持图片懒加载，但是**该功能只对文章页面起作用**。你可以配置该功能，修改主题配置文件：
+从 `v1.2.0` 版本开始，Stun 主题支持图片懒加载的功能，但是**该功能只对文章页面起作用**。想要配置该功能，请修改主题配置文件：
 
 ``` yaml
 lazyload:
@@ -955,11 +955,11 @@ lazyload:
 
 - `gif`
 
-  ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190801204631.png)
+  ![Stun | lazyload placeholder - gif](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190801204631.png)
 
 - `block`
 
-  ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190801204629.png)
+  ![Stun | lazyload placeholder - block](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190801204629.png)
 
 ::: warning 注意 ！！！
 下面是启用 lazyload 之后，已知的一些问题。

@@ -85,7 +85,7 @@ Hexo 主题一般都会扩展一些自己特有的标签插件，在这方面做
 
 3. 重启 Hexo 服务器，效果如下。
 
-    ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190803141118.png)
+    ![Stun | tag plugins - table](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190803141118.png)
 
 ### 插入注释 <Badge text="Stable"/> <Badge text="v1.2.0"/>
 
@@ -138,7 +138,7 @@ This is success note.
 
 全部效果如下：
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20200225192132.jpg)
+![Stun | tag plugins - note](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20200225192132.jpg)
 
 ### 插入友链 <Badge text="Stable"/> <Badge text="v1.2.0"/>
 
@@ -195,4 +195,4 @@ This is success note.
 
 3. 重启 Hexo 服务器，效果如下。
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190803141110.png)
+![Stun | tag plugins - friends](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190803141110.png)

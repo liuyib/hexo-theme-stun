@@ -161,17 +161,17 @@ header:
 
 - 如果设置 `header.enable: false`，则所有页面中都不显示网站 Header（只显示顶部导航栏）。效果如下：
 
-  ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20200203194337.jpg)
+  ![Stun | no site header](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20200203194337.jpg)
 
 - 如果设置 `header.enable: true` 和 `header.show_on.post: false`，则文章页不显示网站 Header，其它页面仍会显示。效果如下：
 
     **文章页：**
 
-    ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20200203194337.jpg)
+    ![Stun | no site header in article](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20200203194337.jpg)
 
     **首页（其他页面）：**
 
-    ![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20200203194338.jpg)
+    ![Stun | has site header in others](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20200203194338.jpg)
 
 ::: warning
 下面是一些选项的版本支持情况和注意事项：
@@ -323,7 +323,7 @@ social_setting:
 
 效果如下：
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190717165333.png)
+![Stun | i18n of social link](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190717165333.png)
 
 ## 网站底部设置 <Badge text="Stable"/>
 
@@ -384,7 +384,7 @@ footer:
 
 效果如下：
 
-![](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190623192514.png)
+![Stun | site footer](https://raw.githubusercontent.com/liuyib/picBed/master/hexo-theme-stun/doc/20190623192514.png)
 
 ## 返回顶部 <Badge text="Beta" type="warning"/>
 

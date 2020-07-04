@@ -272,7 +272,7 @@ back2top:
 # The sidebar of site.
 sidebar:
   enable: true
-  # Optional value: left | right
+  # Optional values: left | right
   position: right
   # The distance from the top of the page when the sidebar is fixed (Only `px` unit is supported)
   offsetTop: 20px
@@ -292,7 +292,7 @@ author:
     # Opacity of avatar (value: 0 ~ 1)
     opacity: 1
     # Mouse hover animation
-    # Optional value: turn | shake
+    # Optional values: turn | shake
     animation: turn
   # Your favorite motto.
   motto: hello world
@@ -450,7 +450,7 @@ stick_top:
   # Position of icon
   # Optional values: left | right
   position: right
-    # Icon name in FontAwesome, see: https://fontawesome.com/icons
+  # Icon name in FontAwesome, see: https://fontawesome.com/icons
   icon: fas fa-thumbtack
   # Rotation Angle of icon.
   rotate: 45deg
@@ -521,7 +521,7 @@ minivaline:
   md: true # Support Markdown.
   # MiniValine's display language depends on user's browser or system environment
   # If you want everyone visiting your site to see a uniform language, you can set a force language value
-  # Available values: en  | zh-CN | (and many more)
+  # Optional values: en  | zh-CN | (and many more)
   # More i18n info: https://github.com/MiniValine/minivaline-i18n
   lang:
 
@@ -650,30 +650,25 @@ canvas_nest:
 # ---------------------------------------------------------------
 math:
   enable: false
-
-  # Only the page which has `math: true` in Front-matter will render.
-  # If true, it will load mathjax / katex srcipt EVERY PAGE.
+  # If true, this function will be enabled on every page.
+  # If false, this function will be enabled only if the page where `math: true` is set in `Front-matter`.
   per_page: false
-
-  # value: mathjax / katex (suggest: katex)
+  # ! -------------------------------------------------------------------------------
+  # ! Please see the documentation before using. See:
+  # ! https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/third-part.html#mathjax
+  # ! -------------------------------------------------------------------------------
+  # Optional values: mathjax | katex
   engine: katex
-
-  # See: https://github.com/mathjax/MathJax/
-  # hexo-renderer-kramed (or hexo-renderer-markdown-it-plus or hexo-renderer-pandoc) needed to full MathJax support.
   mathjax:
     cdn: https://cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML
-
     # See: https://mhchem.github.io/MathJax-mhchem/
     mhchem:
       enable: false
       mhchem_js: https://cdn.jsdelivr.net/npm/mathjax-mhchem@3.3.2/mhchem.min.js
-
-  # hexo-renderer-markdown-it-plus (or hexo-renderer-markdown-it with markdown-it-katex plugin) needed to full Katex support.
   katex:
     cdn: https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css
-
+    # See: https://github.com/KaTeX/KaTeX/tree/master/contrib/copy-tex
     copy_tex:
-      # See: https://github.com/KaTeX/KaTeX/tree/master/contrib/copy-tex
       enable: true
       copy_tex_js: https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/copy-tex.min.js
       copy_tex_css: https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/copy-tex.css
@@ -686,7 +681,7 @@ math:
 # See: https://fancyapps.com/fancybox/3/
 fancybox: false
 
-# Whether to enlarge the image when clicked.
+# Click to enlarge picture.
 zoom_image:
   enable: true
   # The color of mask.
