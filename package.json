@@ -28,15 +28,15 @@
     "nib": "^1.1.2"
   },
   "devDependencies": {
-    "@commitlint/cli": "^8.1.0",
-    "commitizen": "^4.0.4",
-    "commitlint-config-cz": "^0.13.0",
+    "@commitlint/cli": "^9.0.1",
+    "commitizen": "^4.1.2",
+    "commitlint-config-cz": "^0.13.1",
     "cz-customizable": "^6.2.0",
-    "eslint": "^7.1.0",
+    "eslint": "^7.4.0",
     "husky": "^4.2.5",
     "standard": "^14.3.4",
     "standard-version": "^8.0.0",
-    "vuepress": "^1.0.2"
+    "vuepress": "^1.5.2"
   },
   "standard": {
     "globals": [
