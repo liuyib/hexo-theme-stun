@@ -32,7 +32,9 @@ html(lang=config.language)
 
       main#main.main
         div.main-inner
-          div#content-wrap.content-wrap
+          div#content-wrap.content-wrap(
+            class=`${page.sidebar === false ? 'content-wrap--noside' : ''}`
+          )
             div#content.content(class=`${is_home() ? 'content-home' : ''}`)
               block content
 
@@ -42,7 +44,7 @@ html(lang=config.language)
             if page.comments
               include ./_partials/widgets/comments.pug
 
-          if theme.sidebar.enable
+          if page.sidebar !== false && theme.sidebar.enable
             div#sidebar-wrap.sidebar-wrap
               aside#sidebar.sidebar
                 include ./_partials/sidebar/sidebar.pug
