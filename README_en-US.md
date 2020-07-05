@@ -36,6 +36,7 @@ Language: [English](https://github.com/liuyib/hexo-theme-stun/blob/master/README
 ## :sparkles: Demo
 
 - [Liuyib's Blog](https://liuyib.github.io/)
+- [Gemini's Blog](https://geminiplanet.cn/)
 - [弥枳's Blog](http://blog2.coor.top/)
 - [轻尘's Blog](https://qcxitong.xyz/)
 - [impressionyang's Blog](https://impressionyang.github.io)
@@ -45,7 +46,6 @@ Language: [English](https://github.com/liuyib/hexo-theme-stun/blob/master/README
 - [MikyMing's Blog](https://mikyming.online/)
 - [Yichangkong's Blog](https://yichangkong.github.io/)
 - [樱井枫的小博客](https://sakurai.in/)
-- [Gemini's Blog](https://geminiplanet.cn/)
 
 If you plan to use «Stun» theme for a long time and want to show it here, you just need to modify the [README_en-US](https://github.com/liuyib/hexo-theme-stun/edit/master/README_en-US.md) to fill in your website and submit PR.
 
