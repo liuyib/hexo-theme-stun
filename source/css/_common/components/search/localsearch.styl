@@ -1,4 +1,7 @@
-search-results-height = search-popup-padding * 2 + search-input-padding * 2 + search-input-height;
+if theme.local_search.external
+  search-results-height = search-popup-padding * 2 + search-input-padding * 2 + search-input-height+5;
+else
+  search-results-height = search-popup-padding * 2 + search-input-padding * 2 + search-input-height;
 
 .search {
   &-input {
