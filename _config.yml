@@ -615,6 +615,7 @@ algolia_search:
 # See: https://github.com/wzpan/hexo-generator-search/
 local_search:
   enable: false
+  external: false
 
 # ---------------------------------------------------------------
 # Background config
