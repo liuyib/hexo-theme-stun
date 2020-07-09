@@ -733,7 +733,10 @@ busuanzi:
    local_search:
      # 是否启用
      enable: true
+     # 是否启用备用的外部搜索引擎搜索（谷歌、必应）
+     external: false
    ```
+   您可以使用[hexo-submit-urls-to-search-engine](https://github.com/cjh0613/hexo-submit-urls-to-search-engine)插件优化外部索引量。
 
 5. 重启 Hexo 服务器
 
