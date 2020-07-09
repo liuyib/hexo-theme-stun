@@ -1,8 +1,32 @@
 div.search-mask
 
+if theme.local_search.external
+  script.
+    function cjh_search(){
+    var cjhthis_host=window.location.host;
+    var $input = $('.search-input input');var q = $input.val().toLowerCase().trim();
+    var url = "https://www.bing.com/search";
+    var url = url + '?q='+q+' site:'+cjhthis_host;
+    if(q){
+    window.location.href=url;
+    }}
+    function cjh_g_search(){
+    var cjhthis_host=window.location.host;
+    var $input = $('.search-input input');var q = $input.val().toLowerCase().trim();
+    var url = "https://www.google.com/";
+    var url = url + '?q='+q+' site:'+cjhthis_host;
+    if(q){
+    window.location.href=url;
+    }}
+
 div.search-popup
   span.search-close
   div.search-input
     input(placeholder= __('local_search.input_placeholder'))
+    if theme.local_search.external
+      div(style="font-size:1rem")
+        a(class="post-readmore__link" href="javascript:;" onclick="cjh_g_search();return false;") Google
+        | &emsp;
+        a(class="post-readmore__link" href="javascript:;" onclick="cjh_search();return false;") Bing
 
   div.search-results
