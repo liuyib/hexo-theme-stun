@@ -1,5 +1,18 @@
 # 优化建议
 
+## 优化网站 SEO
+
+### 移除网址中多余的 `/index.html`
+
+TODO
+
+### 向搜索引擎提交 URLs
+
+<!-- 
+[hexo-submit-urls-to-search-engine](https://github.com/cjh0613/hexo-submit-urls-to-search-engine)
+TODO...
+-->
+
 ## 打包、压缩资源文件 <Badge text="Disrelated" type="warning"/>
 
 ::: danger

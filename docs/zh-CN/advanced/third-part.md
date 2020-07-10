@@ -733,12 +733,36 @@ busuanzi:
    local_search:
      # 是否启用
      enable: true
-     # 是否启用备用的外部搜索引擎搜索（谷歌、必应）
-     external: false
    ```
-   您可以使用[hexo-submit-urls-to-search-engine](https://github.com/cjh0613/hexo-submit-urls-to-search-engine)插件优化外部索引量。
 
 5. 重启 Hexo 服务器
+
+   ```bash
+   $ hexo clean && hexo s
+   ```
+
+### 辅助搜索按钮 <Badge text="Beta" type="warning"/> <Badge text="v2.2.1"/>
+
+该功能是使用**搜索引擎**和**你输入的关键字**，来搜索你的博客网站。
+
+启用该功能的前提是：启用了 [Algolia 搜索](#algolia-搜索) 或 [本地搜索](#本地搜索)。使用步骤如下：
+
+1. 启用 [Algolia 搜索](#algolia-搜索) 或 [本地搜索](#本地搜索)
+2. 修改主题配置文件
+
+   ```yaml
+   assist_search:
+      # 是否启用
+      enable: true
+      # 谷歌搜索的按钮。点击该按钮后，会通过 www.google.com 来搜索你输入的字符。
+      google: true
+      # 必应搜索的按钮。点击该按钮后，会通过 www.bing.com 来搜索你输入的字符。
+      bing: true
+      # 百度搜索的按钮。点击该按钮后，会通过 www.baidu.com 来搜索你输入的字符。
+      baidu: true
+   ```
+
+3. 重启 Hexo 服务器
 
    ```bash
    $ hexo clean && hexo s
