@@ -39,7 +39,7 @@
 - [弥枳's Blog](http://blog2.coor.top/)
 - [轻尘's Blog](https://qcxitong.xyz/)
 - [impressionyang's Blog](https://impressionyang.github.io)
-- [峡州仙士之页](https://cjh0613.github.io/blog/index.html) | [国际站](https://cjh0613.github.io/en/index.html)
+- [峡州仙士之页](https://cjh0613.github.io/blog/)
 - [Cheeks's Blog](https://www.cheeks.top/)
 - [lingan1996's Blog](https://www.lingan1996.top)
 - [MikyMing's Blog](https://mikyming.online/)
