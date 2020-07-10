@@ -1,6 +1,7 @@
 search-popup-padding = 1rem;
 search-input-height = 2rem;
-search-input-padding = 1rem;
+search-input-margin = 1rem;
+search-assist-height = 2rem;
 
 .search {
   &-mask {
@@ -31,7 +32,7 @@ search-input-padding = 1rem;
   }
 
   &-input {
-    margin: search-input-padding 0;
+    margin: search-input-margin 0;
 
     input {
       border: 2px solid alpha($blue-light, .5);
@@ -87,6 +88,25 @@ search-input-padding = 1rem;
     em {
       font-style: normal;
       background-color: $yellow-light;
+    }
+  }
+
+  &-btns {
+    height: search-assist-height;
+    text-align: center;
+
+    &-item {
+      margin: 0 5px;
+      border-radius: 5px;
+      padding: 3px 5px;
+      line-height: search-assist-height;
+      color: #fff;
+      background-color: $blue-lighter;
+      cursor: pointer;
+
+      i {
+        margin: 0 3px;
+      }
     }
   }
 }

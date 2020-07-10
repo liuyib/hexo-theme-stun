@@ -76,6 +76,14 @@ local_search:
   input_placeholder: Search for Posts (Support multiple keywords)
   hits_empty: We didn't find any results for the search
 
+# Auxiliary search buttons
+assist_search:
+  prompt_label: "Search by:"
+  prompt_input: Please enter characters
+  google: Google
+  bing: Bing
+  baidu: Baidu
+
 # Reward
 reward:
   btn_text: Buy me a coffee

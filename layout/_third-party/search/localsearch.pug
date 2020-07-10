@@ -241,3 +241,35 @@ script.
     Stun.utils.pjaxReloadLocalSearch();
   }, false);
 
+  function safeOpenUrl(url) {
+    var newTab = window.open();
+    newTab.opener = null;
+    newTab.location = url;
+  }
+
+  function extSearch(engine) {
+    var engines = {
+      google: 'https://www.google.com/search?q=',
+      bing: 'https://cn.bing.com/search?q=',
+      baidu: 'https://www.baidu.com/s?ie=UTF-8&wd=',
+    };
+    var host = window.location.host;
+    var query = $('.search-input input').val().toLowerCase().trim();
+    var uri = engines[engine] + query + ' site:' + host;
+
+    if (query) {
+      safeOpenUrl(uri);
+    } else {
+      Stun.utils.popAlert('warning', '!{ __("assist_search.prompt_input") }');
+    }
+  }
+
+  var assistSearchList = window.CONFIG.assistSearch;
+
+  if (Array.isArray(assistSearchList)) {
+    assistSearchList.forEach(function (name) {
+      document.querySelector('.search-btns-item--' + name).addEventListener('click', function () {
+        extSearch(name);
+      }, false);
+    });
+  }
