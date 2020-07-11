@@ -1,4 +1,8 @@
-search-results-height = search-popup-padding * 2 + search-input-padding * 2 + search-input-height;
+if (hexo-config('assist_search.enable')) {
+  search-results-height = search-popup-padding * 2 + search-input-margin * 2 + search-input-height + search-assist-height;
+} else {
+  search-results-height = search-popup-padding * 2 + search-input-margin * 2 + search-input-height;
+}
 
 .search {
   &-input {

@@ -76,6 +76,14 @@ local_search:
   input_placeholder: 檢索文章（支持多關鍵字，請用空格分隔）
   hits_empty: 沒有找到任何檢索結果
 
+# 搜索的輔助按鈕
+assist_search:
+  prompt_label: "使用搜索："
+  prompt_input: 請輸入字符
+  google: 谷歌
+  bing: 必應
+  baidu: 百度
+
 # 打賞
 reward:
   btn_text: 請我喝杯咖啡~
