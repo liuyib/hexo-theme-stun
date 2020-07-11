@@ -614,7 +614,20 @@ algolia_search:
 # Local Search
 # See: https://github.com/wzpan/hexo-generator-search/
 local_search:
+  enable: true
+
+# Auxiliary search buttons
+# ! -----------------------------------------------------------------------------------------
+# ! This feature can only be enabled if either `algolia_search` or `local_search` is enabled.
+# ! -----------------------------------------------------------------------------------------
+assist_search:
   enable: false
+  # Show the Google Search button. Use `www.google.com` to search for what you type.
+  google: true
+  # Show the Bing Search button. Use `www.bing.com` to search for what you type.
+  bing: true
+  # Show the Baidu Search button. Use `www.baidu.com` to search for what you type.
+  baidu: true
 
 # ---------------------------------------------------------------
 # Background config
@@ -838,6 +851,8 @@ icon:
   notetag_info: fas fa-info-circle
   notetag_warning: fas fa-exclamation-circle
   notetag_danger: fas fa-minus-circle
+  google: fab fa-google
+  # bing: fab fa-bing # not exist
 
 # Set a CDN address for the vendor you want to customize.
 # ! -------------------------------------------------------------------

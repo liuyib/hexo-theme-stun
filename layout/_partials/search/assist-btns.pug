@@ -1,0 +1,16 @@
+if theme.assist_search.enable
+  div.search-btns
+    = __('assist_search.prompt_label')
+
+    if theme.assist_search.google
+      span.search-btns-item.search-btns-item--google
+        i(class=theme.icon.google)
+        = __('assist_search.google')
+    if theme.assist_search.bing
+      span.search-btns-item.search-btns-item--bing
+        i(class=theme.icon.bing)
+        = __('assist_search.bing')
+    if theme.assist_search.baidu
+      span.search-btns-item.search-btns-item--baidu
+        i(class=theme.icon.baidu)
+        = __('assist_search.baidu')

@@ -15,6 +15,19 @@
     });
   }
 
+  var assistSearch = 'undefined';
+  if (theme.assist_search.enable) {
+    assistSearch = [];
+
+    for (var key in theme.assist_search) {
+      var value = theme.assist_search[key];
+      if (value && key !== 'enable') {
+        assistSearch.push(key);
+      }
+    }
+    assistSearch = JSON.stringify(assistSearch);
+  }
+
   var fontIcon = 'undefined';
   if (theme.icon) {
     fontIcon = JSON.stringify({
@@ -146,6 +159,7 @@ script.
   var CONFIG = {
     root: '!{ config.root }',
     algolia: !{ algolia },
+    assistSearch: !{ assistSearch },
     fontIcon: !{ fontIcon },
     sidebar: !{ sidebar },
     header: !{ header },
