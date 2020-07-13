@@ -35,7 +35,7 @@
     "eslint": "^7.4.0",
     "husky": "^4.2.5",
     "standard": "^14.3.4",
-    "standard-version": "^8.0.0",
+    "standard-version": "^8.0.1",
     "vuepress": "^1.5.2"
   },
   "standard": {
