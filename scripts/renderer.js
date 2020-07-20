@@ -7,21 +7,21 @@ const nunjucksCfg = {
   autoescape: false
 }
 
-function safeDump(json, spacer = undefined) {
+function safeDump (json, spacer = undefined) {
   if (typeof json !== 'undefined' && json !== null) {
     return JSON.stringify(json, null, spacer)
   }
   return '""'
 }
 
-function safeTrim(value) {
+function safeTrim (value) {
   if (typeof value === 'string') {
     return value.trim()
   }
   return value
 }
 
-function njkCompile(data) {
+function njkCompile (data) {
   let env
   if (data.path) {
     env = nunjucks.configure(dirname(data.path), nunjucksCfg)
@@ -36,7 +36,7 @@ function njkCompile(data) {
   return nunjucks.compile(data.text, env, data.path)
 }
 
-function njkRenderer(data, options) {
+function njkRenderer (data, options) {
   return njkCompile(data).render(options)
 }
 
