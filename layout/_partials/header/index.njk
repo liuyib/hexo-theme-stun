@@ -1,0 +1,36 @@
+{% import '_partials/header/menu-item.njk' as menu_item with context %}
+
+<nav class="header-nav header-nav--{% if isNoHeader %}sticky{% else %}fixed{% endif %}">
+  <div class="header-nav-inner">
+    <div class="header-nav-menubtn">
+      <i class="theme.icon.menu_btn"></i>
+    </div>
+    <div class="header-nav-menu">
+      {{ menu_item.render(theme.menu) }}
+    </div>
+  </div>
+</nav>
+
+{% if not isNoHeader %}
+  <div
+    class="header-banner"
+    style="{% if theme.header.bg_image.enable and page.top_image %}background: url({{ page.top_image }}) no-repeat center/cover;{% endif %}"
+  ></div>
+
+  <div class="header-banner-info">
+    <div class="header-banner-info__title">
+      {{- config.title -}}
+    </div>
+    <div class="header-banner-info__subtitle">
+      {{- config.subtitle -}}
+    </div>
+  </div>
+
+  {% if theme.header.scroll_down_icon.enable %}
+    <div class="header-banner-arrow">
+      <div class="header-banner-arrow__icon">
+        <i class="theme.header.scroll_down_icon.name"></i>
+      </div>
+    </div>
+  {% endif %}
+{% endif %}

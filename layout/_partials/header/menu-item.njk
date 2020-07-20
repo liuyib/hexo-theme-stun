@@ -1,0 +1,35 @@
+{% macro render(menu = {}, className = '') %}
+  {% for name, info in menu %}
+    {% if name and info %}
+      {% set infos = info.split('||') %}
+      {% set menuPath = infos[0] | safetrim %}
+      {% set menuIcon = infos[1] | safetrim %}
+      {% set hasSubMenu = (menuPath | lower) === 'javascript:;' %}
+
+      <div class="header-nav-{{ className }}menu-item">
+        <a
+          href="{% if hasSubMenu %}javascript:;{% else %}{{ menuPath }}{% endif %}"
+          class="header-nav-{{ className }}menu-item__link"
+          {% if hasSubMenu %}onclick="return false;"{% endif %}
+        >
+          {% if (not theme.menu_settings.text_only) and menuIcon %}
+            <span class="header-nav-{{ className }}menu-item__icon">
+              <i class="{{ menuIcon }}"></i>
+            </span>
+          {% endif %}
+          {% if not theme.menu_settings.icon_only %}
+            <span class="header-nav-{{ className }}menu-item__text">
+              {{- __('menu.' + name) -}}
+            </span>
+          {% endif %}
+        </a>
+
+        {% if hasSubMenu %}
+          <div class="header-nav-submenu">
+            {# TODO... #}
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+  {% endfor %}
+{% endmacro %}

@@ -12,11 +12,11 @@ $yellow-light  = #fff494
 // -------------------------------------------
 // z-index list
 // -------------------------------------------
-$z-index-2 = -2
+$z-index-0 = -2
 $z-index-1 = -1
-$z-index0  = 0
-$z-index1  = 1
-$z-index2  = 2
+$z-index-2  = 0
+$z-index-3  = 1
+$z-index-4  = 2
 
 // -------------------------------------------
 // Layout
@@ -28,36 +28,36 @@ $sm-width = 768px - 0.02px
 $md-width = 992px - 0.02px
 $lg-width = 1200px - 0.02px
 
-get-main-padding() {
-  $main-padding = convert(hexo-config('layout.main_padding.default'));
-  $gap-left = 0;
-  $gap-right = 0;
+// get-main-padding() {
+//   $main-padding = convert(hexo-config('layout.main_padding.default'));
+//   $gap-left = 0;
+//   $gap-right = 0;
 
-  if ($main-padding[1]) {
-    $gap-right = $main-padding[1];
+//   if ($main-padding[1]) {
+//     $gap-right = $main-padding[1];
 
-    if ($main-padding[3]) {
-      $gap-left = $main-padding[3];
-    } else {
-      $gap-left = $main-padding[1];
-    }
-  } else {
-    $gap-left = $gap-right = $main-padding[0];
-  }
+//     if ($main-padding[3]) {
+//       $gap-left = $main-padding[3];
+//     } else {
+//       $gap-left = $main-padding[1];
+//     }
+//   } else {
+//     $gap-left = $gap-right = $main-padding[0];
+//   }
 
-  return $gap-left $gap-right;
-}
+//   return $gap-left $gap-right;
+// }
 
-// Width
-$main-padding-width     = get-main-padding()[0] + get-main-padding()[1]
-$content-width          = convert(hexo-config('layout.content') || '$sm-width')
-$sidebar-width          = convert(hexo-config('layout.sidebar') || '300px')
-$content-sidebar-gap    = convert(hexo-config('layout.content_sidebar_gap') || '30px')
-if (hexo-config('sidebar.enable')) {
-  $main-width           = $content-width + $sidebar-width + $content-sidebar-gap + $main-padding-width
-} else {
-  $main-width           = $content-width + $main-padding-width
-}
+// // Width
+// $main-padding-width     = get-main-padding()[0] + get-main-padding()[1]
+// $content-width          = convert(hexo-config('layout.content') || '$sm-width')
+// $sidebar-width          = convert(hexo-config('layout.sidebar') || '300px')
+// $content-sidebar-gap    = convert(hexo-config('layout.content_sidebar_gap') || '30px')
+// if (hexo-config('sidebar.enable')) {
+//   $main-width           = $content-width + $sidebar-width + $content-sidebar-gap + $main-padding-width
+// } else {
+//   $main-width           = $content-width + $main-padding-width
+// }
 
 // -------------------------------------------
 // Font, line-height

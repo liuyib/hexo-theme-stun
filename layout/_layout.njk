@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="{{ config.language }}">
+  <head>
+    {{ partial('_partials/head/head.njk', {}, { cache: theme.cache.enable }) }}
+    {% include '_partials/head/head-unique.njk' %}
+    <title>
+      {%- block title %}{% endblock -%}
+    </title>
+  </head>
+
+  <body>
+    <div id="container" class="container">
+      <header id="header" class="header">
+        <div class="header-inner">
+          {% include '_partials/header/index.njk' %}
+        </div>
+      </header>
+
+      <main id="main" class="main">
+        <div class="main-inner">
+          <div id="content-wrap" class="content-wrap">
+            <div id="content" class="content">
+              {% block content %}{% endblock %}
+            </div>
+          </div>
+
+          <div id="sidebar-wrap" class="sidebar-wrap">
+            <aside id="sidebar" class="sidebar">
+              {% block sidebar %}{% endblock %}
+            </aside>
+          </div>
+        </div>
+      </main>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        footer
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

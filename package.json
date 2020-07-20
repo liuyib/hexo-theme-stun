@@ -1,13 +1,11 @@
 {
   "name": "hexo-theme-stun",
   "version": "2.1.1",
-  "description": "A beautiful & simple theme for Hexo",
+  "description": "An elegant theme for Hexo",
   "homepage": "https://liuyib.github.io",
   "scripts": {
     "commit": "git cz",
     "release": "standard-version",
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
     "lint": "standard",
     "lint:fix": "standard --fix"
   },
@@ -24,9 +22,6 @@
   "bugs": {
     "url": "https://github.com/liuyib/hexo-theme-stun/issues"
   },
-  "dependencies": {
-    "nib": "^1.1.2"
-  },
   "devDependencies": {
     "@commitlint/cli": "^9.0.1",
     "commitizen": "^4.1.2",
@@ -35,8 +30,7 @@
     "eslint": "^7.4.0",
     "husky": "^4.2.5",
     "standard": "^14.3.4",
-    "standard-version": "^8.0.0",
-    "vuepress": "^1.5.2"
+    "standard-version": "^8.0.1"
   },
   "standard": {
     "globals": [

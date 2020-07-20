@@ -1,0 +1,14 @@
+{# Built-in Hexo helper #}
+{{ open_graph() }}
+
+{# Custom Hexo helper #}
+{{ canonical() }}
+
+{# Exports some Front-Matter variables to Front-End #}
+<script{{ pjax }} class="page-configurations">
+  CONFIG.page = {
+    isHome : {{ is_home() }},
+    isPost : {{ is_post() }},
+    lang   : '{{ page.lang }}'
+  };
+</script>

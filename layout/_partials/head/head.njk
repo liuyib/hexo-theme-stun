@@ -1,0 +1,36 @@
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Hexo {{ version.hexo }}">
+
+{% if theme.site_meta.telephone_no %}
+  <meta name="format-detection" content="telephone=no">
+{% endif %}
+
+{%- if theme.favicon.apple_touch_icon %}
+  <link rel="apple-touch-icon" href="{{ url_for(theme.favicon.apple_touch_icon) }}" sizes="180x180">
+{%- endif %}
+{%- if theme.favicon.medium %}
+  <link rel="icon" href="{{ url_for(theme.favicon.medium) }}" type="image/png" sizes="32x32">
+{%- endif %}
+{%- if theme.favicon.small %}
+  <link rel="icon" href="{{ url_for(theme.favicon.small) }}" type="image/png" sizes="16x16">
+{%- endif %}
+{%- if theme.favicon.safari_pinned_tab.image and theme.favicon.safari_pinned_tab.color %}
+  <link rel="mask-icon" href="{{ url_for(theme.favicon.safari_pinned_tab.image) }}" color="{{ theme.favicon.safari_pinned_tab.color }}">
+{%- endif %}
+{% if theme.favicon.msapplication.image %}
+  <meta name="msapplication-TileImage" content="{{ url_for(theme.favicon.msapplication.image) }}">
+{% endif %}
+{% if theme.favicon.msapplication.color %}
+  <meta name="msapplication-TileColor" content="{{ theme.favicon.msapplication.color }}">
+{% endif %}
+{% if theme.favicon.msapplication.config %}
+  <meta name="msapplication-config" content="{{ url_for(theme.favicon.msapplication.config) }}">
+{% endif %}
+<meta name="theme-color" content="{{ theme.site_meta.theme_color }}">
+
+<link rel="stylesheet" href="{{ url_for(theme.css) }}/index.css">
+
+{# Custom Hexo helper #}
+{{ stun_config() }}
