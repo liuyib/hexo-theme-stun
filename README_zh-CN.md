@@ -1,6 +1,6 @@
 <div align="right">
   语言:
-  <a title="Engligh" href="./README.md">🇺🇸</a>
+  <a title="English" href="./README.md">🇺🇸</a>
   🇨🇳
 </div>
 
