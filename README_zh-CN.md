@@ -1,7 +1,7 @@
 <div align="right">
-  Language:
-  🇺🇸
-  <a title="Chinese" href="./README_zh-CN.md">🇨🇳</a>
+  语言:
+  <a title="Engligh" href="./README.md">🇺🇸</a>
+  🇨🇳
 </div>
 
 <a title="Stun website" href="https://theme-stun.github.io/">
@@ -10,12 +10,12 @@
 
 # Stun
 
-> An elegant Hexo theme, made from scratch with love.
+> 一个优雅的 Hexo 主题，用爱从零开始制作
 
-[Website](https://theme-stun.github.io/) |
-[Documentation](https://theme-stun.github.io/docs/) |
-[Installation Guide](https://theme-stun.github.io/docs/guide/quick-start.html#installation) |
-[Contribution Guide](https://theme-stun.github.io/docs/contribute/contribute.html#contribution)
+[官网](https://theme-stun.github.io/) |
+[文档](https://theme-stun.github.io/docs/) |
+[安装指南](https://theme-stun.github.io/docs/guide/quick-start.html#installation) |
+[贡献指南](https://theme-stun.github.io/docs/contribute/contribute.html#contribution)
 
 [![NPM version](https://img.shields.io/npm/v/hexo-theme-stun?logo=npm&color=blue)](https://www.npmjs.com/package/hexo-theme-stun)
 [![Required Hexo version](https://img.shields.io/badge/hexo-%3E=4.0.0-blue?logo=hexo&color=blue)](https://hexo.io)
@@ -26,13 +26,13 @@
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![GitHub](https://img.shields.io/github/license/liuyib/hexo-theme-stun)](https://github.com/liuyib/hexo-theme-stun/blob/master/LICENSE)
 
-## :sparkles: Demo
+## :sparkles: 演示
 
 - [Liuyib's Blog](https://liuyib.github.io/)
 - [弥枳's Blog](http://blog2.coor.top/)
 - [轻尘's Blog](https://qcxitong.xyz/)
 - [impressionyang's Blog](https://impressionyang.github.io)
-- [峡州仙士之页](https://cjh0613.github.io/en/)
+- [峡州仙士之页](https://cjh0613.github.io/blog/)
 - [Cheeks's Blog](https://www.cheeks.top/)
 - [lingan1996's Blog](https://www.lingan1996.top)
 - [MikyMing's Blog](https://mikyming.online/)
@@ -40,49 +40,49 @@
 - [樱井枫的小博客](https://sakurai.in/)
 - [Gemini's Blog](https://geminiplanet.cn/)
 
-If you plan to use «Stun» theme for a long time and want to show it here, you just need to modify the [README](https://github.com/liuyib/hexo-theme-stun/edit/master/README.md) to fill in your website and submit PR.
+如果你准备长期使用 «Stun» 主题，并希望展示在这里，你只需在 [README_zh-CN](https://github.com/liuyib/hexo-theme-stun/edit/master/README_zh-CN.md) 中填入你的网站，然后提交 PR 即可。
 
-## :crystal_ball: Feature
+## :crystal_ball: 特性
 
-- Simple & Fast & Easy to Use & **Highly Customizable**
-- Responsive design
-- [Secondary navigation menu](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/advanced-setting.html#二级导航菜单)
-- Support [image lazy loading](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/advanced-setting.html#图片懒加载)
-- Support [Pjax](https://github.com/defunkt/jquery-pjax)
-- Support [PWA](https://developers.google.com/web/progressive-web-apps)
-- Support [Fancybox](https://github.com/fancyapps/fancybox)
-- Support [Quicklink](https://github.com/GoogleChromeLabs/quicklink)
-- Support [MathJax](https://www.mathjax.org/)、[KaTex](https://katex.org/)
-- Support [Gitalk](https://github.com/gitalk/gitalk)、[Valine](https://valine.js.org/)、[Livere](https://livere.com/)、[Disqus](https://disqus.com/)、[Utterances](https://github.com/utterance/utterances) comments
-- [Album page](https://liuyib.github.io/gallery/) of waterfall streaming
-- Built-in [Google ads](https://www.google.cn/adsense/start/)
-- Multiple code [highlighting themes](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/advanced-setting.html#代码高亮)
-- Beautiful [background effects](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/third-part.html#ribbon)
-- Detailed [documentation](https://liuyib.github.io/hexo-theme-stun/)
+- 简洁 & 快速 & 易用 & **可定制性高**
+- 响应式设计
+- [二级导航菜单](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/advanced-setting.html#二级导航菜单)
+- 支持[图片懒加载](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/advanced-setting.html#图片懒加载)
+- 支持 [Pjax](https://github.com/defunkt/jquery-pjax)
+- 支持 [PWA](https://developers.google.com/web/progressive-web-apps)
+- 支持 [Fancybox](https://github.com/fancyapps/fancybox)
+- 支持 [Quicklink](https://github.com/GoogleChromeLabs/quicklink)
+- 支持 [MathJax](https://www.mathjax.org/)、[KaTex](https://katex.org/)
+- 支持 [Gitalk](https://github.com/gitalk/gitalk)、[Valine](https://valine.js.org/)、[Livere](https://livere.com/)、[Disqus](https://disqus.com/)、[Utterances](https://github.com/utterance/utterances) 评论
+- 瀑布流式的[相册页面](https://liuyib.github.io/gallery/)
+- 内置[谷歌广告](https://www.google.cn/adsense/start/)，一键开启
+- 代码高亮，[多种配色](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/advanced-setting.html#代码高亮)可选
+- 好看的[背景特效](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/third-part.html#ribbon)
+- 超详细[配置文档](https://liuyib.github.io/hexo-theme-stun/)
 
-## :package: Install
+## :package: 安装
 
-Enter your hexo directory, run this:
+进入 Hexo 根目录，执行指令：
 
 ```bash
 $ git clone https://github.com/liuyib/hexo-theme-stun.git themes/stun
 ```
 
-## :hammer: Usage
+## :hammer: 使用
 
-Change the `_config.yml` file in your hexo root directory:
+修改 Hexo 根目录下的 `_config.yml` 文件：
 
 ```yml
 theme: stun
 ```
 
-Run your hexo server:
+然后，启动 Hexo 服务器：
 
 ```bash
 $ hexo clean && hexo s
 ```
 
-## :art: Update
+## :art: 更新
 
 ```bash
 $ cd themes/stun
@@ -90,26 +90,26 @@ $ cd themes/stun
 $ git pull
 ```
 
-## :question: Question
+## :question: 问题
 
-If you have problems, please read [documentation](https://theme-stun.github.io/docs/) firstly, or check [FAQ](./FAQ.md). You can open an `issue` when the above methods can't help you :hugs:.
+如果遇到问题，首先请仔细阅读[文档](https://theme-stun.github.io/docs/zh-CN/)，或者查看[常见问题](./FAQ.md)。当以上的方法都无法帮助你时，再去提出 `issue`:hugs:。
 
-## :handshake: Contribution
+## :handshake: 贡献
 
-Please make sure to read the [Contributing Guide](https://theme-stun.github.io/docs/contribute/contribute.html#contribution) before making a pull request.
+在提出 Pull request 之前，请务必先阅读[贡献指南](https://theme-stun.github.io/docs/contribute/contribute.html#contribution)。
 
-Thank you to all the people who have already contributed to «Stun»!
+感谢所有为 «Stun» 做出贡献的人！
 
 <a href="https://github.com/liuyib/hexo-theme-stun/graphs/contributors">
   <img src="https://opencollective.com/hexo-theme-stun/contributors.svg?width=980">
 </a>
 
-## :computer: Browser Support
+## :computer: 浏览器支持
 
 | <img src="https://raw.githubusercontent.com/liuyib/picBed/master/collection/20190723235410.png" alt="IE" width="32px" height="32px" /></br> IE | <img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/35.1.0/edge/edge_64x64.png" alt="Edge" width="32px" height="32px" /></br> Edge | <img src="https://raw.githubusercontent.com/liuyib/picBed/master/collection/20190723235406.png" alt="Firefox" width="32px" height="32px" /></br> Firefox | <img src="https://raw.githubusercontent.com/liuyib/picBed/master/collection/20190723235407.png" alt="Chrome" width="32px" height="32px" /></br> Chrome | <img src="https://raw.githubusercontent.com/liuyib/picBed/master/collection/20190723235409.png" alt="Safari" width="32px" height="32px" /></br> Safari | <img src="https://raw.githubusercontent.com/liuyib/picBed/master/collection/20190723235411.png" alt="Opera" width="32px" height="32px" /></br> Opera |
 | :---: | :---: | :---: |:---: | :---: | :---: |
 | Not Supported | 12+ | 41+ | 45+ | 10+ | 32+ |
 
-## :page_with_curl: License
+## :page_with_curl: 开源协议
 
 [MIT](https://github.com/liuyib/hexo-theme-stun/blob/master/LICENSE) Copyright (c) 2020 liuyib
