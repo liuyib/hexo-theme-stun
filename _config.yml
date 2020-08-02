@@ -17,6 +17,10 @@ site_meta:
   # Set the background color of the Android Chrome navigation bar.
   # If enable, `<meta name="theme-color" content="#ffffff">` will be inserted into the website.
   theme_color: '#ffffff'
+  # Speed up web pages by pre-resolving DNS.
+  # See: https://www.keycdn.com/support/prefetching
+  dns_prefetch:
+    - https://cdn.jsdelivr.net
 
 # Documentation: https://theme-stun.github.io/docs/zh-CN/guide/primary.html#favicon
 favicon:

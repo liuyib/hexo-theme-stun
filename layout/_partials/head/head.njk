@@ -48,6 +48,10 @@
   <meta name="sogou_site_verification" content="{{ theme.webmaster_tools.sougou }}">
 {% endif %}
 
+{% for uri in (theme.site_meta.dns_prefetch | s_array) %}
+  <link rel="dns-prefetch" href="{{ uri }}">
+{% endfor %}
+
 <link rel="stylesheet" href="{{ url_for(theme.css) }}/index.css">
 
 {# Custom Hexo helper #}
