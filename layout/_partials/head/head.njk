@@ -30,6 +30,22 @@
 {% endif %}
 <meta name="theme-color" content="{{ theme.site_meta.theme_color }}">
 
+{% if theme.webmaster_tools.google %}
+  <meta name="google-site-verification" content="{{ theme.webmaster_tools.google }}">
+{% endif %}
+{% if theme.webmaster_tools.bing %}
+  <meta name="msvalidate.01" content="{{ theme.webmaster_tools.bing }}">
+{% endif %}
+{% if theme.webmaster_tools.baidu %}
+  <meta name="baidu-site-verification" content="{{ theme.webmaster_tools.baidu }}">
+{% endif %}
+{% if theme.webmaster_tools.qihu360 %}
+  <meta name="360-site-verification" content="{{ theme.webmaster_tools.qihu360 }}">
+{% endif %}
+{% if theme.webmaster_tools.sougou %}
+  <meta name="sogou_site_verification" content="{{ theme.webmaster_tools.sougou }}">
+{% endif %}
+
 <link rel="stylesheet" href="{{ url_for(theme.css) }}/index.css">
 
 {# Custom Hexo helper #}

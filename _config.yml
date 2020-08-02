@@ -34,6 +34,35 @@ favicon:
   #   color: '#54bcff'
   #   config: /browserconfig.xml
 
+# ---------------------------------------------------------------
+# SEO Settings
+# ---------------------------------------------------------------
+
+# If true, will add site-subtitle to index page.
+# Remember to set up your `subtitle` in Hexo `_config.yml`.
+index_subtitle: false
+
+webmaster_tools:
+  # Google Webmaster tools verification.
+  # See: https://www.google.com/webmasters/
+  google:
+  # Bing Webmaster tools verification.
+  # See: https://www.bing.com/webmaster/
+  bing:
+  # Baidu Webmaster tools verification.
+  # See: https://ziyuan.baidu.com/site/
+  baidu:
+  # 360 Webmaster tools verification.
+  # see http://zhanzhang.so.com/
+  qihu360:
+  # Sougou Webmaster tools verification.
+  # see http://zhanzhang.sogou.com/
+  sougou:
+
+# ---------------------------------------------------------------
+# Other config
+# ---------------------------------------------------------------
+
 # Assets
 # In theme directory (source/css)
 css: css
