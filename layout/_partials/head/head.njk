@@ -28,7 +28,9 @@
 {% if theme.favicon.msapplication.config %}
   <meta name="msapplication-config" content="{{ url_for(theme.favicon.msapplication.config) }}">
 {% endif %}
-<meta name="theme-color" content="{{ theme.site_meta.theme_color }}">
+{% if theme.site_meta.theme_color %}
+  <meta name="theme-color" content="{{ theme.site_meta.theme_color }}">
+{% endif %}
 
 {% if theme.webmaster_tools.google %}
   <meta name="google-site-verification" content="{{ theme.webmaster_tools.google }}">
