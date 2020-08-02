@@ -24,6 +24,7 @@
 [![devDependencies Status](https://david-dm.org/liuyib/hexo-theme-stun/dev-status.svg)](https://david-dm.org/liuyib/hexo-theme-stun?type=dev)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fliuyib%2Fhexo-theme-stun.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fliuyib%2Fhexo-theme-stun?ref=badge_shield)
 [![GitHub](https://img.shields.io/github/license/liuyib/hexo-theme-stun)](https://github.com/liuyib/hexo-theme-stun/blob/master/LICENSE)
 
 ## :sparkles: Demo
@@ -112,4 +113,6 @@ Thank you to all the people who have already contributed to «Stun»!
 
 ## :page_with_curl: License
 
-[MIT](https://github.com/liuyib/hexo-theme-stun/blob/master/LICENSE) Copyright (c) 2020 liuyib
+[MIT](https://github.com/liuyib/hexo-theme-stun/blob/master/LICENSE) Copyright (c) 2019-present [liuyib](https://github.com/liuyib)
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fliuyib%2Fhexo-theme-stun.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fliuyib%2Fhexo-theme-stun?ref=badge_large)
