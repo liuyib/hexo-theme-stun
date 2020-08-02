@@ -2,8 +2,8 @@
   {% for name, info in menu %}
     {% if name and info %}
       {% set infos = info.split('||') %}
-      {% set menuPath = infos[0] | safetrim %}
-      {% set menuIcon = infos[1] | safetrim %}
+      {% set menuPath = infos[0] | s_trim %}
+      {% set menuIcon = infos[1] | s_trim %}
       {% set hasSubMenu = (menuPath | lower) === 'javascript:;' %}
 
       <div class="header-nav-{{ className }}menu-item">

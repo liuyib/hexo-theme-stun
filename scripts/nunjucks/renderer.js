@@ -2,23 +2,10 @@
 
 const nunjucks = require('nunjucks')
 const { dirname } = require('path')
+const { addCustomFilters } = require('./filters')
 
 const nunjucksCfg = {
   autoescape: false
-}
-
-function safeDump (json, spacer = undefined) {
-  if (typeof json !== 'undefined' && json !== null) {
-    return JSON.stringify(json, null, spacer)
-  }
-  return '""'
-}
-
-function safeTrim (value) {
-  if (typeof value === 'string') {
-    return value.trim()
-  }
-  return value
 }
 
 function njkCompile (data) {
@@ -29,9 +16,7 @@ function njkCompile (data) {
     env = nunjucks.configure(nunjucksCfg)
   }
 
-  // Add custom filter
-  env.addFilter('safedump', safeDump)
-  env.addFilter('safetrim', safeTrim)
+  addCustomFilters(env)
 
   return nunjucks.compile(data.text, env, data.path)
 }
