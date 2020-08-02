@@ -13,6 +13,7 @@
   <a href="http://commitizen.github.io/cz-cli/" target="_blank" rel="noopener noreferrer">
     <img alt="Commitizen friendly" src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg">
   </a>
+<a href="https://app.fossa.com/projects/git%2Bgithub.com%2Fliuyib%2Fhexo-theme-stun?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Fliuyib%2Fhexo-theme-stun.svg?type=shield"/></a>
   <a href="https://libraries.io/github/liuyib/hexo-theme-stun#dependencies" target="_blank" rel="noopener noreferrer">
     <img alt="Dependency status" src="https://img.shields.io/librariesio/github/liuyib/hexo-theme-stun">
   </a>
@@ -32,6 +33,9 @@
 </p>
 
 语言: [English](https://github.com/liuyib/hexo-theme-stun/blob/master/README_en-US.md) | [中文简体](https://github.com/liuyib/hexo-theme-stun/blob/master/README.md)
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fliuyib%2Fhexo-theme-stun.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fliuyib%2Fhexo-theme-stun?ref=badge_large)
 
 ## :sparkles: 演示
 
