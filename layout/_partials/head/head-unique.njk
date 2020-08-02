@@ -1,8 +1,12 @@
 {# Built-in Hexo helper #}
-{{ open_graph() }}
+{% if theme.site_meta.open_graph %}
+  {{ open_graph() }}
+{% endif %}
 
 {# Custom Hexo helper #}
-{{ canonical() }}
+{% if theme.site_meta.canonical %}
+  {{ canonical() }}
+{% endif %}
 
 {# Exports some Front-Matter variables to Front-End #}
 <script{{ pjax }} class="page-configurations">

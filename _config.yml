@@ -17,6 +17,12 @@ site_meta:
   # Set the background color of the Android Chrome navigation bar.
   # If enable, `<meta name="theme-color" content="#ffffff">` will be inserted into the website.
   theme_color: '#ffffff'
+  # Set a canonical link tag for your Hexo site.
+  # See: https://support.google.com/webmasters/answer/139066
+  canonical: true
+  # Inserts Open Graph data.
+  # See: https://hexo.io/docs/helpers#open-graph
+  open_graph: true
   # Speed up web pages by pre-resolving DNS.
   # See: https://www.keycdn.com/support/prefetching
   dns_prefetch:
