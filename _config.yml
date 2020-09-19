@@ -250,7 +250,7 @@ creative_commons:
   #   it | lv | lt | hu | nl | no | pt | pt_BR | pl | ro | sl | fi | sv
   #   tr | is | cs | el | be | ru | zh | zh_TW | uk | ar | fa | bn | ja | ko
   # If not set, `en` will be used by default.
-  language: es
+  language:
 
 # Back to top
 back2top:
