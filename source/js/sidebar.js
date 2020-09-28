@@ -35,7 +35,7 @@ $(document).ready(function () {
       var MIN_HEIGHT_TO_TOP = 5
 
       if (headingTop <= MIN_HEIGHT_TO_TOP) {
-        currHeading = this.getAttribute('id')
+        currHeading = window.encodeURIComponent(this.getAttribute('id'))
       }
     })
 
