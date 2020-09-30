@@ -6,6 +6,8 @@
   "scripts": {
     "commit": "git cz",
     "release": "standard-version",
+    "release:lts": "npm run release -- --release-as",
+    "release:pre": "npm run release -- --prerelease",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "lint": "standard",
