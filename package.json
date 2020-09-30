@@ -36,7 +36,7 @@
     "husky": "^4.3.0",
     "standard": "^14.3.4",
     "standard-version": "^9.0.0",
-    "vuepress": "^1.6.0"
+    "vuepress": "^1.5.2"
   },
   "standard": {
     "globals": [
