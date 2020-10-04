@@ -40,14 +40,12 @@ Language: [English](https://github.com/liuyib/hexo-theme-stun/blob/master/README
 
 - [Liuyib's Blog](https://liuyib.github.io/)
 - [弥枳's Blog](http://blog2.coor.top/)
-- [轻尘's Blog](https://qcxitong.xyz/)
 - [impressionyang's Blog](https://impressionyang.github.io)
 - [峡州仙士之页](https://cjh0613.github.io/en/)
 - [Cheeks's Blog](https://www.cheeks.top/)
 - [lingan1996's Blog](https://www.lingan1996.top)
 - [MikyMing's Blog](https://mikyming.online/)
 - [Yichangkong's Blog](https://yichangkong.github.io/)
-- [樱井枫的小博客](https://sakurai.in/)
 - [Gemini's Blog](https://geminiplanet.cn/)
 - [PVulcan's Blog](https://pvulcan.cn/)
 
