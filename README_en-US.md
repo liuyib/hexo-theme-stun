@@ -47,7 +47,6 @@ Language: [English](https://github.com/liuyib/hexo-theme-stun/blob/master/README
 - [lingan1996's Blog](https://www.lingan1996.top)
 - [MikyMing's Blog](https://mikyming.online/)
 - [Yichangkong's Blog](https://yichangkong.github.io/)
-- [樱井枫的小博客](https://sakurai.in/)
 - [Gemini's Blog](https://geminiplanet.cn/)
 - [PVulcan's Blog](https://pvulcan.cn/)
 
