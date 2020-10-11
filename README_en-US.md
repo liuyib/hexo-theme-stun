@@ -48,6 +48,7 @@ Language: [English](https://github.com/liuyib/hexo-theme-stun/blob/master/README
 - [Yichangkong's Blog](https://yichangkong.github.io/)
 - [Gemini's Blog](https://geminiplanet.cn/)
 - [PVulcan's Blog](https://pvulcan.cn/)
+- [TimeMachine's Blog](https://timemachine.icu/)
 
 If you plan to use «Stun» theme for a long time and want to show it here, you just need to modify the [README_en-US](https://github.com/liuyib/hexo-theme-stun/edit/master/README_en-US.md) to fill in your website and submit PR.
 
