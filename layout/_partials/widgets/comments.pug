@@ -16,3 +16,8 @@ else if theme.utterances.enable
 else if theme.livere.enable
   div#comments.comments
     div#lv-container(data-id="city" data-uid=theme.livere.uid)
+else if theme.fbcomments.enable
+  div#comments.comments
+    div#fbcomments-container
+      #fb-root
+      .fb-comments(data-href=page.permalink, data-numposts=theme.fbcomments.numPosts, data-width=theme.fbcomments.width)

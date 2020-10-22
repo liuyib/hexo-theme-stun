@@ -92,6 +92,11 @@ if page.comments || theme.pjax.enable
     - var gitalk_css = 'https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.css';
     - if (theme.cdn.gitalk_css) gitalk_css = theme.cdn.gitalk_css;
     link(rel="stylesheet" href=gitalk_css type="text/css")
+  if theme.fbcomments.enable
+    if !theme.fbcomments.appID
+      throw "Hexo-FBComments error: Facebook AppId not found. Set it in your config.yml file or uninstall hex_fbcomments, or disable it in the config.yml file."
+    else
+      script(async, defer, src='https://connect.facebook.net/' + theme.fbcomments.lang + '/sdk.js#xfbml=1&version=v8.0&appId=' + theme.fbcomments.appID + '&autoLogAppEvents=1&order_by=' + theme.fbcomments.order_by)
 
 if theme.algolia_search.enable
   - var instantsearch_css = 'https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.css';

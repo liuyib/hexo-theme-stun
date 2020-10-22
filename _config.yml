@@ -560,6 +560,17 @@ utterances:
   # ! -------------------------------------------------------------------------------
   script_url: https://utteranc.es/client.js
 
+# Facebook Comments
+fbcomments:
+  enable: false
+  appID: 
+  colorscheme: light # (optional) light/dark
+  enabled: true # (optional) true/false
+  lang: en_US # (optional)
+  order_by: time  # (optional) time/reverse_time/social
+  numPosts: 10 # (optional) defaults to 5
+  width: 100%
+
 # ---------------------------------------------------------------
 # Statistics and Analytics config
 # ---------------------------------------------------------------
