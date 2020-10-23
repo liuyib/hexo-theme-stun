@@ -18,6 +18,12 @@ else if theme.livere.enable
     div#lv-container(data-id="city" data-uid=theme.livere.uid)
 else if theme.fbcomments.enable
   div#comments.comments
-    div#fbcomments-container
-      #fb-root
-      .fb-comments(data-href=page.permalink, data-numposts=theme.fbcomments.numPosts, data-width=theme.fbcomments.width)
+    div#fb-root
+    div.fb-comments(
+      data-href=page.permalink
+      data-lazy=theme.fbcomments.lazy
+      data-mobile=theme.fbcomments.mobile
+      data-numposts=theme.fbcomments.numPosts
+      data-order-by=theme.fbcomments.order_by
+      data-width=theme.fbcomments.width
+    )
