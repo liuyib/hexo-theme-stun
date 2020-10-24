@@ -10,6 +10,14 @@
   }
 }
 
+if (hexo-config('fbcomments.enable')) {
+  .fb-comments {
+    iframe {
+      width: 100% !important;
+    }
+  }
+}
+
 if (hexo-config('night_mode.enable')) {
   if (hexo-config('gitalk.enable')) {
     :root {

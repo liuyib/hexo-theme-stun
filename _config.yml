@@ -563,7 +563,9 @@ utterances:
 # Facebook Comments
 # See: https://developers.facebook.com/docs/plugins/comments
 fbcomments:
-  enable: true
+  enable: false
+  # The ID of your own Facebook App.
+  appId:
   # See: https://developers.facebook.com/docs/internationalization#locales
   # Example: en_US | zh_CN | zh_HK ... and so on. For detail, see: ☝
   lang: en_US
