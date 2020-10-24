@@ -614,7 +614,7 @@ algolia_search:
 # Local Search
 # See: https://github.com/wzpan/hexo-generator-search/
 local_search:
-  enable: true
+  enable: false
 
 # Auxiliary search buttons
 # ! -----------------------------------------------------------------------------------------
