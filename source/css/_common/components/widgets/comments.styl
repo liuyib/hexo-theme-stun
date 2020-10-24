@@ -1,3 +1,23 @@
+.comments {
+  margin: 1.5rem 0 0;
+  width: 100%;
+  layout-card();
+
+  if (hexo-config('sidebar.position') == 'left') {
+    float: right;
+  } else if (hexo-config('sidebar.position') == 'right') {
+    float: left;
+  }
+}
+
+if (hexo-config('fbcomments.enable')) {
+  .fb-comments {
+    iframe {
+      width: 100% !important;
+    }
+  }
+}
+
 if (hexo-config('night_mode.enable')) {
   if (hexo-config('gitalk.enable')) {
     :root {
@@ -26,20 +46,6 @@ if (hexo-config('night_mode.enable')) {
     html.nightmode {
       --color-gradient-begin: rgba(43, 49, 59, 0);
       --color-gradient-end: rgba(43, 49, 59, 1);
-    }
-  }
-}
-
-if (hexo-config('gitalk.enable') || hexo-config('valine.enable') || hexo-config('livere.enable') || hexo-config('disqus.enable') || hexo-config('utterances.enable')) {
-  .comments {
-    margin: 1.5rem 0 0;
-    width: 100%;
-    layout-card();
-
-    if (hexo-config('sidebar.position') == 'left') {
-      float: right;
-    } else if (hexo-config('sidebar.position') == 'right') {
-      float: left;
     }
   }
 }

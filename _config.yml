@@ -560,6 +560,27 @@ utterances:
   # ! -------------------------------------------------------------------------------
   script_url: https://utteranc.es/client.js
 
+# Facebook Comments
+# See: https://developers.facebook.com/docs/plugins/comments
+fbcomments:
+  enable: false
+  # The ID of your own Facebook App.
+  appId:
+  # See: https://developers.facebook.com/docs/internationalization#locales
+  # Example: en_US | zh_CN | zh_HK ... and so on. For detail, see: ☝
+  lang: en_US
+  # Number of comments displayed by default.
+  numPosts: 10
+  # See: https://developers.facebook.com/docs/plugins/comments#sorting
+  # Optional values: social | reverse_time | time
+  order_by: reverse_time
+  # Optional values: true | false
+  lazy: true
+  # Whether to optimize the display on the mobile.
+  # Optional values: true | false
+  mobile: true
+  width: 100%
+
 # ---------------------------------------------------------------
 # Statistics and Analytics config
 # ---------------------------------------------------------------
