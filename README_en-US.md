@@ -16,8 +16,8 @@
   <a href="https://app.fossa.com/projects/git%2Bgithub.com%2Fliuyib%2Fhexo-theme-stun?ref=badge_shield">
     <img alt="FOSSA Status" src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Fliuyib%2Fhexo-theme-stun.svg?type=shield"/>
   </a>
-  <a href="https://libraries.io/github/liuyib/hexo-theme-stun#dependencies" target="_blank" rel="noopener noreferrer">
-    <img alt="Dependency status" src="https://img.shields.io/librariesio/github/liuyib/hexo-theme-stun">
+  <a href="https://depfu.com/github/liuyib/hexo-theme-stun?project_id=17221" target="_blank" rel="noopener noreferrer">
+    <img alt="Dependencies status" src="https://badges.depfu.com/badges/c063484513939d540c95c0a824e5606f/count.svg">
   </a>
   <a href="https://github.com/liuyib/hexo-theme-stun/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">
     <img alt="GitHub LICENSE" src="https://img.shields.io/github/license/liuyib/hexo-theme-stun.svg">
