@@ -52,7 +52,6 @@ assignees: ''
 ```yml
 
 ```
-
 </details>
 
 **Stun Configuration:**
@@ -64,7 +63,6 @@ assignees: ''
 ```yml
 
 ```
-
 </details>
 
 ## Expected behaviour
