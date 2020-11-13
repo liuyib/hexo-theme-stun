@@ -1,3 +1,0 @@
-# Primary Setting
-
-> Documentation is writing...

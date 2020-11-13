@@ -1,3 +1,0 @@
-# Advanced setting
-
-> Documentation is writing...
