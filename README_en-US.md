@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://liuyib.github.io/hexo-theme-stun/" target="_blank" rel="noopener noreferrer">
+  <a href="https://theme-stun.github.io/docs/" target="_blank" rel="noopener noreferrer">
     <img src="./source/images/icons/stun-logo.svg" alt="Stun Logo" width="100">
   </a>
 </p>
@@ -57,8 +57,8 @@ If you plan to use «Stun» theme for a long time and want to show it here, you 
 
 - Simple & Fast & Easy to Use & **Highly Customizable**
 - Responsive design
-- [Secondary navigation menu](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/advanced-setting.html#二级导航菜单)
-- Support [image lazy loading](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/advanced-setting.html#图片懒加载)
+- [Secondary navigation menu](https://theme-stun.github.io/docs/zh-CN/advanced/advanced.html#二级导航菜单)
+- Support [image lazy loading](https://theme-stun.github.io/docs/zh-CN/advanced/advanced.html#图片懒加载)
 - Support [Pjax](https://github.com/defunkt/jquery-pjax)
 - Support [PWA](https://developers.google.com/web/progressive-web-apps)
 - Support [Fancybox](https://github.com/fancyapps/fancybox)
@@ -67,9 +67,9 @@ If you plan to use «Stun» theme for a long time and want to show it here, you 
 - Support [Gitalk](https://github.com/gitalk/gitalk)、[Valine](https://valine.js.org/)、[Livere](https://livere.com/)、[Disqus](https://disqus.com/)、[Utterances](https://github.com/utterance/utterances) comments
 - [Album page](https://liuyib.github.io/gallery/) of waterfall streaming
 - Built-in [Google ads](https://www.google.cn/adsense/start/)
-- Multiple code [highlighting themes](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/advanced-setting.html#代码高亮)
-- Beautiful [background effects](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/third-part.html#ribbon)
-- Detailed [documentation](https://liuyib.github.io/hexo-theme-stun/)
+- Multiple code [highlighting themes](https://theme-stun.github.io/docs/zh-CN/advanced/advanced.html#代码高亮)
+- Beautiful [background effects](https://theme-stun.github.io/docs/zh-CN/advanced/third-part.html#ribbon)
+- Detailed [documentation](https://theme-stun.github.io/docs/)
 
 ## :package: Install
 
@@ -113,15 +113,15 @@ $ git pull
 
 ## :page_facing_up: Documentation
 
-Please see: [https://liuyib.github.io/hexo-theme-stun/](https://liuyib.github.io/hexo-theme-stun/)
+Please see: [https://theme-stun.github.io/docs/](https://theme-stun.github.io/docs/)
 
 ## :question: Question
 
-If you have problems, please read [documentation](https://liuyib.github.io/hexo-theme-stun/zh-CN/) firstly, or check [FAQ](https://github.com/liuyib/hexo-theme-stun/blob/master/FAQ.md). You can open an `issue` when the above methods can't help you :hugs:.
+If you have problems, please read [documentation](https://theme-stun.github.io/docs/) firstly, or check [FAQ](https://github.com/liuyib/hexo-theme-stun/blob/master/FAQ.md). You can open an `issue` when the above methods can't help you :hugs:.
 
 ## :handshake: Contribution
 
-Please make sure to read the [Contributing Guide](https://liuyib.github.io/hexo-theme-stun/contribute/contribute.html) before making a pull request.
+Please make sure to read the [Contributing Guide](https://theme-stun.github.io/docs/contribute/contribute.html) before making a pull request.
 
 Thank you to all the people who have already contributed to «Stun»!
 

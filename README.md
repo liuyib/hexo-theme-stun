@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://liuyib.github.io/hexo-theme-stun/" target="_blank" rel="noopener noreferrer">
+  <a href="https://theme-stun.github.io/docs/zh-CN/" target="_blank" rel="noopener noreferrer">
     <img src="./source/images/icons/stun-logo.svg" alt="Stun Logo" width="100">
   </a>
 </p>
@@ -57,8 +57,8 @@
 
 - 简洁 & 快速 & 易用 & **可定制性高**
 - 响应式设计
-- [二级导航菜单](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/advanced-setting.html#二级导航菜单)
-- 支持[图片懒加载](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/advanced-setting.html#图片懒加载)
+- [二级导航菜单](https://theme-stun.github.io/docs/zh-CN/advanced/advanced.html#二级导航菜单)
+- 支持[图片懒加载](https://theme-stun.github.io/docs/zh-CN/advanced/advanced.html#图片懒加载)
 - 支持 [Pjax](https://github.com/defunkt/jquery-pjax)
 - 支持 [PWA](https://developers.google.com/web/progressive-web-apps)
 - 支持 [Fancybox](https://github.com/fancyapps/fancybox)
@@ -67,9 +67,9 @@
 - 支持 [Gitalk](https://github.com/gitalk/gitalk)、[Valine](https://valine.js.org/)、[Livere](https://livere.com/)、[Disqus](https://disqus.com/)、[Utterances](https://github.com/utterance/utterances) 评论
 - 瀑布流式的[相册页面](https://liuyib.github.io/gallery/)
 - 内置[谷歌广告](https://www.google.cn/adsense/start/)，一键开启
-- 代码高亮，[多种配色](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/advanced-setting.html#代码高亮)可选
-- 好看的[背景特效](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/third-part.html#ribbon)
-- 超详细[配置文档](https://liuyib.github.io/hexo-theme-stun/)
+- 代码高亮，[多种配色](https://theme-stun.github.io/docs/zh-CN/advanced/advanced.html#代码高亮)可选
+- 好看的[背景特效](https://theme-stun.github.io/docs/zh-CN/advanced/third-part.html#ribbon)
+- 超详细[配置文档](https://theme-stun.github.io/docs/zh-CN/)
 
 ## :package: 安装
 
@@ -113,15 +113,15 @@ $ git pull
 
 ## :page_facing_up: 文档
 
-请查看：[https://liuyib.github.io/hexo-theme-stun/zh-CN/](https://liuyib.github.io/hexo-theme-stun/zh-CN/)
+请查看：[https://theme-stun.github.io/docs/zh-CN/](https://theme-stun.github.io/docs/zh-CN/)
 
 ## :question: 问题
 
-如果遇到问题，首先请仔细阅读[文档](https://liuyib.github.io/hexo-theme-stun/zh-CN/)，或者查看[常见问题](https://github.com/liuyib/hexo-theme-stun/blob/master/FAQ.md)。当以上的方法都无法帮助你时，再去提出 `issue`:hugs:。
+如果遇到问题，首先请仔细阅读[文档](https://theme-stun.github.io/docs/zh-CN/)，或者查看[常见问题](https://github.com/liuyib/hexo-theme-stun/blob/master/FAQ.md)。当以上的方法都无法帮助你时，再去提出 `issue`:hugs:。
 
 ## :handshake: 贡献
 
-在提出 Pull request 之前，请务必先阅读[贡献指南](https://liuyib.github.io/hexo-theme-stun/zh-CN/contribute/contribute.html)。
+在提出 Pull request 之前，请务必先阅读[贡献指南](https://theme-stun.github.io/docs/zh-CN/contribute/contribute.html)。
 
 感谢所有为 «Stun» 做出贡献的人！
 

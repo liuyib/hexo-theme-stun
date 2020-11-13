@@ -10,7 +10,7 @@
 
 在文章的 Markdown 文件中添加 `<!-- more -->` 标记，标记之前的部分会被当做文章摘要显示在首页（这个标记是 Hexo 的一个功能，与主题无关）。
 
-> 当然，Stun 主题也提供了自动保留文章摘要的功能。详参见：[文章摘要](https://liuyib.github.io/hexo-theme-stun/zh-CN/guide/primary-setting.html#%E6%96%87%E7%AB%A0%E6%91%98%E8%A6%81)
+> 当然，Stun 主题也提供了自动保留文章摘要的功能。详参见：[文章摘要](https://theme-stun.github.io/docs/zh-CN/guide/primary.html#文章摘要)
 
 ## 各种控制台报错问题
 
@@ -20,7 +20,7 @@
 
   如果你没有更新主题版本之前可以正常运行，更新之后控制台就会报错，那么这样的错误都是和**配置文件**相关，分为以下两种情况：
 
-  - 你使用了[平滑升级](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/advanced-setting.html#%E5%B9%B3%E6%BB%91%E5%8D%87%E7%BA%A7)这一特性来备份配置文件
+  - 你使用了[平滑升级](https://theme-stun.github.io/docs/zh-CN/advanced/advanced.html#平滑升级)这一特性来备份配置文件
 
     由于主题在新的版本中**可能会**更改配置项（如果有更改，会在[版本发布的文档](https://github.com/liuyib/hexo-theme-stun/releases)中进行说明），你**必须**保持 `stun.yml` 和 主题的 `_config.yml` 里的配置项同步，否则就会出现报错。
 
@@ -86,4 +86,4 @@ pjax:
   avoid_banner: true
 ```
 
-> 注意：启用上述功能后，Pjax 的配置项 `scrollTo` 将失效。详参见：[启用 Pjax](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/third-part.html#%E5%90%AF%E7%94%A8-pjax)
+> 注意：启用上述功能后，Pjax 的配置项 `scrollTo` 将失效。详参见：[启用 Pjax](https://theme-stun.github.io/docs/zh-CN/advanced/third-part.html#启用-pjax)

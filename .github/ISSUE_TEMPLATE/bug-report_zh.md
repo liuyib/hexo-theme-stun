@@ -15,7 +15,7 @@ assignees: ''
 - [] 是的，我搜索并阅读了 [Issues 列表](https://github.com/liuyib/hexo-theme-stun/issues)（包括关闭的），但是没有帮助到我。
 - [] 是的，我是第一次使用 Stun 主题。
 - [] 是的，我之前用过 Stun 主题，并且可以正常运行。但是当我做了一些更改后，主题就无法正常运行了。
-- [] 是的，我使用了 [平滑升级](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/advanced.html#%E5%B9%B3%E6%BB%91%E5%8D%87%E7%BA%A7) 的特性，并且阅读了其文档。
+- [] 是的，我使用了 [平滑升级](https://theme-stun.github.io/docs/zh-CN/advanced/advanced.html#%E5%B9%B3%E6%BB%91%E5%8D%87%E7%BA%A7) 的特性，并且阅读了其文档。
 
 ## 环境信息
 

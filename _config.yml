@@ -689,7 +689,7 @@ math:
   per_page: false
   # ! -------------------------------------------------------------------------------
   # ! Please see the documentation before using. See:
-  # ! https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/third-part.html#mathjax
+  # ! https://theme-stun.github.io/docs/zh-CN/advanced/third-part.html#mathjax
   # ! -------------------------------------------------------------------------------
   # Optional values: mathjax | katex
   engine: katex

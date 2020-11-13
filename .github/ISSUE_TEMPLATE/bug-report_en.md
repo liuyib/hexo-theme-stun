@@ -15,7 +15,7 @@ assignees: ''
 - [] Yes, I already searched for current [issues](https://github.com/liuyib/hexo-theme-stun/issues) and this did not help me.
 - [] Yes, I'm using the «Stun» theme for the first time.
 - [] Yes, I've used the «Stun» theme before and it worked normally. But when I made some changes, the theme does not work properly.
-- [] Yes, I used the [Smooth Upgrade](https://liuyib.github.io/hexo-theme-stun/zh-CN/advanced/advanced.html#%E5%B9%B3%E6%BB%91%E5%8D%87%E7%BA%A7) feature and have read its documentation.
+- [] Yes, I used the [Smooth Upgrade](https://theme-stun.github.io/docs/zh-CN/advanced/advanced.html#%E5%B9%B3%E6%BB%91%E5%8D%87%E7%BA%A7) feature and have read its documentation.
 
 ## Environment Information
 

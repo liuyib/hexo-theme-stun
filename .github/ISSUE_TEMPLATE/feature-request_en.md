@@ -12,7 +12,7 @@ assignees: ''
 
 <!-- Change [] to [x] to select -->
 - [] Yes, I have read [FAQ](https://github.com/liuyib/hexo-theme-stun/blob/master/FAQ.md).
-- [] Yes, I have read the documents of [Stun](https://liuyib.github.io/hexo-theme-stun/).
+- [] Yes, I have read the documents of [Stun](https://theme-stun.github.io/docs/).
 
 ## Expected behaviour
 
