@@ -8,8 +8,6 @@
     "release": "standard-version",
     "release:lts": "npm run release -- --release-as",
     "release:pre": "npm run release -- --prerelease",
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
     "lint": "standard",
     "lint:fix": "standard --fix"
   },
@@ -31,11 +29,10 @@
     "commitizen": "^4.2.2",
     "commitlint-config-cz": "^0.13.2",
     "cz-customizable": "^6.3.0",
-    "eslint": "^7.12.1",
+    "eslint": "^7.13.0",
     "husky": "^4.3.0",
     "standard": "^14.3.4",
-    "standard-version": "^9.0.0",
-    "vuepress": "^1.7.1"
+    "standard-version": "^9.0.0"
   },
   "standard": {
     "globals": [
