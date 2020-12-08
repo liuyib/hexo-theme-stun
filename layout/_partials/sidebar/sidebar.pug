@@ -1,4 +1,4 @@
-- var isShowToc = is_post() && ((page.toc !== false) && theme.toc.enable);
+- var isShowToc = (page.toc === true || (is_post() && page.toc !== false)) && theme.toc.enable;
 
 if isShowToc
   div.sidebar-nav
