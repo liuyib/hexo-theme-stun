@@ -6,7 +6,7 @@ $(document).ready(function () {
     .slice(0, -1)
 
   function initTocDisplay () {
-    if ($('.post-body').find(HEADING_SELECTOR)[0] || $('.custompage').find(HEADING_SELECTOR)[0]) {
+    if ($('.post-body, .custompage').find(HEADING_SELECTOR)[0]) {
       return
     }
     $('.sidebar-nav').addClass('hide')
@@ -23,7 +23,7 @@ $(document).ready(function () {
   // Automatically expand items in the article directory
   //   based on the scrolling of heading in the article.
   function autoSpreadToc () {
-    var $postBody = $('.post-body').length > 0 ? $('.post-body') : $('.custompage')
+    var $postBody = $('.post-body, .custompage')
     var $allTocItem = $('.sidebar-toc li')
     var $headings = $postBody.find(HEADING_SELECTOR)
     var $firsetChild = $headings.first()
