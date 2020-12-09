@@ -1,4 +1,9 @@
-- var isShowToc = is_post() && ((page.toc !== false) && theme.toc.enable);
+-
+  var isShowToc = page.toc === true;
+
+  if (typeof page.toc !== 'boolean') {
+    isShowToc = theme.toc.enable && is_post();
+  }
 
 if isShowToc
   div.sidebar-nav
