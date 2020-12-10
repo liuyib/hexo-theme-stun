@@ -4,6 +4,7 @@
   var isNoHeader = !theme.header.enable || (is_post() && !theme.header.show_on.post);
   var isEnableNoHeader = !theme.header.enable || !theme.header.show_on.post;
   var isShowReward = typeof page.reward === 'boolean' ? page.reward === true : (theme.reward.enable && is_post());
+  var isShowCC = typeof page.copyright === 'boolean' ? page.copyright === true : (theme.creative_commons.enable && is_post());
 
   var pjax = false;
   var dataPjax = {};

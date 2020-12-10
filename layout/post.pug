@@ -19,7 +19,7 @@ block content
         div.post-ending.ending
           div.ending__text= __('post.end')
 
-      if (page.copyright !== false) && (theme.creative_commons.enable && theme.creative_commons.post)
+      if page.copyright === true || (isShowCC && theme.creative_commons.post)
         include ./_partials/widgets/copyright.pug
 
       if theme.post_widget.tags
