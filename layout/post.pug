@@ -34,7 +34,7 @@ block content
       if theme.post_widget.share.enable
         include ./_partials/widgets/share.pug
 
-      if (page.reward !== false) && theme.reward.enable
+      if isShowReward
         include ./_partials/widgets/reward.pug
 
       include ./_partials/widgets/paginator.pug
