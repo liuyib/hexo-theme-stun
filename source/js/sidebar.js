@@ -53,7 +53,8 @@ $(document).ready(function () {
       return
     }
     if (currHeading !== lastHeading) {
-      var $targetLink = $('.sidebar-toc a[href="#' + currHeading + '"]')
+      var anchor = window.decodeURIComponent(currHeading)
+      var $targetLink = $('.sidebar-toc a[href="#' + anchor + '"]')
       $allTocItem.removeClass('active current')
       $targetLink.parents('li').addClass('active')
       $targetLink.parent().addClass('current')
