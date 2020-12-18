@@ -1,0 +1,36 @@
+-
+  var waline_js = 'https://unpkg.com/@waline/client/dist/Waline.min.js';
+
+  if (theme.cdn.waline) {
+    waline_js = theme.cdn.waline;
+  }
+
+script(src=waline_js)
+
+script&attributes(dataPjax).
+  function loadWaline () {
+    var GUEST_INFO = ['nick', 'mail', 'link'];
+    var guest_info = '!{ theme.waline.meta }';
+
+    guest_info = guest_info.split(',').filter(function(item) {
+      return GUEST_INFO.indexOf(item) > -1;
+    });
+
+    new Waline({
+      el: '#waline-container',
+      serverURL: '!{ theme.waline.serverURL }',
+      placeholder: '!{ theme.waline.placeholder }',
+      pageSize: '!{ theme.waline.pageSize }' || 10,
+      lang: '!{ theme.waline.language }' || 'zh-cn',
+      visitor: !{ theme.waline.visitor },
+      avatar: '!{ theme.waline.avatar }',
+      path: window.location.pathname,
+      meta: guest_info
+    });
+  }
+
+  if (!{ pjax }) {
+    loadWaline();
+  } else {
+    window.addEventListener('DOMContentLoaded', loadWaline, false);
+  }

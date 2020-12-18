@@ -1,6 +1,9 @@
 if theme.disqus.enable
   div#comments.comments
     div#disqus_thread
+else if theme.waline.enable
+  div#comments.comments
+    div#waline-container
 else if theme.valine.enable
   div#comments.comments
     div#valine-container
