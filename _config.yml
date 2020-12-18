@@ -482,6 +482,25 @@ gitalk:
   # Optional values: en | zh-CN | es-ES | fr | ru | zh-TW
   language:
 
+# Waline
+# See: https://waline.js.org/
+waline:
+  enable: false
+  # serverURL
+  serverURL:
+  # Comment box placeholder.
+  placeholder: Just go go
+  # Gravatar style.
+  avatar: mp
+  # Custom comment header.
+  meta: nick,mail,link
+  # the number of comments of each page
+  pageSize:
+  # Optional values: en | zh-cn | zh-TW | jp
+  lang: zh-CN,zh-TW,en
+  # visitor statistics
+  visitor:
+
 # Valine
 # See: https://valine.js.org/quickstart.html
 valine:
@@ -865,6 +884,7 @@ icon:
   prompt_info: fas fa-arrow-circle-right
   prompt_warning: fas fa-exclamation-circle
   prompt_error: fas fa-times-circle
+  waline_visitor: fas fa-eye
   valine_visitor: fas fa-eye
   post_heading: fas fa-link
   notetag_default: fas fa-arrow-circle-right
@@ -924,6 +944,12 @@ cdn:
   # leancloud_storage: //cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js
   valine:
   leancloud_storage:
+
+  # Waline
+  # See: https://github.com/lizheming/waline
+  # Example:
+  # minivaline: //cdn.jsdelivr.net/npm/minivaline/dist/MiniValine.min.js
+  waline:
 
   # minivaline
   # See: https://github.com/MiniValine/MiniValine
