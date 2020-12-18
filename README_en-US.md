@@ -29,8 +29,8 @@
   <a href="https://github.com/liuyib/hexo-theme-stun/releases" target="_blank" rel="noopener noreferrer">
     <img alt="GitHub release" src="https://img.shields.io/github/release/liuyib/hexo-theme-stun.svg">
   </a>
-  <a href="https://gitter.im/liuyib/hexo-theme-stun?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge" target="_blank" rel="noopener noreferrer">
-    <img alt="Gitter" src="https://badges.gitter.im/liuyib/hexo-theme-stun.svg">
+  <a href="https://github.com/liuyib/hexo-theme-stun/discussions" target="_blank" rel="noopener noreferrer">
+    <img alt="Github Discussions" src="https://img.shields.io/badge/Github-Discussions-4fb999.svg">
   </a>
 </p>
 
