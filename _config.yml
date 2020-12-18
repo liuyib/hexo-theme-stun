@@ -486,7 +486,7 @@ gitalk:
 # See: https://waline.js.org/
 waline:
   enable: false
-  # serverURL
+  # The URL of your server.
   serverURL:
   # Comment box placeholder.
   placeholder: Just go go
@@ -494,12 +494,12 @@ waline:
   avatar: mp
   # Custom comment header.
   meta: nick,mail,link
-  # the number of comments of each page
-  pageSize:
-  # Optional values: en | zh-cn | zh-TW | jp
+  # The number of comments per page.
+  pageSize: 10
+  # Optional values: en | zh-CN | zh-TW | jp
   lang: zh-CN,zh-TW,en
-  # visitor statistics
-  visitor:
+  # Article reading statistics.
+  visitor: false
 
 # Valine
 # See: https://valine.js.org/quickstart.html
@@ -948,7 +948,7 @@ cdn:
   # Waline
   # See: https://github.com/lizheming/waline
   # Example:
-  # minivaline: //cdn.jsdelivr.net/npm/minivaline/dist/MiniValine.min.js
+  # waline: //unpkg.com/@waline/client@0.8.5/dist/Waline.min.js
   waline:
 
   # minivaline
