@@ -5,35 +5,43 @@ module.exports = {
   types: [
     {
       value: 'feat',
-      name : '✨  feat:        A new feature'
+      name : 'feat:        A new feature'
     },
     {
       value: 'fix',
-      name : '🐞  fix:         A bug fix'
+      name : 'fix:         A bug fix'
+    },
+    {
+      value: 'pref',
+      name: 'pref:        A code change that improves performance',
     },
     {
       value: 'refactor',
-      name : '🔨  refactor:    A code change that neither fixes a bug nor adds a feature'
-    },
-    {
-      value: 'docs',
-      name : '📚  docs:        Documentation only changes'
-    },
-    {
-      value: 'style',
-      name : '🎨  style:       Code Style, Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)'
+      name : 'refactor:    A code change that neither fixes a bug nor adds a feature'
     },
     {
       value: 'test',
-      name : '✅  test:        Add missing tests or correcting existing tests'
+      name : 'test:        Add missing tests or correcting existing tests'
+    },
+    {
+      value: 'style',
+      name : 'style:       Changes that do not affect the meaning of the code \n               (white-space, formatting, missing semi-colons, etc)'
+    },
+    {
+      value: 'ci',
+      name: 'ci:          Add or Modify the configuration of Continuous Integration(CI)',
+    },
+    {
+      value: 'docs',
+      name : 'docs:        Documentation only changes'
     },
     {
       value: 'chore',
-      name : '📦  chore:       Other changes that don\'t modify src or test files. Such as updating build tasks, package manager'
+      name : 'chore:       Other changes that don\'t modify src or test files. Such as updating build tasks, package manager'
     },
     {
       value: 'revert',
-      name:  '⏪  revert:      Revert to a commit'
+      name:  'revert:      Revert to a commit'
     }
   ]
 };
