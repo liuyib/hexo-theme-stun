@@ -136,6 +136,10 @@ Thank you to all the people who have already contributed to «Stun»!
 | :---: | :---: | :---: |:---: | :---: | :---: |
 | Not Supported | 12+ | 41+ | 45+ | 10+ | 32+ |
 
+## :star: Trend of Star
+
+[![Stargazers over time](https://starchart.cc/liuyib/hexo-theme-stun.svg)](https://starchart.cc/liuyib/hexo-theme-stun.svg)
+
 ## :page_with_curl: License
 
 [MIT](https://github.com/liuyib/hexo-theme-stun/blob/master/LICENSE) Copyright (c) 2019-present liuyib

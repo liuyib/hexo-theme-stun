@@ -136,6 +136,10 @@ $ git pull
 | :---: | :---: | :---: |:---: | :---: | :---: |
 | Not Supported | 12+ | 41+ | 45+ | 10+ | 32+ |
 
+## :star: Star 历史趋势
+
+[![Stargazers over time](https://starchart.cc/liuyib/hexo-theme-stun.svg)](https://starchart.cc/liuyib/hexo-theme-stun.svg)
+
 ## :page_with_curl: 开源协议
 
 [MIT](https://github.com/liuyib/hexo-theme-stun/blob/master/LICENSE) Copyright (c) 2019-present liuyib
