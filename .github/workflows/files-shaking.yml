@@ -1,5 +1,5 @@
 # Delete files that are used only in development.
-name: 'ShakeFiles'
+name: 'FilesShaking'
 
 on:
   push:
@@ -26,6 +26,7 @@ jobs:
           mv layout ./dist/layout
           mv scripts ./dist/scripts
           mv source ./dist/source
+          mv package.json ./dist/package.json
           mv _config.yml ./dist/_config.yml
 
       - name: Deploy
