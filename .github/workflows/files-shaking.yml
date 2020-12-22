@@ -37,5 +37,5 @@ jobs:
           github_token: ${{ secrets.MY_GITHUB_TOKEN }}
           user_name: ${{ secrets.MY_USER_NAME }}
           user_email: ${{ secrets.MY_USER_EMAIL }}
-          commit_message: Shake files that are used only in development
+          commit_message: Reduce files and keep only those required at runtime
           disable_nojekyll: true
