@@ -1,0 +1,40 @@
+# Delete files that are used only in development.
+name: 'ShakeFiles'
+
+on:
+  push:
+    branchs: [master]
+  pull_request:
+    branchs: [master]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Node.js v12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+
+      - name: Move files
+        id: move_files
+        run: |
+          mkdir ./dist
+          mv languages ./dist/languages
+          mv layout ./dist/layout
+          mv scripts ./dist/scripts
+          mv source ./dist/source
+          mv _config.yml ./dist/_config.yml
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_dir: ./dist
+          publish_branch: dist
+          github_token: ${{ secrets.MY_GITHUB_TOKEN }}
+          user_name: ${{ secrets.MY_USER_NAME }}
+          user_email: ${{ secrets.MY_USER_EMAIL }}
+          commit_message: Shake files that are used only in development
+          disable_nojekyll: true
