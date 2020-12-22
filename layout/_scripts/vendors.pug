@@ -1,0 +1,44 @@
+-
+  var jquery_js = 'https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js';
+  var velocity_js = 'https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js';
+  var velocity_ui_js = 'https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js';
+
+  if (theme.cdn.jquery) jquery_js = theme.cdn.jquery;
+  if (theme.cdn.velocity) velocity_js = theme.cdn.velocity;
+  if (theme.cdn.velocity_ui) velocity_ui_js = theme.cdn.velocity_ui;
+
+script(src=jquery_js)
+script(src=velocity_js)
+script(src=velocity_ui_js)
+
+if theme.canvas_ribbon.enable
+  - var ribbon_js = 'https://cdn.jsdelivr.net/npm/ribbon.js@latest/dist/ribbon.min.js';
+  - var ribbon = theme.canvas_ribbon;
+  - if (theme.cdn.canvas_ribbon) ribbon_js = theme.cdn.canvas_ribbon;
+  script(src=ribbon_js size=ribbon.size alpha=ribbon.alpha zIndex=ribbon.zIndex)
+
+if theme.canvas_nest.enable
+  - var nest_js = 'https://cdn.jsdelivr.net/npm/canvas-nest.js@1.0.1/dist/canvas-nest.min.js';
+  - var nest = theme.canvas_nest;;
+  - if (theme.cdn.canvas_nest) nest_js = theme.cdn.canvas_nest;
+  script(src=nest_js color=nest.color opacity=nest.opacity count=nest.count zIndex=nest.zIndex)
+
+if theme.fancybox
+  - var fancybox_js = 'https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js';
+  - if (theme.cdn.fancybox_js) fancybox_js = theme.cdn.fancybox_js;
+  script(src=fancybox_js)
+
+if theme.gallery_waterfall.enable
+  - var masonry_js = 'https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js';
+  - if (theme.cdn.masonry) masonry_js = theme.cdn.masonry;
+  script(src=masonry_js)
+
+if theme.lazyload.enable
+  - var lazyload_js = 'https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.min.js';
+  - if (theme.cdn.lazyload) lazyload_js = theme.cdn.lazyload;
+  script(src=lazyload_js)
+
+if theme.post_widget.share.enable
+  - var share_js = 'https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js';
+  - if (theme.cdn.share_js) share_js = theme.cdn.share_js;
+  script(src=share_js)

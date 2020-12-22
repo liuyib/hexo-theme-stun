@@ -1,0 +1,18 @@
+.table-plugin {
+  tr {
+    transition: background-color .2s ease;
+
+    &:nth-of-type(even) {
+      background-color: var(--color-gray-150);
+    }
+
+    &:hover {
+      background-color: var(--color-gray-200);
+    }
+  }
+
+  th,
+  td {
+    min-width: 5rem;
+  }
+}

@@ -1,0 +1,19 @@
+nav(class=`${is_post() ? 'post-paginator' : ''}`).paginator
+  if !is_post()
+    - var prevText = `<i class="${theme.icon.paginator_prev}"></i>`;
+    - var nextText = `<i class="${theme.icon.paginator_next}"></i>`;
+    div.paginator-inner
+      != paginator({ prev_text: prevText, next_text: nextText, mid_size: 1, escape: false })
+  else
+    if page.prev
+      div.paginator-prev
+        a.paginator-prev__link(href=url_for(page.prev.path))
+          span.paginator-prev__icon
+            i(class=theme.icon.paginator_prev)
+          span.paginator-prev__text= page.prev.title || __('post.untitled')
+    if page.next
+      div.paginator-next
+        a.paginator-next__link(href=url_for(page.next.path))
+          span.paginator-prev__text= page.next.title || __('post.untitled')
+          span.paginator-next__icon
+            i(class=theme.icon.paginator_next)

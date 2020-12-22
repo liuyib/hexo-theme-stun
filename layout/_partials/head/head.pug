@@ -1,0 +1,117 @@
+-
+  var title = __('title') !== 'title' ? __('title') : config.title;
+  var subtitle = __('subtitle') !== 'subtitle' ? __('subtitle') : config.subtitle;
+  var author = __('author') !== 'author' ? __('author') : config.author;
+  var description = __('description') !== 'description' ? __('description') : config.description;
+  var keywords = config.author + ', ' + config.title;
+  var title_suffix = ' | ' + title;
+
+  if (is_home()) {
+    title = title + ((theme.index_subtitle && subtitle) ? (' | ' + subtitle) : '');
+  } else if (is_archive()) {
+    title = __('title.archive') + title_suffix;
+  } else if (is_category()) {
+    title = __('title.category') + ': ' + page.category + title_suffix;
+  } else if (is_tag()) {
+    title = __('title.tag') + ': ' + page.tag + title_suffix;
+  } else if (is_post()) {
+    title = (page.title || __('post.untitled')) + title_suffix;
+  } else {
+    if (page.type === 'tags') {
+      title = __('title.tag') + title_suffix;
+    } else if (page.type === 'categories') {
+      title = __('title.category') + title_suffix;
+    } else {
+      title = page.title + title_suffix;
+    }
+  }
+
+meta(charset="UTF-8")
+meta(http-equiv="X-UA-Compatible" content="IE=edge")
+
+if (theme.kill_old_ie && theme.kill_old_ie.enable)
+  include ./kill-old-ie.pug
+
+meta(name="viewport" content="width=device-width, initial-scale=1")
+meta(name="format-detection" content="telephone=no")
+meta(name="apple-mobile-web-app-capable" content="yes")
+meta(name="apple-mobile-web-app-status-bar-style" content="black")
+
+if theme.pwa.enable
+  if theme.pwa.theme_color
+    meta(name="theme-color" content=theme.pwa.theme_color)
+  if theme.pwa.manifest
+    link(rel="manifest" href=`${url_for(theme.pwa.manifest)}?v=${stun_env('version')}`)
+
+if theme.favicon.small
+  link(rel="icon" href=`${url_for(theme.favicon.small)}?v=${stun_env('version')}` type="image/png" sizes="16x16")
+if theme.favicon.medium
+  link(rel="icon" href=`${url_for(theme.favicon.medium)}?v=${stun_env('version')}` type="image/png" sizes="32x32")
+if theme.favicon.apple_touch_icon
+  link(rel="apple-touch-icon" href=`${url_for(theme.favicon.apple_touch_icon)}?v=${stun_env('version')}` sizes="180x180")
+if theme.favicon.safari_pinned_tab
+  link(rel="mask-icon" href=`${url_for(theme.favicon.safari_pinned_tab)}?v=${stun_env('version')}` color="#54bcff")
+if theme.favicon.msapplication
+  meta(name="msapplication-TileImage" content=`${url_for(theme.favicon.msapplication)}`)
+  meta(name="msapplication-TileColor" content="#000000")
+
+if theme.google_site_verification
+  meta(name="google-site-verification" content=theme.google_site_verification)
+if theme.bing_site_verification
+  meta(name="msvalidate.01" content=theme.bing_site_verification)
+if theme.baidu_site_verification
+  meta(name="baidu-site-verification" content=theme.baidu_site_verification)
+if theme.qihu360_site_verification
+  meta(name="360-site-verification" content=theme.qihu360_site_verification)
+if theme.sougou_site_verification
+  meta(name="sogou_site_verification" content=theme.sougou_site_verification)
+
+!= open_graph()
+
+title= title
+
+if theme.canonical
+  link(ref="canonical" href=full_url_for(page.path))
+
+if theme.feed.rss
+  link(rel="alternate" href=url_for(theme.feed.rss) type="application/atom+xml")
+
+link(rel="dns-prefetch" href="https://cdn.jsdelivr.net")
+
+- var fontawesome_css = 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css';
+- if (theme.cdn.fontawesome) fontawesome_css = theme.cdn.fontawesome;
+link(rel="stylesheet" href=fontawesome_css type="text/css")
+
+if theme.fancybox
+  - var fancybox_css = 'https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css';
+  - if (theme.cdn.fancybox_css) fancybox_css = theme.cdn.fancybox_css;
+  link(rel="stylesheet" href=fancybox_css type="text/css")
+
+if page.comments || theme.pjax.enable
+  if theme.gitalk.enable
+    - var gitalk_css = 'https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.css';
+    - if (theme.cdn.gitalk_css) gitalk_css = theme.cdn.gitalk_css;
+    link(rel="stylesheet" href=gitalk_css type="text/css")
+
+if theme.algolia_search.enable
+  - var instantsearch_css = 'https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.css';
+  - if (theme.cdn.instantsearch_css) instantsearch_css = theme.cdn.instantsearch_css;
+  link(rel="stylesheet" href=instantsearch_css type="text/css")
+
+if theme.post_widget.share.enable
+  - var share_css = 'https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css';
+  - if (theme.cdn.share_css) share_css = theme.cdn.share_css;
+  link(rel="stylesheet" href=share_css type="text/css")
+
+link(rel="stylesheet" href=`${url_for(theme.css)}/index.css?v=${stun_env('version')}`)
+
+if theme.google_analytics
+  link(rel="dns-prefetch" href="https://www.googletagmanager.com")
+if theme.baidu_analytics
+  link(rel="dns-prefetch" href="https://hm.baidu.com")
+if theme.tencent_analytics
+  link(rel="dns-prefetch" href="https://tajs.qq.com")
+
+include ../../_third-party/advertising/index.pug
+include ../../_third-party/analytics/index.pug
+include ../config.pug

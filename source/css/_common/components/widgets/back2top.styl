@@ -1,0 +1,29 @@
+.back2top {
+  position: fixed;
+  right: 0;
+  bottom: 5vh;
+  transition: transform .2s ease;
+  transform: translateX(100%);
+  cursor: pointer;
+
+  &--show {
+    transform: translateX(-100%);
+  }
+
+  &--hide {
+    transform: translateX(100%);
+  }
+
+  &__icon {
+    display: block;
+    font-size: 1.2rem;
+    line-height: 1;
+    color: convert(hexo-config('back2top.icon.color') || '#666');
+    transition: color .2s ease;
+    transform: rotate(convert(hexo-config('back2top.icon.rotate') || '0'));
+
+    &:hover {
+      color: convert(hexo-config('back2top.icon.hover_color') || '#999');
+    }
+  }
+}

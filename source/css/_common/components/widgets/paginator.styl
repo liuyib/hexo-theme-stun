@@ -1,0 +1,75 @@
+.paginator {
+  margin-top: 1rem;
+  text-align: center;
+
+  // ------------------------------
+  // Pagination for Home/Archives
+  // ------------------------------
+  &-inner {
+    border-radius: 5px;
+    padding: 12px 0;
+    background-color: var(--color-gray-150);
+  }
+
+  .page-number,
+  .prev,
+  .next {
+    display: inline-block;
+    margin: 0 .5em;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    width: 1.5rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    vertical-align: middle;
+    transition: border .2s ease;
+
+    &:hover {
+      border-color: var(--color-gray-260);
+    }
+  }
+
+  .current {
+    color: $pagination-item-active-color;
+    background-color: $pagination-item-active-bg-color;
+
+    &:hover {
+      border-color: transparent;
+    }
+  }
+
+  // -------------------------
+  // Pagination for Articles
+  // -------------------------
+  &-prev,
+  &-next {
+    width: 100%;
+
+    &__link {
+      break-word();
+      color: $pagination-arrow-color;
+      transition: color .2s ease;
+
+      &:hover {
+        color: $pagination-arrow-hover-color;
+      }
+    }
+  }
+
+  &-prev {
+    text-align: left;
+
+    &__icon {
+      margin-right: .3rem;
+    }
+  }
+
+  &-next {
+    text-align: right;
+
+    &__icon {
+      margin-left: .3rem;
+    }
+  }
+}

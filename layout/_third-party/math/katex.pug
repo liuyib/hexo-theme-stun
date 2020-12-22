@@ -1,0 +1,7 @@
+link(href=theme.math.katex.cdn rel="stylesheet" type="text/css")
+
+if theme.math.katex.copy_tex.enable
+  if theme.math.katex.copy_tex.copy_tex_css
+    link(href=theme.math.katex.copy_tex.copy_tex_css rel="stylesheet" type="text/css")
+  if theme.math.katex.copy_tex.copy_tex_js
+    script(src=theme.math.katex.copy_tex.copy_tex_js)

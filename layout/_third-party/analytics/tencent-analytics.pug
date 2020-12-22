@@ -1,0 +1,12 @@
+script.
+  (function() {
+    var hm = document.createElement('script');
+    hm.src = 'https://tajs.qq.com/stats?sId=!{ theme.tencent_analytics }';
+    hm.async = true;
+
+    if (!{ theme.pjax.enable }) {
+      hm.setAttribute('data-pjax', '');
+    }
+    var s = document.getElementsByTagName('script')[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();

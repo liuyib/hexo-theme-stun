@@ -1,0 +1,31 @@
+extends ./_layout.pug
+
+block content
+  include ./_mixins/gallery.pug
+
+  if page.type === 'tags'
+    div.tagcloud
+      div.tagcloud-total= __('page.tags') + ' - '
+        span= site.tags.length
+      - var min_font = theme.tag_cloud ? theme.tag_cloud.min_size : 14;
+      - var max_font = theme.tag_cloud ? theme.tag_cloud.max_size : 24;
+      - var start_color = theme.tag_cloud ? theme.tag_cloud.start_color : '#a4d8fa';
+      - var end_color = theme.tag_cloud ? theme.tag_cloud.end_color : '#1b9ef3';
+      div.tagcloud-item
+        != tagcloud({min_font: min_font, max_font: max_font, amount: theme.tag_cloud.max_amount, color: true, start_color, end_color})
+  else if page.type === 'categories'
+    div.category
+      div.category-total= __('page.categories') + ' - '
+        span= site.categories.length
+      != list_categories()
+  else
+    div.custompage
+      if page.photos && page.photos.length
+        +gallery(page)
+      != page.content
+
+  if isShowReward
+    include ./_partials/widgets/reward.pug
+
+  if isShowCC
+    include ./_partials/widgets/copyright.pug

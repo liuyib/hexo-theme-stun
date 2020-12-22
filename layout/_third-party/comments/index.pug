@@ -1,0 +1,21 @@
+if page.comments || theme.pjax.enable
+  if theme.disqus.enable
+    include ./disqus.pug
+  else if theme.waline.enable
+    include ./waline.pug
+  else if theme.valine.enable
+    include ./valine.pug
+  else if theme.minivaline.enable
+    include ./minivaline.pug
+  else if theme.gitalk.enable
+    include ./gitalk.pug
+  else if theme.utterances.enable
+    include ./utterances.pug
+  else if theme.livere.enable
+    include ./livere.pug
+  else if theme.fbcomments.enable
+    include ./fbcomments.pug
+else if theme.waline.enable && theme.waline.visitor
+  include ./waline.pug
+else if theme.valine.enable && theme.valine.visitor
+  include ./valine.pug

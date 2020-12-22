@@ -1,0 +1,18 @@
+mixin postMetaItem({ isIconOnly, iconClass, iconText, popoverPos, popoverText, valueText, valueAttr })
+  -
+    var iconElemAttr = {};
+    var valElemAttr = {};
+
+    if (isIconOnly) {
+      iconElemAttr['data-popover'] = popoverText;
+      iconElemAttr['data-popover-pos'] = popoverPos;
+    }
+    if (valueAttr) {
+      valElemAttr = valueAttr;
+    }
+
+  span.post-meta-item__icon&attributes(iconElemAttr)
+    i(class=iconClass)
+  if !isIconOnly
+    span.post-meta-item__info= iconText
+  span.post-meta-item__value&attributes(valElemAttr)= valueText

@@ -1,0 +1,188 @@
+// Global variables
+// ==========================================
+// Global color
+$blue-light    = #49b1f5
+$blue-lighter  = #a4d8fa
+$red-dark      = #ff0000
+$orange-dark   = #fc6423
+$orange-light  = #ff8d5c
+$yellow-dark   = #f2df17
+$yellow-light  = #fff494
+
+// -------------------------------------------
+// z-index list
+// -------------------------------------------
+$z-index-2 = -2
+$z-index-1 = -1
+$z-index0  = 0
+$z-index1  = 1
+$z-index2  = 2
+
+// -------------------------------------------
+// Layout
+// -------------------------------------------
+// Subtract 0.02px to prevent bugs when certain device sizes
+//   are exactly equal to critical dimensions
+$xs-width = 576px - 0.02px
+$sm-width = 768px - 0.02px
+$md-width = 992px - 0.02px
+$lg-width = 1200px - 0.02px
+
+get-main-padding() {
+  $main-padding = convert(hexo-config('layout.main_padding.default'));
+  $gap-left = 0;
+  $gap-right = 0;
+
+  if ($main-padding[1]) {
+    $gap-right = $main-padding[1];
+
+    if ($main-padding[3]) {
+      $gap-left = $main-padding[3];
+    } else {
+      $gap-left = $main-padding[1];
+    }
+  } else {
+    $gap-left = $gap-right = $main-padding[0];
+  }
+
+  return $gap-left $gap-right;
+}
+
+// Width
+$main-padding-width     = get-main-padding()[0] + get-main-padding()[1]
+$content-width          = convert(hexo-config('layout.content') || '$sm-width')
+$sidebar-width          = convert(hexo-config('layout.sidebar') || '300px')
+$content-sidebar-gap    = convert(hexo-config('layout.content_sidebar_gap') || '30px')
+if (hexo-config('sidebar.enable')) {
+  $main-width           = $content-width + $sidebar-width + $content-sidebar-gap + $main-padding-width
+} else {
+  $main-width           = $content-width + $main-padding-width
+}
+
+// -------------------------------------------
+// Font, line-height
+// -------------------------------------------
+// Line height
+$line-height-base       = 2    // global line height
+$line-height-heading    = 1.5  // <h1~6> line height
+$line-height-codeblock  = 1.7  // can`t less 1.3
+
+// Font size
+$font-size-rem          = 20px // <html>
+$font-size-base         = 14px // <body>
+$font-size-header       = $font-size-base + 4px
+$font-size-sidebar      = $font-size-base + 2px
+$font-size-main         = $font-size-base + 2px
+$font-size-footer       = $font-size-base + 2px
+//                        h1    h2    h3    h4    h5    h6
+$font-size-headings     = 2em 1.5em 1.25em 1em .875em .85em
+
+// Font family
+$font-family-chinese    = 'PingFang SC', 'Microsoft YaHei'
+$font-family-base       = $font-family-chinese, sans-serif, Arial
+$font-family-heading    = $font-family-base
+$font-family-code       = 'Source Code Pro', Consolas, Menlo, Monaco, 'Courier New', monospace
+$font-family-kbd        = consolas, 'Liberation Mono', courier, monospace
+$font-family-icons      = 'FontAwesome'
+
+// Font weight
+$font-weight-light      = 300
+$font-weight-normal     = 400
+$font-weight-bold       = 600
+$font-weight-bolder     = 700
+
+// Element color
+// -------------------------------------------
+// Selection ( ::selection )
+$selection-bg                  = #8be0e1
+$selection-color               = #fff
+
+// Body ( <body> )
+$body-bg-color                 = darken(#f4f5f5, 5%)
+
+// Link ( <a> )
+$link-color                    = #058ed2
+$link-hover-color              = #11a3eb
+$link-bottom-color             = transparent
+$link-bottom-hover-color       = #7ebef1
+
+// Heading ( <h1~6> )
+$heading-logo-color            = $orange-dark
+
+// Horizon line ( <hr> )
+$hr-color                      = #b8dcfd
+
+// Module color
+// -------------------------------------------
+// Header
+$header-bg-color                   = #2d2e30
+$header-text-color                 = #f5f6f7
+$header-nav-bg-color               = #2d2e30
+$header-menu-hover-color           = $blue-light
+
+// Footer
+$footer-bg-color                   = #2d2e30
+$footer-text-color                 = #f5f6f7
+$footer-link-color                 = #c20808
+$footer-link-hover-color           = #ed0b0b
+
+// Home page
+$home-readmore-bg-color            = #73c8ff
+$home-readmore-bg-hover-color      = $blue-light
+
+// Category page
+$category-list-dot-color           = $blue-light
+$category-list-dot-hover-color     = $orange-dark
+$category-link-color               = $blue-light
+$category-link-hover-color         = $orange-dark
+
+// Tag page
+$tag-hover-color                   = $orange-dark
+
+// Sidebar
+$sidebar-nav-text-hover-color      = $orange-dark
+$sidebar-social-color              = #a0daff
+$sidebar-social-hover-color        = darken(#a0daff, 20%)
+$sidebar-feed-email-color          = #54bcff
+$sidebar-feed-rss-color            = #ff8956
+$sidebar-state-post-color          = #54bcff
+$sidebar-state-tag-color           = #ff8956
+
+// Post
+$post-update-color                 = $blue-light
+$post-reading-time-color           = $blue-light
+$post-reading-count-color          = $orange-dark
+$post-tags-icon-color              = $blue-light
+
+// Post timeline (In the archive/tag/category page.)
+$post-timeline-line-color          = #c8edff
+$post-timeline-dot-color           = #6ec5ff
+$post-timeline-dot-hover-color     = $orange-dark
+
+// Pagination
+$pagination-item-active-color       = #f4f5f5
+$pagination-item-active-bg-color    = $blue-light
+$pagination-arrow-color             = $blue-light
+$pagination-arrow-hover-color       = $orange-dark
+
+// Reward
+$reward-btn-color                  = #ff6868
+$reward-btn-hover-color            = #e45c5c
+$reward-alipay-color               = #1caceb
+$reward-wechat-color               = #3cb034
+
+$loading-bar-bg-color              = #77b6ff
+$loading-bar-shadow-color          = alpha(#77b6ff, .7)
+
+// Notification
+$alert-success-color               = #52c41a
+$alert-info-color                  = #1890ff
+$alert-warning-color               = #faad14
+$alert-error-color                 = #f5222d
+
+// Note plugin
+$note-default-color                = var(--color-gray-600)
+$note-success-color                = #42b983
+$note-info-color                   = #4898dd
+$note-warning-color                = #e7c000
+$note-danger-color                 = #dc3b3b

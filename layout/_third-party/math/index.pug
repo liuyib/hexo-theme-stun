@@ -1,0 +1,14 @@
+if theme.math.enable
+  - var isHomeHasMath = false;
+  if is_home()
+    - page.posts.each(function (post) {
+      if post.math && !isHomeHasMath
+        - isHomeHasMath = true;
+    - })
+
+  if pjax || (!is_tag() && !is_category() && !is_archive())
+    if pjax || isHomeHasMath || (theme.math.per_page || page.math)
+      if theme.math.engine === 'mathjax'
+        include ./mathjax.pug
+      else if theme.math.engine === 'katex'
+        include ./katex.pug

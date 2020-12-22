@@ -1,0 +1,37 @@
+clearfix() {
+  &::before,
+  &::after {
+    content: ' ';
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+break-word() {
+  white-space: normal;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+break-all() {
+  white-space: normal;
+  word-wrap: normal;
+  word-break: break-all;
+}
+
+layout-card() {
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  background-color: var(--color-card);
+}
+
+fontawesome-base() {
+  font: normal normal normal 14px / 1 $font-family-icons;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

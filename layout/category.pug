@@ -1,0 +1,10 @@
+extends ./_layout.pug
+include ./_mixins/timeline.pug
+
+block content
+  div.categorypage
+    div.categorypage-title
+      span.categorypage-title__text= `${__('page.categories')} -- `
+      span.categorypage-title__name= page.category
+
+    +timeline(page.posts.data)

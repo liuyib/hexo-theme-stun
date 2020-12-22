@@ -1,0 +1,67 @@
+.search-input {
+  .ais-search-box {
+    max-width: 100%;
+  }
+}
+
+.algolia-hit-item {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-right: .8rem;
+    border: .15rem solid $blue-light;
+    border-radius: 50%;
+    width: .6rem;
+    height: .6rem;
+    background-color: #f5f6f7;
+    transition: color .2s;
+  }
+
+  em {
+    font-style: normal;
+    color: $red-dark;
+    background-color: transparent;
+  }
+}
+
+#algolia-pagination {
+  margin: .5rem 0;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+}
+
+.ais-pagination {
+  &--item {
+    a {
+      display: block;
+      border-radius: 3px;
+      width: 1.5rem;
+      height: 1.5rem;
+      font-size: $font-size-base + 2pxr;
+      line-height: 1.5rem;
+      text-align: center;
+      transition: color .2s ease, background-color .2s ease;
+      cursor: pointer;
+
+      &:hover {
+        color: #fff;
+        background-color: $blue-light;
+      }
+    }
+  }
+}
+
+#algolia-stats {
+  overflow: hidden;
+}
+
+.algolia-logo {
+  img {
+    width: 4rem;
+    height: 1.5rem;
+  }
+}

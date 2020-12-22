@@ -1,0 +1,112 @@
+include ./meta-item.pug
+
+mixin postHeader(post)
+  header.post-header
+    if post.top
+      include ../_partials/widgets/sticky-top.pug
+
+    h1.post-title
+      if post.link
+        a.post-title__link(href=url_for(post.link) target="_blank" rel="noopener" )
+          = post.title || post.link
+      else if is_post()
+        = post.title || __('post.untitled')
+      else
+        a.post-title__link(href=url_for(post.path))
+          = post.title || __('post.untitled')
+
+    if !post.link
+      - var isPostMetaIconOnly = theme.post_meta.icon_only;
+      div.post-meta
+        if theme.post_meta.created.enable
+          span.post-meta-item.post-meta-item--createtime
+            - var iconClass = theme.post_meta.created.icon;
+            +postMetaItem({
+              isIconOnly: isPostMetaIconOnly,
+              iconClass: iconClass,
+              iconText: __('post.created'),
+              popoverPos: 'up',
+              popoverText: __('popover.post.create_time'),
+              valueText: full_date(post.date, 'YYYY-MM-DD')
+            })
+
+        if theme.post_meta.updated.enable
+          span.post-meta-item.post-meta-item--updatetime
+            - var iconClass = theme.post_meta.updated.icon;
+            +postMetaItem({
+              isIconOnly: isPostMetaIconOnly,
+              iconClass: iconClass,
+              iconText: __('post.updated'),
+              popoverPos: 'up',
+              popoverText: __('popover.post.update_time'),
+              valueText: full_date(post.updated, 'YYYY-MM-DD')
+            })
+
+        if theme.post_meta.word_count.enable
+          span.post-meta-item.post-meta-item--wordcount
+            - var iconClass = theme.post_meta.word_count.icon;
+            +postMetaItem({
+              isIconOnly: isPostMetaIconOnly,
+              iconClass: iconClass,
+              iconText: __('post.word_count'),
+              popoverPos: 'up',
+              popoverText: __('popover.post.word_count'),
+              valueText: wordcount(post.content)
+            })
+
+        if theme.post_meta.reading_time.enable
+          span.post-meta-item.post-meta-item--readtime
+            - var iconClass = theme.post_meta.reading_time.icon;
+            - var postRead = theme.post_meta.reading_time;
+            +postMetaItem({
+              isIconOnly: isPostMetaIconOnly,
+              iconClass: iconClass,
+              iconText: __('post.reading_time'),
+              popoverPos: 'up',
+              popoverText: __('popover.post.reading_time'),
+              valueText: `${min2read(post.content, { cn: postRead.speed.zh, en: postRead.speed.en })}${__('post.reading_unit')}`
+            })
+
+        if theme.waline.enable && theme.waline.visitor
+          span(id=url_for(post.path) data-flag-title=post.title).post-meta-item.post-meta-item--visitors.leancloud_visitors
+            - var iconClass = theme.icon.waline_visitor;
+            +postMetaItem({
+              isIconOnly: isPostMetaIconOnly,
+              iconClass: iconClass,
+              iconText: __('post.reading_count'),
+              popoverPos: 'up',
+              popoverText: __('popover.post.visit_num'),
+              valueAttr: {
+                class: 'leancloud-visitors-count'
+              }
+            })
+        
+        if theme.valine.enable && theme.valine.visitor
+          span(id=url_for(post.path) data-flag-title=post.title).post-meta-item.post-meta-item--visitors.leancloud_visitors
+            - var iconClass = theme.icon.valine_visitor;
+            +postMetaItem({
+              isIconOnly: isPostMetaIconOnly,
+              iconClass: iconClass,
+              iconText: __('post.reading_count'),
+              popoverPos: 'up',
+              popoverText: __('popover.post.visit_num'),
+              valueAttr: {
+                class: 'leancloud-visitors-count'
+              }
+            })
+
+        //- Can`t show the result of busuanzi counting in homepage, because will conflict by ID selector.
+        if is_post()
+          if theme.busuanzi.enable && theme.busuanzi.post_pv.enable
+            span.post-meta-item.post-meta-item--visitors
+              - var iconClass = theme.busuanzi.post_pv.icon;
+              +postMetaItem({
+                isIconOnly: isPostMetaIconOnly || theme.busuanzi.icon_only,
+                iconClass: iconClass,
+                iconText: __('post.reading_count'),
+                popoverPos: 'up',
+                popoverText: __('popover.post.visit_num'),
+                valueAttr: {
+                  id: 'busuanzi_value_page_pv'
+                }
+              })

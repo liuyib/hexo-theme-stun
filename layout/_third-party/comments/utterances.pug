@@ -1,0 +1,26 @@
+script&attributes(dataPjax).
+  function loadUtterances() {
+    var d = document, s = d.createElement('script');
+    var container = d.getElementById('utterances-container');
+
+    if (!container) {
+      return;
+    }
+    s.src = '!{ theme.utterances.script_url }';
+    s.setAttribute('repo', '!{ theme.utterances.owner }/!{ theme.utterances.repo }');
+    s.setAttribute('issue-term', '!{ theme.utterances.mapping }');
+    s.setAttribute('label', '!{ theme.utterances.label }');
+    s.setAttribute('theme', '!{ theme.utterances.theme }');
+    s.setAttribute('crossorigin', 'anonymous');
+    s.setAttribute('async', '');
+    if (!{ pjax }) {
+      s.setAttribute('data-pjax-rm', '');
+    }
+    container.append(s);
+  }
+
+  if (!{ pjax }) {
+    loadUtterances();
+  } else {
+    window.addEventListener('DOMContentLoaded', loadUtterances, false);
+  }

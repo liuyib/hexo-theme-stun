@@ -1,0 +1,107 @@
+# Site title
+title:
+  home: Inicio
+  archive: Archivo
+  category: Categoría
+  tag: Etiqueta
+
+# Header nav
+nav:
+  search: Búsqueda
+
+# Header menu
+menu:
+  home: Inicio
+  archives: Archivos
+  categories: Categorías
+  tags: Etiquetas
+  about: Sobre Nosotros
+
+# Archives page, Categories page, Tags page
+page:
+  tags: Etiquetas
+  categories: Categorías
+  posts-empty: Sin artículos
+  posts-total: Hay %s artículos en total, ¡Adelante!
+
+# Sidebar
+sidebar:
+  overview: Reseña
+  catalog: Contenido
+  subscribe: Suscríbete
+  archives: Archivo
+  categories: Categorías
+  tags: Etiquetas
+  read_info: Has leído
+
+# Social link
+social:
+  github: Github
+  google: Google
+  twitter: Twitter
+  youtube: Youtube
+  segmentfault: Segmentfault
+  zhihu: Zhihu
+  weibo: Weibo
+  wechat: Wechat
+  telegram: Telegram
+  qq: QQ
+
+# Article
+post:
+  created: Creado
+  updated: Actualizado
+  word_count: Palabras
+  reading_count: Visitado
+  reading_time: Leyendo
+  reading_unit: m
+  read_more: Leer más
+  sticky: pegajoso
+  untitled: "[ Sin título ]"
+  end: ------ FIN ------
+  copyright:
+    author: Autor
+    link: Enlace
+    license_title: Copyright
+    license_content: Todos los artículos de este blog están bajo licencia  de <a href="%s" rel="external nofollow" target="_blank">%s</a> a menos que se indique lo contrario
+
+# Algolia search
+algolia_search:
+  input_placeholder: Buscar entradas
+  hits_empty: "No encontramos resultados para la búsqueda: ${query}"
+  hits_stats: '${hits} resultados encontrados en ${time} ms'
+
+# Local search
+local_search:
+  input_placeholder: Buscar entradas (Soporte para varias palabras)
+  hits_empty: No encontramos resultados para la búsqueda
+
+# Reward
+reward:
+  btn_text: Cómprame un café
+  alipay: Alipay
+  wechat: Wechat
+
+# Site footer
+footer:
+  powered: Potenciado por %s
+  theme: Tema
+  site_uv: Visitantes
+  site_pv: Vistas
+
+# Prompt message
+prompt:
+  copy_success: Éxito en copia
+  copy_error: Error en copia
+
+popover:
+  copy_button: Copiar
+  creative_commons: Creative Commons
+  post:
+    create_time: Hora de creación
+    update_time: Hora de actualización
+    word_count: Conteo de palabras
+    reading_time: Tiempo de lectura
+    visit_num: Visitantes
+  site_uv: Visitantes únicos
+  site_pv: Vista de página

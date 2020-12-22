@@ -1,0 +1,51 @@
+script(type="text/x-mathjax-config").
+  var mathjaxMhchem = '';
+  var mathJaxTex = {
+    equationNumbers: {
+      autoNumber: 'AMS'
+    }
+  };
+
+  if (!{ theme.math.mathjax.mhchem.enable }) {
+    mathjaxMhchem = '!{ theme.math.mathjax.mhchem.mhchem_js }';
+    MathJax.Ajax.config.path['mhchem'] = mathjaxMhchem;
+
+    mathJaxTex.extensions = [mathjaxMhchem];
+  } else {
+    mathJaxTex.extensions = ['AMSmath.js','AMSsymbols.js'];
+  }
+
+  MathJax.Hub.Config({
+    menuSettings: {
+      zoom: 'None'
+    },
+    showMathMenu: false,
+    jax: ['input/TeX','output/CommonHTML'],
+    extensions: ['tex2jax.js'],
+    TeX: mathJaxTex,
+    tex2jax: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling; }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next); }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i++) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+
+script(src=theme.math.mathjax.cdn)

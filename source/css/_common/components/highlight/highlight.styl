@@ -1,0 +1,391 @@
+@require './theme.styl';
+@require './diff.styl';
+
+codeStyle = hexo-config('codeblock.style') || 'default';
+wordWrap = hexo-config('codeblock.word_wrap') || false;
+// Show lang in tag plugin.
+languages = 'markdown' 'md' 'diff' 'javascript' 'js' 'typescript' 'ts' 'java' 'json' 'html' 'xml' 'css' 'less' 'scss' 'stylus' 'styl' 'sql' 'bash' 'shell' 'python' 'py' 'ruby' 'cpp' 'c\+\+' 'c\#' 'go' 'kotlin' 'kt' 'objectivec' 'php' 'perl' 'pl' 'pm' 'rust' 'rs' 'swift' 'coffeescript' 'coffee' 'lua' 'yaml' 'yml' 'nginx' 'dockerfile' 'makefile';
+
+.highlight {
+  figcaption {
+    span {
+      &:first-child::before {
+        margin: 0 .6rem 0 0;
+        color: $highlight-code-lang-color;
+      }
+    }
+  }
+}
+
+for lang in languages {
+  .highlight {
+    &{'.' + lang} {
+      figcaption {
+        span {
+          &:first-child::before {
+            content: lang;
+          }
+        }
+      }
+    }
+  }
+}
+
+.highlight {
+  margin: 0 0 1rem;
+  border-radius: .25rem;
+  width: 100%;
+  line-height: $line-height-codeblock;
+  color: $highlight-color;
+  background-color: $highlight-background;
+
+  pre,
+  code {
+    font-family: $font-family-code;
+  }
+
+  pre {
+    margin: 0;
+
+    if (wordWrap) {
+      white-space: pre-wrap;
+      counter-reset: line;
+    }
+  }
+
+  td {
+    border-width: 0;
+  }
+
+  figcaption {
+    position: relative;
+    width: 100%;
+    color: $highlight-header-color;
+    background-color: $highlight-header-bg-color;
+    clearfix();
+
+    if (codeStyle == 'carbon') {
+      border-top-left-radius: .25rem;
+      border-top-right-radius: .25rem;
+    }
+
+    if (codeStyle == 'default') {
+      padding: .1rem 0;
+    }
+
+    span {
+      &:first-child {
+        float: left;
+        margin-left: .5rem;
+        color: $highlight-code-note-color;
+      }
+
+      &.external-link {
+        float: right;
+        margin-right: 2em;
+      }
+    }
+  }
+
+  figcaption.custom {
+    min-height: 1.5rem;
+
+    if (codeStyle == 'default') {
+      border-radius: .25rem;
+    }
+
+    if (codeStyle == 'carbon') {
+      display: flex;
+    }
+
+    .custom-lang {
+      float: left;
+      margin: 0 .6rem;
+      color: $highlight-code-lang-color;
+    }
+
+    if (codeStyle == 'carbon') {
+      .custom-carbon {
+        display: flex;
+        margin: .2rem 0 0 .5rem;
+        font-size: 0;
+        align-items: center;
+
+        &-dot {
+          display: inline-block;
+          margin: 0 4px;
+          border-radius: 50%;
+          width: 10px;
+          height: 10px;
+
+          &--red {
+            background-color: #ff5f56;
+          }
+
+          &--yellow {
+            background-color: #ffbd2e;
+          }
+
+          &--green {
+            background-color: #27c93f;
+          }
+        }
+      }
+    }
+  }
+
+  addLineNumber() {
+    .line {
+      &::before {
+        content: counter(line);
+        display: inline-block;
+        margin-right: .5rem;
+        box-sizing: content-box;
+        padding: 0 .8rem 0 .4rem;
+        min-width: 1rem;
+        text-align: right;
+        color: $highlight-side-color;
+        background-color: $highlight-side-bg-color;
+        counter-increment: line;
+      }
+    }
+  }
+
+  & figcaption:not(.custom) {
+    if (codeStyle == 'carbon') {
+      background-color: $highlight-side-bg-color;
+    }
+
+    if (codeStyle == 'simple' || (codeStyle == 'carbon')) {
+      & + .table-container,
+      & + table {
+        if (wordWrap) {
+          td.code {
+            padding: 0;
+          }
+
+          addLineNumber();
+        } else {
+          td.gutter {
+            display: table-cell;
+          }
+        }
+      }
+    }
+  }
+
+  td.gutter {
+    border-right: 1px solid $gap-line-color;
+    padding: .4rem .6rem;
+    width: 2rem;
+    background-color: $highlight-side-bg-color;
+
+    if (codeStyle == 'default') {
+      border-radius: .25rem;
+    }
+
+    if (wordWrap || (codeStyle == 'simple' || (codeStyle == 'carbon'))) {
+      display: none;
+    }
+
+    pre {
+      text-align: right;
+      white-space: nowrap;
+      color: $highlight-side-color;
+      background-color: inherit;
+    }
+  }
+
+  td.code {
+    if (codeStyle == 'simple' || (codeStyle == 'carbon')) {
+      padding: .5rem .75rem;
+    } else if (codeStyle == 'default') {
+      if (wordWrap) {
+        padding: 0;
+      } else {
+        padding: .5rem .6rem;
+      }
+    }
+  }
+
+  if (wordWrap && (codeStyle == 'default')) {
+    addLineNumber();
+  }
+
+  .marked {
+    background-color: $marked-line-bg-color;
+  }
+
+  .emphasis {
+    font-style: italic;
+  }
+
+  .strong {
+    font-weight: bold;
+  }
+
+  .comment {
+    color: $highlight-comment;
+  }
+
+  .quote,
+  .params {
+    color: $highlight-color;
+  }
+
+  .selector-tag,
+  .template-variable,
+  .variable,
+  .deletion,
+  .regexp,
+  .name,
+  .tag {
+    color: $highlight-red;
+  }
+
+  .builtin-name,
+  .literal,
+  .number,
+  .type,
+  .meta,
+  .link {
+    color: $highlight-orange;
+  }
+
+  .class .keyword:first-child + .title,
+  .built_in,
+  .attribute {
+    color: $highlight-yellow;
+  }
+
+  .class .keyword ~ .title,
+  .string .template-variable,
+  .meta-string,
+  .tag,
+  .class,
+  .subst,
+  .regexp {
+    color: $highlight-green;
+  }
+
+  .string,
+  .symbol,
+  .bullet,
+  .addition {
+    color: $highlight-aqua;
+  }
+
+  .title,
+  .section {
+    color: $highlight-blue;
+  }
+
+  .meta-keyword,
+  .doctag,
+  .selector-id,
+  .selector-attr,
+  .selector-class,
+  .selector-pseudo,
+  .function,
+  .tag .attr,
+  .keyword {
+    color: $highlight-purple;
+  }
+}
+
+.bash .meta,
+.rust .meta {
+  color: $highlight-comment;
+}
+
+.c\\+\\+ .built_in,
+.cpp .built_in,
+.ini .variable,
+.ini .literal,
+.ini .number,
+.less .variable,
+.scss .variable,
+.styl .variable,
+.stylus .variable {
+  color: $highlight-color;
+}
+
+.html .meta,
+.xml .meta,
+.yaml .attr,
+.yml .attr {
+  color: $highlight-red;
+}
+
+.js .params,
+.javascript .params {
+  color: $highlight-orange;
+}
+
+.json .attr,
+.swift .type {
+  color: $highlight-yellow;
+}
+
+.variable .variable,
+.bash .variable,
+.c\\+\\+ .meta,
+.cpp .meta,
+.c\\# .meta,
+.css .number,
+.diff .meta {
+  color: $highlight-green;
+}
+
+.md .section,
+.markdown .section,
+.py .string .meta,
+.python .string .meta {
+  color: $highlight-aqua;
+}
+
+.bash .built_in,
+.css .built_in,
+.go .built_in,
+.py .meta,
+.python .meta,
+.shell .meta,
+.shell .keyword,
+.shell .built_in {
+  color: $highlight-blue;
+}
+
+.ini .attr,
+.objectivec .meta,
+.yaml .type,
+.yml .type {
+  color: $highlight-purple;
+}
+
+.diff {
+  .addition {
+    color: $highlight-addition-color;
+    background-color: $highlight-addition-bg-color;
+  }
+
+  .deletion {
+    color: $highlight-deletion-color;
+    background-color: $highlight-deletion-bg-color;
+  }
+}
+
+if (hexo-config('night_mode.enable')) {
+  .nightmode {
+    if (hexo-config('codeblock.highlight') == 'light') {
+      .diff {
+        .addition {
+          background-color: transparent;
+        }
+
+        .deletion {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}

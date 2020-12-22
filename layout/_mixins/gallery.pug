@@ -1,0 +1,4 @@
+mixin gallery(post)
+  div.gallery
+    each photo in post.photos
+      img(src=url_for(photo))

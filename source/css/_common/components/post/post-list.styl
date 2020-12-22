@@ -1,0 +1,35 @@
+// Only in homepage.
+
+.postlist {
+  &-item {
+    margin: 0 0 1.5rem;
+    width: 100%;
+    layout-card();
+  }
+}
+
+.post {
+  &-readmore {
+    margin-top: 1.5rem;
+    text-align: center;
+
+    &__link {
+      display: inline-block;
+      border-radius: 5px;
+      padding: 0 .6em;
+      color: var(--color-gray-200);
+      background-color: $home-readmore-bg-color;
+      transition: background-color .2s ease;
+      cursor: pointer;
+
+      &:hover {
+        color: var(--color-gray-200);
+        background-color: $home-readmore-bg-hover-color;
+      }
+    }
+
+    &__icon {
+      margin-left: .3rem;
+    }
+  }
+}

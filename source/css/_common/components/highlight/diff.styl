@@ -1,0 +1,18 @@
+highlight_theme = hexo-config('codeblock.highlight') || 'light';
+
+if (highlight_theme == 'light') {
+  $highlight-addition-color    = #229922;
+  $highlight-addition-bg-color = #f0fff4;
+  $highlight-deletion-color    = #dd4444;
+  $highlight-deletion-bg-color = #ffeef0;
+} else if (highlight_theme == 'dark') {
+  $highlight-addition-color    = #229922;
+  $highlight-addition-bg-color = transparent;
+  $highlight-deletion-color    = #dd4444;
+  $highlight-deletion-bg-color = transparent;
+} else if (highlight_theme == 'ocean') {
+  $highlight-addition-color    = #99c794;
+  $highlight-addition-bg-color = transparent;
+  $highlight-deletion-color    = #eb606b;
+  $highlight-deletion-bg-color = transparent;
+}

@@ -1,0 +1,30 @@
+section.postlist
+  include ../../_mixins/post-header.pug
+  include ../../_mixins/gallery.pug
+
+  - var postLists = theme.post_list.paginate.home ? page.posts : site.posts;
+  - postLists.each(function (post) {
+    article.postlist-item.post
+      +postHeader(post)
+
+      div.post-body
+        if theme.post_list.cover_image.home && post.top_image
+          img(src=post.top_image)
+
+        if post.photos && post.photos.length
+          +gallery(post)
+
+        - var isExcerpt = true;
+        if post.excerpt
+          div.post-excerpt!= post.excerpt
+        else
+          - isExcerpt = false;
+          div.post-excerpt!= post.content
+
+        if !post.link && isExcerpt
+          div.post-readmore
+            a.post-readmore__link(href=url_for(post.path))
+              span.post-readmore__text= __('post.read_more')
+              span.post-readmore__icon
+                i(class=theme.icon.read_more_btn)
+  - })

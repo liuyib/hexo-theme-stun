@@ -1,0 +1,27 @@
+.loading-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  opacity: 0;
+  transition: opacity .4s linear;
+
+  &__progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: $loading-bar-bg-color;
+    box-shadow: 0 0 10px $loading-bar-shadow-color;
+  }
+
+  &.loading {
+    opacity: 1;
+    transition: none;
+  }
+
+  &.loading &__progress {
+    transition: width .4s ease;
+  }
+}

@@ -1,0 +1,38 @@
+script&attributes(dataPjax).
+  function loadDisqus () {
+    if (!document.getElementById('disqus_thread')) {
+      return;
+    }
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: function () {
+          this.page.url = '!{ page.permalink }';
+          this.page.identifier = '!{ page.path }';
+          this.page.title = '!{ page.title }';
+        }
+      });
+    } else {
+      var d = document;
+      var sc = d.createElement('script');
+      var se = d.createElement('script');
+
+      if (!{ theme.disqus.count }) {
+        sc.src = 'https://!{ theme.disqus.shortname }.disqus.com/count.js';
+        sc.id = 'dsq-count-scr';
+        sc.async = true;
+        if (!{ pjax }) {
+          sc.setAttribute('data-pjax', '');
+        }
+        (d.head || d.body).appendChild(sc);
+      }
+      se.src = 'https://!{ theme.disqus.shortname }.disqus.com/embed.js';
+      (d.head || d.body).appendChild(se);
+    }
+  }
+
+  if (!{ pjax }) {
+    loadDisqus();
+  } else {
+    window.addEventListener('DOMContentLoaded', loadDisqus, false);
+  }

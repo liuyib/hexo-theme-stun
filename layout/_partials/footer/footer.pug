@@ -1,0 +1,47 @@
+-
+  var footer = theme.footer;
+  var nowYear = new Date().getFullYear();
+  var startYear = footer.copyright.since || nowYear;
+  var endYear = footer.copyright.end || nowYear;
+  var footerCopyright = footer.copyright.enable
+  var footerBeian = footer.beian.enable
+
+if footerCopyright || footerBeian
+  div
+    if footerCopyright
+      span= `Copyright © ${startYear}` + ((startYear !== endYear) ? `~${endYear}` : '')
+      if footer.icon.enable
+        span(class="footer__icon")
+          i(class=footer.icon.name)
+      else
+        span.footer__devider
+      span!= footer.copyright.text || config.author
+    if footerCopyright && footerBeian
+      span.footer__devider= '|'
+    if footerBeian
+      span!= footer.beian.icp
+
+-
+  var footerPowered = footer.powered.enable
+  var footerTheme = footer.theme.enable
+
+if footerPowered || footerTheme
+  div
+    if footerPowered
+      span
+        != _p('footer.powered', link_to(HEXO_URL, 'Hexo', { external: true }))
+      if footer.powered.version
+        span= ' v' + hexo_env('version')
+    if footerPowered && footerTheme
+      span.footer__devider= '|'
+    if footerTheme
+      span= __('footer.theme') + ' - '
+        != link_to(STUN_URL, 'Stun', { external: true })
+      if footer.theme.version
+        span= ' v' + stun_env('version')
+
+if theme.busuanzi.enable
+  include ../analytics/busuanzi.pug
+
+if footer.custom.enable
+  div!= footer.custom.text

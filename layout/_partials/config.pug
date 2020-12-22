@@ -1,0 +1,182 @@
+-
+  var algolia = 'undefined';
+  var env = process.env;
+  if (theme.algolia_search.enable) {
+    algolia = JSON.stringify({
+      appId: env.ALGOLIA_APP_ID || config.algolia.appId || config.algolia.applicationID,
+      apiKey: env.ALGOLIA_API_KEY || config.algolia.apiKey,
+      indexName: env.ALGOLIA_INDEX_NAME || config.algolia.indexName,
+      hits: theme.algolia_search.hits,
+      languages: {
+        inputPlaceholder: __('algolia_search.input_placeholder'),
+        hitsEmpty: __('algolia_search.hits_empty'),
+        hitsStats: __('algolia_search.hits_stats')
+      }
+    });
+  }
+
+  var assistSearch = 'undefined';
+  if (theme.assist_search.enable) {
+    assistSearch = [];
+
+    for (var key in theme.assist_search) {
+      var value = theme.assist_search[key];
+      if (value && key !== 'enable') {
+        assistSearch.push(key);
+      }
+    }
+    assistSearch = JSON.stringify(assistSearch);
+  }
+
+  var fontIcon = 'undefined';
+  if (theme.icon) {
+    fontIcon = JSON.stringify({
+      prompt: {
+        success: theme.icon.prompt_success,
+        info: theme.icon.prompt_info,
+        warning: theme.icon.prompt_warning,
+        error: theme.icon.prompt_error
+      },
+      copyBtn: theme.icon.copy_btn
+    });
+  }
+
+  var sidebar = 'undefined';
+  if (theme.sidebar.enable) {
+    sidebar = JSON.stringify({
+      offsetTop: theme.sidebar.offsetTop,
+      tocMaxDepth: theme.toc.max_depth
+    });
+  }
+
+  var header = 'undefined';
+  if (theme.header.enable) {
+    var isScrollDownIcon = theme.header.scroll_down_icon.enable || false;
+
+    header = JSON.stringify({
+      enable: theme.header.enable,
+      showOnPost: theme.header.show_on.post,
+      scrollDownIcon: isScrollDownIcon,
+    });
+  }
+
+  var postWidget = 'undefined';
+  if (theme.post_widget) {
+    var endText = theme.post_widget.end_text.enable || false;
+
+    if (endText) {
+      postWidget = JSON.stringify({
+        endText: endText,
+      });
+    }
+  }
+
+  var nightMode = 'undefined';
+  if (theme.night_mode.enable) {
+    nightMode = JSON.stringify({
+      enable: theme.night_mode.enable,
+    });
+  }
+
+  var back2top = 'undefined';
+  if (theme.back2top.enable) {
+    back2top = JSON.stringify({
+      enable: theme.back2top.enable
+    });
+  }
+
+  var codeStyle = theme.codeblock.style || 'default';
+  var highlight = theme.codeblock.highlight || 'light';
+  var wordWrap = theme.codeblock.word_wrap || false;
+  var codeblock = JSON.stringify({
+    style: codeStyle,
+    highlight: highlight,
+    wordWrap: wordWrap
+  });
+
+  var zoomImage = 'undefined';
+  if (theme.zoom_image.enable) {
+    zoomImage = JSON.stringify({
+      gapAside: theme.zoom_image.gap_aside
+    });
+  }
+
+  var galleryWaterfall = 'undefined';
+  if (theme.gallery_waterfall.enable) {
+    galleryWaterfall = JSON.stringify({
+      colWidth: theme.gallery_waterfall.col_width,
+      gapX: theme.gallery_waterfall.gap_x
+    });
+  }
+
+  var pjaxConfig = 'undefined';
+  if (theme.pjax.enable) {
+    pjaxConfig = JSON.stringify({
+      avoidBanner: theme.pjax.avoid_banner
+    });
+  }
+
+  var externalLink = 'undefined';
+  if (theme.external_link) {
+    var iconEnable = theme.external_link.icon.enable || false;
+    var iconName = theme.external_link.icon.name || '';
+
+    if (iconEnable) {
+      externalLink = JSON.stringify({
+        icon: {
+          enable: iconEnable,
+          name: iconName
+        }
+      });
+    }
+  }
+
+  var shortcuts = 'undefined';
+  if (theme.shortcuts) {
+    var isSwitchPost = theme.shortcuts.switch_post.enable || false;
+
+    if (isSwitchPost) {
+      shortcuts = JSON.stringify({
+        switchPost: isSwitchPost
+      });
+    }
+  }
+
+  var prompt = JSON.stringify({
+    copyButton: __('popover.copy_button'),
+    copySuccess: __('prompt.copy_success'),
+    copyError: __('prompt.copy_error')
+  });
+
+  var sourcePath = JSON.stringify({
+    js: theme.js,
+    css: theme.css,
+    images: theme.images
+  });
+
+script.
+  var Stun = window.Stun || {};
+  var CONFIG = {
+    root: '!{ config.root }',
+    algolia: !{ algolia },
+    assistSearch: !{ assistSearch },
+    fontIcon: !{ fontIcon },
+    sidebar: !{ sidebar },
+    header: !{ header },
+    postWidget: !{ postWidget },
+    nightMode: !{ nightMode },
+    back2top: !{ back2top },
+    codeblock: !{ codeblock },
+    reward: !{ isShowReward },
+    fancybox: !{ theme.fancybox },
+    zoomImage: !{ zoomImage },
+    galleryWaterfall: !{ galleryWaterfall },
+    lazyload: !{ theme.lazyload.enable },
+    pjax: !{ pjaxConfig },
+    externalLink: !{ externalLink },
+    shortcuts: !{ shortcuts },
+    prompt: !{ prompt },
+    sourcePath: !{ sourcePath },
+  };
+
+  window.CONFIG = CONFIG;

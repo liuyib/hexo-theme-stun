@@ -1,0 +1,23 @@
+div.busuanzi
+  -
+    var isBszIconOnly = theme.busuanzi.icon_only;
+    var iconElemAttr = {};
+    if (isBszIconOnly) iconElemAttr['data-popover-pos'] = 'up';
+
+  if theme.busuanzi.site_uv.enable
+    span.busuanzi-siteuv
+      - if (isBszIconOnly) iconElemAttr['data-popover'] = __('popover.site_uv');
+      span.busuanzi-siteuv__icon&attributes(iconElemAttr)
+        i(class=theme.busuanzi.site_uv.icon)
+      if !isBszIconOnly
+        span.busuanzi-siteuv__info= __('footer.site_uv')
+      span.busuanzi-siteuv__value#busuanzi_value_site_uv
+
+  if theme.busuanzi.site_pv.enable
+    span.busuanzi-sitepv
+      - if (isBszIconOnly) iconElemAttr['data-popover'] = __('popover.site_pv');
+      span.busuanzi-siteuv__icon&attributes(iconElemAttr)
+        i(class=theme.busuanzi.site_pv.icon)
+      if !isBszIconOnly
+        span.busuanzi-siteuv__info= __('footer.site_pv')
+      span.busuanzi-siteuv__value#busuanzi_value_site_pv

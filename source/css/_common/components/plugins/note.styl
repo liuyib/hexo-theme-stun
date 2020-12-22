@@ -1,0 +1,100 @@
+$note-padding = 12px;
+$note-icon-size = $font-size-base + 4px;
+
+.note-plugin {
+  position: relative;
+  margin-bottom: 20px;
+  border: 1px solid var(--color-gray-250);
+  border-left-width: 6px;
+  padding: 0 $note-padding + 5px;
+
+  &:not(.no-icon) {
+    padding-left: 40px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+  }
+
+  p {
+    margin: $note-padding 0;
+  }
+
+  strong {
+    font-size: $note-icon-size;
+    line-height: 1.75;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 1em;
+    left: 12px;
+    font-size: $note-icon-size;
+    line-height: 1;
+
+    &--default {
+      color: $note-default-color;
+    }
+
+    &--success {
+      color: $note-success-color;
+    }
+
+    &--info {
+      color: $note-info-color;
+    }
+
+    &--warning {
+      color: $note-warning-color;
+    }
+
+    &--danger {
+      color: $note-danger-color;
+    }
+  }
+
+  &.default {
+    border-left-color: $note-default-color;
+
+    strong {
+      color: $note-default-color;
+    }
+  }
+
+  &.success {
+    border-left-color: $note-success-color;
+
+    strong {
+      color: $note-success-color;
+    }
+  }
+
+  &.info {
+    border-left-color: $note-info-color;
+
+    strong {
+      color: $note-info-color;
+    }
+  }
+
+  &.warning {
+    border-left-color: $note-warning-color;
+
+    strong {
+      color: $note-warning-color;
+    }
+  }
+
+  &.danger {
+    border-left-color: $note-danger-color;
+
+    strong {
+      color: $note-danger-color;
+    }
+  }
+}

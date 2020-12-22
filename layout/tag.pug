@@ -1,0 +1,10 @@
+extends ./_layout.pug
+include ./_mixins/timeline.pug
+
+block content
+  div.tagpage
+    div.tagpage-title
+      span.tagpage-title__text= `${__('page.tags')} -- `
+      span.tagpage-title__name= page.tag
+
+    +timeline(page.posts.data)

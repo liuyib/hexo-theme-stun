@@ -1,0 +1,4 @@
+if theme.busuanzi.enable && (theme.busuanzi.site_uv.enable || theme.busuanzi.site_pv.enable || theme.busuanzi.post_pv.enable)
+  - var busuanzi_js = 'https://cdn.jsdelivr.net/gh/sukkaw/busuanzi@latest/bsz.pure.mini.js';
+  - if (theme.cdn.busuanzi) busuanzi_js = theme.cdn.busuanzi;
+  script(src=busuanzi_js async)

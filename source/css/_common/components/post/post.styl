@@ -1,0 +1,132 @@
+.post {
+  &-header {
+    position: relative;
+    margin-bottom: 1rem;
+    font-size: 1em;
+    text-align: center;
+  }
+
+  &-title {
+    margin: 0;
+    color: var(--color-gray-950);
+    cursor: auto;
+
+    &__link {
+      position: relative;
+      color: var(--color-gray-800);
+      break-word();
+
+      &::before {
+        content: '';
+        visibility: hidden;
+        position: absolute;
+        right: 0;
+        bottom: -4px;
+        left: 0;
+        height: 2px;
+        background-color: var(--color-gray-800);
+        transition: transform .2s ease-in-out;
+        transform: scaleX(0);
+      }
+
+      &:hover {
+        color: var(--color-gray-800);
+
+        &::before {
+          visibility: visible;
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
+
+  &-meta {
+    &-item {
+      &:not(:first-child)::before {
+        content: '•';
+        margin: 0 .5rem;
+        color: var(--color-gray-700);
+      }
+
+      &__icon,
+      &__info,
+      &__value {
+        margin: 0 2px;
+      }
+
+      if (hexo-config('post_meta.created.enable')) {
+        &--createtime {
+          color: var(--color-gray-700);
+        }
+      }
+
+      if (hexo-config('post_meta.updated.enable')) {
+        &--updatetime {
+          color: $post-update-color;
+        }
+      }
+
+      if (hexo-config('post_meta.word_count.enable')) {
+        &--wordcount {
+          color: var(--color-gray-700);
+        }
+      }
+
+      if (hexo-config('post_meta.reading_time.enable')) {
+        &--readtime {
+          color: $post-reading-time-color;
+        }
+      }
+
+      if (hexo-config('busuanzi.post_pv.enable')) {
+        &--visitors {
+          color: $post-reading-count-color;
+        }
+      }
+    }
+  }
+
+  if (hexo-config('post_widget.end_text.enable')) {
+    &-ending {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &-copyright {
+    margin-bottom: 1rem;
+  }
+
+  if (hexo-config('post_widget.tags')) {
+    &-tags {
+      margin-bottom: 1rem;
+
+      &-item {
+        margin: 0 .5rem;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        &__icon,
+        &__link {
+          margin: .1rem;
+          color: $post-tags-icon-color;
+          transition: color .2s;
+
+          ^[-1]:hover & {
+            color: $orange-dark;
+          }
+        }
+      }
+    }
+  }
+
+  &-reward {
+    margin-bottom: 1rem;
+  }
+
+  &-paginator {
+    border-top: 1px solid var(--color-gray-250);
+    padding-top: 1rem;
+  }
+}

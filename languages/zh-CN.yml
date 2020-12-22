@@ -1,0 +1,115 @@
+# 网站标题
+title:
+  home: 首页
+  archive: 归档
+  category: 分类
+  tag: 标签
+
+# 导航栏
+nav:
+  search: 搜索
+
+# 导航栏菜单
+menu:
+  home: 首页
+  archives: 归档
+  categories: 分类
+  tags: 标签
+  about: 关于
+
+# 归档页、分类页、标签页
+page:
+  tags: 标签
+  categories: 分类
+  posts-empty: 目前还没有文章哦！
+  posts-total: 目前共计 %s 篇文章，继续加油！
+
+# 侧边栏
+sidebar:
+  overview: 站点概览
+  catalog: 文章目录
+  subscribe: 订阅
+  archives: 归档
+  categories: 分类
+  tags: 标签
+  read_info: 你已阅读了
+
+# 社交链接
+social:
+  github: Github
+  google: Google
+  twitter: Twitter
+  youtube: Youtube
+  segmentfault: 思否
+  zhihu: 知乎
+  weibo: 微博
+  wechat: 微信
+  telegram: Telegram
+  qq: QQ
+
+# 文章
+post:
+  created: 发表于
+  updated: 更新于
+  word_count: 字数统计
+  reading_count: 阅读次数
+  reading_time: 阅读时长
+  reading_unit: 分
+  read_more: 阅读全文
+  sticky: 置顶文章
+  untitled: "[ 文章无标题 ]"
+  end: ------ 本文结束，感谢您的阅读 ------
+  copyright:
+    author: 本文作者
+    link: 本文链接
+    license_title: 版权声明
+    license_content: 本博客所有文章除特别声明外，均采用 <a href="%s" rel="external nofollow" target="_blank">%s</a> 许可协议。转载请注明出处！
+
+# Algolia 搜索
+algolia_search:
+  input_placeholder: 搜索文章
+  hits_empty: '没有找到任何搜索结果：${query}'
+  hits_stats: '找到 ${hits} 条搜索结果，耗时 ${time} 毫秒'
+
+# 本地搜索
+local_search:
+  input_placeholder: 搜索文章（支持多关键词，请用空格分隔）
+  hits_empty: 没有找到任何搜索结果
+
+# 搜索的辅助按钮
+assist_search:
+  prompt_label: "使用搜索："
+  prompt_input: 请输入字符
+  google: 谷歌
+  bing: 必应
+  baidu: 百度
+
+# 打赏
+reward:
+  btn_text: 请我喝杯咖啡~
+  alipay: 支付宝打赏
+  wechat: 微信打赏
+
+# 网站底部
+footer:
+  powered: 由 %s 强力驱动
+  theme: 主题
+  site_uv: 访问人数
+  site_pv: 浏览总量
+
+# 提示信息
+prompt:
+  copy_success: 复制成功
+  copy_error: 复制失败
+
+popover:
+  copy_button: 复制
+  creative_commons: 知识共享许可协议
+  post:
+    create_time: 发表时间
+    update_time: 修改时间
+    word_count: 字数统计
+    reading_time: 阅读时间
+    visit_num: 阅读次数
+  site_uv: 访问人数
+  site_pv: 浏览总量

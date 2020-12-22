@@ -1,0 +1,52 @@
+mixin timeline(posts)
+  section.timeline
+    - var year, tmpYear;
+    - var sortPosts = [];
+    //- Sort posts by date in descending order.
+    each post in posts
+      if sortPosts.length === 0
+        - sortPosts.push(post)
+      else
+        each sPost, index in sortPosts
+          - var isBigTime = new Date(post.date).getTime() > new Date(sPost.date).getTime();
+          if post.top
+            if !sPost.top || isBigTime
+              - sortPosts.splice(index, 0, post)
+              - break
+            else if index + 1 === sortPosts.length
+              - sortPosts.push(post)
+              - break
+          else
+            if !sPost.top && isBigTime
+              - sortPosts.splice(index, 0, post)
+              - break
+            else if index + 1 === sortPosts.length
+              - sortPosts.push(post)
+              - break
+
+    each post in sortPosts
+      if post.date
+        - tmpYear = full_date(post.date, 'YYYY')
+      if tmpYear !== year
+        - year = tmpYear
+        time.timeline-item.timeline-item--year= year
+
+      article.timeline-item
+        if post.date
+          time.timeline-item__time= full_date(post.date, 'MM-DD')
+          h2.timeline-item__title
+            if post.link
+              a(
+                class="timeline-item__link"
+                href=url_for(post.link)
+                target="_blank"
+                rel="noopener"
+              )= post.title || post.link
+            else
+              a(
+                class="timeline-item__link"
+                href=url_for(post.path)
+              )= post.title || __('post.untitled')
+
+        if post.top
+          include ../_partials/widgets/sticky-top.pug

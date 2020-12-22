@@ -1,0 +1,259 @@
+// $main-width: A calc value.
+// -----------------------------------------
+@media (min-width: $main-width) {
+  if (hexo-config('sidebar.enable')) {
+    .header-nav-inner {
+      width: $main-width;
+    }
+  }
+
+  .main-inner {
+    width: $main-width;
+  }
+}
+
+// $md-width: 992px - 0.02px
+// -----------------------------------------
+@media (min-width: $md-width) {
+  if (!hexo-config('sidebar.enable')) {
+    .header-nav-inner {
+      width: $md-width;
+    }
+  }
+
+  .header {
+    &-nav {
+      &-menu {
+        display: inline-block !important;
+        opacity: 1 !important;
+      }
+
+      &-submenu {
+        border-radius: 3px;
+      }
+    }
+  }
+}
+
+// $md-width: 992px - 0.02px
+// -----------------------------------------
+@media (max-width: $md-width) {
+  .header {
+    &-inner {
+      height: 17rem;
+    }
+
+    &-banner {
+      &-info {
+        &__title {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+
+    &-nav {
+      &-menubtn {
+        display: block;
+        float: left;
+      }
+
+      &-menu {
+        overflow: hidden;
+        position: absolute;
+        top: header-nav-height;
+        right: 0;
+        left: 0;
+        width: auto;
+        height: auto;
+        background-color: $header-nav-bg-color;
+
+        &-item {
+          float: none;
+          overflow: hidden;
+          margin: 0;
+
+          &__link {
+            padding-right: 1.5rem;
+            padding-left: 1.5rem;
+            text-align: left;
+            color: #f4f5f5;
+          }
+        }
+      }
+
+      &-submenu {
+        display: block;
+        position: initial;
+        width: 100%;
+
+        &-item {
+          &__link {
+            padding-right: 1rem;
+            padding-left: 3rem;
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+
+  .content-wrap {
+    width: 100%;
+  }
+
+  if (hexo-config('sidebar.enable')) {
+    .sidebar-wrap {
+      display: none;
+    }
+  }
+
+  .post-list .post {
+    margin: 0 0 1rem;
+    padding: 1rem;
+  }
+}
+
+// sm-width: 768px - 0.02px
+// -----------------------------------------
+@media (max-width: $sm-width) {
+  .header {
+    &-nav {
+      &-inner {
+        padding: convert(hexo-config('layout.main_padding.tablet') || '15px');
+      }
+    }
+
+    &-banner {
+      &-info {
+        &__title {
+          margin-bottom: 1rem;
+          font-size: 3rem;
+        }
+
+        &__subtitle {
+          font-size: .9rem;
+        }
+      }
+    }
+  }
+
+  .main-inner {
+    padding: convert(hexo-config('layout.main_padding.tablet') || '15px');
+  }
+
+  if (hexo-config('algolia_search.enable') || hexo-config('local_search.enable')) {
+    .search {
+      &-popup {
+        top: 0;
+        left: 0;
+        margin: 0;
+        border-radius: 0;
+        width: 100%;
+        height: 100vh;
+        max-height: 100vh;
+      }
+
+      &-results {
+        max-height: 'calc(100vh - %s)' % search-results-height;
+      }
+    }
+  }
+}
+
+// xs-width: 576px - 0.02px
+// -----------------------------------------
+@media (max-width: $xs-width) {
+  .header {
+    &-inner {
+      height: 13rem;
+    }
+
+    &-nav {
+      &-inner {
+        padding: convert(hexo-config('layout.main_padding.mobile') || '10px');
+      }
+
+      if (hexo-config('algolia_search.enable') || hexo-config('local_search.enable')) {
+        &-search__text {
+          display: none;
+        }
+      }
+    }
+
+    &-banner {
+      &-info {
+        &__title {
+          margin-bottom: .5rem;
+          font-size: 2rem;
+        }
+
+        &__subtitle {
+          font-size: $font-size-base;
+        }
+      }
+
+      &-arrow {
+        bottom: .5rem;
+      }
+    }
+  }
+
+  .main-inner {
+    padding: convert(hexo-config('layout.main_padding.mobile') || '10px');
+  }
+
+  .content,
+  .comments {
+    padding: .6rem .8rem;
+    font-size: $font-size-base + 1px;
+  }
+
+  .archive {
+    margin-left: .5rem;
+
+    &-total {
+      padding-left: 1rem;
+    }
+  }
+
+  .timeline {
+    &-item {
+      padding-left: 1rem;
+
+      &__time {
+        width: 2.75rem;
+      }
+
+      &__title {
+        width: calc(100% - 4rem);
+      }
+    }
+  }
+
+  .post-list .post {
+    margin: 0 0 .8rem;
+    padding: .8rem;
+  }
+
+  if (hexo-config('algolia_search.enable')) {
+    .algolia-hit-item {
+      margin: 0;
+    }
+  }
+
+  if (hexo-config('gallery_waterfall.enable')) {
+    .gallery {
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .friends-plugin {
+    &__item {
+      margin: 0;
+      padding: .5rem 1rem;
+      width: 100%;
+    }
+  }
+}

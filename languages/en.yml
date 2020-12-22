@@ -1,0 +1,115 @@
+# Site title
+title:
+  home: Home
+  archive: Archive
+  category: Category
+  tag: Tag
+
+# Header nav
+nav:
+  search: Search
+
+# Header menu
+menu:
+  home: Home
+  archives: Archives
+  categories: Categories
+  tags: Tags
+  about: About
+
+# Archives page, Categories page, Tags page
+page:
+  tags: Tags
+  categories: Categories
+  posts-empty: No articles
+  posts-total: Total %s Articles, Go on!
+
+# Sidebar
+sidebar:
+  overview: Overview
+  catalog: Catalog
+  subscribe: Subscribe
+  archives: Archives
+  categories: Categories
+  tags: Tags
+  read_info: You have read
+
+# Social link
+social:
+  github: Github
+  google: Google
+  twitter: Twitter
+  youtube: Youtube
+  segmentfault: Segmentfault
+  zhihu: Zhihu
+  weibo: Weibo
+  wechat: Wechat
+  telegram: Telegram
+  qq: QQ
+
+# Article
+post:
+  created: Created
+  updated: Updated
+  word_count: Words
+  reading_count: Visited
+  reading_time: Reading
+  reading_unit: m
+  read_more: Read More
+  sticky: Sticky
+  untitled: "[ Untitled ]"
+  end: ------ END ------
+  copyright:
+    author: Author
+    link: Link
+    license_title: Copyright
+    license_content: All articles in this blog are licensed under <a href="%s" rel="external nofollow" target="_blank">%s</a> unless stating additionally
+
+# Algolia search
+algolia_search:
+  input_placeholder: Search for Posts
+  hits_empty: "We didn't find any results for the search: ${query}"
+  hits_stats: '${hits} results found in ${time} ms'
+
+# Local search
+local_search:
+  input_placeholder: Search for Posts (Support multiple keywords)
+  hits_empty: We didn't find any results for the search
+
+# Auxiliary search buttons
+assist_search:
+  prompt_label: "Search by:"
+  prompt_input: Please enter characters
+  google: Google
+  bing: Bing
+  baidu: Baidu
+
+# Reward
+reward:
+  btn_text: Buy me a coffee
+  alipay: Alipay
+  wechat: Wechat
+
+# Site footer
+footer:
+  powered: Powered by %s
+  theme: Theme
+  site_uv: Visitors
+  site_pv: Views
+
+# Prompt message
+prompt:
+  copy_success: Copy Success
+  copy_error: Copy Error
+
+popover:
+  copy_button: Copy
+  creative_commons: Creative Commons
+  post:
+    create_time: Created Time
+    update_time: Updated Time
+    word_count: Words Count
+    reading_time: Reading Time
+    visit_num: Visitors
+  site_uv: Unique Visitor
+  site_pv: Page View

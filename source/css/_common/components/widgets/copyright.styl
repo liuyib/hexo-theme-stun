@@ -1,0 +1,25 @@
+.copyright {
+  position: relative;
+  border: 1px solid var(--color-gray-250);
+  padding: .8rem 1rem;
+  width: 100%;
+  transition: box-shadow .2s ease;
+
+  &:hover {
+    box-shadow: 0 0 16px 8px var(--color-gray-250);
+  }
+
+  &-author,
+  &-link,
+  &-notice {
+    &__name {
+      font-weight: $font-weight-bold;
+      break-word();
+    }
+
+    &__value {
+      color: var(--color-gray-800);
+      break-all();
+    }
+  }
+}

@@ -1,0 +1,43 @@
+-
+  var gitalk_js = 'https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js';
+  var gitalk_md5 = 'https://cdn.jsdelivr.net/npm/js-md5@latest/src/md5.min.js';
+
+  if (theme.cdn.gitalk_js) {
+    gitalk_js = theme.cdn.gitalk_js;
+  }
+  if (theme.cdn.gitalk_md5) {
+    gitalk_md5 = theme.cdn.gitalk_md5;
+  }
+
+script(src=gitalk_js)&attributes(dataPjax)
+script(src=gitalk_md5)&attributes(dataPjax)
+
+-
+  var gtLang = theme.gitalk.language
+    ? theme.gitalk.language
+    : config.language;
+
+script&attributes(dataPjax).
+  function loadGitalk () {
+    if (!document.getElementById('gitalk-container')) {
+      return;
+    }
+
+    var gitalk = new Gitalk({
+      id: md5(window.location.pathname.slice(1)),
+      clientID: '!{ theme.gitalk.client_id }',
+      clientSecret: '!{ theme.gitalk.client_secret }',
+      repo: '!{ theme.gitalk.repo }',
+      owner: '!{ theme.gitalk.owner }',
+      admin: ['!{ theme.gitalk.admin }'],
+      distractionFreeMode: '!{ theme.gitalk.distraction_free_mode }',
+      language: '!{ gtLang }'
+    });
+    gitalk.render('gitalk-container');
+  }
+
+  if (!{ pjax }) {
+    loadGitalk();
+  } else {
+    window.addEventListener('DOMContentLoaded', loadGitalk, false);
+  }

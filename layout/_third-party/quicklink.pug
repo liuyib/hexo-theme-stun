@@ -1,0 +1,28 @@
+if theme.quicklink.enable
+  -
+    var loadQuicklink = false;
+    var quicklink_js = 'https://cdn.jsdelivr.net/npm/quicklink@1.0.1/dist/quicklink.umd.js';
+    if (theme.cdn.quicklink) quicklink_js = theme.cdn.quicklink;
+
+  if is_home() && theme.quicklink.home
+    - loadQuicklink = true;
+  if is_archive() && theme.quicklink.archive
+    - loadQuicklink = true;
+  if theme.pjax.enable
+    - loadQuicklink = true;
+  if loadQuicklink || ((page && page.quicklink) || (post && post.quicklink))
+    script(src=quicklink_js)
+    script.
+      function initQuicklink() {
+        quicklink({
+          timeout: '!{ theme.quicklink.timeout }',
+          priority: !{ theme.quicklink.priority },
+          ignores: [uri => uri.includes('#'), uri => uri === '!{ url.replace("index.html", '') }', !{ theme.quicklink.ignores }]
+        });
+      }
+
+      if (!{ pjax } || !{ !theme.quicklink.delay }) {
+        initQuicklink();
+      } else {
+        window.addEventListener('DOMContentLoaded', initQuicklink, false);
+      }

@@ -1,0 +1,9 @@
+div(class=`${is_post() ? 'post-reward' : ''}`).reward
+  div.reward-button= __('reward.btn_text')
+  div.reward-qrcode
+    span.reward-qrcode-alipay
+      img.reward-qrcode-alipay__img(src=theme.reward.alipay)
+      div.reward-qrcode-alipay__text= __('reward.alipay')
+    span.reward-qrcode-wechat
+      img.reward-qrcode-wechat__img(src=theme.reward.wechat)
+      div.reward-qrcode-wechat__text= __('reward.wechat')

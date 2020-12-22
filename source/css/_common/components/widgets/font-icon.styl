@@ -1,0 +1,19 @@
+if (hexo-config('external_link.icon.enable')) {
+  .exturl {
+    &__icon {
+      margin: 0 .1em 0 .3em;
+      font-size: .8em;
+      color: convert(hexo-config('external_link.icon.color') || '#aaa');
+    }
+
+    &__link {
+      break-word();
+    }
+  }
+
+  .footer {
+    .exturl__icon {
+      color: #fff;
+    }
+  }
+}

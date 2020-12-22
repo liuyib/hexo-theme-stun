@@ -1,0 +1,29 @@
+-
+  var minivaline_js = 'https://cdn.jsdelivr.net/npm/minivaline/dist/MiniValine.min.js';
+
+  if (theme.cdn.minivaline) {
+    minivaline_js = theme.cdn.minivaline;
+  }
+
+script(src=minivaline_js)
+
+script&attributes(dataPjax).
+  function loadminivaline () {
+    new MiniValine({
+      el: '#minivaline-container',
+      appId: '!{ theme.minivaline.appId }',
+      appKey: '!{ theme.minivaline.appKey }',
+      placeholder: '!{ theme.minivaline.placeholder }',
+      lang: '!{ theme.minivaline.lang }',
+      adminEmailMd5: '!{ theme.minivaline.adminEmailMd5 }',
+      math: !{ theme.minivaline.math },
+      md: !{ theme.minivaline.md }
+    });
+
+  }
+
+  if (!{ pjax }) {
+    loadminivaline();
+  } else {
+    window.addEventListener('DOMContentLoaded', loadminivaline, false);
+  }

@@ -1,0 +1,27 @@
+.zoomimg-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $z-index2;
+  width: 100%;
+  height: 100%;
+  background-color: convert(hexo-config('zoom_image.mask_color') || '#fff');
+  opacity: 0;
+}
+
+// Zoom in image without fancybox.
+.zoomimg {
+  cursor: zoom-in;
+
+  &--hide {
+    visibility: hidden;
+  }
+
+  &-clone {
+    position: absolute;
+    z-index: $z-index2;
+    background-color: #fff;
+    cursor: zoom-out;
+    will-change: transform;
+  }
+}

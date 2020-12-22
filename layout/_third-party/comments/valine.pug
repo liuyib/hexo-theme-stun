@@ -1,0 +1,44 @@
+-
+  var leancloud_storage_js = 'https://cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js';
+  var valine_js = 'https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js';
+
+  if (theme.cdn.leancloud_storage) {
+    leancloud_storage_js = theme.cdn.leancloud_storage;
+  }
+  if (theme.cdn.valine) {
+    valine_js = theme.cdn.valine;
+  }
+
+script(src=leancloud_storage_js)
+script(src=valine_js)
+
+script&attributes(dataPjax).
+  function loadValine () {
+    var GUEST_INFO = ['nick', 'mail', 'link'];
+    var guest_info = '!{ theme.valine.meta }';
+
+    guest_info = guest_info.split(',').filter(function(item) {
+      return GUEST_INFO.indexOf(item) > -1;
+    });
+    new Valine({
+      el: '#valine-container',
+      appId: '!{ theme.valine.appid }',
+      appKey: '!{ theme.valine.appkey }',
+      notify: !{ theme.valine.notify },
+      verify: !{ theme.valine.verify },
+      placeholder: '!{ theme.valine.placeholder }',
+      avatar: '!{ theme.valine.avatar }',
+      meta: guest_info,
+      pageSize: '!{ theme.valine.pageSize }' || 10,
+      visitor: !{ theme.valine.visitor },
+      recordIP: !{ theme.valine.recordIP },
+      lang: '!{ theme.valine.language }' || 'zh-cn',
+      path: window.location.pathname
+    });
+  }
+
+  if (!{ pjax }) {
+    loadValine();
+  } else {
+    window.addEventListener('DOMContentLoaded', loadValine, false);
+  }

@@ -1,0 +1,106 @@
+-
+  var pjaxSelectors = [
+    'head title',
+    '#main',
+    '.pjax-reload'
+  ];
+  if (isEnableNoHeader) {
+    pjaxSelectors.push('.header-inner');
+  }
+  var pjaxArgs = {
+    'selectors': pjaxSelectors,
+    'history': theme.pjax.history,
+    'scrollTo': theme.pjax.scrollTo,
+    'scrollRestoration': theme.pjax.scrollRestoration,
+    'cacheBust': theme.pjax.cacheBust,
+    'debug': theme.pjax.debug,
+    'currentUrlFullReload': theme.pjax.currentUrlFullReload,
+    'timeout': theme.pjax.timeout
+  };
+  if (theme.pjax.elements) {
+    pjaxArgs.elements.push(theme.pjax.elements);
+  }
+  if (theme.pjax.selectors) {
+    pjaxArgs.selectors.push(theme.pjax.selectors);
+  }
+  if (theme.pjax.selectors) {
+    pjaxArgs.switches = theme.pjax.selectors;
+  }
+  if (theme.pjax.selectors) {
+    pjaxArgs.switchesOptions = theme.pjax.selectors;
+  }
+  pjaxArgs = JSON.stringify(pjaxArgs);
+
+if theme.pjax.enable
+  - var pjax_js = 'https://cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js';
+  - if (theme.cdn.pjax) pjax_js = theme.cdn.pjax;
+  script(src=pjax_js)
+
+script.
+  window.addEventListener('DOMContentLoaded', function () {
+    var pjax = new Pjax(!{ pjaxArgs });
+    // 加载进度条的计时器
+    var loadingTimer = null;
+
+    // 重置页面 Y 方向上的滚动偏移量
+    document.addEventListener('pjax:send', function () {
+      $('.header-nav-menu').removeClass('show');
+      if (CONFIG.pjax && CONFIG.pjax.avoidBanner) {
+        $('html').velocity('scroll', {
+          duration: 500,
+          offset: $('#header').height(),
+          easing: 'easeInOutCubic'
+        });
+      }
+
+      var loadingBarWidth = 20;
+      var MAX_LOADING_WIDTH = 95;
+
+      $('.loading-bar').addClass('loading');
+      $('.loading-bar__progress').css('width', loadingBarWidth + '%');
+      clearInterval(loadingTimer);
+      loadingTimer = setInterval(function () {
+        loadingBarWidth += 3;
+        if (loadingBarWidth > MAX_LOADING_WIDTH) {
+          loadingBarWidth = MAX_LOADING_WIDTH;
+        }
+        $('.loading-bar__progress').css('width', loadingBarWidth + '%');
+      }, 500);
+    }, false);
+
+    window.addEventListener('pjax:complete', function () {
+      clearInterval(loadingTimer);
+      $('.loading-bar__progress').css('width', '100%');
+      $('.loading-bar').removeClass('loading');
+      setTimeout(function () {
+        $('.loading-bar__progress').css('width', '0');
+      }, 400);
+      $('link[rel=prefetch], script[data-pjax-rm]').each(function () {
+        $(this).remove();
+      });
+      $('script[data-pjax], #pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+
+      if (Stun.utils.pjaxReloadBoot) {
+        Stun.utils.pjaxReloadBoot();
+      }
+      if (Stun.utils.pjaxReloadScroll) {
+        Stun.utils.pjaxReloadScroll();
+      }
+      if (Stun.utils.pjaxReloadSidebar) {
+        Stun.utils.pjaxReloadSidebar();
+      }
+      if (!{ isEnableNoHeader }) {
+        if (Stun.utils.pjaxReloadHeader) {
+          Stun.utils.pjaxReloadHeader();
+        }
+        if (Stun.utils.pjaxReloadScrollIcon) {
+          Stun.utils.pjaxReloadScrollIcon();
+        }
+        if (Stun.utils.pjaxReloadLocalSearch) {
+          Stun.utils.pjaxReloadLocalSearch();
+        }
+      }
+    }, false);
+  }, false);

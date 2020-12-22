@@ -1,0 +1,119 @@
+.clearfix {
+  clearfix();
+}
+
+// UI components
+// ----------------------------------------
+// "Popover" component
+[data-popover] {
+  position: relative;
+}
+
+[data-popover]::before {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: $z-index2;
+  font-family: sans-serif, Arial;
+  font-size: $font-size-base;
+  font-weight: normal;
+  font-style: normal;
+  line-height: $line-height-base;
+  white-space: nowrap;
+  color: #fff;
+  background-color: alpha(#000, .9);
+  opacity: 0;
+  text-shadow: none;
+  transition: opacity .2s ease, transform .2s ease;
+  transform: translate(-50%, -70%);
+  pointer-events: none;
+}
+
+[data-popover]::before {
+  content: attr(data-popover);
+  border-radius: 4px;
+  padding: .2rem .6rem;
+}
+
+@media (min-width: $md-width) {
+  [data-popover-pos='up']:hover::before {
+    opacity: 1;
+    transform: translate(-50%, -120%);
+  }
+}
+
+// "Alert" component
+.stun-message {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  z-index: $z-index2;
+  transform: translateX(-50%);
+}
+
+.stun-alert {
+  position: relative;
+  border-radius: 3px;
+  padding: 8px 12px;
+  font-size: $font-size-base + 2px;
+  line-height: 1rem;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+
+  &-success {
+    color: $alert-success-color;
+
+    & ~ i {
+      color: $alert-success-color;
+    }
+  }
+
+  &-info {
+    color: $alert-info-color;
+
+    & ~ i {
+      color: $alert-info-color;
+    }
+  }
+
+  &-warning {
+    color: $alert-warning-color;
+
+    & ~ i {
+      color: $alert-warning-color;
+    }
+  }
+
+  &-error {
+    color: $alert-error-color;
+
+    & ~ i {
+      color: $alert-error-color;
+    }
+  }
+
+  &-description {
+    margin-left: .5rem;
+  }
+}
+
+// Animation class
+// ----------------------------------------
+.anime-close {
+  &::before,
+  &::after {
+    transition: transform .2s ease;
+    transform: rotate(-45deg);
+  }
+
+  &::after {
+    transform: rotate(-135deg);
+  }
+
+  &:hover {
+    &::before,
+    &::after {
+      transform: rotate(0);
+    }
+  }
+}

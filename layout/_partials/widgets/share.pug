@@ -1,0 +1,9 @@
+-
+  var socialShare = theme.post_widget.share;
+  var socialShareLabel = socialShare.label || 'Share to: ';
+
+if socialShare.target
+  div.post-share
+    if socialShare.target
+      div.social-share(data-sites=`${socialShare.target}`)
+        = socialShareLabel

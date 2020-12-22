@@ -1,0 +1,151 @@
+-
+  var instantsearch_js = 'https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.js';
+
+  if (theme.cdn.instantsearch_js) {
+    instantsearch_js = theme.cdn.instantsearch_js;
+  }
+
+script(src=instantsearch_js defer)
+
+script.
+  window.addEventListener('DOMContentLoaded', function () {
+    $('.header-nav-search').on('click', function (e) {
+      e.stopPropagation();
+
+      $('body').css('overflow', 'hidden');
+      $('.search-popup')
+        .velocity('stop')
+        .velocity('transition.expandIn', {
+          duration: 300,
+          complete: function () {
+            $('.search-popup input').focus();
+          }
+        });
+      $('.search-mask')
+        .velocity('stop')
+        .velocity('transition.fadeIn', {
+          duration: 300
+        });
+    });
+
+    function closeSearch () {
+      $('body').css({ overflow: 'auto' });
+      $('.search-popup').css({ display: 'none' });
+      $('.search-mask').css({ display: 'none' });
+    }
+
+    $('.search-mask, .search-close').on('click', function () {
+      closeSearch();
+    });
+
+    $(document).on('keydown', function (e) {
+      // Escape <=> 27
+      if (e.keyCode === Stun.utils.codeToKeyCode('Escape')) {
+        closeSearch();
+      }
+    });
+
+    var algolia = CONFIG.algolia;
+    if (!algolia && !(algolia.appId && algolia.apiKey && algolia.indexName)) {
+      return console.error('Algolia setting is invalid.');
+    }
+
+    var search = instantsearch({
+      appId: algolia.appId,
+      apiKey: algolia.apiKey,
+      indexName: algolia.indexName,
+      searchParameters: {
+        hitsPerPage: algolia.hits.per_page || 10
+      },
+      searchFunction: function (helper) {
+        var searchInput = $('.search-input').find('input');
+
+        if (searchInput.val()) {
+          helper.search();
+        }
+      }
+    });
+
+    search.addWidget(
+      instantsearch.widgets.searchBox({
+        container: '.search-input',
+        reset: false,
+        magnifier: false,
+        placeholder: algolia.languages.inputPlaceholder
+      })
+    );
+
+    // The hits of search results.
+    search.addWidget(
+      instantsearch.widgets.hits({
+        container: '#algolia-hits',
+        templates: {
+          item: function (data) {
+            var link = data.permalink ? data.permalink : CONFIG.root + data.path;
+            return (
+              '<a href="' + link + '" class="algolia-hit-item-link">' +
+                data._highlightResult.title.value +
+              '</a>'
+            );
+          },
+          empty: function (data) {
+            return (
+              '<div id="algolia-hits-empty">' +
+                algolia.languages.hitsEmpty.replace(/\$\{query}/, data.query) +
+              '</div>'
+            );
+          }
+        },
+        cssClasses: {
+          item: 'algolia-hit-item'
+        }
+      })
+    );
+
+    // The stats of search results.
+    if ($('#algolia-stats')[0]) {
+      search.addWidget(
+        instantsearch.widgets.stats({
+          container: '#algolia-stats',
+          templates: {
+            body: function (data) {
+              var stats = algolia.languages.hitsStats
+                .replace(/\$\{hits}/, data.nbHits)
+                .replace(/\$\{time}/, data.processingTimeMS);
+              return (
+                stats +
+                '<span class="algolia-logo pull-right">' +
+                  '<img src="' + CONFIG.root +
+                  `${CONFIG.sourcePath.images}/algolia.svg" alt="Algolia" />` +
+                '</span>'
+              );
+            }
+          }
+        })
+      );
+    }
+
+    // The pagination of the results.
+    search.addWidget(
+      instantsearch.widgets.pagination({
+        container: '#algolia-pagination',
+        scrollTo: false,
+        showFirstLast: false,
+        labels: {
+          first: '<i class="fa fa-angle-double-left"></i>',
+          last: '<i class="fa fa-angle-double-right"></i>',
+          previous: '<i class="fa fa-angle-left"></i>',
+          next: '<i class="fa fa-angle-right"></i>'
+        },
+        cssClasses: {
+          root: 'pagination',
+          item: 'pagination-item',
+          link: 'page-number',
+          active: 'current',
+          disabled: 'disabled-item'
+        }
+      })
+    );
+
+    search.start();
+  });

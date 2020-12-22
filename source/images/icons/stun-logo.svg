@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Author: liuyib <https://github.com/liuyib> -->
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" height="512px" width="512px" x="0px" y="0px">
+<style type="text/css">.st1{fill:#FFFFFF;}</style>
+	<path fill="#73C8FF" d="M354.8,85.9C301.6,55.1,257.2,30,256,30s-45.6,25.1-98.8,55.9l-96.6,55.9v228.4l96.7,56.1 c55.2,31.9,97.6,56,98.8,55.9c1.1-0.1,45.6-25.3,98.7-56.1l96.6-55.9V141.7L354.8,85.9z"/>
+	<polygon class="st1" points="256,145.1 188,180.1 228.6,201 256,186.9 329.8,224.9 350,215.5 350,193.5 "/>
+	<polygon class="st1" points="343.5,322 350,318.6 350,283.5 168.5,190 162,193.4 162,228.5 "/>
+	<polygon class="st1" points="283.4,311.1 256,325.2 182.2,287.2 162,296.6 162,318.6 256,367 324,332 "/>
+</svg>

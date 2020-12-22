@@ -1,0 +1,22 @@
+script&attributes(dataPjax).
+  function loadLivere () {
+    var d = document, s = d.createElement('script');
+
+    if (!d.getElementById('lv-container')) {
+      return;
+    }
+    if (typeof LivereTower === 'function') {
+      return;
+    }
+    s.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    if (!{ pjax }) {
+      s.setAttribute('data-pjax-rm', '');
+    }
+    (d.head || d.body).appendChild(s);
+  }
+
+  if (!{ pjax }) {
+    loadLivere();
+  } else {
+    window.addEventListener('DOMContentLoaded', loadLivere, false);
+  }

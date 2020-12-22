@@ -1,0 +1,7 @@
+meta(name="renderer" content="webkit")
+meta(name="force-rendering" content="webkit")
+
+script.
+  if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) {
+    window.location.href = '!{ theme.kill_old_ie.warning_url }';
+  }

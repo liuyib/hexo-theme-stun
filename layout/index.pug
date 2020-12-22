@@ -1,0 +1,7 @@
+extends ./_layout.pug
+
+block content
+  include ./_partials/post/post-list.pug
+
+  if theme.post_list.paginate.home
+    include ./_partials/widgets/paginator.pug

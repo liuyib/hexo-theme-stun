@@ -1,0 +1,32 @@
+if theme.disqus.enable
+  div#comments.comments
+    div#disqus_thread
+else if theme.waline.enable
+  div#comments.comments
+    div#waline-container
+else if theme.valine.enable
+  div#comments.comments
+    div#valine-container
+else if theme.minivaline.enable
+  div#comments.comments
+    div#minivaline-container
+else if theme.gitalk.enable
+  div#comments.comments
+    div#gitalk-container
+else if theme.utterances.enable
+  div#comments.comments
+    div#utterances-container
+else if theme.livere.enable
+  div#comments.comments
+    div#lv-container(data-id="city" data-uid=theme.livere.uid)
+else if theme.fbcomments.enable
+  div#comments.comments
+    div#fb-root
+    div.fb-comments(
+      data-href=page.permalink
+      data-lazy=theme.fbcomments.lazy
+      data-mobile=theme.fbcomments.mobile
+      data-numposts=theme.fbcomments.numPosts
+      data-order-by=theme.fbcomments.order_by
+      data-width=theme.fbcomments.width
+    )

@@ -1,0 +1,24 @@
+mixin menuItem(menu, className)
+  each value, name in (menu || {})
+    if name && value
+      -
+        var item = value.split('||');
+        var menuPath = item[0] ? item[0].trim() : '/';
+        var menuIcon = item[1] ? item[1].trim() : false;
+        var hasSubMenu = menuPath.toLowerCase() === 'javascript:;';
+        var aTagAttr = {};
+        if (hasSubMenu) aTagAttr.onclick = 'return false;';
+
+      div(class=`header-nav-${className || ''}menu-item`)
+        a(
+          href=hasSubMenu ? 'javascript:;' : menuPath
+          class=`header-nav-${className || ''}menu-item__link`
+        )&attributes(aTagAttr)
+          if !theme.menu_settings.text_only && menuIcon
+            span(class=`header-nav-${className || ''}menu-item__icon`)
+              i(class=menuIcon)
+          if !theme.menu_settings.icon_only
+            span(class=`header-nav-${className || ''}menu-item__text`)= __(`menu.${name}`)
+        if hasSubMenu
+          div.header-nav-submenu
+            +menuItem(theme.submenu[name], 'sub')

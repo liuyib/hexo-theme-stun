@@ -1,0 +1,22 @@
+- let fbCommentsSrc = `https://connect.facebook.net/${theme.fbcomments.lang}/sdk.js#xfbml=1&version=v8.0`;
+- if (pjax) {
+    script(src=fbCommentsSrc)
+    script&attributes(dataPjax).
+      function loadFBComments() {
+        if (!'!{ theme.fbcomments.appId }') {
+          console.error('Stun Error: Facebook AppId not found. Please search for `fbcomments` in _config.yml of «Stun» theme and set `fbcomments.appId`.');
+          return;
+        }
+
+        window.FB.init({
+          appId            : '!{ theme.fbcomments.appId }',
+          autoLogAppEvents : true,
+          xfbml            : true,
+          version          : 'v8.0'
+        });
+      }
+      loadFBComments();
+
+- } else {
+    script(async defer crossorigin="anonymous" src=fbCommentsSrc)
+- }

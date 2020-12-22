@@ -1,0 +1,40 @@
+extends ./_layout.pug
+
+block content
+  // Just used to judge whether it is an article page
+  div#is-post
+  div.post
+    include ./_mixins/post-header.pug
+    include ./_mixins/gallery.pug
+
+    +postHeader(page)
+
+    div.post-body
+      if page.photos && page.photos.length
+        +gallery(page)
+      != page.content
+
+    footer.post-footer
+      if theme.post_widget.end_text.enable
+        div.post-ending.ending
+          div.ending__text= __('post.end')
+
+      if page.copyright === true || (isShowCC && theme.creative_commons.post)
+        include ./_partials/widgets/copyright.pug
+
+      if theme.post_widget.tags
+        if page.tags && page.tags.length > 0
+          div.post-tags
+            each tag in page.tags.data
+              span.post-tags-item
+                span.post-tags-item__icon
+                  i(class=theme.icon.post_tags)
+                a.post-tags-item__link(href=tag.permalink)= tag.name
+
+      if theme.post_widget.share.enable
+        include ./_partials/widgets/share.pug
+
+      if isShowReward
+        include ./_partials/widgets/reward.pug
+
+      include ./_partials/widgets/paginator.pug

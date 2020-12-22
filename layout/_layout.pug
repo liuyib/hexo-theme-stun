@@ -1,0 +1,82 @@
+-
+  var HEXO_URL = 'http://hexo.io/';
+  var STUN_URL = 'https://github.com/liuyib/hexo-theme-stun/';
+  var isNoHeader = !theme.header.enable || (is_post() && !theme.header.show_on.post);
+  var isEnableNoHeader = !theme.header.enable || !theme.header.show_on.post;
+  var isShowReward = typeof page.reward === 'boolean' ? page.reward === true : (theme.reward.enable && is_post());
+  var isShowCC = typeof page.copyright === 'boolean' ? page.copyright === true : (theme.creative_commons.enable && is_post());
+
+  var pjax = false;
+  var dataPjax = {};
+  if (theme.pjax.enable) {
+    pjax = true;
+    dataPjax = { 'data-pjax': '' };
+  }
+
+  var ccLicense = '';
+  var ccLanguage = '';
+  if (theme.creative_commons) {
+    var cc = theme.creative_commons;
+    ccLicense = cc.license && cc.license.toLowerCase();
+    ccLanguage = cc.language && cc.language.toLowerCase() || 'en';
+  }
+  var ccUrl = `https://creativecommons.org/licenses/${ccLicense}/4.0/deed.${ccLanguage}`;
+
+doctype html
+html(lang=config.language)
+  head
+    include ./_partials/head/head.pug
+  body
+    div#container.container
+      header#header.header
+        div.header-inner(class=`${isNoHeader ? 'header-inner--height header-inner--bgcolor' : ''}`)
+          include ./_partials/header/header.pug
+
+      main#main.main
+        div.main-inner
+          div#content-wrap.content-wrap(
+            class=`${page.sidebar === false ? 'content-wrap--noside' : ''}`
+          )
+            div#content.content(class=`${is_home() ? 'content-home' : ''}`)
+              block content
+
+            if (is_archive() && theme.post_list.paginate.archives) || is_category() || is_tag()
+              include ./_partials/widgets/paginator.pug
+
+            if page.comments
+              include ./_partials/widgets/comments.pug
+
+          if page.sidebar !== false && theme.sidebar.enable
+            div#sidebar-wrap.sidebar-wrap
+              aside#sidebar.sidebar
+                include ./_partials/sidebar/sidebar.pug
+
+          div.clearfix
+
+      footer#footer.footer
+        div.footer-inner
+          include ./_partials/footer/footer.pug
+
+      include ./_partials/widgets/loading-bar.pug
+
+      if theme.back2top.enable
+        include ./_partials/widgets/back2top.pug
+    include ./_partials/search/index.pug
+
+    include ./_scripts/vendors.pug
+    include ./_third-party/search/index.pug
+
+    if pjax
+      include ./_third-party/pjax.pug
+
+      div#pjax-reload
+        include ./_third-party/math/index.pug
+        include ./_third-party/quicklink.pug
+        include ./_third-party/analytics/busuanzi.pug
+    else
+      include ./_third-party/math/index.pug
+      include ./_third-party/quicklink.pug
+      include ./_third-party/analytics/busuanzi.pug
+
+    include ./_third-party/comments/index.pug
+    include ./_scripts/stun.pug
