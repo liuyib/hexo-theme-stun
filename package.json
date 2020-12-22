@@ -1,0 +1,60 @@
+{
+  "name": "hexo-theme-stun",
+  "version": "2.4.0",
+  "description": "A beautiful & simple theme for Hexo",
+  "homepage": "https://liuyib.github.io",
+  "scripts": {
+    "commit": "git cz",
+    "release": "standard-version",
+    "release:lts": "npm run release -- --release-as",
+    "release:pre": "npm run release -- --prerelease",
+    "lint": "standard",
+    "lint:fix": "standard --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liuyib/hexo-theme-stun"
+  },
+  "keywords": [
+    "Stun",
+    "Hexo"
+  ],
+  "author": "liuyib",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/liuyib/hexo-theme-stun/issues"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "commitizen": "^4.2.2",
+    "commitlint-config-cz": "^0.13.2",
+    "cz-customizable": "^6.3.0",
+    "eslint": "^7.15.0",
+    "husky": "^4.3.6",
+    "standard": "^14.3.4",
+    "standard-version": "^9.0.0"
+  },
+  "standard": {
+    "globals": [
+      "$",
+      "CONFIG",
+      "hexo",
+      "Stun",
+      "instantsearch"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "./.cz-config.js"
+    }
+  }
+}
