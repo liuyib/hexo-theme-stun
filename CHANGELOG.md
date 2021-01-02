@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.5.0](https://github.com/liuyib/hexo-theme-stun/compare/v2.4.0...v2.5.0) (2021-01-02)
+
+
+### Features
+
+* add waline comment system ([#141](https://github.com/liuyib/hexo-theme-stun/issues/141)) ([d2ce245](https://github.com/liuyib/hexo-theme-stun/commit/d2ce245ed7d57f6ca9cf66e89a5edbe1bd877f1b))
+
+
+### Bug Fixes
+
+* **toc:** toc can't spread automatically [#145](https://github.com/liuyib/hexo-theme-stun/issues/145) ([7b2b507](https://github.com/liuyib/hexo-theme-stun/commit/7b2b507b6f0ba2ed746d69f38130bcf5acf41308))
+
 ## [2.4.0](https://github.com/liuyib/hexo-theme-stun/compare/v2.3.0...v2.4.0) (2020-12-11)
 
 
