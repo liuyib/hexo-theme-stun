@@ -82,6 +82,14 @@ If you plan to use «Stun» theme for a long time and want to show it here, you 
   $ git clone https://github.com/liuyib/hexo-theme-stun.git themes/stun
   ```
 
+  > This command will clone all the files in this repository, many of which are only used for project development and are not used by ordinary users at all. Therefore, if you want to clone only the files necessary for the theme to run, please use the following command instead of the above command:
+  >
+  > ```bash
+  > $ git clone -b dist https://github.com/liuyib/hexo-theme-stun.git themes/stun
+  > ```
+  >
+  > Note: It is not convenient to update in the future, please use with caution.
+
 - Install dependency `hexo-renderer-pug`
 
   Enter your hexo directory, run this:

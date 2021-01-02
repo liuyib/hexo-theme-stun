@@ -82,6 +82,14 @@
   $ git clone https://github.com/liuyib/hexo-theme-stun.git themes/stun
   ```
 
+  > 该指令会将本仓库中的所有文件克隆下来，其中有很多文件仅用于项目开发，对于普通用户来说完全用不到。因此，如果你想仅克隆主题运行所必需的文件，请用下面的指令代替上面的指令：
+  >
+  > ```bash
+  > $ git clone -b dist https://github.com/liuyib/hexo-theme-stun.git themes/stun
+  > ```
+  >
+  > 注意：这样做不方便以后更新，请谨慎使用。
+
 - 安装依赖 `hexo-renderer-pug`
 
   进入 Hexo 根目录，执行指令：
