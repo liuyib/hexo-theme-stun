@@ -53,8 +53,14 @@ $(document).ready(function () {
       return
     }
     if (currHeading !== lastHeading) {
-      var anchor = window.decodeURIComponent(currHeading)
-      var $targetLink = $('.sidebar-toc a[href="#' + anchor + '"]')
+      var $targetLink = $('.sidebar-toc a[href="#' + currHeading + '"]')
+
+      // In order to be compatible with Hexo under v5.0.0
+      if (!$targetLink.length) {
+        var anchorDecode = window.decodeURIComponent(currHeading)
+        $targetLink = $('.sidebar-toc a[href="#' + anchorDecode + '"]')
+      }
+
       $allTocItem.removeClass('active current')
       $targetLink.parents('li').addClass('active')
       $targetLink.parent().addClass('current')
