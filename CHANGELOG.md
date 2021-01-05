@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.6.0](https://github.com/liuyib/hexo-theme-stun/compare/v2.5.0...v2.6.0) (2021-01-05)
+
+
+### Features
+
+* **i18n:** allow use i18n files by data files [#121](https://github.com/liuyib/hexo-theme-stun/issues/121) ([724d34f](https://github.com/liuyib/hexo-theme-stun/commit/724d34f353d76a2bce17058f2ad6346a74ef0536))
+
 ## [2.5.0](https://github.com/liuyib/hexo-theme-stun/compare/v2.4.0...v2.5.0) (2021-01-02)
 
 
