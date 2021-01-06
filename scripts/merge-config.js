@@ -43,10 +43,13 @@ hexo.on('generateBefore', function () {
 
     var usingLang = rootConfig.language
     var targetLangData = data[`languages/${usingLang}`]
-    var flattenData = flatten(targetLangData)
 
-    if (Object.keys(flattenData).length) {
-      hexo.theme.i18n.data[usingLang] = flattenData
+    if (targetLangData) {
+      var flattenData = flatten(targetLangData)
+
+      if (Object.keys(flattenData).length) {
+        hexo.theme.i18n.data[usingLang] = flattenData
+      }
     }
   }
 
