@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.6.1](https://github.com/liuyib/hexo-theme-stun/compare/v2.6.0...v2.6.1) (2021-01-06)
+
+
+### Bug Fixes
+
+* **#149:** can't run when languages folder not exist ([f3956ff](https://github.com/liuyib/hexo-theme-stun/commit/f3956fffe81f0de4d7f4a455ce69b265fb474198)), closes [#149](https://github.com/liuyib/hexo-theme-stun/issues/149)
+
 ## [2.6.0](https://github.com/liuyib/hexo-theme-stun/compare/v2.5.0...v2.6.0) (2021-01-05)
 
 
