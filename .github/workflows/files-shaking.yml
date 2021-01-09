@@ -3,9 +3,9 @@ name: 'FilesShaking'
 
 on:
   push:
-    branchs: [master]
+    branches: [master]
   pull_request:
-    branchs: [master]
+    branches: [master]
 
 jobs:
   deploy:
