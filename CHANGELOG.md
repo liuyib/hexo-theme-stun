@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.6.2](https://github.com/liuyib/hexo-theme-stun/compare/v2.6.1...v2.6.2) (2021-01-25)
+
+
+### Bug Fixes
+
+* **#156:** can't render math formula in post title ([fc73f5a](https://github.com/liuyib/hexo-theme-stun/commit/fc73f5a14e3e511ce357b6e3b22e96891d937ac9)), closes [#156](https://github.com/liuyib/hexo-theme-stun/issues/156)
+
 ### [2.6.1](https://github.com/liuyib/hexo-theme-stun/compare/v2.6.0...v2.6.1) (2021-01-06)
 
 
