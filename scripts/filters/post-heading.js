@@ -26,11 +26,10 @@ hexo.extend.filter.register(
         return match
       }
 
-      var filterHtml = (html.replace(/<[^>]+>/gim, '') || '').trim()
       return `
         <${tName} id="${id}" ${attrBegin} ${attrEnd}>
           <a href="#${id}" class="heading-link"><i class="${theme.icon &&
-        theme.icon.post_heading}"></i></a>${filterHtml}</${tName}>
+        theme.icon.post_heading}"></i></a>${html}</${tName}>
       `
     })
   },
