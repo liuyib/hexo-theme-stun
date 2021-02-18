@@ -122,7 +122,10 @@ $ git pull
 
 ## :page_facing_up: 文档
 
-请查看：[https://theme-stun.github.io/docs/zh-CN/](https://theme-stun.github.io/docs/zh-CN/)
+下面是多个文档镜像（它们是全量同步的），任选其一访问即可。
+
+- Github Pages: [https://theme-stun.github.io/docs/](https://theme-stun.github.io/docs/)
+- Gitee Pages: [https://theme-stun.gitee.io/docs/](https://theme-stun.gitee.io/docs/)
 
 ## :question: 问题
 

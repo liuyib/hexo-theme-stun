@@ -122,7 +122,10 @@ $ git pull
 
 ## :page_facing_up: Documentation
 
-Please see: [https://theme-stun.github.io/docs/](https://theme-stun.github.io/docs/)
+Below are some document mirrors (they are fully synchronized), and you can access any one of them.
+
+- Github Pages: [https://theme-stun.github.io/docs/](https://theme-stun.github.io/docs/)
+- Gitee Pages: [https://theme-stun.gitee.io/docs/](https://theme-stun.gitee.io/docs/)
 
 ## :question: Question
 
