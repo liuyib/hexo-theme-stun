@@ -22,7 +22,7 @@ script&attributes(dataPjax).
       placeholder: '!{ theme.waline.placeholder }',
       pageSize: '!{ theme.waline.pageSize }' || 10,
       lang: '!{ theme.waline.language }' || 'zh-cn',
-      visitor: !{ theme.waline.visitor },
+      visitor: location.hostname!=='localhost' && !{ theme.waline.visitor } ,
       avatar: '!{ theme.waline.avatar }',
       path: window.location.pathname,
       meta: guest_info

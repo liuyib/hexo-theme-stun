@@ -41,6 +41,21 @@ qihu360_site_verification:
 sougou_site_verification:
 
 # ---------------------------------------------------------------
+# HTML head config
+# ---------------------------------------------------------------
+# use <link rel="preload"> to preload important resources
+preload:
+  enable: false
+  item:
+    # whether preload index.css
+    css: true
+    # some source you want to preload: file || type
+    # type: audio, document, embed, font, image, style, script, video...
+    # eg: /img/a.jpg || image
+    # document: https://developer.mozilla.org/zh-CN/docs/Web/HTML/Preloading_content
+    customize:
+
+# ---------------------------------------------------------------
 # Menu config
 # ---------------------------------------------------------------
 
