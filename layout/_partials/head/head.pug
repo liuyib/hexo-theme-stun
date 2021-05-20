@@ -37,6 +37,17 @@ meta(name="format-detection" content="telephone=no")
 meta(name="apple-mobile-web-app-capable" content="yes")
 meta(name="apple-mobile-web-app-status-bar-style" content="black")
 
+if theme.preload.enable
+  if theme.preload.item.css
+    link(rel="preload" href=`${url_for(theme.css)}/index.css?v=${stun_env('version')}` as="style")
+  if theme.preload.item.customize
+    - var files = theme.preload.item.customize
+    - for(k=0; k<files.length; k++) {
+    -   file = files[k].split(' || ');
+      link(rel="preload", href=`${file[0]}` as=`${file[1]}`)
+    - }
+    
+
 if theme.pwa.enable
   if theme.pwa.theme_color
     meta(name="theme-color" content=theme.pwa.theme_color)
