@@ -501,20 +501,26 @@ gitalk:
 # See: https://waline.js.org/
 waline:
   enable: false
-  # The URL of your server.
-  serverURL:
-  # Comment box placeholder.
-  placeholder: Just go go
+  # serverURL
+  serverURL: 
+  # word count limit number | [number, number]
+  wordLimit: 0
   # Gravatar style.
   avatar: mp
   # Custom comment header.
   meta: nick,mail,link
-  # The number of comments per page.
+  # the number of comments of each page
   pageSize: 10
-  # Optional values: en | zh-CN | zh-TW | jp
+  # Optional values: en | zh-cn | zh-TW | jp
   lang: zh-CN,zh-TW,en
-  # Article reading statistics.
-  visitor: false
+  # visitor statistics
+  visitor: true
+  # info required [] | ['nick'] | ['nick', 'mail']
+  requiredMeta: []
+  # locale
+  locale:
+    # Comment box placeholder.
+    placeholder: Just go go
 
 # Valine
 # See: https://valine.js.org/quickstart.html

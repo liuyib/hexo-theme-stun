@@ -1,5 +1,5 @@
 -
-  var waline_js = 'https://unpkg.com/@waline/client/dist/Waline.min.js';
+  var waline_js = 'https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js';
 
   if (theme.cdn.waline) {
     waline_js = theme.cdn.waline;
@@ -9,23 +9,45 @@ script(src=waline_js)
 
 script&attributes(dataPjax).
   function loadWaline () {
-    var GUEST_INFO = ['nick', 'mail', 'link'];
-    var guest_info = '!{ theme.waline.meta }';
+    var META = ['nick', 'mail', 'link'];
+    var need_meta = '!{ theme.waline.meta }';
+    var require_meta = '!{theme.waline.requiredMeta}';
 
-    guest_info = guest_info.split(',').filter(function(item) {
-      return GUEST_INFO.indexOf(item) > -1;
+    need_meta = need_meta.split(',').filter(function(item) {
+      return META.indexOf(item) > -1;
+    });
+
+    require_meta = require_meta.split(',').filter(function(item) {
+      return META.indexOf(item) > -1;
     });
 
     new Waline({
       el: '#waline-container',
-      serverURL: '!{ theme.waline.serverURL }',
-      placeholder: '!{ theme.waline.placeholder }',
-      pageSize: '!{ theme.waline.pageSize }' || 10,
-      lang: '!{ theme.waline.language }' || 'zh-cn',
-      visitor: location.hostname!=='localhost' && !{ theme.waline.visitor } ,
-      avatar: '!{ theme.waline.avatar }',
-      path: window.location.pathname,
-      meta: guest_info
+      serverURL: '!{theme.waline.serverURL}',
+      wordLimit: !{theme.waline.wordLimit},
+      path: location.pathname,
+      avatar: '!{theme.waline.avatar}',
+      meta: need_meta,
+      pageSize: '!{theme.waline.pageSize}' || 10,
+      lang: '!{theme.waline.lang}' || 'zh-cn',
+      visitor: location.hostname!=='localhost' && !{theme.waline.visitor} ,
+      requiredMeta: require_meta,
+      uploadImage: function(file) {
+        const formData = new FormData();
+        formData.append('image', file);
+        
+        return fetch('https://7bu.top/api/upload', {
+          method: 'POST',
+          headers: {
+            'token': 'e8d5dcf6c091c20029c02070c011bd69'
+          },
+          body: formData
+        }).then(resp => resp.json()).then(resp => resp.data.url);
+      },
+      locale: {
+        admin: 'FF',
+        placeholder: '!{theme.waline.locale.placeholder}'
+      }
     });
   }
 
