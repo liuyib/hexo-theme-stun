@@ -1,0 +1,10 @@
+div#rightside.rightside
+    if theme.back2top.enable
+        div#back2top
+            span.rightside__icon
+                i(class=theme.back2top.icon.name)
+    if is_post() && theme.go2comments.enable
+        div#go2comments.rightside--show
+            span.rightside__icon(style="transform: rotate(0deg);")
+                a(href="#comments", title=theme.go2comments.icon.title)
+                    i(class=theme.go2comments.icon.name)
