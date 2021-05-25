@@ -67,13 +67,13 @@ $(document).ready(function () {
 
     if (scrollTop !== 0) {
       if (!isBack2topShow) {
-        $back2top.addClass('back2top--show')
-        $back2top.removeClass('back2top--hide')
+        $back2top.addClass('rightside--show')
+        $back2top.removeClass('rightside--hide')
         isBack2topShow = true
       }
     } else {
-      $back2top.addClass('back2top--hide')
-      $back2top.removeClass('back2top--show')
+      $back2top.addClass('rightside--hide')
+      $back2top.removeClass('rightside--show')
       isBack2topShow = false
     }
   }

@@ -267,6 +267,26 @@ creative_commons:
   # If not set, `en` will be used by default.
   language:
 
+# ---------------------------------------------------------------
+# RightSide config
+# ---------------------------------------------------------------
+
+rightside:
+  # (Please use "" to wrap the value)
+  color: "#49b1f5"
+  # Color when the mouse hovers it (Please use "" to wrap the value)
+  hover_color: "#fc6423"
+
+# Go to comments
+go2comments:
+  enable: true
+  icon:
+    # Icon name in FontAwesome, see: https://fontawesome.com/icons
+    name: far fa-comment-dots
+    # Notification text
+    title: 直达评论
+    
+  
 # Back to top
 back2top:
   enable: true
@@ -275,10 +295,6 @@ back2top:
     name: fas fa-rocket
     # Rotation Angle of icon.
     rotate: -45deg
-    # (Please use "" to wrap the value)
-    color: "#49b1f5"
-    # Color when the mouse hovers it (Please use "" to wrap the value)
-    hover_color: "#fc6423"
 
 # ---------------------------------------------------------------
 # Sidebar config

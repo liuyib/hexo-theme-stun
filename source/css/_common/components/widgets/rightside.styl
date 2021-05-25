@@ -1,7 +1,7 @@
-.back2top {
+.rightside {
   position: fixed;
-  right: 0;
-  bottom: 5vh;
+  right: 5px;
+  bottom: 2vh;
   transition: transform .2s ease;
   transform: translateX(100%);
   cursor: pointer;
@@ -16,14 +16,14 @@
 
   &__icon {
     display: block;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     line-height: 1;
-    color: convert(hexo-config('back2top.icon.color') || '#666');
+    color: convert(hexo-config('rightside.color') || '#666');
     transition: color .2s ease;
     transform: rotate(convert(hexo-config('back2top.icon.rotate') || '0'));
 
     &:hover {
-      color: convert(hexo-config('back2top.icon.hover_color') || '#999');
+      color: convert(hexo-config('rightside.hover_color') || '#999');
     }
   }
 }
