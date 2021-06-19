@@ -29,7 +29,7 @@
     "commitizen": "^4.2.2",
     "commitlint-config-cz": "^0.13.2",
     "cz-customizable": "^6.3.0",
-    "eslint": "^7.17.0",
+    "eslint": "^7.29.0",
     "husky": "^4.3.6",
     "standard": "^14.3.4",
     "standard-version": "^9.1.0"
