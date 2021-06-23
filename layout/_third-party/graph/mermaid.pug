@@ -1,5 +1,8 @@
 script(src=`https://cdn.jsdelivr.net/npm/mermaid@${theme.graph.mermaid.version}/dist/mermaid.min.js`)
 script. 
-   if (window.mermaid) {
-      mermaid.initialize({theme: 'forest'});
-    }
+   window.addEventListener('load', function(){
+      if (window.mermaid) {
+       mermaid.initialize({theme: 'forest'});
+      }
+   })
+   
