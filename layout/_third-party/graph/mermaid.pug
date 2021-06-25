@@ -4,5 +4,28 @@ script.
       if (window.mermaid) {
        mermaid.initialize({theme: 'forest'});
       }
+      let graphs = document.querySelectorAll('.mermaid')
+      graphs.forEach(it => {
+         it.onclick = function() {
+            let dom = document.createElement('div')
+            dom.style.position = 'fixed'
+            dom.style.top = 0
+            dom.style.left = 0
+            dom.style.right = 0
+            dom.style.bottom = 0
+            dom.style.backgroundColor = 'rgba(0, 0, 0, 0.5)'
+            dom.style.overflowY='scroll'
+            let cloneNode = it.cloneNode(true)
+            cloneNode.style.backgroundColor = "#fff"
+            cloneNode.style.width="80vw"
+            cloneNode.style.margin="80px auto"
+            cloneNode.style.textAlign="center"
+            dom.appendChild(cloneNode)
+            dom.onclick = function() {
+               document.body.removeChild(dom)
+            }
+            document.body.appendChild(dom)
+         }
+      })
    })
    
