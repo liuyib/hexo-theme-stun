@@ -9,9 +9,9 @@ $(document).ready(function () {
     if ($('.post-body, .custompage').find(HEADING_SELECTOR)[0]) {
       return
     }
-    $('.sidebar-nav').addClass('hide')
-    $('.sidebar-toc').addClass('hide')
-    $('.sidebar-ov').removeClass('hide')
+    $('.card-info-nav').addClass('hide')
+    $('.card-info-toc').addClass('hide')
+    $('.card-info-ov').removeClass('hide')
   }
 
   // The heading that reached the top currently.
@@ -24,7 +24,7 @@ $(document).ready(function () {
   //   based on the scrolling of heading in the article.
   function autoSpreadToc () {
     var $postBody = $('.post-body, .custompage')
-    var $allTocItem = $('.sidebar-toc li')
+    var $allTocItem = $('.card-info-toc li')
     var $headings = $postBody.find(HEADING_SELECTOR)
     var $firsetChild = $headings.first()
 
@@ -53,12 +53,12 @@ $(document).ready(function () {
       return
     }
     if (currHeading !== lastHeading) {
-      var $targetLink = $('.sidebar-toc a[href="#' + currHeading + '"]')
+      var $targetLink = $('.card-info-toc a[href="#' + currHeading + '"]')
 
       // In order to be compatible with Hexo under v5.0.0
       if (!$targetLink.length) {
         var anchorDecode = window.decodeURIComponent(currHeading)
-        $targetLink = $('.sidebar-toc a[href="#' + anchorDecode + '"]')
+        $targetLink = $('.card-info-toc a[href="#' + anchorDecode + '"]')
       }
 
       $allTocItem.removeClass('active current')
@@ -73,15 +73,15 @@ $(document).ready(function () {
   var isTocScroll = false
   // Scroll the post toc to the middle.
   function scrollTocToMiddle () {
-    var $tocWrapHeight = $('.sidebar-toc').height()
-    var $tocHeight = $('.sidebar-toc > div').height()
+    var $tocWrapHeight = $('.card-info-toc').height()
+    var $tocHeight = $('.card-info-toc > div').height()
 
     if ($tocHeight <= $tocWrapHeight) {
       return
     }
 
-    var $tocWrap = $('.sidebar-toc')
-    var $currTocItem = $('.sidebar-toc .current a')
+    var $tocWrap = $('.card-info-toc')
+    var $currTocItem = $('.card-info-toc .current a')
 
     if ($currTocItem[0] && $tocWrap[0]) {
       var tocTop = $currTocItem.offset().top - $tocWrap.offset().top
@@ -153,7 +153,7 @@ $(document).ready(function () {
         parseInt($post[0].getBoundingClientRect().top * -1) + windowHeight
     }
 
-    var percentNum = Number($('.sidebar-reading-info__num').text())
+    var percentNum = Number($('.card-info-reading-info__num').text())
     postReadingHeight = parseInt(Math.abs(postReadingHeight))
     percent = parseInt((postScrollTop / postReadingHeight) * 100)
     percent = percent > 100 ? 100 : percent < 0 ? 0 : percent
@@ -165,8 +165,8 @@ $(document).ready(function () {
     ) {
       return
     }
-    $('.sidebar-reading-info__num').text(percent)
-    $('.sidebar-reading-line').css(
+    $('.card-info-reading-info__num').text(percent)
+    $('.card-info-reading-line').css(
       'transform',
       'translateX(' + (percent - 100) + '%)'
     )
@@ -192,10 +192,10 @@ $(document).ready(function () {
   )
 
   Stun.utils.pjaxReloadSidebar = function () {
-    var $navToc = $('.sidebar-nav-toc')
-    var $navOv = $('.sidebar-nav-ov')
-    var $tocWrap = $('.sidebar-toc')
-    var $overview = $('.sidebar-ov')
+    var $navToc = $('.card-info-nav-toc')
+    var $navOv = $('.card-info-nav-ov')
+    var $tocWrap = $('.card-info-toc')
+    var $overview = $('.card-info-ov')
 
     $navToc.on('click', function (e) {
       e.stopPropagation()

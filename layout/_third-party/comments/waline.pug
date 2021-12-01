@@ -1,5 +1,5 @@
 -
-  var waline_js = 'https://unpkg.com/@waline/client/dist/Waline.min.js';
+  var waline_js = 'https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js';
 
   if (theme.cdn.waline) {
     waline_js = theme.cdn.waline;
@@ -9,23 +9,51 @@ script(src=waline_js)
 
 script&attributes(dataPjax).
   function loadWaline () {
-    var GUEST_INFO = ['nick', 'mail', 'link'];
-    var guest_info = '!{ theme.waline.meta }';
+    var META = ['nick', 'mail', 'link'];
+    var need_meta = '!{ theme.waline.meta }';
+    var require_meta = '!{theme.waline.requiredMeta}';
 
-    guest_info = guest_info.split(',').filter(function(item) {
-      return GUEST_INFO.indexOf(item) > -1;
+    need_meta = need_meta.split(',').filter(function(item) {
+      return META.indexOf(item) > -1;
+    });
+
+    require_meta = require_meta.split(',').filter(function(item) {
+      return META.indexOf(item) > -1;
     });
 
     new Waline({
       el: '#waline-container',
-      serverURL: '!{ theme.waline.serverURL }',
-      placeholder: '!{ theme.waline.placeholder }',
-      pageSize: '!{ theme.waline.pageSize }' || 10,
-      lang: '!{ theme.waline.language }' || 'zh-cn',
-      visitor: !{ theme.waline.visitor },
-      avatar: '!{ theme.waline.avatar }',
-      path: window.location.pathname,
-      meta: guest_info
+      serverURL: '!{theme.waline.serverURL}',
+      visitor: location.hostname!=='localhost' && !{theme.waline.visitor} ,
+      emoji: [
+        'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili',
+        'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq',
+        'https://cdn.jsdelivr.net/gh/zhheo/Sticker-Heo@latest/Sticker-100/',
+      ],
+      wordLimit: !{theme.waline.wordLimit},
+      path: location.pathname,
+      avatar: '!{theme.waline.avatar}',
+      meta: need_meta,
+      pageSize: '!{theme.waline.pageSize}' || 10,
+      lang: '!{theme.waline.lang}' || 'zh-cn',
+      requiredMeta: require_meta,
+      uploadImage: function(file) {
+        const formData = new FormData();
+        formData.append('image', file);
+        
+        return fetch('https://7bu.top/api/upload', {
+          method: 'POST',
+          headers: {
+            'token': 'e8d5dcf6c091c20029c02070c011bd69'
+          },
+          body: formData
+        }).then(resp => resp.json()).then(resp => resp.data.url);
+      },
+      locale: {
+        admin: 'FF',
+        friend: '小伙伴',
+        placeholder: '!{theme.waline.locale.placeholder}'
+      }
     });
   }
 
@@ -34,3 +62,14 @@ script&attributes(dataPjax).
   } else {
     window.addEventListener('DOMContentLoaded', loadWaline, false);
   }
+
+  window.addEventListener('load', () => {
+    Waline.Widget.RecentComments({
+      serverURL: '!{theme.waline.serverURL}',
+      count: 3,
+    }).then(({ comments }) => {
+      document.getElementById('newest-comments-list').innerHTML = comments.map(
+        (comment) => `<div class="newest-item"><a href="${comment.url}" class="newest-item-avatar"><img src="https://sdn.geekzu.org/avatar/${comment.mail}?s=70" /></a><div class="newest-item-content"><span class="newest-item-content-comment">${comment.comment}</span><div class="newest-item-content-info"><span><a href=${comment.link ? comment.link : '/'}>${comment.nick}</a> / ${comment.insertedAt.substring(0, 10)}</span></div></div></div>`
+      ).join('');
+    });
+  });

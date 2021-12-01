@@ -41,6 +41,21 @@ qihu360_site_verification:
 sougou_site_verification:
 
 # ---------------------------------------------------------------
+# HTML head config
+# ---------------------------------------------------------------
+# use <link rel="preload"> to preload important resources
+preload:
+  enable: false
+  item:
+    # whether preload index.css
+    css: true
+    # some source you want to preload: file || type
+    # type: audio, document, embed, font, image, style, script, video...
+    # eg: /img/a.jpg || image
+    # document: https://developer.mozilla.org/zh-CN/docs/Web/HTML/Preloading_content
+    customize:
+
+# ---------------------------------------------------------------
 # Menu config
 # ---------------------------------------------------------------
 
@@ -252,6 +267,26 @@ creative_commons:
   # If not set, `en` will be used by default.
   language:
 
+# ---------------------------------------------------------------
+# RightSide config
+# ---------------------------------------------------------------
+
+rightside:
+  # (Please use "" to wrap the value)
+  color: "#49b1f5"
+  # Color when the mouse hovers it (Please use "" to wrap the value)
+  hover_color: "#fc6423"
+
+# Go to comments
+go2comments:
+  enable: true
+  icon:
+    # Icon name in FontAwesome, see: https://fontawesome.com/icons
+    name: far fa-comment-dots
+    # Notification text
+    title: 直达评论
+    
+  
 # Back to top
 back2top:
   enable: true
@@ -260,10 +295,6 @@ back2top:
     name: fas fa-rocket
     # Rotation Angle of icon.
     rotate: -45deg
-    # (Please use "" to wrap the value)
-    color: "#49b1f5"
-    # Color when the mouse hovers it (Please use "" to wrap the value)
-    hover_color: "#fc6423"
 
 # ---------------------------------------------------------------
 # Sidebar config
@@ -273,11 +304,21 @@ back2top:
 sidebar:
   enable: true
   # Optional values: left | right
-  position: right
+  position: left
   # The distance from the top of the page when the sidebar is fixed (Only `px` unit is supported)
   offsetTop: 20px
-  # Whether to show horizon line.
-  horizon_line: false
+  # toc and ov
+  card_info:
+    enable: true
+    # Whether to show horizon line.
+    horizon_line: true
+  # announcement
+  card_announcement:
+    enable: true
+    content: This is my Blog
+  # newest comment
+  card_newest_comment:
+    enable: false
 
 author:
   enable: true
@@ -486,20 +527,26 @@ gitalk:
 # See: https://waline.js.org/
 waline:
   enable: false
-  # The URL of your server.
-  serverURL:
-  # Comment box placeholder.
-  placeholder: Just go go
+  # serverURL
+  serverURL: 
+  # word count limit number | [number, number]
+  wordLimit: 0
   # Gravatar style.
   avatar: mp
   # Custom comment header.
   meta: nick,mail,link
-  # The number of comments per page.
+  # the number of comments of each page
   pageSize: 10
-  # Optional values: en | zh-CN | zh-TW | jp
+  # Optional values: en | zh-cn | zh-TW | jp
   lang: zh-CN,zh-TW,en
-  # Article reading statistics.
-  visitor: false
+  # visitor statistics
+  visitor: true
+  # info required [] | ['nick'] | ['nick', 'mail']
+  requiredMeta: []
+  # locale
+  locale:
+    # Comment box placeholder.
+    placeholder: Just go go
 
 # Valine
 # See: https://valine.js.org/quickstart.html

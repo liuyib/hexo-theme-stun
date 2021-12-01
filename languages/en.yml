@@ -33,6 +33,10 @@ sidebar:
   categories: Categories
   tags: Tags
   read_info: You have read
+  card_announcement: Announcement
+  card_newest_comments:
+    title: Newest Comments
+    loading: Loading
 
 # Social link
 social:

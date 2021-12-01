@@ -47,9 +47,8 @@ html(lang=config.language)
               include ./_partials/widgets/comments.pug
 
           if page.sidebar !== false && theme.sidebar.enable
-            div#sidebar-wrap.sidebar-wrap
-              aside#sidebar.sidebar
-                include ./_partials/sidebar/sidebar.pug
+            div#sidebar.sidebar
+              include ./_partials/sidebar/sidebar.pug
 
           div.clearfix
 
@@ -59,8 +58,8 @@ html(lang=config.language)
 
       include ./_partials/widgets/loading-bar.pug
 
-      if theme.back2top.enable
-        include ./_partials/widgets/back2top.pug
+      include ./_partials/widgets/rightside.pug
+      
     include ./_partials/search/index.pug
 
     include ./_scripts/vendors.pug
