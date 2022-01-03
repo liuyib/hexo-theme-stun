@@ -1,0 +1,72 @@
+/**
+ * image.js v4 | https://volantis.js.org
+ */
+
+'use strict';
+
+// {% image url %}
+// {% image url, alt=haha %}
+// {% image url, width=50% %}
+// {% image url, height=32px %}
+// {% image url, bg=#eee %}
+// {% image url, alt=haha, width=400px %}
+// {% image url, alt=haha, width=400px, bg=#eee %}
+hexo.extend.tag.register('image', function(args) {
+    if(/::/g.test(args)){
+        args = args.join(' ').split('::');
+    }
+    else{
+        args = args.join(' ').split(',');
+    }
+    const url = args[0].trim();
+    let alt = '';
+    let bg = '';
+    let style = '';
+    if (args.length > 1) {
+        for (let i = 1; i < args.length; i++) {
+        const tmp = args[i].trim();
+        if (tmp.includes('alt=')) {
+            alt = tmp.substring(4, tmp.length);
+        } else if (tmp.includes('width=')) {
+            style += 'width:' + tmp.substring(6, tmp.length) + ';';
+        } else if (tmp.includes('height=')) {
+            style += 'height:' + tmp.substring(7, tmp.length) + ';';
+        } else if (tmp.includes('bg=')) {
+            bg = tmp.substring(3, tmp.length);
+        }
+        }
+    }
+    function img(url, alt, style) {
+        let img = '';
+        img += '<img class="lazyload lazyload-gif zooming" src="' + url + '"';
+        if (alt.length > 0) {
+        img += ' alt="' + alt + '"';
+        } else {
+        img += ' alt="image"';
+        }
+        if (style.length > 0) {
+        img += ' style="' + style + '"';
+        }
+        img += '/>';
+        return img;
+    }
+
+    let ret = '';
+    // wrap
+    ret += '<div class="img-wrap">';
+    // bg
+    ret += '<div class="img-bg"';
+    if (bg.length > 0) {
+        ret += ' style="background:' + bg + '"';
+    }
+    ret += '>';
+    ret += img(url, alt, style);
+    ret += '</div>';
+
+    if (alt.length > 0) {
+        ret += '<span class="image-caption">' + alt + '</span>';
+    }
+
+    ret += '</div>';
+    return ret;
+});
