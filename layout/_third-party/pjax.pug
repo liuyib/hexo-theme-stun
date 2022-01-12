@@ -32,7 +32,7 @@
   pjaxArgs = JSON.stringify(pjaxArgs);
 
 if theme.pjax.enable
-  - var pjax_js = 'https://cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js';
+  - var pjax_js = 'https://unpkg.zhimg.com/pjax@latest/pjax.min.js';
   - if (theme.cdn.pjax) pjax_js = theme.cdn.pjax;
   script(src=pjax_js)
 
