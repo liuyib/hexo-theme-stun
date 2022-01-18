@@ -36,21 +36,21 @@ script&attributes(dataPjax).
       pageSize: '!{theme.waline.pageSize}' || 10,
       lang: '!{theme.waline.lang}' || 'zh-cn',
       requiredMeta: require_meta,
+      locale: {
+        admin: '!{theme.waline.locale.admin}',
+        placeholder: '!{theme.waline.locale.placeholder}'
+      },
       uploadImage: function(file) {
         const formData = new FormData();
         formData.append('image', file);
         
-        return fetch('https://7bu.top/api/upload', {
+        return fetch('!{theme.waline.uploadImage.url}', {
           method: 'POST',
           headers: {
-            'token': 'e8d5dcf6c091c20029c02070c011bd69'
+            'token': '!{theme.waline.uploadImage.token}'
           },
           body: formData
         }).then(resp => resp.json()).then(resp => resp.data.url);
-      },
-      locale: {
-        admin: '!{theme.waline.locale.admin}',
-        placeholder: '!{theme.waline.locale.placeholder}'
       }
     });
   }

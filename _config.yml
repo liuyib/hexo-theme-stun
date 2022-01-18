@@ -552,6 +552,10 @@ waline:
   emoji:
     - https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili
     - https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq
+  # uploadImage
+  uploadImage:
+    url: https://7bu.top/api/upload
+    token: 
 
 # Valine
 # See: https://valine.js.org/quickstart.html
