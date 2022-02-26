@@ -17,18 +17,6 @@ menu:
   categories: 分类
   tags: 标签
   About: 关于
-  Author: 作者
-  bb: 哔哔
-  gallery: 相册
-  reward: 打赏
-  friends: 友链
-  lab: 实验室
-  run: 跑步
-  statistics: 统计
-  short: 短链接
-  mirror: 镜像
-  other: 其他
-  boundfor: 开往
 
 # 归档页、分类页、标签页
 page:
