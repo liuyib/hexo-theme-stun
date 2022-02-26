@@ -769,18 +769,18 @@ math:
   # Optional values: mathjax | katex
   engine: katex
   mathjax:
-    cdn: https://unpkg.zhimg.com/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+    cdn: https://cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML
     # See: https://mhchem.github.io/MathJax-mhchem/
     mhchem:
       enable: false
-      mhchem_js: https://unpkg.zhimg.com/mathjax-mhchem@3.3.2/mhchem.min.js
+      mhchem_js: https://cdn.jsdelivr.net/npm/mathjax-mhchem@3.3.2/mhchem.min.js
   katex:
-    cdn: https://unpkg.zhimg.com/katex@0.10.2/dist/katex.min.css
+    cdn: https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css
     # See: https://github.com/KaTeX/KaTeX/tree/master/contrib/copy-tex
     copy_tex:
       enable: true
-      copy_tex_js: https://unpkg.zhimg.com/katex@0.10.2/dist/contrib/copy-tex.min.js
-      copy_tex_css: https://unpkg.zhimg.com/katex@0.10.2/dist/contrib/copy-tex.css
+      copy_tex_js: https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/copy-tex.min.js
+      copy_tex_css: https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/copy-tex.css
 
 # ---------------------------------------------------------------
 # Other config
@@ -959,24 +959,24 @@ cdn:
   # Using version: 5.12.1
   # See: https://fontawesome.com/
   # Example:
-  # fontawesome: //unpkg.zhimg.com/font-awesome@4.7.0/css/font-awesome.min.css
-  # fontawesome: //unpkg.zhimg.com/@fortawesome/fontawesome-free@5.12.1/css/all.min.css
+  # fontawesome: //cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css
+  # fontawesome: //cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css
   # fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
   # fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css
   fontawesome:
 
   # Using version: 3.4.1
   # Example:
-  # jquery: //unpkg.zhimg.com/jquery@v3.4.1/dist/jquery.min.js
+  # jquery: //cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js
   # jquery: //cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js
   jquery:
 
   # Using version: 1.5.2
   # See: http://velocityjs.org/
   # Example:
-  # velocity: //unpkg.zhimg.com/velocity-animate@1.5.2/velocity.min.js
+  # velocity: //cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js
   # velocity: //cdnjs.cloudflare.com/ajax/libs/velocity/1.5.2/velocity.min.js
-  # velocity_ui: //unpkg.zhimg.com/velocity-animate@1.5.2/velocity.ui.min.js
+  # velocity_ui: //cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js
   # velocity_ui: //cdnjs.cloudflare.com/ajax/libs/velocity/1.5.2/velocity.ui.min.js
   velocity:
   velocity_ui:
@@ -985,9 +985,9 @@ cdn:
   # Using version: latest & latest
   # See: https://github.com/gitalk/gitalk/, https://github.com/emn178/js-md5/
   # Example:
-  # gitalk_js: //unpkg.zhimg.com/gitalk@latest/dist/gitalk.min.js
-  # gitalk_css: //unpkg.zhimg.com/gitalk@latest/dist/gitalk.css
-  # md5: //unpkg.zhimg.com/js-md5@latest/src/md5.min.js
+  # gitalk_js: //cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js
+  # gitalk_css: //cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.css
+  # md5: //cdn.jsdelivr.net/npm/js-md5@latest/src/md5.min.js
   gitalk_js:
   gitalk_css:
   gitalk_md5:
@@ -996,8 +996,8 @@ cdn:
   # Using version: latest & latest
   # See: https://github.com/xCss/Valine/, https://www.npmjs.com/package/leancloud-storage/
   # Example:
-  # valine: //unpkg.zhimg.com/valine@latest/dist/Valine.min.js
-  # leancloud_storage: //unpkg.zhimg.com/leancloud-storage@latest/dist/av-min.js
+  # valine: //cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js
+  # leancloud_storage: //cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js
   valine:
   leancloud_storage:
 
@@ -1010,7 +1010,7 @@ cdn:
   # minivaline
   # See: https://github.com/MiniValine/MiniValine
   # Example:
-  # minivaline: //unpkg.zhimg.com/minivaline/dist/MiniValine.min.js
+  # minivaline: //cdn.jsdelivr.net/npm/minivaline/dist/MiniValine.min.js
   minivaline:
 
   # busuanzi
@@ -1023,21 +1023,21 @@ cdn:
   # Using version: 2.1.1
   # See: https://busuanzi.ibruce.info/
   # Example:
-  # instantsearch_js: //unpkg.zhimg.com/instantsearch.js@2.1.1/dist/instantsearch.min.js
-  # instantsearch_css: //unpkg.zhimg.com/instantsearch.js@2.1.1/dist/instantsearch.min.css
+  # instantsearch_js: //cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.js
+  # instantsearch_css: //cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.css
   instantsearch_js:
   instantsearch_css:
 
   # Using version: latest
   # See: https://github.com/hustcc/ribbon.js
   # Example:
-  # canvas_ribbon: //unpkg.zhimg.com/ribbon.js@latest/dist/ribbon.min.js
+  # canvas_ribbon: //cdn.jsdelivr.net/npm/ribbon.js@latest/dist/ribbon.min.js
   canvas_ribbon:
 
   # Using version: latest
   # See: https://github.com/hustcc/canvas-nest.js
   # Example:
-  # canvas_nest: //unpkg.zhimg.com/canvas-nest.js@1.0.1/dist/canvas-nest.min.js
+  # canvas_nest: //cdn.jsdelivr.net/npm/canvas-nest.js@1.0.1/dist/canvas-nest.min.js
   canvas_nest:
 
   # Using version: 3.5.7
@@ -1051,31 +1051,31 @@ cdn:
   # Using version: 4.2.2
   # See: https://masonry.desandro.com/
   # Example:
-  # masonry: //unpkg.zhimg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js
+  # masonry: //cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js
   masonry:
 
   # Using version: 2.0.0-rc.2
   # See: https://github.com/tuupola/lazyload/
   # Example:
-  # lazyload: //unpkg.zhimg.com/lazyload@2.0.0-rc.2/lazyload.min.js
+  # lazyload: //cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.min.js
   lazyload:
 
   # Using version: latest
   # See: https://github.com/GoogleChromeLabs/quicklink/
   # Example:
-  # quicklink: //unpkg.zhimg.com/quicklink@latest/dist/quicklink.umd.js
+  # quicklink: //cdn.jsdelivr.net/npm/quicklink@latest/dist/quicklink.umd.js
   quicklink:
 
   # Using version: latest
   # See: https://github.com/MoOx/pjax/
   # Example:
-  # pjax: //unpkg.zhimg.com/pjax@latest/pjax.min.js
+  # pjax: //cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js
   pjax:
 
   # Using version: 1.0.16
   # See: https://github.com/overtrue/share.js
   # Example:
-  # share_js: //unpkg.zhimg.com/social-share.js@1.0.16/dist/js/social-share.min.js
-  # share_css: //unpkg.zhimg.com/social-share.js@1.0.16/dist/css/share.min.css
+  # share_js: //cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js
+  # share_css: //cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css
   share_js:
   share_css:
