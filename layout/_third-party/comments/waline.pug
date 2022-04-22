@@ -36,6 +36,7 @@ script&attributes(dataPjax).
       pageSize: '!{theme.waline.pageSize}' || 10,
       lang: '!{theme.waline.lang}' || 'zh-cn',
       requiredMeta: require_meta,
+      dark: '!{theme.waline.dark}',
       locale: {
         admin: '!{theme.waline.locale.admin}',
         placeholder: '!{theme.waline.locale.placeholder}'
@@ -60,14 +61,3 @@ script&attributes(dataPjax).
   } else {
     window.addEventListener('DOMContentLoaded', loadWaline, false);
   }
-
-  window.addEventListener('load', () => {
-    Waline.Widget.RecentComments({
-      serverURL: '!{theme.waline.serverURL}',
-      count: 3,
-    }).then(({ comments }) => {
-      document.getElementById('newest-comments-list').innerHTML = comments.map(
-        (comment) => `<div class="newest-item"><a href="${comment.url}" class="newest-item-avatar"><img src="https://sdn.geekzu.org/avatar/${comment.mail}?s=70" /></a><div class="newest-item-content"><span class="newest-item-content-comment">${comment.comment}</span><div class="newest-item-content-info"><span><a href=${comment.link ? comment.link : '/'}>${comment.nick}</a> / ${comment.insertedAt.substring(0, 10)}</span></div></div></div>`
-      ).join('');
-    });
-  });

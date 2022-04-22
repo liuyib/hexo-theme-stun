@@ -24,6 +24,13 @@ img.inline
   display: inline;
 }
 
+.v[data-class='v'] .vcontent img[src^="https://img.t.sinajs.cn"]
+{
+  width: 1.25em;
+  margin: 0.25em;
+  vertical-align: middle;
+}
+
 // 顶部栏
 @media (max-width: $md-width) {
   .header-nav-menu-item__link {
@@ -44,3 +51,9 @@ $footer-bg-color                   = #2d2e30
 $footer-text-color                 = #f5f6f7
 $footer-link-color                 = #c20808
 $footer-link-hover-color           = #ed0b0b
+
+// 其他
+h1 {
+  margin: .67em 0;
+  font-size: 1.8em !important;
+}

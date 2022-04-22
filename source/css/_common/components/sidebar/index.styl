@@ -50,14 +50,14 @@ if (hexo-config('sidebar.card_info.enable')) {
         transition: opacity .2s;
 
         &:hover {
-          color: $sidebar-nav-text-hover-color;
+          color: $card-info-nav-text-hover-color;
           cursor: pointer;
         }
       }
 
       .current {
-        border-color: $sidebar-nav-text-hover-color;
-        color: $sidebar-nav-text-hover-color;
+        border-color: $card-info-nav-text-hover-color;
+        color: $card-info-nav-text-hover-color;
       }
     }
 
@@ -188,11 +188,11 @@ if (hexo-config('sidebar.card_info.enable')) {
             margin: .2rem;
             text-align: center;
             color: var(--color-gray-100);
-            background-color: $sidebar-social-color;
+            background-color: $card-info-social-color;
 
             &:hover {
               color: var(--color-gray-100);
-              background-color: $sidebar-social-hover-color;
+              background-color: $card-info-social-hover-color;
             }
 
             if (hexo-config('social_setting.icon_only')) {
@@ -240,18 +240,18 @@ if (hexo-config('sidebar.card_info.enable')) {
           }
 
           &-email__link {
-            color: $sidebar-feed-email-color;
+            color: $card-info-feed-email-color;
 
             &:hover {
-              color: darken($sidebar-feed-email-color, 20%);
+              color: darken($card-info-feed-email-color, 20%);
             }
           }
 
           &-rss__link {
-            color: $sidebar-feed-rss-color;
+            color: $card-info-feed-rss-color;
 
             &:hover {
-              color: darken($sidebar-feed-rss-color, 20%);
+              color: darken($card-info-feed-rss-color, 20%);
             }
           }
         }
@@ -272,10 +272,10 @@ if (hexo-config('sidebar.card_info.enable')) {
           }
 
           &--posts {
-            color: $sidebar-state-post-color;
+            color: $card-info-state-post-color;
 
             &:hover {
-              color: darken($sidebar-state-post-color, 30%);
+              color: darken($card-info-state-post-color, 30%);
             }
           }
 
@@ -288,10 +288,10 @@ if (hexo-config('sidebar.card_info.enable')) {
           }
 
           &--tags {
-            color: $sidebar-state-tag-color;
+            color: $card-info-state-tag-color;
 
             &:hover {
-              color: darken($sidebar-state-tag-color, 30%);
+              color: darken($card-info-state-tag-color, 30%);
             }
           }
 

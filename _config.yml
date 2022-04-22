@@ -529,6 +529,8 @@ waline:
   enable: false
   # serverURL
   serverURL: 
+  # dark mode https://waline.js.org/reference/client.html#dark
+  dark: 
   # word count limit number | [number, number]
   wordLimit: 0
   # Gravatar style.
