@@ -533,8 +533,6 @@ waline:
   dark: 
   # word count limit number | [number, number]
   wordLimit: 0
-  # Gravatar style.
-  avatar: mp
   # Custom comment header.
   meta: nick,mail,link
   # the number of comments of each page
@@ -542,7 +540,7 @@ waline:
   # Optional values: en | zh-cn | zh-TW | jp
   lang: zh-CN,zh-TW,en
   # visitor statistics
-  visitor: true
+  pageview: true
   # info required [] | ['nick'] | ['nick', 'mail']
   requiredMeta: []
   # locale
@@ -550,14 +548,6 @@ waline:
     admin: 
     # Comment box placeholder.
     placeholder: Just go go
-  # emoji
-  emoji:
-    - https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili
-    - https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq
-  # uploadImage
-  uploadImage:
-    url: https://7bu.top/api/upload
-    token: 
 
 # Valine
 # See: https://valine.js.org/quickstart.html
@@ -1006,8 +996,10 @@ cdn:
   # Waline
   # See: https://github.com/lizheming/waline
   # Example:
-  # waline: //unpkg.com/@waline/client@0.8.5/dist/Waline.min.js
-  waline:
+  # waline_js: //cdn.jsdelivr.net/npm/@waline/client/dist/waline.js
+  # waline_css: //cdn.jsdelivr.net/npm/@waline/client/dist/waline.css
+  waline_js: 
+  waline_css: 
 
   # minivaline
   # See: https://github.com/MiniValine/MiniValine
