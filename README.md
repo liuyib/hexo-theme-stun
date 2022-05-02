@@ -50,6 +50,7 @@
 - [PVulcan's Blog](https://pvulcan.cn/)
 - [TimeMachine's Blog](https://timemachine.icu/)
 - [Oridnaryman's Blog](https://jack1024.club/)
+- [Frank's Blog](https://shufanhao.github.io/)
 - [未读代码](https://www.wdbyte.com/)
 
 如果你准备长期使用 «Stun» 主题，并希望展示在这里，你只需在 [README](https://github.com/liuyib/hexo-theme-stun/edit/master/README.md) 中填入你的网站，然后提交 PR 即可。
