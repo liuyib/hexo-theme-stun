@@ -27,8 +27,8 @@ script&attributes(dataPjax).
       return META.indexOf(item) > -1;
     });
 
-    new Waline.init({
-      el: '#waline-container',
+    Waline.init({
+      el: location.pathname === '/' ? null : '#waline-container',
       serverURL: '!{theme.waline.serverURL}',
       pageview: location.hostname!=='localhost' && !{theme.waline.pageview} ,
       wordLimit: !{theme.waline.wordLimit},

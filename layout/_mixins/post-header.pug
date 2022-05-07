@@ -67,8 +67,8 @@ mixin postHeader(post)
               valueText: `${min2read(post.content, { cn: postRead.speed.zh, en: postRead.speed.en })}${__('post.reading_unit')}`
             })
 
-        if theme.waline.enable && theme.waline.visitor
-          span(id=url_for(post.path) data-flag-title=post.title).post-meta-item.post-meta-item--visitors.leancloud_visitors
+        if theme.waline.enable && theme.waline.pageview
+          span(data-flag-title=post.title).post-meta-item.post-meta-item--visitors
             - var iconClass = theme.icon.waline_visitor;
             +postMetaItem({
               isIconOnly: isPostMetaIconOnly,
@@ -77,7 +77,8 @@ mixin postHeader(post)
               popoverPos: 'up',
               popoverText: __('popover.post.visit_num'),
               valueAttr: {
-                class: 'leancloud-visitors-count'
+                class: 'waline-pageview-count',
+                "data-path": url_for(post.path)
               }
             })
         
