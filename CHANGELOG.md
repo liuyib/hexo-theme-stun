@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.7.0](https://github.com/liuyib/hexo-theme-stun/compare/v2.4.0...v2.7.0) (2022-07-11)
+
+### Features
+
+* **plugins:** add button tag-plugin ([c0e2475](https://github.com/liuyib/hexo-theme-stun/commit/c0e2475eee7ff01e4daed66bed2ec3ca69fe84a4))
+
+### Bug Fixes
+
+* **tencent_analytics:** delete tencent analytics ([#161](https://github.com/liuyib/hexo-theme-stun/issues/161)) ([f4dd263](https://github.com/liuyib/hexo-theme-stun/commit/f4dd263f6864dfb6af218fda8ce3fef4530b1b85))
+
 ### [2.6.2](https://github.com/liuyib/hexo-theme-stun/compare/v2.6.1...v2.6.2) (2021-01-25)
 
 
