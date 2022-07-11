@@ -1,6 +1,6 @@
 {
   "name": "hexo-theme-stun",
-  "version": "2.6.2",
+  "version": "2.7.0",
   "description": "A beautiful & simple theme for Hexo",
   "homepage": "https://liuyib.github.io",
   "scripts": {
@@ -28,7 +28,7 @@
     "@commitlint/cli": "^11.0.0",
     "commitizen": "^4.2.2",
     "commitlint-config-cz": "^0.13.2",
-    "cz-customizable": "^6.9.0",
+    "cz-customizable": "^6.3.0",
     "eslint": "^7.17.0",
     "husky": "^4.3.6",
     "standard": "^14.3.4",
