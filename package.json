@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
-    "commitizen": "^4.2.2",
+    "commitizen": "^4.2.4",
     "commitlint-config-cz": "^0.13.2",
     "cz-customizable": "^6.3.0",
     "eslint": "^7.17.0",
