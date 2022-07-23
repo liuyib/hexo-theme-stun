@@ -12,7 +12,6 @@ nav:
 # 导航栏菜单
 menu:
   home: 首页
-  article: 文章
   archives: 归档
   categories: 分类
   tags: 标签
@@ -47,7 +46,6 @@ social:
   wechat: 微信
   telegram: Telegram
   qq: QQ
-
 
 # 文章
 post:
