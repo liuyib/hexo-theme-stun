@@ -680,10 +680,6 @@ google_analytics:
 # See: https://tongji.baidu.com/
 baidu_analytics:
 
-# Tencent analytics ID
-# See: https://v2.ta.qq.com/
-tencent_analytics:
-
 # ---------------------------------------------------------------
 # Search config
 # ---------------------------------------------------------------

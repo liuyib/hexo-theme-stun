@@ -1,3 +1,5 @@
+<strong>警告：目前该项目年久失修，请尽量不要使用，建议使用一直处于维护状态的 [NexT](https://github.com/next-theme/hexo-theme-next) 主题，祝好</strong>
+
 <p align="center">
   <a href="https://theme-stun.github.io/docs/zh-CN/" target="_blank" rel="noopener noreferrer">
     <img src="./source/images/icons/stun-logo.svg" alt="Stun Logo" width="100">
@@ -39,18 +41,11 @@
 ## :sparkles: 演示
 
 - [Liuyib's Blog](https://liuyib.github.io/)
-- [弥枳's Blog](http://blog2.coor.top/)
-- [impressionyang's Blog](https://impressionyang.github.io)
-- [峡州仙士之页](https://cjh0613.github.io/blog/)
 - [Cheeks's Blog](https://www.cheeks.top/)
 - [lingan1996's Blog](https://www.lingan1996.top)
 - [MikyMing's Blog](https://mikyming.online/)
-- [Yichangkong's Blog](https://yichangkong.github.io/)
 - [Gemini's Blog](https://geminiplanet.cn/)
-- [PVulcan's Blog](https://pvulcan.cn/)
 - [TimeMachine's Blog](https://timemachine.icu/)
-- [Oridnaryman's Blog](https://jack1024.club/)
-- [未读代码](https://www.wdbyte.com/)
 
 如果你准备长期使用 «Stun» 主题，并希望展示在这里，你只需在 [README](https://github.com/liuyib/hexo-theme-stun/edit/master/README.md) 中填入你的网站，然后提交 PR 即可。
 
@@ -122,7 +117,10 @@ $ git pull
 
 ## :page_facing_up: 文档
 
-请查看：[https://theme-stun.github.io/docs/zh-CN/](https://theme-stun.github.io/docs/zh-CN/)
+下面是多个文档镜像（它们是全量同步的），任选其一访问即可。
+
+- Github Pages: [https://theme-stun.github.io/docs/](https://theme-stun.github.io/docs/)
+- Gitee Pages: [https://theme-stun.gitee.io/docs/](https://theme-stun.gitee.io/docs/)
 
 ## :question: 问题
 

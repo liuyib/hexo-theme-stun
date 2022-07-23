@@ -1,0 +1,38 @@
+$border-width = 1px;
+
+.button-plugin {
+  display: inline-block;
+  border: $border-width solid $button-default-bg;
+  border-radius: .2rem;
+  padding: .2rem .75rem;
+  height: $button-height;
+  line-height: 1.375;
+  color: $button-default-color;
+  background-color: $button-default-bg;
+  transition: background-color .2s ease;
+
+  &:hover {
+    color: $button-default-color;
+    background-color: $button-default-hover-bg;
+  }
+
+  & > span {
+    display: inline-block;
+  }
+
+  &--icon-only {
+    padding: 0;
+    width: $button-height;
+    height: $button-height;
+    line-height: $button-height - $border-width * 2;
+    text-align: center;
+  }
+
+  &__icon {
+    line-height: 1;
+  }
+
+  &__icon + &__content {
+    margin-left: .3rem;
+  }
+}
