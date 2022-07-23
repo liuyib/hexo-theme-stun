@@ -15,7 +15,7 @@ if page.comments || theme.pjax.enable
     include ./livere.pug
   else if theme.fbcomments.enable
     include ./fbcomments.pug
-else if theme.waline.enable && theme.waline.visitor
+else if theme.waline.enable && theme.waline.pageview
   include ./waline.pug
 else if theme.valine.enable && theme.valine.visitor
   include ./valine.pug
