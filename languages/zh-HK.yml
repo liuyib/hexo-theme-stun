@@ -16,14 +16,7 @@ menu:
   archives: 歸檔
   categories: 分類
   tags: 標籤
-  About: 關於
-  Author: 作者
-  bb: 哔哔
-  gallery: 相册
-  reward: 打赏
-  friends: 友链
-  lab: 實驗室
-  boundfor: 開往
+  about: 關於
 
 # 歸檔頁、分類頁、標籤頁
 page:
@@ -41,10 +34,6 @@ sidebar:
   categories: 分類
   tags: 標籤
   read_info: 你已閱讀了
-  card_announcement: 公告
-  card_newest_comments:
-    title: 最新評論
-    loading: 正在加載中
 
 # 社交連結
 social:

@@ -1,9 +1,9 @@
 div.note
   $border-codeblock = 4px
   bg($c)
-    return mix($c, $color-card, 10)
+    return mix($c, $card-color, 10)
   border($c)
-    return mix($c, $color-card, 100)
+    return mix($c, $card-color, 100)
   position: relative
   margin-top: $gap-p
   margin-bottom: $gap-p
@@ -33,7 +33,7 @@ div.note
     margin-top: $gap-p * 0.5
     margin-bottom: $gap-p * 0.5
   .link-card
-    background: var(--color-card)
+    background: var(--card-color)
   &::before
     position: absolute
     top: "calc(50% - %s * 0.5)" % (24px)
@@ -47,42 +47,42 @@ div.note
     font-family: 'Font Awesome 5 Free'
 
   background: var(--color-block)
-  border-left: $border-codeblock solid $color-theme
+  border-left: $border-codeblock solid $theme-color
   &::before
-    color: $color-theme
+    color: $theme-color
     content: '\f054'
   &::before
     content: '\f054'
 
   &.quote
-    background: bg($color-md-blue)
-    border-color: border($color-md-blue)
+    background: bg($note-color-blue)
+    border-color: border($note-color-blue)
     &::before
-      color: border($color-md-blue)
+      color: border($note-color-blue)
       content: '\f10d'
   &.info
-    background: bg($color-theme)
-    border-color: border($color-theme)
+    background: bg($theme-color)
+    border-color: border($theme-color)
     &::before
-      color: border($color-theme)
+      color: border($theme-color)
       content: '\f129'
   &.success,&.done
-    background: bg($color-mac-green)
-    border-color: border($color-mac-green)
+    background: bg($note-color-mac-green)
+    border-color: border($note-color-mac-green)
     &::before
-      color: border($color-mac-green)
+      color: border($note-color-mac-green)
       content: '\f00c'
   &.warning
-    background: bg($color-mac-yellow)
-    border-color: border($color-mac-yellow)
+    background: bg($note-color-mac-yellow)
+    border-color: border($note-color-mac-yellow)
     &::before
-      color: border($color-mac-yellow)
+      color: border($note-color-mac-yellow)
       content: '\f12a'
   &.danger,&.error
-    background: bg($color-mac-red)
-    border-color: border($color-mac-red)
+    background: bg($note-color-mac-red)
+    border-color: border($note-color-mac-red)
     &::before
-      color: border($color-mac-red)
+      color: border($note-color-mac-red)
       content: '\f00d'
   &.radiation::before
     content: '\f7b9'
@@ -114,42 +114,42 @@ div.note
     background: none
     border-color: none
   &.light
-    background: mix($color-text, $color-card, 5)
-    border-color: mix($color-text, $color-card, 50)
+    background: mix($text-color, $card-color, 5)
+    border-color: mix($text-color, $card-color, 50)
     &::before
-      color: mix($color-text, $color-card, 50)
+      color: mix($text-color, $card-color, 50)
   &.gray
-    background: mix($color-text, $color-card, 5)
-    border-color: mix($color-text, $color-card, 80)
+    background: mix($text-color, $card-color, 5)
+    border-color: mix($text-color, $card-color, 80)
     &::before
-      color: mix($color-text, $color-card, 80)
+      color: mix($text-color, $card-color, 80)
   &.theme
-    background: bg($color-theme)
-    border-color: border($color-theme)
+    background: bg($theme-color)
+    border-color: border($theme-color)
     &::before
-      color: border($color-theme)
+      color: border($theme-color)
   &.red
-    background: bg($color-mac-red)
-    border-color: border($color-mac-red)
+    background: bg($note-color-mac-red)
+    border-color: border($note-color-mac-red)
     &::before
-      color: border($color-mac-red)
+      color: border($note-color-mac-red)
   &.yellow
-    background: bg($color-mac-yellow)
-    border-color: border($color-mac-yellow)
+    background: bg($note-color-mac-yellow)
+    border-color: border($note-color-mac-yellow)
     &::before
-      color: border($color-mac-yellow)
+      color: border($note-color-mac-yellow)
   &.green
-    background: bg($color-mac-green)
-    border-color: border($color-mac-green)
+    background: bg($note-color-mac-green)
+    border-color: border($note-color-mac-green)
     &::before
-      color: border($color-mac-green)
+      color: border($note-color-mac-green)
   &.cyan
-    background: bg($color-mac-cyan)
-    border-color: border($color-mac-cyan)
+    background: bg($note-color-mac-cyan)
+    border-color: border($note-color-mac-cyan)
     &::before
-      color: border($color-mac-cyan)
+      color: border($note-color-mac-cyan)
   &.blue
-    background: bg($color-md-blue)
-    border-color: border($color-md-blue)
+    background: bg($note-color-blue)
+    border-color: border($note-color-blue)
     &::before
-      color: border($color-md-blue)
+      color: border($note-color-blue)

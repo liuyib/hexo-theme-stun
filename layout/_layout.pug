@@ -47,8 +47,9 @@ html(lang=config.language)
               include ./_partials/widgets/comments.pug
 
           if page.sidebar !== false && theme.sidebar.enable
-            div#sidebar.sidebar
-              include ./_partials/sidebar/sidebar.pug
+            div#sidebar-wrap.sidebar-wrap
+              aside#sidebar.sidebar
+                include ./_partials/sidebar/sidebar.pug
 
           div.clearfix
 

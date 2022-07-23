@@ -16,7 +16,7 @@ menu:
   archives: 归档
   categories: 分类
   tags: 标签
-  About: 关于
+  about: 关于
 
 # 归档页、分类页、标签页
 page:
@@ -34,19 +34,20 @@ sidebar:
   categories: 分类
   tags: 标签
   read_info: 你已阅读了
-  card_announcement: 公告
-  card_newest_comments:
-    title: 最新评论
-    loading: 正在加载中
 
 # 社交链接
 social:
   github: Github
+  google: Google
+  twitter: Twitter
+  youtube: Youtube
+  segmentfault: 思否
   zhihu: 知乎
   weibo: 微博
-  Bilibili: BiliBili
-  Email: 邮箱
-  
+  wechat: 微信
+  telegram: Telegram
+  qq: QQ
+
 
 # 文章
 post:

@@ -33,10 +33,6 @@ sidebar:
   categories: Categorías
   tags: Etiquetas
   read_info: Has leído
-  card_announcement: Anuncio
-  card_newest_comments:
-    title: Comentarios más recientes
-    loading: Cargando
 
 # Social link
 social:

@@ -304,21 +304,11 @@ back2top:
 sidebar:
   enable: true
   # Optional values: left | right
-  position: left
+  position: right
   # The distance from the top of the page when the sidebar is fixed (Only `px` unit is supported)
   offsetTop: 20px
-  # toc and ov
-  card_info:
-    enable: true
-    # Whether to show horizon line.
-    horizon_line: true
-  # announcement
-  card_announcement:
-    enable: true
-    content: This is my Blog
-  # newest comment
-  card_newest_comment:
-    enable: false
+  # Whether to show horizon line.
+  horizon_line: false
 
 author:
   enable: true
