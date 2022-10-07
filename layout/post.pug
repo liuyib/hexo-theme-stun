@@ -9,7 +9,7 @@ block content
 
     +postHeader(page)
 
-    div.post-body
+    div.post-body(class= page.indent ? "" : "post-indent") 
       if page.photos && page.photos.length
         +gallery(page)
       != page.content

@@ -1,10 +1,8 @@
 -
   var isShowToc = page.toc === true;
-
   if (typeof page.toc !== 'boolean') {
     isShowToc = theme.toc.enable && is_post();
   }
-
 if isShowToc
   div.sidebar-nav
     span.sidebar-nav-toc.current= __('sidebar.catalog')
@@ -40,7 +38,6 @@ section.sidebar-ov(class=`${isShowToc ? 'hide' : ''}`)
             var socialIcon = (item[1] + '').trim();
             var isSocialIconOnly = theme.social_setting.icon_only;
             var elemAttr = {};
-
             if (isSocialIconOnly) {
               elemAttr['data-popover'] = __(`social.${name}`);
               elemAttr['data-popover-pos'] = 'up';

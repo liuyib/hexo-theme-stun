@@ -3,6 +3,7 @@
 var pathFn = require('path')
 var fs = require('hexo-fs')
 
+// {% table [path] [thead1,thead2,...] %}
 function table (args) {
   var path = pathFn.join(hexo.source_dir, args[0])
   var headers = args[1].split(',')
@@ -42,4 +43,29 @@ function table (args) {
   })
 }
 
+// {% blocktable title %}
+// content
+// {% endblocktable %}
+function postTableBlock(args, content) {
+  if(/::/g.test(args)){
+    args = args.join(' ').split('::');
+  }
+  else{
+    args = args.join(' ').split(',');
+  }
+  let ret = '';
+  // wrap
+  ret += '<div class="table-wrap">';
+  // caption
+  if (args.length > 0) {
+    const caption = args[0].trim();
+    ret += '<span class="table-caption">' + caption + '</span>';
+  }
+  // content
+  ret += hexo.render.renderSync({text: content, engine: 'markdown'}).split('\n').join('');
+  ret += '</div>';
+  return ret;
+}
+
 hexo.extend.tag.register('table', table, { ends: false, async: true })
+hexo.extend.tag.register('blocktable', postTableBlock, { ends: true })

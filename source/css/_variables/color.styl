@@ -1,0 +1,148 @@
+// Element color
+// -------------------------------------------
+// Global color
+$blue-light    = #49b1f5
+$blue-lighter  = #a4d8fa
+$red-dark      = #ff0000
+$orange-dark   = #fc6423
+$orange-light  = #ff8d5c
+$yellow-dark   = #f2df17
+$yellow-light  = #fff494
+
+// Selection ( ::selection )
+$selection-bg                  = #8be0e1
+$selection-color               = #fff
+
+// Body ( <body> )
+$body-bg-color                 = darken(#f4f5f5, 5%)
+
+// Link ( <a> )
+$link-color                    = #058ed2
+$link-hover-color              = #11a3eb
+$link-bottom-color             = transparent
+$link-bottom-hover-color       = #7ebef1
+
+// Heading ( <h1~6> )
+$heading-logo-color            = $orange-dark
+
+// Horizon line ( <hr> )
+$hr-color                      = #b8dcfd
+
+// Module color
+// -------------------------------------------
+// Header
+$header-bg-color                   = #2d2e30
+$header-text-color                 = #f5f6f7
+$header-nav-bg-color               = #2d2e30
+$header-menu-hover-color           = $blue-light
+
+// Footer
+$footer-bg-color                   = #2d2e30
+$footer-text-color                 = #f5f6f7
+$footer-link-color                 = #c20808
+$footer-link-hover-color           = #ed0b0b
+
+// Home page
+$home-readmore-bg-color            = #73c8ff
+$home-readmore-bg-hover-color      = $blue-light
+
+// Category page
+$category-list-dot-color           = $blue-light
+$category-list-dot-hover-color     = $orange-dark
+$category-link-color               = $blue-light
+$category-link-hover-color         = $orange-dark
+
+// Tag page
+$tag-hover-color                   = $orange-dark
+
+// Sidebar
+$sidebar-nav-text-hover-color      = $orange-dark
+$sidebar-social-color              = #a0daff
+$sidebar-social-hover-color        = darken(#a0daff, 20%)
+$sidebar-feed-email-color          = #54bcff
+$sidebar-feed-rss-color            = #ff8956
+$sidebar-state-post-color          = #54bcff
+$sidebar-state-tag-color           = #ff8956
+
+// Post
+$post-update-color                 = $blue-light
+$post-reading-time-color           = $blue-light
+$post-reading-count-color          = $orange-dark
+$post-tags-icon-color              = $blue-light
+
+// Post timeline (In the archive/tag/category page.)
+$post-timeline-line-color          = #c8edff
+$post-timeline-dot-color           = #6ec5ff
+$post-timeline-dot-hover-color     = $orange-dark
+
+// Pagination
+$pagination-item-active-color       = #f4f5f5
+$pagination-item-active-bg-color    = $blue-light
+$pagination-arrow-color             = $blue-light
+$pagination-arrow-hover-color       = $orange-dark
+
+// Reward
+$reward-btn-color                  = #ff6868
+$reward-btn-hover-color            = #e45c5c
+$reward-alipay-color               = #1caceb
+$reward-wechat-color               = #3cb034
+
+$loading-bar-bg-color              = #77b6ff
+$loading-bar-shadow-color          = alpha(#77b6ff, .7)
+
+// Notification
+$alert-success-color               = #52c41a
+$alert-info-color                  = #1890ff
+$alert-warning-color               = #faad14
+$alert-error-color                 = #f5222d
+
+// Button plugin
+$button-height                     = 32px
+$button-default-color              = #fff
+$button-default-hover-color        = #fff
+$button-default-bg                 = $home-readmore-bg-color
+$button-default-hover-bg           = $home-readmore-bg-hover-color
+
+// volantis plugin
+$color-md-red                      = #f44336
+$color-md-pink                     = #E91E63
+$color-md-purple                   = #9c27b0
+$color-md-deep-purple              = #673ab7
+$color-md-indigo                   = #3f51b5
+$color-md-light-blue               = #4BA7EE
+$color-md-blue                     = #2196f3
+$color-md-deep-blue                = #3367d6
+$color-md-teal                     = #009688
+$color-md-green                    = #4caf50
+$color-md-light-green              = #8bc34a
+$color-md-orange                   = #ff9800
+$color-md-deep-orange              = #ff5722
+$color-md-brown                    = #795548
+$color-md-blue-grey                = #607d8b
+$color-md-grey                     = #9e9e9e
+$color-md-light-grey               = #e0e0e0
+$color-md-yellow                   = #FCEC60
+$color-md-amber                    = #F6C344
+
+$color-mac-cyan                = #1BCDFC
+$color-mac-green               = #3DC550
+$color-mac-yellow              = #FFBD2B
+$color-mac-red                 = #FE5F58
+
+$color-google-blue             = #4688F1
+$color-google-green            = #3AA757
+$color-google-yellow           = #FABB2D
+$color-google-red              = #E8453C
+
+$color-read-bkg                = #e0d8c8
+$color-read-post               = #f8f1e2
+
+$color-theme                   = #44D7B6
+$color-card                    = #fff
+$color-text                    = #444
+$color-block                   = #f6f6f6
+$color-meta                    = #888
+$color-p                       = #444
+
+bgcolor($c, $mix = 10)
+  return mix($c, $color-card, $mix)

@@ -1,31 +1,52 @@
 -
-  var waline_js = 'https://unpkg.com/@waline/client/dist/Waline.min.js';
+  var waline_js = 'https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.js';
+  var waline_css = 'https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.css'
 
-  if (theme.cdn.waline) {
-    waline_js = theme.cdn.waline;
+  if (theme.cdn.waline_js) {
+    waline_js = theme.cdn.waline_js;
+  }
+
+  if (theme.cdn.waline_css) {
+    waline_css = theme.cdn.waline_css;
   }
 
 script(src=waline_js)
+link(rel="stylesheet" href=waline_css type="text/css")
 
 script&attributes(dataPjax).
   function loadWaline () {
-    var GUEST_INFO = ['nick', 'mail', 'link'];
-    var guest_info = '!{ theme.waline.meta }';
+    var META = ['nick', 'mail', 'link'];
+    var need_meta = '!{ theme.waline.meta }';
+    var require_meta = '!{theme.waline.requiredMeta}';
+    var emojiURL = '!{theme.waline.emoji}';
 
-    guest_info = guest_info.split(',').filter(function(item) {
-      return GUEST_INFO.indexOf(item) > -1;
+    need_meta = need_meta.split(',').filter(function(item) {
+      return META.indexOf(item) > -1;
     });
 
-    new Waline({
-      el: '#waline-container',
-      serverURL: '!{ theme.waline.serverURL }',
-      placeholder: '!{ theme.waline.placeholder }',
-      pageSize: '!{ theme.waline.pageSize }' || 10,
-      lang: '!{ theme.waline.language }' || 'zh-cn',
-      visitor: !{ theme.waline.visitor },
-      avatar: '!{ theme.waline.avatar }',
-      path: window.location.pathname,
-      meta: guest_info
+    require_meta = require_meta.split(',').filter(function(item) {
+      return META.indexOf(item) > -1;
+    });
+
+    emojiURL = emojiURL.split(',');
+
+    Waline.init({
+      el: location.pathname === '/' ? null : '#waline-container',
+      serverURL: '!{theme.waline.serverURL}',
+      pageview: location.hostname!=='localhost' && !{theme.waline.pageview} ,
+      emoji: emojiURL,
+      wordLimit: !{theme.waline.wordLimit},
+      path: location.pathname,
+      meta: need_meta,
+      pageSize: '!{theme.waline.pageSize}' || 10,
+      lang: '!{theme.waline.lang}' || 'zh-cn',
+      requiredMeta: require_meta,
+      dark: '!{theme.waline.dark}',
+      locale: {
+        admin: '!{theme.waline.locale.admin}',
+        placeholder: '!{theme.waline.locale.placeholder}'
+      },
+      reaction: !{theme.waline.reaction}
     });
   }
 

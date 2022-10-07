@@ -37,7 +37,7 @@ if (hexo-config('night_mode.enable')) {
     }
   }
 
-  if (hexo-config('valine.enable')) {
+  if (hexo-config('valine.enable') || hexo-config('waline.enable')) {
     :root {
       --color-gradient-begin: rgba(255, 255, 255, 0);
       --color-gradient-end: rgba(255, 255, 255, 1);

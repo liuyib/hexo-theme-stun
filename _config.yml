@@ -41,6 +41,21 @@ qihu360_site_verification:
 sougou_site_verification:
 
 # ---------------------------------------------------------------
+# HTML head config
+# ---------------------------------------------------------------
+# use <link rel="preload"> to preload important resources
+preload:
+  enable: false
+  item:
+    # whether preload index.css
+    css: true
+    # some source you want to preload: file || type
+    # type: audio, document, embed, font, image, style, script, video...
+    # eg: /img/a.jpg || image
+    # document: https://developer.mozilla.org/zh-CN/docs/Web/HTML/Preloading_content
+    customize:
+
+# ---------------------------------------------------------------
 # Menu config
 # ---------------------------------------------------------------
 
@@ -252,6 +267,26 @@ creative_commons:
   # If not set, `en` will be used by default.
   language:
 
+# ---------------------------------------------------------------
+# RightSide config
+# ---------------------------------------------------------------
+
+rightside:
+  # (Please use "" to wrap the value)
+  color: "#49b1f5"
+  # Color when the mouse hovers it (Please use "" to wrap the value)
+  hover_color: "#fc6423"
+
+# Go to comments
+go2comments:
+  enable: true
+  icon:
+    # Icon name in FontAwesome, see: https://fontawesome.com/icons
+    name: far fa-comment-dots
+    # Notification text
+    title: 直达评论
+    
+  
 # Back to top
 back2top:
   enable: true
@@ -260,10 +295,6 @@ back2top:
     name: fas fa-rocket
     # Rotation Angle of icon.
     rotate: -45deg
-    # (Please use "" to wrap the value)
-    color: "#49b1f5"
-    # Color when the mouse hovers it (Please use "" to wrap the value)
-    hover_color: "#fc6423"
 
 # ---------------------------------------------------------------
 # Sidebar config
@@ -486,20 +517,33 @@ gitalk:
 # See: https://waline.js.org/
 waline:
   enable: false
-  # The URL of your server.
-  serverURL:
-  # Comment box placeholder.
-  placeholder: Just go go
-  # Gravatar style.
-  avatar: mp
+  # serverURL
+  serverURL: 
+  # dark mode https://waline.js.org/reference/client.html#dark
+  dark: 
+  # word count limit number | [number, number]
+  wordLimit: 0
   # Custom comment header.
   meta: nick,mail,link
-  # The number of comments per page.
+  # the number of comments of each page
   pageSize: 10
-  # Optional values: en | zh-CN | zh-TW | jp
+  # Optional values: en | zh-cn | zh-TW | jp
   lang: zh-CN,zh-TW,en
-  # Article reading statistics.
-  visitor: false
+  # visitor statistics
+  pageview: true
+  # info required [] | ['nick'] | ['nick', 'mail']
+  requiredMeta: []
+  # locale
+  locale:
+    admin: 
+    # Comment box placeholder.
+    placeholder: Just go go
+  # emoji
+  emoji:
+    - https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili
+    - https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq
+  # reaction
+  reaction: false
 
 # Valine
 # See: https://valine.js.org/quickstart.html
@@ -715,12 +759,12 @@ math:
       enable: false
       mhchem_js: https://cdn.jsdelivr.net/npm/mathjax-mhchem@3.3.2/mhchem.min.js
   katex:
-    cdn: https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css
+    cdn: https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css
     # See: https://github.com/KaTeX/KaTeX/tree/master/contrib/copy-tex
     copy_tex:
       enable: true
-      copy_tex_js: https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/copy-tex.min.js
-      copy_tex_css: https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/copy-tex.css
+      copy_tex_js: https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/copy-tex.min.js
+      copy_tex_css: https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/copy-tex.css
 
 # ---------------------------------------------------------------
 # Other config
@@ -896,19 +940,19 @@ icon:
 # ! Do not edit the follow configs, unless you know what you are doing.
 # ! -------------------------------------------------------------------
 cdn:
-  # Using version: 5.12.1
+  # Using version: 5.15.3
   # See: https://fontawesome.com/
   # Example:
   # fontawesome: //cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css
   # fontawesome: //cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css
   # fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
-  # fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css
+  # fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css
   fontawesome:
 
-  # Using version: 3.4.1
+  # Using version: 3.6.0
   # Example:
-  # jquery: //cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js
-  # jquery: //cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js
+  # jquery: //cdn.jsdelivr.net/npm/jquery@v3.6.0/dist/jquery.min.js
+  # jquery: //cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js
   jquery:
 
   # Using version: 1.5.2
@@ -944,8 +988,10 @@ cdn:
   # Waline
   # See: https://github.com/lizheming/waline
   # Example:
-  # waline: //unpkg.com/@waline/client@0.8.5/dist/Waline.min.js
-  waline:
+  # waline_js: //cdn.jsdelivr.net/npm/@waline/client/dist/waline.js
+  # waline_css: //cdn.jsdelivr.net/npm/@waline/client/dist/waline.css
+  waline_js: 
+  waline_css: 
 
   # minivaline
   # See: https://github.com/MiniValine/MiniValine
