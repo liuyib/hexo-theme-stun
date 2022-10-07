@@ -8,8 +8,6 @@ $sm-width = 768px - 0.02px
 $md-width = 992px - 0.02px
 $lg-width = 1200px - 0.02px
 
-$gap = 16px
-$gap-p = 1em
 get-main-padding() {
   $main-padding = convert(hexo-config('layout.main_padding.default'));
   $gap-left = 0;
@@ -40,3 +38,12 @@ if (hexo-config('sidebar.enable')) {
 } else {
   $main-width           = $content-width + $main-padding-width
 }
+
+// volantis plugin
+$border-card      = 12px
+$border-codeblock = 4px
+$border-searchbar = 8px
+$border-button    = 2px
+
+$gap   = 16px
+$gap-p = 1em

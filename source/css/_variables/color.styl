@@ -9,11 +9,6 @@ $orange-light  = #ff8d5c
 $yellow-dark   = #f2df17
 $yellow-light  = #fff494
 
-$theme-color                   = #44D7B6
-$meta-color                    = #888
-$card-color                    = #fff
-$text-color                    = #444
-
 // Selection ( ::selection )
 $selection-bg                  = #8be0e1
 $selection-color               = #fff
@@ -108,10 +103,46 @@ $button-default-hover-color        = #fff
 $button-default-bg                 = $home-readmore-bg-color
 $button-default-hover-bg           = $home-readmore-bg-hover-color
 
-// Note plugin
-$note-color-blue                        = #2196f3
-$note-color-mac-cyan                    = #1BCDFC
-$note-color-mac-green                   = #3DC550
-$note-color-mac-yellow                  = #FFBD2B
-$note-color-mac-red                     = #FE5F58
+// volantis plugin
+$color-md-red                      = #f44336
+$color-md-pink                     = #E91E63
+$color-md-purple                   = #9c27b0
+$color-md-deep-purple              = #673ab7
+$color-md-indigo                   = #3f51b5
+$color-md-light-blue               = #4BA7EE
+$color-md-blue                     = #2196f3
+$color-md-deep-blue                = #3367d6
+$color-md-teal                     = #009688
+$color-md-green                    = #4caf50
+$color-md-light-green              = #8bc34a
+$color-md-orange                   = #ff9800
+$color-md-deep-orange              = #ff5722
+$color-md-brown                    = #795548
+$color-md-blue-grey                = #607d8b
+$color-md-grey                     = #9e9e9e
+$color-md-light-grey               = #e0e0e0
+$color-md-yellow                   = #FCEC60
+$color-md-amber                    = #F6C344
 
+$color-mac-cyan                = #1BCDFC
+$color-mac-green               = #3DC550
+$color-mac-yellow              = #FFBD2B
+$color-mac-red                 = #FE5F58
+
+$color-google-blue             = #4688F1
+$color-google-green            = #3AA757
+$color-google-yellow           = #FABB2D
+$color-google-red              = #E8453C
+
+$color-read-bkg                = #e0d8c8
+$color-read-post               = #f8f1e2
+
+$color-theme                   = #44D7B6
+$color-card                    = #fff
+$color-text                    = #444
+$color-block                   = #f6f6f6
+$color-meta                    = #888
+$color-p                       = #444
+
+bgcolor($c, $mix = 10)
+  return mix($c, $color-card, $mix)
