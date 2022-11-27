@@ -143,6 +143,14 @@ header:
     # In site directory (source/uploads): /uploads/avatar.png
     # You can also use a link of image.
     url:
+  # Banner area.
+  banner:
+    # Effective for all pages.
+    enable: true
+    # You can override it by `header_title` in Front-Matter of .md
+    title: Hello Stun
+    # You can override it by `header_subtitle` in Front-Matter of .md
+    subtitle: An elegant theme for Hexo
   # Mask effect of the background image.
   mask:
     enable: false
