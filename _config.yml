@@ -863,6 +863,9 @@ kill_old_ie:
 # Assets
 # In theme directory (source/css)
 css: css
+# In theme/hexo directory (source/css/custom.css)
+# Allow user to override css.
+css_custom: css/custom.css
 # In theme directory (source/js)
 js: js
 # In theme directory (source/images)
