@@ -303,7 +303,7 @@ author:
     # Optional values: turn | shake
     animation: turn
   # Your favorite motto.
-  motto: hello world
+  motto: Hello Stun
 
 # Social links
 # Value before `||` is the target link, value after `||` is the name of FontAwesome icon.
