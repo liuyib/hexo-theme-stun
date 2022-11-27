@@ -27,9 +27,12 @@ if !isNoHeader
         : ''
     }`
   )
-    div.header-banner-info
-      div.header-banner-info__title= config.title
-      div.header-banner-info__subtitle= config.subtitle
+    if theme.header.banner.enable
+      div.header-banner-info
+        if page.header_title || theme.header.banner.title
+          div.header-banner-info__title= page.header_title || theme.header.banner.title
+        if page.header_subtitle || theme.header.banner.subtitle
+          div.header-banner-info__subtitle= page.header_subtitle || theme.header.banner.subtitle
 
     if theme.header.scroll_down_icon.enable
       div.header-banner-arrow
