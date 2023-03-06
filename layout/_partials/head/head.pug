@@ -105,12 +105,13 @@ if theme.post_widget.share.enable
 
 link(rel="stylesheet" href=`${url_for(theme.css)}/index.css?v=${stun_env('version')}`)
 
+if theme.css_custom
+  link(rel="stylesheet" href=theme.css_custom)
+
 if theme.google_analytics
   link(rel="dns-prefetch" href="https://www.googletagmanager.com")
 if theme.baidu_analytics
   link(rel="dns-prefetch" href="https://hm.baidu.com")
-if theme.tencent_analytics
-  link(rel="dns-prefetch" href="https://tajs.qq.com")
 
 include ../../_third-party/advertising/index.pug
 include ../../_third-party/analytics/index.pug

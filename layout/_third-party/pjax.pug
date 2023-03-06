@@ -6,6 +6,8 @@
   ];
   if (isEnableNoHeader) {
     pjaxSelectors.push('.header-inner');
+  } else {
+    pjaxSelectors.push('.header-banner');
   }
   var pjaxArgs = {
     'selectors': pjaxSelectors,
