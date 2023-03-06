@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.8.0](https://github.com/liuyib/hexo-theme-stun/compare/v2.7.0...v2.8.0) (2022-11-27)
+
+
+### Features
+
+* support set title/subtitle of banner ([7053cbc](https://github.com/liuyib/hexo-theme-stun/commit/7053cbc106d3e1bdf6ab14ddf6817d9c02170aa8))
+* support to override css by custom .css ([1a8a055](https://github.com/liuyib/hexo-theme-stun/commit/1a8a05543bf74aaf219f40e13e3cfb8e2ac252a1))
+
+
+### Bug Fixes
+
+* **pjax:** image/title/subtitle of banner are not updated ([e41f2b7](https://github.com/liuyib/hexo-theme-stun/commit/e41f2b721284696d0aa3e93e35419be5c1848d39))
+
+## [2.7.0](https://github.com/liuyib/hexo-theme-stun/compare/v2.4.0...v2.7.0) (2022-07-11)
+
+### Features
+
+* **plugins:** add button tag-plugin ([c0e2475](https://github.com/liuyib/hexo-theme-stun/commit/c0e2475eee7ff01e4daed66bed2ec3ca69fe84a4))
+
+### Bug Fixes
+
+* **tencent_analytics:** delete tencent analytics ([#161](https://github.com/liuyib/hexo-theme-stun/issues/161)) ([f4dd263](https://github.com/liuyib/hexo-theme-stun/commit/f4dd263f6864dfb6af218fda8ce3fef4530b1b85))
+
 ### [2.6.2](https://github.com/liuyib/hexo-theme-stun/compare/v2.6.1...v2.6.2) (2021-01-25)
 
 

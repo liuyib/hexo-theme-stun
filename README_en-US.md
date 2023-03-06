@@ -1,3 +1,5 @@
+<strong>WARNING: The project is deprecated, please do not use it. You can try [NexT](https://github.com/next-theme/hexo-theme-next) that is maintains actively, good luck.</strong>
+
 <p align="center">
   <a href="https://theme-stun.github.io/docs/" target="_blank" rel="noopener noreferrer">
     <img src="./source/images/icons/stun-logo.svg" alt="Stun Logo" width="100">
@@ -39,18 +41,11 @@ Language: [English](https://github.com/liuyib/hexo-theme-stun/blob/master/README
 ## :sparkles: Demo
 
 - [Liuyib's Blog](https://liuyib.github.io/)
-- [弥枳's Blog](http://blog2.coor.top/)
-- [impressionyang's Blog](https://impressionyang.github.io)
-- [峡州仙士之页](https://cjh0613.github.io/en/)
 - [Cheeks's Blog](https://www.cheeks.top/)
 - [lingan1996's Blog](https://www.lingan1996.top)
 - [MikyMing's Blog](https://mikyming.online/)
-- [Yichangkong's Blog](https://yichangkong.github.io/)
 - [Gemini's Blog](https://geminiplanet.cn/)
-- [PVulcan's Blog](https://pvulcan.cn/)
 - [TimeMachine's Blog](https://timemachine.icu/)
-- [Oridnaryman's Blog](https://jack1024.club/)
-- [未读代码](https://www.wdbyte.com/)
 
 If you plan to use «Stun» theme for a long time and want to show it here, you just need to modify the [README_en-US](https://github.com/liuyib/hexo-theme-stun/edit/master/README_en-US.md) to fill in your website and submit PR.
 
@@ -122,7 +117,10 @@ $ git pull
 
 ## :page_facing_up: Documentation
 
-Please see: [https://theme-stun.github.io/docs/](https://theme-stun.github.io/docs/)
+Below are some document mirrors (they are fully synchronized), and you can access any one of them.
+
+- Github Pages: [https://theme-stun.github.io/docs/](https://theme-stun.github.io/docs/)
+- Gitee Pages: [https://theme-stun.gitee.io/docs/](https://theme-stun.gitee.io/docs/)
 
 ## :question: Question
 
@@ -141,8 +139,8 @@ Thank you to all the people who have already contributed to «Stun»!
 ## :computer: Browser Support
 
 | <img src="https://raw.githubusercontent.com/liuyib/picBed/master/collection/20190723235410.png" alt="IE" width="32px" height="32px" /></br> IE | <img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/35.1.0/edge/edge_64x64.png" alt="Edge" width="32px" height="32px" /></br> Edge | <img src="https://raw.githubusercontent.com/liuyib/picBed/master/collection/20190723235406.png" alt="Firefox" width="32px" height="32px" /></br> Firefox | <img src="https://raw.githubusercontent.com/liuyib/picBed/master/collection/20190723235407.png" alt="Chrome" width="32px" height="32px" /></br> Chrome | <img src="https://raw.githubusercontent.com/liuyib/picBed/master/collection/20190723235409.png" alt="Safari" width="32px" height="32px" /></br> Safari | <img src="https://raw.githubusercontent.com/liuyib/picBed/master/collection/20190723235411.png" alt="Opera" width="32px" height="32px" /></br> Opera |
-| :---: | :---: | :---: |:---: | :---: | :---: |
-| Not Supported | 12+ | 41+ | 45+ | 10+ | 32+ |
+| :--------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------: |
+|                                                                 Not Supported                                                                  |                                                                      12+                                                                      |                                                                           41+                                                                            |                                                                          45+                                                                           |                                                                          10+                                                                           |                                                                         32+                                                                          |
 
 ## :star: Trend of Star
 

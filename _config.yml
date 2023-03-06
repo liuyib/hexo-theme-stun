@@ -89,18 +89,18 @@ favicon:
 pwa:
   enable: false
   manifest: /manifest.json
-  # (Please use "" to wrap the value)
-  theme_color: "#54bcff"
+  # (Please use '' to wrap the value)
+  theme_color: '#54bcff'
 
 # Night mode
 night_mode:
   enable: true
   # The button of switching to the night mode.
   button:
-    # Color of button (Please use "" to wrap the value).
-    color: "#fafafa"
-    # Background color of button (Please use "" to wrap the value).
-    bg_color: "#8c8a8a"
+    # Color of button (Please use '' to wrap the value).
+    color: '#fafafa'
+    # Background color of button (Please use '' to wrap the value).
+    bg_color: '#8c8a8a'
   # The icon that stand for day and night.
   icon:
     dark: 🌜
@@ -143,6 +143,14 @@ header:
     # In site directory (source/uploads): /uploads/avatar.png
     # You can also use a link of image.
     url:
+  # Banner area.
+  banner:
+    # Effective for all pages.
+    enable: true
+    # You can override it by `header_title` in Front-Matter of .md
+    title: Hello Stun
+    # You can override it by `header_subtitle` in Front-Matter of .md
+    subtitle: An elegant theme for Hexo
   # Mask effect of the background image.
   mask:
     enable: false
@@ -151,8 +159,8 @@ header:
   nav:
     # Height of the navigation bar (Supports all CSS units)
     height: 50px
-    # Background color of the navigation bar (Please use "" to wrap the value).
-    bg_color: "#333"
+    # Background color of the navigation bar (Please use '' to wrap the value).
+    bg_color: '#333'
   # The icon that prompts the user to pull down.
   scroll_down_icon:
     enable: false
@@ -213,8 +221,8 @@ footer:
     name: fas fa-heart
     # Heartbeat animation.
     animation: false
-    # (Please use "" to wrap the value)
-    color: "#ff0000"
+    # (Please use '' to wrap the value)
+    color: '#ff0000'
   # Hexo link
   powered:
     enable: true
@@ -260,10 +268,10 @@ back2top:
     name: fas fa-rocket
     # Rotation Angle of icon.
     rotate: -45deg
-    # (Please use "" to wrap the value)
-    color: "#49b1f5"
-    # Color when the mouse hovers it (Please use "" to wrap the value)
-    hover_color: "#fc6423"
+    # (Please use '' to wrap the value)
+    color: '#49b1f5'
+    # Color when the mouse hovers it (Please use '' to wrap the value)
+    hover_color: '#fc6423'
 
 # ---------------------------------------------------------------
 # Sidebar config
@@ -295,7 +303,7 @@ author:
     # Optional values: turn | shake
     animation: turn
   # Your favorite motto.
-  motto: hello world
+  motto: Hello Stun
 
 # Social links
 # Value before `||` is the target link, value after `||` is the name of FontAwesome icon.
@@ -349,8 +357,8 @@ feed:
 # The reading progress of post.
 reading_progress:
   enable: true
-  # (Please use "" to wrap the value)
-  color: "#fc6423"
+  # (Please use '' to wrap the value)
+  color: '#fc6423'
   height: 1px
 
 # ---------------------------------------------------------------
@@ -439,7 +447,7 @@ post_widget:
   share:
     enable: false
     # The text displayed before the share button.
-    label: "Share to: "
+    label: 'Share to: '
     # Optional values: qzone | qq | weibo | wechat | douban | linkedin | facebook | twitter | google
     target: qzone, qq, weibo, wechat, douban, linkedin, facebook, twitter, google
 
@@ -454,8 +462,8 @@ stick_top:
   icon: fas fa-thumbtack
   # Rotation Angle of icon.
   rotate: 45deg
-  # (Please use "" to wrap the value)
-  color: "#999"
+  # (Please use '' to wrap the value)
+  color: '#999'
 
 # ---------------------------------------------------------------
 # Comment config
@@ -632,10 +640,6 @@ google_analytics:
 # See: https://tongji.baidu.com/
 baidu_analytics:
 
-# Tencent analytics ID
-# See: https://v2.ta.qq.com/
-tencent_analytics:
-
 # ---------------------------------------------------------------
 # Search config
 # ---------------------------------------------------------------
@@ -690,7 +694,7 @@ canvas_nest:
   enable: false
   # Color of lines.
   # RGB values, use `,` to separate.
-  color: "0,0,0"
+  color: '0,0,0'
   # The opacity of lines (value: 0 ~ 1)
   opacity: 0.6
   # The number of lines.
@@ -738,8 +742,8 @@ fancybox: false
 zoom_image:
   enable: true
   # The color of mask.
-  # (Please use "" to wrap the value)
-  mask_color: "rgba(0,0,0,0.6)"
+  # (Please use '' to wrap the value)
+  mask_color: 'rgba(0,0,0,0.6)'
   # The gap between image and a edge of screen when image is enlarged.
   # (Only `px` unit is supported)
   gap_aside: 20px
@@ -823,8 +827,8 @@ external_link:
     enable: true
     # Icon name in FontAwesome, see: https://fontawesome.com/icons
     name: fas fa-external-link-alt
-    # (Please use "" to wrap the value)
-    color: "#aaa"
+    # (Please use '' to wrap the value)
+    color: '#aaa'
 
 # The shortcuts of the site.
 shortcuts:
@@ -837,9 +841,9 @@ shortcuts:
 # Tag cloud
 # If not used, comment it or ignore it.
 tag_cloud:
-  # (Please use "" to wrap the value)
-  start_color: "#a4d8fa"
-  end_color: "#49b1f5"
+  # (Please use '' to wrap the value)
+  start_color: '#a4d8fa'
+  end_color: '#49b1f5'
   # Size for tag.
   min_size: 16
   max_size: 26
@@ -850,7 +854,7 @@ tag_cloud:
 # See: https://support.dmeng.net/upgrade-your-browser.html
 kill_old_ie:
   enable: false
-  # The URL of warning page (Please use "" to wrap the value).
+  # The URL of warning page.
   # ! ----------------------------------------------------------------
   # ! Usually you don't need to set this option, just use the default.
   # ! ----------------------------------------------------------------
@@ -859,6 +863,9 @@ kill_old_ie:
 # Assets
 # In theme directory (source/css)
 css: css
+# In theme/hexo directory (source/css/custom.css)
+# Allow user to override css.
+css_custom: css/custom.css
 # In theme directory (source/js)
 js: js
 # In theme directory (source/images)
