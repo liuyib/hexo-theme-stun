@@ -40,6 +40,8 @@
       "CONFIG",
       "hexo",
       "Stun",
+      "location",
+      "navigator",
       "instantsearch"
     ]
   },

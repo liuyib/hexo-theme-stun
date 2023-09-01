@@ -10,6 +10,8 @@
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly",
     "hexo": "readonly",
+    "location": "readonly",
+    "navigator": "readonly",
     "Stun": "readonly",
     "CONFIG": "readonly"
   },

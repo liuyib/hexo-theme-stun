@@ -46,7 +46,7 @@
 - [MikyMing's Blog](https://mikyming.online/)
 - [Gemini's Blog](https://geminiplanet.cn/)
 - [TimeMachine's Blog](https://timemachine.icu/)
-- [Jiangyh's Blog](https://bestjarvan.gitee.io/)
+- [Jiangyh's Blog](https://jiangyh.cn/)
 - [Frank's Blog](https://shufanhao.top/)
 - [Jun's blog](https://www.jun997.xyz/)
 
