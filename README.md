@@ -49,6 +49,7 @@
 - [Jiangyh's Blog](https://bestjarvan.gitee.io/)
 - [Frank's Blog](https://shufanhao.top/)
 - [Jun's blog](https://www.jun997.xyz/)
+- [DavidingPlus's Blog](https://davidingplus.gitee.io/)
 
 如果你准备长期使用 «Stun» 主题，并希望展示在这里，你只需在 [README](https://github.com/liuyib/hexo-theme-stun/edit/master/README.md) 中填入你的网站，然后提交 PR 即可。
 
