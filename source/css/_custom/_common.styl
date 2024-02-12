@@ -1,0 +1,82 @@
+// 图片设置
+.content img {
+  border: none;
+  margin: 5px auto;
+  max-height: 300px;
+}
+
+img.inline {
+  vertical-align: -4px;
+  display: inline-block;
+  height: 20px
+}
+
+// 脚注
+.footnotes-list {
+  padding-inline-start: 20px;
+}
+.footnote-item {
+  line-height: 125% !important;
+  font-size: 12px;
+}
+
+// 评论表情
+.wl-content img {
+  display: inline;
+}
+
+.wl-content img[src^="https://img.t.sinajs.cn"]
+{
+  width: 1.25em;
+  margin: 0.25em;
+  vertical-align: middle;
+}
+
+// 顶部栏
+@media (max-width: $md-width) {
+  .header-nav-menu-item__link {
+    color: #2d2e30;
+  }
+}
+
+/*哔哩哔哩视频适配*/
+.bilibili {
+    position: relative;
+    width: 100%;
+}
+@media only screen and (max-width: 767px) {
+    .bilibili {height: 15em;max-width: 25em;}
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .bilibili {height: 20em;max-width: 30em;}
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .bilibili {height: 30em;max-width: 40em;}
+}
+@media only screen and (min-width: 1200px) {
+    .bilibili {height: 40em;max-width: 50em;}
+}
+
+// Module color
+// -------------------------------------------
+// Header
+$header-bg-color                   = #ffebd7
+$header-text-color                 = #2d2e30
+$header-nav-bg-color               = #ffebd7
+$header-menu-hover-color           = $blue-light
+
+// Footer
+$footer-bg-color                   = #2d2e30
+$footer-text-color                 = #f5f6f7
+$footer-link-color                 = #c20808
+$footer-link-hover-color           = #ed0b0b
+
+// 其他
+h1 {
+  margin: .67em 0;
+  font-size: 1.8em !important;
+}
+
+.fa,.fa-brands,.fa-duotone,.fa-light,.fa-regular,.fa-solid {
+  line-height: inherit !important;
+}

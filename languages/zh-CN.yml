@@ -12,10 +12,21 @@ nav:
 # 导航栏菜单
 menu:
   home: 首页
+  article: 文章
   archives: 归档
   categories: 分类
   tags: 标签
-  about: 关于
+  About: 关于
+  site: 本站
+  friends: 友人
+  friendlink: 友链
+  friendcircle: 友圈
+  lab: 实验室
+  run: 跑步
+  statistics: 统计
+  other: 其他
+  boundfor: 开往
+  goto: 虫洞
 
 # 归档页、分类页、标签页
 page:
@@ -43,9 +54,9 @@ social:
   segmentfault: 思否
   zhihu: 知乎
   weibo: 微博
-  wechat: 微信
-  telegram: Telegram
-  qq: QQ
+  Bilibili: BiliBili
+  Email: 邮箱
+
 
 # 文章
 post:

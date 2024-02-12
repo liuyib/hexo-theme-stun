@@ -1,4 +1,5 @@
 -
+  var SW_URL = '/sw_init.js';
   var HEXO_URL = 'http://hexo.io/';
   var STUN_URL = 'https://github.com/liuyib/hexo-theme-stun/';
   var isNoHeader = !theme.header.enable || (is_post() && !theme.header.show_on.post);
@@ -21,6 +22,8 @@
     ccLanguage = cc.language && cc.language.toLowerCase() || 'en';
   }
   var ccUrl = `https://creativecommons.org/licenses/${ccLicense}/4.0/deed.${ccLanguage}`;
+
+script(src=SW_URL)
 
 doctype html
 html(lang=config.language)
